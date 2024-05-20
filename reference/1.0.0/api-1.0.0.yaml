@@ -44,7 +44,7 @@ paths:
         - Tenant
       x-group-name: Tenant
       x-proxy-name: products
-      summary: Returns tenant provider API.
+      summary: Returns the tenant provider API.
       operationId: TenantProviderID
       responses:
         200:
