@@ -37,7 +37,7 @@
           link: docs/introduction/contact-us.md
 - sections:
   - title: Getting Started
-    link: docs/getting-started.md
+    link: docs/get-started.md
     open: true
     sections:
     - title: Setup a Tenant
