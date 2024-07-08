@@ -19,6 +19,8 @@
           link: docs/getting-started/preview-and-publish-content/preview-and-publish.md
     - title: Getting Started Preview
       link: docs/getting-started.md&branch=preview
+    - title: Getting Started Party
+      link: docs/getting-started.md&branch=party
 - sections:
     - title: Gated Content
       link: docs/Spec_Testing/gatedContent.md
