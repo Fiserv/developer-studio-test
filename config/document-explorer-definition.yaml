@@ -5,7 +5,7 @@
           link: docs/introduction/contact-us.md
 - sections:
     - title: Getting Started
-      link: docs/getting-started.md
+      link: docs/get-started.md
       sections:
         - title: Setup New Tenant
           link: docs/getting-started/setup-tenant/setup-tenant.md
@@ -18,7 +18,7 @@
         - title: Preview & Publish Content
           link: docs/getting-started/preview-and-publish-content/preview-and-publish.md
     - title: Getting Started Preview
-      link: docs/getting-started.md&branch=preview
+      link: docs/get-started.md&branch=preview
 - sections:
     - title: Gated Content
       link: docs/Spec_Testing/gatedContent.md
