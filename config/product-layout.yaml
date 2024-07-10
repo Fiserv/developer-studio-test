@@ -49,7 +49,7 @@ productPage:
             - description: Get Started with Developer Studio.
             - link: 
               - type: markdown
-              - uri: /docs/getting-started.md
+              - uri: /docs/get-started.md
           - contextualNavigationCard:
             - title: Tutorials
             - description: Learn how to integrate with Developer Studio.

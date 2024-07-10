@@ -19,7 +19,7 @@
       ]
     }
   ],
-  "getStartedFilePath": "/docs/getting-started.md",
+  "getStartedFilePath": "/docs/get-started.md",
   "resourcesFilePath": "/docs/resources/resources.md",
   "apiVersions": [
     {
