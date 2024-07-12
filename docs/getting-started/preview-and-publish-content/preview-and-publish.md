@@ -73,7 +73,7 @@ Need Help ?
 
 [Stoplight Content Edit]: <https://gist.githubusercontent.com/f2zdirk/0d6e1e22180086f6169a2686a3ae1ec9/raw/22c36a3fbd595844296c2d25dc0e14b27d51e1ab/Stoplight_Content_Edit.png>
 
-[click here]: <http://dev-portal-ui-stage-developer-portal.roks-eck-cluster-8a571839bba611238ae425f409ae5396-0000.us-south.containers.appdomain.cloud/product/5/docs/?path=docs/getting-started.md>
+[click here]: <http://dev-portal-ui-stage-developer-portal.roks-eck-cluster-8a571839bba611238ae425f409ae5396-0000.us-south.containers.appdomain.cloud/product/5/docs/?path=docs/get-started.md>
 
 [developer studio Preview]: <https://gist.githubusercontent.com/f2zdirk/0d6e1e22180086f6169a2686a3ae1ec9/raw/22c36a3fbd595844296c2d25dc0e14b27d51e1ab/Developer_Portal_Preview.png>
 
