@@ -27,7 +27,7 @@
 # are granted or extended by this work or
 # the delivery of this work
 ################################################################################
-- filePath: "Spec_Testing/Private Access.pdf"
+- filePath: "Spec_Testing/Private_Access.pdf"
   access: private
   groups: []
 - filePath: "Spec_Testing/Entitled_Access.pdf"
