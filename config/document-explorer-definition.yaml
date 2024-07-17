@@ -4,8 +4,8 @@
         - title: Contact Studio Support
           link: docs/introduction/contact-us.md
 - sections:
-    - title: Getting Started
-      link: docs/get-started.md
+    - title: Different Getting Started
+      link: docs/getting-started/new-getting-started.md
       sections:
         - title: Setup New Tenant
           link: docs/getting-started/setup-tenant/setup-tenant.md
