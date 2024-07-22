@@ -4,7 +4,6 @@
   "brand": "Fiserv",
   "brandLogoURL": "https://raw.githubusercontent.com/Fiserv/developer-studio-test/develop/assets/images/Fiserv_Logo.jpg",
   "solution": [
-    "financial-institutions",
     "merchants"
   ],
   "brandDescription": "Fiserv, Inc. is a global provider of payments and financial services technology solutions. The Company provides account processing and digital banking solutions, card issuer processing and network services, payments, e-commerce, merchant acquiring and processing, and the Clover cloud-based point-of-sale solution. The Company operates through three segments: Merchant Acceptance (Acceptance), Financial Technology (Fintech) and Payments and Network (Payments). Test",
@@ -35,8 +34,8 @@
   "product": {
     "featured": true,
     "logoURL": "https://raw.githubusercontent.com/Fiserv/developer-studio-test/develop/assets/images/Portal_Logo.png",
-    "description": "Developer Studio is a product of Developer Studio where developers can come to the studio to develop their development.",
-    "longDescription": "Developer Studio is a product of Developer Studio where developers can come to the studio to develop.",
+    "description": "Developer Studio Test is a product of Developer Studio.",
+    "longDescription": "Developer Studio Test is a cool product of Developer Studio.",
     "apiSpecification": "/v1/apis/DeveloperStudioTest",
     "layout": "/v1/layouts/DeveloperStudioTest",
     "documentation": "/v1/docs/DeveloperStudioTest",
