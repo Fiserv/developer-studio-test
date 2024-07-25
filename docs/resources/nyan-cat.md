@@ -15,3 +15,9 @@ Below is a quick reference of Nyan Cat.
 You can also find one at [home](https://devstudio:1oBbB!l3Xac@dev-developer.fiserv.com/).
 
 Please find more if possible.
+
+![reference image](/assets/image/nyan.jpg)
+
+[cat_dog](/docs/?path=docs/resources/cat-dog.md)
+
+[Home](/product/DeveloperStudioTest)
