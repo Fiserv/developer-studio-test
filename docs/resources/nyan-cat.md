@@ -12,15 +12,15 @@ Below is a quick reference of Nyan Cat.
 ### Table of Contents  
 * [Nyan Cat](https://www.nyan.cat/)
 
-You can also find one at [home](https://devstudio:1oBbB!l3Xac@dev-developer.fiserv.com/).
+You can also find one at [home](dev-developer.fiserv.com/).
 
 Please find more if possible.
 
-![reference image](/assets/image/nyan.jpg)
+![reference image](/assets/images/nyan.jpg)
 
 [cat_dog_relative](?path=docs/resources/cat-dog.md)
 
-[cat_dog_dotdot](../../../../../../docs/?path=docs/resources/cat-dog.md)
+[cat_dog_dotdot](../docs/?path=docs/resources/cat-dog.md)
 
 [cat_dog_direct](/product/DeveloperStudioTest/docs/?path=docs/resources/cat-dog.md)
 
