@@ -18,6 +18,10 @@ Please find more if possible.
 
 ![reference image](/assets/image/nyan.jpg)
 
-[cat_dog](/docs/?path=docs/resources/cat-dog.md)
+[cat_dog_relative](?path=docs/resources/cat-dog.md)
+
+[cat_dog_dotdot](../../../../../../docs/?path=docs/resources/cat-dog.md)
+
+[cat_dog_direct](/product/DeveloperStudioTest/docs/?path=docs/resources/cat-dog.md)
 
 [Home](/product/DeveloperStudioTest)
