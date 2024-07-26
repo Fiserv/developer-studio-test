@@ -16,7 +16,7 @@ You can also find one at [home](dev-developer.fiserv.com/).
 
 Please find more if possible.
 
-![reference image](/assets/images/nyan.jpg)
+![reference image](../../../../../../assets/images/nyan.jpg)
 
 [cat_dog_relative](?path=docs/resources/cat-dog.md)
 
