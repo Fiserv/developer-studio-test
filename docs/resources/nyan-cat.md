@@ -5,6 +5,7 @@
 
 >It's very cool.
 
+#### Nyan Cat Example
 For example, this entire page is powered by Nyan Cat!
 
 Below is a quick reference of Nyan Cat.
@@ -12,9 +13,11 @@ Below is a quick reference of Nyan Cat.
 ### Table of Contents  
 * [Nyan Cat](https://www.nyan.cat/)
 
-You can also find one at [home](dev-developer.fiserv.com/).
+You can also find one at [home](/).
 
 Please find more if possible.
+
+##### Nyan Cat Pictures
 
 ![reference image](../../../../../../assets/images/nyan.jpg)
 
