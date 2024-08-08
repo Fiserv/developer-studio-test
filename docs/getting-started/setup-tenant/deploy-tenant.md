@@ -4,7 +4,7 @@
 
 Need to deploy your tenant application ? 
 
-Quick start guide will provide you the necessary steps to get your Application setup, configure and deploy on Cloud Server really quick.
+Quick start guide will provide you the necessary steps to get your Application setup, configure and deploy on Cloud Server really quick. Test this out using the info provided in the docs.
 
 > Recommended : To complete following steps before proceeding to deployment process. 
 
