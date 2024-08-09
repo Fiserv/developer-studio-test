@@ -22,6 +22,10 @@ Please find more if possible.
 
 ![reference image](../../../../../../assets/images/nyan.jpg)
 
+![not an image](../../../../../../assets/images/moo.jpg)
+
+![raw image](https://raw.githubusercontent.com/Fiserv/developer-studio-test/assets/images/nyan.jpg)
+
 [cat_dog_relative](?path=docs/resources/cat-dog.md)
 
 [cat_dog_dotdot](../docs/?path=docs/resources/cat-dog.md)
