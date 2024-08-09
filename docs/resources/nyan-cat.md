@@ -22,7 +22,7 @@ Please find more if possible.
 
 ![reference image](../../../../../../assets/images/nyan.jpg)
 
-![not an image](../../../../../../assets/images/moo.jpg)
+![not an image](/assets/images/moo.png)
 
 ![raw image](https://raw.githubusercontent.com/Fiserv/developer-studio-test/assets/images/nyan.jpg)
 
