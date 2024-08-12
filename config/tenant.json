@@ -22,7 +22,6 @@
     }
   ],
   "getStartedFilePath": "docs/get-started.md",
-  "resourcesFilePath": "docs/resources/resources.md",
   "apiVersions": [
     {
       "version": "11.0.1",
