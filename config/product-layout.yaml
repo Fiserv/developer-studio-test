@@ -30,7 +30,7 @@
 
 header:
   productDescription: To onboard properly into the Developer Studio as a new tenant each product must support these APIs so that we can retrieve product specific API specifications and documentation.
-getStarted: /docs/getting-started.md
+getStarted: /docs/product-layout-getting-started.md
 benefits:
   - title: Transform Customer Experience
     description: Pre-certified integrations to value added solutions and third-party providers that power next-generation commerce experiences.
