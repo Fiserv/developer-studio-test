@@ -27,89 +27,100 @@
 # are granted or extended by this work or 
 # the delivery of this work
 ################################################################################
-
 header:
-  productDescription: To onboard properly into the Developer Studio as a new tenant each product must support these APIs so that we can retrieve product specific API specifications and documentation.
-getStarted: /docs/product-layout-getting-started.md
-benefits:
-  - title: Transform Customer Experience
-    description: Pre-certified integrations to value added solutions and third-party providers that power next-generation commerce experiences.
-  - title: Accelerate Revenue
-    description: Intelligent orchestration layer that reduces code complexity and operational costs.
-  - title: Optimize Commerce
-    description: BackOffice automation with a modern set of tools and APIs.
+#  productName: FirstVision - LATAM
+#  whoIsItFor: LATAM
+#  image: 
+#    link: "/assets/images/Fiserv_Logo.jpg"
+#    altText: FirstVision - LATAM™
+  productionDescription: Fiserv provides a single, consolidated processing platform for all your payment cards, loans, prepaid, and commercial card products. FirstVision™ is our outsourced processing solution that meets your challenges head-on and transforms your technology capability. Built on core VisionPLUS® software, FirstVision™ provides an end-to-end solution. FirstVision™ Restful APIs enable you to achieve platform modernization and competitive edge delivering the following benefits to your business.
+getStarted: /docs/english/getting-started.md
 guides:
-  - title: Setup a tenant
-    description: Fiserv Products within the Fiserv portfolio that are showcased through the studio are known as tenants. Tenants standup a tenant server that will serve all the content through the studio for developers visiting the Fiserv Developer Studio.
-    link: docs/getting-started/setup-tenant/setup-tenant.md
-  - title: Preview and Publish
-    description: This quick start guide will provide you with the necessary steps to get you from API Specification to ready-to-preview/publish API Documentation in 10 minutes flat.
-    link: docs/getting-started/preview-and-publish-content/preview-and-publish.md
-  - title: Markdown Usage
-    description: Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents.
-    link: docs/resources/markdown-support.md
+  - title: Postman Test Tutorial
+    description: Demostrate the initial settings that must be applied to Postman's Collection.
+    link: docs/english/getting-started/postman.md
+benefits:
+  - title: Time to Market
+    description: Service-based architecture with API enabled and a fully integrated suite of solutions ensures quicker application development and integration.
+    icon: assets/images/time.jpg
+  - title: Transform Business
+    description: Platform architecture built around technology simplification and leveraging open APIs, reducing the cost of change and meeting the innovation.
+    icon: assets/images/transform1.png
+  - title: Speed to Market
+    description: FirstVision™ oriented architecture with open APIs enables service consumption rather than change management.
+    icon: assets/images/transform.png
 featuredFeatures:
-  - title: Documentation 1
-    groupName: Guides
+  - title: Accounts
+    description: Account basic functions such as add, inquiry and edit account. Also includes account level processing options for a card account.
     featured: true
-    description: Step by step documentation to setup and market your product.
     relatedDocs:
-      - link: docs/getting-started/setup-tenant/setup-tenant.md
-        title: Tenant setup
-        externalLink: https://gitlab.onefiserv.net/developer-studio/ai-center/ai-gateway-library
+    - link: docs/english/api-reference/api-reference.md
+      title: Accounts
     relatedAPIs:
-      - type: post
-        path: /address
-        title: Add Address
-        externalLink: https://www.fiserv.com/sales
-  - title: Documentation 1
-    groupName: Howto
+    - title: Accound Add
+      type: "post"
+      path: "/account/add-L8V3"
+  - title: Cards
+    description: Cards functions to add, inquiry and edit card records. A card record contains information about the card (or “plastic”) that is issued to the cardholder. Also includes cross reference between customer, account and card.
     featured: true
-    description: Step by step documentation to setup and market your product.
     relatedDocs:
-      - link: docs/getting-started/setup-tenant/setup-tenant.md
-        title: Tenant setup
+    - link: docs/english/api-reference/api-reference.md
+      title: Cards
     relatedAPIs:
-      - type: post
-        path: /address
-        title: Add Address
-  - title: Documentation 2
-    groupName: Guides
-    description: Step by step documentation to setup and market your product.
+    - title: Card Activation
+      type: "put"
+      path: "/cards/activation"
+  - title: Customer
+    description: Customer Name Address functions. Multiple accounts can be associated with a single Customer Name/Address record. Cross-reference between records customer to account to cards and relationships are also available.
+    featured: true
     relatedDocs:
-      - link: docs/getting-started/setup-tenant/setup-tenant.md
-        title: Tenant setup
+    - link: docs/english/api-reference/api-reference.md
+      title: Customer
     relatedAPIs:
-      - type: post
-        path: /address
-        title: Add Address
-  - title: Documentation 3
-    groupName: Guides
-    description: Step by step documentation to setup and market your product.
+    - title: Account Number Inquiry
+      type: "post"
+      path: "/customer/accountNumber"
+  - title: Transactions
+    groupName: Credit Issuance
+    description: Transactions functions to add, adjust or inquiry functions actions. Display transactional details.
+    featured: true
     relatedDocs:
-      - link: docs/getting-started/setup-tenant/setup-tenant.md
-        title: Tenant setup
+    - link: docs/english/api-reference/api-reference.md
+      title: Transactions
     relatedAPIs:
-      - type: post
-        path: /address
-        title: Add Address
-  - title: Documentation 2
-    groupName: Howto
-    description: Step by step documentation to setup and market your product.
+    - title: Account Enrollment Inquiry
+      type: "get"
+      path: "/transactions/enroll-history/{accountNumber}"
+  - title: Loyalty
+    groupName: Credit Issuance
+    description: Loyalty program functions to reward customers for their repeated patronage. Loyalty programs are also known as a rewards program or points program.
+    featured: false
     relatedDocs:
-      - link: docs/getting-started/setup-tenant/setup-tenant.md
-        title: Tenant setup
+    - link: docs/english/api-reference/api-reference.md
+      title: Loyalty
     relatedAPIs:
-      - type: post
-        path: /address
-        title: Add Address
-  - title: Documentation 3
-    groupName: Howto
-    description: Step by step documentation to setup and market your product.
+    - title: Cross Reference Inquiry
+      type: "post"
+      path: "/loyalty/crossReference"
+  - title: Notifications
+    groupName: Credit Issuance
+    description: Enrollment and cancellation features with the flexibility to trigger Email’s basis for specific events such as authorizations, address change, card blocking, card activation, card replacement or reissue, payment due date and credit limit change.
+    featured: false
     relatedDocs:
-      - link: docs/getting-started/setup-tenant/setup-tenant.md
-        title: Tenant setup
+    - link: docs/english/api-reference/api-reference.md
+      title: Notifications
     relatedAPIs:
-      - type: post
-        path: /address
-        title: Add Address
+    - title: Notification
+      type: "post"
+      path: "/v2/pushNotification"
+  - title: Tokenization
+    groupName: Credit Issuance
+    description: Tokenization retrieve and validate list of available cards associated with the account number requested from VISA. Allows to check the eligibility of the cards for digitization. Also, validates if the token exists and active and call when the issuer's token status has changed.
+    featured: false
+    relatedDocs:
+    - link: docs/english/api-reference/api-reference.md
+      title: Tokenization
+    relatedAPIs:
+    - title: Available Cards Inquiry
+      type: "post"
+      path: "/vtis/v1/getAvailableCards"

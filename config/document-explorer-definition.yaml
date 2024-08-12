@@ -1,68 +1,182 @@
+---
 - sections:
-    - title: Introduction
+    - title: English
       sections:
-        - title: Contact Studio Support
-          link: docs/introduction/contact-us.md
-- sections:
-    - title: Getting Started
-      link: docs/get-started.md
-      sections:
-        - title: Setup New Tenant
-          link: docs/getting-started/setup-tenant/setup-tenant.md
-        - title: Deploy New Tenant
-          link: docs/getting-started/setup-tenant/deploy-tenant.md
-        - title: Register New Tenant
-          link: docs/getting-started/setup-tenant/register-tenant.md
-        - title: Code New Tenant
-          link: docs/getting-started/code-a-tenant/code-tenant.md
-        - title: Preview & Publish Content
-          link: docs/getting-started/preview-and-publish-content/preview-and-publish.md
-    - title: Getting Started Preview
-      link: docs/get-started.md&branch=preview
-- sections:
-    - title: Gated Content
-      link: docs/Spec_Testing/gatedContent.md
-      # open: true  
-      sections:
-      - title: Gated Content Testing
-        link: docs/Spec_Testing/gatedContent.md 
-      # access: public
-      # groups: []
-
-- sections:
-    - title: NotificationToggleTest
-      sections:
-      - title: NotificationTesting
-        link: docs/NotificationToggleTest/notificationTest.md
-
-- sections:
-    - title: Resources
-      sections:
-        - title: API Guidelines
-          link: docs/resources/guides/api-guide.md
-        - title: How it works
-          link: docs/resources/guides/how-to-use-stoplight.md
-        - title: Learn how to use Prism Stoplight
-          link: docs/resources/guides/how-to-use-stoplight.md
-        - title: Learn how to use DocIgnore
-          link: docs/resources/guides/how-to-use-docignore.md
-        - title: Tutorials
-          link: docs/resources/guides/how-to-use-docignore.md
+        - title: Introduction
+          link: docs/english/introduction.md
+        - title: Getting Started
+          link: docs/english/getting-started.md
           sections:
-            - title: Markdown Support Guide
-              link: docs/resources/markdown-support.md
-              sections:
-                - title: Card Support
-                  link: docs/tutorials/markdown/card.md
-                - title: Tabs Support
-                  link: docs/tutorials/markdown/tabs.md
-        - title: FAQ
-          link: docs/faq/faq.md
-
-        - title: Testing
-          open: true
-          sections: 
-            - title: TestingDocs
-              link: docs/SpecTest/SpecTest.md
-              access: public
-              groups: []
+            - title: Postman Tutorial
+              link: docs/english/getting-started/postman.md
+            - title: Services List
+              link: docs/english/getting-started/messages-list.md
+            - title: Structure
+              link: docs/english/getting-started/structure.md
+            - title: Terminology
+              link: docs/english/getting-started/terminology.md
+        - title: API Reference
+          link: docs/english/api-reference/api-reference.md
+          sections:
+            - title: Access Token
+              link: docs/english/api-reference/accessToken.md
+            - title: API Glossary
+              link: docs/english/api-reference/api-glossary.md
+            - title: API Request
+              link: docs/english/api-reference/api-request.md
+            - title: Error Handling
+              link: docs/english/api-reference/response-handling.md
+            - title: Message Level Encryption
+              link: docs/english/api-reference/encryption.md
+            - title: Webhook
+              link: docs/english/api-reference/5-notifications.md
+        - title: Main Cases
+          sections:
+            - title: Account Management
+              link: docs/english/main-cases/account.md
+            - title: API Environment
+              link: docs/english/main-cases/api-environment.md
+            - title: Audit and Monitoring
+              link: docs/english/main-cases/audit.md
+            - title: Card Controls
+              link: docs/english/main-cases/card-controls.md
+            - title: Card Management
+              link: docs/english/main-cases/card.md
+            - title: Customer Management
+              link: docs/english/main-cases/customer.md
+            - title: Digital Card Issuing
+              link: docs/english/main-cases/digital.md
+            - title: Falcon System Integration
+              link: docs/english/main-cases/falcon.md
+            - title: HMAC Signature
+              link: docs/english/main-cases/hmac.md
+            - title: Relation Client-Account-Card
+              link: docs/english/main-cases/relation.md
+            - title: Upload Founds
+              link: docs/english/main-cases/uploads.md
+        - title: Release Notes
+          sections:
+            - title: 2023
+              link: docs/english/releaseNotes/2023.md
+            - title: 2024
+              link: docs/english/releaseNotes/2024.md
+    - title: Español
+      sections:
+        - title: Introducción
+          link: docs/spanish/introduccion.md
+        - title: Empezando
+          link: docs/spanish/empezando.md
+          sections:
+            - title: Estructura
+              link: docs/spanish/empezando/estructura.md
+            - title: Lista de Servicios
+              link: docs/spanish/empezando/lista-servicios.md
+            - title: Postman
+              link: docs/spanish/empezando/postman.md
+            - title: Terminología
+              link: docs/spanish/empezando/terminologia.md
+        - title: Referencia API
+          link: docs/spanish/referencia-api/referencia-api.md
+          sections:
+            - title: Access Token
+              link: docs/spanish/referencia-api/accessToken.md
+            - title: Encriptación a Nivel de Mensaje
+              link: docs/spanish/referencia-api/encriptacion.md
+            - title: Glosario API
+              link: docs/spanish/referencia-api/glosario-api.md
+            - title: Manejo de Respuesta
+              link: docs/spanish/referencia-api/manejo-respuesta.md
+            - title: Solicitud de API
+              link: docs/spanish/referencia-api/solicitud-api.md
+            - title: Webhook
+              link: docs/spanish/referencia-api/4-notificaciones.md
+        - title: Casos Principales
+          sections:
+            - title: Ambiente de API
+              link: docs/spanish/casos-principales/ambiente-api.md
+            - title: Auditoría y Monitoreo
+              link: docs/spanish/casos-principales/auditoria.md
+            - title: Cargar Fondos
+              link: docs/spanish/casos-principales/cargas.md
+            - title: Controles de Tarjetas
+              link: docs/spanish/casos-principales/controles-tarjeta.md
+            - title: Emisión de Tarjetas Digitales
+              link: docs/spanish/casos-principales/emision-tarjetas.md
+            - title: Firma HMAC
+              link: docs/spanish/casos-principales/hmac.md
+            - title: Gestión de Clientes
+              link: docs/spanish/casos-principales/gestion-clientes.md
+            - title: Gestión de Cuentas
+              link: docs/spanish/casos-principales/gestion-cuentas.md
+            - title: Gestión de Tarjetas
+              link: docs/spanish/casos-principales/gestion-tarjetas.md
+            - title: Integración con el Sistema Falcon
+              link: docs/spanish/casos-principales/integracion-falcon.md
+            - title: Relación Cliente-Cuenta-Tarjeta
+              link: docs/spanish/casos-principales/relacion.md
+        - title: Release Notes
+          sections:
+            - title: 2023
+              link: docs/spanish/releaseNotes/2023.md
+            - title: 2024
+              link: docs/spanish/releaseNotes/2024.md
+    - title: Português
+      sections:
+        - title: Introdução
+          link: docs/português/introdução.md
+        - title: Começando
+          link: docs/português/começando.md
+          sections:
+            - title: Estrutura
+              link: docs/português/começando/estrutura.md
+            - title: Lista de Serviços
+              link: docs/português/começando/lista-serviços.md
+            - title: Postman
+              link: docs/português/começando/postman.md
+            - title: Terminologia
+              link: docs/português/começando/terminologia.md
+        - title: Referência API
+          link: docs/português/referência-api/referência-api.md
+          sections:
+            - title: Access Token
+              link: docs/português/referência-api/accessToken.md
+            - title: Criptografia ao Nível de Mensagem
+              link: docs/português/referência-api/criptografia.md
+            - title: Gestão de Resposta
+              link: docs/português/referência-api/gestão-resposta.md
+            - title: Glossário da API
+              link: docs/português/referência-api/glossário-api.md
+            - title: Solicitação de API
+              link: docs/português/referência-api/solicitação-api.md
+            - title: Webhook
+              link: docs/português/referência-api/5-notificações.md 
+        - title: Principais Casos
+          sections:
+            - title: Ambiente da API
+              link: docs/português/principais-casos/ambiente-api.md
+            - title: Assinatura HMAC 
+              link: docs/português/principais-casos/hmac.md
+            - title: Auditoria e Monitoramento
+              link: docs/português/principais-casos/auditoria.md
+            - title: Carregar Fundos
+              link: docs/português/principais-casos/carregar-fundos.md
+            - title: Controles de Cartão
+              link: docs/português/principais-casos/controles-cartão.md
+            - title: Emissão de Cartões Digitais
+              link: docs/português/principais-casos/emissão-cartões.md
+            - title: Gestão de Cartões
+              link: docs/português/principais-casos/gestão-cartões.md
+            - title: Gestão de Clientes
+              link: docs/português/principais-casos/gestão-clientes.md
+            - title: Gestão de Contas
+              link: docs/português/principais-casos/gestão-contas.md
+            - title: Integração com o Sistema Falcon
+              link: docs/português/principais-casos/integração-falcon.md
+            - title: Relação Cliente-Conta-Cartão
+              link: docs/português/principais-casos/relação.md
+        - title: Release Notes
+          sections:
+            - title: 2023
+              link: docs/português/releaseNotes/2023.md
+            - title: 2024
+              link: docs/português/releaseNotes/2024.md
