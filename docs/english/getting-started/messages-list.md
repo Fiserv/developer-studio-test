@@ -248,7 +248,7 @@ tags: [Getting Started, VMX, Services List, First Vision, Issuing, Card Processi
 
 ### Account 
 
-| Endpoint Name                                                                                                                                                         | Service                 | Version | API endpoint                                                                                                                                                       | Method |
+| Endpoint Name                                                                                                                                                         | Services                 | Version | API endpoint                                                                                                                                                       | Method |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------ |
 |[Account Add](https://developer.fiserv.com/product/FirstVisionLATAM/api/?type=post&path=/account/&branch=main&version=1.0.0)|M.CMS.ACCOUNT.ADD|R8V8|/account/|POST|
 |[Account Block Code Update](https://developer.fiserv.com/product/FirstVisionLATAM/api/?type=put&path=/account/block-code&branch=main&version=1.0.0)|M.CMS.ACCT.BLKCD.UPD|R8V1|/account/block-code|PUT|
