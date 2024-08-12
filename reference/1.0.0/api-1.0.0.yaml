@@ -30,7 +30,7 @@
 
 openapi: 3.0.2
 info:
-  title: Dev Portal Tenant APIs.
+  title: Dev Portal Tenant APIs to test.
   description: To onboard a new tenant into the Fiserv Developer Studio as a new tenant each
     product must support these APIs so that we can retrieve product specific API specs
     and documentation.
