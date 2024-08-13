@@ -5,5 +5,5 @@ on:
 
 jobs:
   validator:
-    uses: Fiserv/remote-actions/.github/workflows/validator-service.yaml@TFDS-1530-Direct-Link-Validator
+    uses: Fiserv/remote-actions/.github/workflows/validator-service.yaml@main
     secrets: inherit
