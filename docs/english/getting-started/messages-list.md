@@ -210,7 +210,7 @@ tags: [Getting Started, VMX, Services List, First Vision, Issuing, Card Processi
 
 ## Version 1.1.0
 
-| Name                                                                                                                                                                     | Service                 | Version | API endpoint                      | Method |
+| Name                                                                                                                                                                     | Services                 | Version | API endpoint                      | Method |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------- | ------- | --------------------------------- | ------ |
 | [Account Boarding Driver Request](https://developer.fiserv.com/product/FirstVisionLATAM/api/?type=post&path=/account/v2/accountBoardingDriver&branch=main&version=1.1.0) | M.CMS.CUST.ACCT.CRD.DRV | L8V3    | /account/v2/accountBoardingDriver | POST   |
 | [Account to Account Funds Transfer](https://developer.fiserv.com/product/FirstVisionLATAM/api/?type=put&path=/account/FL-transferP2P&branch=main&version=1.1.0)          | M.ASM.MONETARYPTP.ACT   | L8V2    | /account/FL-transferP2P           | PUT    |
