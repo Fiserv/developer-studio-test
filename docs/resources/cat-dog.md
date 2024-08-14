@@ -45,3 +45,9 @@ another way to call gif
 
 one more type
 ![selfie](/assets/images/test_jpeg.jpeg)
+
+found another type - tiff
+![dolores-park](/assets/images/test_tiff_lowercase.tiff)
+
+now with upper case
+![dolores-park](/assets/images/test_tiff.TIFF)
