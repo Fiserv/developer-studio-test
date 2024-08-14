@@ -36,3 +36,9 @@ url reference 2
 inline html with markdown
 
 <img src="/assets/images/cat-dog.png" alt="Cat Dog" style="width:300px;">
+
+now let us do a gif
+![api_suite](/assets/images/test_gif.gif)
+
+one more type
+![selfie](/assets/images/test_jpeg.jpeg)
