@@ -23,3 +23,16 @@ Below is a quick reference of Cat Dog.
 Please don't bring him to work
 
 ![Cat Dog png](../../assets/images/cat-dog.png)
+
+html tag
+<img src="/assets/images/cat-dog.png" alt="Cat Dog">
+
+url reference 1
+![Cat Dog png][cat-dog]
+
+url reference 2
+[cat-dog]: /assets/images/cat-dog.png
+
+inline html with markdown
+
+<img src="/assets/images/cat-dog.png" alt="Cat Dog" style="width:300px;">
