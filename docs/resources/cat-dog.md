@@ -40,5 +40,8 @@ inline html with markdown
 now let us do a gif
 ![api_suite](/assets/images/test_gif.gif)
 
+another way to call gif
+<img src="/assets/images/test_gif.gif" alt="API SUITE">
+
 one more type
 ![selfie](/assets/images/test_jpeg.jpeg)
