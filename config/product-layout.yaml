@@ -48,68 +48,68 @@ guides:
   - title: Markdown Usage
     description: Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents.
     link: docs/resources/markdown-support.md
-# featuredFeatures:
-#   - title: Documentation 1
-#     groupName: Guides
-#     featured: true
-#     description: Step by step documentation to setup and market your product.
-#     relatedDocs:
-#       - link: docs/getting-started/setup-tenant/setup-tenant.md
-#         title: Tenant setup
-#         externalLink: https://gitlab.onefiserv.net/developer-studio/ai-center/ai-gateway-library
-#     relatedAPIs:
-#       - type: post
-#         path: /address
-#         title: Add Address
-#         externalLink: https://www.fiserv.com/sales
-#   - title: Documentation 1
-#     groupName: Howto
-#     featured: true
-#     description: Step by step documentation to setup and market your product.
-#     relatedDocs:
-#       - link: docs/getting-started/setup-tenant/setup-tenant.md
-#         title: Tenant setup
-#     relatedAPIs:
-#       - type: post
-#         path: /address
-#         title: Add Address
-#   - title: Documentation 2
-#     groupName: Guides
-#     description: Step by step documentation to setup and market your product.
-#     relatedDocs:
-#       - link: docs/getting-started/setup-tenant/setup-tenant.md
-#         title: Tenant setup
-#     relatedAPIs:
-#       - type: post
-#         path: /address
-#         title: Add Address
-#   - title: Documentation 3
-#     groupName: Guides
-#     description: Step by step documentation to setup and market your product.
-#     relatedDocs:
-#       - link: docs/getting-started/setup-tenant/setup-tenant.md
-#         title: Tenant setup
-#     relatedAPIs:
-#       - type: post
-#         path: /address
-#         title: Add Address
-#   - title: Documentation 2
-#     groupName: Howto
-#     description: Step by step documentation to setup and market your product.
-#     relatedDocs:
-#       - link: docs/getting-started/setup-tenant/setup-tenant.md
-#         title: Tenant setup
-#     relatedAPIs:
-#       - type: post
-#         path: /address
-#         title: Add Address
-#   - title: Documentation 3
-#     groupName: Howto
-#     description: Step by step documentation to setup and market your product.
-#     relatedDocs:
-#       - link: docs/getting-started/setup-tenant/setup-tenant.md
-#         title: Tenant setup
-#     relatedAPIs:
-#       - type: post
-#         path: /address
-#         title: Add Address
+featuredFeatures:
+  - title: Documentation 1
+    groupName: Guides
+    featured: true
+    description: Step by step documentation to setup and market your product.
+    relatedDocs:
+      - link: docs/getting-started/setup-tenant/setup-tenant.md
+        title: Tenant setup
+        externalLink: https://gitlab.onefiserv.net/developer-studio/ai-center/ai-gateway-library
+    relatedAPIs:
+      - type: post
+        path: /address
+        title: Add Address
+        externalLink: https://www.fiserv.com/sales
+  - title: Documentation 1
+    groupName: Howto
+    featured: true
+    description: Step by step documentation to setup and market your product.
+    relatedDocs:
+      - link: docs/getting-started/setup-tenant/setup-tenant.md
+        title: Tenant setup
+    relatedAPIs:
+      - type: post
+        path: /address
+        title: Add Address
+  - title: Documentation 2
+    groupName: Guides
+    description: Step by step documentation to setup and market your product.
+    relatedDocs:
+      - link: docs/getting-started/setup-tenant/setup-tenant.md
+        title: Tenant setup
+    relatedAPIs:
+      - type: post
+        path: /address
+        title: Add Address
+  - title: Documentation 3
+    groupName: Guides
+    description: Step by step documentation to setup and market your product.
+    relatedDocs:
+      - link: docs/getting-started/setup-tenant/setup-tenant.md
+        title: Tenant setup
+    relatedAPIs:
+      - type: post
+        path: /address
+        title: Add Address
+  - title: Documentation 2
+    groupName: Howto
+    description: Step by step documentation to setup and market your product.
+    relatedDocs:
+      - link: docs/getting-started/setup-tenant/setup-tenant.md
+        title: Tenant setup
+    relatedAPIs:
+      - type: post
+        path: /address
+        title: Add Address
+  - title: Documentation 3
+    groupName: Howto
+    description: Step by step documentation to setup and market your product.
+    relatedDocs:
+      - link: docs/getting-started/setup-tenant/setup-tenant.md
+        title: Tenant setup
+    relatedAPIs:
+      - type: post
+        path: /address
+        title: Add Address
