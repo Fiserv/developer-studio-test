@@ -20,34 +20,42 @@ Below is a quick reference of Cat Dog.
 
 ![Cat Dog png](/assets/images/cat-dog.png)
 
-Please don't bring him to work
-
+Please don't bring him to work\
 ![Cat Dog png](../../assets/images/cat-dog.png)
 
-html tag
+html tag\
 <img src="/assets/images/cat-dog.png" alt="Cat Dog">
 
-url reference 1
+url reference 1\
 ![Cat Dog png][cat-dog]
 
-url reference 2
+url reference 2\
 [cat-dog]: /assets/images/cat-dog.png
 
-inline html with markdown
-
+inline html with markdown\
 <img src="/assets/images/cat-dog.png" alt="Cat Dog" style="width:300px;">
 
-now let us do a gif
+now let us do a gif\
 ![api_suite](/assets/images/test_gif.gif)
 
-another way to call gif
+another way to call gif\
 <img src="/assets/images/test_gif.gif" alt="API SUITE">
 
-one more type
+one more type\
 ![selfie](/assets/images/test_jpeg.jpeg)
 
-found another type - tiff
+found another type - tiff\
 ![dolores-park](/assets/images/test_tiff_lowercase.tiff)
 
-now with upper case
+now with upper case\
 ![dolores-park](/assets/images/test_tiff.TIFF)
+
+Let us do some big files now\
+First a JPEG\
+![screenshot1](/assets/images/3mb-jpeg-file.jpeg)
+
+Then a JPG\
+![screenshot2](/assets/images/3mb-jpg-file.jpg)
+
+And finally a PNG\
+![screenshot3](/assets/images/3mb-png-file.png)
