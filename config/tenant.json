@@ -36,8 +36,8 @@
   "product": {
     "featured": true,
     "logoURL": "https://raw.githubusercontent.com/Fiserv/developer-studio-test/develop/assets/images/Portal_Logo.png",
-    "description": "Developer Studio is a product of Developer Studio where developers can come to the studio to develop their development.",
-    "longDescription": "Developer Studio is a product of Developer Studio where developers can come to the studio to develop.",
+    "description": "Developer Studio is a product of Developer Studio where developers can come to the studio to develop their undeveloped development.",
+    "longDescription": "Developer Studio is a product of Developer Studio where developers can come to the studio to develop like devs.",
     "apiSpecification": "/v1/apis/DeveloperStudioTest",
     "layout": "/v1/layouts/DeveloperStudioTest",
     "documentation": "/v1/docs/DeveloperStudioTest",
