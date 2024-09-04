@@ -27,7 +27,14 @@
     {
       "version": "11.0.1",
       "versionType": "major",
-      "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
+      "releaseNotesPath": "",
+      "apiSpecFileNames": [
+        "Cards/CardService"
+      ]
+    },
+    {
+      "version": "10.0.1",
+      "versionType": "minor",
       "apiSpecFileNames": [
         "Cards/CardService"
       ]
