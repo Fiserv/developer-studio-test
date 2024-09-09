@@ -19,6 +19,8 @@ comment
 
 <script>alert("Basic script")</script>
 
+<script>console.log("Basic log")</script>
+
 <sCriPt>alert("capitalization trick")</ScRipt>
 
 <scrip<script>is removed</script>t>alert(123)</script>
