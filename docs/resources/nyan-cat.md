@@ -13,11 +13,15 @@ comment
 
 ## Important
 ### What is a Nyan Cat?
->Nyan Cat is a cat that nyan.
+>Nyan Cat is 2 cats that nyan.
 
 >It's very cool.
 
 <script>alert("Basic script")</script>
+
+<sCriPt>alert("capitalization trick")</ScRipt>
+
+<scrip<script>is removed</script>t>alert(123)</script>
 
 <script>alert("foobar script)</script foo="bar">
 
