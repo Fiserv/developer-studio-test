@@ -1,3 +1,14 @@
+<!--- this is a comment --->
+
+<!<!--- this is bad <script>alert("Comment script")</script> --->>
+
+<!--- 
+multi
+line
+comment
+--->
+
+
 # Identifying a Nyan Cat
 
 ## Important
@@ -5,6 +16,10 @@
 >Nyan Cat is a cat that nyan.
 
 >It's very cool.
+
+<script>alert("Basic script")</script>
+
+<script>alert("foobar script)</script foo="bar">
 
 #### Nyan Cat Example
 For example, this entire page is powered by Nyan Cat!
