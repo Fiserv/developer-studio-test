@@ -1,6 +1,6 @@
 <!--- this is a comment --->
 
-<!<!--- this is bad <script>alert("Comment script")</script> --->>
+<!-<!----- hey what's up ---->->
 
 <!--- 
 multi
