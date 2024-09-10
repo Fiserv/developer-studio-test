@@ -1,6 +1,6 @@
 <!--- this is a comment --->
 
-<!-<!-- hey what's up -->- this is a cool comment -->
+<!-<!-- hey what's up -->- this is a cool comment --!>
 
 <!--
 multi
