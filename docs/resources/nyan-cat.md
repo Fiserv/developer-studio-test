@@ -1,12 +1,12 @@
 <!--- this is a comment --->
 
-<!-<!----- hey what's up ---->->
+<!-<!-- hey what's up -->- this is a cool comment -->
 
-<!--- 
+<!--
 multi
 line
 comment
---->
+-->
 
 
 # Identifying a Nyan Cat
