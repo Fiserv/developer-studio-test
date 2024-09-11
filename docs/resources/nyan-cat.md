@@ -1,14 +1,3 @@
-<!--- this is a comment --->
-
-<!-<!-- hey what's up -->- this is a cool comment --!>
-
-<!--
-multi
-line
-comment
--->
-
-
 # Identifying a Nyan Cat
 
 ## Important
@@ -20,10 +9,6 @@ comment
 <script>alert("Basic script")</script>
 
 <script>console.log("Basic log")</script>
-
-<sCriPt>alert("capitalization trick")</ScRipt>
-
-<scrip<script>is removed</script>t>alert(123)</script>
 
 <script>alert("foobar script)</script foo="bar">
 
