@@ -24,6 +24,8 @@ You can also find one at [home](/).
 
 Please find more if possible.
 
+Here's [a copy](download/assets/files/nyan-cat.txt) in case you wanted to have one locally!
+
 ##### Nyan Cat Pictures
 
 ![reference image](../../../../../../assets/images/nyan.jpg)
