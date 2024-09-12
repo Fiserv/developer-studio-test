@@ -6,12 +6,6 @@
 
 >It's very cool.
 
-<script>alert("Basic script")</script>
-
-<script>console.log("Basic log")</script>
-
-<script>alert("foobar script)</script foo="bar">
-
 #### Nyan Cat Example
 For example, this entire page is powered by Nyan Cat!
 
