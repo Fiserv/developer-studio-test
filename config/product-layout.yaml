@@ -35,9 +35,9 @@ benefits:
   - title: Transform Customer Experience
     description: Pre-certified integrations to value added solutions and third-party providers that power next-generation commerce experiences.
   - title: Accelerate Revenue
-    description: Intelligent orchestration layer that reduces code complexity and operational costs.
+    description: Intelligent orchestration layer that reduces code complexity and operational costs. <img src="assets/images/nyan.png" />
   - title: Optimize Commerce
-    description: BackOffice automation with a modern set of tools and APIs.
+    description: BackOffice automation with a modern set of tools and APIs. <img src="../assets/images/cat-dog.png" />
 guides:
   - title: Setup a tenant
     description: Fiserv Products within the Fiserv portfolio that are showcased through the studio are known as tenants. Tenants standup a tenant server that will serve all the content through the studio for developers visiting the Fiserv Developer Studio.
@@ -52,7 +52,7 @@ featuredFeatures:
   - title: Documentation 1
     groupName: Guides
     featured: true
-    description: Step by step documentation to setup and market your product.
+    description: Step by step documentation to setup and market your product. Download [here](download/assets/files/nyan-cat.txt)
     relatedDocs:
       - link: docs/getting-started/setup-tenant/setup-tenant.md
         title: Tenant setup
