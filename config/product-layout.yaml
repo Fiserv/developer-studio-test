@@ -68,8 +68,6 @@ featuredFeatures:
     relatedDocs:
       - link: docs/getting-started/setup-tenant/setup-tenant.md
         title: Tenant setup
-      - link: download/assets/files/nyan-cat.txt
-        title: Nyan cat
     relatedAPIs:
       - type: post
         path: /address
@@ -78,8 +76,8 @@ featuredFeatures:
     groupName: Howto
     description: Step by step documentation to setup and market your product.
     relatedDocs:
-      - link: docs/getting-started/setup-tenant/setup-tenant.md
-        title: Tenant setup
+      - link: download/assets/files/nyan-cat.txt
+        linkTitle: Nyan cat
     relatedAPIs:
       - type: post
         path: /address
