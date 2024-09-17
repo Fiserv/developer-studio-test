@@ -76,7 +76,7 @@ featuredFeatures:
     groupName: Howto
     description: Step by step documentation to setup and market your product.
     relatedDocs:
-      - link: download/assets/files/nyan-cat.txt
+      - downloadLink: download/assets/files/nyan-cat.txt
         linkTitle: Nyan cat
     relatedAPIs:
       - type: post
