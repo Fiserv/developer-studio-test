@@ -29,15 +29,15 @@
 ################################################################################
 
 header:
-  productDescription: To onboard properly into the Developer Studio as a new tenant each product must support these APIs so that we can retrieve product specific API specifications and documentation.
+  productionDescription: Welcome to Developer Studio Test Tenant. Download a copy of [nyan cat transcript](download/assets/files/nyan-cat.txt)!<br><br><img src="assets/images/nyan.png" />
 getStarted: /docs/product-layout-getting-started.md
 benefits:
   - title: Transform Customer Experience
     description: Pre-certified integrations to value added solutions and third-party providers that power next-generation commerce experiences.
   - title: Accelerate Revenue
-    description: Intelligent orchestration layer that reduces code complexity and operational costs. <img src="assets/images/nyan.png" />
+    description: Intelligent orchestration layer that reduces code complexity and operational costs.
   - title: Optimize Commerce
-    description: BackOffice automation with a modern set of tools and APIs. <img src="../assets/images/cat-dog.png" />
+    description: BackOffice automation with a modern set of tools and APIs.
 guides:
   - title: Setup a tenant
     description: Fiserv Products within the Fiserv portfolio that are showcased through the studio are known as tenants. Tenants standup a tenant server that will serve all the content through the studio for developers visiting the Fiserv Developer Studio.
@@ -52,7 +52,7 @@ featuredFeatures:
   - title: Documentation 1
     groupName: Guides
     featured: true
-    description: Step by step documentation to setup and market your product. Download [here](download/assets/files/nyan-cat.txt)
+    description: Step by step documentation to setup and market your product.
     relatedDocs:
       - link: docs/getting-started/setup-tenant/setup-tenant.md
         title: Tenant setup
@@ -68,6 +68,8 @@ featuredFeatures:
     relatedDocs:
       - link: docs/getting-started/setup-tenant/setup-tenant.md
         title: Tenant setup
+      - link: download/assets/files/nyan-cat.txt
+        title: Nyan cat
     relatedAPIs:
       - type: post
         path: /address
