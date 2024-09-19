@@ -1,7 +1,7 @@
 ---
 openapi: 3.0.0
 info:
-  title: Card Account Relationship Service
+  title: Card Account Relationship Service test v1
   description: Card Account Relationship service provides maintenance of relationship between Cards and Financial Accounts.
   contact:
     name: Tracy Dahle
