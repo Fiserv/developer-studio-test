@@ -4,4 +4,4 @@
 
     Comming Soon....
 
-[download spec](download/assets/tennat_spec.zip)
+[download spec](download/assets/spec.zip)
