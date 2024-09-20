@@ -1,4 +1,4 @@
-# !!!!!!!!!!!!!!! PRODUCT LAYOUT !!!!!!!!!!!!!!! Getting Started Stage Test
+# !!!!!!!!!!!!!!! PRODUCT LAYOUT !!!!!!!!!!!!!!! Getting Started Stage Test v1
 
 ## Welcome to the Developer Studio!
 
