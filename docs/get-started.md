@@ -1,4 +1,4 @@
-# Getting Started Stage Test
+# Getting Started Stage
 
 ## Welcome to the Developer Studio!
 
