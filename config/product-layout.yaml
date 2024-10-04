@@ -30,6 +30,9 @@
 
 header:
   productionDescription: Welcome to Developer Studio Test Tenant. Download a copy of <a download href="download/assets/nyan-cat.txt">nyan cat</a> or even <a href="download/assets/images/cat-dog.png" download>a second copy</a>!<br><br><img src="assets/images/nyan.jpg" width="300" height="300"/><img src="assets/images/cat-dog.png" width="300" height="300"/>
+  zipFileDownloadTest: |
+    # Zip file download test
+    - [zip file download test](download/assets/files/DeveloperStudioTest_spec.zip)
 getStarted: /docs/product-layout-getting-started.md
 benefits:
   - title: Transform Customer Experience
