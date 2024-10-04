@@ -76,8 +76,8 @@ featuredFeatures:
     groupName: Howto
     description: Step by step documentation to setup and market your product.
     relatedDocs:
-      - downloadLink: download/assets/files/nyan-cat.txt
-        linkTitle: Nyan cat
+      - downloadLink: download/assets/files/DeveloperStudioTest_spec.zip
+        linkTitle: Zip file download test
     relatedAPIs:
       - type: post
         path: /address
