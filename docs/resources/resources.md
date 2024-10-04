@@ -14,7 +14,7 @@
 
 
 # Zip file download test using image as a link
-[![Download](assets/images/Fiserv_Logo.jpg)](assets/files/developer-studio-test_spec.zip)
+[![Download](assets/images/Fiserv_Logo.jpg)](download/assets/files/developer-studio-test_spec.zip)
 
 # Zip file download test using a button
 
