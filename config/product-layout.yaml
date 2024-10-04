@@ -29,7 +29,7 @@
 ################################################################################
 
 header:
-  productionDescription: Welcome to Developer Studio Test Tenant. Download a copy of <a download href="download/assets/nyan-cat.txt">nyan cat</a> or even <a href="download/assets/images/cat-dog.png" download>a second copy</a>!<br><br><img src="assets/images/nyan.jpg" width="300" height="300"/><img src="assets/images/cat-dog.png" width="300" height="300"/>
+  productionDescription: Welcome to Developer Studio Test Tenant. Download a copy of <a download href="assets/files/developer-studio-test_spec.zip">nyan cat</a> or even <a href="download/assets/images/cat-dog.png" download>a second copy</a>!<br><br><img src="assets/images/nyan.jpg" width="300" height="300"/><img src="assets/images/cat-dog.png" width="300" height="300"/>
 getStarted: /docs/product-layout-getting-started.md
 benefits:
   - title: Transform Customer Experience
@@ -76,8 +76,8 @@ featuredFeatures:
     groupName: Howto
     description: Step by step documentation to setup and market your product.
     relatedDocs:
-      - downloadLink: download/assets/files/DeveloperStudioTest_spec.zip
-        linkTitle: Zip file download test
+      - downloadLink: download/assets/files/nyan-cat.txt
+        linkTitle: Nyan cat
     relatedAPIs:
       - type: post
         path: /address
