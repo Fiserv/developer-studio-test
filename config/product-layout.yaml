@@ -77,7 +77,7 @@ featuredFeatures:
     description: Step by step documentation to setup and market your product.
     relatedDocs:
       - downloadLink: download/assets/files/DeveloperStudioTest_spec.zip
-        linkTitle: Zip file download test
+        linkTitle: Zip file download test - new
     relatedAPIs:
       - type: post
         path: /address
