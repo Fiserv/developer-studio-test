@@ -105,11 +105,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CardModRsType'
-      x-group-name: Card Service
-      x-proxy-name: Update Card (updated)
+      x-group-name: Card Service For ChildProductName4
+      x-proxy-name: Update Card (new!)
       x-child-product-name:
       - ChildProductName1
       - ChildProductName2
+      - ChildProductName3
+      - ChildProductName4
     post:
       tags:
       - Add Card
