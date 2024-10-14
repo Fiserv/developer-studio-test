@@ -109,10 +109,7 @@ paths:
       - CardService1 
       - CardService2 
       - CardService3 
-      x-proxy-name:
-      - UpdateCard1 
-      - UpdateCard2 
-      - UpdateCard3 
+      x-proxy-name: UpdateCard 
       x-child-product-name:
       - ChildProductName1
       - ChildProductName2
