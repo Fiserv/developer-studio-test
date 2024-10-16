@@ -21,6 +21,7 @@ Please find more if possible.
 Here's [a copy](download/assets/files/nyan-cat.txt) in case you wanted to have one locally!
 
 [direct file](https://raw.githubusercontent.com/Fiserv/developer-studio-test/refs/heads/develop/assets/nyan-cat.txt)
+
 ![direct image](https://raw.githubusercontent.com/Fiserv/developer-studio-test/refs/heads/develop/assets/images/nyan.jpg)
 
 ##### Nyan Cat Pictures
