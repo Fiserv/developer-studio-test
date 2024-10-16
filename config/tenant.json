@@ -22,7 +22,6 @@
     }
   ],
   "getStartedFilePath": "docs/get-started.md",
-  "getStartedDownloadPath": "download/../../../assets/nyan-cat.txt",
   "apiVersions": [
     {
       "version": "11.0.1",
@@ -36,6 +35,7 @@
   "product": {
     "featured": true,
     "logoURL": "../../../../assets/images/Portal_Logo.png",
+    "getStartedDownloadPath": "download/../../../assets/nyan-cat.txt",
     "description": "Developer Studio is a product of Developer Studio where developers can come to the studio to develop like devs.",
     "longDescription": "Developer Studio is a product of Developer Studio where developers can come to the studio to develop their undeveloped development.",
     "apiSpecification": "/v1/apis/DeveloperStudioTest",
