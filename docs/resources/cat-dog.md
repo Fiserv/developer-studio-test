@@ -14,7 +14,7 @@ Below is a quick reference of Cat Dog.
 
 - [Cat Dog](https://en.wikipedia.org/wiki/CatDog)
 
-<img class="image-center" src="https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/cat-dog.png" >
+/assets/images/cat-dog.png" >
 
 <img class="image-center" src="/assets/images/cat-dog.png">
 
