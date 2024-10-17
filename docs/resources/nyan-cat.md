@@ -20,13 +20,13 @@ Please find more if possible.
 
 Here's [a copy](download/assets/files/nyan-cat.txt) in case you wanted to have one locally!
 
-<a download src="https://raw.githubusercontent.com/Fiserv/developer-studio-test/refs/heads/develop/assets/nyan-cat.txt" target=_blank>html link</a>
+<a download src="download/assets/nyan-cat.txt" target=_blank>html link</a>
 
-[direct file](https://raw.githubusercontent.com/Fiserv/developer-studio-test/refs/heads/develop/assets/nyan-cat.txt)
+[direct file](/assets/nyan-cat.txt)
 
-<img src="https://raw.githubusercontent.com/Fiserv/developer-studio-test/refs/heads/develop/assets/images/nyan.jpg" />
+<img src="/assets/images/nyan.jpg" />
 
-![direct image](https://raw.githubusercontent.com/Fiserv/developer-studio-test/refs/heads/develop/assets/images/nyan.jpg)
+![direct image](/assets/images/nyan.jpg)
 
 ##### Nyan Cat Pictures
 
