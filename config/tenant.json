@@ -36,7 +36,7 @@
     "featured": true,
     "logoURL": "../../../../assets/images/Portal_Logo.png",
     "description": "Developer Studio is a product of Developer Studio where developers can come to the studio to develop like devs.",
-    "longDescription": "download/../../../assets/nyan-cat.txt",
+    "longDescription": "Welcome to Developer Studio Test Tenant. Download a copy of <a download href='assets/files/DeveloperStudioTest_spec.zip'>nyan cat</a> or even <a href='download/assets/images/cat-dog.png' download>a second copy</a>!<br><br><img src='assets/images/nyan.jpg' width='300' height='300'/><img src='assets/images/cat-dog.png' width='300' height='300'/>",
     "apiSpecification": "/v1/apis/DeveloperStudioTest",
     "layout": "/v1/layouts/DeveloperStudioTest",
     "documentation": "/v1/docs/DeveloperStudioTest",
