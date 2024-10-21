@@ -64,6 +64,8 @@
                   link: docs/tutorials/markdown/card.md
                 - title: Tabs Support
                   link: docs/tutorials/markdown/tabs.md
+        - title: Nyan dog
+          link: docs/resources/nyan-dog.md
         - title: FAQ
           link: docs/faq/faq.md
 
