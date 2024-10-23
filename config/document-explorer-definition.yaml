@@ -26,7 +26,6 @@
         - title: RN1
           link: docs/release-notes/rn1.md
 
-
 - sections:
     - title: Gated Content
       link: docs/Spec_Testing/gatedContent.md
@@ -64,8 +63,6 @@
                   link: docs/tutorials/markdown/card.md
                 - title: Tabs Support
                   link: docs/tutorials/markdown/tabs.md
-        - title: Nyan dog
-          link: docs/resources/nyan-dog.md
         - title: FAQ
           link: docs/faq/faq.md
 
@@ -76,3 +73,5 @@
               link: docs/SpecTest/SpecTest.md
               access: public
               groups: []
+            - title: Nyan cat download
+              link: https://raw.githubusercontent.com/Fiserv/developer-studio-test/refs/heads/develop/assets/nyan-cat.txt
