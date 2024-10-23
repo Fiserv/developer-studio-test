@@ -74,4 +74,4 @@
               access: public
               groups: []
             - title: Nyan cat download
-              link: https://raw.githubusercontent.com/Fiserv/developer-studio-test/refs/heads/develop/assets/nyan-cat.txt
+              link: /assets/nyan-cat.txt
