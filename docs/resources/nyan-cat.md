@@ -20,7 +20,7 @@ Please find more if possible.
 
 Here's [a copy](download/assets/files/nyan-cat.txt) in case you wanted to have one locally!
 
-<a download src="download/assets/nyan-cat.txt" target=_blank>html link</a>
+<a download href="download/assets/nyan-cat.txt" target=_blank>html link</a>
 
 [direct file](download/assets/nyan-cat.txt)
 
