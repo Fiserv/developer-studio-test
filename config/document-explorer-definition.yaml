@@ -25,8 +25,11 @@
       sections:
         - title: RN1
           link: docs/release-notes/rn1.md
-- title: Nyan dog
-  link: docs/resources/nyan-dog.md
+
+- sections:
+    - title: Nyan dog
+      link: docs/resources/nyan-dog.md
+
 - sections:
     - title: Gated Content
       link: docs/Spec_Testing/gatedContent.md
