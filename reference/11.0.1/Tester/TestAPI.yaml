@@ -14,7 +14,7 @@ paths:
       summary: Get list of items
       description: Returns a list of items
       x-group-name: ItemGroup
-      x-proxy-name: itemProxy1  # Ensuring this field is present
+      x-proxy-name: itemProxy1
       responses:
         '200':
           description: Successful operation
@@ -30,9 +30,7 @@ paths:
       summary: Get an item by ID
       description: Returns a single item
       x-group-name: ItemGroup
-      x-proxy-names:
-        - itemProxy1
-        - itemProxy3
+      x-proxy-name: itemProxy1  # Ensuring x-proxy-name is included
       parameters:
         - name: itemId
           in: path
