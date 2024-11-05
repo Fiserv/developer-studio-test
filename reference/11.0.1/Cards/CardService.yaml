@@ -1,8 +1,8 @@
 ---
 openapi: 3.0.0
 info:
-  title: Card Service
-  description: The Card service provides administration in respect to creation, modification, inquiry, and deletion of any type of EFT cards used by the holders. It supports operations managing the credit, debit, prepaid and private label cards.
+  title: Card Services
+  description: Card services provides administration in respect to creation, modification, inquiry, and deletion of any type of EFT cards used by the holders. It supports operations managing the credit, debit, prepaid and private label cards.
   contact:
     name: Tracy Dahle
     email: Tracy.Dahle@fiserv.com
