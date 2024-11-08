@@ -30,8 +30,8 @@ paths:
   /cards:
     put:
       tags:
-      - Update Card (new)
-      summary: Update Card.
+      - Update Cards (new)
+      summary: Update Many Cards.
       description: "Modifies the information of an existing debit or credit card account, such as embossing details, flex data details, and account address and name details.<br> For more information about the Cards domain, <a href=\"../docs/?path=docs/fintechs/cards.md\" title=\"Click to open\">click here.</a> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n  </ul>"
       operationId: CardModOper
       parameters:
