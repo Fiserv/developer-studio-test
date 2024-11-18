@@ -30,9 +30,9 @@
 
 openapi: 3.0.2
 info:
-  title: Dev Portal Tenant APIs.
-  description: To onboard into the Fiserv Developer Studio as a new tenant each
-    product must support these APIs so that we can retrieve product specific API specifications
+  title: Dev Portal Tenant APIs to test 10.
+  description: To onboard a new tenant into the Fiserv Developer Studio as a new tenant each
+    product must support these APIs so that we can retrieve product specific API specs
     and documentation.
   version: 1.0.0
 servers:
@@ -43,8 +43,8 @@ paths:
       tags:
         - Tenant
       x-group-name: Tenant
-      x-proxy-name: products
-      summary: Returns the tenant provider API.
+      x-proxy-name: apis        
+      summary: Returns tenant provider API (TEST OF WEBHOOK)
       operationId: TenantProviderID
       responses:
         200:
@@ -308,7 +308,7 @@ components:
               description: Documentation
             featured:
               type: boolean
-              description: Featured
+              description: Featured feature
             layout:
               type: string
               description: Layout

@@ -1,6 +1,6 @@
 # Register the tenant
 
-## Documentation Quickstart Guide
+## Quickstart Guide
 
 Now that the tenant is configured and deployed we now need to register the URL with the `Fiserv Developer Studio.`
 

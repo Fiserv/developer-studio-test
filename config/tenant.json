@@ -1,11 +1,14 @@
 {
-  "title": "Developer Studio",
-  "name": "DeveloperStudio",
+  "title": "Developer Studio Test",
+  "name": "DeveloperStudioTest",
   "brand": "Fiserv",
-  "brandLogoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Fiserv_Logo.jpg",
-  "solution": ["financial-institutions"],
-  "brandDescription": "Fiserv, Inc. is a global provider of payments and financial services technology solutions. The Company provides account processing and digital banking solutions, card issuer processing and network services, payments, e-commerce, merchant acquiring and processing, and the Clover cloud-based point-of-sale solution. The Company operates through three segments: Merchant Acceptance (Acceptance), Financial Technology (Fintech) and Payments and Network (Payments).",
-  "getStartedFilePath": "docs/get-started.md",
+  "brandLogoURL": "/assets/images/Fiserv_Logo.jpg",
+  "coastURL": "https://fiserv.coastdemo.com/share/66e9b55b18f16b65adf809cd?mode=link&zoom=90&layoutType=web|https://fiserv.coastdemo.com/share/66e9c03018f16b65adfa7b52?mode=link&zoom=90&layoutType=web",
+  "solution": [
+    "financial-institutions",
+    "merchants"
+  ],
+  "brandDescription": "Fiserv, Inc. is a global provider of payments and financial services technology solutions. The Company provides account processing and digital banking solutions, card issuer processing and network services, payments, e-commerce, merchant acquiring and processing, and the Clover cloud-based point-of-sale solution. The Company operates through three segments: Merchant Acceptance (Acceptance), Financial Technology (Fintech) and Payments and Network (Payments). Test",
   "categories": [
     {
       "name": "businessTypes",
@@ -18,45 +21,87 @@
       ]
     }
   ],
+  "getStartedFilePath": "docs/get-started.md",
+  "apiVersions": [
+    {
+      "version": "11.0.1",
+      "versionType": "major",
+      "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
+      "apiSpecFileNames": [
+        "Cards/CardService",
+        "test"
+      ]
+    },
+    {
+      "version": "11.0.0",
+      "versionType": "minor",
+      "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
+      "apiSpecFileNames": [
+        "Cards/CardService"
+      ]
+    }
+  ],
   "product": {
     "featured": true,
-    "logoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Portal_Logo.png",
-    "description": "To onboard properly into the Developer Studio as a tenant each product must support these APIs so that we can retrieve product specific API specifications and documentation.",
-    "longDescription":"To onboard properly into the Developer Studi as a tenant each product must support these APIs so that we can retrieve product specific API specifications and documentation.",
-    "apiSpecification": "/v1/apis",
-    "layout": "/v1/layouts",
-    "documentation": "/v1/docs",
-    "documenttree": "/v1/docs",
-    "documenttreeV2": "/v2/docs",
-    "sandbox": "/v1/sandboxrun",
-    "feature":[
+    "logoURL": "../../../../assets/images/Portal_Logo.png",
+    "description": "Developer Studio is a product of Developer Studio where developers can come to the studio to develop like devs.",
+    "longDescription": "Welcome to Developer Studio Test Tenant. Download a copy of <a download href='assets/files/DeveloperStudioTest_spec.zip'>nyan cat</a> or even <a href='download/assets/images/cat-dog.png' download>a second copy</a>!<br><br><img src='assets/images/nyan.jpg' width='300' height='300'/><img src='assets/images/cat-dog.png' width='300' height='300'/>",
+    "apiSpecification": "/v1/apis/DeveloperStudioTest",
+    "layout": "/v1/layouts/DeveloperStudioTest",
+    "documentation": "/v1/docs/DeveloperStudioTest",
+    "documenttree": "/v1/docs/DeveloperStudioTest",
+    "documenttreeV2": "/v2/docs/DeveloperStudioTest",
+    "sandbox": "/v1/sandboxrun/DeveloperStudioTest",
+    "accessConfig": "/v1/fileAccess/DeveloperStudioTest",
+    "assets": "/v1/assets/DeveloperStudioTest",
+    "feature": [
+      {
+        "name": "sandBox",
+        "value": true
+      },
       {
         "name": "plugins",
         "value": false
       },
       {
         "name": "industryOptionsAPIExplorer",
+        "value": true
+      },
+      {
+        "name": "editParameterAPIExplorer",
+        "value": true
+      },
+      {
+        "name": "downloadPostman",
         "value": false
       }
-  ]
+    ],
+    "adminAddresses": [
+      {
+        "groupId": "TEST_GROUP_RG",
+        "adminAddress": [
+          "rekha.gupta@fiserv.com, yanyan.yang@fiserv.com"
+        ]
+      }
+    ]
   },
-  "supportConfig": [{ 
-		"bug": {
-			"label": "bug,devStudio",
-			"template": "bug.md",
-			"assignees": "f2zdirk"
-		},
-
-		"feedback": {
-			"label": "feedback,devStudio",
-			"template": "feedback.md",
-			"assignees": "f2zdirk"
-		},
-
-		"enhancement": {
-			"label": "enhancement,devStudio",
-			"template": "feature.md",
-			"assignees": "f2zdirk"
-		}
-	}]
+  "supportConfig": [
+    {
+      "bug": {
+        "label": "bug,devStudio",
+        "template": "bug.md",
+        "assignees": "f2zdirk1"
+      },
+      "feedback": {
+        "label": "feedback,devStudio",
+        "template": "feedback.md",
+        "assignees": "f2zdirk"
+      },
+      "enhancement": {
+        "label": "enhancement,devStudio",
+        "template": "feature.md",
+        "assignees": "f2zdirk"
+      }
+    }
+  ]
 }

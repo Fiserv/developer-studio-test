@@ -11,16 +11,16 @@ Below is a quick reference of all the Markdown syntax that is supported by Stopl
 
 ### Table of Contents  
 * [Headers](#headers)
-* [Emphasis](#emphasis)  
-* [Lists](#lists)  
-* [Links](#lnks)  
-* [Images](#imgs)  
-* [Code and Syntax Highlighting](#code)  
-* [Tables](#tables)  
-* [Blockquotes](#blockquotes)   
+* [Emphasis](#emphasis)
+* [Lists](#lists)
+* [Links](#lnks)
+* [Images](#imgs)
+* [Code and Syntax Highlighting](#code)
+* [Tables](#tables)
+* [Blockquotes](#blockquotes)
 * [Horizontal Rule](#hr)
 
-## <a name="headers"/>  Headers
+## <a name="headers"/> Headers
 
 ```no-highlight
 # H1
@@ -30,6 +30,12 @@ Below is a quick reference of all the Markdown syntax that is supported by Stopl
 ##### H5
 ###### H6
 ```
+
+<!-- DO NOT Remove the commented code below line 33-37, being used in automation
+# Testing for PORT-7164
+## Title/Right Nav Pulled from Commented Out Header
+### Just trying things
+-->
 
 # H1
 ## H2
@@ -66,7 +72,7 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 ```
 ## <a name="lnks"/> Links
 
-Different ways to create links.
+Different ways to create links:
 
 ```no-highlight
 1. To link Inline-style
@@ -112,7 +118,6 @@ alert(s);
 ```
 
 
-
 ## <a name="tables"/> Tables
 
 Tables aren't part of the core Markdown spec, but they are part of GFM and *Markdown Here* supports them. They are an easy way of adding tables to your email -- a task that would otherwise require copy-pasting from another application.
@@ -142,7 +147,7 @@ Markdown | Less | Pretty
 
 Quote break.
 
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote. 
+> This is a very long line of text that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote, just in case you didn't know. 
 ```
 
 ## <a name="hr"/> Horizontal Rule

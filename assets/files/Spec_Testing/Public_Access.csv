@@ -1,0 +1,576 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1701465408629,528,featureSets,200,OK,Thread Group 1-1,text,true,,3294,260,1,1,https://dev-developerstudio.fiserv.com/graphql,528,0,285
+1701465409157,77,productTags,200,OK,Thread Group 1-1,text,true,,2556,275,1,1,https://dev-developerstudio.fiserv.com/graphql,77,0,0
+1701465409662,78,allLinkOutTenants,200,OK,Thread Group 1-1,text,true,,9675,478,1,1,https://dev-developerstudio.fiserv.com/graphql,78,0,0
+1701465409883,304,featureSets,200,OK,Thread Group 1-2,text,true,,3294,260,2,2,https://dev-developerstudio.fiserv.com/graphql,304,0,78
+1701465410162,177,getAllUseCases,200,OK,Thread Group 1-1,text,true,,14258,528,2,2,https://dev-developerstudio.fiserv.com/graphql,177,0,0
+1701465410887,79,productTags,200,OK,Thread Group 1-2,text,true,,2556,275,2,2,https://dev-developerstudio.fiserv.com/graphql,79,0,0
+1701465411162,390,getTenants,200,OK,Thread Group 1-1,text,true,,173216,1628,3,3,https://dev-developerstudio.fiserv.com/graphql,250,0,0
+1701465411140,459,featureSets,200,OK,Thread Group 1-3,text,true,,3294,260,3,3,https://dev-developerstudio.fiserv.com/graphql,459,0,228
+1701465411887,81,allLinkOutTenants,200,OK,Thread Group 1-2,text,true,,9675,478,3,3,https://dev-developerstudio.fiserv.com/graphql,81,0,0
+1701465412645,74,productTags,200,OK,Thread Group 1-3,text,true,,2556,275,4,4,https://dev-developerstudio.fiserv.com/graphql,74,0,0
+1701465412390,333,featureSets,200,OK,Thread Group 1-4,text,true,,3294,260,4,4,https://dev-developerstudio.fiserv.com/graphql,333,0,112
+1701465412662,72,solutionMerchants,200,OK,Thread Group 1-1,text,true,,2636,535,4,4,https://dev-developerstudio.fiserv.com/graphql,72,0,0
+1701465413384,155,getAllUseCases,200,OK,Thread Group 1-2,text,true,,14258,528,4,4,https://dev-developerstudio.fiserv.com/graphql,155,0,0
+1701465413632,396,featureSets,200,OK,Thread Group 1-5,text,true,,3294,260,5,5,https://dev-developerstudio.fiserv.com/graphql,396,0,167
+1701465414394,73,productTags,200,OK,Thread Group 1-4,text,true,,2556,275,5,5,https://dev-developerstudio.fiserv.com/graphql,73,0,0
+1701465414645,80,allLinkOutTenants,200,OK,Thread Group 1-3,text,true,,9675,478,5,5,https://dev-developerstudio.fiserv.com/graphql,80,0,0
+1701465414661,81,megaMenu,200,OK,Thread Group 1-1,text,true,,3899,325,5,5,https://dev-developerstudio.fiserv.com/graphql,81,0,0
+1701465415382,327,getTenants,200,OK,Thread Group 1-2,text,true,,173216,1628,5,5,https://dev-developerstudio.fiserv.com/graphql,181,0,0
+1701465416136,76,productTags,200,OK,Thread Group 1-5,text,true,,2556,275,5,5,https://dev-developerstudio.fiserv.com/graphql,76,0,0
+1701465416894,78,allLinkOutTenants,200,OK,Thread Group 1-4,text,true,,9675,478,5,5,https://dev-developerstudio.fiserv.com/graphql,78,0,0
+1701465417162,83,getAllUserAccessGroups,200,OK,Thread Group 1-1,text,true,,2780,328,5,5,https://dev-developerstudio.fiserv.com/graphql,83,0,0
+1701465417144,175,getAllUseCases,200,OK,Thread Group 1-3,text,true,,14258,528,5,5,https://dev-developerstudio.fiserv.com/graphql,175,0,0
+1701465417885,75,solutionMerchants,200,OK,Thread Group 1-2,text,true,,2636,535,5,5,https://dev-developerstudio.fiserv.com/graphql,75,0,0
+1701465418632,77,allLinkOutTenants,200,OK,Thread Group 1-5,text,true,,9675,478,5,5,https://dev-developerstudio.fiserv.com/graphql,77,0,0
+1701465419394,143,getAllUseCases,200,OK,Thread Group 1-4,text,true,,14258,528,5,5,https://dev-developerstudio.fiserv.com/graphql,143,0,0
+1701465419662,129,getDocTree,Non HTTP response code: org.apache.http.NoHttpResponseException,Non HTTP response message: dev-developerstudio.fiserv.com:443 failed to respond,Thread Group 1-1,text,false,,2087,0,5,5,https://dev-developerstudio.fiserv.com/graphql,0,0,0
+1701465419645,310,getTenants,200,OK,Thread Group 1-3,text,true,,173216,1628,5,5,https://dev-developerstudio.fiserv.com/graphql,166,0,0
+1701465420386,78,megaMenu,200,OK,Thread Group 1-2,text,true,,3899,325,5,5,https://dev-developerstudio.fiserv.com/graphql,78,0,0
+1701465421133,158,getAllUseCases,200,OK,Thread Group 1-5,text,true,,14258,528,5,5,https://dev-developerstudio.fiserv.com/graphql,158,0,0
+1701465421895,319,getTenants,200,OK,Thread Group 1-4,text,true,,173216,1628,5,5,https://dev-developerstudio.fiserv.com/graphql,176,0,0
+1701465422145,72,solutionMerchants,200,OK,Thread Group 1-3,text,true,,2636,535,5,5,https://dev-developerstudio.fiserv.com/graphql,72,0,0
+1701465422888,78,getAllUserAccessGroups,200,OK,Thread Group 1-2,text,true,,2780,328,5,5,https://dev-developerstudio.fiserv.com/graphql,78,0,0
+1701465423636,316,getTenants,200,OK,Thread Group 1-5,text,true,,173216,1628,5,5,https://dev-developerstudio.fiserv.com/graphql,174,0,0
+1701465424396,87,solutionMerchants,200,OK,Thread Group 1-4,text,true,,2636,535,5,5,https://dev-developerstudio.fiserv.com/graphql,87,0,0
+1701465424643,71,megaMenu,200,OK,Thread Group 1-3,text,true,,3899,325,5,5,https://dev-developerstudio.fiserv.com/graphql,71,0,0
+1701465425389,79,getDocTree,200,OK,Thread Group 1-2,text,true,,2091,376,5,5,https://dev-developerstudio.fiserv.com/graphql,79,0,0
+1701465426136,77,solutionMerchants,200,OK,Thread Group 1-5,text,true,,2636,535,5,5,https://dev-developerstudio.fiserv.com/graphql,77,0,0
+1701465426895,131,megaMenu,200,OK,Thread Group 1-4,text,true,,3899,325,5,5,https://dev-developerstudio.fiserv.com/graphql,131,0,0
+1701465427145,90,getAllUserAccessGroups,200,OK,Thread Group 1-3,text,true,,2780,328,5,5,https://dev-developerstudio.fiserv.com/graphql,90,0,0
+1701465422163,6004,apiListAlpha,200,OK,Thread Group 1-1,text,true,,1719,588,5,5,https://dev-developerstudio.fiserv.com/graphql,6004,0,93
+1701465428168,115,searchDocs,200,OK,Thread Group 1-1,text,true,,10533,1142,5,5,https://dev-developerstudio.fiserv.com/graphql,115,0,0
+1701465428635,75,megaMenu,200,OK,Thread Group 1-5,text,true,,3899,325,5,5,https://dev-developerstudio.fiserv.com/graphql,75,0,0
+1701465429395,134,getAllUserAccessGroups,200,OK,Thread Group 1-4,text,true,,2780,328,5,5,https://dev-developerstudio.fiserv.com/graphql,134,0,0
+1701465429645,89,getDocTree,200,OK,Thread Group 1-3,text,true,,2091,376,5,5,https://dev-developerstudio.fiserv.com/graphql,89,0,0
+1701465430672,91,getPopularPages,200,OK,Thread Group 1-1,text,true,,3372,459,5,5,https://dev-developerstudio.fiserv.com/graphql,90,0,0
+1701465427888,3748,apiListAlpha,200,OK,Thread Group 1-2,text,true,,1719,588,5,5,https://dev-developerstudio.fiserv.com/graphql,3748,0,0
+1701465431136,523,getAllUserAccessGroups,200,OK,Thread Group 1-5,text,true,,2780,328,5,5,https://dev-developerstudio.fiserv.com/graphql,523,0,0
+1701465431636,129,searchDocs,200,OK,Thread Group 1-2,text,true,,10533,1142,5,5,https://dev-developerstudio.fiserv.com/graphql,129,0,0
+1701465431894,80,getDocTree,200,OK,Thread Group 1-4,text,true,,2091,376,5,5,https://dev-developerstudio.fiserv.com/graphql,80,0,0
+1701465433636,78,getDocTree,200,OK,Thread Group 1-5,text,true,,2091,376,5,5,https://dev-developerstudio.fiserv.com/graphql,78,0,0
+1701465433172,1016,apiList,200,OK,Thread Group 1-1,text,false,Test failed: text expected not to contain /error/,215413,1109,5,5,https://dev-developerstudio.fiserv.com/graphql,853,0,0
+1701465434140,95,getPopularPages,200,OK,Thread Group 1-2,text,true,,3372,459,5,5,https://dev-developerstudio.fiserv.com/graphql,95,0,0
+1701465435667,14,BeanShell Sampler,200,OK,Thread Group 1-1,text,true,,0,0,5,5,null,0,0,0
+1701465432144,3918,apiListAlpha,200,OK,Thread Group 1-3,text,true,,1719,588,5,5,https://dev-developerstudio.fiserv.com/graphql,3918,0,0
+1701465436062,111,searchDocs,200,OK,Thread Group 1-3,text,true,,10533,1142,5,5,https://dev-developerstudio.fiserv.com/graphql,111,0,0
+1701465436640,965,apiList,200,OK,Thread Group 1-2,text,false,Test failed: text expected not to contain /error/,215413,1109,5,5,https://dev-developerstudio.fiserv.com/graphql,833,0,0
+1701465438171,77,featureSets,200,OK,Thread Group 1-1,text,true,,3294,260,5,5,https://dev-developerstudio.fiserv.com/graphql,77,0,0
+1701465438567,80,getPopularPages,200,OK,Thread Group 1-3,text,true,,3372,459,5,5,https://dev-developerstudio.fiserv.com/graphql,80,0,0
+1701465439140,3,BeanShell Sampler,200,OK,Thread Group 1-2,text,true,,0,0,5,5,null,0,0,0
+1701465434394,4788,apiListAlpha,200,OK,Thread Group 1-4,text,true,,1719,588,5,5,https://dev-developerstudio.fiserv.com/graphql,4788,0,0
+1701465439183,146,searchDocs,200,OK,Thread Group 1-4,text,true,,10533,1142,5,5,https://dev-developerstudio.fiserv.com/graphql,146,0,0
+1701465436136,5348,apiListAlpha,200,OK,Thread Group 1-5,text,true,,1719,588,5,5,https://dev-developerstudio.fiserv.com/graphql,5348,0,0
+1701465440672,816,productTags,200,OK,Thread Group 1-1,text,true,,2556,275,5,5,https://dev-developerstudio.fiserv.com/graphql,816,0,0
+1701465441485,109,searchDocs,200,OK,Thread Group 1-5,text,true,,10533,1142,5,5,https://dev-developerstudio.fiserv.com/graphql,109,0,0
+1701465441684,82,getPopularPages,200,OK,Thread Group 1-4,text,true,,3372,459,5,5,https://dev-developerstudio.fiserv.com/graphql,82,0,0
+1701465441640,216,featureSets,200,OK,Thread Group 1-2,text,true,,3294,260,5,5,https://dev-developerstudio.fiserv.com/graphql,216,0,0
+1701465441067,977,apiList,200,OK,Thread Group 1-3,text,false,Test failed: text expected not to contain /error/,215413,1109,5,5,https://dev-developerstudio.fiserv.com/graphql,863,0,0
+1701465443173,89,allLinkOutTenants,200,OK,Thread Group 1-1,text,true,,9675,478,5,5,https://dev-developerstudio.fiserv.com/graphql,89,0,0
+1701465443568,2,BeanShell Sampler,200,OK,Thread Group 1-3,text,true,,0,0,5,5,null,0,0,0
+1701465443989,76,getPopularPages,200,OK,Thread Group 1-5,text,true,,3372,459,5,5,https://dev-developerstudio.fiserv.com/graphql,76,0,0
+1701465444141,98,productTags,200,OK,Thread Group 1-2,text,true,,2556,275,5,5,https://dev-developerstudio.fiserv.com/graphql,98,0,0
+1701465444187,986,apiList,200,OK,Thread Group 1-4,text,false,Test failed: text expected not to contain /error/,215413,1109,5,5,https://dev-developerstudio.fiserv.com/graphql,823,0,0
+1701465445669,152,getAllUseCases,200,OK,Thread Group 1-1,text,true,,14258,528,5,5,https://dev-developerstudio.fiserv.com/graphql,152,0,0
+1701465446068,72,featureSets,200,OK,Thread Group 1-3,text,true,,3294,260,5,5,https://dev-developerstudio.fiserv.com/graphql,72,0,0
+1701465446688,2,BeanShell Sampler,200,OK,Thread Group 1-4,text,true,,0,0,5,5,null,0,0,0
+1701465446641,207,allLinkOutTenants,200,OK,Thread Group 1-2,text,true,,9675,478,5,5,https://dev-developerstudio.fiserv.com/graphql,207,0,0
+1701465446489,964,apiList,200,OK,Thread Group 1-5,text,false,Test failed: text expected not to contain /error/,215413,1109,5,5,https://dev-developerstudio.fiserv.com/graphql,852,0,0
+1701465448171,323,getTenants,200,OK,Thread Group 1-1,text,true,,173216,1628,5,5,https://dev-developerstudio.fiserv.com/graphql,179,0,0
+1701465448566,72,productTags,200,OK,Thread Group 1-3,text,true,,2556,275,5,5,https://dev-developerstudio.fiserv.com/graphql,72,0,0
+1701465448990,2,BeanShell Sampler,200,OK,Thread Group 1-5,text,true,,0,0,5,5,null,0,0,0
+1701465449188,75,featureSets,200,OK,Thread Group 1-4,text,true,,3294,260,5,5,https://dev-developerstudio.fiserv.com/graphql,75,0,0
+1701465449140,154,getAllUseCases,200,OK,Thread Group 1-2,text,true,,14258,528,5,5,https://dev-developerstudio.fiserv.com/graphql,154,0,0
+1701465450672,79,solutionMerchants,200,OK,Thread Group 1-1,text,true,,2636,535,5,5,https://dev-developerstudio.fiserv.com/graphql,79,0,0
+1701465451066,75,allLinkOutTenants,200,OK,Thread Group 1-3,text,true,,9675,478,5,5,https://dev-developerstudio.fiserv.com/graphql,75,0,0
+1701465451487,75,featureSets,200,OK,Thread Group 1-5,text,true,,3294,260,5,5,https://dev-developerstudio.fiserv.com/graphql,75,0,0
+1701465451687,70,productTags,200,OK,Thread Group 1-4,text,true,,2556,275,5,5,https://dev-developerstudio.fiserv.com/graphql,70,0,0
+1701465451641,406,getTenants,200,OK,Thread Group 1-2,text,true,,173216,1628,5,5,https://dev-developerstudio.fiserv.com/graphql,293,0,0
+1701465453172,74,megaMenu,200,OK,Thread Group 1-1,text,true,,3899,325,5,5,https://dev-developerstudio.fiserv.com/graphql,73,0,0
+1701465453567,151,getAllUseCases,200,OK,Thread Group 1-3,text,true,,14258,528,5,5,https://dev-developerstudio.fiserv.com/graphql,151,0,0
+1701465453989,75,productTags,200,OK,Thread Group 1-5,text,true,,2556,275,5,5,https://dev-developerstudio.fiserv.com/graphql,75,0,0
+1701465454139,69,solutionMerchants,200,OK,Thread Group 1-2,text,true,,2636,535,5,5,https://dev-developerstudio.fiserv.com/graphql,69,0,0
+1701465454187,74,allLinkOutTenants,200,OK,Thread Group 1-4,text,true,,9675,478,5,5,https://dev-developerstudio.fiserv.com/graphql,74,0,0
+1701465455668,90,getAllUserAccessGroups,200,OK,Thread Group 1-1,text,true,,2780,328,5,5,https://dev-developerstudio.fiserv.com/graphql,90,0,0
+1701465456067,280,getTenants,200,OK,Thread Group 1-3,text,true,,173216,1628,5,5,https://dev-developerstudio.fiserv.com/graphql,181,0,0
+1701465456487,80,allLinkOutTenants,200,OK,Thread Group 1-5,text,true,,9675,478,5,5,https://dev-developerstudio.fiserv.com/graphql,80,0,0
+1701465456637,74,megaMenu,200,OK,Thread Group 1-2,text,true,,3899,325,5,5,https://dev-developerstudio.fiserv.com/graphql,74,0,0
+1701465456687,167,getAllUseCases,200,OK,Thread Group 1-4,text,true,,14258,528,5,5,https://dev-developerstudio.fiserv.com/graphql,167,0,0
+1701465458169,79,getDocTree,200,OK,Thread Group 1-1,text,true,,2091,376,5,5,https://dev-developerstudio.fiserv.com/graphql,79,0,0
+1701465458567,74,solutionMerchants,200,OK,Thread Group 1-3,text,true,,2636,535,5,5,https://dev-developerstudio.fiserv.com/graphql,74,0,0
+1701465458987,150,getAllUseCases,200,OK,Thread Group 1-5,text,true,,14258,528,5,5,https://dev-developerstudio.fiserv.com/graphql,150,0,0
+1701465459141,76,getAllUserAccessGroups,200,OK,Thread Group 1-2,text,true,,2780,328,5,5,https://dev-developerstudio.fiserv.com/graphql,76,0,0
+1701465459186,323,getTenants,200,OK,Thread Group 1-4,text,true,,173216,1628,5,5,https://dev-developerstudio.fiserv.com/graphql,180,0,0
+1701465461068,84,megaMenu,200,OK,Thread Group 1-3,text,true,,3899,325,5,5,https://dev-developerstudio.fiserv.com/graphql,84,0,0
+1701465461640,79,getDocTree,200,OK,Thread Group 1-2,text,true,,2091,376,5,5,https://dev-developerstudio.fiserv.com/graphql,79,0,0
+1701465461689,79,solutionMerchants,200,OK,Thread Group 1-4,text,true,,2636,535,5,5,https://dev-developerstudio.fiserv.com/graphql,79,0,0
+1701465461485,313,getTenants,200,OK,Thread Group 1-5,text,true,,173216,1628,5,5,https://dev-developerstudio.fiserv.com/graphql,215,0,0
+1701465463568,74,getAllUserAccessGroups,200,OK,Thread Group 1-3,text,true,,2780,328,5,5,https://dev-developerstudio.fiserv.com/graphql,74,0,0
+1701465460671,4719,apiListAlpha,200,OK,Thread Group 1-1,text,true,,1719,588,5,5,https://dev-developerstudio.fiserv.com/graphql,4719,0,0
+1701465463989,1405,solutionMerchants,200,OK,Thread Group 1-5,text,true,,2636,535,5,5,https://dev-developerstudio.fiserv.com/graphql,1405,0,0
+1701465464186,1227,megaMenu,200,OK,Thread Group 1-4,text,true,,3899,325,5,5,https://dev-developerstudio.fiserv.com/graphql,1227,0,0
+1701465465390,112,searchDocs,200,OK,Thread Group 1-1,text,true,,10533,1142,5,5,https://dev-developerstudio.fiserv.com/graphql,112,0,0
+1701465466068,77,getDocTree,200,OK,Thread Group 1-3,text,true,,2091,376,5,5,https://dev-developerstudio.fiserv.com/graphql,77,0,0
+1701465466686,90,getAllUserAccessGroups,200,OK,Thread Group 1-4,text,true,,2780,328,5,5,https://dev-developerstudio.fiserv.com/graphql,90,0,0
+1701465464141,3593,apiListAlpha,200,OK,Thread Group 1-2,text,true,,1719,588,5,5,https://dev-developerstudio.fiserv.com/graphql,3593,0,0
+1701465466486,1264,megaMenu,200,OK,Thread Group 1-5,text,true,,3899,325,5,5,https://dev-developerstudio.fiserv.com/graphql,1264,0,0
+1701465467735,106,searchDocs,200,OK,Thread Group 1-2,text,true,,10533,1142,5,5,https://dev-developerstudio.fiserv.com/graphql,106,0,0
+1701465467895,81,getPopularPages,200,OK,Thread Group 1-1,text,true,,3372,459,5,5,https://dev-developerstudio.fiserv.com/graphql,81,0,0
+1701465468988,80,getAllUserAccessGroups,200,OK,Thread Group 1-5,text,true,,2780,328,5,5,https://dev-developerstudio.fiserv.com/graphql,80,0,0
+1701465469188,77,getDocTree,200,OK,Thread Group 1-4,text,true,,2091,376,5,5,https://dev-developerstudio.fiserv.com/graphql,77,0,0
+1701465470395,1094,apiList,200,OK,Thread Group 1-1,text,false,Test failed: text expected not to contain /error/,215413,1109,5,5,https://dev-developerstudio.fiserv.com/graphql,934,0,0
+1701465471486,105,getDocTree,200,OK,Thread Group 1-5,text,true,,2091,376,5,5,https://dev-developerstudio.fiserv.com/graphql,105,0,0
+1701465468564,3579,apiListAlpha,200,OK,Thread Group 1-3,text,true,,1719,588,5,5,https://dev-developerstudio.fiserv.com/graphql,3579,0,0
+1701465470239,1927,getPopularPages,200,OK,Thread Group 1-2,text,true,,3372,459,5,5,https://dev-developerstudio.fiserv.com/graphql,1927,0,49
+1701465472143,370,searchDocs,200,OK,Thread Group 1-3,text,true,,10533,1142,5,5,https://dev-developerstudio.fiserv.com/graphql,370,0,80
+1701465472895,1,BeanShell Sampler,200,OK,Thread Group 1-1,text,true,,0,0,5,5,null,0,0,0
+1701465472739,1238,apiList,200,OK,Thread Group 1-2,text,false,Test failed: text expected not to contain /error/,215413,1109,5,5,https://dev-developerstudio.fiserv.com/graphql,1094,0,0
+1701465474647,77,getPopularPages,200,OK,Thread Group 1-3,text,true,,3372,459,5,5,https://dev-developerstudio.fiserv.com/graphql,77,0,0
+1701465475238,1,BeanShell Sampler,200,OK,Thread Group 1-2,text,true,,0,0,5,5,null,0,0,0
+1701465475394,72,featureSets,200,OK,Thread Group 1-1,text,true,,3294,260,5,5,https://dev-developerstudio.fiserv.com/graphql,72,0,0
+1701465471685,4363,apiListAlpha,200,OK,Thread Group 1-4,text,true,,1719,588,5,5,https://dev-developerstudio.fiserv.com/graphql,4363,0,0
+1701465476049,451,searchDocs,200,OK,Thread Group 1-4,text,true,,10533,1142,5,5,https://dev-developerstudio.fiserv.com/graphql,451,0,77
+1701465477895,72,productTags,200,OK,Thread Group 1-1,text,true,,2556,275,5,5,https://dev-developerstudio.fiserv.com/graphql,72,0,0
+1701465478553,81,getPopularPages,200,OK,Thread Group 1-4,text,true,,3372,459,5,5,https://dev-developerstudio.fiserv.com/graphql,81,0,0
+1701465473984,4703,apiListAlpha,200,OK,Thread Group 1-5,text,true,,1719,588,5,5,https://dev-developerstudio.fiserv.com/graphql,4703,0,38
+1701465477738,971,featureSets,200,OK,Thread Group 1-2,text,true,,3294,260,5,5,https://dev-developerstudio.fiserv.com/graphql,971,0,0
+1701465478687,121,searchDocs,200,OK,Thread Group 1-5,text,true,,10533,1142,5,5,https://dev-developerstudio.fiserv.com/graphql,121,0,0
+1701465477147,2385,apiList,200,OK,Thread Group 1-3,text,false,Test failed: text expected not to contain /error/,215413,1109,5,5,https://dev-developerstudio.fiserv.com/graphql,2247,0,0
+1701465479648,1,BeanShell Sampler,200,OK,Thread Group 1-3,text,true,,0,0,5,5,null,0,0,0
+1701465480235,79,productTags,200,OK,Thread Group 1-2,text,true,,2556,275,5,5,https://dev-developerstudio.fiserv.com/graphql,79,0,0
+1701465480395,85,allLinkOutTenants,200,OK,Thread Group 1-1,text,true,,9675,478,5,5,https://dev-developerstudio.fiserv.com/graphql,85,0,0
+1701465481192,158,getPopularPages,200,OK,Thread Group 1-5,text,true,,3372,459,5,5,https://dev-developerstudio.fiserv.com/graphql,158,0,0
+1701465481054,1122,apiList,200,OK,Thread Group 1-4,text,false,Test failed: text expected not to contain /error/,215413,1109,5,5,https://dev-developerstudio.fiserv.com/graphql,966,0,0
+1701465482148,77,featureSets,200,OK,Thread Group 1-3,text,true,,3294,260,5,5,https://dev-developerstudio.fiserv.com/graphql,77,0,0
+1701465482739,85,allLinkOutTenants,200,OK,Thread Group 1-2,text,true,,9675,478,5,5,https://dev-developerstudio.fiserv.com/graphql,85,0,0
+1701465482890,315,getAllUseCases,200,OK,Thread Group 1-1,text,true,,14258,528,5,5,https://dev-developerstudio.fiserv.com/graphql,315,0,42
+1701465483553,2,BeanShell Sampler,200,OK,Thread Group 1-4,text,true,,0,0,5,5,null,0,0,0
+1701465484648,73,productTags,200,OK,Thread Group 1-3,text,true,,2556,275,5,5,https://dev-developerstudio.fiserv.com/graphql,73,0,0
+1701465483691,1144,apiList,200,OK,Thread Group 1-5,text,false,Test failed: text expected not to contain /error/,215413,1109,5,5,https://dev-developerstudio.fiserv.com/graphql,1030,0,0
+1701465485236,146,getAllUseCases,200,OK,Thread Group 1-2,text,true,,14258,528,5,5,https://dev-developerstudio.fiserv.com/graphql,146,0,0
+1701465485394,323,getTenants,200,OK,Thread Group 1-1,text,true,,173216,1628,5,5,https://dev-developerstudio.fiserv.com/graphql,179,0,0
+1701465486054,75,featureSets,200,OK,Thread Group 1-4,text,true,,3294,260,5,5,https://dev-developerstudio.fiserv.com/graphql,75,0,0
+1701465486190,1,BeanShell Sampler,200,OK,Thread Group 1-5,text,true,,0,0,5,5,null,0,0,0
+1701465487147,78,allLinkOutTenants,200,OK,Thread Group 1-3,text,true,,9675,478,5,5,https://dev-developerstudio.fiserv.com/graphql,78,0,0
+1701465487894,74,solutionMerchants,200,OK,Thread Group 1-1,text,true,,2636,535,5,5,https://dev-developerstudio.fiserv.com/graphql,74,0,0
+1701465487737,316,getTenants,200,OK,Thread Group 1-2,text,true,,173216,1628,5,5,https://dev-developerstudio.fiserv.com/graphql,175,0,0
+1701465488554,72,productTags,200,OK,Thread Group 1-4,text,true,,2556,275,5,5,https://dev-developerstudio.fiserv.com/graphql,72,0,0
+1701465488692,79,featureSets,200,OK,Thread Group 1-5,text,true,,3294,260,5,5,https://dev-developerstudio.fiserv.com/graphql,79,0,0
+1701465489647,162,getAllUseCases,200,OK,Thread Group 1-3,text,true,,14258,528,5,5,https://dev-developerstudio.fiserv.com/graphql,162,0,0
+1701465490238,74,solutionMerchants,200,OK,Thread Group 1-2,text,true,,2636,535,5,5,https://dev-developerstudio.fiserv.com/graphql,74,0,0
+1701465490394,74,megaMenu,200,OK,Thread Group 1-1,text,true,,3899,325,5,5,https://dev-developerstudio.fiserv.com/graphql,74,0,0
+1701465491054,188,allLinkOutTenants,200,OK,Thread Group 1-4,text,true,,9675,478,5,5,https://dev-developerstudio.fiserv.com/graphql,188,0,0
+1701465491191,77,productTags,200,OK,Thread Group 1-5,text,true,,2556,275,5,5,https://dev-developerstudio.fiserv.com/graphql,77,0,0
+1701465492148,394,getTenants,200,OK,Thread Group 1-3,text,true,,173216,1628,5,5,https://dev-developerstudio.fiserv.com/graphql,281,0,0
+1701465492739,74,megaMenu,200,OK,Thread Group 1-2,text,true,,3899,325,5,5,https://dev-developerstudio.fiserv.com/graphql,74,0,0
+1701465492894,79,getAllUserAccessGroups,200,OK,Thread Group 1-1,text,true,,2780,328,5,5,https://dev-developerstudio.fiserv.com/graphql,79,0,0
+1701465493554,73,getAllUseCases,Non HTTP response code: org.apache.http.NoHttpResponseException,Non HTTP response message: dev-developerstudio.fiserv.com:443 failed to respond,Thread Group 1-4,text,false,,2087,0,5,5,https://dev-developerstudio.fiserv.com/graphql,0,0,0
+1701465493692,74,allLinkOutTenants,200,OK,Thread Group 1-5,text,true,,9675,478,5,5,https://dev-developerstudio.fiserv.com/graphql,74,0,0
+1701465494647,79,solutionMerchants,200,OK,Thread Group 1-3,text,true,,2636,535,5,5,https://dev-developerstudio.fiserv.com/graphql,79,0,0
+1701465495238,79,getAllUserAccessGroups,200,OK,Thread Group 1-2,text,true,,2780,328,5,5,https://dev-developerstudio.fiserv.com/graphql,79,0,0
+1701465495391,85,getDocTree,200,OK,Thread Group 1-1,text,true,,2091,376,5,5,https://dev-developerstudio.fiserv.com/graphql,85,0,0
+1701465496191,142,getAllUseCases,200,OK,Thread Group 1-5,text,true,,14258,528,5,5,https://dev-developerstudio.fiserv.com/graphql,142,0,0
+1701465496050,544,getTenants,200,OK,Thread Group 1-4,text,true,,173216,1628,5,5,https://dev-developerstudio.fiserv.com/graphql,432,0,47
+1701465497147,72,megaMenu,200,OK,Thread Group 1-3,text,true,,3899,325,5,5,https://dev-developerstudio.fiserv.com/graphql,72,0,0
+1701465497739,106,getDocTree,200,OK,Thread Group 1-2,text,true,,2091,376,5,5,https://dev-developerstudio.fiserv.com/graphql,106,0,0
+1701465498550,76,solutionMerchants,200,OK,Thread Group 1-4,text,true,,2636,535,5,5,https://dev-developerstudio.fiserv.com/graphql,76,0,0
+1701465498693,298,getTenants,200,OK,Thread Group 1-5,text,true,,173216,1628,5,5,https://dev-developerstudio.fiserv.com/graphql,200,0,0
+1701465499648,92,getAllUserAccessGroups,200,OK,Thread Group 1-3,text,true,,2780,328,5,5,https://dev-developerstudio.fiserv.com/graphql,92,0,0
+1701465501054,75,megaMenu,200,OK,Thread Group 1-4,text,true,,3899,325,5,5,https://dev-developerstudio.fiserv.com/graphql,75,0,0
+1701465497895,3614,apiListAlpha,200,OK,Thread Group 1-1,text,true,,1719,588,5,5,https://dev-developerstudio.fiserv.com/graphql,3614,0,0
+1701465501192,319,solutionMerchants,200,OK,Thread Group 1-5,text,true,,2636,535,5,5,https://dev-developerstudio.fiserv.com/graphql,319,0,0
+1701465501509,112,searchDocs,200,OK,Thread Group 1-1,text,true,,10533,1142,5,5,https://dev-developerstudio.fiserv.com/graphql,112,0,0
+1701465502147,392,getDocTree,200,OK,Thread Group 1-3,text,true,,2091,376,5,5,https://dev-developerstudio.fiserv.com/graphql,392,0,0
+1701465503552,79,getAllUserAccessGroups,200,OK,Thread Group 1-4,text,true,,2780,328,5,5,https://dev-developerstudio.fiserv.com/graphql,79,0,0
+1701465504013,77,getPopularPages,200,OK,Thread Group 1-1,text,true,,3372,459,5,5,https://dev-developerstudio.fiserv.com/graphql,77,0,0
+1701465500240,4751,apiListAlpha,200,OK,Thread Group 1-2,text,true,,1719,588,5,5,https://dev-developerstudio.fiserv.com/graphql,4751,0,0
+1701465503689,1320,megaMenu,200,OK,Thread Group 1-5,text,true,,3899,325,5,5,https://dev-developerstudio.fiserv.com/graphql,1320,0,0
+1701465504990,133,searchDocs,200,OK,Thread Group 1-2,text,true,,10533,1142,5,5,https://dev-developerstudio.fiserv.com/graphql,133,0,0
+1701465506050,118,getDocTree,200,OK,Thread Group 1-4,text,true,,2091,376,5,5,https://dev-developerstudio.fiserv.com/graphql,118,0,0
+1701465506192,153,getAllUserAccessGroups,200,OK,Thread Group 1-5,text,true,,2780,328,5,5,https://dev-developerstudio.fiserv.com/graphql,153,0,0
+1701465506513,1035,apiList,200,OK,Thread Group 1-1,text,false,Test failed: text expected not to contain /error/,215413,1109,5,5,https://dev-developerstudio.fiserv.com/graphql,944,0,0
+1701465507495,83,getPopularPages,200,OK,Thread Group 1-2,text,true,,3372,459,5,5,https://dev-developerstudio.fiserv.com/graphql,83,0,0
+1701465504647,3743,apiListAlpha,200,OK,Thread Group 1-3,text,true,,1719,588,5,5,https://dev-developerstudio.fiserv.com/graphql,3743,0,0
+1701465508391,110,searchDocs,200,OK,Thread Group 1-3,text,true,,10533,1142,5,5,https://dev-developerstudio.fiserv.com/graphql,110,0,0
+1701465508688,92,getDocTree,200,OK,Thread Group 1-5,text,true,,2091,376,5,5,https://dev-developerstudio.fiserv.com/graphql,92,0,0
+1701465509014,1,BeanShell Sampler,200,OK,Thread Group 1-1,text,true,,0,0,5,5,null,0,0,0
+1701465509995,1004,apiList,200,OK,Thread Group 1-2,text,false,Test failed: text expected not to contain /error/,215413,1109,5,5,https://dev-developerstudio.fiserv.com/graphql,835,0,0
+1701465511513,86,featureSets,200,OK,Thread Group 1-1,text,true,,3294,260,5,5,https://dev-developerstudio.fiserv.com/graphql,86,0,0
+1701465508553,3567,apiListAlpha,200,OK,Thread Group 1-4,text,true,,1719,588,5,5,https://dev-developerstudio.fiserv.com/graphql,3567,0,0
+1701465510894,1244,getPopularPages,200,OK,Thread Group 1-3,text,true,,3372,459,5,5,https://dev-developerstudio.fiserv.com/graphql,1244,0,0
+1701465512119,126,searchDocs,200,OK,Thread Group 1-4,text,true,,10533,1142,5,5,https://dev-developerstudio.fiserv.com/graphql,126,0,0
+1701465512495,1,BeanShell Sampler,200,OK,Thread Group 1-2,text,true,,0,0,5,5,null,0,0,0
+1701465511191,3363,apiListAlpha,200,OK,Thread Group 1-5,text,true,,1719,588,5,5,https://dev-developerstudio.fiserv.com/graphql,3363,0,0
+1701465514013,544,productTags,200,OK,Thread Group 1-1,text,true,,2556,275,5,5,https://dev-developerstudio.fiserv.com/graphql,544,0,0
+1701465514555,109,searchDocs,200,OK,Thread Group 1-5,text,true,,10533,1142,5,5,https://dev-developerstudio.fiserv.com/graphql,109,0,0
+1701465513394,1288,apiList,200,OK,Thread Group 1-3,text,false,Test failed: text expected not to contain /error/,215413,1109,5,5,https://dev-developerstudio.fiserv.com/graphql,1127,0,0
+1701465514624,83,getPopularPages,200,OK,Thread Group 1-4,text,true,,3372,459,5,5,https://dev-developerstudio.fiserv.com/graphql,83,0,0
+1701465514994,74,featureSets,200,OK,Thread Group 1-2,text,true,,3294,260,5,5,https://dev-developerstudio.fiserv.com/graphql,74,0,0
+1701465515894,2,BeanShell Sampler,200,OK,Thread Group 1-3,text,true,,0,0,5,5,null,0,0,0
+1701465516514,436,allLinkOutTenants,200,OK,Thread Group 1-1,text,true,,9675,478,5,5,https://dev-developerstudio.fiserv.com/graphql,436,0,0
+1701465517061,79,getPopularPages,200,OK,Thread Group 1-5,text,true,,3372,459,5,5,https://dev-developerstudio.fiserv.com/graphql,79,0,0
+1701465517495,329,productTags,200,OK,Thread Group 1-2,text,true,,2556,275,5,5,https://dev-developerstudio.fiserv.com/graphql,329,0,0
+1701465517125,845,apiList,200,OK,Thread Group 1-4,text,false,Test failed: text expected not to contain /error/,215413,1109,5,5,https://dev-developerstudio.fiserv.com/graphql,733,0,0
+1701465518395,75,featureSets,200,OK,Thread Group 1-3,text,true,,3294,260,5,5,https://dev-developerstudio.fiserv.com/graphql,75,0,0
+1701465519014,156,getAllUseCases,200,OK,Thread Group 1-1,text,true,,14258,528,5,5,https://dev-developerstudio.fiserv.com/graphql,156,0,0
+1701465519625,1,BeanShell Sampler,200,OK,Thread Group 1-4,text,true,,0,0,5,5,null,0,0,0
+1701465519994,176,allLinkOutTenants,200,OK,Thread Group 1-2,text,true,,9675,478,5,5,https://dev-developerstudio.fiserv.com/graphql,176,0,0
+1701465519560,784,apiList,200,OK,Thread Group 1-5,text,false,Test failed: text expected not to contain /error/,215413,1109,5,5,https://dev-developerstudio.fiserv.com/graphql,669,0,0
+1701465520892,75,productTags,200,OK,Thread Group 1-3,text,true,,2556,275,5,5,https://dev-developerstudio.fiserv.com/graphql,74,0,0
+1701465521514,329,getTenants,200,OK,Thread Group 1-1,text,true,,173216,1628,5,5,https://dev-developerstudio.fiserv.com/graphql,182,0,0
+1701465522059,1,BeanShell Sampler,200,OK,Thread Group 1-5,text,true,,0,0,5,5,null,0,0,0
+1701465522124,77,featureSets,200,OK,Thread Group 1-4,text,true,,3294,260,5,5,https://dev-developerstudio.fiserv.com/graphql,77,0,0
+1701465522494,148,getAllUseCases,200,OK,Thread Group 1-2,text,true,,14258,528,5,5,https://dev-developerstudio.fiserv.com/graphql,148,0,0
+1701465523393,80,allLinkOutTenants,200,OK,Thread Group 1-3,text,true,,9675,478,5,5,https://dev-developerstudio.fiserv.com/graphql,79,0,0
+1701465524013,76,solutionMerchants,200,OK,Thread Group 1-1,text,true,,2636,535,5,5,https://dev-developerstudio.fiserv.com/graphql,76,0,0
+1701465524559,72,featureSets,200,OK,Thread Group 1-5,text,true,,3294,260,5,5,https://dev-developerstudio.fiserv.com/graphql,72,0,0
+1701465524624,77,productTags,200,OK,Thread Group 1-4,text,true,,2556,275,5,5,https://dev-developerstudio.fiserv.com/graphql,77,0,0
+1701465524993,337,getTenants,200,OK,Thread Group 1-2,text,true,,173216,1628,5,5,https://dev-developerstudio.fiserv.com/graphql,190,0,0
+1701465525896,153,getAllUseCases,200,OK,Thread Group 1-3,text,true,,14258,528,5,5,https://dev-developerstudio.fiserv.com/graphql,153,0,0
+1701465526515,74,megaMenu,200,OK,Thread Group 1-1,text,true,,3899,325,5,5,https://dev-developerstudio.fiserv.com/graphql,74,0,0
+1701465527060,74,productTags,200,OK,Thread Group 1-5,text,true,,2556,275,4,4,https://dev-developerstudio.fiserv.com/graphql,74,0,0
+1701465527124,75,allLinkOutTenants,200,OK,Thread Group 1-4,text,true,,9675,478,3,3,https://dev-developerstudio.fiserv.com/graphql,75,0,0
+1701465527494,74,solutionMerchants,200,OK,Thread Group 1-2,text,true,,2636,535,3,3,https://dev-developerstudio.fiserv.com/graphql,74,0,0
+1701465528395,332,getTenants,200,OK,Thread Group 1-3,text,true,,173216,1628,2,2,https://dev-developerstudio.fiserv.com/graphql,185,0,0
+1701465528624,159,getAllUseCases,200,OK,Thread Group 1-4,text,true,,14258,528,1,1,https://dev-developerstudio.fiserv.com/graphql,159,0,0
+1701466271981,163,featureSets,Non HTTP response code: java.net.UnknownHostException,"Non HTTP response message: perf-developer.fiserv.com: nodename nor servname provided, or not known",Thread Group 1-1,text,false,,2525,0,2,2,https://perf-developer.fiserv.com/graphql,0,0,162
+1701466272139,5,featureSets,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-2,text,false,,2302,0,2,2,https://perf-developer.fiserv.com/graphql,0,0,4
+1701466272410,1,featureSets,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-3,text,false,,2220,0,3,3,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466272680,0,featureSets,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-4,text,false,,2220,0,4,4,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466272879,1,productTags,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-1,text,false,,2220,0,4,4,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466272952,0,featureSets,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-5,text,false,,2220,0,5,5,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466273143,0,productTags,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-2,text,false,,2220,0,5,5,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466273217,1,featureSets,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-6,text,false,,2220,0,6,6,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466273486,0,featureSets,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-7,text,false,,2220,0,7,7,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466273752,0,featureSets,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-8,text,false,,2220,0,8,8,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466273913,1,productTags,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-3,text,false,,2220,0,8,8,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466274018,1,featureSets,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-9,text,false,,2220,0,9,9,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466274286,0,featureSets,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-10,text,false,,2220,0,10,10,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466274552,0,featureSets,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-11,text,false,,2220,0,11,11,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466274685,1,productTags,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-4,text,false,,2220,0,11,11,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466274818,0,featureSets,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-12,text,false,,2220,0,12,12,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466274880,0,allLinkOutTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-1,text,false,,2220,0,12,12,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466275081,0,featureSets,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-13,text,false,,2220,0,13,13,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466275344,1,featureSets,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-14,text,false,,2220,0,14,14,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466275456,1,productTags,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-5,text,false,,2220,0,14,14,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466275605,1,featureSets,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-15,text,false,,2220,0,15,15,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466275642,0,allLinkOutTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-2,text,false,,2220,0,15,15,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466275864,0,featureSets,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-16,text,false,,2220,0,16,16,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466276122,0,featureSets,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-17,text,false,,2220,0,17,17,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466276221,0,productTags,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-6,text,false,,2220,0,17,17,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466276375,0,featureSets,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-18,text,false,,2220,0,18,18,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466276623,0,featureSets,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-19,text,false,,2220,0,19,19,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466276861,0,featureSets,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-20,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466276990,0,productTags,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-7,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466277757,0,productTags,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-8,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466277914,0,allLinkOutTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-3,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466278521,1,productTags,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-9,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466279289,0,productTags,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-10,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466280055,0,productTags,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-11,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466280184,1,allLinkOutTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-4,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466280822,1,productTags,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-12,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466280875,1,getAllUseCases,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-1,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466281586,0,productTags,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-13,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466282350,2,productTags,Non HTTP response code: java.net.UnknownHostException,"Non HTTP response message: perf-developer.fiserv.com: nodename nor servname provided, or not known",Thread Group 1-14,text,false,,2525,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,2
+1701466282454,0,allLinkOutTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-5,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466283109,0,productTags,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-15,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466283141,1,getAllUseCases,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-2,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466283869,1,productTags,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-16,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466284624,0,productTags,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-17,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466284723,0,allLinkOutTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-6,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466285377,0,productTags,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-18,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466286127,1,productTags,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-19,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466286867,1,productTags,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-20,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466286991,1,allLinkOutTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-7,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466287757,1,allLinkOutTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-8,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466287915,1,getAllUseCases,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-3,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466288523,1,allLinkOutTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-9,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466289288,1,allLinkOutTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-10,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466290055,0,allLinkOutTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-11,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466290185,0,getAllUseCases,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-4,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466290823,0,allLinkOutTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-12,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466290880,1,getTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-1,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466291584,1,allLinkOutTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-13,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466292348,1,allLinkOutTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-14,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466292456,2,getAllUseCases,Non HTTP response code: java.net.UnknownHostException,"Non HTTP response message: perf-developer.fiserv.com: nodename nor servname provided, or not known",Thread Group 1-5,text,false,,2525,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,2
+1701466293110,0,allLinkOutTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-15,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466293142,1,getTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-2,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466293869,0,allLinkOutTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-16,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466294626,0,allLinkOutTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-17,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466294721,0,getAllUseCases,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-6,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466295377,0,allLinkOutTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-18,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466296124,1,allLinkOutTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-19,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466296865,0,allLinkOutTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-20,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466296990,0,getAllUseCases,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-7,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466297756,1,getAllUseCases,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-8,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466297914,1,getTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-3,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466298523,0,getAllUseCases,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-9,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466299290,0,getAllUseCases,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-10,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466300055,0,getAllUseCases,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-11,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466300186,0,getTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-4,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466300824,0,getAllUseCases,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-12,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466300880,0,solutionMerchants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-1,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466301584,1,getAllUseCases,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-13,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466302348,0,getAllUseCases,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-14,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466302455,0,getTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-5,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466303108,2,getAllUseCases,Non HTTP response code: java.net.UnknownHostException,"Non HTTP response message: perf-developer.fiserv.com: nodename nor servname provided, or not known",Thread Group 1-15,text,false,,2525,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,2
+1701466303141,1,solutionMerchants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-2,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466303870,0,getAllUseCases,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-16,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,0
+1701466304623,1,getAllUseCases,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-17,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466304721,1,getTenants,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-6,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466305380,1,getAllUseCases,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-18,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466306127,1,getAllUseCases,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: perf-developer.fiserv.com,Thread Group 1-19,text,false,,2220,0,20,20,https://perf-developer.fiserv.com/graphql,0,0,1
+1701466324712,523,featureSets,200,OK,Thread Group 1-3,text,false,Test failed: text expected not to contain /error/,3110,261,4,4,https://perf-developerstudio.fiserv.com/graphql,520,0,121
+1701466324441,794,featureSets,200,OK,Thread Group 1-2,text,false,Test failed: text expected not to contain /error/,3110,261,4,4,https://perf-developerstudio.fiserv.com/graphql,791,0,392
+1701466324272,963,featureSets,200,OK,Thread Group 1-1,text,false,Test failed: text expected not to contain /error/,3110,261,4,4,https://perf-developerstudio.fiserv.com/graphql,960,0,561
+1701466324984,314,featureSets,200,OK,Thread Group 1-4,text,false,Test failed: text expected not to contain /error/,3110,261,5,5,https://perf-developerstudio.fiserv.com/graphql,314,0,84
+1701466325256,361,featureSets,200,OK,Thread Group 1-5,text,false,Test failed: text expected not to contain /error/,3110,261,6,6,https://perf-developerstudio.fiserv.com/graphql,361,0,128
+1701466325526,400,featureSets,200,OK,Thread Group 1-6,text,false,Test failed: text expected not to contain /error/,3110,261,7,7,https://perf-developerstudio.fiserv.com/graphql,400,0,86
+1701466325800,301,featureSets,200,OK,Thread Group 1-7,text,false,Test failed: text expected not to contain /error/,3110,261,8,8,https://perf-developerstudio.fiserv.com/graphql,301,0,79
+1701466326180,185,productTags,200,OK,Thread Group 1-1,text,true,,2542,276,9,9,https://perf-developerstudio.fiserv.com/graphql,185,0,0
+1701466326065,304,featureSets,200,OK,Thread Group 1-8,text,false,Test failed: text expected not to contain /error/,3110,261,9,9,https://perf-developerstudio.fiserv.com/graphql,304,0,84
+1701466326445,73,productTags,200,OK,Thread Group 1-2,text,true,,2472,276,9,9,https://perf-developerstudio.fiserv.com/graphql,73,0,0
+1701466326332,301,featureSets,200,OK,Thread Group 1-9,text,false,Test failed: text expected not to contain /error/,3110,261,10,10,https://perf-developerstudio.fiserv.com/graphql,301,0,83
+1701466326717,79,productTags,200,OK,Thread Group 1-3,text,true,,2472,276,10,10,https://perf-developerstudio.fiserv.com/graphql,79,0,0
+1701466326598,389,featureSets,200,OK,Thread Group 1-10,text,false,Test failed: text expected not to contain /error/,3110,261,11,11,https://perf-developerstudio.fiserv.com/graphql,389,0,90
+1701466326863,306,featureSets,200,OK,Thread Group 1-11,text,false,Test failed: text expected not to contain /error/,3110,261,12,12,https://perf-developerstudio.fiserv.com/graphql,305,0,80
+1701466327128,316,featureSets,200,OK,Thread Group 1-12,text,false,Test failed: text expected not to contain /error/,3110,261,13,13,https://perf-developerstudio.fiserv.com/graphql,316,0,94
+1701466327489,74,productTags,200,OK,Thread Group 1-4,text,true,,2472,276,13,13,https://perf-developerstudio.fiserv.com/graphql,74,0,0
+1701466327392,308,featureSets,200,OK,Thread Group 1-13,text,false,Test failed: text expected not to contain /error/,3110,261,14,14,https://perf-developerstudio.fiserv.com/graphql,308,0,84
+1701466327654,309,featureSets,200,OK,Thread Group 1-14,text,false,Test failed: text expected not to contain /error/,3110,261,15,15,https://perf-developerstudio.fiserv.com/graphql,309,0,83
+1701466327918,344,featureSets,200,OK,Thread Group 1-15,text,false,Test failed: text expected not to contain /error/,3110,261,16,16,https://perf-developerstudio.fiserv.com/graphql,344,0,118
+1701466328260,69,productTags,200,OK,Thread Group 1-5,text,true,,2542,276,16,16,https://perf-developerstudio.fiserv.com/graphql,69,0,0
+1701466328171,301,featureSets,200,OK,Thread Group 1-16,text,false,Test failed: text expected not to contain /error/,3110,261,17,17,https://perf-developerstudio.fiserv.com/graphql,301,0,77
+1701466328427,310,featureSets,200,OK,Thread Group 1-17,text,false,Test failed: text expected not to contain /error/,3110,261,18,18,https://perf-developerstudio.fiserv.com/graphql,310,0,89
+1701466328679,311,featureSets,200,OK,Thread Group 1-18,text,false,Test failed: text expected not to contain /error/,3110,261,19,19,https://perf-developerstudio.fiserv.com/graphql,311,0,89
+1701466329030,73,productTags,200,OK,Thread Group 1-6,text,true,,2472,276,19,19,https://perf-developerstudio.fiserv.com/graphql,73,0,0
+1701466328927,312,featureSets,200,OK,Thread Group 1-19,text,false,Test failed: text expected not to contain /error/,3110,261,20,20,https://perf-developerstudio.fiserv.com/graphql,312,0,85
+1701466329164,316,featureSets,200,OK,Thread Group 1-20,text,false,Test failed: text expected not to contain /error/,3110,261,20,20,https://perf-developerstudio.fiserv.com/graphql,316,0,93
+1701466329803,73,productTags,200,OK,Thread Group 1-7,text,true,,2472,276,20,20,https://perf-developerstudio.fiserv.com/graphql,73,0,0
+1701466330569,82,productTags,200,OK,Thread Group 1-8,text,true,,2472,276,20,20,https://perf-developerstudio.fiserv.com/graphql,82,0,0
+1701466330680,100,allLinkOutTenants,200,OK,Thread Group 1-1,text,true,,12489,479,20,20,https://perf-developerstudio.fiserv.com/graphql,100,0,0
+1701466330945,95,allLinkOutTenants,200,OK,Thread Group 1-2,text,true,,12489,479,20,20,https://perf-developerstudio.fiserv.com/graphql,95,0,0
+1701466331336,78,productTags,200,OK,Thread Group 1-9,text,true,,2472,276,20,20,https://perf-developerstudio.fiserv.com/graphql,78,0,0
+1701466331716,99,allLinkOutTenants,200,OK,Thread Group 1-3,text,true,,12489,479,20,20,https://perf-developerstudio.fiserv.com/graphql,99,0,0
+1701466332102,267,productTags,200,OK,Thread Group 1-10,text,true,,2472,276,20,20,https://perf-developerstudio.fiserv.com/graphql,267,0,43
+1701466332866,273,productTags,200,OK,Thread Group 1-11,text,true,,2542,276,20,20,https://perf-developerstudio.fiserv.com/graphql,273,0,51
+1701466333632,267,productTags,200,OK,Thread Group 1-12,text,true,,2472,276,20,20,https://perf-developerstudio.fiserv.com/graphql,267,0,40
+1701466333988,339,allLinkOutTenants,200,OK,Thread Group 1-4,text,true,,12489,479,20,20,https://perf-developerstudio.fiserv.com/graphql,339,0,58
+1701466334395,261,productTags,200,OK,Thread Group 1-13,text,true,,2542,276,20,20,https://perf-developerstudio.fiserv.com/graphql,261,0,44
+1701466335158,270,productTags,200,OK,Thread Group 1-14,text,true,,2542,276,20,20,https://perf-developerstudio.fiserv.com/graphql,270,0,48
+1701466335922,458,productTags,200,OK,Thread Group 1-15,text,true,,2542,276,20,20,https://perf-developerstudio.fiserv.com/graphql,458,0,185
+1701466336260,602,allLinkOutTenants,200,OK,Thread Group 1-5,text,true,,12489,479,20,20,https://perf-developerstudio.fiserv.com/graphql,602,0,331
+1701466336676,284,productTags,200,OK,Thread Group 1-16,text,true,,2542,276,20,20,https://perf-developerstudio.fiserv.com/graphql,284,0,63
+1701466337427,279,productTags,200,OK,Thread Group 1-17,text,true,,2472,276,20,20,https://perf-developerstudio.fiserv.com/graphql,278,0,52
+1701466338184,266,productTags,200,OK,Thread Group 1-18,text,true,,2472,276,20,20,https://perf-developerstudio.fiserv.com/graphql,266,0,41
+1701466338530,301,allLinkOutTenants,200,OK,Thread Group 1-6,text,true,,12489,479,20,20,https://perf-developerstudio.fiserv.com/graphql,301,0,46
+1701466338929,263,productTags,200,OK,Thread Group 1-19,text,true,,2472,276,20,20,https://perf-developerstudio.fiserv.com/graphql,263,0,41
+1701466339165,282,productTags,200,OK,Thread Group 1-20,text,true,,2542,276,20,20,https://perf-developerstudio.fiserv.com/graphql,282,0,47
+1701466339803,287,allLinkOutTenants,200,OK,Thread Group 1-7,text,true,,12489,479,20,20,https://perf-developerstudio.fiserv.com/graphql,287,0,36
+1701466340567,304,allLinkOutTenants,200,OK,Thread Group 1-8,text,true,,12489,479,20,20,https://perf-developerstudio.fiserv.com/graphql,304,0,42
+1701466340678,618,getAllUseCases,200,OK,Thread Group 1-1,text,true,,14543,529,20,20,https://perf-developerstudio.fiserv.com/graphql,618,0,59
+1701466340944,659,getAllUseCases,200,OK,Thread Group 1-2,text,true,,14543,529,20,20,https://perf-developerstudio.fiserv.com/graphql,658,0,53
+1701466341336,306,allLinkOutTenants,200,OK,Thread Group 1-9,text,true,,12489,479,20,20,https://perf-developerstudio.fiserv.com/graphql,306,0,52
+1701466341714,478,getAllUseCases,200,OK,Thread Group 1-3,text,true,,14543,529,20,20,https://perf-developerstudio.fiserv.com/graphql,478,0,51
+1701466342101,321,allLinkOutTenants,200,OK,Thread Group 1-10,text,true,,12489,479,20,20,https://perf-developerstudio.fiserv.com/graphql,321,0,62
+1701466342864,310,allLinkOutTenants,200,OK,Thread Group 1-11,text,true,,12489,479,20,20,https://perf-developerstudio.fiserv.com/graphql,310,0,57
+1701466343630,312,allLinkOutTenants,200,OK,Thread Group 1-12,text,true,,12489,479,20,20,https://perf-developerstudio.fiserv.com/graphql,312,0,53
+1701466343988,575,getAllUseCases,200,OK,Thread Group 1-4,text,true,,14543,529,20,20,https://perf-developerstudio.fiserv.com/graphql,575,0,40
+1701466344395,315,allLinkOutTenants,200,OK,Thread Group 1-13,text,true,,12489,479,20,20,https://perf-developerstudio.fiserv.com/graphql,315,0,46
+1701466345158,325,allLinkOutTenants,200,OK,Thread Group 1-14,text,true,,12489,479,20,20,https://perf-developerstudio.fiserv.com/graphql,325,0,66
+1701466345920,330,allLinkOutTenants,200,OK,Thread Group 1-15,text,true,,12489,479,20,20,https://perf-developerstudio.fiserv.com/graphql,330,0,78
+1701466346676,310,allLinkOutTenants,200,OK,Thread Group 1-16,text,true,,12489,479,20,20,https://perf-developerstudio.fiserv.com/graphql,310,0,57
+1701466346260,774,getAllUseCases,200,OK,Thread Group 1-5,text,true,,14543,529,20,20,https://perf-developerstudio.fiserv.com/graphql,774,0,63
+1701466347429,317,allLinkOutTenants,200,OK,Thread Group 1-17,text,true,,12489,479,20,20,https://perf-developerstudio.fiserv.com/graphql,317,0,61
+1701466348183,314,allLinkOutTenants,200,OK,Thread Group 1-18,text,true,,12489,479,20,20,https://perf-developerstudio.fiserv.com/graphql,314,0,53
+1701466348531,544,getAllUseCases,200,OK,Thread Group 1-6,text,true,,14543,529,20,20,https://perf-developerstudio.fiserv.com/graphql,544,0,43
+1701466348932,310,allLinkOutTenants,200,OK,Thread Group 1-19,text,true,,12489,479,20,20,https://perf-developerstudio.fiserv.com/graphql,310,0,44
+1701466349167,304,allLinkOutTenants,200,OK,Thread Group 1-20,text,true,,12489,479,20,20,https://perf-developerstudio.fiserv.com/graphql,304,0,44
+1701466349804,589,getAllUseCases,200,OK,Thread Group 1-7,text,true,,14543,529,20,20,https://perf-developerstudio.fiserv.com/graphql,589,0,50
+1701466350680,394,getTenants,200,OK,Thread Group 1-1,text,true,,70249,1629,20,20,https://perf-developerstudio.fiserv.com/graphql,332,0,49
+1701466350568,563,getAllUseCases,200,OK,Thread Group 1-8,text,true,,14543,529,20,20,https://perf-developerstudio.fiserv.com/graphql,563,0,63
+1701466350945,395,getTenants,200,OK,Thread Group 1-2,text,true,,70249,1629,20,20,https://perf-developerstudio.fiserv.com/graphql,334,0,46
+1701466351336,602,getAllUseCases,200,OK,Thread Group 1-9,text,true,,14543,529,20,20,https://perf-developerstudio.fiserv.com/graphql,601,0,39
+1701466351716,542,getTenants,200,OK,Thread Group 1-3,text,true,,70249,1629,20,20,https://perf-developerstudio.fiserv.com/graphql,479,0,40
+1701466352102,431,getAllUseCases,200,OK,Thread Group 1-10,text,true,,14543,529,20,20,https://perf-developerstudio.fiserv.com/graphql,431,0,51
+1701466352868,402,getAllUseCases,200,OK,Thread Group 1-11,text,true,,14543,529,20,20,https://perf-developerstudio.fiserv.com/graphql,402,0,47
+1701466353632,416,getAllUseCases,200,OK,Thread Group 1-12,text,true,,14543,529,20,20,https://perf-developerstudio.fiserv.com/graphql,416,0,41
+1701466353987,401,getTenants,200,OK,Thread Group 1-4,text,true,,70249,1629,20,20,https://perf-developerstudio.fiserv.com/graphql,336,0,52
+1701466354396,491,getAllUseCases,200,OK,Thread Group 1-13,text,true,,14543,529,20,20,https://perf-developerstudio.fiserv.com/graphql,491,0,44
+1701466355157,460,getAllUseCases,200,OK,Thread Group 1-14,text,true,,14543,529,20,20,https://perf-developerstudio.fiserv.com/graphql,460,0,40
+1701466355922,580,getAllUseCases,200,OK,Thread Group 1-15,text,true,,14543,529,20,20,https://perf-developerstudio.fiserv.com/graphql,580,0,55
+1701466356260,391,getTenants,200,OK,Thread Group 1-5,text,true,,70249,1629,20,20,https://perf-developerstudio.fiserv.com/graphql,326,0,42
+1701466356676,428,getAllUseCases,200,OK,Thread Group 1-16,text,true,,14543,529,20,20,https://perf-developerstudio.fiserv.com/graphql,428,0,38
+1701466357430,606,getAllUseCases,200,OK,Thread Group 1-17,text,true,,14543,529,20,20,https://perf-developerstudio.fiserv.com/graphql,606,0,43
+1701466358180,454,getAllUseCases,200,OK,Thread Group 1-18,text,true,,14543,529,20,20,https://perf-developerstudio.fiserv.com/graphql,454,0,39
+1701466358529,404,getTenants,200,OK,Thread Group 1-6,text,true,,70249,1629,20,20,https://perf-developerstudio.fiserv.com/graphql,342,0,57
+1701466358927,567,getAllUseCases,200,OK,Thread Group 1-19,text,true,,14543,529,20,20,https://perf-developerstudio.fiserv.com/graphql,567,0,49
+1701466359168,483,getAllUseCases,200,OK,Thread Group 1-20,text,true,,14543,529,20,20,https://perf-developerstudio.fiserv.com/graphql,483,0,62
+1701466359802,404,getTenants,200,OK,Thread Group 1-7,text,true,,70249,1629,20,20,https://perf-developerstudio.fiserv.com/graphql,340,0,61
+1701466360570,413,getTenants,200,OK,Thread Group 1-8,text,true,,70249,1629,20,20,https://perf-developerstudio.fiserv.com/graphql,352,0,58
+1701466360680,483,solutionMerchants,200,OK,Thread Group 1-1,text,true,,2604,536,20,20,https://perf-developerstudio.fiserv.com/graphql,483,0,68
+1701466360943,390,solutionMerchants,200,OK,Thread Group 1-2,text,true,,2604,536,20,20,https://perf-developerstudio.fiserv.com/graphql,390,0,48
+1701466361335,409,getTenants,200,OK,Thread Group 1-9,text,true,,70249,1629,20,20,https://perf-developerstudio.fiserv.com/graphql,344,0,45
+1701466361714,281,solutionMerchants,200,OK,Thread Group 1-3,text,true,,2604,536,20,20,https://perf-developerstudio.fiserv.com/graphql,281,0,59
+1701466362102,412,getTenants,200,OK,Thread Group 1-10,text,true,,70249,1629,20,20,https://perf-developerstudio.fiserv.com/graphql,381,0,67
+1701466362862,401,getTenants,200,OK,Thread Group 1-11,text,true,,70249,1629,20,20,https://perf-developerstudio.fiserv.com/graphql,342,0,51
+1701466363631,407,getTenants,200,OK,Thread Group 1-12,text,true,,70249,1629,20,20,https://perf-developerstudio.fiserv.com/graphql,349,0,51
+1701466363989,277,solutionMerchants,200,OK,Thread Group 1-4,text,true,,2604,536,20,20,https://perf-developerstudio.fiserv.com/graphql,277,0,53
+1701466364396,511,getTenants,200,OK,Thread Group 1-13,text,true,,70249,1629,20,20,https://perf-developerstudio.fiserv.com/graphql,474,0,45
+1701466365155,398,getTenants,200,OK,Thread Group 1-14,text,true,,70249,1629,20,20,https://perf-developerstudio.fiserv.com/graphql,336,0,54
+1701466365922,423,getTenants,200,OK,Thread Group 1-15,text,true,,70249,1629,20,20,https://perf-developerstudio.fiserv.com/graphql,365,0,37
+1701466366261,257,solutionMerchants,200,OK,Thread Group 1-5,text,true,,2604,536,20,20,https://perf-developerstudio.fiserv.com/graphql,257,0,38
+1701466366675,395,getTenants,200,OK,Thread Group 1-16,text,true,,70249,1629,20,20,https://perf-developerstudio.fiserv.com/graphql,332,0,42
+1701466367428,429,getTenants,200,OK,Thread Group 1-17,text,true,,70249,1629,20,20,https://perf-developerstudio.fiserv.com/graphql,363,0,63
+1701466368179,415,getTenants,200,OK,Thread Group 1-18,text,true,,70249,1629,20,20,https://perf-developerstudio.fiserv.com/graphql,356,0,52
+1701466368528,282,solutionMerchants,200,OK,Thread Group 1-6,text,true,,2604,536,20,20,https://perf-developerstudio.fiserv.com/graphql,282,0,56
+1701466368928,401,getTenants,200,OK,Thread Group 1-19,text,true,,70249,1629,20,20,https://perf-developerstudio.fiserv.com/graphql,339,0,56
+1701466369167,411,getTenants,200,OK,Thread Group 1-20,text,true,,70249,1629,20,20,https://perf-developerstudio.fiserv.com/graphql,348,0,53
+1701466369802,301,solutionMerchants,200,OK,Thread Group 1-7,text,true,,2604,536,20,20,https://perf-developerstudio.fiserv.com/graphql,301,0,53
+1701466370568,267,solutionMerchants,200,OK,Thread Group 1-8,text,true,,2604,536,20,20,https://perf-developerstudio.fiserv.com/graphql,267,0,46
+1701466370680,401,megaMenu,200,OK,Thread Group 1-1,text,true,,3867,326,20,20,https://perf-developerstudio.fiserv.com/graphql,401,0,52
+1701466370945,374,megaMenu,200,OK,Thread Group 1-2,text,true,,3867,326,20,20,https://perf-developerstudio.fiserv.com/graphql,374,0,44
+1701466371336,277,solutionMerchants,200,OK,Thread Group 1-9,text,true,,2604,536,20,20,https://perf-developerstudio.fiserv.com/graphql,277,0,54
+1701466371714,275,megaMenu,200,OK,Thread Group 1-3,text,true,,3867,326,20,20,https://perf-developerstudio.fiserv.com/graphql,275,0,48
+1701466372102,258,solutionMerchants,200,OK,Thread Group 1-10,text,true,,2604,536,20,20,https://perf-developerstudio.fiserv.com/graphql,258,0,41
+1701466372867,258,solutionMerchants,200,OK,Thread Group 1-11,text,true,,2604,536,20,20,https://perf-developerstudio.fiserv.com/graphql,258,0,36
+1701466373632,276,solutionMerchants,200,OK,Thread Group 1-12,text,true,,2604,536,20,20,https://perf-developerstudio.fiserv.com/graphql,276,0,51
+1701466373987,252,megaMenu,200,OK,Thread Group 1-4,text,true,,3867,326,20,20,https://perf-developerstudio.fiserv.com/graphql,252,0,35
+1701466374396,280,solutionMerchants,200,OK,Thread Group 1-13,text,true,,2604,536,20,20,https://perf-developerstudio.fiserv.com/graphql,279,0,56
+1701466375158,282,solutionMerchants,200,OK,Thread Group 1-14,text,true,,2604,536,20,20,https://perf-developerstudio.fiserv.com/graphql,282,0,54
+1701466375921,286,solutionMerchants,200,OK,Thread Group 1-15,text,true,,2604,536,20,20,https://perf-developerstudio.fiserv.com/graphql,286,0,50
+1701466376260,259,megaMenu,200,OK,Thread Group 1-5,text,true,,3867,326,20,20,https://perf-developerstudio.fiserv.com/graphql,259,0,40
+1701466376672,294,solutionMerchants,200,OK,Thread Group 1-16,text,true,,2604,536,20,20,https://perf-developerstudio.fiserv.com/graphql,294,0,69
+1701466377429,269,solutionMerchants,200,OK,Thread Group 1-17,text,true,,2604,536,20,20,https://perf-developerstudio.fiserv.com/graphql,269,0,45
+1701466378179,279,solutionMerchants,200,OK,Thread Group 1-18,text,true,,2604,536,20,20,https://perf-developerstudio.fiserv.com/graphql,279,0,54
+1701466378525,263,megaMenu,200,OK,Thread Group 1-6,text,true,,3867,326,20,20,https://perf-developerstudio.fiserv.com/graphql,263,0,40
+1701466378929,269,solutionMerchants,200,OK,Thread Group 1-19,text,true,,2604,536,20,20,https://perf-developerstudio.fiserv.com/graphql,269,0,44
+1701466379168,273,solutionMerchants,200,OK,Thread Group 1-20,text,true,,2604,536,20,20,https://perf-developerstudio.fiserv.com/graphql,273,0,43
+1701466379802,259,megaMenu,200,OK,Thread Group 1-7,text,true,,3867,326,20,20,https://perf-developerstudio.fiserv.com/graphql,259,0,37
+1701466380569,275,megaMenu,200,OK,Thread Group 1-8,text,true,,3867,326,20,20,https://perf-developerstudio.fiserv.com/graphql,274,0,50
+1701466380678,347,getAllUserAccessGroups,200,OK,Thread Group 1-1,text,true,,1477,329,20,20,https://perf-developerstudio.fiserv.com/graphql,347,0,34
+1701466380944,398,getAllUserAccessGroups,200,OK,Thread Group 1-2,text,true,,1477,329,20,20,https://perf-developerstudio.fiserv.com/graphql,398,0,44
+1701466381336,264,megaMenu,200,OK,Thread Group 1-9,text,true,,3867,326,20,20,https://perf-developerstudio.fiserv.com/graphql,264,0,44
+1701466381715,325,getAllUserAccessGroups,200,OK,Thread Group 1-3,text,true,,1477,329,20,20,https://perf-developerstudio.fiserv.com/graphql,324,0,39
+1701466382102,280,megaMenu,200,OK,Thread Group 1-10,text,true,,3867,326,20,20,https://perf-developerstudio.fiserv.com/graphql,280,0,58
+1701466382864,258,megaMenu,200,OK,Thread Group 1-11,text,true,,3867,326,20,20,https://perf-developerstudio.fiserv.com/graphql,258,0,39
+1701466383632,273,megaMenu,200,OK,Thread Group 1-12,text,true,,3867,326,20,20,https://perf-developerstudio.fiserv.com/graphql,273,0,52
+1701466383988,421,getAllUserAccessGroups,200,OK,Thread Group 1-4,text,true,,1477,329,20,20,https://perf-developerstudio.fiserv.com/graphql,421,0,56
+1701466384396,288,megaMenu,200,OK,Thread Group 1-13,text,true,,3867,326,20,20,https://perf-developerstudio.fiserv.com/graphql,288,0,60
+1701466385157,275,megaMenu,200,OK,Thread Group 1-14,text,true,,3867,326,20,20,https://perf-developerstudio.fiserv.com/graphql,275,0,54
+1701466385923,279,megaMenu,200,OK,Thread Group 1-15,text,true,,3867,326,20,20,https://perf-developerstudio.fiserv.com/graphql,279,0,60
+1701466386259,410,getAllUserAccessGroups,200,OK,Thread Group 1-5,text,true,,1477,329,20,20,https://perf-developerstudio.fiserv.com/graphql,410,0,44
+1701466386672,267,megaMenu,200,OK,Thread Group 1-16,text,true,,3867,326,20,20,https://perf-developerstudio.fiserv.com/graphql,267,0,47
+1701466387429,257,megaMenu,200,OK,Thread Group 1-17,text,true,,3867,326,20,20,https://perf-developerstudio.fiserv.com/graphql,257,0,39
+1701466388183,271,megaMenu,200,OK,Thread Group 1-18,text,true,,3867,326,20,20,https://perf-developerstudio.fiserv.com/graphql,271,0,49
+1701466388530,359,getAllUserAccessGroups,200,OK,Thread Group 1-6,text,true,,1477,329,20,20,https://perf-developerstudio.fiserv.com/graphql,359,0,37
+1701466388927,261,megaMenu,200,OK,Thread Group 1-19,text,true,,3867,326,20,20,https://perf-developerstudio.fiserv.com/graphql,261,0,38
+1701466389168,277,megaMenu,200,OK,Thread Group 1-20,text,true,,3867,326,20,20,https://perf-developerstudio.fiserv.com/graphql,277,0,43
+1701466389803,360,getAllUserAccessGroups,200,OK,Thread Group 1-7,text,true,,1477,329,20,20,https://perf-developerstudio.fiserv.com/graphql,360,0,40
+1701466390569,354,getAllUserAccessGroups,200,OK,Thread Group 1-8,text,true,,1477,329,20,20,https://perf-developerstudio.fiserv.com/graphql,354,0,44
+1701466390679,269,getDocTree,200,OK,Thread Group 1-1,text,true,,2059,377,20,20,https://perf-developerstudio.fiserv.com/graphql,269,0,45
+1701466390945,287,getDocTree,200,OK,Thread Group 1-2,text,true,,2059,377,20,20,https://perf-developerstudio.fiserv.com/graphql,287,0,46
+1701466391334,354,getAllUserAccessGroups,200,OK,Thread Group 1-9,text,true,,1477,329,20,20,https://perf-developerstudio.fiserv.com/graphql,354,0,50
+1701466391716,264,getDocTree,200,OK,Thread Group 1-3,text,true,,2059,377,20,20,https://perf-developerstudio.fiserv.com/graphql,264,0,39
+1701466392102,369,getAllUserAccessGroups,200,OK,Thread Group 1-10,text,true,,1477,329,20,20,https://perf-developerstudio.fiserv.com/graphql,369,0,36
+1701466392863,367,getAllUserAccessGroups,200,OK,Thread Group 1-11,text,true,,1477,329,20,20,https://perf-developerstudio.fiserv.com/graphql,367,0,64
+1701466393632,350,getAllUserAccessGroups,200,OK,Thread Group 1-12,text,true,,1477,329,20,20,https://perf-developerstudio.fiserv.com/graphql,350,0,51
+1701466393987,286,getDocTree,200,OK,Thread Group 1-4,text,true,,2059,377,20,20,https://perf-developerstudio.fiserv.com/graphql,286,0,62
+1701466394396,348,getAllUserAccessGroups,200,OK,Thread Group 1-13,text,true,,1477,329,20,20,https://perf-developerstudio.fiserv.com/graphql,348,0,48
+1701466395157,330,getAllUserAccessGroups,200,OK,Thread Group 1-14,text,true,,1477,329,20,20,https://perf-developerstudio.fiserv.com/graphql,330,0,36
+1701466395920,372,getAllUserAccessGroups,200,OK,Thread Group 1-15,text,true,,1477,329,20,20,https://perf-developerstudio.fiserv.com/graphql,372,0,45
+1701466396260,261,getDocTree,200,OK,Thread Group 1-5,text,true,,2059,377,20,20,https://perf-developerstudio.fiserv.com/graphql,261,0,38
+1701466396676,365,getAllUserAccessGroups,200,OK,Thread Group 1-16,text,true,,1477,329,20,20,https://perf-developerstudio.fiserv.com/graphql,365,0,36
+1701466397429,349,getAllUserAccessGroups,200,OK,Thread Group 1-17,text,true,,1477,329,20,20,https://perf-developerstudio.fiserv.com/graphql,349,0,54
+1701466398183,344,getAllUserAccessGroups,200,OK,Thread Group 1-18,text,true,,1477,329,20,20,https://perf-developerstudio.fiserv.com/graphql,344,0,46
+1701466398530,273,getDocTree,200,OK,Thread Group 1-6,text,true,,2059,377,20,20,https://perf-developerstudio.fiserv.com/graphql,273,0,48
+1701466398928,386,getAllUserAccessGroups,200,OK,Thread Group 1-19,text,true,,1477,329,20,20,https://perf-developerstudio.fiserv.com/graphql,386,0,55
+1701466399168,352,getAllUserAccessGroups,200,OK,Thread Group 1-20,text,true,,1477,329,20,20,https://perf-developerstudio.fiserv.com/graphql,352,0,58
+1701466399803,262,getDocTree,200,OK,Thread Group 1-7,text,true,,2059,377,20,20,https://perf-developerstudio.fiserv.com/graphql,262,0,38
+1701466400569,273,getDocTree,200,OK,Thread Group 1-8,text,true,,2059,377,20,20,https://perf-developerstudio.fiserv.com/graphql,273,0,48
+1701466401334,274,getDocTree,200,OK,Thread Group 1-9,text,true,,2059,377,20,20,https://perf-developerstudio.fiserv.com/graphql,274,0,50
+1701466402102,276,getDocTree,200,OK,Thread Group 1-10,text,true,,2059,377,20,20,https://perf-developerstudio.fiserv.com/graphql,276,0,48
+1701466402867,278,getDocTree,200,OK,Thread Group 1-11,text,true,,2059,377,20,20,https://perf-developerstudio.fiserv.com/graphql,278,0,54
+1701466403632,425,getDocTree,200,OK,Thread Group 1-12,text,true,,2059,377,20,20,https://perf-developerstudio.fiserv.com/graphql,425,0,48
+1701466400940,4750,apiListAlpha,200,OK,Thread Group 1-2,text,true,,1687,589,20,20,https://perf-developerstudio.fiserv.com/graphql,4750,0,41
+1701466404393,1607,getDocTree,200,OK,Thread Group 1-13,text,true,,2059,377,20,20,https://perf-developerstudio.fiserv.com/graphql,1607,0,41
+1701466400677,5546,apiListAlpha,200,OK,Thread Group 1-1,text,true,,1687,589,20,20,https://perf-developerstudio.fiserv.com/graphql,5546,0,51
+1701466405158,1074,getDocTree,200,OK,Thread Group 1-14,text,true,,2059,377,20,20,https://perf-developerstudio.fiserv.com/graphql,1074,0,45
+1701466405921,339,getDocTree,200,OK,Thread Group 1-15,text,true,,2059,377,20,20,https://perf-developerstudio.fiserv.com/graphql,339,0,46
+1701466406675,268,getDocTree,200,OK,Thread Group 1-16,text,true,,2059,377,20,20,https://perf-developerstudio.fiserv.com/graphql,268,0,41
+1701466401716,6774,apiListAlpha,200,OK,Thread Group 1-3,text,true,,1687,589,20,20,https://perf-developerstudio.fiserv.com/graphql,6773,0,42
+1701466408180,559,getDocTree,200,OK,Thread Group 1-18,text,true,,2059,377,20,20,https://perf-developerstudio.fiserv.com/graphql,559,0,38
+1701466407426,1313,getDocTree,200,OK,Thread Group 1-17,text,true,,2059,377,20,20,https://perf-developerstudio.fiserv.com/graphql,1313,0,43
+1701466408930,380,getDocTree,200,OK,Thread Group 1-19,text,true,,2059,377,20,20,https://perf-developerstudio.fiserv.com/graphql,380,0,51
+1701466409167,279,getDocTree,200,OK,Thread Group 1-20,text,true,,2059,377,20,20,https://perf-developerstudio.fiserv.com/graphql,279,0,52
+1701466406260,4849,apiListAlpha,200,OK,Thread Group 1-5,text,true,,1687,589,20,20,https://perf-developerstudio.fiserv.com/graphql,4848,0,44
+1701466410944,348,searchDocs,200,OK,Thread Group 1-2,text,true,,10078,1143,20,20,https://perf-developerstudio.fiserv.com/graphql,348,0,61
+1701466403988,7576,apiListAlpha,200,OK,Thread Group 1-4,text,true,,1687,589,20,20,https://perf-developerstudio.fiserv.com/graphql,7576,0,47
+1701466410680,884,searchDocs,Non HTTP response code: org.apache.http.NoHttpResponseException,Non HTTP response message: perf-developerstudio.fiserv.com:443 failed to respond,Thread Group 1-1,text,false,,2088,0,20,20,https://perf-developerstudio.fiserv.com/graphql,0,0,0
+1701466411716,135,searchDocs,200,OK,Thread Group 1-3,text,true,,10078,1143,20,20,https://perf-developerstudio.fiserv.com/graphql,135,0,0
+1701466408526,5793,apiListAlpha,200,OK,Thread Group 1-6,text,true,,1687,589,20,20,https://perf-developerstudio.fiserv.com/graphql,5793,0,35
+1701466410568,6559,apiListAlpha,200,OK,Thread Group 1-8,text,true,,1687,589,20,20,https://perf-developerstudio.fiserv.com/graphql,6559,0,61
+1701466413984,3190,searchDocs,200,OK,Thread Group 1-4,text,true,,10078,1143,20,20,https://perf-developerstudio.fiserv.com/graphql,3190,0,0
+1701466416261,1412,searchDocs,200,OK,Thread Group 1-5,text,true,,10078,1143,20,20,https://perf-developerstudio.fiserv.com/graphql,1412,0,50
+1701466411335,9323,apiListAlpha,200,OK,Thread Group 1-9,text,true,,1687,589,20,20,https://perf-developerstudio.fiserv.com/graphql,9323,0,51
+1701466420675,587,getPopularPages,200,OK,Thread Group 1-1,text,true,,3594,460,20,20,https://perf-developerstudio.fiserv.com/graphql,587,0,62
+1701466420941,538,getPopularPages,200,OK,Thread Group 1-2,text,true,,3594,460,20,20,https://perf-developerstudio.fiserv.com/graphql,538,0,44
+1701466421711,261,getPopularPages,200,OK,Thread Group 1-3,text,true,,3594,460,20,20,https://perf-developerstudio.fiserv.com/graphql,260,0,39
+1701466409802,12261,apiListAlpha,200,OK,Thread Group 1-7,text,true,,1687,589,20,20,https://perf-developerstudio.fiserv.com/graphql,12261,0,37
+1701466413630,10471,apiListAlpha,200,OK,Thread Group 1-12,text,true,,1687,589,20,20,https://perf-developerstudio.fiserv.com/graphql,10471,0,48
+1701466412102,12914,apiListAlpha,200,OK,Thread Group 1-10,text,true,,1687,589,20,20,https://perf-developerstudio.fiserv.com/graphql,12914,0,40
+1701466423986,1371,getPopularPages,200,OK,Thread Group 1-4,text,true,,3594,460,20,20,https://perf-developerstudio.fiserv.com/graphql,1371,0,52
+1701466426258,296,getPopularPages,200,OK,Thread Group 1-5,text,true,,3594,460,20,20,https://perf-developerstudio.fiserv.com/graphql,296,0,44
+1701466425016,2951,searchDocs,200,OK,Thread Group 1-10,text,true,,10078,1143,20,20,https://perf-developerstudio.fiserv.com/graphql,2951,0,0
+1701466412867,17036,apiListAlpha,200,OK,Thread Group 1-11,text,true,,1687,589,20,20,https://perf-developerstudio.fiserv.com/graphql,17036,0,47
+1701466424102,6137,searchDocs,200,OK,Thread Group 1-12,text,true,,10078,1143,20,20,https://perf-developerstudio.fiserv.com/graphql,6137,0,0
+1701466415159,16970,apiListAlpha,200,OK,Thread Group 1-14,text,true,,1687,589,20,20,https://perf-developerstudio.fiserv.com/graphql,16970,0,67
+1701466422063,11908,searchDocs,200,OK,Thread Group 1-7,text,false,Test failed: text expected not to contain /error/,1558,1143,20,20,https://perf-developerstudio.fiserv.com/graphql,11908,0,0
+1701466431716,2260,apiList,200,OK,Thread Group 1-3,text,false,Test failed: text expected not to contain /error/,1545,1110,20,20,https://perf-developerstudio.fiserv.com/graphql,2260,0,57
+1701466418183,15794,apiListAlpha,200,OK,Thread Group 1-18,text,false,Test failed: text expected not to contain /error/,1550,589,20,20,https://perf-developerstudio.fiserv.com/graphql,15794,0,46
+1701466418530,15448,searchDocs,200,OK,Thread Group 1-6,text,false,Test failed: text expected not to contain /error/,1558,1143,20,20,https://perf-developerstudio.fiserv.com/graphql,15448,0,0
+1701466430681,3299,apiList,200,OK,Thread Group 1-1,text,false,Test failed: text expected not to contain /error/,1545,1110,20,20,https://perf-developerstudio.fiserv.com/graphql,3299,0,45
+1701466420569,13413,searchDocs,200,OK,Thread Group 1-8,text,false,Test failed: text expected not to contain /error/,1558,1143,20,20,https://perf-developerstudio.fiserv.com/graphql,13413,0,0
+1701466429905,4079,searchDocs,200,OK,Thread Group 1-11,text,false,Test failed: text expected not to contain /error/,1558,1143,20,20,https://perf-developerstudio.fiserv.com/graphql,4079,0,0
+1701466432129,1855,searchDocs,200,OK,Thread Group 1-14,text,false,Test failed: text expected not to contain /error/,1558,1143,20,20,https://perf-developerstudio.fiserv.com/graphql,1855,0,0
+1701466417430,16559,apiListAlpha,200,OK,Thread Group 1-17,text,false,Test failed: text expected not to contain /error/,1550,589,20,20,https://perf-developerstudio.fiserv.com/graphql,16559,0,40
+1701466421336,12652,searchDocs,200,OK,Thread Group 1-9,text,false,Test failed: text expected not to contain /error/,1558,1143,20,20,https://perf-developerstudio.fiserv.com/graphql,12652,0,0
+1701466418931,15059,apiListAlpha,200,OK,Thread Group 1-19,text,false,Test failed: text expected not to contain /error/,1550,589,20,20,https://perf-developerstudio.fiserv.com/graphql,15059,0,50
+1701466416677,17315,apiListAlpha,200,OK,Thread Group 1-16,text,false,Test failed: text expected not to contain /error/,1550,589,20,20,https://perf-developerstudio.fiserv.com/graphql,17315,0,50
+1701466430943,3049,apiList,200,OK,Thread Group 1-2,text,false,Test failed: text expected not to contain /error/,1545,1110,20,20,https://perf-developerstudio.fiserv.com/graphql,3049,0,59
+1701466415923,18072,apiListAlpha,200,OK,Thread Group 1-15,text,false,Test failed: text expected not to contain /error/,1550,589,20,20,https://perf-developerstudio.fiserv.com/graphql,18072,0,36
+1701466414394,19604,apiListAlpha,200,OK,Thread Group 1-13,text,false,Test failed: text expected not to contain /error/,1550,589,20,20,https://perf-developerstudio.fiserv.com/graphql,19604,0,37
+1701466419168,14831,apiListAlpha,200,OK,Thread Group 1-20,text,false,Test failed: text expected not to contain /error/,1550,589,20,20,https://perf-developerstudio.fiserv.com/graphql,14831,0,45
+1701466433973,76,getPopularPages,200,OK,Thread Group 1-7,text,true,,3594,460,20,20,https://perf-developerstudio.fiserv.com/graphql,76,0,0
+1701466433983,74,getPopularPages,200,OK,Thread Group 1-8,text,true,,3594,460,20,20,https://perf-developerstudio.fiserv.com/graphql,74,0,0
+1701466433979,82,getPopularPages,200,OK,Thread Group 1-6,text,true,,3594,460,20,20,https://perf-developerstudio.fiserv.com/graphql,82,0,0
+1701466433989,85,getPopularPages,200,OK,Thread Group 1-9,text,true,,3594,460,20,20,https://perf-developerstudio.fiserv.com/graphql,85,0,0
+1701466433989,93,searchDocs,200,OK,Thread Group 1-17,text,false,Test failed: text expected not to contain /error/,1558,1143,20,20,https://perf-developerstudio.fiserv.com/graphql,93,0,0
+1701466433977,114,searchDocs,200,OK,Thread Group 1-18,text,false,Test failed: text expected not to contain /error/,1558,1143,20,20,https://perf-developerstudio.fiserv.com/graphql,114,0,0
+1701466433990,111,searchDocs,200,OK,Thread Group 1-19,text,false,Test failed: text expected not to contain /error/,1558,1143,20,20,https://perf-developerstudio.fiserv.com/graphql,111,0,0
+1701466433995,108,searchDocs,200,OK,Thread Group 1-15,text,false,Test failed: text expected not to contain /error/,1558,1143,20,20,https://perf-developerstudio.fiserv.com/graphql,107,0,0
+1701466433993,118,searchDocs,200,OK,Thread Group 1-16,text,false,Test failed: text expected not to contain /error/,1558,1143,20,20,https://perf-developerstudio.fiserv.com/graphql,118,0,0
+1701466433998,114,searchDocs,200,OK,Thread Group 1-13,text,false,Test failed: text expected not to contain /error/,1558,1143,20,20,https://perf-developerstudio.fiserv.com/graphql,114,0,0
+1701466433999,114,searchDocs,200,OK,Thread Group 1-20,text,false,Test failed: text expected not to contain /error/,1558,1143,20,20,https://perf-developerstudio.fiserv.com/graphql,114,0,0
+1701466434104,87,getPopularPages,200,OK,Thread Group 1-12,text,true,,3594,460,20,20,https://perf-developerstudio.fiserv.com/graphql,87,0,0
+1701466433987,308,apiList,200,OK,Thread Group 1-4,text,false,Test failed: text expected not to contain /error/,1545,1110,20,20,https://perf-developerstudio.fiserv.com/graphql,308,0,76
+1701466435021,272,getPopularPages,200,OK,Thread Group 1-10,text,true,,3594,460,20,20,https://perf-developerstudio.fiserv.com/graphql,272,0,44
+1701466436257,319,apiList,200,OK,Thread Group 1-5,text,false,Test failed: text expected not to contain /error/,1545,1110,19,19,https://perf-developerstudio.fiserv.com/graphql,319,0,61
+1701466439909,480,getPopularPages,200,OK,Thread Group 1-11,text,true,,3594,460,18,18,https://perf-developerstudio.fiserv.com/graphql,480,0,255
+1701466440676,15,BeanShell Sampler,200,OK,Thread Group 1-1,text,true,,0,0,17,17,null,0,0,0
+1701466440945,5,BeanShell Sampler,200,OK,Thread Group 1-2,text,true,,0,0,16,16,null,0,0,0
+1701466441716,4,BeanShell Sampler,200,OK,Thread Group 1-3,text,true,,0,0,15,15,null,0,0,0
+1701466442133,284,getPopularPages,200,OK,Thread Group 1-14,text,true,,3594,460,14,14,https://perf-developerstudio.fiserv.com/graphql,284,0,58
+1701466443987,4,BeanShell Sampler,200,OK,Thread Group 1-4,text,true,,0,0,13,13,null,0,0,0
+1701466443979,282,getPopularPages,200,OK,Thread Group 1-18,text,true,,3594,460,12,12,https://perf-developerstudio.fiserv.com/graphql,282,0,44
+1701466444003,263,getPopularPages,200,OK,Thread Group 1-20,text,true,,3594,460,11,11,https://perf-developerstudio.fiserv.com/graphql,263,0,40
+1701466443993,278,getPopularPages,200,OK,Thread Group 1-17,text,true,,3594,460,10,10,https://perf-developerstudio.fiserv.com/graphql,278,0,42
+1701466443996,283,getPopularPages,200,OK,Thread Group 1-19,text,true,,3594,460,9,9,https://perf-developerstudio.fiserv.com/graphql,283,0,59
+1701466443979,302,apiList,200,OK,Thread Group 1-6,text,false,Test failed: text expected not to contain /error/,1545,1110,8,8,https://perf-developerstudio.fiserv.com/graphql,302,0,44
+1701466443973,308,apiList,200,OK,Thread Group 1-7,text,false,Test failed: text expected not to contain /error/,1545,1110,7,7,https://perf-developerstudio.fiserv.com/graphql,308,0,48
+1701466443996,285,getPopularPages,200,OK,Thread Group 1-16,text,true,,3594,460,7,7,https://perf-developerstudio.fiserv.com/graphql,285,0,53
+1701466444001,282,getPopularPages,200,OK,Thread Group 1-15,text,true,,3594,460,5,5,https://perf-developerstudio.fiserv.com/graphql,282,0,51
+1701466443988,309,apiList,200,OK,Thread Group 1-8,text,false,Test failed: text expected not to contain /error/,1545,1110,4,4,https://perf-developerstudio.fiserv.com/graphql,309,0,58
+1701466443993,304,apiList,200,OK,Thread Group 1-9,text,false,Test failed: text expected not to contain /error/,1545,1110,4,4,https://perf-developerstudio.fiserv.com/graphql,304,0,46
+1701466444001,301,getPopularPages,200,OK,Thread Group 1-13,text,true,,3594,460,2,2,https://perf-developerstudio.fiserv.com/graphql,301,0,51
+1701466444107,291,apiList,200,OK,Thread Group 1-12,text,false,Test failed: text expected not to contain /error/,1545,1110,1,1,https://perf-developerstudio.fiserv.com/graphql,291,0,57

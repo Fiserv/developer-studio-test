@@ -1,8 +1,8 @@
 # Preview and Publish using Stoplight
 
-## Documentation Quickstart Guide
+## Quickstart Guide
 
-Want to preview/publish documentation? This quick start guide will provide you with the necessary steps to get you from API Specification to ready-to-preview/publish API Documentation in 5 minutes flat.
+Want to preview/publish documentation? This quick start guide will provide you with the necessary steps to get you from API Specification to ready-to-preview/publish API Documentation in 10 minutes flat.
 
 ## 1. Open Fiserv Portal Stoplight
 
@@ -22,9 +22,9 @@ Click on the Edit button to edit the content for the selected project.
 
 ![Stoplight Edit Page]
 
-## 4. Switch the Git Branches
+## 4. Switch the Github Branches
 
-Switch the Git Branches to preview/publish the project content.
+Switch the Github Branches to preview/publish the project content.
 
 ![Stoplight Switch Git Branch]
 
@@ -36,9 +36,9 @@ Switch the Git Branches to preview/publish the project content.
 
 ![Stoplight Publish Branch]
 
-## 5. Select the file to modify, edit the content & push the changes to Git.
+## 5. Select the file to modify, edit the content & push the changes into GitHub.
 
-Select the file to edit, make changes, preview it & then push the changes to Git.
+Select the file to edit, make changes, preview it & then push the changes into GitHub.
 
 ![Stoplight Content Edit]
 
