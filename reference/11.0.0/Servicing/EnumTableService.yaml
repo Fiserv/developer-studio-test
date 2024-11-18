@@ -1,0 +1,810 @@
+---
+openapi: 3.0.0
+info:
+  title: EnumTableService
+  description: Enumeration Table service supports an inquiry operation that allows to retrieve enumerated values and associated descriptions from fields available to service providers.
+  contact: {}
+  version: 11.0.0
+servers:
+- url: /
+paths:
+  /enumtable/secured:
+    post:
+      tags:
+      - Get Enumeration Table
+      summary: Get Enumeration Table.
+      description: "Retrieves enumeration values and their descriptions associated to a field. <br> For more information about the Operations and Servicing domain <a href=\"../docs/?path=docs/fintechs/servicing.md\" title=\"Click to open\">click here.</a> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n  </ul>"
+      operationId: GetEnumTableSecured
+      parameters:
+      - name: EFXHeader
+        in: header
+        description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open"> click here</a>.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/EFXHeader'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EnumTableInqRqType'
+            examples:
+              Sample Banking by Branch:
+                $ref: '#/components/examples/EnumTableInqRequestByBranch-Premier'
+              Sample Banking by Data Description:
+                $ref: '#/components/examples/EnumTableInqRequestByDataDescription-Premier'
+              Sample Banking by Relationship:
+                $ref: '#/components/examples/EnumTableInqRequestByRelationship-Premier'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EnumTableInqRsType'
+              examples:
+                Sample Banking by Branch:
+                  $ref: '#/components/examples/EnumTableInqResponseByBranch-Premier'
+                Sample Banking by Data Description:
+                  $ref: '#/components/examples/EnumTableInqResponseByDataDescription-Premier'
+                Sample Banking by Relationship:
+                  $ref: '#/components/examples/EnumTableInqResponseByRelationship-Premier'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusType1'
+              examples:
+                "401":
+                  $ref: '#/components/examples/401-Premier'
+        "422":
+          description: Un-processable Entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusType1'
+              examples:
+                "422":
+                  $ref: '#/components/examples/422-Premier'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusType1'
+              examples:
+                "500":
+                  $ref: '#/components/examples/500-Premier'
+        "503":
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusType1'
+              examples:
+                "503":
+                  $ref: '#/components/examples/503-Premier'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EnumTableInqRsType'
+      x-group-name: Enumeration Table Service
+      x-proxy-name: Get Enumeration Table
+      x-child-product-name: Operations and Servicing
+components:
+  schemas:
+    EFXHeader:
+      required:
+      - OrganizationId
+      type: string
+      properties:
+        OrganizationId:
+          type: string
+        TrnId:
+          maxLength: 30
+          type: string
+        VendorId:
+          type: string
+          description: An identifier, supplied by Fiserv, that represents the vendor using  this API service.
+        Context:
+          $ref: '#/components/schemas/Context'
+      example: '{ "TrnId": "f262cfa4-9da4-4a10-b48c-2e947ce3e66c", "OrganizationId": "PRMOrg10", "VendorId": "112233", "Context":{ "Channel": "WEB" } }'
+    Context:
+      type: object
+      properties:
+        ClientAppName:
+          maxLength: 40
+          type: string
+          description: Client Application Name of the application making the service request (e.g. Architect, Commercial Center, etc.).
+        Channel:
+          type: string
+          description: Indicates the channel used by the client application.
+        ClientDateTime:
+          pattern: ^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$
+          type: string
+          description: Client date and time as reported by the client application that is making the service request.
+          format: date-time
+        ClientTerminalSeqNum:
+          maxLength: 36
+          type: string
+          description: Also known as Trace Number or Sequence in some systems. Used to allow the client terminal to set a unique identifier for the transaction. When used by a Network defined transaction the value of this identifier is typically set to narrow character of 12.
+        OriginatorType:
+          type: integer
+          description: The type of organization that the originator represents. This is usually a coded value representing the industry that the organization operates in. It contains the SIC code. For ISO 8583 (DE18) the element is restricted to narrow character of maximum lenght of 4. Originator Type codes that apply to financial institutions are:- • 6010 - Financial institution—bank, savings and loan (S and L), or credit union • 6011 - Financial institution—ATM • 6012 - Financial institution—merchandise sale • 6999 - Financial institution—home banking
+          format: int64
+        TerminalIdent:
+          maxLength: 36
+          type: string
+          description: Unique code identifying a terminal at the card acceptor locatio (such as terminal code or terminal number of ATM). See For ISO 8583 (DE41) the element is restricted to a narrow character with maximum length of 8.
+        TerminalAddr1:
+          maxLength: 64
+          type: string
+        TerminalAddr2:
+          maxLength: 64
+          type: string
+        TerminalAddr3:
+          maxLength: 64
+          type: string
+        TerminalAddr4:
+          maxLength: 64
+          type: string
+        TerminalCity:
+          maxLength: 32
+          type: string
+        TerminalCounty:
+          maxLength: 32
+          type: string
+        TerminalStateProv:
+          maxLength: 32
+          type: string
+          description: State Province. ISO 3166-2:US codes.
+        TerminalPostalCode:
+          maxLength: 11
+          type: string
+          description: Postal Code is ZipCode in the US.
+        TerminalCountryCodeSource:
+          type: string
+          description: Country code source.ISO3166-Numeric, ISO3166-Alpha-3
+          enum:
+          - ISO3166Numeric
+          - ISO3166Alpha3
+        TerminalCountryCodeValue:
+          maxLength: 80
+          type: string
+        PhoneType:
+          type: string
+        PhoneNum:
+          type: string
+        PhoneExchange:
+          type: string
+        TerminalOwnerName:
+          maxLength: 40
+          type: string
+          description: Name of the owner or operator of the terminal.  For ISO 8583 (DE43) the element is restricted to C-15.
+        SystTraceAuditNum:
+          maxLength: 36
+          type: string
+          description: Number assigned by the transaction originator to assist in identifying a transaction uniquely. The trace number remains unchanged for all messages throughout the life of a transaction. This number is not a terminal receipt number. The originating processor increments the trace number by one for each transaction sent to the switch. For ISO 8583 (DE11) the element is restricted to NC-6
+        NetworkIdent:
+          maxLength: 80
+          type: string
+          description: Identifies the interchange network for the transaction. The transaction is applied to the specified network settlement counts and balances. For ISO 8583 (DE62) the element is restricted to NC-6
+        NetworkRefIdent:
+          maxLength: 36
+          type: string
+          description: Document reference supplied by the system retaining the original source document and used to assist in locating that document. The acquirer of a transaction assigns this number. The issuer processor must retain it in the event that a chargeback is submitted for the transaction. For ISO 8583 (DE37) the element is restricted to C-12
+        AcquirerIdent:
+          maxLength: 36
+          type: string
+          description: Identifies the acquirer of the authorization or financial transaction. It is a mandatory element in all authorization and financial messages and does not change throughout the life of a transaction. EPOC considers the acquirer as the terminal owner for reporting purposes. For ISO 8583 (DE32) the element is restricted to C-12
+        AcquirerCountryCodeSource:
+          type: string
+          description: Country code source.ISO3166-Numeric, ISO3166-Alpha-3
+          enum:
+          - US
+          - IND
+        AcquirerCountryCodeValue:
+          type: string
+        MerchNum:
+          maxLength: 23
+          type: string
+          description: Merchant Number. For ISO 8583 (DE42) the element is restricted to C-15
+        SettlementDate:
+          type: string
+          description: This is the date on which the transaction will be settled. Used by ISO 8583 (DE63)
+          format: date
+        SettlementIdent:
+          maxLength: 36
+          type: string
+          description: This is the identification of the settlement account in which the transaction will be settled.
+        BusinessApplIdent:
+          type: string
+          description: This is the identification of the settlement account in which the transaction will be settled.
+        BranchIdent:
+          maxLength: 22
+          type: string
+        TellerIdent:
+          type: string
+        TillIdent:
+          type: string
+        AMPMCode:
+          type: string
+          enum:
+          - AM
+          - PM
+        ReentryType:
+          type: string
+          enum:
+          - Manual
+          - Auto
+    DataApplTypeType:
+      title: DataApplTypeType
+      type: string
+      description: |-
+        Type of data application. <br> Valid values are:
+          - ALL
+          - CDA
+          - CRD
+          - DDA
+          - LOAN
+          - LOC
+          - Party
+          - SDA
+          - SDB
+          - DDL
+      xml:
+        name: DataApplTypeType
+        namespace: http://EFX.integration.fiserv.com/V1_0
+        prefix: default
+        attribute: false
+        wrapped: false
+      enum:
+      - ALL
+      - CDA
+      - CCA
+      - COLL
+      - CRD
+      - DDA
+      - LOAN
+      - LOC
+      - RET
+      - Party
+      - PartyOrg
+      - PartyPer
+      - LEAS
+      - SDA
+      - DDL
+      - IRA
+      - RRA
+      - MLN
+      - CLA
+      - EQU
+      - GLA
+      - ILA
+      - EXT
+      - LIP
+      - CLOC
+      - MLA
+      - PBA
+      - PORT
+      - SDB
+      - MMA
+    EnumTableStatusCodeType:
+      title: EnumTableStatusCodeType
+      type: string
+      description: |-
+        Code to specify the current status of enumeration table. <br> Valid value is:
+          - Valid
+      enum:
+      - Valid
+      - Deleted
+    SeverityType:
+      title: SeverityType
+      type: string
+      description: Severity type of the EFX status code. Refer to the <a href="../docs?path=docs/response-codes.md">Response Codes</a> section for more information.
+      enum:
+      - Error
+      - Warning
+      - Info
+    SubjectElementType:
+      title: SubjectElementType
+      type: object
+      properties:
+        Path:
+          type: string
+          description: Path of the element (in XPath absolute notation format) where the error occurred.  If the error occurred at the top-level element, then name of the element is returned in the response.
+        ServerPath:
+          maxLength: 256
+          type: string
+          description: Server Path is the Service Provider’s identification of the field in their schema, such as an XPath, field ID, or field name that is associated with the ServerStatusCode. If this element is set, it must be returned in the ServerPath element of the OvrdExceptionData aggregate if the exception is being overridden.
+        Value:
+          maxLength: 256
+          type: string
+          description: Human readable information of the EFX data value of the element to be overridden. This value should not be provided for the fields that cannot be represented as a string, for example, binary data.
+      description: Information about the subject element
+    AdditionalStatusType:
+      title: AdditionalStatusType
+      type: object
+      properties:
+        StatusCode:
+          maxLength: 20
+          type: string
+          description: EFX Standard Status code that indicates the result of API response. Refer to the <a href="../docs?path=docs/response-codes.md">Response Codes</a> section to view the list of all possible status codes.
+        StatusDesc:
+          maxLength: 255
+          type: string
+          description: Brief information about the EFX status code. Refer to the <a href="../docs?path=docs/response-codes.md">Response Codes</a> for more information.
+        Severity:
+          $ref: '#/components/schemas/SeverityType'
+        SvcProviderName:
+          maxLength: 1024
+          type: string
+          description: |-
+            Name of a service provider. Possible values are:
+              - Cleartouch
+              - DNA
+              - Precision
+              - Premier
+              - Signature
+        ServerStatusCode:
+          maxLength: 20
+          type: string
+          description: 'Server status code of the service provider''s application.  '
+        ServerStatusDesc:
+          maxLength: 255
+          type: string
+          description: Description of the server status code of the service provider's application.
+        OvrdExceptionInd:
+          type: boolean
+          description: Flag that indicates whether the exception can be overridden by resubmitting the request message.
+        SubjectElement:
+          type: array
+          description: Information about the elements that caused the status.
+          items:
+            $ref: '#/components/schemas/SubjectElementType'
+    BaseKeysType:
+      title: BaseKeysType
+      type: string
+    EnumTableDataType:
+      title: EnumTableDataType
+      required:
+      - EnumValue
+      - EnumValueDesc
+      type: object
+      properties:
+        EnumValue:
+          maxLength: 80
+          type: string
+          description: Values returned in enumeration table
+        EnumValueDesc:
+          maxLength: 255
+          type: string
+          description: Description of enumeration values
+      description: Details of data in enumeration table
+    EnumTableInfoType:
+      title: EnumTableInfoType
+      type: object
+      properties:
+        EnumTableData:
+          type: array
+          description: Enumeration Table Data.
+          items:
+            $ref: '#/components/schemas/EnumTableDataType'
+      description: Information of enumeration table returned in the response
+    RecCtrlInType:
+      title: RecCtrlInType
+      type: object
+      properties:
+        MaxRecLimit:
+          type: integer
+          description: Maximum number of records that can be returned within a single response
+          format: int64
+        Cursor:
+          maxLength: 250
+          type: string
+          description: 'Next record pointer to include in the response if more than 250 posted transaction records exist. <br> <b>Note: </b> For more than 250 posted transactions, ESF returns Cursor value in the RecCtrlOut/Cursor field. To retrieve the next set of posted transactions, this field should be sent in the subsequent request within RecCtrlIn/Cursor field.'
+      description: Maximum number of records that client can specify to process within a single response
+    SvcIdentType:
+      title: SvcIdentType
+      type: object
+      properties:
+        SvcProviderName:
+          maxLength: 1024
+          type: string
+          description: Service Provider Name is a globally unique identifier for a service provider which indicates the location of the Service Provider that gave the error.
+        SvcNbr:
+          maxLength: 36
+          type: string
+          description: Service Number.
+        SvcName:
+          maxLength: 32
+          type: string
+          description: Service Name.
+    EnumTableKeysType:
+      title: EnumTableKeysType
+      description: Unique information to identify the name of enumeration table record
+      allOf:
+      - required:
+        - EnumTableIdent
+        type: object
+        properties:
+          BranchIdent:
+            maxLength: 22
+            type: string
+            description: Unique identification code of branch
+            example: "1234"
+          DataApplType:
+            $ref: '#/components/schemas/DataApplTypeType'
+          EnumTableIdent:
+            maxLength: 50
+            type: string
+            description: Unique identifier of the enumeration table
+    EnumTableSelType:
+      title: EnumTableSelType
+      required:
+      - EnumTableKeys
+      type: object
+      properties:
+        EnumTableKeys:
+          $ref: '#/components/schemas/EnumTableKeysType'
+        EnumFilter:
+          maxLength: 80
+          type: array
+          description: Filter used to sort the values returned in the enumeration table response. <br> For example, if EnumFilter is set to "Countery Code" for StateProv table, then repose includes the the sates of the country code sent in the request.
+          items:
+            maxLength: 80
+            type: string
+      description: Details of selected EnumTable records
+    EnumTableInqRqType:
+      title: EnumTableInqRqType
+      required:
+      - EnumTableSel
+      type: object
+      properties:
+        RecCtrlIn:
+          $ref: '#/components/schemas/RecCtrlInType'
+        EnumTableSel:
+          $ref: '#/components/schemas/EnumTableSelType'
+    StatusType:
+      title: StatusType
+      required:
+      - Severity
+      - StatusCode
+      - StatusDesc
+      - SvcProviderName
+      type: object
+      properties:
+        Id:
+          type: string
+          description: Status identification number.
+        StatusCode:
+          maxLength: 20
+          type: string
+          description: EFX Standard Status code that indicates the result of API response. Refer to the <a href="../docs?path=docs/response-codes.md">Response Codes</a> section to view the list of all possible status codes.
+        StatusDesc:
+          maxLength: 255
+          type: string
+          description: Brief information about the EFX status code. Refer to the <a href="../docs?path=docs/response-codes.md">Response Codes</a> section for more information.
+        Severity:
+          $ref: '#/components/schemas/SeverityType'
+        SvcProviderName:
+          maxLength: 1024
+          type: string
+          description: |-
+            Name of a service provider. Possible values are:
+              -  Cleartouch
+              -  DNA
+              -  Precision
+              -  Premier
+              -  Signature
+        ServerStatusCode:
+          maxLength: 20
+          type: string
+          description: Server status code of the service provider's application.
+        ServerStatusDesc:
+          maxLength: 255
+          type: string
+          description: Description of the server status code of the service provider's application.
+        OvrdExceptionInd:
+          type: boolean
+          description: Flag to indicate whether the exception can be overridden by resubmitting the request message.
+        SubjectRole:
+          type: string
+          description: Authorization level required to override, such as Teller and Supervisor.
+        SubjectElement:
+          type: array
+          description: Information about the elements that caused the status.
+          items:
+            $ref: '#/components/schemas/SubjectElementType'
+        ContentHTML:
+          type: string
+          description: Response status in HTML format. This parameter returns only in some cases.
+        AdditionalStatus:
+          type: array
+          description: Details of the additional status of the response message. This aggrigate can appear once for each additional status that the server is expected to provide.
+          items:
+            $ref: '#/components/schemas/AdditionalStatusType'
+      description: Details of the API response messages.
+    StatusType1:
+      title: Status Type for Error messages
+      required:
+      - Status
+      type: object
+      properties:
+        Status:
+          $ref: '#/components/schemas/StatusType'
+    RecCtrlOutType:
+      title: RecCtrlOutType
+      required:
+      - SentRecCount
+      type: object
+      properties:
+        SentRecCount:
+          type: integer
+          description: Total number of records that matched the selection criteria and returned in the response message
+          format: int64
+        Cursor:
+          maxLength: 250
+          type: string
+          description: 'Next record pointer included in the response if more than 250 posted transaction records exist. <br> <b>Note: </b> For more than 250 posted transactions, ESF returns Cursor value in the RecCtrlOut/Cursor field.'
+      description: Information retrieved for the criteria specified in the RecCtrlIn aggregate of the request message
+    EnumTableStatusType:
+      title: EnumTableStatusType
+      required:
+      - EnumTableStatusCode
+      type: object
+      properties:
+        EnumTableStatusCode:
+          $ref: '#/components/schemas/EnumTableStatusCodeType'
+        EffDt:
+          pattern: ^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$
+          type: string
+          description: 'Effective date and time when the status of enumeration table is changed. <br> <b>Format: </b> yyyy-MM-ddTHH:mm:ss.SSS'
+          example: 2021-01-31T23:59:59.999
+      description: Current status of the enumeration table
+    EnumTableRecType:
+      title: EnumTableRecType
+      required:
+      - EnumTableInfo
+      - EnumTableKeys
+      - EnumTableStatus
+      type: object
+      properties:
+        EnumTableKeys:
+          $ref: '#/components/schemas/EnumTableKeysType'
+        EnumTableInfo:
+          $ref: '#/components/schemas/EnumTableInfoType'
+        EnumTableStatus:
+          $ref: '#/components/schemas/EnumTableStatusType'
+      description: Details of the enumeration table record returned in the response for the specified search criteria
+    EnumTableInqRsType:
+      title: EnumTableInqRsType
+      required:
+      - Status
+      type: object
+      properties:
+        Status:
+          $ref: '#/components/schemas/StatusType'
+        RecCtrlOut:
+          $ref: '#/components/schemas/RecCtrlOutType'
+        EnumTableRec:
+          type: array
+          description: Details of the enumeration table record returned in the response for the specified search criteria
+          items:
+            $ref: '#/components/schemas/EnumTableRecType'
+  examples:
+    "401-Premier":
+      value:
+        Status:
+          StatusCode: "1740"
+          StatusDesc: Authentication Failed
+          Severity: Error
+          SvcProviderName: Premier
+          ServerStatusCode: "401"
+          ServerStatusDesc: Unauthorized
+    "422-Premier":
+      value:
+        Status:
+          StatusCode: "1090"
+          StatusDesc: Invalid Value
+          Severity: Error
+          SvcProviderName: Premier
+          ServerStatusCode: "422"
+          ServerStatusDesc: Unprocessable Entity
+    "500-Premier":
+      value:
+        Status:
+          StatusCode: "100"
+          StatusDesc: General Error
+          Severity: Error
+          SvcProviderName: Premier
+          ServerStatusCode: "500"
+          ServerStatusDesc: Internal Server Error
+    "503-Premier":
+      value:
+        Status:
+          StatusCode: "300"
+          StatusDesc: System Not Available
+          Severity: Error
+          SvcProviderName: Premier
+          ServerStatusCode: "503"
+          ServerStatusDesc: Service Unavailable
+    EnumTableInqRequestByBranch-Premier:
+      value:
+        RecCtrlIn:
+          MaxRecLimit: 5
+          Cursor: "2"
+        EnumTableSel:
+          EnumTableKeys:
+            EnumTableIdent: Branch
+    EnumTableInqResponseByBranch-Premier:
+      value:
+        Status:
+          StatusCode: "0"
+          StatusDesc: Success
+          Severity: Info
+          SvcProviderName: Premier
+        RecCtrlOut:
+          SentRecCount: 4
+        EnumTableRec:
+        - EnumTableKeys:
+            EnumTableIdent: Branch
+          EnumTableInfo:
+            EnumTableData:
+            - EnumValue: "1"
+              EnumValueDesc: OAKDALE ACCOUNTING BRANCH
+            - EnumValue: "2"
+              EnumValueDesc: SOUTHSIDE VALLEY ACCOUNTING
+            - EnumValue: "3"
+              EnumValueDesc: CYPRESS ACCOUNTING BRANCH
+            - EnumValue: "4"
+              EnumValueDesc: MAIN STREET BRANCH
+          EnumTableStatus:
+            EnumTableStatusCode: Valid
+            EffDt: 2021-12-21T16:13:34.064
+    EnumTableInqRequestByDataDescription-Premier:
+      value:
+        EnumTableSel:
+          EnumTableKeys:
+            BranchIdent: "2"
+            DataApplType: SDA
+            EnumTableIdent: RiskRanking
+          EnumFilter:
+          - StateProv
+    EnumTableInqResponseByDataDescription-Premier:
+      value:
+        Status:
+          StatusCode: "0"
+          StatusDesc: Success
+          Severity: Info
+          SvcProviderName: Premier
+        RecCtrlOut:
+          SentRecCount: 4
+        EnumTableRec:
+        - EnumTableKeys:
+            BranchIdent: "00002"
+            DataApplType: SDA
+            EnumTableIdent: RiskRanking
+          EnumTableInfo:
+            EnumTableData:
+            - EnumValue: "0"
+              EnumValueDesc: NONE
+          EnumTableStatus:
+            EnumTableStatusCode: Valid
+            EffDt: 2021-12-21T16:29:24.358
+        - EnumTableKeys:
+            BranchIdent: "00002"
+            DataApplType: SDA
+            EnumTableIdent: RiskRanking
+          EnumTableInfo:
+            EnumTableData:
+            - EnumValue: "1"
+              EnumValueDesc: LOW
+          EnumTableStatus:
+            EnumTableStatusCode: Valid
+            EffDt: 2021-12-21T16:29:24.358
+        - EnumTableKeys:
+            BranchIdent: "00002"
+            DataApplType: SDA
+            EnumTableIdent: RiskRanking
+          EnumTableInfo:
+            EnumTableData:
+            - EnumValue: "2"
+              EnumValueDesc: MEDIUM
+          EnumTableStatus:
+            EnumTableStatusCode: Valid
+            EffDt: 2021-12-21T16:29:24.358
+        - EnumTableKeys:
+            BranchIdent: "00002"
+            DataApplType: SDA
+            EnumTableIdent: RiskRanking
+          EnumTableInfo:
+            EnumTableData:
+            - EnumValue: "3"
+              EnumValueDesc: HIGH
+          EnumTableStatus:
+            EnumTableStatusCode: Valid
+            EffDt: 2021-12-21T16:29:24.358
+    EnumTableInqRequestByRelationship-Premier:
+      value:
+        EnumTableSel:
+          EnumTableKeys:
+            EnumTableIdent: AddrLocation
+    EnumTableInqResponseByRelationship-Premier:
+      value:
+        Status:
+          StatusCode: "0"
+          StatusDesc: Success
+          Severity: Info
+          SvcProviderName: Premier
+        RecCtrlOut:
+          SentRecCount: 7
+        EnumTableRec:
+        - EnumTableKeys:
+            EnumTableIdent: AddrLocation
+          EnumTableInfo:
+            EnumTableData:
+            - EnumValue: "1506"
+              EnumValueDesc: Mailing Address
+          EnumTableStatus:
+            EnumTableStatusCode: Valid
+            EffDt: 2021-12-21T16:51:10.570
+        - EnumTableKeys:
+            EnumTableIdent: AddrLocation
+          EnumTableInfo:
+            EnumTableData:
+            - EnumValue: "1507"
+              EnumValueDesc: Agency Address - Ins Addenda
+          EnumTableStatus:
+            EnumTableStatusCode: Valid
+            EffDt: 2021-12-21T16:51:10.665
+        - EnumTableKeys:
+            EnumTableIdent: AddrLocation
+          EnumTableInfo:
+            EnumTableData:
+            - EnumValue: "1508"
+              EnumValueDesc: Security Broker Address
+          EnumTableStatus:
+            EnumTableStatusCode: Valid
+            EffDt: 2021-12-21T16:51:10.665
+        - EnumTableKeys:
+            EnumTableIdent: AddrLocation
+          EnumTableInfo:
+            EnumTableData:
+            - EnumValue: "1509"
+              EnumValueDesc: Appraiser Address - Appraisal
+          EnumTableStatus:
+            EnumTableStatusCode: Valid
+            EffDt: 2021-12-21T16:51:10.665
+        - EnumTableKeys:
+            EnumTableIdent: AddrLocation
+          EnumTableInfo:
+            EnumTableData:
+            - EnumValue: "1510"
+              EnumValueDesc: Holder Address - Lien
+          EnumTableStatus:
+            EnumTableStatusCode: Valid
+            EffDt: 2021-12-21T16:51:10.665
+        - EnumTableKeys:
+            EnumTableIdent: AddrLocation
+          EnumTableInfo:
+            EnumTableData:
+            - EnumValue: "1511"
+              EnumValueDesc: Company Address
+          EnumTableStatus:
+            EnumTableStatusCode: Valid
+            EffDt: 2021-12-21T16:51:10.665
+        - EnumTableKeys:
+            EnumTableIdent: AddrLocation
+          EnumTableInfo:
+            EnumTableData:
+            - EnumValue: "1512"
+              EnumValueDesc: Beneficiary Address
+          EnumTableStatus:
+            EnumTableStatusCode: Valid
+            EffDt: 2021-12-21T16:51:10.666

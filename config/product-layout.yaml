@@ -28,125 +28,57 @@
 # the delivery of this work
 ################################################################################
 
-productPage:
-  - hero:
-    - image: /assests/image/hero.png #???
-    - descrption: Hero description
-  - journey Cards:
-      - journeyCard:
-        - title: Learn # => learn 
-        - description: 'Use our AI-powered studio to quickly discover the right integration for your next app project.
-        
-        Experiment with our API’s in our intelligent API Explorer. 
-        
-        Browse sample code and follow our guided tutorials to learn best practices for integration.'
-        - link: 
-          - type: markdown
-          - uri: /docs/learn.md
-        - contextualNavigationCards: #cnav card
-          - contextualNavigationCard:
-            - title: Getting Started
-            - description: Get Started with Developer Studio.
-            - link: 
-              - type: markdown
-              - uri: /docs/get-started.md
-          - contextualNavigationCard:
-            - title: Tutorials
-            - description: Learn how to integrate with Developer Studio.
-            - link: 
-              - type: markdown
-              - uri: /docs/tutorials.md
-          - contextualNavigationCard:
-            - title: Video
-            - description: Watch how to create more unified commerce
-            - link: 
-              - type: externalLink # [externalLink | internalLink | markdown]
-              - uri: https://www.youtube.com/watch?v=X8jKx8pPjrU
-      - journeyCard:
-        - title: Build
-        - description: 'Build on top of our sample code to get your app coded in minutes.
-        
-        Our lightweight SDK’s and plug-in’s might be the fastest path to completing your app.'
-        - link: 
-          - type: markdown
-          - uri: /docs/build.md
-        - contextualNavigationCards:
-          - contextualNavigationCard:
-            - title: API Reference
-            - description: Explore all our APIs
-            - link: 
-              - type: internalLink
-              - uri: /docs/apis
-          - contextualNavigationCard:
-            - title: SDKs
-            - description: Use SDKs to accelarate your development
-            - cardType: reference | page
-            - link: 
-              - type: markdown
-              - uri: /docs/sdks.md # => http://dev.fiserv.com/docs/api
-          - contextualNavigationCard:
-            - title: Sample Code
-            - description: Free just like Costco samples & no limit
-            - cardType: reference | page
-            - link: 
-              - type: markdown
-              - uri: /docs/samples.md # => http://dev.fiserv.com/docs/api
-      - journeyCard:
-        - title: Test
-        - description: 'Flex your app end-to-end in our full-featured Sandbox.
-        
-        Incorporate Sandbox testing into your CI pipeline.
-        
-        Use our intelligent Test Tracker to discover parts of your app that need more attention. 
-        
-        *Requires registration'
-        - link: 
-          - type: markdown
-          - uri: /docs/test.md
-        - contextualNavigationCards: #cnav card
-          - contextualNavigationCard:
-            - title: Sandbox
-            - description: Use our sandbox to test your app end-to-end
-            - link: 
-              - type: internalLink
-              - uri: /sandbox
-          - contextualNavigationCard:
-            - title: Score Card
-            - description: See how your app is doing
-            - link: 
-              - type: internalLink
-              - uri: /scorecard
-          - contextualNavigationCard:
-            - title: Unit Testing
-            - description: Test with confidence
-            - link: 
-              - type: internalLink # [externalLink | internalLink | markdown]
-              - uri: /testing
-      - journeyCard:
-        - title: Deploy
-        - description: 'When your app is ready for prime time, submit it for automated certification. 
-        Your certified app is now ready to be deployed to Production. 
-        Congratulations!! 
-        *Requires registration'
-        - link: 
-          - type: markdown
-          - uri: /docs/deploy.md
-        - contextualNavigationCards:
-          - contextualNavigationCard:
-            - title: Certify
-            - description: Get your stamp of approval from us
-            - link: 
-              - type: markdown
-              - uri: /docs/certify.md
-          - contextualNavigationCard:
-            - title: Deploy
-            - description: Ready, set, Deploy!
-            - link: 
-              - type: internalLink
-              - uri: /docs/api # => http://dev.fiserv.com/docs/api
-          - contextualNavigationCard:
-            - title: Operate
-            - description: Setup montioring and alerting
-            - link: 
-              - type: internalLink
-              - uri: /docs/api # => http://dev.fiserv.com/docs/api
+header:
+  productionDescription: Welcome to Developer Studio Test Tenant. Download a copy of <a download href="download/assets/nyan-cat.txt">nyan cat</a> or even <a href="download/assets/images/cat-dog.png" download>a second copy</a>!<br><br><img src="/assets/images/nyan.jpg" width="300" height="300"/><img src="assets/images/cat-dog.png" width="300" height="300"/>
+getStarted: /docs/product-layout-getting-started.md
+benefits:
+  - title: Transform Customer Experience
+    description: Pre-certified integrations to value added solutions and third-party providers that power next-generation commerce experiences.
+  - title: Accelerate Revenue
+    description: Intelligent orchestration layer that reduces code complexity and operational costs.
+  - title: Optimize Commerce
+    description: BackOffice automation with a modern set of tools and APIs.
+guides:
+  - title: Setup a tenant
+    description: Fiserv Products within the Fiserv portfolio that are showcased through the studio are known as tenants. Tenants standup a tenant server that will serve all the content through the studio for developers visiting the Fiserv Developer Studio.
+    link: docs/getting-started/setup-tenant/setup-tenant.md
+  - title: Preview and Publish
+    description: This quick start guide will provide you with the necessary steps to get you from API Specification to ready-to-preview/publish API Documentation in 10 minutes flat.
+    link: docs/getting-started/preview-and-publish-content/preview-and-publish.md
+  - title: Markdown Usage
+    description: Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents.
+    link: docs/resources/markdown-support.md
+featuredFeatures:
+  - title: Documentation 1
+    groupName: Guides
+    featured: true
+    description: Step by step documentation to setup and market your product.
+    relatedDocs:
+      - link: docs/getting-started/setup-tenant/setup-tenant.md
+        title: Tenant setup
+        externalLink: https://gitlab.onefiserv.net/developer-studio/ai-center/ai-gateway-library
+    relatedAPIs:
+      - type: post
+        path: /address
+        title: Add Address
+        externalLink: https://www.fiserv.com/sales
+  - title: Documentation 2
+    groupName: Howto
+    description: Step by step documentation to setup and market your product.
+    relatedDocs:
+      - link: docs/getting-started/setup-tenant/setup-tenant.md
+        title: Tenant setup
+    relatedAPIs:
+      - type: post
+        path: /address
+        title: Add Address
+  - title: Documentation 3
+    groupName: Howto
+    description: Step by step documentation to setup and market your product.
+    relatedDocs:
+      - downloadLink: download/assets/files/DeveloperStudioTest_spec.zip
+        linkTitle: Zip file download test - new
+    relatedAPIs:
+      - type: post
+        path: /address
+        title: Add Address

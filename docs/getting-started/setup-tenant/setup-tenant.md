@@ -1,8 +1,8 @@
 # Setup a tenant
 
-## Documentation Quickstart Guide
+## Quickstart Guide
 
-Products within the Fiserv portfolio that are showcased through the studio are known as `tenants`.  Tenants standup a `tenant server` that will serve all the content through the studio for developers visiting the Fiserv Developer Studio.
+Fiserv Products within the Fiserv portfolio that are showcased through the studio are known as `tenants`. Tenants standup a `tenant server` that will serve all the content through the studio for developers visiting the Fiserv Developer Studio.
 
 ## Cloning the Github tenant repoistory
 

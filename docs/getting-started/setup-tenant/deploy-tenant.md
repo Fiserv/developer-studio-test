@@ -1,17 +1,17 @@
 # Deploy the tenant
 
-## Documentation Quickstart Guide
+## Quickstart Guide
 
-Need to deploy your application ? 
+Need to deploy your tenant application ? 
 
-This quick start guide will provide you the necessary steps to get your Application setup, configure and deploy on Cloud Server really quick.
+Quick start guide will provide you the necessary steps to get your Application setup, configure and deploy on Cloud Server really quick.
 
 > Recommended : To complete following steps before proceeding to deployment process. 
 
     * Tenant Setup
     * Tenant Repository Setup
 
-Now, developer is ready to deploy your tenant application. Developer can delpoy application in any open cloud server. Here we are providing example for new application deployment within IBM cloud with OpenShift Cluster. 
+Developer is now ready to deploy your tenant application. Developer can delpoy application in any open cloud server. Here we are providing example for new application deployment within IBM cloud with OpenShift Cluster. 
 
 ## Deployment checklist
 
@@ -25,7 +25,7 @@ Here are the following steps to integrate your new tenant application within Ope
 
 ## Step 1: Login to IBM OpenShift cluster 
 
-Developer can access [IBM Cloud] to navigate to Home page of OpenShift. 
+Tenant Developer can access [IBM Cloud] to navigate to Home page of OpenShift. 
 
 Select your active cluster. Example: `<new-running-cluster>`
 
@@ -122,7 +122,7 @@ Click **Create** button to generate the application resource.
 
 ## Step 12: Generating Application
 
-Now developer should able to see application icon in your Topology view.
+Now tenant developer should able to see application icon in your Topology view.
 
 ![Generate App]
 
@@ -132,7 +132,7 @@ Please wait until Build and Deployment is completed. Once completed icon should 
 
 ## Step 13: Launching your application
 
-Final step is to launch your application by clicking on Open URL.
+Final step is to launch your application by clicking on Open URL. 
 
 ![Launch App]
  

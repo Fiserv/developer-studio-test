@@ -1,79 +1,79 @@
-################################################################################
-# Copyrights © 2021-2022 Fiserv, Inc. or its affiliates. 
-# Fiserv is a trademark of Fiserv, Inc., 
-# registered or used in the United States and foreign countries, 
-# and may or may not be registered in your country.  
-# All trademarks, service marks, 
-# and trade names referenced in this 
-# material are the property of their 
-# respective owners. This work, including its contents 
-# and programming, is confidential and its use 
-# is strictly limited. This work is furnished only 
-# for use by duly authorized licensees of Fiserv, Inc. 
-# or its affiliates, and their designated agents 
-# or employees responsible for installation or 
-# operation of the products. Any other use, 
-# duplication, or dissemination without the 
-# prior written consent of Fiserv, Inc. 
-# or its affiliates is strictly prohibited. 
-# Except as specified by the agreement under 
-# which the materials are furnished, Fiserv, Inc. 
-# and its affiliates do not accept any liabilities 
-# with respect to the information contained herein 
-# and are not responsible for any direct, indirect, 
-# special, consequential or exemplary damages 
-# resulting from the use of this information. 
-# No warranties, either express or implied, 
-# are granted or extended by this work or 
-# the delivery of this work
-################################################################################
-
 - sections:
     - title: Introduction
-      link:
-      open: true
       sections:
-        - title: Contact Us
+        - title: Contact Studio Support
           link: docs/introduction/contact-us.md
 - sections:
-  - title: Getting Started
-    link: docs/get-started.md
-    open: true
-    sections:
-    - title: Setup a Tenant
-      link: docs/getting-started/setup-tenant/setup-tenant.md
-    - title: Deploy Tenant
-      link: docs/getting-started/setup-tenant/deploy-tenant.md
-    - title: Register Tenant
-      link: docs/getting-started/setup-tenant/register-tenant.md
-    - title: Code a Tenant
-      link: docs/getting-started/code-a-tenant/code-tenant.md
-    - title: Preview & Publish
-      link: docs/getting-started/preview-and-publish-content/preview-and-publish.md
-- sections:
-  - title: Resources
-    link:
-    open: true
-    sections:
-    - title: API Guide
-      link: docs/resources/guides/api-guide.md
-    - title: How it works
-      link: docs/resources/guides/how-it-works.md
-    - title: How to use Stoplight
-      link: docs/resources/guides/how-to-use-stoplight.md
-    - title: How to use Docignore
-      link: docs/resources/guides/how-to-use-docignore.md
-    - title: Tutorials
-      link:
-      open: true
+    - title: Getting Started
+      link: docs/getting-started/new-getting-started.md
       sections:
-      - title: Markdown Guide
-        link: docs/resources/markdown-support.md
-        open: true
-        sections:
-        - title: Card Support
-          link: docs/tutorials/markdown/card.md
-        - title: Tabs Support
-          link: docs/tutorials/markdown/tabs.md
-    - title: FAQ
-      link: docs/faq/faq.md
+        - title: Setup New Tenant
+          link: docs/getting-started/setup-tenant/setup-tenant.md
+        - title: Deploy New Tenant
+          link: docs/getting-started/setup-tenant/deploy-tenant.md
+        - title: Register New Tenant
+          link: docs/getting-started/setup-tenant/register-tenant.md
+        - title: Code New Tenant
+          link: docs/getting-started/code-a-tenant/code-tenant.md
+        - title: Preview & Publish Content
+          link: docs/getting-started/preview-and-publish-content/preview-and-publish.md
+    - title: Getting Started Preview
+      link: docs/get-started.md&branch=preview
+
+- sections:
+    - title: Release Notes
+      sections:
+        - title: RN1
+          link: docs/release-notes/rn1.md
+
+- sections:
+    - title: Nyan dog
+      link: docs/resources/nyan-dog.md
+
+- sections:
+    - title: Gated Content
+      link: docs/Spec_Testing/gatedContent.md
+      # open: true  
+      sections:
+      - title: Gated Content Testing
+        link: docs/Spec_Testing/gatedContent.md 
+      # access: public
+      # groups: []
+
+- sections:
+    - title: NotificationToggleTest
+      sections:
+      - title: NotificationTesting
+        link: docs/NotificationToggleTest/notificationTest.md
+
+- sections:
+    - title: Resources
+      sections:
+        - title: API Guidelines
+          link: docs/resources/guides/api-guide.md
+        - title: How it works
+          link: docs/resources/guides/how-to-use-stoplight.md
+        - title: Learn how to use Prism Stoplight
+          link: docs/resources/guides/how-to-use-stoplight.md
+        - title: Learn how to use DocIgnore
+          link: docs/resources/guides/how-to-use-docignore.md
+        - title: Tutorials
+          link: docs/resources/guides/how-to-use-docignore.md
+          sections:
+            - title: Markdown Support Guide
+              link: docs/resources/markdown-support.md
+              sections:
+                - title: Card Support
+                  link: docs/tutorials/markdown/card.md
+                - title: Tabs Support
+                  link: docs/tutorials/markdown/tabs.md
+        - title: FAQ
+          link: docs/faq/faq.md
+
+        - title: Testing
+          open: true
+          sections: 
+            - title: TestingDocs
+              link: docs/SpecTest/SpecTest.md
+              access: public
+              groups: []
