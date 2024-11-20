@@ -38,4 +38,8 @@ Here's [a copy](download/assets/files/nyan-cat.txt) in case you wanted to have o
 
 [cat_dog_direct](/product/DeveloperStudioTest/docs/?path=docs/resources/cat-dog.md)
 
-[Home](/product/DeveloperStudioTest)
+[Home](/product/CommerceHub)
+
+[other doc](/product/DirectPlatformSpecifications/docs/?path=docs/EMV/EMVImplementationGuide.md)
+
+[Support](/support/docs/?path=docs/FAQ.md)
