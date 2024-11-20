@@ -43,3 +43,5 @@ Here's [a copy](download/assets/files/nyan-cat.txt) in case you wanted to have o
 [other doc](/product/DirectPlatformSpecifications/docs/?path=docs/EMV/EMVImplementationGuide.md)
 
 [Support](/support/docs/?path=docs/FAQ.md)
+
+<a href="/support/docs/?path=docs/FAQ.md" target=_blank>Support redirect</a>
