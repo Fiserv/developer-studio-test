@@ -19,6 +19,8 @@
           link: docs/getting-started/preview-and-publish-content/preview-and-publish.md
     - title: Getting Started Preview
       link: docs/get-started.md&branch=preview
+    - title: Commerce Hub Doc
+      link: /product/CommerceHub/docs/?path=docs/Getting-Started/Getting-Started-General.md
 
 - sections:
     - title: Release Notes
