@@ -31,6 +31,8 @@
 - sections:
     - title: Nyan dog
       link: docs/resources/nyan-dog.md
+    - title: Nyan cat download
+      link: download/assets/files/nyan-cat.txt
 
 - sections:
     - title: Gated Content
