@@ -26,7 +26,7 @@ Here's [a copy](download/assets/files/nyan-cat.txt) in case you wanted to have o
 
 <img src="/assets/images/nyan.jpg" />
 
-![direct image](/assets/images/nyan.jpg)
+![](/assets/images/nyan.jpg)
 
 ##### Nyan Cat Pictures
 
@@ -43,5 +43,7 @@ Here's [a copy](download/assets/files/nyan-cat.txt) in case you wanted to have o
 [other doc](/product/DirectPlatformSpecifications/docs/?path=docs/EMV/EMVImplementationGuide.md)
 
 [Support](/support/docs/?path=docs/FAQ.md)
+
+[markdown new tab](newtab/support/docs/?path=docs/FAQ.md)
 
 <a href="/support/docs/?path=docs/FAQ.md" target="_blank" rel="noopener noreferrer">Support redirect</a>
