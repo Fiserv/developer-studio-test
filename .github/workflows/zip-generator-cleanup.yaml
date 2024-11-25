@@ -1,5 +1,4 @@
 name: Zip Generator Cleanup
-
 on:
   pull_request:
     types: [closed]
