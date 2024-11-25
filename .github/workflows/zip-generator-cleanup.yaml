@@ -1,17 +1,9 @@
-name: Merge and Delete Zip Generator Branch
-
+name: Zip Generator Cleanup
 on:
   pull_request:
     types: [closed]
 
 jobs:
-  delete_branch:
-    runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'update-zip-files')
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Delete branch
-        run: git push origin --delete ${{ github.event.pull_request.head.ref }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.ZIP_GENERATOR_ACTION }}
+  post-merge-actions:
+    uses: Fiserv/remote-actions/.github/workflows/post-merge-actions.yaml@main
+    secrets: inherit
