@@ -12,8 +12,7 @@ servers:
   description: SwaggerHub API Auto Mocking
 - url: https://connect.fiserv.com/v1
   description: v1 endpoint
-- url: https://connect.fiserv.com/v2
-  description: v2 endpoint
+- {url: 'https://connect.fiserv.com/v2', description: 'v2 endpoint'}
 - url: https://{core}.{environment}.efx.banksol.onefiserv.net/cards
   variables:
     core:
