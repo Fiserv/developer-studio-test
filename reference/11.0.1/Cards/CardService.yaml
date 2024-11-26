@@ -106,7 +106,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/CardModRsType'
       x-group-name: CardService1 
-      x-proxy-name: Update Card 
+      x-proxy-name: "Update Card"
       x-child-product-name:
       - ChildProductName1
       - ChildProductName2
