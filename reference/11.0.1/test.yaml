@@ -205,6 +205,7 @@ paths:
     get:
       x-group-name: Petro Transaction Services
       x-proxy-name: Read Petro Transaction
+      x-hidden: true
       tags:
       - petro-transactions
       summary: Read a petro Transaction
