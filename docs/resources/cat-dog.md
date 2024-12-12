@@ -17,11 +17,11 @@ Below is a quick reference of Cat Dog.
     {
       "image": [
         "/assets/images/cat-dog.png",
-        "Woo-SelectEnv.png",
+        "cat-dog.png",
         1600
       ],
       "align": "center",
-      "sizing": "100",
+      "sizing": "300",
       "border": true
     }
   ]
