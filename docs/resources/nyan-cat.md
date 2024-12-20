@@ -2,7 +2,7 @@
 
 ## Important
 ### What is a Nyan Cat?
->Nyan Cat is 2 cats that nyan.
+>Nyan Cat is a cat that nyan.
 
 >It's very cool.
 
