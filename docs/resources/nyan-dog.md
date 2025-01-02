@@ -30,4 +30,21 @@ Here's [a copy](download/assets/files/nyan-cat.txt) in case you wanted to have o
 
 [cat_dog_direct](/product/DeveloperStudioTest/docs/?path=docs/resources/cat-dog.md)
 
+#### Downloadable MP4 Test
+
+##### Test # 1
+[Download Video](../../assets/files/tfds_3479.mp4)
+
+##### Test # 2
+<a href="../../assets/files/tfds_3479.mp4" download>Download Video</a>
+
+#### Test # 3
+[Download Video](../../assets/files/tfds_3479.mp4)
+
+#### Test # 4
+[![Download](../../assets/images/download-icon.png)](../../assets/files/tfds_3479.mp4)
+
+#### Test # 5
+<button onclick="window.location.href='../../assets/files/tfds_3479.mp4';">Download Video</button>
+
 [Home](/product/DeveloperStudioTest)
