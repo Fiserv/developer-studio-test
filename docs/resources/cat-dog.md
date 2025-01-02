@@ -1,4 +1,7 @@
-# Identifying a Cat Dog #
+# Identifying a Cat Dog#
+
+Alteratives to Cat Dog#
+=======================
 
 ### What is a # Cat Dog?
 
