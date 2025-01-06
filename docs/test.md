@@ -13,6 +13,11 @@ The hosted pages show your merchant name at the top and allow you to display a s
 
 ![hostedpage-option1](../api/hosted-image/Developer-Portal-Tenant-API/assets/images/hostedpage-option.jpg)
 
+## Coast Assets
+
+![This is an external link to hostedpage-option link](/assets/images/coast-placeholder.png)
+
+![This is an external link to hostedpage-option link](/assets/images/coast-placeholder-dark.png)
 
 ## Required Fields
 
