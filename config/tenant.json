@@ -2,11 +2,10 @@
   "title": "Developer Studio Test",
   "name": "DeveloperStudioTest",
   "brand": "Fiserv",
-  "brandLogoURL": "/assets/images/Fiserv_Logo.jpg",
+  "brandLogoURL": "assets/images/Fiserv_Logo.jpg",
   "coastURL": "https://fiserv.coastdemo.com/share/66e9b55b18f16b65adf809cd?mode=link&zoom=90&layoutType=web|https://fiserv.coastdemo.com/share/66e9c03018f16b65adfa7b52?mode=link&zoom=90&layoutType=web",
   "solution": [
-    "financial-institutions",
-    "merchants"
+    "fake-solution"
   ],
   "brandDescription": "Fiserv, Inc. is a global provider of payments and financial services technology solutions. The Company provides account processing and digital banking solutions, card issuer processing and network services, payments, e-commerce, merchant acquiring and processing, and the Clover cloud-based point-of-sale solution. The Company operates through three segments: Merchant Acceptance (Acceptance), Financial Technology (Fintech) and Payments and Network (Payments). Test",
   "categories": [
@@ -26,10 +25,17 @@
     {
       "version": "11.0.1",
       "versionType": "major",
-      "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
       "apiSpecFileNames": [
         "Cards/CardService",
         "test"
+      ]
+    },
+    {
+      "version": "12.0.0",
+      "versionType": "major",
+      "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
+      "apiSpecFileNames": [
+        "Cards/CardService"
       ]
     },
     {
@@ -43,8 +49,8 @@
   ],
   "product": {
     "featured": true,
-    "logoURL": "../../../../assets/images/Portal_Logo.png",
-    "description": "Developer Studio is a product of Developer Studio where developers can come to the studio to develop like devs.",
+    "logoURL": "assets/images/Portal_Logo.png",
+    "description": "Developer Studio is a product of Developer Studio where developers can come to the studio to develop like devs. This description is definitely way too long",
     "longDescription": "Welcome to Developer Studio Test Tenant. Download a copy of <a download href='assets/files/DeveloperStudioTest_spec.zip'>nyan cat</a> or even <a href='download/assets/images/cat-dog.png' download>a second copy</a>!<br><br><img src='assets/images/nyan.jpg' width='300' height='300'/><img src='assets/images/cat-dog.png' width='300' height='300'/>",
     "apiSpecification": "/v1/apis/DeveloperStudioTest",
     "layout": "/v1/layouts/DeveloperStudioTest",
