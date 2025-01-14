@@ -30,7 +30,7 @@
 
 - sections:
     - title: Nyan dog
-      link: docs/resources/nyan-dog.md
+      link: docs/resources/fake-document.md
     - title: Nyan cat download
       link: download/assets/files/nyan-cat.txt
 
