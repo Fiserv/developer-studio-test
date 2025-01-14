@@ -108,8 +108,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CardModRsType'
-      x-group-name: CardService1 
-      x-proxy-name: UpdateCard
+      x-group-name: CardService1
       x-child-product-name:
       - ChildProductName1
       - ChildProductName2
@@ -133,7 +132,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CardAddRqType'
+              $ref: '#/components/schemas/FakeSchema'
             examples:
               Sample Banking:
                 $ref: '#/components/examples/PremierCardAddRequestExample'
