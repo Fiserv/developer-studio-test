@@ -44,12 +44,23 @@
 - filePath: "Spec_Testing/Public_Access.zip"
   access: public
 - filePath: "Spec_Testing/Public_Access.ppt"
-  access: public  
-# - filePath: "Spec_Testing/Public_Access.html"
-#   access: public  
-# - filePath: "SpecTest/Test_Equinox_PIMS.csv"
-#   access: private
-#   groups: [UCOMM_MOBILE_GATEWAY]  
+  access: public 
+
+# No name
+- access: private
+  groups: [TEST_GROUP_RG]
+# Space in filename
+- filePath: "Spec_Testing/Public Access.ppt"
+  access: public
+# Unssuported type
+- filePath: "Spec_Testing/Public_Access.html"
+  access: public
+# File not found
+- filePath: "Not_real/file.docx"
+  access: public
+# Missing group
+- filePath: "Spec_Testing/Public Access.ppt"
+  access: private
 
 
 #   groups: [Test_Group_RG]
