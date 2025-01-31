@@ -176,5 +176,3 @@ Need Help ?
 [FAQ]: <?path=docs/faq/faq.md>
 
 [Register Tenant]:<?path=docs/getting-started/setup-tenant/register-tenant.md>
-
-testtest
