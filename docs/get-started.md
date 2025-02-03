@@ -32,6 +32,4 @@ ___
 Need Help ?
 [FAQ](?path=docs/faq/faq.md)
 ___
-
-i'm updating this now
  
