@@ -41,5 +41,8 @@ Here's [a copy](download/assets/files/nyan-cat.txt) in case you wanted to have o
 #### Test # 3
 [Download Video](download/assets/files/tfds_3479.mp4)
 
+#### Test # 4
+[![Download](../../assets/images/Fiserv_Logo.jpg)](download/assets/files/tfds_3479.mp4)
+
 
 [Home](/product/DeveloperStudioTest)
