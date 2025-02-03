@@ -81,6 +81,3 @@ And finally a PNG
 
 now let us do a small gif
 ![api_suite](/assets/images/test_small_gif.gif)
-
-
-oh cat dog
