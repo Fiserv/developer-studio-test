@@ -1,0 +1,430 @@
+################################################################################
+# Copyrights © 2021-2022 Fiserv, Inc. or its affiliates.
+# Fiserv is a trademark of Fiserv, Inc.,
+# registered or used in the United States and foreign countries,
+# and may or may not be registered in your country.
+# All trademarks, service marks,
+# and trade names referenced in this
+# material are the property of their
+# respective owners. This work, including its contents
+# and programming, is confidential and its use
+# is strictly limited. This work is furnished only
+# for use by duly authorized licensees of Fiserv, Inc.
+# or its affiliates, and their designated agents
+# or employees responsible for installation or
+# operation of the products. Any other use,
+# duplication, or dissemination without the
+# prior written consent of Fiserv, Inc.
+# or its affiliates is strictly prohibited.
+# Except as specified by the agreement under
+# which the materials are furnished, Fiserv, Inc.
+# and its affiliates do not accept any liabilities
+# with respect to the information contained herein
+# and are not responsible for any direct, indirect,
+# special, consequential or exemplary damages
+# resulting from the use of this information.
+# No warranties, either express or implied,
+# are granted or extended by this work or
+# the delivery of this work
+################################################################################
+
+#openapi: 3.1.0 TODO: gitlab can read 3.0.x
+openapi: 3.0.3
+info:
+  title: index-data openapi spec
+  description: Fiserv smalll business readonly index data
+  version: "1.0"
+servers:
+  - url: https://az-p-spring-apps-cert-delivery-ic.private.azuremicroservices.io/index-data/
+    description: Sandbox url
+tags:
+  - name: IndexDetail
+  - name: DataDownload
+paths:
+  /api/v1/index-details:
+    post:
+      tags:
+        - IndexDetail
+      summary: Search IndexDetails by criteria
+      x-proxy-name: index-details
+      description: Retrieve a list of IndexDetails based on the provided search criteria.
+      operationId: searchIndexDetail
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchIndexDetailRequest'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IndexDetailDto'
+        400:
+          description: Invalid input, e.g. invalid values for parameters.
+  /api/v1/index-details/adjusted:
+    post:
+      tags:
+        - IndexDetail
+      x-proxy-name: index-details/adjusted
+      summary: Search IndexDetails with adjusted values by criteria
+      description: Retrieve a list of IndexDetails with adjusted values based on the provided search criteria.
+      operationId: searchIndexDetailAdjusted
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchIndexDetailRequest'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IndexDetailDto'
+        400:
+          description: Invalid input, e.g. invalid values for parameters.
+  /api/v1/index-details/top-10:
+    post:
+      tags:
+        - IndexDetail
+      x-proxy-name: index-details/top-10
+      summary: Top 10 IndexDetails
+      description: Retrieve top 10 IndexDetails for last month.
+      operationId: getTop10
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IndexDetailDto'
+  /api/v1/index-history:
+    post:
+      tags:
+        - IndexDetail
+      x-proxy-name: index-history
+      summary: Search history by criteria
+      description: Retrieve a list of naics3 history records that show index values for them for the last 12 months.
+      operationId: searchHistory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchHistoryRequest'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SearchHistoryResponse'
+        400:
+          description: Invalid input, e.g. invalid values for parameters.
+  /api/v1/index-history/adjusted:
+    post:
+      tags:
+        - IndexDetail
+      x-proxy-name: index-history/adjusted
+      summary: Search history with adjusted values by criteria
+      description: Retrieve a list of naics3 history records with adjusted values that show index values for them for the last 12 months.
+      operationId: searchHistoryAdjusted
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchHistoryRequest'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SearchHistoryResponse'
+        400:
+          description: Invalid input, e.g. invalid values for parameters.
+  /api/v1/data-download:
+    post:
+      tags:
+        - DataDownload
+      x-proxy-name: data-download
+      summary: Download data based on filters
+      description: Download a CSV File based on filters provided.
+      operationId: dataDownloadCsv
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataDownloadRequest'
+      responses:
+        200:
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        400:
+          description: Invalid input, e.g. invalid values for parameters.
+components:
+  schemas:
+    DataDownloadRequest:
+      type: object
+      properties:
+        dataSet:
+          type: string
+        selectFields:
+          type: array
+          items:
+            type: string
+            description: Will have columnNames that will be used for select statement.
+        queryFilter:
+          type: object
+          properties:
+            geo:
+              type: array
+              items:
+                type: string
+              description: Optional, geo to be used a filter. If not provided - all known geo codes will be included.
+            msa:
+              type: array
+              items:
+                type: string
+              description: Optional, msa to be used a filter. If not provided - no msa records will be included.
+            naicsCode3s:
+              type: array
+              items:
+                type: string
+              description: Optional, naicsCode3s to be included in the result. If not provided - all known naics3 will be included.
+            naicsCode2s:
+              type: array
+              items:
+                type: string
+              description: Optional, naicsCode2s to be included in the result. If not provided - all known naics2 will be included.
+            startPeriod:
+              type: string
+              format: date
+              description: Optional, start period of the query. If not provided the previous month of the current date will be used!
+            endPeriod:
+              type: string
+              format: date
+              description: Optional, end period of the query. If not provided the previous month of the current date will be used!
+            seasonallyAdjusted:
+              type: boolean
+            nonSeasonallyAdjusted:
+              type: boolean
+        userInfo:
+          type: object
+          description: This user info should be stored in the Database. Should include Timestamp, User Info and  Request Information in
+          properties:
+            name:
+              type: string
+              description: Mandatory Full name of the user
+            email:
+              type: string
+              description: Mandatory email of the user
+            title:
+              type: string
+              description: Mandatory Job Title of the user
+
+    SearchHistoryRequest:
+      type: object
+      properties:
+        geo:
+          type: string
+          description: Optional, geo to be included in the result. If not provided - all known geo codes will be included.
+        naicsCode3s:
+          type: array
+          items:
+            type: string
+          description: Optional, naicsCode3s to be included in the result. If not provided - all known naics3 will be included.
+        period:
+          type: string
+          format: date
+          description: Optional, period of the last of 12 moths. If not provided the previous moth of the current date will be used!
+    MonthIndexValue:
+      type: object
+      properties:
+        salesIndex:
+          type: number
+          format: double
+        countIndex:
+          type: number
+          format: double
+        period:
+          type: string
+          format: date
+    ByNaicsCode3History:
+      type: object
+      properties:
+        naicsCode3:
+          type: string
+        naicsShortDesc3:
+          type: string
+        naicsDesc3:
+          type: string
+        salesMomDiff:
+          type: number
+          format: double
+        salesYoyDiff:
+          type: number
+          format: double
+        countMomDiff:
+          type: number
+          format: double
+        countYoyDiff:
+          type: number
+          format: double
+        volumeRank:
+          type: integer
+        countIndexChange:
+          type: integer
+        salesIndexChange:
+          type: integer
+        monthlyIndexValues:
+          type: array
+          items:
+            $ref: '#/components/schemas/MonthIndexValue'
+    SearchHistoryResponse:
+      type: object
+      properties:
+        geo:
+          type: string
+        byNaicsCode3:
+          type: array
+          items:
+            $ref: '#/components/schemas/ByNaicsCode3History'
+    SearchIndexDetailRequest:
+      type: object
+      required:
+        - startPeriod
+      properties:
+        naicsCode2:
+          type: string
+          maxLength: 50
+        naicsCode3:
+          type: string
+          maxLength: 50
+        geo:
+          type: string
+        fetchMSA:
+          type: boolean
+        startPeriod:
+          type: string
+          format: date
+        endPeriod:
+          type: string
+          format: date
+    IndexDetailDto:
+      type: object
+      properties:
+        geo:
+          type: string
+          maxLength: 2
+        geoName:
+          type: string
+        geoRegion:
+          type: string
+        naicsCode2:
+          type: string
+        naicsShortDesc2:
+          type: string
+        naicsDesc2:
+          type: string
+        naicsCode3:
+          type: string
+        naicsShortDesc3:
+          type: string
+        naicsDesc3:
+          type: string
+        salesIndex:
+          type: number
+          format: double
+        salesMomDiff:
+          type: number
+          format: double
+        salesMomRank:
+          type: integer
+        salesYoyDiff:
+          type: number
+          format: double
+        countIndex:
+          type: number
+          format: double
+        countMomDiff:
+          type: number
+          format: double
+        countYoyDiff:
+          type: number
+          format: double
+        period:
+          type: string
+          format: date
+        volumeRank:
+          type: integer
+        countIndexChange:
+          type: integer
+        salesIndexChange:
+          type: integer
+    LastDateResponse:
+      type: object
+      properties:
+        lastDate:
+          type: string
+    ReportType:
+      type: object
+      properties:
+        code:
+          type: string
+        value:
+          type: string
+        isActive:
+          type: boolean
+    Naics3:
+      type: object
+      properties:
+        naicsCode3:
+          type: string
+        naicsDesc3:
+          type: string
+        naicsShortDesc3:
+          type: string
+    Naics2:
+      type: object
+      properties:
+        naicsCode2:
+          type: string
+        naicsDesc2:
+          type: string
+        naicsShortDesc2:
+          type: string
+    State:
+      type: object
+      properties:
+        state:
+          type: string
+        name:
+          type: string
+        region:
+          type: string
+    Metrics:
+      type: object
+      properties:
+        code:
+          type: string
+        value:
+          type: string

@@ -29,7 +29,8 @@
       "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
       "apiSpecFileNames": [
         "Cards/CardService",
-        "test"
+        "test",
+        "SmallExample"
       ]
     },
     {
