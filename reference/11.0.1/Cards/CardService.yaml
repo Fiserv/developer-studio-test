@@ -58,7 +58,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Ok
+          description: Ok <img src="/assets/images/cat-dog.png" alt="Cat Dog"> See this here! :blush:
           content:
             application/json:
               schema:
@@ -85,7 +85,7 @@ paths:
                 "422":
                   $ref: '#/components/examples/422-Premier'
         "500":
-          description: Internal Server Error
+          description: Internal Server Error 
           content:
             application/json:
               schema:
