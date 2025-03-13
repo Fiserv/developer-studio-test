@@ -715,7 +715,7 @@ components:
     FdCustomerId:
       title: FD Customer ID
       type: string
-      description: FD customer identifier tied to the vaulted accounts.<script>alert(1);console.log('hello');</script>[link](https://nyan.cat) :smile: <img src="/assets/images/cat-dog.png" alt="Cat Dog" style="width:300px;">
+      description: FD customer identifier tied to the vaulted accounts.<script>alert(1);console.log('hello');</script>[link](https://nyan.cat)
       example: cuid-0987613457398475
 
     Fleet:
