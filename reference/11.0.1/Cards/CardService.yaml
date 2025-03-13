@@ -58,7 +58,7 @@ paths:
         required: true
       responses:
         "200":
-          description: Ok
+          description: Ok :smile: <img src="/assets/images/cat-dog.png" alt="Cat Dog" style="width:300px;">
           content:
             application/json:
               schema:
