@@ -1885,7 +1885,7 @@ components:
           $ref: '#/components/schemas/DayOfMonthType'
         Month:
           type: integer
-          description: Month number of the year. Can be any number between 1 to 12.
+          description: Month number of the year. Can be any number between 1 to 12. :blush:
           format: int64
       description: Date and month for the applicable fee.
     DurationType:
