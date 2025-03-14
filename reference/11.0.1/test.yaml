@@ -2739,7 +2739,7 @@ components:
               - description: UNLD1
                 available: true
                 price: 3.99
-                priceTier: credit <script>alert(1);console.log('hello');</script>[link](https://nyan.cat)
+                priceTier: credit
                 gradeId: '1'
             resources:
             - id: 8a7f1f908631ab1801865376acd83699
