@@ -191,7 +191,7 @@ components:
           type: array
           items:
             type: string
-            description: Will have columnNames that will be used for select statement.
+            description: Will have columnNames that will be used for select statement. <pre><code class="language-js">const a = 1;</code></pre>
         queryFilter:
           type: object
           properties:
