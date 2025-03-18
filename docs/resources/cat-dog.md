@@ -9,7 +9,7 @@ Alteratives to Cat Dog#
 
 > It's very weird.
 
-For example, this entire page is anti-Cat Dog!
+For example, this entire page is composed of Cat Dog!
 
 Below is a quick reference of Cat Dog.
 
