@@ -191,7 +191,7 @@ components:
           type: array
           items:
             type: string
-            description: Will have columnNames that will be used for select statement. <pre><code class="language-js">const a = 1;</code></pre>
+            description: Will have columnNames that will be used for select statement.
         queryFilter:
           type: object
           properties:
@@ -246,7 +246,7 @@ components:
       properties:
         geo:
           type: string
-          description: Optional, geo to be included in the result. If not provided - all known geo codes will be included.
+          description: Optional, geo to be included in the result. If not provided - all known geo codes will be included. <pre><code class="language-js">const a = 1;</code></pre>
         naicsCode3s:
           type: array
           items:
