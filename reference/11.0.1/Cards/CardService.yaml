@@ -4787,7 +4787,7 @@ components:
         StatusCode:
           maxLength: 20
           type: string
-          description: EFX Standard Status code for the result of API response. Refer to the <a href="../docs?path=docs/response-codes.md" title="Click to open">Response Codes</a> section to view the list of all possible status codes. :smile:
+          description: EFX Standard Status code for the result of API response. Refer to the <a href="../docs?path=docs/response-codes.md" title="Click to open">Response Codes</a> section to view the list of all possible status codes.
         StatusDesc:
           maxLength: 255
           type: string
