@@ -1,6 +1,7 @@
 # Snippets Test
 
 ## JSON
+first json snippet
 ```json
 {
   "amount": {
@@ -19,6 +20,26 @@
     "eciIndicator": "CHANNEL_ENCRYPTED",
     "posConditionCode": "CARD_NOT_PRESENT_ECOM"
   },
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
+  }
+}
+```
+
+second json snippet
+```json
+{
+  "source": {
+    "sourceType": "PaymentCard",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card
+      "keyId": "88000000022"
+    }   
+  },  
   "merchantDetails": {
     "merchantId": "100008000003683",
     "terminalId": "10000001"
