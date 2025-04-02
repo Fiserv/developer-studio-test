@@ -31,10 +31,6 @@
 const paymentFields = await window.fiserv.components.paymentFields({...});
 const paze = await window.fiserv.components.paze({...});
 const captcha = await window.fiserv.components.captcha({...});
-</code></pre>
-<p>after first code block</p>
-<p>before second code block</p>
-<pre><code class="language-javascript">
 await window.fiserv.init({
   cspNonce: "NONCE",
   additionalFrameAncestors: ["merchant.com"],
