@@ -3,6 +3,72 @@ tags: [tag1, tag2, tag3]
 ---
 # HTML Enrichment Test
 
+## Tabs
+
+<!--
+type: tab
+titles: Request, Response
+-->
+
+The example below contains the minimum parameters for a successful Data Capture API request using a *PaymentCard*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments-vas/v1/card-capture).
+
+<!-- theme: success -->
+> **POST** `/payments-vas/v1/card-capture`
+
+```json
+{
+  "source": {
+    "sourceType": "PaymentCard",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000022"
+    }
+  },
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
+  }
+}
+```
+
+<!--
+type: tab
+-->
+
+Example of a Data Capture API *(200: Success)* response.
+
+<!-- theme: info -->
+> For more information, see the [response handling documentation](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md)
+
+```json
+{
+  "gatewayResponse": {
+    "transactionType": "TOKENIZE",
+    "transactionState": "AUTHORIZED",
+    "transactionProcessingDetails": {
+      "transactionTimestamp": "2024-03-12T18:15:39.710423262Z",
+      "apiTraceId": "755f19915f284309bd28250124620ef5",
+      "clientRequestId": "681a5623eceb7b521e6a3bd520b70915",
+      "transactionId": "755f19915f284309bd28250124620ef5"
+    }
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "last4": "0019",
+      "scheme": "VISA",
+      "expirationMonth": "10",
+      "expirationYear": "2030"
+    }
+  }
+}
+```
+
+<!-- type: tab-end -->
+
 ## JSON
 first json snippet
 ```json
