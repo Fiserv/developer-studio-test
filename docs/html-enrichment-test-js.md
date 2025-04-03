@@ -8,9 +8,9 @@ tags: [tag1, tag2, tag3]
 
 ## Download
 
-## Tabs
 [download spec](download/assets/files/spec.zip)
 
+## Tabs
 <!--
 type: tab
 titles: Request, Response
