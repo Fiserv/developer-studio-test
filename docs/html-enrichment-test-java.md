@@ -3,7 +3,13 @@ tags: [tag1, tag2, tag3]
 ---
 # HTML Enrichment Test
 
+## Image
+<img class="image-center" src="/assets/images/cat-dog.png" >
+
+## Download
+
 ## Tabs
+[download spec](download/assets/files/spec.zip)
 
 <!--
 type: tab
@@ -69,8 +75,8 @@ Example of a Data Capture API *(200: Success)* response.
 
 <!-- type: tab-end -->
 
-## JSON
-first json snippet
+## Code Snippets
+### json snippet
 ```json
 {
   "amount": {
@@ -96,7 +102,7 @@ first json snippet
 }
 ```
 
-second json snippet
+### another json snippet
 ```json
 {
   "source": {
@@ -116,7 +122,7 @@ second json snippet
 }
 ```
 
-## Javascript
+### Javascript
 ```javascript
 const paymentFields = await window.fiserv.components.paymentFields({...});
 const paze = await window.fiserv.components.paze({...});
@@ -134,7 +140,7 @@ await window.fiserv.init({
 });
 ```
 
-## Text
+### Text
 ```text
 Content-Type: application/json
 Client-Request-Id: {REQUEST_UUID}
@@ -144,12 +150,12 @@ Auth-Token-Type: HMAC
 Authorization: {HMAC_MESSAGE_SIGNATURE}
 ```
 
-## html
+### html
 ```html
 <div id="payment-saq-a-ep-form-div"></div>
 ```
 
-## Java
+### Java
 ```java
 private static Mac sha256HMAC = null;
  
