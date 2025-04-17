@@ -8,3 +8,5 @@
 [Tabs](?path=./tabs.md)
 
 [get started](?path=./get-started.md)
+
+[readme](?path=./README.md)
