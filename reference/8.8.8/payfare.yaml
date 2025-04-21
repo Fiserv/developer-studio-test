@@ -291,7 +291,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /users/{payfare_id}:
+  /users/{payfare_update_id}:
     put:
       summary: Update a User
       x-proxy-name: Update a User
