@@ -40,6 +40,14 @@
       "apiSpecFileNames": [
         "Cards/CardService"
       ]
+    },
+    {
+      "version": "8.8.8",
+      "versionType": "minor",
+      "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
+      "apiSpecFileNames": [
+        "payfare/payfare.yaml"
+      ]
     }
   ],
   "product": {
