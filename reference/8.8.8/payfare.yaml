@@ -37,9 +37,9 @@ components:
                 type: string
 paths:
   /users/create-application:
-    x-proxy-name: create-application
     post:
       summary: Create a User
+      x-proxy-name: create-application
       description: Creates a user within the Payfare system.
       security:
         - ApiKeyAuth: []
@@ -197,9 +197,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
   /users/{payfare_id}:
-    x-proxy-name: payfare_id
     get:
       summary: Get a User
+      x-proxy-name: payfare_id
       description: Returns the user’s information.
       security:
         - ApiKeyAuth: []
