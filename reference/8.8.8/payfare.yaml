@@ -291,7 +291,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /users/{payfare_update_id}:
     put:
       summary: Update a User
       x-proxy-name: Update a User
@@ -374,3 +373,4 @@ paths:
                   phone_number:
                     type: string
                     example: +199955512
+
