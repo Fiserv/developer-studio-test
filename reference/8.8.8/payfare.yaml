@@ -1,0 +1,292 @@
+openapi: 3.0.0
+info:
+  title: Payfare B2B API
+  version: 1.0.0
+  description: This is the OpenAPI specification for the Payfare B2B API.
+servers:
+  - url: https://api.payfare.com/v1
+    description: Production server
+  - url: https://uat.api.payfare.com/v1
+    description: UAT server
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-PFClient-Key
+    ApiSecretAuth:
+      type: apiKey
+      in: header
+      name: X-PFClient-Secret
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              code:
+                type: integer
+              msg:
+                type: string
+              field:
+                type: string
+paths:
+  /users/create-application:
+    post:
+      summary: Create a User
+      x-proxy-name: create-application
+      description: Creates a user within the Payfare system.
+      security:
+        - ApiKeyAuth: []
+        - ApiSecretAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  example: Jane
+                middle_name:
+                  type: string
+                last_name:
+                  type: string
+                  example: Person
+                embossed_name:
+                  type: string
+                  example: Jane Person
+                email:
+                  type: string
+                  example: jperson@example.com
+                phone_number:
+                  type: string
+                  example: +19995551234
+                address:
+                  type: object
+                  properties:
+                    address_line1:
+                      type: string
+                      example: 1 Dr. Carlton B. Goodlett Place
+                    address_line2:
+                      type: string
+                      example: suite 100
+                    city:
+                      type: string
+                      example: San Francisco
+                    region:
+                      type: string
+                      example: CA
+                    zip_code:
+                      type: string
+                      example: 94111
+                    country_code:
+                      type: string
+                      example: US
+                shipping_address:
+                  type: object
+                  properties:
+                    address_line1:
+                      type: string
+                      example: 1 Dr. Carlton B. Goodlett Place
+                    address_line2:
+                      type: string
+                      example: suite 100
+                    city:
+                      type: string
+                      example: San Francisco
+                    region:
+                      type: string
+                      example: CA
+                    zip_code:
+                      type: string
+                      example: 94111
+                    country_code:
+                      type: string
+                      example: US
+                date_of_birth:
+                  type: string
+                  example: 1965-03-28
+                external_id:
+                  type: string
+                  example: PartnerID-123456
+                express_consent:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      date:
+                        type: string
+                      accepted:
+                        type: boolean
+                reward_tier:
+                  type: string
+                  example: gold
+                rewards_eligible:
+                  type: boolean
+                ssn:
+                  type: string
+                  example: 123456789
+                tins:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      jurisdiction:
+                        type: string
+                      tin:
+                        type: string
+                      no_tin_reason:
+                        type: string
+                ship_type:
+                  type: string
+                  example: mail
+                device_info:
+                  type: object
+                  properties:
+                    device_model:
+                      type: string
+                    device_os_name:
+                      type: string
+                    device_os_version:
+                      type: string
+                    cpu_abi:
+                      type: string
+                    ip_address:
+                      type: string
+                    public_ip_address:
+                      type: string
+                preferred_language:
+                  type: string
+                  example: en-us
+                metadata:
+                  type: string
+                mock_response:
+                  type: boolean
+                ebvs_id_template:
+                  type: string
+      responses:
+        '200':
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  created_at:
+                    type: string
+                    example: 2018-12-07T21:47:41+00:00
+                  payfare_id:
+                    type: string
+                    example: ce49eba7-b746-4cef-ac3a-79d2d6bff274
+                  wallet_status:
+                    type: string
+                    example: pending
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /users/{payfare_id}:
+    get:
+      summary: Get a User
+      x-proxy-name: payfare_id
+      description: Returns the user’s information.
+      security:
+        - ApiKeyAuth: []
+        - ApiSecretAuth: []
+      parameters:
+        - name: payfare_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User information retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  first_name:
+                    type: string
+                    example: Abli
+                  last_name:
+                    type: string
+                    example: Person
+                  email:
+                    type: string
+                    example: aperson@example.com
+                  phone_number:
+                    type: string
+                    example: +19995551234
+                  address:
+                    type: object
+                    properties:
+                      address_line1:
+                        type: string
+                        example: 1 Dr. Carlton B. Goodlett Place
+                      city:
+                        type: string
+                        example: San Francisco
+                      region:
+                        type: string
+                        example: CA
+                      zip_code:
+                        type: string
+                        example: 94111
+                      country_code:
+                        type: string
+                        example: US
+                  external_id:
+                    type: string
+                    example: PartnerID-123456
+                  created_at:
+                    type: string
+                    example: 1532973790
+                  payfare_id:
+                    type: string
+                    example: ce49eba7-b746-4cef-ac3a-79d2d6bff274
+                  express_consent:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        date:
+                          type: string
+                        accepted:
+                          type: boolean
+                  status:
+                    type: string
+                    example: pending-activation
+                  wallet_status:
+                    type: string
+                    example: active
+                  reward_tier:
+                    type: string
+                    example: green
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
