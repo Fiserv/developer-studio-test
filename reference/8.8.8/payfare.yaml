@@ -371,4 +371,6 @@ paths:
                     type: string
                     example: aperson@example.com
                   phone_number:
+                    type: string
+                    example: +199955512
 
