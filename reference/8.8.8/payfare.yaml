@@ -39,6 +39,7 @@ paths:
   /users/create-application:
     post:
       summary: Create a User
+      x-group-name: Payfare
       x-proxy-name: create-application
       description: Creates a user within the Payfare system.
       security:
@@ -199,6 +200,7 @@ paths:
   /users/{payfare_id}:
     get:
       summary: Get a User
+      x-group-name: Payfare
       x-proxy-name: payfare_id
       description: Returns the user’s information.
       security:
