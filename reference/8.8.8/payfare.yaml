@@ -39,8 +39,8 @@ paths:
   /users/create-application:
     post:
       summary: Create a User
-      x-group-name: Payfare
-      x-proxy-name: create-application
+      x-proxy-name: Create a User
+      x-group-name: Payfare-B2B
       description: Creates a user within the Payfare system.
       security:
         - ApiKeyAuth: []
@@ -200,8 +200,8 @@ paths:
   /users/{payfare_id}:
     get:
       summary: Get a User
-      x-group-name: Payfare
-      x-proxy-name: payfare_id
+      x-proxy-name: Get a User
+      x-group-name: Payfare-B2B
       description: Returns the user’s information.
       security:
         - ApiKeyAuth: []
@@ -291,4 +291,86 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-
+  /users/{payfare_update_id}:
+    put:
+      summary: Update a User
+      x-proxy-name: Update a User
+      x-group-name: Payfare-B2B
+      description: Update a user’s contact information, including phone, address.
+      security:
+        - ApiKeyAuth: []
+        - ApiSecretAuth: []
+      parameters:
+        - name: payfare_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: jperson@example.com
+                phone_number:
+                  type: string
+                  example: +19995551234
+                address:
+                  type: object
+                  properties:
+                    address_line1:
+                      type: string
+                      example: 1 Dr. Carlton B. Goodlett Place
+                    address_line2:
+                      type: string
+                      example: suite 100
+                    city:
+                      type: string
+                      example: San Francisco
+                    region:
+                      type: string
+                      example: CA
+                    zip_code:
+                      type: string
+                      example: 94111
+                    country_code:
+                      type: string
+                      example: US
+                express_consent:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      date:
+                        type: string
+                      accepted:
+                        type: boolean
+                reward_tier:
+                  type: string
+                  example: Bronze
+      responses:
+        '200':
+          description: User updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  first_name:
+                    type: string
+                    example: Abli
+                  last_name:
+                    type: string
+                    example: Person
+                  email:
+                    type: string
+                    example: aperson@example.com
+                  phone_number:
+                    type: string
+                    example: +199955512
