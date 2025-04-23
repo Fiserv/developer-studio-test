@@ -34,7 +34,7 @@
   "paths": {
     "/users/{payfare_id}/bank-accounts": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Get Direct Deposit Information",
         "summary": "Get Direct Deposit Information",
         "description": "Use this endpoint to retrieve the direct deposit information associated with the cardholder.",
@@ -101,7 +101,7 @@
     },
     "/users/{payfare_id}/cards": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Get Cards",
         "summary": "Get Cards",
         "description": "Use this endpoint to retrieve the card information of all the cards associated with the cardholder.",
@@ -288,7 +288,7 @@
     },
     "/users/{payfare_id}/cards/{card_id}/status": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Get Card Status",
         "summary": "Get Card Status",
         "description": "Use this endpoint to retrieve the card status of a particular card associated with the cardholder.",
@@ -444,7 +444,7 @@
     },
     "/users/{payfare_id}/card-shipping-details": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Get Card Shipping Status",
         "summary": "Get Card Shipping Status",
         "description": "Use this endpoint to get the shipment status of the cardholder's new card.",
@@ -537,7 +537,7 @@
     },
     "/users/{payfare_id}/user-session": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Get User Session",
         "summary": "Get User Session",
         "description": "This endpoint returns an x-bishop token that will be used for authentication by the Payfare Wallet SDK.",
@@ -649,7 +649,7 @@
     },
     "/users/{payfare_id}/cards/{card_id}/reissue-card": {
       "post": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Reissue Card",
         "summary": "Reissue Card",
         "description": "Use this BaaS endpoint to reissue a user's card.",
@@ -747,7 +747,7 @@
     },
     "/users/{payfare_id}/primary-card": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Get Primary Card",
         "summary": "Get Primary Card",
         "description": "Use this endpoint to retrieve the user's primary card details.",
@@ -803,7 +803,7 @@
     },
     "/users/{payfare_id}/cards/{card_id}/shipping-address": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Get Shipping Address",
         "summary": "Get Shipping Address",
         "description": "Use this endpoint to get the current shipping address on file for the cardholder.",
@@ -967,7 +967,7 @@
     },
     "/users/{payfare_id}/cards/{card_id}/transactions": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Get Transactions",
         "summary": "Get Transactions",
         "description": "Use this endpoint to retrieve transaction line items associated with the cardholder between specific dates.",
@@ -1191,7 +1191,7 @@
     },
     "/users/{payfare_id}/cards/{card_id}/balance": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Get Card Balance",
         "summary": "Get Card Balance",
         "description": "Use this endpoint to retrieve the user's card balance",
@@ -1257,7 +1257,7 @@
     },
     "/users/{payfare_id}/rewards/balance": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Get Rewards Balance",
         "summary": "Get Rewards Balance",
         "description": "Use this endpoint to retrieve the user's rewards balance.",
@@ -1313,7 +1313,7 @@
     },
     "/users/{payfare_id}/rewards/redeem": {
       "post": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Redeem Rewards",
         "summary": "Redeem Rewards",
         "description": "Use this BaaS endpoint to redeem a cardholder's reward balance.",
@@ -1387,7 +1387,7 @@
     },
     "/users/{payfare_id}/transaction-details/{transaction_id}": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Get Transaction Details",
         "summary": "Get Transaction Details",
         "description": "This endpoint returns more granular details about the transaction line item.",
@@ -1453,7 +1453,7 @@
     },
     "/users/{payfare_id}/rewards/transactions": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Get Reward Transactions",
         "summary": "Get Reward Transactions",
         "description": "Use this endpoint to retrieve reward transaction line items associated with the cardholder between specific dates.",
@@ -1507,7 +1507,7 @@
     },
     "/users/{payfare_id}/account-statements": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Get Account Statements",
         "summary": "Get Account Statements",
         "description": "Use this endpoint to retrieve the direct deposit information associated with the cardholder.",
@@ -1677,7 +1677,7 @@
     },
     "/users/{payfare_id}/direct-deposit-form": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Get Direct Deposit Form",
         "summary": "Get Direct Deposit Form",
         "description": "Use this endpoint to retrieve the direct deposit information associated with the cardholder.",
@@ -1744,7 +1744,7 @@
     },
     "/users/{payfare_id}/cards/{card_id}/account-balances": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Get Account Balances",
         "summary": "Get Account Balances",
         "description": "Use this BaaS endpoint to get all the account balances associated with your account",
@@ -1851,7 +1851,7 @@
     },
     "/users/{payfare_id}/cards/{card_id}/other-accounts/info": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Get Other Accounts Info",
         "summary": "Get Other Accounts Info",
         "description": "Use this BaaS endpoint to details of all your purses.",
@@ -2027,7 +2027,7 @@
     },
     "/users/{payfare_id}/cards/{card_id}/account-transfer": {
       "post": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Transfer Money Between Accounts (Main + Goal)",
         "summary": "Transfer Money Between Accounts (Main + Goal)",
         "description": "Use this BaaS endpoint to transfer the money between main account and goal account.",
@@ -2175,7 +2175,7 @@
     },
     "/users/{payfare_id}/cards/{card_id}/goals/{account_id}/transactions": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Get Goal Transactions",
         "summary": "Get Goal Transactions",
         "description": "Use this BaaS endpoint to get the purse transactions",
@@ -2330,7 +2330,7 @@
     },
     "/users/{payfare_id}/ach-payments/recipients": {
       "post": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Add New ACH Recipient",
         "summary": "Add New ACH Recipient",
         "description": "Use this BaaS endpoint to add new recipient for the ACH transfers",
@@ -2618,7 +2618,7 @@
     },
     "/users/{payfare_id}/ach-payments/recipients/{recipient_id}": {
       "post": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Update ACH Recipient",
         "summary": "Update ACH Recipient",
         "description": "Use this BaaS endpoint to update exisitng recipient for the ACH transfers",
@@ -2927,7 +2927,7 @@
     },
     "/users/{payfare_id}/ach-payments/recipients/{recipient_id}/remove": {
       "post": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Delete Specific ACH Recipient",
         "summary": "Delete Specific ACH Recipient",
         "description": "Use this BaaS endpoint to delete a single recipient for the ACH transfers",
@@ -3005,7 +3005,7 @@
     },
     "/users/{payfare_id}/ach": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Get ACH Transfers",
         "summary": "Get ACH Transfers",
         "description": "Use this BaaS endpoint to all the ACH transfers",
@@ -3169,7 +3169,7 @@
     },
     "/users/{payfare_id}/ach/{ach_id}": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Get Particular ACH Transfer",
         "summary": "Get Particular ACH Transfer",
         "description": "Use this BaaS endpoint to all the ACH transfers",
@@ -3306,7 +3306,7 @@
     },
     "/users/{payfare_id}/ach/transfer-types": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Get ACH Transfer Limits",
         "summary": "Get ACH Transfer Limits",
         "description": "Use this BaaS endpoint to all the ACH transfer types",
@@ -3419,7 +3419,7 @@
     },
     "/users/{payfare_id}/ach-payments/recipients/{recipient_id}/send": {
       "post": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Send Money ACH",
         "summary": "Send Money ACH",
         "description": "Use this BaaS endpoint to send money to other accounts",
@@ -3525,7 +3525,7 @@
     },
     "/users/{payfare_id}/ach-transfers/{ach_id}/cancel": {
       "post": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "Cancel ACH",
         "summary": "Cancel ACH",
         "description": "Use this BaaS endpoint cancel the ACH transfer.",
@@ -3603,7 +3603,7 @@
     },
     "/users/{payfare_id}/atm-locations": {
       "get": {
-        "x-proxy-group": "BaaS",
+        "x-group-name": "BaaS",
         "x-proxy-name": "ATM Finder",
         "summary": "ATM Finder",
         "description": "Use this BaaS endpoint to get the ATM locations near the specified longitude and latitude.",
