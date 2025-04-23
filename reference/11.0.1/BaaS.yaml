@@ -1,0 +1,3729 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "BaaS API",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://sandbox-api.payfare.com/baas"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "sec0": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-PFClient-Key",
+        "x-default": "126eeb7c-d130-45c4-b3db-280f01aebe20"
+      },
+      "sec1": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-PFClient-Secret",
+        "x-default": "225e2b4b-7cb7-4267-a65c-097ea541b21f"
+      }
+    }
+  },
+  "security": [
+    {
+      "sec0": [],
+      "sec1": []
+    }
+  ],
+  "paths": {
+    "/users/{payfare_id}/bank-accounts": {
+      "get": {
+        "summary": "Get Direct Deposit Information",
+        "description": "Use this endpoint to retrieve the direct deposit information associated with the cardholder.",
+        "operationId": "get-direct-deposit-information",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n   \"status\": \"success\",\n   \"data\": {\n       \"bank_account\": {\n           \"dda_number\": \"9898985597508008\",\n           \"routing_number\": \"072401068\"\n       }\n   },\n   \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "bank_account": {
+                          "type": "object",
+                          "properties": {
+                            "dda_number": {
+                              "type": "string",
+                              "example": "9898985597508008"
+                            },
+                            "routing_number": {
+                              "type": "string",
+                              "example": "072401068"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/{payfare_id}/cards": {
+      "get": {
+        "summary": "Get Cards",
+        "description": "Use this endpoint to retrieve the card information of all the cards associated with the cardholder.",
+        "operationId": "get-cards",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n   \"status\": \"success\",\n   \"data\": {\n       \"cards\": [\n           {\n               \"ting\": \"a77cf392-e069-4321-a28b-f90198946c56\",\n               \"proxy\": \"110195056507057\",\n               \"currency_code\": \"USD\",\n               \"active\": 1,\n               \"is_reissuable\": 1,\n               \"card_status\": \"lost\",\n               \"reason\": \"Unlocking card\",\n               \"reason_code\": {\n                   \"code\": 3001,\n                   \"message\": \"BY_USER_CARD_LOST\"\n               },\n               \"expiry_month\": \"11\",\n               \"expiry_year\": \"2028\",\n               \"card_number_masked\": \"601999******8008\",\n               \"activation_date\": \"2023-01-17T05:55:44+00:00\",\n               \"created_at\": \"2023-01-17T05:07:15+00:00\",\n               \"updated_at\": \"2023-01-17T05:55:59+00:00\",\n               \"pending\": 0,\n               \"is_virtual\": false,\n               \"is_expired\": false,\n               \"is_expiring\": false,\n               \"reissue_limit_reached\": false,\n               \"profile_recently_updated\": false\n           },\n           {\n               \"ting\": \"ff928fb9-be01-4046-a1e8-03b783baa919\",\n               \"proxy\": \"110195056508443\",\n               \"currency_code\": \"USD\",\n               \"active\": 1,\n               \"is_reissuable\": 0,\n               \"card_status\": \"in-transit\",\n               \"reason\": null,\n               \"reason_code\": null,\n               \"expiry_month\": \"11\",\n               \"expiry_year\": \"2028\",\n               \"card_number_masked\": \"60*************9310\",\n               \"activation_date\": null,\n               \"created_at\": \"2023-01-17T05:56:48+00:00\",\n               \"updated_at\": \"2023-01-17T05:56:49+00:00\",\n               \"pending\": 1,\n               \"is_virtual\": false,\n               \"is_expired\": false,\n               \"is_expiring\": false,\n               \"reissue_limit_reached\": false,\n               \"profile_recently_updated\": false\n           }\n       ],\n       \"auto_method\": {\n           \"ting\": \"ff928fb9-be01-4046-a1e8-03b783baa919\",\n           \"method_type\": \"card\",\n           \"is_virtual\": false,\n           \"meta\": {\n               \"proxy\": \"110195056508443\"\n           }\n       }\n   },\n   \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "cards": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "ting": {
+                                "type": "string",
+                                "example": "a77cf392-e069-4321-a28b-f90198946c56"
+                              },
+                              "proxy": {
+                                "type": "string",
+                                "example": "110195056507057"
+                              },
+                              "currency_code": {
+                                "type": "string",
+                                "example": "USD"
+                              },
+                              "active": {
+                                "type": "integer",
+                                "example": 1,
+                                "default": 0
+                              },
+                              "is_reissuable": {
+                                "type": "integer",
+                                "example": 1,
+                                "default": 0
+                              },
+                              "card_status": {
+                                "type": "string",
+                                "example": "lost"
+                              },
+                              "reason": {
+                                "type": "string",
+                                "example": "Unlocking card"
+                              },
+                              "reason_code": {
+                                "type": "object",
+                                "properties": {
+                                  "code": {
+                                    "type": "integer",
+                                    "example": 3001,
+                                    "default": 0
+                                  },
+                                  "message": {
+                                    "type": "string",
+                                    "example": "BY_USER_CARD_LOST"
+                                  }
+                                }
+                              },
+                              "expiry_month": {
+                                "type": "string",
+                                "example": "11"
+                              },
+                              "expiry_year": {
+                                "type": "string",
+                                "example": "2028"
+                              },
+                              "card_number_masked": {
+                                "type": "string",
+                                "example": "601999******8008"
+                              },
+                              "activation_date": {
+                                "type": "string",
+                                "example": "2023-01-17T05:55:44+00:00"
+                              },
+                              "created_at": {
+                                "type": "string",
+                                "example": "2023-01-17T05:07:15+00:00"
+                              },
+                              "updated_at": {
+                                "type": "string",
+                                "example": "2023-01-17T05:55:59+00:00"
+                              },
+                              "pending": {
+                                "type": "integer",
+                                "example": 0,
+                                "default": 0
+                              },
+                              "is_virtual": {
+                                "type": "boolean",
+                                "example": false,
+                                "default": true
+                              },
+                              "is_expired": {
+                                "type": "boolean",
+                                "example": false,
+                                "default": true
+                              },
+                              "is_expiring": {
+                                "type": "boolean",
+                                "example": false,
+                                "default": true
+                              },
+                              "reissue_limit_reached": {
+                                "type": "boolean",
+                                "example": false,
+                                "default": true
+                              },
+                              "profile_recently_updated": {
+                                "type": "boolean",
+                                "example": false,
+                                "default": true
+                              }
+                            }
+                          }
+                        },
+                        "auto_method": {
+                          "type": "object",
+                          "properties": {
+                            "ting": {
+                              "type": "string",
+                              "example": "ff928fb9-be01-4046-a1e8-03b783baa919"
+                            },
+                            "method_type": {
+                              "type": "string",
+                              "example": "card"
+                            },
+                            "is_virtual": {
+                              "type": "boolean",
+                              "example": false,
+                              "default": true
+                            },
+                            "meta": {
+                              "type": "object",
+                              "properties": {
+                                "proxy": {
+                                  "type": "string",
+                                  "example": "110195056508443"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/{payfare_id}/cards/{card_id}/status": {
+      "get": {
+        "summary": "Get Card Status",
+        "description": "Use this endpoint to retrieve the card status of a particular card associated with the cardholder.",
+        "operationId": "get-card-status",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "card_id",
+            "in": "path",
+            "description": "The UUID of the Payfare card.",
+            "schema": {
+              "type": "string",
+              "default": "c6fe6212-c9b1-4477-9aac-55560b591083"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n   \"status\": \"success\",\n   \"data\": {\n       \"status_name\": \"closed\"\n   },\n   \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "status_name": {
+                          "type": "string",
+                          "example": "closed"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "summary": "Set Card Status",
+        "description": "Use this BaaS endpoint to lock and unlock the cardholder's card upon their request. This same endpoint is also used to mark a card as lost, stolen and damaged.",
+        "operationId": "set-card-status",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user.",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "card_id",
+            "in": "path",
+            "description": "The UUID of the Payfare card.",
+            "schema": {
+              "type": "string",
+              "default": "c6fe6212-c9b1-4477-9aac-55560b591083"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "description": "The status the cardholder wishes to set the card to.",
+                    "default": "frozen"
+                  },
+                  "report_date": {
+                    "type": "string",
+                    "description": "The date on which the cardholder has requested to make this status change in (YYYY-MM-DD) format.",
+                    "default": "2023-06-30"
+                  }
+                }
+              },
+              "examples": {
+                "Lock Request": {
+                  "value": {
+                    "status": "frozen",
+                    "report_date": "2025-06-30"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": {},\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/{payfare_id}/card-shipping-details": {
+      "get": {
+        "summary": "Get Card Shipping Status",
+        "description": "Use this endpoint to get the shipment status of the cardholder's new card.",
+        "operationId": "get-card-shipping-status-details-for-user",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"first_name\": \"Tony\",\n        \"last_name\": \"Stark\",\n        \"address_line_1\": \"10880 Malibu Point\",\n        \"address_line_2\": null,\n        \"address_line_3\": null,\n        \"address_line_4\": null,\n        \"city\": \"Malibu\",\n        \"region\": \"CA\",\n        \"country_code\": \"US\",\n        \"postal_code\": \"90265\",\n        \"state\": \"pre-shipment\",\n        \"date\": \"2023-02-28T18:26:40+00:00\"\n    },\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "first_name": {
+                          "type": "string",
+                          "example": "Tony"
+                        },
+                        "last_name": {
+                          "type": "string",
+                          "example": "Stark"
+                        },
+                        "address_line_1": {
+                          "type": "string",
+                          "example": "10880 Malibu Point"
+                        },
+                        "address_line_2": {},
+                        "address_line_3": {},
+                        "address_line_4": {},
+                        "city": {
+                          "type": "string",
+                          "example": "Malibu"
+                        },
+                        "region": {
+                          "type": "string",
+                          "example": "CA"
+                        },
+                        "country_code": {
+                          "type": "string",
+                          "example": "US"
+                        },
+                        "postal_code": {
+                          "type": "string",
+                          "example": "90265"
+                        },
+                        "state": {
+                          "type": "string",
+                          "example": "pre-shipment"
+                        },
+                        "date": {
+                          "type": "string",
+                          "example": "2023-02-28T18:26:40+00:00"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/{payfare_id}/user-session": {
+      "get": {
+        "summary": "Get User Session",
+        "description": "This endpoint returns an x-bishop token that will be used for authentication by the Payfare Wallet SDK.",
+        "operationId": "get-user-session",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user.",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"x-bishop\": \"dbf7383a131ae08798796e0daa84f672d6381d74a94a316a93314704d1b5c042\"\n    },\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "x-bishop": {
+                          "type": "string",
+                          "example": "dbf7383a131ae08798796e0daa84f672d6381d74a94a316a93314704d1b5c042"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"error\",\n    \"errors\": [\n        {\n            \"code\": 10050,\n            \"message\": \"User not found\",\n            \"field\": \"\"\n        }\n    ],\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "code": {
+                            "type": "integer",
+                            "example": 10050,
+                            "default": 0
+                          },
+                          "message": {
+                            "type": "string",
+                            "example": "User not found"
+                          },
+                          "field": {
+                            "type": "string",
+                            "example": ""
+                          }
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/{payfare_id}/cards/{card_id}/reissue-card": {
+      "post": {
+        "summary": "Reissue Card",
+        "description": "Use this BaaS endpoint to reissue a user's card.",
+        "operationId": "reissue-card",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user.",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "card_id",
+            "in": "path",
+            "description": "The UUID of the Payfare card.",
+            "schema": {
+              "type": "string",
+              "default": "c6fe6212-c9b1-4477-9aac-55560b591083"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "description": "The selected status of the current card by the cardholder. Values can be lost, stolen or damaged.",
+                    "default": "lost"
+                  },
+                  "report_date": {
+                    "type": "string",
+                    "description": "The date of when the cardholder requested the status update in YYYY-MM-DD format.",
+                    "default": "2023-01-21"
+                  }
+                }
+              },
+              "examples": {
+                "Request Example": {
+                  "value": {
+                    "channel": "partner_name",
+                    "lang_code": "en-us",
+                    "country_code": "us",
+                    "app_type": "iOS",
+                    "app_version": "1.0.0",
+                    "app_name": "Example App",
+                    "status": "lost",
+                    "report_date": "2023-12-21"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": {},\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/{payfare_id}/primary-card": {
+      "get": {
+        "summary": "Get Primary Card",
+        "description": "Use this endpoint to retrieve the user's primary card details.",
+        "operationId": "get-primary-card",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/{payfare_id}/cards/{card_id}/shipping-address": {
+      "get": {
+        "summary": "Get Shipping Address",
+        "description": "Use this endpoint to get the current shipping address on file for the cardholder.",
+        "operationId": "get-shipping-address",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "card_id",
+            "in": "path",
+            "description": "The UUID of the Payfare card.",
+            "schema": {
+              "type": "string",
+              "default": "c6fe6212-c9b1-4477-9aac-55560b591083"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "summary": "Set Shipping Address",
+        "description": "Use this endpoint to update the cardholder's shipping address.",
+        "operationId": "set-shipping-address",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "card_id",
+            "in": "path",
+            "description": "The UUID of the Payfare card.",
+            "schema": {
+              "type": "string",
+              "default": "c6fe6212-c9b1-4477-9aac-55560b591083"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "address_line_1": {
+                    "type": "string",
+                    "description": "The street address. Maximum of 60 characters.",
+                    "default": "123 Fake St"
+                  },
+                  "address_line_2": {
+                    "type": "string",
+                    "description": "The unit, suite or apartment number. Ex: #812 or Unit 812 or Apt. 812. This field can be left null and is optional to send.",
+                    "default": "Unit 812"
+                  },
+                  "city": {
+                    "type": "string",
+                    "description": "The name of the city. Maximum of 60 characters. Ex: Toronto.",
+                    "default": "Syracuse"
+                  },
+                  "region": {
+                    "type": "string",
+                    "description": "The region which is the short code for the state or province. Ex: CA for California.",
+                    "default": "CA"
+                  },
+                  "postal_code": {
+                    "type": "string",
+                    "description": "The zip code or postal code of the shipping address. Ex: 90210",
+                    "default": "13205"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/{payfare_id}/cards/{card_id}/transactions": {
+      "get": {
+        "summary": "Get Transactions",
+        "description": "Use this endpoint to retrieve transaction line items associated with the cardholder between specific dates.",
+        "operationId": "get-transactions",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "card_id",
+            "in": "path",
+            "description": "The UUID of the payfare card",
+            "schema": {
+              "type": "string",
+              "default": "c6fe6212-c9b1-4477-9aac-55560b591083"
+            },
+            "required": true
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Transaction type that you wish to pull. Sending \"all\" returns posted and pending transactions.  Likewise, sending \"posted\" or \"pending\" will return the corresponding transactions of that type.",
+            "schema": {
+              "type": "string",
+              "default": "all"
+            }
+          },
+          {
+            "name": "from_datetime",
+            "in": "query",
+            "description": "The starting UTC datetime in ISO 8601 format from which the transactions will be filtered from.",
+            "schema": {
+              "type": "string",
+              "default": "2023‐05‐01T08:00:00"
+            }
+          },
+          {
+            "name": "to_datetime",
+            "in": "query",
+            "description": "The ending UTC datetime in ISO 8601 format from which the transactions will be filtered from.",
+            "schema": {
+              "type": "string",
+              "default": "2023‐05‐020T23:59:59"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n   \"status\": \"success\",\n   \"data\": {\n       \"cards\": [\n           {\n               \"ting\": \"a77cf392-e069-4321-a28b-f90198946c56\",\n               \"proxy\": \"110195056507057\",\n               \"currency_code\": \"USD\",\n               \"active\": 1,\n               \"is_reissuable\": 1,\n               \"card_status\": \"lost\",\n               \"reason\": \"Unlocking card\",\n               \"reason_code\": {\n                   \"code\": 3001,\n                   \"message\": \"BY_USER_CARD_LOST\"\n               },\n               \"expiry_month\": \"11\",\n               \"expiry_year\": \"2028\",\n               \"card_number_masked\": \"601999******8008\",\n               \"activation_date\": \"2023-01-17T05:55:44+00:00\",\n               \"created_at\": \"2023-01-17T05:07:15+00:00\",\n               \"updated_at\": \"2023-01-17T05:55:59+00:00\",\n               \"pending\": 0,\n               \"is_virtual\": false,\n               \"is_expired\": false,\n               \"is_expiring\": false,\n               \"reissue_limit_reached\": false,\n               \"profile_recently_updated\": false\n           },\n           {\n               \"ting\": \"ff928fb9-be01-4046-a1e8-03b783baa919\",\n               \"proxy\": \"110195056508443\",\n               \"currency_code\": \"USD\",\n               \"active\": 1,\n               \"is_reissuable\": 0,\n               \"card_status\": \"in-transit\",\n               \"reason\": null,\n               \"reason_code\": null,\n               \"expiry_month\": \"11\",\n               \"expiry_year\": \"2028\",\n               \"card_number_masked\": \"60*************9310\",\n               \"activation_date\": null,\n               \"created_at\": \"2023-01-17T05:56:48+00:00\",\n               \"updated_at\": \"2023-01-17T05:56:49+00:00\",\n               \"pending\": 1,\n               \"is_virtual\": false,\n               \"is_expired\": false,\n               \"is_expiring\": false,\n               \"reissue_limit_reached\": false,\n               \"profile_recently_updated\": false\n           }\n       ],\n       \"auto_method\": {\n           \"ting\": \"ff928fb9-be01-4046-a1e8-03b783baa919\",\n           \"method_type\": \"card\",\n           \"is_virtual\": false,\n           \"meta\": {\n               \"proxy\": \"110195056508443\"\n           }\n       }\n   },\n   \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "cards": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "ting": {
+                                "type": "string",
+                                "example": "a77cf392-e069-4321-a28b-f90198946c56"
+                              },
+                              "proxy": {
+                                "type": "string",
+                                "example": "110195056507057"
+                              },
+                              "currency_code": {
+                                "type": "string",
+                                "example": "USD"
+                              },
+                              "active": {
+                                "type": "integer",
+                                "example": 1,
+                                "default": 0
+                              },
+                              "is_reissuable": {
+                                "type": "integer",
+                                "example": 1,
+                                "default": 0
+                              },
+                              "card_status": {
+                                "type": "string",
+                                "example": "lost"
+                              },
+                              "reason": {
+                                "type": "string",
+                                "example": "Unlocking card"
+                              },
+                              "reason_code": {
+                                "type": "object",
+                                "properties": {
+                                  "code": {
+                                    "type": "integer",
+                                    "example": 3001,
+                                    "default": 0
+                                  },
+                                  "message": {
+                                    "type": "string",
+                                    "example": "BY_USER_CARD_LOST"
+                                  }
+                                }
+                              },
+                              "expiry_month": {
+                                "type": "string",
+                                "example": "11"
+                              },
+                              "expiry_year": {
+                                "type": "string",
+                                "example": "2028"
+                              },
+                              "card_number_masked": {
+                                "type": "string",
+                                "example": "601999******8008"
+                              },
+                              "activation_date": {
+                                "type": "string",
+                                "example": "2023-01-17T05:55:44+00:00"
+                              },
+                              "created_at": {
+                                "type": "string",
+                                "example": "2023-01-17T05:07:15+00:00"
+                              },
+                              "updated_at": {
+                                "type": "string",
+                                "example": "2023-01-17T05:55:59+00:00"
+                              },
+                              "pending": {
+                                "type": "integer",
+                                "example": 0,
+                                "default": 0
+                              },
+                              "is_virtual": {
+                                "type": "boolean",
+                                "example": false,
+                                "default": true
+                              },
+                              "is_expired": {
+                                "type": "boolean",
+                                "example": false,
+                                "default": true
+                              },
+                              "is_expiring": {
+                                "type": "boolean",
+                                "example": false,
+                                "default": true
+                              },
+                              "reissue_limit_reached": {
+                                "type": "boolean",
+                                "example": false,
+                                "default": true
+                              },
+                              "profile_recently_updated": {
+                                "type": "boolean",
+                                "example": false,
+                                "default": true
+                              }
+                            }
+                          }
+                        },
+                        "auto_method": {
+                          "type": "object",
+                          "properties": {
+                            "ting": {
+                              "type": "string",
+                              "example": "ff928fb9-be01-4046-a1e8-03b783baa919"
+                            },
+                            "method_type": {
+                              "type": "string",
+                              "example": "card"
+                            },
+                            "is_virtual": {
+                              "type": "boolean",
+                              "example": false,
+                              "default": true
+                            },
+                            "meta": {
+                              "type": "object",
+                              "properties": {
+                                "proxy": {
+                                  "type": "string",
+                                  "example": "110195056508443"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/{payfare_id}/cards/{card_id}/balance": {
+      "get": {
+        "summary": "Get Card Balance",
+        "description": "Use this endpoint to retrieve the user's card balance",
+        "operationId": "get-card-balance",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "card_id",
+            "in": "path",
+            "description": "The UUID of the Payfare card.",
+            "schema": {
+              "type": "string",
+              "default": "c6fe6212-c9b1-4477-9aac-55560b591083"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/{payfare_id}/rewards/balance": {
+      "get": {
+        "summary": "Get Rewards Balance",
+        "description": "Use this endpoint to retrieve the user's rewards balance.",
+        "operationId": "get-card-balance-copy",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/{payfare_id}/rewards/redeem": {
+      "post": {
+        "summary": "Redeem Rewards",
+        "description": "Use this BaaS endpoint to redeem a cardholder's reward balance.",
+        "operationId": "redeem-rewards",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user.",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": {},\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {},
+              "examples": {
+                "Request Example": {
+                  "value": {
+                    "channel": "partner_name",
+                    "lang_code": "en-us",
+                    "country_code": "us",
+                    "app_type": "iOS",
+                    "app_version": "1.0.0",
+                    "app_name": "Example App",
+                    "status": "lost",
+                    "report_date": "2023-12-21"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{payfare_id}/transaction-details/{transaction_id}": {
+      "get": {
+        "summary": "Get Transaction Details",
+        "description": "This endpoint returns more granular details about the transaction line item.",
+        "operationId": "get-transaction-details",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "transaction_id",
+            "in": "path",
+            "description": "The unique id of the transaction. For reward redemptions, the value would be \"redemption\"",
+            "schema": {
+              "type": "string",
+              "default": "F32836565"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/{payfare_id}/rewards/transactions": {
+      "get": {
+        "summary": "Get Reward Transactions",
+        "description": "Use this endpoint to retrieve reward transaction line items associated with the cardholder between specific dates.",
+        "operationId": "get-reward-transactions",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "from_datetime",
+            "in": "query",
+            "description": "The starting UTC datetime in ISO 8601 format from which the transactions will be filtered from.",
+            "schema": {
+              "type": "string",
+              "default": "2023‐05‐01T08:00:00"
+            }
+          },
+          {
+            "name": "to_datetime",
+            "in": "query",
+            "description": "The ending UTC datetime in ISO 8601 format from which the transactions will be filtered from.",
+            "schema": {
+              "type": "string",
+              "default": "2023‐05‐020T23:59:59"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"transactions\": [\n            {\n                \"reward_id\": \"a04634f9-f074-4770-9420-26d78d2ffb50\",\n                \"transaction_id\": \"2165792000\",\n                \"rewards_earned\": 20.0,\n                \"purchase_amount\": 1000.0,\n                \"cash_withdrawal\": null,\n                \"transaction_total\": 1000.0,\n                \"partner_source\": \"doordash\",\n                \"reward_percentage\": 2.0,\n                \"reward_tier\": null,\n                \"mcc\": \"5542\",\n                \"category\": \"Gas\",\n                \"transaction_date\": \"2023-08-08T18:41:02+00:00\",\n                \"posted_date\": \"2023-08-09T11:34:53+00:00\",\n                \"merchant_name\": \"SUNOCO 0960228500\",\n            }\n        ]\n    },\n    \"message\": \"\"\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/{payfare_id}/account-statements": {
+      "get": {
+        "summary": "Get Account Statements",
+        "description": "Use this endpoint to retrieve the direct deposit information associated with the cardholder.",
+        "operationId": "get-account-statements",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"statements\": [\n            {\n                \"url\": \"https://payfare-unicron-dev.s3.amazonaws.com/partner/account-statements/us/961a6913-bc0e-49c4-abd7-3473c92adea0/partner_110195631015095_07012023_07312023.pdf?AWSAccessKeyId=AKIA4Q3UOHCP4FKOFWGA&Signature=jOGNqDsdTluQIuSO8e7I%2B3HxJ%2Fo%3D&Expires=1692005279\",\n                \"last4\": \"4689\",\n                \"start_date\": \"2023-07-01T00:00:00\",\n                \"end_date\": \"2023-07-31T00:00:00\"\n            }\n        ]\n    },\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "statements": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "url": {
+                                "type": "string",
+                                "example": "https://payfare-unicron-dev.s3.amazonaws.com/partner/account-statements/us/961a6913-bc0e-49c4-abd7-3473c92adea0/partner_110195631015095_07012023_07312023.pdf?AWSAccessKeyId=AKIA4Q3UOHCP4FKOFWGA&Signature=jOGNqDsdTluQIuSO8e7I%2B3HxJ%2Fo%3D&Expires=1692005279"
+                              },
+                              "last4": {
+                                "type": "string",
+                                "example": "4689"
+                              },
+                              "start_date": {
+                                "type": "string",
+                                "example": "2023-07-01T00:00:00"
+                              },
+                              "end_date": {
+                                "type": "string",
+                                "example": "2023-07-31T00:00:00"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"error\",\n    \"errors\": [\n        {\n            \"code\": 10050,\n            \"message\": \"User not found\",\n            \"field\": \"\"\n        }\n    ],\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "code": {
+                            "type": "integer",
+                            "example": 10050,
+                            "default": 0
+                          },
+                          "message": {
+                            "type": "string",
+                            "example": "User not found"
+                          },
+                          "field": {
+                            "type": "string",
+                            "example": ""
+                          }
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "403",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"error\",\n    \"errors\": [\n        {\n            \"code\": 11403,\n            \"message\": \"Access Forbidden\",\n            \"field\": \"\"\n        }\n    ],\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "code": {
+                            "type": "integer",
+                            "example": 11403,
+                            "default": 0
+                          },
+                          "message": {
+                            "type": "string",
+                            "example": "Access Forbidden"
+                          },
+                          "field": {
+                            "type": "string",
+                            "example": ""
+                          }
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/{payfare_id}/direct-deposit-form": {
+      "get": {
+        "summary": "Get Direct Deposit Form",
+        "description": "Use this endpoint to retrieve the direct deposit information associated with the cardholder.",
+        "operationId": "get-direct-deposit-form",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n   \"status\": \"success\",\n   \"data\": {\n       \"bank_account\": {\n           \"dda_number\": \"9898985597508008\",\n           \"routing_number\": \"072401068\"\n       }\n   },\n   \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "bank_account": {
+                          "type": "object",
+                          "properties": {
+                            "dda_number": {
+                              "type": "string",
+                              "example": "9898985597508008"
+                            },
+                            "routing_number": {
+                              "type": "string",
+                              "example": "072401068"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/{payfare_id}/cards/{card_id}/account-balances": {
+      "get": {
+        "summary": "Get Account Balances",
+        "description": "Use this BaaS endpoint to get all the account balances associated with your account",
+        "operationId": "get-account-balances",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user.",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "card_id",
+            "in": "path",
+            "description": "The UUID of the Payfare card.",
+            "schema": {
+              "type": "string",
+              "default": "c6fe6212-c9b1-4477-9aac-55560b591083"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"balances\": {\n            \"card\": 87.0,\n            \"card_v2\": {\n                \"balance\": 87.0,\n                \"balance_on\": \"2023-10-27T06:25:32+00:00\"\n            },\n            \"savings\": 100.0,\n            \"savings_v2\": {\n                \"balance\": 100.0,\n                \"balance_on\": \"2023-10-27T06:25:32+00:00\"\n            }\n        }\n    },\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "balances": {
+                          "type": "object",
+                          "properties": {
+                            "card": {
+                              "type": "integer",
+                              "example": 87,
+                              "default": 0
+                            },
+                            "card_v2": {
+                              "type": "object",
+                              "properties": {
+                                "balance": {
+                                  "type": "integer",
+                                  "example": 87,
+                                  "default": 0
+                                },
+                                "balance_on": {
+                                  "type": "string",
+                                  "example": "2023-10-27T06:25:32+00:00"
+                                }
+                              }
+                            },
+                            "savings": {
+                              "type": "integer",
+                              "example": 100,
+                              "default": 0
+                            },
+                            "savings_v2": {
+                              "type": "object",
+                              "properties": {
+                                "balance": {
+                                  "type": "integer",
+                                  "example": 100,
+                                  "default": 0
+                                },
+                                "balance_on": {
+                                  "type": "string",
+                                  "example": "2023-10-27T06:25:32+00:00"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/{payfare_id}/cards/{card_id}/other-accounts/info": {
+      "get": {
+        "summary": "Get Other Accounts Info",
+        "description": "Use this BaaS endpoint to details of all your purses.",
+        "operationId": "get-other-accounts",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user.",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "card_id",
+            "in": "path",
+            "description": "The UUID of the Payfare card.",
+            "schema": {
+              "type": "string",
+              "default": "c6fe6212-c9b1-4477-9aac-55560b591083"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"purses\": [\n            {\n                \"ting\": \"6a307e27-b277-4360-ad0b-8c28fde5b617\",\n                \"reference_id\": \"110195633986486\",\n                \"proxy\": \"110195633986308\",\n                \"card_ting\": \"708e8ae5-3fb6-4a0a-954a-11f29d8f87ba\",\n                \"balance\": 200.0,\n                \"balance_on\": \"2023-10-27T06:28:54+00:00\",\n                \"last_notification_event_id\": null,\n                \"program_id\": \"PURSE_USD\",\n                \"program_abbreviation\": \"Purse Program G\",\n                \"short_code\": \"SAVAC0\",\n                \"currency_code\": \"USD\",\n                \"status\": \"active\",\n                \"status_code\": \"B\",\n                \"account_number_masked\": \"60*************0894\",\n                \"expiry_date\": \"2029-08-31\",\n                \"name\": \"\",\n                \"description\": \"\",\n                \"primary\": 1,\n                \"is_goal\": 1,\n                \"created_at\": \"2023-10-27T06:14:34+00:00\",\n                \"updated_at\": \"2023-10-27T06:28:54+00:00\",\n                \"transaction_count\": 2\n            }\n        ]\n    },\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "purses": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "ting": {
+                                "type": "string",
+                                "example": "6a307e27-b277-4360-ad0b-8c28fde5b617"
+                              },
+                              "reference_id": {
+                                "type": "string",
+                                "example": "110195633986486"
+                              },
+                              "proxy": {
+                                "type": "string",
+                                "example": "110195633986308"
+                              },
+                              "card_ting": {
+                                "type": "string",
+                                "example": "708e8ae5-3fb6-4a0a-954a-11f29d8f87ba"
+                              },
+                              "balance": {
+                                "type": "integer",
+                                "example": 200,
+                                "default": 0
+                              },
+                              "balance_on": {
+                                "type": "string",
+                                "example": "2023-10-27T06:28:54+00:00"
+                              },
+                              "last_notification_event_id": {},
+                              "program_id": {
+                                "type": "string",
+                                "example": "PURSE_USD"
+                              },
+                              "program_abbreviation": {
+                                "type": "string",
+                                "example": "Purse Program G"
+                              },
+                              "short_code": {
+                                "type": "string",
+                                "example": "SAVAC0"
+                              },
+                              "currency_code": {
+                                "type": "string",
+                                "example": "USD"
+                              },
+                              "status": {
+                                "type": "string",
+                                "example": "active"
+                              },
+                              "status_code": {
+                                "type": "string",
+                                "example": "B"
+                              },
+                              "account_number_masked": {
+                                "type": "string",
+                                "example": "60*************0894"
+                              },
+                              "expiry_date": {
+                                "type": "string",
+                                "example": "2029-08-31"
+                              },
+                              "name": {
+                                "type": "string",
+                                "example": ""
+                              },
+                              "description": {
+                                "type": "string",
+                                "example": ""
+                              },
+                              "primary": {
+                                "type": "integer",
+                                "example": 1,
+                                "default": 0
+                              },
+                              "is_goal": {
+                                "type": "integer",
+                                "example": 1,
+                                "default": 0
+                              },
+                              "created_at": {
+                                "type": "string",
+                                "example": "2023-10-27T06:14:34+00:00"
+                              },
+                              "updated_at": {
+                                "type": "string",
+                                "example": "2023-10-27T06:28:54+00:00"
+                              },
+                              "transaction_count": {
+                                "type": "integer",
+                                "example": 2,
+                                "default": 0
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {},
+              "examples": {
+                "Lock Request": {
+                  "value": {
+                    "status": "frozen",
+                    "report_date": "2025-06-30"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{payfare_id}/cards/{card_id}/account-transfer": {
+      "post": {
+        "summary": "Transfer Money Between Accounts (Main + Goal)",
+        "description": "Use this BaaS endpoint to transfer the money between main account and goal account.",
+        "operationId": "transfer-money-between-main-goal",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user.",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "card_id",
+            "in": "path",
+            "description": "The UUID of the Payfare card.",
+            "schema": {
+              "type": "string",
+              "default": "c6fe6212-c9b1-4477-9aac-55560b591083"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to_account": {
+                    "type": "string",
+                    "description": "To Transfer money from card to purse",
+                    "default": "6a307e27-b277-4360-ad0b-8c28fde5b617"
+                  },
+                  "from_account": {
+                    "type": "string",
+                    "description": "To transfer money from purse to card",
+                    "default": "6a307e27-b277-4360-ad0b-8c28fde5b617"
+                  },
+                  "amount": {
+                    "type": "number",
+                    "description": "The amount to be transferred.",
+                    "default": 100,
+                    "format": "float"
+                  }
+                }
+              },
+              "examples": {
+                "Lock Request": {
+                  "value": {
+                    "status": "frozen",
+                    "report_date": "2025-06-30"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"result\": {\n            \"ting\": \"7c75b9fd-a735-49fa-b932-c74ef8047c5d\",\n            \"confirmation\": \"F2165979989\",\n            \"description\": \"Transfer from Account to Goal\",\n            \"amount\": 10.0,\n            \"tranasaction_date\": \"2023-10-30T16:09:44+00:00\",\n            \"from_account_type\": \"ACCOUNT\",\n            \"from_account_balance\": 500.0,\n            \"to_account_type\": \"GOAL\",\n            \"to_account_balance\": 10.0,\n            \"running_balance\": 0.0\n        }\n    },\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "result": {
+                          "type": "object",
+                          "properties": {
+                            "ting": {
+                              "type": "string",
+                              "example": "7c75b9fd-a735-49fa-b932-c74ef8047c5d"
+                            },
+                            "confirmation": {
+                              "type": "string",
+                              "example": "F2165979989"
+                            },
+                            "description": {
+                              "type": "string",
+                              "example": "Transfer from Account to Goal"
+                            },
+                            "amount": {
+                              "type": "integer",
+                              "example": 10,
+                              "default": 0
+                            },
+                            "tranasaction_date": {
+                              "type": "string",
+                              "example": "2023-10-30T16:09:44+00:00"
+                            },
+                            "from_account_type": {
+                              "type": "string",
+                              "example": "ACCOUNT"
+                            },
+                            "from_account_balance": {
+                              "type": "integer",
+                              "example": 500,
+                              "default": 0
+                            },
+                            "to_account_type": {
+                              "type": "string",
+                              "example": "GOAL"
+                            },
+                            "to_account_balance": {
+                              "type": "integer",
+                              "example": 10,
+                              "default": 0
+                            },
+                            "running_balance": {
+                              "type": "integer",
+                              "example": 0,
+                              "default": 0
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/{payfare_id}/cards/{card_id}/goals/{account_id}/transactions": {
+      "get": {
+        "summary": "Get Goal Transactions",
+        "description": "Use this BaaS endpoint to get the purse transactions",
+        "operationId": "get-purse-transactions",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user.",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "card_id",
+            "in": "path",
+            "description": "The UUID of the Payfare card.",
+            "schema": {
+              "type": "string",
+              "default": "c6fe6212-c9b1-4477-9aac-55560b591083"
+            },
+            "required": true
+          },
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "The UUID of the Payfare other account",
+            "schema": {
+              "type": "string",
+              "default": "6a307e27-b277-4360-ad0b-8c28fde5b617"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "from_datetime": {
+                    "type": "string",
+                    "description": "The starting UTC datetime in ISO 8601 format from which the purse transactions will be filtered from.",
+                    "default": "2023‐05‐01T08:00:00"
+                  },
+                  "to_datetime": {
+                    "type": "string",
+                    "description": "The ending UTC datetime in ISO 8601 format from which the purse transactions will be filtered from.",
+                    "default": "2023‐05‐020T23:59:59"
+                  }
+                }
+              },
+              "examples": {
+                "Lock Request": {
+                  "value": {
+                    "status": "frozen",
+                    "report_date": "2025-06-30"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"transactions\": [\n            {\n                \"ting\": \"d0-a254-28f243f27684\",\n                \"confirmation\": \"F2165979990\",\n                \"description\": \"Transfer from Account to Goal\",\n                \"amount\": 10.0,\n                \"transaction_date\": \"2023-10-30T09:09:45-07:00\",\n                \"from_account_type\": \"ACCOUNT\",\n                \"from_account_balance\": 0.0,\n                \"to_account_type\": \"GOAL\",\n                \"to_account_balance\": 0.0,\n                \"running_balance\": 10.0\n            }\n        ]\n    },\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "transactions": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "ting": {
+                                "type": "string",
+                                "example": "d0-a254-28f243f27684"
+                              },
+                              "confirmation": {
+                                "type": "string",
+                                "example": "F2165979990"
+                              },
+                              "description": {
+                                "type": "string",
+                                "example": "Transfer from Account to Goal"
+                              },
+                              "amount": {
+                                "type": "integer",
+                                "example": 10,
+                                "default": 0
+                              },
+                              "transaction_date": {
+                                "type": "string",
+                                "example": "2023-10-30T09:09:45-07:00"
+                              },
+                              "from_account_type": {
+                                "type": "string",
+                                "example": "ACCOUNT"
+                              },
+                              "from_account_balance": {
+                                "type": "integer",
+                                "example": 0,
+                                "default": 0
+                              },
+                              "to_account_type": {
+                                "type": "string",
+                                "example": "GOAL"
+                              },
+                              "to_account_balance": {
+                                "type": "integer",
+                                "example": 0,
+                                "default": 0
+                              },
+                              "running_balance": {
+                                "type": "integer",
+                                "example": 10,
+                                "default": 0
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/{payfare_id}/ach-payments/recipients": {
+      "post": {
+        "summary": "Add New ACH Recipient",
+        "description": "Use this BaaS endpoint to add new recipient for the ACH transfers",
+        "operationId": "add-new-ach-recipient",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user.",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "first_name",
+                  "last_name",
+                  "phone_number",
+                  "bank_account"
+                ],
+                "properties": {
+                  "first_name": {
+                    "type": "string",
+                    "description": "The first name of the recipient",
+                    "default": "John"
+                  },
+                  "last_name": {
+                    "type": "string",
+                    "description": "The last name of the recipient",
+                    "default": "Smith"
+                  },
+                  "phone_number": {
+                    "type": "string",
+                    "description": "The recipient's phone number",
+                    "default": "2345678701"
+                  },
+                  "bank_account": {
+                    "type": "object",
+                    "properties": {
+                      "account_number": {
+                        "type": "string",
+                        "description": "The account number of recipient",
+                        "default": "1000003"
+                      },
+                      "account_type": {
+                        "type": "string",
+                        "description": "The account type of recipient",
+                        "default": "Checking"
+                      },
+                      "bank_name": {
+                        "type": "string",
+                        "description": "Bank name of recipient",
+                        "default": "Bank of US"
+                      },
+                      "routing_number": {
+                        "type": "string",
+                        "description": "The routing number of recipients account",
+                        "default": "011001234"
+                      }
+                    }
+                  },
+                  "own_account": {
+                    "type": "boolean",
+                    "description": "To indicate whether this is the own_account of the user",
+                    "default": false
+                  }
+                }
+              },
+              "examples": {
+                "Lock Request": {
+                  "value": {
+                    "status": "frozen",
+                    "report_date": "2025-06-30"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"recipient\": {\n            \"id\": \"bd992a59-cd4f-4baa-8462-a4e7e1db786c\",\n            \"first_name\": \"John\",\n            \"last_name\": \"Smith\",\n            \"nickname\": null,\n            \"phone_number\": \"2345678701\",\n            \"bank_account\": {\n                \"bank_name\": \"Bank of US\",\n                \"account_number\": \"1000004\",\n                \"routing_number\": \"011001234\",\n                \"account_type\": \"Checking\",\n                \"bank_number\": null,\n                \"transit\": null\n            },\n            \"own_account\": false\n        }\n    },\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "recipient": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "example": "bd992a59-cd4f-4baa-8462-a4e7e1db786c"
+                            },
+                            "first_name": {
+                              "type": "string",
+                              "example": "John"
+                            },
+                            "last_name": {
+                              "type": "string",
+                              "example": "Smith"
+                            },
+                            "nickname": {},
+                            "phone_number": {
+                              "type": "string",
+                              "example": "2345678701"
+                            },
+                            "bank_account": {
+                              "type": "object",
+                              "properties": {
+                                "bank_name": {
+                                  "type": "string",
+                                  "example": "Bank of US"
+                                },
+                                "account_number": {
+                                  "type": "string",
+                                  "example": "1000004"
+                                },
+                                "routing_number": {
+                                  "type": "string",
+                                  "example": "011001234"
+                                },
+                                "account_type": {
+                                  "type": "string",
+                                  "example": "Checking"
+                                },
+                                "bank_number": {},
+                                "transit": {}
+                              }
+                            },
+                            "own_account": {
+                              "type": "boolean",
+                              "example": false,
+                              "default": true
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "summary": "Get ACH Recipients",
+        "description": "Use this BaaS endpoint to get all of cardholder's recipients",
+        "operationId": "get-ach-recipients",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user.",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"recipients\": [\n            {\n                \"first_name\": \"Tyler\",\n                \"last_name\": \"Hansen\",\n                \"nickname\": \"Landlord\",\n                \"phone_number\": \"415-000-0000\",\n                \"bank_account\": {\n                    \"account_number\": \"123456789\",\n                    \"account_type\": \"savings\",\n                    \"bank_name\": \"Bank of America\",\n                    \"routing_number\": \"34567890\"\n                },\n                \"id\": \"17a25a69-77ee-4937-889b-f44ab4a07733\"\n            },\n            {\n                \"first_name\": \"John\",\n                \"last_name\": \"Smith\",\n                \"nickname\": \"Housekeeper\",\n                \"phone_number\": \"415-122-0000\",\n                \"bank_account\": {\n                    \"account_number\": \"987654321\",\n                    \"account_type\": \"checking\",\n                    \"bank_name\": \"Bank of America\",\n                    \"routing_number\": \"09876543\"\n                },\n                \"id\": \"609b81df-5814-4739-be20-b036594c16ce\"\n            }\n        ]\n    },\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "recipients": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "first_name": {
+                                "type": "string",
+                                "example": "Tyler"
+                              },
+                              "last_name": {
+                                "type": "string",
+                                "example": "Hansen"
+                              },
+                              "nickname": {
+                                "type": "string",
+                                "example": "Landlord"
+                              },
+                              "phone_number": {
+                                "type": "string",
+                                "example": "415-000-0000"
+                              },
+                              "bank_account": {
+                                "type": "object",
+                                "properties": {
+                                  "account_number": {
+                                    "type": "string",
+                                    "example": "123456789"
+                                  },
+                                  "account_type": {
+                                    "type": "string",
+                                    "example": "savings"
+                                  },
+                                  "bank_name": {
+                                    "type": "string",
+                                    "example": "Bank of America"
+                                  },
+                                  "routing_number": {
+                                    "type": "string",
+                                    "example": "34567890"
+                                  }
+                                }
+                              },
+                              "id": {
+                                "type": "string",
+                                "example": "17a25a69-77ee-4937-889b-f44ab4a07733"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {},
+              "examples": {
+                "Lock Request": {
+                  "value": {
+                    "status": "frozen",
+                    "report_date": "2025-06-30"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{payfare_id}/ach-payments/recipients/{recipient_id}": {
+      "post": {
+        "summary": "Update ACH Recipient",
+        "description": "Use this BaaS endpoint to update exisitng recipient for the ACH transfers",
+        "operationId": "update-ach-recipient",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user.",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "recipient_id",
+            "in": "path",
+            "description": "The UUID of the recipient",
+            "schema": {
+              "type": "string",
+              "default": "8ab683c8-ff22-45bc-9f7b-362e19a5ef91"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "first_name",
+                  "last_name",
+                  "phone_number",
+                  "bank_account"
+                ],
+                "properties": {
+                  "first_name": {
+                    "type": "string",
+                    "description": "The first name of the recipient",
+                    "default": "John"
+                  },
+                  "last_name": {
+                    "type": "string",
+                    "description": "The last name of the recipient",
+                    "default": "Smith"
+                  },
+                  "phone_number": {
+                    "type": "string",
+                    "description": "The recipient's phone number",
+                    "default": "2345678701"
+                  },
+                  "bank_account": {
+                    "type": "object",
+                    "properties": {
+                      "account_number": {
+                        "type": "string",
+                        "description": "The account number of recipient",
+                        "default": "1000003"
+                      },
+                      "account_type": {
+                        "type": "string",
+                        "description": "The account type of recipient",
+                        "default": "Checking"
+                      },
+                      "bank_name": {
+                        "type": "string",
+                        "description": "Bank name of recipient",
+                        "default": "Bank of US"
+                      },
+                      "routing_number": {
+                        "type": "string",
+                        "description": "The routing number of recipients account",
+                        "default": "011001234"
+                      }
+                    }
+                  },
+                  "nickname": {
+                    "type": "string",
+                    "description": "Nickname of the recipient",
+                    "default": "Jake"
+                  }
+                }
+              },
+              "examples": {
+                "Lock Request": {
+                  "value": {
+                    "status": "frozen",
+                    "report_date": "2025-06-30"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"recipient\": {\n            \"id\": \"bd992a59-cd4f-4baa-8462-a4e7e1db786c\",\n            \"first_name\": \"John\",\n            \"last_name\": \"Smith\",\n            \"nickname\": null,\n            \"phone_number\": \"2345678701\",\n            \"bank_account\": {\n                \"bank_name\": \"Bank of US\",\n                \"account_number\": \"1000004\",\n                \"routing_number\": \"011001234\",\n                \"account_type\": \"Checking\",\n                \"bank_number\": null,\n                \"transit\": null\n            },\n            \"own_account\": false\n        }\n    },\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "recipient": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "example": "bd992a59-cd4f-4baa-8462-a4e7e1db786c"
+                            },
+                            "first_name": {
+                              "type": "string",
+                              "example": "John"
+                            },
+                            "last_name": {
+                              "type": "string",
+                              "example": "Smith"
+                            },
+                            "nickname": {},
+                            "phone_number": {
+                              "type": "string",
+                              "example": "2345678701"
+                            },
+                            "bank_account": {
+                              "type": "object",
+                              "properties": {
+                                "bank_name": {
+                                  "type": "string",
+                                  "example": "Bank of US"
+                                },
+                                "account_number": {
+                                  "type": "string",
+                                  "example": "1000004"
+                                },
+                                "routing_number": {
+                                  "type": "string",
+                                  "example": "011001234"
+                                },
+                                "account_type": {
+                                  "type": "string",
+                                  "example": "Checking"
+                                },
+                                "bank_number": {},
+                                "transit": {}
+                              }
+                            },
+                            "own_account": {
+                              "type": "boolean",
+                              "example": false,
+                              "default": true
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "summary": "Get Specific ACH Recipient Details",
+        "description": "Use this BaaS endpoint to get a single recipient for the ACH transfers",
+        "operationId": "get-ach-recipient",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user.",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "recipient_id",
+            "in": "path",
+            "description": "The UUID of payfare recipient",
+            "schema": {
+              "type": "string",
+              "default": "a4cf0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"recipient\": {\n            \"id\": \"980768ce-c691-4d08-80f2-a757598510ef\",\n            \"first_name\": \"John\",\n            \"last_name\": \"Smith\",\n            \"nickname\": null,\n            \"phone_number\": \"2345678701\",\n            \"bank_account\": {\n                \"bank_name\": \"Bank of US\",\n                \"account_number\": \"1000001\",\n                \"routing_number\": \"011001234\",\n                \"account_type\": \"Checking\",\n                \"bank_number\": null,\n                \"transit\": null\n            },\n            \"own_account\": false\n        }\n    },\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "recipient": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "example": "980768ce-c691-4d08-80f2-a757598510ef"
+                            },
+                            "first_name": {
+                              "type": "string",
+                              "example": "John"
+                            },
+                            "last_name": {
+                              "type": "string",
+                              "example": "Smith"
+                            },
+                            "nickname": {},
+                            "phone_number": {
+                              "type": "string",
+                              "example": "2345678701"
+                            },
+                            "bank_account": {
+                              "type": "object",
+                              "properties": {
+                                "bank_name": {
+                                  "type": "string",
+                                  "example": "Bank of US"
+                                },
+                                "account_number": {
+                                  "type": "string",
+                                  "example": "1000001"
+                                },
+                                "routing_number": {
+                                  "type": "string",
+                                  "example": "011001234"
+                                },
+                                "account_type": {
+                                  "type": "string",
+                                  "example": "Checking"
+                                },
+                                "bank_number": {},
+                                "transit": {}
+                              }
+                            },
+                            "own_account": {
+                              "type": "boolean",
+                              "example": false,
+                              "default": true
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {},
+              "examples": {
+                "Lock Request": {
+                  "value": {
+                    "status": "frozen",
+                    "report_date": "2025-06-30"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{payfare_id}/ach-payments/recipients/{recipient_id}/remove": {
+      "post": {
+        "summary": "Delete Specific ACH Recipient",
+        "description": "Use this BaaS endpoint to delete a single recipient for the ACH transfers",
+        "operationId": "delete-ach-recipient",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user.",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "recipient_id",
+            "in": "path",
+            "description": "The UUID of payfare recipient",
+            "schema": {
+              "type": "string",
+              "default": "a4cf0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": {},\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {},
+              "examples": {
+                "Lock Request": {
+                  "value": {
+                    "status": "frozen",
+                    "report_date": "2025-06-30"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{payfare_id}/ach": {
+      "get": {
+        "summary": "Get ACH Transfers",
+        "description": "Use this BaaS endpoint to all the ACH transfers",
+        "operationId": "get-ach-transfers",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user.",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "from_datetime",
+            "in": "query",
+            "description": "The starting UTC datetime in ISO 8601 format from which the purse transactions will be filtered from.",
+            "schema": {
+              "type": "string",
+              "default": "2024-04-08T08:05:58"
+            }
+          },
+          {
+            "name": "to_datetime",
+            "in": "query",
+            "description": "The starting UTC datetime in ISO 8601 format from which the purse transactions will be filtered to.",
+            "schema": {
+              "type": "string",
+              "default": "2024-04-20T08:05:58"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"transfer_id\": \"adeaf959-5243-488e-86d1-bb33896c0c2a\",\n            \"details_id\": \"dd6199af-d926-4806-974f-8421d3fdcc72\",\n            \"confirmation_code\": \"96C0C2A\",\n            \"user_ting\": \"ce206bd6-ddd0-4bfe-bba4-5dee5226db01\",\n            \"transfer_amount\": 10.0,\n            \"transfer_fee\": 0.0,\n            \"transfer_currency\": \"USD\",\n            \"status\": \"withdrawal-success\",\n            \"transfer_type\": \"next-day\",\n            \"transfer_date\": 2023307,\n            \"created_at\": \"2023-11-02T07:30:16+00:00\",\n            \"recipient_name\": \"Babu Jala\",\n            \"account_number\": \"****000\",\n            \"bank_number\": null,\n            \"transit\": null,\n            \"routing_number\": \"011001234\",\n            \"updated_at\": \"2023-11-02T07:30:16+00:00\",\n            \"data\": null,\n            \"provider\": \"corecard\",\n            \"recipient_id\": \"8ab683c8-ff22-45bc-9f7b-362e19a5ef91\"\n        }\n    ],\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "transfer_id": {
+                            "type": "string",
+                            "example": "adeaf959-5243-488e-86d1-bb33896c0c2a"
+                          },
+                          "details_id": {
+                            "type": "string",
+                            "example": "dd6199af-d926-4806-974f-8421d3fdcc72"
+                          },
+                          "confirmation_code": {
+                            "type": "string",
+                            "example": "96C0C2A"
+                          },
+                          "user_ting": {
+                            "type": "string",
+                            "example": "ce206bd6-ddd0-4bfe-bba4-5dee5226db01"
+                          },
+                          "transfer_amount": {
+                            "type": "integer",
+                            "example": 10,
+                            "default": 0
+                          },
+                          "transfer_fee": {
+                            "type": "integer",
+                            "example": 0,
+                            "default": 0
+                          },
+                          "transfer_currency": {
+                            "type": "string",
+                            "example": "USD"
+                          },
+                          "status": {
+                            "type": "string",
+                            "example": "withdrawal-success"
+                          },
+                          "transfer_type": {
+                            "type": "string",
+                            "example": "next-day"
+                          },
+                          "transfer_date": {
+                            "type": "integer",
+                            "example": 2023307,
+                            "default": 0
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "example": "2023-11-02T07:30:16+00:00"
+                          },
+                          "recipient_name": {
+                            "type": "string",
+                            "example": "Babu Jala"
+                          },
+                          "account_number": {
+                            "type": "string",
+                            "example": "****000"
+                          },
+                          "bank_number": {},
+                          "transit": {},
+                          "routing_number": {
+                            "type": "string",
+                            "example": "011001234"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "example": "2023-11-02T07:30:16+00:00"
+                          },
+                          "data": {},
+                          "provider": {
+                            "type": "string",
+                            "example": "corecard"
+                          },
+                          "recipient_id": {
+                            "type": "string",
+                            "example": "8ab683c8-ff22-45bc-9f7b-362e19a5ef91"
+                          }
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {},
+              "examples": {
+                "Lock Request": {
+                  "value": {
+                    "status": "frozen",
+                    "report_date": "2025-06-30"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{payfare_id}/ach/{ach_id}": {
+      "get": {
+        "summary": "Get Particular ACH Transfer",
+        "description": "Use this BaaS endpoint to all the ACH transfers",
+        "operationId": "get-ach-transfer",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user.",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "ach_id",
+            "in": "path",
+            "description": "The UUID pf the transfer",
+            "schema": {
+              "type": "string",
+              "default": "e23a0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"transfer_id\": \"231f9206-46ab-451f-9038-0a420ac9c706\",\n        \"details_id\": \"ec9dd54b-c37c-4d2a-b8ce-3a3d6539dce2\",\n        \"confirmation_code\": \"AC9C706\",\n        \"user_id\": \"ce206bd6-ddd0-4bfe-bba4-5dee5226db01\",\n        \"recipient_name\": \"John Smith\",\n        \"transfer_amount\": 10,\n        \"account_number\": \"gAAAAABlQ0o3auZdtLnO2HhyGsdgCTHd1u9vYDWLG6Oz_a25hukCn2P_-n083Kjp62DNg2DqWQV761w2nmEJHoPcXM5QCWyR6w==\",\n        \"routing_number\": \"gAAAAABlQ0o3sv-bYxZpktnXGUHQUMC18IFiiqck94Zew3rabYayG-1L2gDBVrH8R04SHFJw3cjTSuqiu4CxGdHreLF-eHnb2Q==\",\n        \"transfer_fee\": 0,\n        \"transfer_currency\": \"USD\",\n        \"status\": \"withdrawal-success\",\n        \"transfer_type\": \"next-day\",\n        \"transfer_date\": \"2023-11-03\",\n        \"created_at\": \"2023-11-02T07:09:18+00:00\"\n    },\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "transfer_id": {
+                          "type": "string",
+                          "example": "231f9206-46ab-451f-9038-0a420ac9c706"
+                        },
+                        "details_id": {
+                          "type": "string",
+                          "example": "ec9dd54b-c37c-4d2a-b8ce-3a3d6539dce2"
+                        },
+                        "confirmation_code": {
+                          "type": "string",
+                          "example": "AC9C706"
+                        },
+                        "user_id": {
+                          "type": "string",
+                          "example": "ce206bd6-ddd0-4bfe-bba4-5dee5226db01"
+                        },
+                        "recipient_name": {
+                          "type": "string",
+                          "example": "John Smith"
+                        },
+                        "transfer_amount": {
+                          "type": "integer",
+                          "example": 10,
+                          "default": 0
+                        },
+                        "account_number": {
+                          "type": "string",
+                          "example": "gAAAAABlQ0o3auZdtLnO2HhyGsdgCTHd1u9vYDWLG6Oz_a25hukCn2P_-n083Kjp62DNg2DqWQV761w2nmEJHoPcXM5QCWyR6w=="
+                        },
+                        "routing_number": {
+                          "type": "string",
+                          "example": "gAAAAABlQ0o3sv-bYxZpktnXGUHQUMC18IFiiqck94Zew3rabYayG-1L2gDBVrH8R04SHFJw3cjTSuqiu4CxGdHreLF-eHnb2Q=="
+                        },
+                        "transfer_fee": {
+                          "type": "integer",
+                          "example": 0,
+                          "default": 0
+                        },
+                        "transfer_currency": {
+                          "type": "string",
+                          "example": "USD"
+                        },
+                        "status": {
+                          "type": "string",
+                          "example": "withdrawal-success"
+                        },
+                        "transfer_type": {
+                          "type": "string",
+                          "example": "next-day"
+                        },
+                        "transfer_date": {
+                          "type": "string",
+                          "example": "2023-11-03"
+                        },
+                        "created_at": {
+                          "type": "string",
+                          "example": "2023-11-02T07:09:18+00:00"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {},
+              "examples": {
+                "Lock Request": {
+                  "value": {
+                    "status": "frozen",
+                    "report_date": "2025-06-30"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{payfare_id}/ach/transfer-types": {
+      "get": {
+        "summary": "Get ACH Transfer Limits",
+        "description": "Use this BaaS endpoint to all the ACH transfer types",
+        "operationId": "get-transfer-types",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user.",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"fee\": 0.0,\n        \"fee_currency\": \"USD\",\n        \"can_send\": false,\n        \"limit\": [\n            {\n                \"config_key\": 3,\n                \"limit_period\": 86400,\n                \"limit_amount\": 2000,\n                \"available\": 1970.0,\n                \"next_amount\": null,\n                \"next_on\": null\n            },\n            {\n                \"config_key\": 4,\n                \"limit_period\": 2592000,\n                \"limit_amount\": 5000,\n                \"available\": 4970.0,\n                \"next_amount\": null,\n                \"next_on\": null\n            }\n        ]\n    },\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "fee": {
+                          "type": "integer",
+                          "example": 0,
+                          "default": 0
+                        },
+                        "fee_currency": {
+                          "type": "string",
+                          "example": "USD"
+                        },
+                        "can_send": {
+                          "type": "boolean",
+                          "example": false,
+                          "default": true
+                        },
+                        "limit": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "config_key": {
+                                "type": "integer",
+                                "example": 3,
+                                "default": 0
+                              },
+                              "limit_period": {
+                                "type": "integer",
+                                "example": 86400,
+                                "default": 0
+                              },
+                              "limit_amount": {
+                                "type": "integer",
+                                "example": 2000,
+                                "default": 0
+                              },
+                              "available": {
+                                "type": "integer",
+                                "example": 1970,
+                                "default": 0
+                              },
+                              "next_amount": {},
+                              "next_on": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {},
+              "examples": {
+                "Lock Request": {
+                  "value": {
+                    "status": "frozen",
+                    "report_date": "2025-06-30"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{payfare_id}/ach-payments/recipients/{recipient_id}/send": {
+      "post": {
+        "summary": "Send Money ACH",
+        "description": "Use this BaaS endpoint to send money to other accounts",
+        "operationId": "send-money",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user.",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "recipient_id",
+            "in": "path",
+            "description": "The UUID of the recipient",
+            "schema": {
+              "type": "string",
+              "default": "a3df5efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "amount"
+                ],
+                "properties": {
+                  "amount": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "ach_message": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "Lock Request": {
+                  "value": {
+                    "status": "frozen",
+                    "report_date": "2025-06-30"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"ach-payment\": {\n      \"id\": \"c6997032-c912-47e4-a6a5-62ba6c38805\",\n      \"confirmation\": \"C2F41118\"\n    }\n  },\n  \"message\": \"ACH Payment successfully queued.\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "ach-payment": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "example": "c6997032-c912-47e4-a6a5-62ba6c38805"
+                            },
+                            "confirmation": {
+                              "type": "string",
+                              "example": "C2F41118"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "ACH Payment successfully queued."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/{payfare_id}/ach-transfers/{ach_id}/cancel": {
+      "post": {
+        "summary": "Cancel ACH",
+        "description": "Use this BaaS endpoint cancel the ACH transfer.",
+        "operationId": "cancel-ach",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user.",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "ach_id",
+            "in": "path",
+            "description": "The UUID of the account transfer",
+            "schema": {
+              "type": "string",
+              "default": "a3df5efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": {},\n    \"message\": \"\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {}
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {},
+              "examples": {
+                "Lock Request": {
+                  "value": {
+                    "status": "frozen",
+                    "report_date": "2025-06-30"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{payfare_id}/atm-locations": {
+      "get": {
+        "summary": "ATM Finder",
+        "description": "Use this BaaS endpoint to get the ATM locations near the specified longitude and latitude.",
+        "operationId": "get-atm-locations",
+        "parameters": [
+          {
+            "name": "payfare_id",
+            "in": "path",
+            "description": "The UUID of the Payfare user.",
+            "schema": {
+              "type": "string",
+              "default": "f47f0efd-03b0-4402-ad97-cc5c0367bc9c"
+            },
+            "required": true
+          },
+          {
+            "name": "lat",
+            "in": "query",
+            "description": "The latitude of the place to find nearest atms",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "float",
+              "default": 38.9
+            }
+          },
+          {
+            "name": "lng",
+            "in": "query",
+            "description": "The longitude of the place to find nearest atms",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "float",
+              "default": 20.2
+            }
+          },
+          {
+            "name": "radius",
+            "in": "query",
+            "description": "The radius till which nearest atms should be found",
+            "schema": {
+              "type": "number",
+              "format": "float",
+              "default": 100
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"locations\": [\n            {\n                \"atm_network\": \"allpoint\",\n                \"terminal_id\": \"VZ000521\",\n                \"loc_name\": \"CVS\",\n                \"address\": \"7190 University Pkwy\",\n                \"city\": \"Sarasota\",\n                \"region\": \"FL\",\n                \"country\": \"US\",\n                \"postal_code\": \"34240\",\n                \"latitude\": 27.3867828,\n                \"longitude\": -82.4377653,\n                \"location\": {\n                    \"lat\": 27.3867828,\n                    \"lon\": -82.4377653\n                },\n                \"filler\": false,\n                \"fee_amt\": 0,\n                \"fee_currency_code\": \"USD\"\n            },\n            {\n                \"atm_network\": \"allpoint\",\n                \"terminal_id\": \"VS005229\",\n                \"loc_name\": \"CVS\",\n                \"address\": \"5403 University Pkwy\",\n                \"city\": \"University Park\",\n                \"region\": \"FL\",\n                \"country\": \"US\",\n                \"postal_code\": \"34201\",\n                \"latitude\": 27.3890711,\n                \"longitude\": -82.463153,\n                \"location\": {\n                    \"lat\": 27.3890711,\n                    \"lon\": -82.463153\n                },\n                \"filler\": false,\n                \"fee_amt\": 0,\n                \"fee_currency_code\": \"USD\"\n            }\n]}}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "locations": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "atm_network": {
+                                "type": "string",
+                                "example": "allpoint"
+                              },
+                              "terminal_id": {
+                                "type": "string",
+                                "example": "VZ000521"
+                              },
+                              "loc_name": {
+                                "type": "string",
+                                "example": "CVS"
+                              },
+                              "address": {
+                                "type": "string",
+                                "example": "7190 University Pkwy"
+                              },
+                              "city": {
+                                "type": "string",
+                                "example": "Sarasota"
+                              },
+                              "region": {
+                                "type": "string",
+                                "example": "FL"
+                              },
+                              "country": {
+                                "type": "string",
+                                "example": "US"
+                              },
+                              "postal_code": {
+                                "type": "string",
+                                "example": "34240"
+                              },
+                              "latitude": {
+                                "type": "number",
+                                "example": 27.3867828,
+                                "default": 0
+                              },
+                              "longitude": {
+                                "type": "number",
+                                "example": -82.4377653,
+                                "default": 0
+                              },
+                              "location": {
+                                "type": "object",
+                                "properties": {
+                                  "lat": {
+                                    "type": "number",
+                                    "example": 27.3867828,
+                                    "default": 0
+                                  },
+                                  "lon": {
+                                    "type": "number",
+                                    "example": -82.4377653,
+                                    "default": 0
+                                  }
+                                }
+                              },
+                              "filler": {
+                                "type": "boolean",
+                                "example": false,
+                                "default": true
+                              },
+                              "fee_amt": {
+                                "type": "integer",
+                                "example": 0,
+                                "default": 0
+                              },
+                              "fee_currency_code": {
+                                "type": "string",
+                                "example": "USD"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {},
+              "examples": {
+                "Lock Request": {
+                  "value": {
+                    "status": "frozen",
+                    "report_date": "2025-06-30"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-readme": {
+    "headers": [],
+    "explorer-enabled": true,
+    "proxy-enabled": true
+  },
+  "x-readme-fauxas": true
+}
