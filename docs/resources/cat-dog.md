@@ -51,6 +51,9 @@ url reference 1
 url reference 2
 [cat-dog]: /assets/images/cat-dog.png
 
+url reference 3
+![cat-dog]: /assets/images/cat-dog.png
+
 inline html with markdown
 <img src="/assets/images/cat-dog.png" alt="Cat Dog" style="width:300px;">
 
