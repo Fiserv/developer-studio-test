@@ -1,0 +1,1534 @@
+openapi: 3.0.3
+info:
+  title: Deckard (B2B Gateway)
+  version: '1.0'
+servers:
+  - url: https://api.uat.payfarelabs.com
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: header
+      name: X-PFClient-Key
+    sec1:
+      type: apiKey
+      in: header
+      name: X-PFClient-Secret
+security:
+  - sec0: []
+    sec1: []
+paths:
+  /v1/users:
+    post:
+      x-group-name: b2b
+      x-proxy-name: '1. Create User'
+      summary: '1. Create User'
+      description: ''
+      operationId: create-user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  description: The first name of the user.
+                  default: Clark
+                last_name:
+                  type: string
+                  description: The last name of the user.
+                  default: Kent
+                phone_number:
+                  type: string
+                  description: The user's phone number with the international calling code.
+                  default: '+14167771234'
+                email:
+                  type: string
+                  description: The email of the user
+                  default: clark.kent@thedailyplanet.com
+                reward_tier:
+                  type: string
+                  description: >-
+                    The reward category under which this user falls under.
+                    Optional.
+                  default: Platinum
+                address:
+                  type: object
+                  description: The residential address of the user.
+                  properties: {}
+                date_of_birth:
+                  type: string
+                  description: The user's date of birth in YYYY-MM-DD format.
+                  default: '1975-02-28'
+                external_id:
+                  type: string
+                  description: The ID of the user from your platform
+                  default: 1a4042f8-d91d-4a33-95c4-12712cc9a385
+                express_consent:
+                  type: array
+                  items:
+                    type: string
+                  description: >-
+                    An array containing the name and the dates of the accepted
+                    agreements for the card program offered by Payfare.
+                preferred_language:
+                  type: string
+                  description: The preferred ISO 639-1 standard language code of the user.
+                  default: en-us
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: |-
+                    {
+                    "status": "success",
+                    "data": {
+                    "user": {
+                    "payfare_id":
+                    "1bc25ac6-abae-46aa-9b25-329f1ac50ae5",
+                    "first_name": "John",
+                    "middle_name": "Graham",
+                    "last_name": "Smith",
+                    "phone_number": "+11234567891",
+                    "date_of_birth": "1990-01-01",
+                    "created_at": "2020-03-16T18:38:52+00:00",
+                    "status": "pending-activation",
+                    "reward_tier": null,
+                    "metadata": null,
+                    "email": "john.smith@email.com",
+                    "embossed_name": "John Smith",
+                    "external_id": "123456789123456789abcdefg",
+                    "preferred_language": "en-us",
+                    "address": {
+                    "address_line1": "123 Fake St.",
+                    "address_line2": null,
+                    "address_line3": null,
+                    "address_line4": null,
+                    "city": "Toronto",
+                    "region": "ON",
+                    "country_code": "CA",
+                    "postal_code": "AB123"}},
+                    "express_consent": [
+                    {
+                    "id": 532,
+                    "payfare_id": "1bc25ac6-abae-46aa-9b25-329f1ac50ae5",
+                    "name": "Example Program User Agreement",
+                    "accepted": 1,
+                    "date": "2018-01-01T00:00:00+00:00",
+                    "created_at": "2020-03-16T18:38:52.803000+00:00",
+                    "updated_at": "2020-03-16T18:38:52.803000+00:00"}]
+                    },
+                    "message": ""
+                    }
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  data:
+                    type: object
+                    properties:
+                      user:
+                        type: object
+                        properties:
+                          payfare_id:
+                            type: string
+                            example: 1bc25ac6-abae-46aa-9b25-329f1ac50ae5
+                          first_name:
+                            type: string
+                            example: John
+                          middle_name:
+                            type: string
+                            example: Graham
+                          last_name:
+                            type: string
+                            example: Smith
+                          phone_number:
+                            type: string
+                            example: '+11234567891'
+                          date_of_birth:
+                            type: string
+                            example: '1990-01-01'
+                          created_at:
+                            type: string
+                            example: '2020-03-16T18:38:52+00:00'
+                          status:
+                            type: string
+                            example: pending-activation
+                          reward_tier: {}
+                          metadata: {}
+                          email:
+                            type: string
+                            example: john.smith@email.com
+                          embossed_name:
+                            type: string
+                            example: John Smith
+                          external_id:
+                            type: string
+                            example: 123456789123456789abcdefg
+                          preferred_language:
+                            type: string
+                            example: en-us
+                          address:
+                            type: object
+                            properties:
+                              address_line1:
+                                type: string
+                                example: 123 Fake St.
+                              address_line2: {}
+                              address_line3: {}
+                              address_line4: {}
+                              city:
+                                type: string
+                                example: Toronto
+                              region:
+                                type: string
+                                example: 'ON'
+                              country_code:
+                                type: string
+                                example: CA
+                              postal_code:
+                                type: string
+                                example: AB123
+                      express_consent:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 532
+                              default: 0
+                            payfare_id:
+                              type: string
+                              example: 1bc25ac6-abae-46aa-9b25-329f1ac50ae5
+                            name:
+                              type: string
+                              example: Example Program User Agreement
+                            accepted:
+                              type: integer
+                              example: 1
+                              default: 0
+                            date:
+                              type: string
+                              example: '2018-01-01T00:00:00+00:00'
+                            created_at:
+                              type: string
+                              example: '2020-03-16T18:38:52.803000+00:00'
+                            updated_at:
+                              type: string
+                              example: '2020-03-16T18:38:52.803000+00:00'
+                  message:
+                    type: string
+                    example: ''
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+  /v1/users/{payfare_id}/kyc:
+    post:
+      x-group-name: b2b
+      x-proxy-name: '2. Create KYC'
+      summary: '2. Create KYC'
+      description: ''
+      operationId: create-kyc-endpoint
+      parameters:
+        - name: payfare_id
+          in: path
+          description: The UUID of the Payfare user.
+          schema:
+            type: string
+            default: 8c0e91a3-2c9b-4bad-8ece-38a7de460d3c
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tax_id:
+                  type: string
+                  description: >-
+                    Identification number used for tax purposes such as a social
+                    security number.
+                  default: '123123123'
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: |-
+                    {
+                    "status": "success",
+                    "data": {
+                    "kyc_status": "pending",
+                    "kyc_status_at": "2020-08-05T02:05:13.325968+00:00",
+                    "kyc_fail_reason": null,
+                    "ssn": "3332",
+                    "id_number": null,
+                    "document_front": null,
+                    "document_back": null,
+                    "id_type": null,
+                    "country_of_issue": null,
+                    "region_of_issue": null,
+                    "expiry_date": null,
+                    "occupation": null,
+                    "additional_documentation": [],
+                    "user_info": {
+                    "ssn": "hN4tbCkP0N/QasXblPFarw==",
+                    "ssn_last_four": "3333"
+                    },
+                    "out_of_wallet_questions": null,
+                    "metadata": null
+                    },
+                    "message": ""
+                    }
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  data:
+                    type: object
+                    properties:
+                      kyc_status:
+                        type: string
+                        example: pending
+                      kyc_status_at:
+                        type: string
+                        example: '2020-08-05T02:05:13.325968+00:00'
+                      kyc_fail_reason: {}
+                      ssn:
+                        type: string
+                        example: '3332'
+                      id_number: {}
+                      document_front: {}
+                      document_back: {}
+                      id_type: {}
+                      country_of_issue: {}
+                      region_of_issue: {}
+                      expiry_date: {}
+                      occupation: {}
+                      additional_documentation:
+                        type: array
+                        items:
+                          type: string
+                      user_info:
+                        type: object
+                        properties:
+                          ssn:
+                            type: string
+                            example: hN4tbCkP0N/QasXblPFarw==
+                          ssn_last_four:
+                            type: string
+                            example: '3333'
+                      out_of_wallet_questions: {}
+                      metadata: {}
+                  message:
+                    type: string
+                    example: ''
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+    get:
+      x-group-name: b2b
+      x-proxy-name: '4. Monitor Console Log'
+      summary: '4. Monitor Console Log'
+      description: ''
+      operationId: 4-monitor-console-log
+      parameters:
+        - name: payfare_id
+          in: path
+          description: The UUID of the Payfare user.
+          schema:
+            type: string
+            default: 8c0e91a3-2c9b-4bad-8ece-38a7de460d3c
+          required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: >-
+                    {
+
+                    "status":"success",
+
+                    "data":{
+
+                    "kyc_form_url":"https://partner-kyc-app.payfare.com/partner/en
+
+                    -us/kyc/index.html?bibson=068678043e8e2225d841cb59832433137337
+
+                    0b4a21f661268a9639256aaa9b15&ting=b825935c-ca99-4d75-8349-1fbd
+
+                    4cf6c37e&gibby=100101"
+
+                    },
+
+                    "message":""
+
+                    }
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+  /v1/users/{payfare_id}/kyc/form-link:
+    get:
+      x-group-name: b2b
+      x-proxy-name: 'Get KYC Web App URL & Perform KYC'
+      summary: '3. Get KYC Web App URL & Perform KYC'
+      description: ''
+      operationId: get-kyc-form-link
+      parameters:
+        - name: payfare_id
+          in: path
+          description: The UUID of the Payfare user.
+          schema:
+            type: string
+            default: 8c0e91a3-2c9b-4bad-8ece-38a7de460d3c
+          required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: >-
+                    {
+
+                    "status":"success",
+
+                    "data":{
+
+                    "kyc_form_url":"https://partner-kyc-app.payfare.com/partner/en
+
+                    -us/kyc/index.html?bibson=068678043e8e2225d841cb59832433137337
+
+                    0b4a21f661268a9639256aaa9b15&ting=b825935c-ca99-4d75-8349-1fbd
+
+                    4cf6c37e&gibby=100101"
+
+                    },
+
+                    "message":""
+
+                    }
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+  /{payfare_id}:
+    post:
+      x-group-name: b2b
+      x-proxy-name: Create Payout
+      summary: Create Payout
+      description: ''
+      operationId: create-payout
+      parameters:
+        - name: payfare_id
+          in: path
+          schema:
+            type: string
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - external_payment_id
+                - amount
+                - currency_code
+              properties:
+                external_payment_id:
+                  type: string
+                  description: The unique payout identifier from the client
+                amount:
+                  type: number
+                  description: Payout amount
+                  format: float
+                currency_code:
+                  type: string
+                  description: ISO 4217 currency codes
+                description:
+                  type: string
+                metadata:
+                  type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: |-
+                    {
+                        "status": "success",
+                        "data": {
+                            "payout_id": "13e0457f-5bcf-420c-8268-d40332b3d1c2",
+                            "net_amount": 125.50,
+                            "status": "pending",
+                            "created_at": "2023-05-25T04:25:12+00:00",
+                            "currency_code": "USD"
+                        },
+                        "message": ""
+                    }
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  data:
+                    type: object
+                    properties:
+                      payout_id:
+                        type: string
+                        example: 13e0457f-5bcf-420c-8268-d40332b3d1c2
+                      net_amount:
+                        type: number
+                        example: 125.5
+                        default: 0
+                      status:
+                        type: string
+                        example: pending
+                      created_at:
+                        type: string
+                        example: '2023-05-25T04:25:12+00:00'
+                      currency_code:
+                        type: string
+                        example: USD
+                  message:
+                    type: string
+                    example: ''
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+  /v1/payouts/{payout_id}:
+    get:
+      x-group-name: b2b
+      x-proxy-name: Check Payout Status
+      summary: Check Payout Status
+      description: View the status of the payout
+      operationId: check-payout-status
+      parameters:
+        - name: payout_id
+          in: path
+          description: The UUID generated by Payfare for this payout.
+          schema:
+            type: string
+            default: c5cd8f05-5882-4a63-931d-1490111a7c5e
+          required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+  /v1/payment/{payfare_id}/retry:
+    post:
+      x-group-name: b2b
+      x-proxy-name: Retry Payout
+      summary: Retry Payout
+      description: ''
+      operationId: create-payout-copy
+      parameters:
+        - name: payfare_id
+          in: path
+          description: The UUID of the Payfare user
+          schema:
+            type: string
+            default: 8c0e91a3-2c9b-4bad-8ece-38a7de460d3c
+          required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+  /v1/paid/users:
+    post:
+      x-group-name: b2b
+      x-proxy-name: Create User
+      summary: Create User
+      description: Create a user for whom disbursements will be created.
+      operationId: create-user-1
+      parameters:
+        - name: X-PFClient-Key
+          in: header
+          description: Client API Key (provided during onboarding)
+          schema:
+            type: string
+        - name: X-PFClient-Secret
+          in: header
+          description: Client API Secret (provided during onboarding)
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  description: Required
+                last_name:
+                  type: string
+                  description: Required
+                email:
+                  type: string
+                  description: Required
+                phone:
+                  type: string
+                  description: Optional
+                external_id:
+                  type: string
+                  description: Optional and non-unique identifier for worker
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: |-
+                    {
+                        "status": "success",
+                        "data": {
+                            "payfare_id": "65a1d5e5-b4dd-46f9-a43f-979d1eefbdec",
+                            "external_id": "jDoe",
+                            "email": "jdoe@payfare.com",
+                            "phone": "+9055106508",
+                            "status": "pending-onboarding",
+                            "first_name": "John",
+                            "last_name": "Doe",
+                            "created_at": "2023-07-24T17:52:03+00:00",
+                            "company_name": "TestClient"
+                        },
+                        "message": ""
+                    }
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  data:
+                    type: object
+                    properties:
+                      payfare_id:
+                        type: string
+                        example: 65a1d5e5-b4dd-46f9-a43f-979d1eefbdec
+                      external_id:
+                        type: string
+                        example: jDoe
+                      email:
+                        type: string
+                        example: jdoe@payfare.com
+                      phone:
+                        type: string
+                        example: '+9055106508'
+                      status:
+                        type: string
+                        example: pending-onboarding
+                      first_name:
+                        type: string
+                        example: John
+                      last_name:
+                        type: string
+                        example: Doe
+                      created_at:
+                        type: string
+                        example: '2023-07-24T17:52:03+00:00'
+                      company_name:
+                        type: string
+                        example: TestClient
+                  message:
+                    type: string
+                    example: ''
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Missing Required Field:
+                  value: |-
+                    {
+                        "status": "error",
+                        "errors": [
+                            {
+                                "code": 10020,
+                                "message": "Required Field",
+                                "field": "first_name"
+                            }
+                        ],
+                        "message": ""
+                    }
+                Invalid Email:
+                  value: |-
+                    {
+                        "status": "error",
+                        "errors": [
+                            {
+                                "code": 10021,
+                                "message": "Invalid email",
+                                "field": ""
+                            }
+                        ],
+                        "message": ""
+                    }
+                Duplicate User:
+                  value: |-
+                    {
+                        "status": "error",
+                        "errors": [
+                            {
+                                "code": 10010,
+                                "message": "User already exists",
+                                "field": "email"
+                            }
+                        ],
+                        "message": ""
+                    }
+              schema:
+                oneOf:
+                  - title: Missing Required Field
+                    type: object
+                    properties:
+                      status:
+                        type: string
+                        example: error
+                      errors:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            code:
+                              type: integer
+                              example: 10020
+                              default: 0
+                            message:
+                              type: string
+                              example: Required Field
+                            field:
+                              type: string
+                              example: first_name
+                      message:
+                        type: string
+                        example: ''
+                  - title: Invalid Email
+                    type: object
+                    properties:
+                      status:
+                        type: string
+                        example: error
+                      errors:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            code:
+                              type: integer
+                              example: 10021
+                              default: 0
+                            message:
+                              type: string
+                              example: Invalid email
+                            field:
+                              type: string
+                              example: ''
+                      message:
+                        type: string
+                        example: ''
+                  - title: Duplicate User
+                    type: object
+                    properties:
+                      status:
+                        type: string
+                        example: error
+                      errors:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            code:
+                              type: integer
+                              example: 10010
+                              default: 0
+                            message:
+                              type: string
+                              example: User already exists
+                            field:
+                              type: string
+                              example: email
+                      message:
+                        type: string
+                        example: ''
+      deprecated: false
+      x-readme:
+        code-samples:
+          - language: curl
+            code: |-
+              curl --location 'https://uat-deckard.payfare.com/v1/paid/users' \
+              --header 'X-PFClient-Key: CLIENT_KEY' \
+              --header 'X-PFClient-Secret: CLIENT_SECRET' \
+              --header 'Content-Type: application/json' \
+              --data-raw '{
+                  "first_name": "John",   
+                  "last_name": "Doe",
+                  "email": "jdoe@payfare.com",
+                  "phone": "9055106508",
+                  "external_id": "jDoe"
+              }'
+          - language: python
+            code: >
+              import requests
+
+              import json
+
+
+              url = "https://uat-deckard.payfare.com/v1/paid/users"
+
+
+              payload = json.dumps({
+                "first_name": "John",
+                "last_name": "Doe",
+                "email": "jdoe@payfare.com",
+                "phone": "905106508",
+                "external_id": "jDoe"
+              })
+
+              headers = {
+                'X-PFClient-Key': 'CLIENT_KEY',
+                'X-PFClient-Secret': 'CLIENT_SECRET',
+                'Content-Type': 'application/json'
+              }
+
+
+              response = requests.request("POST", url, headers=headers,
+              data=payload)
+
+
+              print(response.text)
+        samples-languages:
+          - curl
+          - python
+  /v1/paid/payouts:
+    post:
+      x-group-name: b2b
+      x-proxy-name: Create Disbursement
+      summary: Create Disbursement
+      description: >-
+        Create a disbursement for the specified user that has the email
+        provided.
+      operationId: create-disbursement
+      parameters:
+        - name: X-PFClient-Key
+          in: header
+          description: Client API Key (provided during onboarding)
+          schema:
+            type: string
+        - name: X-PFClient-Secret
+          in: header
+          description: Client API Secret (provided during onboarding)
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                amount:
+                  type: number
+                  description: Required
+                  format: float
+                payfare_id:
+                  type: string
+                  description: Required for CA channel
+                email:
+                  type: string
+                  description: Required
+                external_payment_id:
+                  type: string
+                  description: Required to track external disbursement id
+                currency_code:
+                  type: string
+                  description: 'Required eg: USD'
+                payout_type:
+                  type: string
+                  description: Required, supported types are instant-pay, tip, etc
+                first_name:
+                  type: string
+                  description: >-
+                    Only required when user creation is needed as part of payout
+                    creation
+                  default: Optional
+                last_name:
+                  type: string
+                  description: >-
+                    Only required when user creation is needed as part of payout
+                    creation
+                  default: Optional
+                phone:
+                  type: string
+                  description: >-
+                    Optional when user creation is needed as part of payout
+                    creation
+                  default: Optional
+                worker_id:
+                  type: string
+                  description: >-
+                    Optional to track external worker id when user creation is
+                    needed as part of payout creation
+                  default: optional
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: |-
+                    {
+                        "status": "success",
+                        "data": {
+                            "payout_id": "4a711e73-cb46-452f-acaa-2a261df63b4d",
+                            "status": "pending",
+                            "currency_code": "USD",
+                            "created_at": "2023-07-25 03:03:04",
+                            "net_amount": 100.00,
+                            "net_earnings": 100.00,
+                            "earnings_id": "4a711e73-cb46-452f-acaa-2a261df63b4d",
+                            "external_payment_id": "jDoe-payout-1",
+                            "description": null,
+                            "metadata": null
+                        },
+                        "message": ""
+                    }
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  data:
+                    type: object
+                    properties:
+                      payout_id:
+                        type: string
+                        example: 4a711e73-cb46-452f-acaa-2a261df63b4d
+                      status:
+                        type: string
+                        example: pending
+                      currency_code:
+                        type: string
+                        example: USD
+                      created_at:
+                        type: string
+                        example: '2023-07-25 03:03:04'
+                      net_amount:
+                        type: integer
+                        example: 100
+                        default: 0
+                      net_earnings:
+                        type: integer
+                        example: 100
+                        default: 0
+                      earnings_id:
+                        type: string
+                        example: 4a711e73-cb46-452f-acaa-2a261df63b4d
+                      external_payment_id:
+                        type: string
+                        example: jDoe-payout-1
+                      description: {}
+                      metadata: {}
+                  message:
+                    type: string
+                    example: ''
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-readme:
+        code-samples:
+          - language: curl
+            code: >-
+              curl --location 'https://uat-deckard.payfare.com/v1/paid/payouts'
+              \
+
+              --header 'X-PFClient-Key: CLIENT_KEY' \
+
+              --header 'X-PFClient-Secret: CLIENT_SECRET' \
+
+              --header 'Content-Type: application/json' \
+
+              --data-raw '{
+                  "amount": 100.00,
+                  "email": "jDoe@payfare.com",
+                  "external_payout_id": "jDoe-payout-1"
+              }'
+          - language: python
+            code: >-
+              import requests
+
+              import json
+
+
+              url = "https://uat-deckard.payfare.com/v1/paid/payouts"
+
+
+              payload = json.dumps({
+                "amount": 2.4,
+                "email": "jDoe@payfare.com",
+                "external_payout_id": "jDoe-payout-1"
+              })
+
+              headers = {
+                'X-PFClient-Key': 'CLIENT_KEY',
+                'X-PFClient-Secret': 'CLIENT_SECRET',
+                'Content-Type': 'application/json'
+              }
+
+
+              response = requests.request("POST", url, headers=headers,
+              data=payload)
+
+
+              print(response.text)
+        samples-languages:
+          - curl
+          - python
+
+  /v1/paid/users/{user_email}/reinvite:
+    post:
+      x-group-name: b2b
+      x-proxy-name: Resend Invite
+      summary: Resend Invite
+      description: Resend an onboarding invite to a user that has yet to onboard
+      operationId: resend-invite
+      parameters:
+        - name: user_email
+          in: path
+          description: Email associated with user
+          schema:
+            type: string
+          required: true
+        - name: X-PFClient-Key
+          in: header
+          description: Client API Key (provided during onboarding)
+          schema:
+            type: string
+        - name: X-PFClient-Secret
+          in: header
+          description: Client API Secret (provided during onboarding)
+          schema:
+            type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: |-
+                    {
+                        "status": "success",
+                        "data": {
+                            "status": "success"
+                        },
+                        "message": ""
+                    }
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  data:
+                    type: object
+                    properties:
+                      status:
+                        type: string
+                        example: success
+                  message:
+                    type: string
+                    example: ''
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-readme:
+        code-samples:
+          - language: curl
+            code: >-
+              curl --location --request POST
+              'https://uat-deckard.payfare.com/v1/paid/users/test@payfare.com/reinvite'
+              \
+
+              --header 'X-PFClient-Key: CLIENT_KEY' \
+
+              --header 'X-PFClient-Secret: CLIENT_SECRET'
+          - language: python
+            code: >
+              import requests
+
+
+              url =
+              "https://uat-deckard.payfare.com/v1/paid/users/test@payfare.com/reinvite"
+
+
+              payload = {}
+
+              headers = {
+                'X-PFClient-Key': 'CLIENT_KEY',
+                'X-PFClient-Secret': 'CLIENT_SECRET'
+              }
+
+
+              response = requests.request("POST", url, headers=headers,
+              data=payload)
+
+
+              print(response.text)
+        samples-languages:
+          - curl
+          - python
+
+  /v1/paid/users/email/{email}:
+    get:
+      x-group-name: b2b
+      x-proxy-name: Get User By Email
+      summary: Get User By Email
+      description: Retrieve user information by email
+      operationId: get-user-by-email
+      parameters:
+        - name: email
+          in: path
+          description: Email associated with user
+          schema:
+            type: string
+          required: true
+        - name: X-PFClient-Key
+          in: header
+          description: Client API Key (provided during onboarding)
+          schema:
+            type: string
+        - name: X-PFClient-Secret
+          in: header
+          description: Client API Secret (provided during onboarding)
+          schema:
+            type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: |-
+                    {
+                        "status": "success",
+                        "data": {
+                            "payfare_id": "65a1d5e5-b4dd-46f9-a43f-979d1eefbdec",
+                            "email": "jdoe@payfare.com",
+                            "phone": "+9055106508",
+                            "status": "pending-onboarding",
+                            "first_name": "John",
+                            "last_name": "Doe",
+                            "created_at": "2023-07-24T17:52:03+00:00",
+                            "company_name": "TestClient"
+                        },
+                        "message": ""
+                    }
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  data:
+                    type: object
+                    properties:
+                      payfare_id:
+                        type: string
+                        example: 65a1d5e5-b4dd-46f9-a43f-979d1eefbdec
+                      email:
+                        type: string
+                        example: jdoe@payfare.com
+                      phone:
+                        type: string
+                        example: '+9055106508'
+                      status:
+                        type: string
+                        example: pending-onboarding
+                      first_name:
+                        type: string
+                        example: John
+                      last_name:
+                        type: string
+                        example: Doe
+                      created_at:
+                        type: string
+                        example: '2023-07-24T17:52:03+00:00'
+                      company_name:
+                        type: string
+                        example: TestClient
+                  message:
+                    type: string
+                    example: ''
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Not Found:
+                  value: |-
+                    {
+                        "status": "error",
+                        "errors": [
+                            {
+                                "code": 10050,
+                                "message": "User not found",
+                                "field": "jdoe@payfare.com"
+                            }
+                        ],
+                        "message": ""
+                    }
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 10050
+                          default: 0
+                        message:
+                          type: string
+                          example: User not found
+                        field:
+                          type: string
+                          example: jdoe@payfare.com
+                  message:
+                    type: string
+                    example: ''
+      deprecated: false
+      x-readme:
+        code-samples:
+          - language: curl
+            code: >-
+              curl --location
+              'https://uat-deckard.payfare.com/v1/paid/users/email/jdoe@payfare.com'
+              \
+
+              --header 'X-PFClient-Key: CLIENT_KEY' \
+
+              --header 'X-PFClient-Secret: CLIENT_SECRET' \
+
+              --header 'Content-Type: application/json' \
+
+              --data-raw ''
+          - language: python
+            code: >
+              import requests
+
+              import json
+
+
+              url =
+              "https://uat-deckard.payfare.com/v1/paid/users/email/jdoe@payfare.com"
+
+
+              payload = json.dumps({})
+
+              headers = {
+                'X-PFClient-Key': 'CLIENT_KEY',
+                'X-PFClient-Secret': 'CLIENT_SECRET',
+                'Content-Type': 'application/json'
+              }
+
+
+              response = requests.request("GET", url, headers=headers,
+              data=payload)
+
+
+              print(response.text)
+        samples-languages:
+          - curl
+          - python
+  /v1/paid/users/{payfare_id}:
+    get:
+      x-group-name: b2b
+      x-proxy-name: Get User By Payfare ID
+      summary: Get User By Payfare ID
+      description: Retrieve user information by payfare id
+      operationId: get-user-by-payfare-id
+      parameters:
+        - name: payfare_id
+          in: path
+          description: Payfare id associated with user
+          schema:
+            type: string
+          required: true
+        - name: X-PFClient-Key
+          in: header
+          description: Client API Key (provided during onboarding)
+          schema:
+            type: string
+        - name: X-PFClient-Secret
+          in: header
+          description: Client API Secret (provided during onboarding)
+          schema:
+            type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: |-
+                    {
+                        "status": "success",
+                        "data": {
+                            "payfare_id": "65a1d5e5-b4dd-46f9-a43f-979d1eefbdec",
+                            "email": "jdoe@payfare.com",
+                            "phone": "+9055106508",
+                            "status": "pending-onboarding",
+                            "first_name": "John",
+                            "last_name": "Doe",
+                            "created_at": "2023-07-24T17:52:03+00:00",
+                            "company_name": "TestClient"
+                        },
+                        "message": ""
+                    }
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  data:
+                    type: object
+                    properties:
+                      payfare_id:
+                        type: string
+                        example: 65a1d5e5-b4dd-46f9-a43f-979d1eefbdec
+                      email:
+                        type: string
+                        example: jdoe@payfare.com
+                      phone:
+                        type: string
+                        example: '+9055106508'
+                      status:
+                        type: string
+                        example: pending-onboarding
+                      first_name:
+                        type: string
+                        example: John
+                      last_name:
+                        type: string
+                        example: Doe
+                      created_at:
+                        type: string
+                        example: '2023-07-24T17:52:03+00:00'
+                      company_name:
+                        type: string
+                        example: TestClient
+                  message:
+                    type: string
+                    example: ''
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Not Found:
+                  value: |-
+                    {
+                        "status": "error",
+                        "errors": [
+                            {
+                                "code": 10050,
+                                "message": "User not found",
+                                "field": "65a1d5e5-b4dd-46f9-a43f-979d1eefbdec"
+                            }
+                        ],
+                        "message": ""
+                    }
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        code:
+                          type: integer
+                          example: 10050
+                          default: 0
+                        message:
+                          type: string
+                          example: User not found
+                        field:
+                          type: string
+                          example: 65a1d5e5-b4dd-46f9-a43f-979d1eefbdec
+                  message:
+                    type: string
+                    example: ''
+      deprecated: false
+      x-readme:
+        code-samples:
+          - language: curl
+            code: >-
+              curl --location
+              'https://uat-deckard.payfare.com/v1/paid/users/65a1d5e5-b4dd-46f9-a43f-979d1eefbdec'
+              \
+
+              --header 'X-PFClient-Key: CLIENT_KEY' \
+
+              --header 'X-PFClient-Secret: CLIENT_SECRET' \
+
+              --header 'Content-Type: application/json' \
+
+              --data-raw ''
+          - language: python
+            code: >
+              import requests
+
+              import json
+
+
+              url =
+              "https://uat-deckard.payfare.com/v1/paid/users/65a1d5e5-b4dd-46f9-a43f-979d1eefbdec"
+
+
+              payload = json.dumps({})
+
+              headers = {
+                'X-PFClient-Key': 'CLIENT_KEY',
+                'X-PFClient-Secret': 'CLIENT_SECRET',
+                'Content-Type': 'application/json'
+              }
+
+
+              response = requests.request("GET", url, headers=headers,
+              data=payload)
+
+
+              print(response.text)
+        samples-languages:
+          - curl
+          - python
+x-readme:
+  headers: []
+  explorer-enabled: false
+  proxy-enabled: true
+x-readme-fauxas: true
