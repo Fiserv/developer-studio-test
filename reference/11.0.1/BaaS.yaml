@@ -354,6 +354,8 @@
         "deprecated": false
       },
       "put": {
+        "x-group-name": "BaaS",
+        "x-proxy-name": "Set Card Status",
         "summary": "Set Card Status",
         "description": "Use this BaaS endpoint to lock and unlock the cardholder's card upon their request. This same endpoint is also used to mark a card as lost, stolen and damaged.",
         "operationId": "set-card-status",
@@ -867,6 +869,8 @@
         "deprecated": false
       },
       "post": {
+        "x-group-name": "BaaS",
+        "x-proxy-name": "Set Shipping Address",
         "summary": "Set Shipping Address",
         "description": "Use this endpoint to update the cardholder's shipping address.",
         "operationId": "set-shipping-address",
@@ -2502,6 +2506,8 @@
         "deprecated": false
       },
       "get": {
+        "x-group-name": "BaaS",
+        "x-proxy-name": "Get ACH Recipient",
         "summary": "Get ACH Recipients",
         "description": "Use this BaaS endpoint to get all of cardholder's recipients",
         "operationId": "get-ach-recipients",
@@ -2800,6 +2806,8 @@
         "deprecated": false
       },
       "get": {
+        "x-group-name": "BaaS",
+        "x-proxy-name": "Get Specific ACH Recipient Details",
         "summary": "Get Specific ACH Recipient Details",
         "description": "Use this BaaS endpoint to get a single recipient for the ACH transfers",
         "operationId": "get-ach-recipient",
