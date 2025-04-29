@@ -40,7 +40,7 @@
       "apiSpecFileNames": [
         "openapi"
       ]
-    },
+    }
   ],
   "product": {
     "featured": true,
