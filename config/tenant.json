@@ -30,16 +30,16 @@
        "apiSpecFileNames": [
         "Cards/CardService",
         "test",
-        "SmallExample"
-
+        "SmallExample",
+        "BaaS"
       ]
     },
     {
-      "version": "1.25.0500",
+      "version": "11.0.0",
       "versionType": "minor",
       "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
       "apiSpecFileNames": [
-        "openapi"
+        "Cards/CardService"
       ]
     }
   ],
