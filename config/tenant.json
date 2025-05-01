@@ -31,7 +31,8 @@
         "Cards/CardService",
         "test",
         "SmallExample",
-        "BaaS"
+        "baas_v1.0.0",
+        "b2b_v1.0.0"
       ]
     },
     {
