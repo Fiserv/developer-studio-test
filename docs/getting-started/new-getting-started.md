@@ -33,5 +33,3 @@ Need Help ?
 [FAQ](?path=docs/faq/faq.md)
 ___
 
-Is this showing up?
- 
