@@ -142,17 +142,17 @@ paths:
           description: OK
           content: {}
       x-proxy-name: set-banking-data-controller
-  /v1/ivr/setBankingData:
-    post:
+  /v1/ivr/getBankingData:
+    get:
       tags:
-        - set-banking-data-controller
-      operationId: setBankingData
+        - get-banking-data-controller
+      operationId: getBankingData
       responses:
         "200":
           description: OK
           content: {}
-      x-proxy-name: set-banking-data-controller
-      x-group-name: Baking Controller
+      x-proxy-name: get-banking-data-controller
+      x-group-name: Banking Controller
   /v1/petro-transactions:
     post:
       x-group-name: Petro Transaction Services
