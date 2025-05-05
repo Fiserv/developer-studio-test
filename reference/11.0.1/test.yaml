@@ -145,13 +145,13 @@ paths:
   /v1/ivr/setBankingData:
     post:
       tags:
-        - set-banking-data-controller
+        - set-banking-data-controller-post
       operationId: setBankingData
       responses:
         "200":
           description: OK
           content: {}
-      x-proxy-name: set-banking-data-controller
+      x-proxy-name: set-banking-data-controller-post
       x-group-name: Baking Controller
   /v1/petro-transactions:
     post:
