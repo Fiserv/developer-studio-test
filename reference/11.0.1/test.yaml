@@ -132,6 +132,27 @@ tags:
 - name: petro-transactions
   description: Operations for purchasing items at a petro site
 paths:
+  /v1/ivr/setBankingData:
+    put:
+      tags:
+        - set-banking-data-controller
+      operationId: setBankingData
+      responses:
+        "200":
+          description: OK
+          content: {}
+      x-proxy-name: set-banking-data-controller
+  /v1/ivr/setBankingData:
+    post:
+      tags:
+        - set-banking-data-controller
+      operationId: setBankingData
+      responses:
+        "200":
+          description: OK
+          content: {}
+      x-proxy-name: set-banking-data-controller
+      x-group-name: Baking Controller
   /v1/petro-transactions:
     post:
       x-group-name: Petro Transaction Services
