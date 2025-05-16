@@ -1,12 +1,12 @@
-# Release Notes 2024
-V1.0
+# Release Notes 2025
+V2.0
 
 <!-- 
 type: tab 
 titles: Premier, Precision
 -->
 
-## 2024_Q3.2
+## 2025_Q2_1
 
 ## Enhancements
 | API Name | Description | Environment Availability |
