@@ -1,0 +1,108 @@
+openapi: 3.0.1
+info:
+  title: Content Service API
+  description: API for managing content creation and retrieval.
+  version: 1.0.0
+servers:
+  - url: https://api.example.com/content-service
+tags:
+  - name: content-service
+    description: Operations for creating and retrieving content
+paths:
+  /content-service:
+    post:
+      x-group-name: Content Service
+      x-proxy-name: Create Content
+      tags:
+        - content-service
+      summary: Create a content entry
+      description: Must include content details such as title, description, and metadata.
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyParam'
+        - $ref: '#/components/parameters/TimestampParam'
+        - $ref: '#/components/parameters/AuthorizationParam'
+        - $ref: '#/components/parameters/ClientTokenParam'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContentRequest'
+            examples:
+              Example 1:
+                summary: Example content creation
+                value:
+                  title: "Sample Content Title"
+                  description: "This is a sample description for the content."
+                  metadata:
+                    author: "John Doe"
+                    tags: [ "sample", "content", "example" ]
+                    createdDate: "2023-10-01T12:00:00Z"
+        required: true
+      responses:
+        201:
+          description: Content created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContentResponse'
+              examples:
+                Example 1:
+                  summary: Example content creation response
+                  value:
+                    contentId: "12345"
+                    title: "Sample Content Title"
+                    description: "This is a sample description for the content."
+                    metadata:
+                      author: "John Doe"
+                      tags: [ "sample", "content", "example" ]
+                      createdDate: "2023-10-01T12:00:00Z"
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        500:
+          $ref: '#/components/responses/ServerError'
+
+    get:
+      x-group-name: Content Service
+      x-proxy-name: Get Content
+      tags:
+        - content-service
+      summary: Retrieve content details
+      description: Fetch content details by providing a content ID.
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyParam'
+        - $ref: '#/components/parameters/TimestampParam'
+        - $ref: '#/components/parameters/AuthorizationParam'
+        - name: contentId
+          in: query
+          description: Unique identifier for the content
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Content retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContentResponse'
+              examples:
+                Example 1:
+                  summary: Example content retrieval response
+                  value:
+                    contentId: "12345"
+                    title: "Sample Content Title"
+                    description: "This is a sample description for the content."
+                    metadata:
+                      author: "John Doe"
+                      tags: [ "sample", "content", "example" ]
+                      createdDate: "2023-10-01T12:00:00Z"
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/ServerError'
