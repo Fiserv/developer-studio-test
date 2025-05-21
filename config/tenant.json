@@ -24,7 +24,7 @@
   "getStartedFilePath": "docs/get-started.md",
   "apiVersions": [
     {
-      "version": "11.0.2",
+      "version": "11.0.3",
       "versionType": "beta",
       "releaseNotesPath": "/release-notes/release-notes-11.0.2.md",
       "apiSpecFileNames": [
