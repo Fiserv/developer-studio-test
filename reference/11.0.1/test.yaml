@@ -1,126 +1,3 @@
-#     - Added Walmart pay as fundingSource
-#     - Added SEC code for ACH
-#     - Added EBT as funding source
-#     - Added Merchant id as header field
-#     - Added asset provider field in the ACH
-# 0.2.0
-#     - Added 'OTHER' CreditCardType
-#     - Added fields in ThreeDSecure object
-#     - Added Price tier in POSItem
-#     - Added PAN type and BIN
-#     - Added Expiry Date to InApp entities
-#     - Added Developer Email in ApplePay/GooglePay/SamsungPay objects
-#     - Added ECIIndicator in ApplePay/GooglePay/SamsungPay objects
-#     - Added local payment methods for Ideal and Bancontact
-# 0.1.9
-#     - OfferRealizationType enum - Add TRANSACTION_LEVEL
-#     - Updated Reward transactionLevel to add priceAdjustments
-#     - Updated PriceAdjustment to add maxQuantity
-#     - Added OfferStatus in the PriceAdjustments
-#     - Added washcodes under POSItem
-#     - Added dynamic descriptors API model
-#     - Added external customer id
-# 0.1.8
-#     - Updated Reward lineItemLevel to add SaleItem
-#     - Added QRCodeId for STAC payment
-#     - Added 3ds web support
-#     - Added Webhook URL for event notification
-#     - Added account type for ACH
-#     - Added percentage currency type
-# 0.1.7
-#     - Added receipt lines in the loyalty transaction info
-#     - Added reward description in Reward
-#     - Added credit in Paypal object
-#     - Added enrollment status and bank name in the ACH object
-#     - Added Vipps as a funding source.
-#     - Updated PriceAdjustment as list under POSItem
-#     - Added 3ds challenge transaction expiry date time in ThreeDSecure
-# 0.1.6
-#     - Add OfferRealizationType enum in PromotionalOffer
-#     - Add posAdjustment (type PriceAdjustment) in PromotionalOffer
-#     - Add saleItems array of POSItem in PromotionalOfferQualifiers
-#     - Added SecurityCode in vaulted Account
-#     - Added VAULTED_ACCOUNT as AccountType
-#     - Added Accept-Language header field
-#     - Added purchaseInfo object in the PetroTransaction
-# 0.1.5
-#     - Added 'currencyValue' & 'currencyCode' to LoyaltyBalance
-#     - Added Link in the Error object.
-#     - Added retailer partner id for marketplace
-#     - Added Amazon Pay funding source
-#     - Added DECLINED and TIMED OUT status for error use cases
-#     - acsSignedContent and CardType in threeDSecureInfo object
-#     - Added AUTH_DECLINED and TIMED OUT status for error use cases
-#     - Added billing phone in Credit,ApplePay, GooglePay, SamsungPay objects
-# 0.1.4
-#     - Added 'createdDateTime', 'lastUpdatedDateTime','transactionDateTime' and ServiceLevelCode
-#     - Added FundingSourceType, AccountStatus and AccountType entities
-#     - Added ACH under funding source.
-#     - Updated salesLineItem with POSItem across all yamls. POSItem is superset of salesLineItem.
-#     - Added offerCostInfo  in the PromotionalOffers entity
-#     - Added availOffersTrxnId identifier in the PetroTransaction entity
-#     - Added previousBalanceUnits and newBalanceUnits in the LoyaltyTransactionInfo entity
-#     - Added PROCEED_TRANSACTION action type for the patch operation
-#     - New 200 response code added on the PATCH operation
-#     - Added 'rate' to TaxDetails
-#     - Added ThreeDSecure object under Petro transaction
-#     - Added PriceAdjustment under POSItem
-# 0.1.3
-#     - Adding LoyaltyTransactionStatus, NVP with valueAsList, alias
-#     - Added additional option OTHER in SaleItemType
-#     - Update in DeviceInfo.
-#     - Added 'billingAddress' element in 'AndroidPay', 'ApplePay' and 'SamsungPay'
-#     - Added few additional fields in PromotionalOffers entity
-# 0.1.2
-#     - Added productCode field under items.
-#     - Added transactionNo field.
-# 0.1.1
-#     - Introduced MasterPass capabilities
-#     - Added 'cardType' attribute in 'ApplePay'
-#     - Added 'cardType', 'dPanLast4' attribute in 'AndroidPay', 'GooglePay' and 'SamsungPay'
-# 0.1.0
-#   - Added 'googlePay' as 'fundingSource' in 'PaymentInfo'
-#   - Added client-token in the header field
-# 0.0.9
-#   - Added 'cardSubType' attribute in Credit object
-#   - Added 'paypal', 'visaCheckout' elements to FundingSource object
-# 0.0.8
-#   - Changed to add offers and rewards to a purchase
-# 0.0.7
-#   - Updated ReferenceToken to have more accurate attribute names, removed use value
-#   - Cleaned up examples in the models
-# 0.0.6
-#     - Changes to ReferenceToken values, rearranged Fleet segments to be alphabetical, etc.
-# 0.0.5
-#     - No change.
-# 0.0.4
-#     - Modified the FleetTag to array
-#     - Added new AccountType and cardType for Fleet cards
-#     - Added Fleet Data segment to support L3 data
-#     - Changed currencyNumericCode to currencyCode in PaymentInfo.
-#     - Changed captureAmount to capturedAmount in PaymentInfo.
-#     - Added status attribute to PaymentInfo.
-#     - Added type attribute to POSItem.
-#     - Changed itemList to items in FuelPurchaseInfo.
-#     - Changed resourceList to resources in SiteInfo.
-#     - Changed itemList to items in SiteResource.
-#     - Changed saleItemList to saleItems in PetroTransaction.
-# 0.0.3
-#     - Removed 'pumpNumber' attribute from PetroSite object and moved under 'FuelPurchaseInfo' object.
-#     - Defined 'ReceiptData' object and included it into 'PetroTransaction' object.
-#     - Added 'saleItemList' attribute referring 'POSItem' to 'PetroTransaction' object.
-#     - Defined 'WashCode' object and included into 'PetroTransaction' object.
-#     - 'payment' attribute in PetroTransaction renamed as 'payments' and made into array.
-#     - 'PaymentInfo' object refactored. Removed Authorization and made into single entity.
-#     - Added attributes requestedTransactionAmount, finalTransactionAmount added to PetroTransaction object.
-#     - Added LoyaltyTransactionInfo object to capture loyalty activity and included as array into PetroTransaction.
-#     - Corrected attribute names posCodeFormat, posCode, posCodeModifier in POSItem object.
-# 0.0.2
-#     - Added 'osVersion' attribute to 'DeviceInfo' object.
-# 0.0.1
-#     - Initial Version
-#-------------------------------------
-
 openapi: 3.0.1
 info:
   title: uCom Petro Transaction Services
@@ -132,27 +9,29 @@ tags:
 - name: petro-transactions
   description: Operations for purchasing items at a petro site
 paths:
-  /v1/ivr/setBankingData:
-    put:
+  /api/v3/tip:
+    post:
       tags:
-        - set-banking-data-controller
-      operationId: setBankingData
+        - tip
+      x-group-name: CardPointe Integrated Terminal API
+      x-proxy-name: tip
+      summary: A call to the tip endpoint prompts the user to specify a tip amount on the terminal.
+      description: |
+        <p>A call to the tip endpoint prompts the user to specify a tip amount on the terminal.</p>
+        <p>See <a href="../docs/?path=docs/documentation/CardPointeIntegratedTerminalDeveloperGuides.md#understanding-the-terminal-api-service-endpoints">Using the Terminal API Tokenization and Payment Endpoints</a> for more information.</p>
+        <p><em>Note: For Ingenico terminals, the <code>tip</code> endpoint is only supported on terminals running firmware version <code>1.6.3.4</code> or higher.</em></p>
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/tipRequest'
       responses:
-        "200":
-          description: OK
-          content: {}
-      x-proxy-name: set-banking-data-controller
-  /v1/ivr/getBankingData:
-    get:
-      tags:
-        - get-banking-data-controller
-      operationId: getBankingData
-      responses:
-        "200":
-          description: OK
-          content: {}
-      x-proxy-name: get-banking-data-controller
-      x-group-name: Banking Controller
+        200: 
+          description: Success
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/tipSuccess'}
   /v1/petro-transactions:
     post:
       x-group-name: Petro Transaction Services
@@ -3495,3 +3374,78 @@ components:
             dataCapture:
               dataEventId: 537edec8-d33e-4ee8-93a7-b9f61876950c
 
+    tipRequest:
+      x-model-version: 1.0
+      description: tip Request
+      properties: 
+        merchantId:
+          description: |
+            <p><strong>Required</strong><p><br>
+            <p>Your Merchant ID, required for all requests.</p>
+          type: string
+          maxLength: 16
+          example: "123456789012"
+        hsn: 
+          description: |
+            <p><strong>Required</strong></p><br>
+            <p>The hardware serial number for the terminal.</p>
+          type: string
+          maxLength: 18
+          example: "14012PP20131409"
+        amount:
+          maxLength: 14
+          description: | 
+            <p><strong>Required</strong></p><br>
+            <p>The dollar amount to be authorized, with two implied decimal places (for example, to specify "$10.00," enter <code>"1000"</code>).</p> 
+          type: string
+          example: "100"
+        prompt:
+          description: |
+            <p><strong>Required</strong></p><br>
+            <p>The text to send to the terminal display to prompt for confirmation.</p><br>
+            <p>To include a percent sign (%) in the prompt text, you must include two percent signs (%%) in the request. If you include a single percent sign, the terminal will display an <code>"unexpected message"</code> string.</p>
+          type: string
+          example: "phone number"
+          maxLength: 1000
+        includeAmountDisplay:
+          description: |
+            <p>Determines if the transaction amount is displayed to the user during an MSR or EMV (card-present) transaction.</p><br>
+            <p>Defaults to <code>true</code> if not provided.</p><br>
+            <p><em>Notes:</em></p><ul>
+            <li><em>For v4 requests, this parameter is always set to <code>false</code>. A value of <code>true</code> in the request will be ignored.</em></li>
+            <li><em>This parameter is not supported for Clover terminals. The Clover terminal displays the amount to the user regardless of this parameter.</em></li></ul>
+          type: boolean
+          example: true
+        includeCustomTipAmount:
+          description: |
+            <p>Determines if a custom tip button is displayed on the terminal.</p><br>
+            <p>If <code>false</code>, then <code>tipPercentPresets</code> is required to provide a range of preset tip percentage values.</p><br>
+            <p>Defaults to <code>true</code> if not provided.</p>
+          type: boolean
+          example: true
+        tipPercentPresets: 
+          type: array
+          items:
+            type: integer
+          example: ["10", "15", "20"]
+          description: |
+            <p>An array of three preset tip percentages, in the format <code>[n, n, n]</code>.</p><br>
+            <p><strong>Required</strong> if <code>"includeCustomTipAmount":"false"</code>.</p><br>
+            <p><em>Note: The ability to set four preset values is planned for a future enhancement.</em></p>
+    tipSuccess:
+      x-model-version: 1.0
+      description: tip Response
+      properties: 
+        amount:
+          description: | 
+            <p>The amount provided in the original request.</p>
+          type: string
+          example: "100"
+        tip:
+          description: The calculated tip amount based on the user's selection or input.
+          type: string
+          example: ".06"
+        total:
+          description: The calculated total transaction amount (amount + tip).
+          type: string
+          example: "1.06"
