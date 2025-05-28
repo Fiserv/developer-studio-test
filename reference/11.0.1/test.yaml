@@ -197,7 +197,7 @@ components:
     #-------------------------------------
     # Operational Models
     #-------------------------------------
-        tipRequest:
+    tipRequest:
       x-model-version: 1.0
       description: tip Request
       properties: 
