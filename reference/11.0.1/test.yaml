@@ -18,8 +18,6 @@ paths:
       summary: A call to the tip endpoint prompts the user to specify a tip amount on the terminal.
       description: |
         <p>A call to the tip endpoint prompts the user to specify a tip amount on the terminal.</p>
-        <p>See <a href="../docs/?path=docs/documentation/CardPointeIntegratedTerminalDeveloperGuides.md#understanding-the-terminal-api-service-endpoints">Using the Terminal API Tokenization and Payment Endpoints</a> for more information.</p>
-        <p><em>Note: For Ingenico terminals, the <code>tip</code> endpoint is only supported on terminals running firmware version <code>1.6.3.4</code> or higher.</em></p>
       requestBody:
         required: true
         content:
@@ -199,6 +197,76 @@ components:
     #-------------------------------------
     # Operational Models
     #-------------------------------------
+        tipRequest:
+      x-model-version: 1.0
+      description: tip Request
+      properties: 
+        merchantId:
+          description: |
+            <p><strong>Required</strong><p><br>
+            <p>Your Merchant ID, required for all requests.</p>
+          type: string
+          maxLength: 16
+          example: "123456789012"
+        hsn: 
+          description: |
+            <p><strong>Required</strong></p><br>
+            <p>The hardware serial number for the terminal.</p>
+          type: string
+          maxLength: 18
+          example: "14012PP20131409"
+        amount:
+          maxLength: 14
+          description: | 
+            <p><strong>Required</strong></p><br>
+            <p>The dollar amount to be authorized, with two implied decimal places (for example, to specify "$10.00," enter <code>"1000"</code>).</p> 
+          type: string
+          example: "100"
+        prompt:
+          description: |
+            <p><strong>Required</strong></p><br>
+            <p>The text to send to the terminal display to prompt for confirmation.</p><br>
+            <p>To include a percent sign (%) in the prompt text, you must include two percent signs (%%) in the request. If you include a single percent sign, the terminal will display an <code>"unexpected message"</code> string.</p>
+          type: string
+          example: "phone number"
+          maxLength: 1000
+        includeAmountDisplay:
+          description: |
+            <p>Determines if the transaction amount is displayed to the user during an MSR or EMV (card-present) transaction.</p><br>
+            <p>Defaults to <code>true</code> if not provided.</p><br>
+            <p><em>Notes:</em></p><ul>
+            <li><em>For v4 requests, this parameter is always set to <code>false</code>. A value of <code>true</code> in the request will be ignored.</em></li>
+            <li><em>This parameter is not supported for Clover terminals. The Clover terminal displays the amount to the user regardless of this parameter.</em></li></ul>
+          type: boolean
+          example: true
+        includeCustomTipAmount:
+          description: |
+            <p>Determines if a custom tip button is displayed on the terminal.</p><br>
+            <p>If <code>false</code>, then <code>tipPercentPresets</code> is required to provide a range of preset tip percentage values.</p><br>
+            <p>Defaults to <code>true</code> if not provided.</p>
+          type: boolean
+          example: true
+        tipPercentPresets: 
+          type: array
+          items:
+            type: integer
+          example: ["10", "15", "20"]
+          description: |
+            <p>An array of three preset tip percentages, in the format <code>[n, n, n]</code>.</p><br>
+            <p><strong>Required</strong> if <code>"includeCustomTipAmount":"false"</code>.</p><br>
+            <p><em>Note: The ability to set four preset values is planned for a future enhancement.</em></p>
+    tipSuccess:
+      x-model-version: 1.0
+      description: tip Response
+      properties: 
+        amount:
+          description: | 
+            <p>The amount provided in the original request.</p>
+          type: string
+          example: "100"
+        tip:
+          description: The calculated tip amount based on the user's selection or input.
+          type: string
     PetroTransactionRequest:
       type: object
       properties:
@@ -3373,77 +3441,6 @@ components:
           - provider: RAVELIN
             dataCapture:
               dataEventId: 537edec8-d33e-4ee8-93a7-b9f61876950c
-
-    tipRequest:
-      x-model-version: 1.0
-      description: tip Request
-      properties: 
-        merchantId:
-          description: |
-            <p><strong>Required</strong><p><br>
-            <p>Your Merchant ID, required for all requests.</p>
-          type: string
-          maxLength: 16
-          example: "123456789012"
-        hsn: 
-          description: |
-            <p><strong>Required</strong></p><br>
-            <p>The hardware serial number for the terminal.</p>
-          type: string
-          maxLength: 18
-          example: "14012PP20131409"
-        amount:
-          maxLength: 14
-          description: | 
-            <p><strong>Required</strong></p><br>
-            <p>The dollar amount to be authorized, with two implied decimal places (for example, to specify "$10.00," enter <code>"1000"</code>).</p> 
-          type: string
-          example: "100"
-        prompt:
-          description: |
-            <p><strong>Required</strong></p><br>
-            <p>The text to send to the terminal display to prompt for confirmation.</p><br>
-            <p>To include a percent sign (%) in the prompt text, you must include two percent signs (%%) in the request. If you include a single percent sign, the terminal will display an <code>"unexpected message"</code> string.</p>
-          type: string
-          example: "phone number"
-          maxLength: 1000
-        includeAmountDisplay:
-          description: |
-            <p>Determines if the transaction amount is displayed to the user during an MSR or EMV (card-present) transaction.</p><br>
-            <p>Defaults to <code>true</code> if not provided.</p><br>
-            <p><em>Notes:</em></p><ul>
-            <li><em>For v4 requests, this parameter is always set to <code>false</code>. A value of <code>true</code> in the request will be ignored.</em></li>
-            <li><em>This parameter is not supported for Clover terminals. The Clover terminal displays the amount to the user regardless of this parameter.</em></li></ul>
-          type: boolean
-          example: true
-        includeCustomTipAmount:
-          description: |
-            <p>Determines if a custom tip button is displayed on the terminal.</p><br>
-            <p>If <code>false</code>, then <code>tipPercentPresets</code> is required to provide a range of preset tip percentage values.</p><br>
-            <p>Defaults to <code>true</code> if not provided.</p>
-          type: boolean
-          example: true
-        tipPercentPresets: 
-          type: array
-          items:
-            type: integer
-          example: ["10", "15", "20"]
-          description: |
-            <p>An array of three preset tip percentages, in the format <code>[n, n, n]</code>.</p><br>
-            <p><strong>Required</strong> if <code>"includeCustomTipAmount":"false"</code>.</p><br>
-            <p><em>Note: The ability to set four preset values is planned for a future enhancement.</em></p>
-    tipSuccess:
-      x-model-version: 1.0
-      description: tip Response
-      properties: 
-        amount:
-          description: | 
-            <p>The amount provided in the original request.</p>
-          type: string
-          example: "100"
-        tip:
-          description: The calculated tip amount based on the user's selection or input.
-          type: string
           example: ".06"
         total:
           description: The calculated total transaction amount (amount + tip).
