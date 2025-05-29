@@ -370,28 +370,28 @@ components:
           example: 'false'
         startPeriod:
           type: string
+          description: Starting period as a string
           format: date
           example: 2025-03-01
         startPeriod1:
-          description: Starting period as a string
           type: string
+          description: Period 1
           format: date
           example: 2025-03-01
         startPeriod2:
           type: string
-          description: Starting period as a string
           format: date
+          description: Period 2
           example: 2025-03-01
         startPeriod3:
           type: string
           format: date
-          description: Starting period as a string
+          description: Period 3
           example: 2025-03-01
         startPeriod4:
           type: string
           format: date
           example: 2025-03-01
-          description: Starting period as a string
         endPeriod:
           type: string
           format: date-time
