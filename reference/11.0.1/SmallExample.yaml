@@ -371,27 +371,32 @@ components:
         startPeriod:
           type: string
           format: date
-          example: 1025-03-01
+          example: 2023-03-01
         startPeriod1:
           type: string
           format: date
-          example: 2020-03-01
+          example: 2022-03-01
         startPeriod2:
           type: string
           format: date
-          example: 2024-03-01
+          example: 2021-03-01
         startPeriod3:
           type: string
           format: date
-          example: 0006-03-01
+          example: 2020-03-01
         startPeriod4:
           type: string
           format: date
-          example: 0010-12-31
+          example: 2010-03-01
         startPeriod5:
           type: string
           format: date
-          example: 0000-01-01
+          description: the date
+          example: 0010-12-31
+        startPeriod6:
+          type: string
+          format: date
+          example: 0001-01-01
         endPeriod:
           type: string
           format: date-time
