@@ -361,17 +361,33 @@ components:
           example: '0'
         geo:
           type: string
+          description: geo location
           example: 'US'
         fetchMSA:
           type: boolean
           default: false
+          description: fetch stuff if true
           example: 'false'
         startPeriod:
           type: string
-          description: Starting period
           format: date
-          example: 0006-02-14
-        startPeriodString:
+          example: '2025-03-01'
+        startPeriod1:
+          description: Starting period as a string
+          type: string
+          format: date
+          example: '2025-03-01'
+        startPeriod2:
+          type: string
+          description: Starting period as a string
+          format: date
+          example: '2025-03-01'
+        startPeriod3:
+          type: string
+          format: date
+          description: Starting period as a string
+          example: '2025-03-01'
+        startPeriod4:
           type: string
           format: date
           example: '2025-03-01'
@@ -380,10 +396,6 @@ components:
           type: string
           format: date-time
           example: 2023-02-16T09:10:27Z
-        endPeriodString:
-          type: string
-          format: date-time
-          example: '2023-02-16T09:10:27Z'
         isInflation:
           type: boolean
           default: false
