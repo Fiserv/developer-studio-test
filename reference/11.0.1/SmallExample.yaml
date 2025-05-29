@@ -371,15 +371,15 @@ components:
         startPeriod:
           type: string
           format: date
-          example: 01-01-2025
+          example: 1990-12-31
         startPeriod1:
           type: string
           format: date
-          example: 1000-01-01
+          example: 1999-01-01
         startPeriod2:
           type: string
           format: date
-          example: 2000-01-01
+          example: 1900-01-01
         startPeriod3:
           type: string
           format: date
