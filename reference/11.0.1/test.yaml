@@ -250,7 +250,7 @@ components:
           type: array
           items:
             type: integer
-          example: ["10", "15", "20"]
+          example: [10, 15, 20]
           description: |
             <p>An array of three preset tip percentages, in the format <code>[n, n, n]</code>.</p><br>
             <p><strong>Required</strong> if <code>"includeCustomTipAmount":"false"</code>.</p><br>
