@@ -379,7 +379,7 @@ components:
         startPeriod2:
           type: string
           format: date
-          example: 2000-03-01
+          example: 2024-03-01
         startPeriod3:
           type: string
           format: date
@@ -388,6 +388,10 @@ components:
           type: string
           format: date
           example: 0010-12-31
+        startPeriod5:
+          type: string
+          format: date
+          example: 0000-01-01
         endPeriod:
           type: string
           format: date-time
