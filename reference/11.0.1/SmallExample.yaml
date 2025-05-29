@@ -371,26 +371,26 @@ components:
         startPeriod:
           type: string
           format: date
-          example: '2025-03-01'
+          example: 2025-03-01
         startPeriod1:
           description: Starting period as a string
           type: string
           format: date
-          example: '2025-03-01'
+          example: 2025-03-01
         startPeriod2:
           type: string
           description: Starting period as a string
           format: date
-          example: '2025-03-01'
+          example: 2025-03-01
         startPeriod3:
           type: string
           format: date
           description: Starting period as a string
-          example: '2025-03-01'
+          example: 2025-03-01
         startPeriod4:
           type: string
           format: date
-          example: '2025-03-01'
+          example: 2025-03-01
           description: Starting period as a string
         endPeriod:
           type: string
