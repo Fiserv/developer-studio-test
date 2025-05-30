@@ -19,8 +19,8 @@
           link: docs/getting-started/preview-and-publish-content/preview-and-publish.md
     - title: Getting Started Preview
       link: docs/get-started.md&branch=preview
-    - title: Commerce Hub Doc
-      link: /product/CommerceHub/docs/?path=docs/Getting-Started/Getting-Started-General.md
+#    - title: Commerce Hub Doc
+#      link: /product/CommerceHub/docs/?path=docs/Getting-Started/Getting-Started-General.md
 
 - sections:
     - title: Release Notes
@@ -28,11 +28,11 @@
         - title: RN1
           link: docs/release-notes/rn1.md
 
-- sections:
-    - title: Nyan dog
-      link: docs/resources/nyan-dog.md
-    - title: Nyan cat download
-      link: download/assets/files/nyan-cat.txt
+#- sections:
+#    - title: Nyan dog
+#      link: docs/resources/nyan-dog.md
+#    - title: Nyan cat download
+#      link: download/assets/files/nyan-cat.txt
 
 - sections:
     - title: Gated Content
