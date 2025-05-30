@@ -400,7 +400,7 @@ components:
         startPeriod7:
           type: string
           format: date
-          example: 2025-05-30
+          example: 05-30-2025
         endPeriod:
           type: string
           format: date-time
