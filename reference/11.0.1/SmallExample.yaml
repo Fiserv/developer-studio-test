@@ -397,6 +397,10 @@ components:
           type: string
           format: date
           example: 0001-01-01
+        startPeriod7:
+          type: string
+          format: date
+          example: 2025-05-30
         endPeriod:
           type: string
           format: date-time
