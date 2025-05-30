@@ -401,6 +401,10 @@ components:
           type: string
           format: date
           example: 25-05-30
+        startPeriod8:
+          type: string
+          format: date-time
+          example: 2024-12-01T00:00:00.000Z
         endPeriod:
           type: string
           format: date-time
