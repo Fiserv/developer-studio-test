@@ -42,7 +42,7 @@ paths:
     get:
       tags:
         - Tenant
-      x-group-name: Tenant
+      x-group-name: NewAPIs
       x-proxy-name: products
       summary: Returns tenant provider API.
       operationId: TenantProviderID
@@ -63,7 +63,7 @@ paths:
     post:
       tags:
         - Specs
-      x-group-name: Specs
+      x-group-name: NewAPIs
       x-proxy-name: apis
       summary: Returns OpenAPI Spec.
       operationId: APISpecProviderId
@@ -83,7 +83,7 @@ paths:
     get:
       tags:
         - Documents
-      x-group-name: Documents
+      x-group-name: NewAPIs
       x-proxy-name: docs
       summary: Returns Docs in markdown format.
       operationId: DocsAPIId
@@ -103,7 +103,7 @@ paths:
     get:
       tags:
         - Layout
-      x-group-name: Layout
+      x-group-name: NewAPIs
       x-proxy-name: layouts
       summary: Returns the product page layout.
       operationId: LayoutAPIId
