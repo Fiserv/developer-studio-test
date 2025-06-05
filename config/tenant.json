@@ -24,16 +24,8 @@
   "getStartedFilePath": "docs/get-started.md",
   "apiVersions": [
     {
-      "version": "11.0.2",
-      "versionType": "major",
-      "releaseNotesPath": "/release-notes/release-notes-11.0.2.md",
-      "apiSpecFileNames": [
-        "api-1.0.0"
-      ]
-    },
-    {
       "version": "11.0.1",
-      "versionType": "minor",
+      "versionType": "maajor",
       "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
       "apiSpecFileNames": [
         "Cards/CardService",
