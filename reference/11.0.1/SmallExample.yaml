@@ -187,6 +187,7 @@ paths:
       summary: Search history with adjusted values by criteria
       description: Retrieve a list of naics3 history records with adjusted values that show index values for them for the last 12 months.
       operationId: searchHistoryAdjusted
+      deprecated: true
       requestBody:
         required: true
         content:
@@ -294,6 +295,7 @@ components:
           default: false
           description: If true, inflation related data will be returned, Else non-inflation data will be returned.
           example: 'false'
+          deprecated: true
     MonthIndexValue:
       type: object
       properties:
