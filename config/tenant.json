@@ -28,7 +28,7 @@
       "versionType": "major",
       "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
       "apiSpecFileNames": [
-        "new2-apis"
+        "new1-apis"
       ]
     },
     {
@@ -39,8 +39,7 @@
         "Cards/CardService",
         "SmallExample",
         "baas_v1.0.0",
-        "b2b_v1.0.0",
-        "test"
+        "b2b_v1.0.0"
       ]
     },
     {
