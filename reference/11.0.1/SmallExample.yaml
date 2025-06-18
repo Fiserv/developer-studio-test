@@ -79,7 +79,7 @@ paths:
     post:
       tags:
         - IndexDetail
-      x-proxy-name: index-details-adjusted
+      x-proxy-name: index-details-adjusted-example
       summary: Search IndexDetails with adjusted values by criteria
       description: Retrieve a list of IndexDetails with adjusted values based on the provided search criteria.
       operationId: searchIndexDetailAdjusted
