@@ -75,6 +75,47 @@ paths:
         500:
           description: 'INTERNAL SERVER ERROR'
           content: {}
+  /api/v1/index-details/adjusted/{example}:
+    post:
+      tags:
+        - IndexDetail
+      x-proxy-name: index-details-adjusted-example
+      summary: Search IndexDetails with adjusted values by criteria
+      description: Retrieve a list of IndexDetails with adjusted values based on the provided search criteria.
+      operationId: searchIndexDetailAdjusted
+      parameters:
+        - name: example
+          in: path
+          required: true
+          deprecated: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchIndexDetailRequest'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IndexDetailDto'
+        400:
+          description: 'BAD REQUEST'
+          content: {}
+        401:
+          description: 'UNAUTHORIZED'
+          content: {}
+        404:
+          description: 'NOT FOUND'
+          content: {}
+        500:
+          description: 'INTERNAL SERVER ERROR'
+          content: {}
   /api/v1/index-details/adjusted:
     post:
       tags:
@@ -83,6 +124,13 @@ paths:
       summary: Search IndexDetails with adjusted values by criteria
       description: Retrieve a list of IndexDetails with adjusted values based on the provided search criteria.
       operationId: searchIndexDetailAdjusted
+      parameters:
+        - name: collection_id
+          in: header
+          required: true
+          deprecated: true
+          schema:
+            type: string
       requestBody:
         content:
           application/json:
