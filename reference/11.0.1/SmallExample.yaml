@@ -344,6 +344,7 @@ components:
       properties:
         geo:
           type: string
+          deprecated: true
         byNaicsCode3:
           type: array
           items:
