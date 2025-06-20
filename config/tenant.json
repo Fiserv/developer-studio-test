@@ -24,8 +24,16 @@
   "getStartedFilePath": "docs/get-started.md",
   "apiVersions": [
     {
-      "version": "11.0.2",
+      "version": "11.0.3",
       "versionType": "major",
+      "releaseNotesPath": "/release-notes/rn2_rajivtest.md",
+      "apiSpecFileNames": [
+        "Cards/CardService"
+      ]
+    },
+    {
+      "version": "11.0.2",
+      "versionType": "minor",
       "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
       "apiSpecFileNames": [
         "new1-apis",
