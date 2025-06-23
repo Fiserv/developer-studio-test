@@ -13,7 +13,7 @@ paths:
     post:
       tags:
         - tip
-      x-group-name: CardPointe Integrated Terminal API
+      x-group-name: 1 CardPointe Integrated Terminal API
       x-proxy-name: tip
       summary: A call to the tip endpoint prompts the user to specify a tip amount on the terminal.
       description: |
@@ -32,7 +32,7 @@ paths:
               schema: {$ref: '#/components/schemas/tipSuccess'}
   /v1/petro-transactions:
     post:
-      x-group-name: Petro Transaction Services
+      x-group-name: petro Transaction Services
       x-proxy-name: Create Petro Transaction
       tags:
       - petro-transactions
@@ -101,7 +101,7 @@ paths:
 
   /v1/petro-transactions/{fdTransactionId}:
     get:
-      x-group-name: Petro Transaction Services
+      x-group-name: -Petro Transaction Services
       x-proxy-name: Read Petro Transaction
       x-hidden: true
       tags:
