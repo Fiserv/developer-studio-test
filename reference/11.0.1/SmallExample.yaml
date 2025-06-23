@@ -232,6 +232,7 @@ paths:
       tags:
         - IndexHistory
       x-proxy-name: index-history-adjusted
+      x-order: 1
       summary: Search history with adjusted values by criteria
       description: Retrieve a list of naics3 history records with adjusted values that show index values for them for the last 12 months.
       operationId: searchHistoryAdjusted
