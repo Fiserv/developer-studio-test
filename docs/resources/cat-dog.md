@@ -14,6 +14,7 @@ For example, this entire page is composed of Cat Dog!
 Below is a quick reference of Cat Dog.
 
 ### Table of Contents
+
 [block:image]
 {
   "images": [
@@ -57,11 +58,15 @@ url reference 3
 inline html with markdown
 <img src="/assets/images/cat-dog.png" alt="Cat Dog" style="width:300px;">
 
+### Some gifs
+
 now let us do a gif
 ![api_suite](/assets/images/test_gif.gif)
 
 another way to call gif
 <img src="/assets/images/test_gif.gif" alt="API SUITE">
+
+### More types
 
 one more type
 ![selfie](/assets/images/test_jpeg.jpeg)
