@@ -72,6 +72,8 @@ found another type - tiff
 now with upper case
 ![dolores-park](/assets/images/test_tiff.TIFF)
 
+### Big files
+
 Let us do some big files now
 First a JPEG
 ![screenshot1](/assets/images/3mb-jpeg-file.jpeg)
@@ -82,5 +84,11 @@ Then a JPG
 And finally a PNG
 ![screenshot3](/assets/images/3mb-png-file.png)
 
+### Small gif
+
 now let us do a small gif
 ![api_suite](/assets/images/test_small_gif.gif)
+
+### That's all the cat dogs
+
+Thanks for reading
