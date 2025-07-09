@@ -1,4 +1,4 @@
-# Getting Started (preview)
+# Getting Started (preview-test)
 
 ## Welcome to the Developer Studio!
 
