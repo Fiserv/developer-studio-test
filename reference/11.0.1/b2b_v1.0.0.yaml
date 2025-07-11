@@ -21,8 +21,8 @@ paths:
   /v1/users:
     post:
       x-group-name: b2b
-      x-proxy-name: '1. Create User'
-      summary: '1. Create User'
+      x-proxy-name: 'Create User'
+      summary: 'Create User'
       description: ''
       operationId: create-user
       requestBody:
@@ -240,8 +240,8 @@ paths:
   /v1/users/{payfare_id}/kyc:
     post:
       x-group-name: b2b
-      x-proxy-name: '2. Create KYC'
-      summary: '2. Create KYC'
+      x-proxy-name: 'Create KYC'
+      summary: 'Create KYC'
       description: ''
       operationId: create-kyc-endpoint
       parameters:
@@ -355,8 +355,8 @@ paths:
       deprecated: false
     get:
       x-group-name: b2b
-      x-proxy-name: '4. Monitor Console Log'
-      summary: '4. Monitor Console Log'
+      x-proxy-name: 'Monitor Console Log'
+      summary: 'Monitor Console Log'
       description: ''
       operationId: 4-monitor-console-log
       parameters:
@@ -409,7 +409,7 @@ paths:
     get:
       x-group-name: b2b
       x-proxy-name: 'Get KYC Web App URL & Perform KYC'
-      summary: '3. Get KYC Web App URL & Perform KYC'
+      summary: 'Get KYC Web App URL & Perform KYC'
       description: ''
       operationId: get-kyc-form-link
       parameters:
