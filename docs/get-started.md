@@ -1,4 +1,4 @@
-# Getting Started (develop branch webhook test)
+# Getting Started (webhook test 1)
 
 ## Welcome to the Developer Studio!
 
