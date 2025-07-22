@@ -24,6 +24,14 @@
   "getStartedFilePath": "docs/get-started.md",
   "apiVersions": [
     {
+      "version": "11.0.4",
+      "versionType": "major",
+      "releaseNotesPath": "/release-notes/rn2_rajivtest.md",
+      "apiSpecFileNames": [
+        "CSAddDeleteAPITest"
+      ]
+    },
+    {
       "version": "11.0.3",
       "versionType": "major",
       "releaseNotesPath": "/release-notes/rn2_rajivtest.md",
