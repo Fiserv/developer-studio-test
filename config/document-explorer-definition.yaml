@@ -7,9 +7,9 @@
     - title: Getting Started
       link: docs/getting-started/new-getting-started.md
       sections:
-        - title: Setup New Tenants
+        - title: Setup new tenants
           link: docs/getting-started/setup-tenant/setup-tenant.md
-        - title: Deploy New Tenants
+        - title: Deploy new tenants
           link: docs/getting-started/setup-tenant/deploy-tenant.md
         - title: Register New Tenants
           link: docs/getting-started/setup-tenant/register-tenant.md
