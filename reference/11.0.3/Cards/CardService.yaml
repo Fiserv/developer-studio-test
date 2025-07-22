@@ -360,7 +360,7 @@ paths:
       tags:
         - Get Card
       summary: Get Card.
-      description: "Retrieves the details of an existing debit or credit card account.<br> For more information about the debit or credit card domain, <a href=\"../docs/?path=docs/fintechs/cards.md\" title=\"Click to open\">click here.</a> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n  </ul>"
+      description: "Retrieves the details of an existing debit or credit card account.<br> For more information about the debit or credit card domain pls visit, <a href=\"../docs/?path=docs/fintechs/cards.md\" title=\"Click to open\">click here.</a> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n  </ul>"
       operationId: CardInqOperSecured
       parameters:
         - name: EFXHeader
