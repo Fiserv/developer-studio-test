@@ -32,11 +32,11 @@ header:
   productionDescription: Welcome to Developer Studio Test Tenant. Download a copy of <a download href="download/assets/nyan-cat.txt">nyan cat</a> or even <a href="download/assets/images/cat-dog.png" download>a second copy</a>!<br><br><img src="/assets/images/nyan.jpg" width="300" height="300"/><img src="assets/images/cat-dog.png" width="300" height="300"/>
 getStarted: /docs/product-layout-getting-started.md
 benefits:
-  - title: Transform Customer Experience
+  - title: Transform customer experience
     description: Pre-certified integrations to value added solutions and third-party providers that power next-generation commerce experiences.
-  - title: Accelerate Revenue
+  - title: Accelerate revenue
     description: Intelligent orchestration layer that reduces code complexity and operational costs.
-  - title: Optimize Commerce
+  - title: Optimize commerce
     description: BackOffice automation with a modern set of tools and APIs.
 guides:
   - title: Setup a tenant
