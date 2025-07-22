@@ -33,7 +33,7 @@
     },
     {
       "version": "11.0.3",
-      "versionType": "major",
+      "versionType": "minor",
       "releaseNotesPath": "/release-notes/rn2_rajivtest.md",
       "apiSpecFileNames": [
         "Cards/CardService"
