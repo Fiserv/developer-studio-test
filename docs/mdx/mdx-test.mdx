@@ -1,0 +1,56 @@
+
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
+import { DemoApp as AppAnimatedConnection, LineConnection } from '@quydoan/documents-ui';
+
+<Meta title='Getting Start' />
+
+## 1. Line Connection
+
+<svg width={240} height={100}>
+  <LineConnection startNode={{ x: 20, y: 50 }}  endNode={{ x: 200, y: 50 }}  startConnecting  stroke='#1976d2' />
+</svg>
+
+## 2. Example with Animation
+
+You can enable animation and control it from the parent component using two callback properties:
+
+- `onStart`: Called when the animation starts
+- `onComplete`: Called when the animation completes
+
+```tsx
+<AnimatedConnection
+  source={sourceRef}
+  target={targetRef}
+  onStart={() => console.log('Animation started')}
+  onComplete={() => console.log('Animation completed')}
+/>
+```
+
+<AnimatedConnection
+  source={sourceRef}
+  target={targetRef}
+  onStart={() => console.log('Animation started')}
+  onComplete={() => console.log('Animation completed')}
+/>
+
+## 3. Controlling Animation When Line Touches Target
+
+With the callback properties, you can control the animation when the line touches the target. See the `App.animated-connection` example for a full implementation:
+
+<AppAnimatedConnection />
+
+---
+
+## More Tips & Resources
+
+- **Component Stories:**
+  - See `src/lib/components/line-connection/line-connection.stories.tsx` for more usage patterns of `LineConnection`.
+  - See `src/lib/components/animated-connection/animated-connection.stories.tsx` for animated connection examples.
+- **Demo App:**
+  - Check `src/lib/demo/App.animated-connection.stories.tsx` and `src/lib/demo/App.animated-connection.tsx` for real-world integration and advanced animation control.
+- **Hooks:**
+  - Use `use-animated-gradient` and `use-animation-sequence` hooks for custom animation logic.
+
+> For further customization, refer to the TypeScript types in each component and hook. You can extend or compose these components to fit your UI needs.
+
+---
