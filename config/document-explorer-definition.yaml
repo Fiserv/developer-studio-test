@@ -81,3 +81,10 @@
               link: docs/SpecTest/SpecTest.md
               access: public
               groups: []
+
+- sections:
+    - title: MDX
+      sections:
+      - title: MDX files
+        link: docs/mdx/mdx-test.mdx
+
