@@ -29,7 +29,7 @@
 ################################################################################
 - filePath: "Spec_Testing/Private_Access.pdf"
   access: private
-  groups: []
+  groups: [TEST_GROUP_RG]
 - filePath: "Spec_Testing/Entitled_Access.pdf"
   access: private
   groups: [TEST_GROUP_RG]  
