@@ -25,14 +25,6 @@ You can enable animation and control it from the parent component using two call
   onComplete={() => console.log('Animation completed')}
 />
 ```
-
-<AnimatedConnection
-  source={sourceRef}
-  target={targetRef}
-  onStart={() => console.log('Animation started')}
-  onComplete={() => console.log('Animation completed')}
-/>
-
 ## 3. Controlling Animation When Line Touches Target
 
 With the callback properties, you can control the animation when the line touches the target. See the `App.animated-connection` example for a full implementation:
