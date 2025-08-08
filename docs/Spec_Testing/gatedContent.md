@@ -28,6 +28,10 @@ Un-Supported Types : .csv, .html
 
 [Entitled_Access.pdf]D(Entitled_Access.pdf)
 
+**Testing**
+[Test_Access.pdf]D(Test_Access.pdf)
+
+
 ** Below file doesn't exist**
 
 [Private File that does not Exist](?path=assets/files/Spec_Testing/Private_Access_File_not_exist.pdf)

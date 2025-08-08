@@ -33,6 +33,9 @@
 - filePath: "Spec_Testing/Entitled_Access.pdf"
   access: private
   groups: [TEST_GROUP_RG]  
+- filePath: "Spec_Testing/Test_Access.pdf"
+  access: private
+  groups: []  
 - filePath: "Spec_Testing/Public_Access.pdf"
   access: public
 - filePath: "Spec_Testing/Public_Access.txt"
