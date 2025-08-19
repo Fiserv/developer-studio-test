@@ -84,12 +84,21 @@ featuredFeatures:
         title: Add Address
 featuredRecipes:
   - title: Featured Recipe 1
+    featured: true
     description: Description of featured recipe 1
     relatedDocs:
       - link: recipes/recipe_1.md
         title: Featured Recipe 1
   - title: Featured Recipe 2
+    featured: true
     description: Description of featured recipe 2
     relatedDocs:
       - link: recipes/recipe_2.md
         title: Featured Recipe 2
+  - title: Featured Recipe 3
+    featured: true
+    description: Description of featured recipe 3
+    relatedDocs:
+      - link: recipes/recipe_3.md
+        title: Featured Recipe 3
+
