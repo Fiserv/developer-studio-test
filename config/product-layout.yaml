@@ -82,3 +82,14 @@ featuredFeatures:
       - type: post
         path: /address
         title: Add Address
+featuredRecipes:
+  - title: Featured Recipe 1
+    description: Description of featured recipe 1
+    relatedDocs:
+      - link: recipes/recipe_1.md
+        title: Featured Recipe 1
+  - title: Featured Recipe 2
+    description: Description of featured recipe 2
+    relatedDocs:
+      - link: recipes/recipe_2.md
+        title: Featured Recipe 2
