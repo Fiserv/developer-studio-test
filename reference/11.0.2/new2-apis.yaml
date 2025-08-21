@@ -28,7 +28,7 @@
 # the delivery of this work
 ################################################################################
 
-openapi: 3.0.2
+openapi: 3.1.0
 info:
   title: Dev Studio Tenant APIs.
   description: To onboard properly into the Fiserv Developer Studio askdjsa as a new tenant each
@@ -226,6 +226,15 @@ components:
         brand:
           type: string
           description: Brand
+          examples:
+            example1:
+              summary: Example one summary
+              value:
+                name: example1
+            example2:
+              summary: Example two summary
+              value:
+                name: example2
         brandDescription:
           type: string
           description: BrandDescription
@@ -300,15 +309,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/PageLayoutResponse'
-          examples:
-            example1:
-              summary: Example one summary
-              value:
-                name: example1
-            example2:
-              summary: Example two summary
-              value:
-                name: example2
         text/yaml:
           schema:
             $ref: '#/components/schemas/PageLayoutResponse'
