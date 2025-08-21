@@ -300,6 +300,15 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/PageLayoutResponse'
+          examples:
+            example1:
+              summary: Example one summary
+              value:
+                name: example1
+            example2:
+              summary: Example two summary
+              value:
+                name: example2
         text/yaml:
           schema:
             $ref: '#/components/schemas/PageLayoutResponse'
