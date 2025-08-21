@@ -7,6 +7,8 @@ servers:
 paths:
   /user:
     get:
+      x-group-name: openAPI3.1
+      x-proxy-name: Get User
       summary: Get user info
       responses:
         '200':
