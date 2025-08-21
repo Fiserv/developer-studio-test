@@ -29,7 +29,8 @@
       "releaseNotesPath": "/release-notes/rn2_rajivtest.md",
       "apiSpecFileNames": [
         "Cards/CardService",
-        "Cards/CardService31"
+        "Cards/CardService31",
+        "openAPI-31-example"
       ]
     },
     {
