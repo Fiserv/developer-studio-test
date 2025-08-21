@@ -30,7 +30,7 @@
       "apiSpecFileNames": [
         "Cards/CardService",
         "Cards/CardService31",
-        "openAPI-31-example"
+        "openapi_3_1_example"
       ]
     },
     {

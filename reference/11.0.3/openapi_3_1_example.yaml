@@ -1,0 +1,62 @@
+openapi: 3.1.0
+info:
+  title: Advanced API
+  version: 1.0.0
+servers:
+- url: https://api.example.com
+paths:
+  /user:
+    get:
+      summary: Get user info
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $schema: https://json-schema.org/draft/2020-12/schema
+                type: object
+                properties:
+                  name:
+                    type: string
+                  email:
+                    type:
+                    - string
+                    - 'null'
+              examples:
+                example1:
+                  summary: User with email
+                  value:
+                    name: Alice
+                    email: alice@example.com
+                example2:
+                  summary: User without email
+                  value:
+                    name: Bob
+                    email: null
+webhooks:
+  newMessage:
+    post:
+      summary: Receive a new message
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                sender:
+                  type: string
+      responses:
+        '200':
+          description: Acknowledged
+components:
+  pathItems:
+    commonGet:
+      get:
+        summary: Common reusable GET
+        responses:
+          '200':
+            description: OK
