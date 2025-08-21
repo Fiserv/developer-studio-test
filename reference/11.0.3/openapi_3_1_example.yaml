@@ -35,7 +35,7 @@ paths:
                   summary: User without email
                   value:
                     name: Bob
-                    email: null
+                    email: bob@example.com
 webhooks:
   newMessage:
     post:
