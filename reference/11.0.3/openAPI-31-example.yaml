@@ -1,0 +1,49 @@
+openapi: 3.1.0
+info:
+  title: Example API
+  version: 1.0.0
+
+paths:
+  /greet:
+    post:
+      x-group-name: OpenAPI3.1
+      x-proxy-name: Greet
+      summary: Greet a user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+            examples:
+              example1:
+                summary: A simple greeting
+                value:
+                  name: Alice
+              example2:
+                summary: Another greeting
+                value:
+                  name: Bob
+      responses:
+        '200':
+          description: A greeting message
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              examples:
+                example1:
+                  summary: Greeting Alice
+                  value:
+                    message: "Hello, Alice!"
+                example2:
+                  summary: Greeting Bob
+                  value:
+                    message: "Hello, Bob!"
+
