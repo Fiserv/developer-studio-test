@@ -28,9 +28,7 @@
       "versionType": "major",
       "releaseNotesPath": "/release-notes/rn2_rajivtest.md",
       "apiSpecFileNames": [
-        "Cards/CardService",
-        "Cards/CardService31",
-        "openapi_3_1_example"
+        "Cards/CardService"
       ]
     },
     {
@@ -96,6 +94,10 @@
       {
         "name": "downloadPostman",
         "value": false
+      },
+      {
+        "name": "enableRecipes",
+        "value": true
       }
     ],
     "adminAddresses": [
