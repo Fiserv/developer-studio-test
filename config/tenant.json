@@ -59,6 +59,14 @@
       "apiSpecFileNames": [
         "Cards/CardService"
       ]
+    },
+    {
+      "version": "backup",
+      "versionType": "minor",
+      "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
+      "apiSpecFileNames": [
+        "api-1.0.0"
+      ]
     }
   ],
   "product": {
