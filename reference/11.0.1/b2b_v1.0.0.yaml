@@ -571,14 +571,14 @@ paths:
         - name: X-PFClient-Key
           in: header
           schema:
-            type: string
+            type: apiKey
             default: 'API key'
           required: true
           description: 'API Key'
         - name: X-PFClient-Secret
           in: header
           schema:
-            type: string
+            type: apiKey
             default: 'API Secret'
           required: true
           description: 'API Secret'
