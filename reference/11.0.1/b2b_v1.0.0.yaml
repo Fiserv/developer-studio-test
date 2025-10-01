@@ -582,6 +582,9 @@ paths:
             default: 'API Secret'
           required: true
           description: 'API Secret'
+      security:
+        - sec0: []
+          sec1: []
       responses:
         '200':
           description: '200'
