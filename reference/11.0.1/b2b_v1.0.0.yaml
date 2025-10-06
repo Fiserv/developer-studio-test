@@ -10,12 +10,10 @@ components:
       type: apiKey
       in: header
       name: X-PFClient-Key
-      example: client-key
     sec1:
       type: apiKey
       in: header
       name: X-PFClient-Secret
-      example: client-secret
 security:
   - sec0: []
     sec1: []
