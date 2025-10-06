@@ -568,20 +568,6 @@ paths:
             type: string
             default: c5cd8f05-5882-4a63-931d-1490111a7c5e
           required: true
-        - name: X-PFClient-Key
-          in: header
-          schema:
-            type: string
-            example: 'API key'
-          required: true
-          description: 'API Key'
-        - name: X-PFClient-Secret
-          in: header
-          schema:
-            type: string
-            example: 'API Secret'
-          required: true
-          description: 'API Secret'
       security:
         - sec0: []
           sec1: []
