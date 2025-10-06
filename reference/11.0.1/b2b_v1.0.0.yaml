@@ -570,7 +570,7 @@ paths:
           required: true
       security:
         - sec0: []
-          sec1: []
+        - sec1: []
       responses:
         '200':
           description: '200'
