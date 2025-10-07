@@ -4,19 +4,6 @@ info:
   version: '1.0'
 servers:
   - url: https://api.uat.payfarelabs.com
-components:
-  securitySchemes:
-    sec0:
-      type: apiKey
-      in: header
-      name: X-PFClient-Key
-    sec1:
-      type: apiKey
-      in: header
-      name: X-PFClient-Secret
-security:
-  - sec0: []
-    sec1: []
 paths:
   /v1/users:
     post:
