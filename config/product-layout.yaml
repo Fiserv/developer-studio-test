@@ -29,7 +29,11 @@
 ################################################################################
 
 header:
-  productionDescription: Welcome to Developer Studio Test Tenant. Download a copy of <a download href="download/assets/nyan-cat.txt">nyan cat</a> or even <a href="download/assets/images/cat-dog.png" download>a second copy</a>!<br><br><img src="/assets/images/nyan.jpg" width="300" height="300"/><img src="assets/images/cat-dog.png" width="300" height="300"/>
+  productionDescription: |
+    Welcome to Developer Studio Test Tenant. Download a copy of [nyan cat](download/assets/nyan-cat.txt) or even [a second copy](download/assets/images/cat-dog.png)!
+    <br /><br />
+    ![Nyan Cat](/assets/images/nyan.jpg){:width="300" height="300"}
+    ![Cat Dog](assets/images/cat-dog.png){:width="300" height="300"}
 getStarted: /docs/product-layout-getting-started.md
 benefits:
   - title: Transform Customer Experience
