@@ -1,7 +1,11 @@
-# Help with Versioning
+# API links
 
-View our [API](/product/DeveloperStudioTest/api/?type=post&path=/cards&branch=develop&version=11.0.1)
+Proper [hard link](/product/DeveloperStudioTest/api/cards?type=post&branch=develop&version=11.0.1)
 
-View our other [API](/product/DeveloperStudioTest/api/?type=put&path=/cards&branch=develop&version=11.0.1)
+Old query param [hard link](/product/DeveloperStudioTest/api/?type=post&path=/cards&branch=develop&version=11.0.1)
 
-Ok just go check it out [here](/api/cards?type=put&version=11.0.1)
+[Root link](/api/cards?type=put&version=11.0.1)
+
+Incorrect [relative link](../api/cards?type=put&version=11.0.1)
+
+Functional [relative link](../../api/cards?type=put&version=11.0.1)
