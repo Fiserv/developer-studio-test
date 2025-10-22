@@ -1,66 +1,78 @@
-# Sample recipe 1
+# This is an MDX File test
 
-## Title
-A clear and descriptive title summarizing the recipe’s purpose
+## This is an H2 heading
 
-## Description
-A brief overview of what the recipe accomplishes and its relevant use cases
+### This is an H3 heading
 
-## Prerequisites
-Setup requirements such as API keys, libraries, or environment configurations
+#### This is an H4 heading
 
-## Step-by-step instructions
-Clear, numbered steps guiding users through the implementation
+##### This is an H5 heading
 
-## Response examples
-Sample API responses for both success and error scenarios
+###### This is an H6 heading
 
-## Error handling tips (optional)
-Suggestions for managing common implementation errors
+## Horizontal rules
+--------------------------
+_This text is  italic_
 
-## Links to API references (encouraged)
-Direct links to relevant API documentation
+__This text is  bold__
 
-## Use cases
-Real-world scenarios where the recipe is applicable
+~~This text is strikethrough~~
 
-## Related Recipes
-Links to similar or complementary recipes
-[recipe 2](?path=docs/recipes/recipe_2.md)
-[recipe 3](?path=docs/recipes/recipe_3.md)
+## Unordered List
+- Item one
+- Item two
+- Item three
 
----
+## Ordered List
+1. First item
+2. Second item
+3. Third item
 
-## Additional Content Types
+Here is some `inline code` in a sentence.
 
-### Nested Headings
-
-#### Level 4 Heading
-
-### Unordered List
-
-- Item 1
-- Item 2
-  - Nested Item 2a
-  - Nested Item 2b
-
-### Ordered List
-
-1. First step
-2. Second step
-   1. Sub-step a
-   2. Sub-step b
-
-### Images
-
-![Alt text for image](https://via.placeholder.com/150 "Sample Image")
-
-### Inline Code
-
-Use the `<MyComponent />` in your MDX file.
-
-### Fenced Code Blocks
+## Code Block Example
 
 ```js
-// JavaScript code block
-console.log('Hello, world!');
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+
+> **Note:** This is a note callout.
+
+> **Warning:** ⚠️ This is a warning callout.
+
+> **Tip:** 💡 This is a tip callout.
+
+## Table Example
+
+| Name     | Age | City      |
+|----------|-----|-----------|
+| Alice    | 24  | New York  |
+| Bob      | 29  | London    |
+| Charlie  | 32  | Sydney    |
+
+| Left Aligned | Center Aligned | Right Aligned |
+|:------------ |:-------------:| -------------:|
+| Apple        | Banana        | Cherry        |
+| Dog          | Elephant      | Fox           |
+
+> **Guideline:** 📋 Please follow the steps in order and double-check your inputs before proceeding.
+
+## Color Palette
+
+| Color Name | Hex Code   | Swatch                          |
+|------------|------------|---------------------------------|
+| Primary    | #0070f3    | <span style={{background:'#0070f3',display:'inline-block',width:'24px',height:'24px',borderRadius:'4px'}}></span> |
+| Success    | #21ba45    | <span style={{background:'#21ba45',display:'inline-block',width:'24px',height:'24px',borderRadius:'4px'}}></span> |
+| Warning    | #fbbd08    | <span style={{background:'#fbbd08',display:'inline-block',width:'24px',height:'24px',borderRadius:'4px'}}></span> |
+| Critical   | #db2828    | <span style={{background:'#db2828',display:'inline-block',width:'24px',height:'24px',borderRadius:'4px'}}></span> |
+
+// React Example: Simple Button Component
+import React from 'react';
+
+function MyButton({ label }) {
+  return <button>{label}</button>;
+}
+
+// Usage
+<MyButton label="Click Me" />
