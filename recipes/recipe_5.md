@@ -67,17 +67,13 @@ Accents: café, naïve, résumé
 
 > This is a regular blockquote.
 
-<!-- theme: info -->
-> This is a informational blockquote.
+<Alert theme="info">This is a informational blockquote.</Alert>
 
-<!-- theme: success -->
-> This is a success blockquote.
+<Alert theme="success">This is a success blockquote.</Alert>
 
-<!-- theme: warning -->
-> This is a warning blockquote.
+<Alert theme="warning">This is a warning blockquote.</Alert>
 
-<!-- theme: danger -->
-> This is a danger blockquote.
+<Alert theme="danger">This is a danger blockquote.</Alert>
 
 ## Links
 
@@ -87,7 +83,7 @@ Different ways to create links.
 [I'm an inline-style link](https://www.google.com)
 
 2. To link Reference-style
-[I'm a reference-style link][https://www.google.com "Google's Homepage"]
+[I'm an inline-style link](https://www.google.com "Google's Homepage")
 
 3. To link to API explorer from documentation pages
 [API page](../api?type=post&path=/v1/apis)
@@ -122,3 +118,25 @@ Different ways to provide downloadable file links
 
 2. Internal download link:  
 [Internal Download Link](../assets/images/test_tiff_lowercase.tiff)
+
+## Tables
+
+Tables aren't part of the core Markdown spec, but they are part of GFM and *Markdown Here* supports them. They are an easy way of adding tables to your email -- a task that would otherwise require copy-pasting from another application.
+
+```no-highlight
+Colons can be used to align columns.
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+
+The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
+```
