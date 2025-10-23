@@ -67,13 +67,17 @@ Accents: café, naïve, résumé
 
 > This is a regular blockquote.
 
-<Alert theme="info">This is a informational blockquote.</Alert>
+<!-- theme: info -->
+> This is a informational blockquote.
 
-<Alert theme="success">This is a success blockquote.</Alert>
+<!-- theme: success -->
+> This is a success blockquote.
 
-<Alert theme="warning">This is a warning blockquote.</Alert>
+<!-- theme: warning -->
+> This is a warning blockquote.
 
-<Alert theme="danger">This is a danger blockquote.</Alert>
+<!-- theme: danger -->
+> This is a danger blockquote.
 
 ## Links
 
@@ -145,3 +149,21 @@ Markdown | Less | Pretty
 --- | --- | ---
 *Still* | `renders` | **nicely**
 1 | 2 | 3
+
+## Horizontal Rule
+
+```
+Three or more...
+
+---
+
+Hyphens
+
+***
+
+Asterisks
+
+___
+
+Underscores
+```
