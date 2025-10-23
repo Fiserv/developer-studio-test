@@ -189,3 +189,29 @@ link: ?path=docs/about-developer-studio.md
 -->
 
 <!-- type: row-end -->
+
+## Tabsets
+To organize content in tabs, indicate `titles` within the first `tab` annotation, followed by the tab content, and closed by a final `tab-end` annotation.
+> Users of Stoplight Flavored Markdown, need to include additional `title` annotation for each tab.
+
+![Tab sets](../assets/images/md/tab_syntax.png "Tabsets")
+
+<!-- theme: danger -->
+> Tab containers cannot be nested.
+
+### Example
+
+<!--
+type: tab
+titles: First Tab, Second Tab
+-->
+
+First tab content...
+
+<!--
+type: tab
+-->
+
+Second tab content...
+
+<!-- type: tab-end -->
