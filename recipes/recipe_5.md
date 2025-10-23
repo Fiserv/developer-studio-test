@@ -36,16 +36,6 @@ This is a [link to example.com](https://example.com).
     1. Sub-item a
     2. Sub-item b
 
----
-
-## Blockquote
-
-> This is a blockquote.
->
-> > This is a nested blockquote.
-
----
-
 ## Inline Code
 
 Here is some `inline code`.
@@ -72,3 +62,19 @@ console.log('Hello, Markdown!');
 
 Emoji: 😃
 Accents: café, naïve, résumé
+
+## Blockquotes
+
+> This is a regular blockquote.
+
+<!-- theme: info -->
+> This is a informational blockquote.
+
+<!-- theme: success -->
+> This is a success blockquote.
+
+<!-- theme: warning -->
+> This is a warning blockquote.
+
+<!-- theme: danger -->
+> This is a danger blockquote.
