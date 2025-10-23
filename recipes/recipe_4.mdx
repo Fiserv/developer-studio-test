@@ -1,14 +1,19 @@
-# This is an MDX File test
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
 
-## This is an H2 heading
+## Emphasis
 
-### This is an H3 heading
+Emphasis, aka italics, with *asterisks* or _underscores_.
 
-#### This is an H4 heading
+Strong emphasis, aka bold, with **asterisks** or __underscores__.
 
-##### This is an H5 heading
+Combined emphasis with **asterisks and _underscores_**.
 
-###### This is an H6 heading
+Strikethrough uses two tildes. ~~Scratch this.~~
 
 ## Horizontal rules
 --------------------------
@@ -28,7 +33,9 @@ __This text is  bold__
 2. Second item
 3. Third item
 
-Here is some `inline code` in a sentence.
+## Inline Code
+
+Here is some `inline code`.
 
 ## Code Block Example
 
@@ -36,56 +43,29 @@ Here is some `inline code` in a sentence.
 function greet(name) {
   return `Hello, ${name}!`;
 }
+```
 
-> **Note:** This is a note callout.
+:::note
+This is a note callout.
+:::
 
 > **Warning:** ⚠️ This is a warning callout.
 
 > **Tip:** 💡 This is a tip callout.
 
-## Table Example
+### Example
 
-| Name     | Age | City      |
-|----------|-----|-----------|
-| Alice    | 24  | New York  |
-| Bob      | 29  | London    |
-| Charlie  | 32  | Sydney    |
+<!--
+type: tab
+titles: First Tab, Second Tab
+-->
 
-| Left Aligned | Center Aligned | Right Aligned |
-|:------------ |:-------------:| -------------:|
-| Apple        | Banana        | Cherry        |
-| Dog          | Elephant      | Fox           |
+First tab content...
 
-> **Guideline:** 📋 Please follow the steps in order and double-check your inputs before proceeding.
+<!--
+type: tab
+-->
 
-## Color Palette
+Second tab content...
 
-| Color Name | Hex Code   | Swatch                          |
-|------------|------------|---------------------------------|
-| Primary    | #0070f3    | <span style={{background:'#0070f3',display:'inline-block',width:'24px',height:'24px',borderRadius:'4px'}}></span> |
-| Success    | #21ba45    | <span style={{background:'#21ba45',display:'inline-block',width:'24px',height:'24px',borderRadius:'4px'}}></span> |
-| Warning    | #fbbd08    | <span style={{background:'#fbbd08',display:'inline-block',width:'24px',height:'24px',borderRadius:'4px'}}></span> |
-| Critical   | #db2828    | <span style={{background:'#db2828',display:'inline-block',width:'24px',height:'24px',borderRadius:'4px'}}></span> |
-
-// React Example: Simple Button Component
-import React from 'react';
-
-function MyButton({ label }) {
-  return <button>{label}</button>;
-}
-
-// Usage
-<MyButton label="Click Me" />
-
-## Dynamic content
-export const name = "World";
-
-Hello, {name}!
-
-## JavaScript Imports/Exports
-The sum of 2 and 3 is {add(2, 3)}.
-
-export const author = "Jane Doe";
-
-##Images
-![Sample Image](https://via.placeholder.com/100 "Placeholder")
+<!-- type: tab-end -->
