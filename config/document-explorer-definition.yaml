@@ -87,4 +87,6 @@
       sections:
       - title: MDX files
         link: docs/mdx/mdx-test.mdx
+      - title: Sample MDX Content
+        link: docs/mdx/mdx-sample.mdx
 
