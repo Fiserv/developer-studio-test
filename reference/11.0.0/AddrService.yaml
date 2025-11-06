@@ -13,8 +13,8 @@ paths:
   /address:
     put:
       tags:
-      - Update Address
-      summary: Update Address.
+      - Update Addresses
+      summary: Update Addresses.
       description: "Modifies one existing address record associated with the financial account or Party.  <br> For more information about the Accountholder domain, <a href=\"../docs/?path=docs/fintechs/accountholder.md\" title=\"Click to open\">click here.</a> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n  </ul>"
       operationId: modifyAddr
       parameters:
