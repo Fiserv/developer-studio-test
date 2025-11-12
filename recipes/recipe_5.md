@@ -44,7 +44,7 @@ Here is some `inline code`.
 
 ```js
 // JavaScript code block
-console.log('Hello, Markdown!');
+console.log('Hello Markdown! Show me a notification.');
 ```
 
 ## Table
