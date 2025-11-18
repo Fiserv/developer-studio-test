@@ -118,7 +118,7 @@ Different ways to display images
 Different ways to provide downloadable file links
 
 1. External download link:  
-[External Download Link](https://github.com/Fiserv/remote-actions/blob/main/assets/files/nyan-cat.txt)
+[External Download Link](https://en.wikipedia.org/wiki/CatDog)
 
 2. Internal download link:  
 [Internal Download Link](../assets/images/test_tiff_lowercase.tiff)
@@ -172,7 +172,7 @@ Underscores
 A `card` has a border and optional values for a title, a description, and a link.
 To have a number of cards in a row, use `row` & `row-end` annotation before and after card(s) to be in a row.
 
-![Row of Cards](../assets/images/md/card_syntax.png "Row of cards")
+![Row of Cards](../assets/images/Fiserv_Logo.jpg "Row of cards")
 
 <!-- type: row -->
 
@@ -194,7 +194,7 @@ link: ?path=docs/about-developer-studio.md
 To organize content in tabs, indicate `titles` within the first `tab` annotation, followed by the tab content, and closed by a final `tab-end` annotation.
 > Users of Stoplight Flavored Markdown, need to include additional `title` annotation for each tab.
 
-![Tab sets](../assets/images/md/tab_syntax.png "Tabsets")
+![Tab sets](../assets/images/Fiserv_Logo.jpg "Tabsets")
 
 <!-- theme: danger -->
 > Tab containers cannot be nested.
