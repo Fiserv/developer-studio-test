@@ -10,9 +10,9 @@ Batch file processing allows a merchant to process multiple transactions in bulk
 
 A secure communication channel is required to submit batch files. To achieve that, we use the SFTP transfer protocol.
 
-<Alert type="info" variant="inline">
+<Alert type="info" variant="inline" className="w-full">
   <AlertIcon />
-  <AlertTitle>Note</AlertTitle>
+  <AlertTitle>Note full width alert. </AlertTitle>
   <AlertDescription>Contact your account representative to set up access to Commerce Hub's SFTP so you can upload your batch files. They will provide the server info, required login credentials, and job name.</AlertDescription>
 </Alert>
 
@@ -38,7 +38,7 @@ To be accepted for processing, the filename for each batch request file must be 
 
 <Alert type="info" variant="inline" className="w-full">
   <AlertIcon />
-  <AlertTitle>Note full width alert</AlertTitle>
+  <AlertTitle>Note </AlertTitle>
   <AlertDescription>The angle brackets *(`<` and `>`)* are used here to indicate placeholders and should be replaced with actual values in the filename.</AlertDescription>
 </Alert>
 
@@ -81,7 +81,7 @@ Commerce Hub defines the following file types:
 
 Every line in the file will be a JSON string having two required attributes `type` and `data`. All file types will have one header record, one footer record and one or more transaction detail records. The definition of header and footer records are the same for all the file types.
 
-<Alert type="warning" variant="inline">
+<Alert type="warning" variant="inline" className="w-full">
   <AlertIcon />
   <AlertTitle>Warning</AlertTitle>
   <AlertDescription>If the file format is not correct, or the file contains invalid values for a given variable then the file will be rejected and none of the transactions will be processed. The [acknowledgement file](?path=docs/Resources/Guides/Batch/Batch-Acknowledgement.md) will provide the status of the validation, including any errors.</AlertDescription>
@@ -110,10 +110,10 @@ Commerce Hub supports various transaction types in batch files, enabling merchan
 <div className="flex flex-row gap-4">
   <Card>  
     <CardHeader>
-      Batch Authorization Request
+      <div>Batch Authorization Request</div>
     </CardHeader>  
     <CardDescription>
-      Streamline your payment processing by submitting multiple pre-authorization and sale transactions in a single batch file. This approach enhances operational efficiency, reduces manual effort, and ensures accurate handling of high transaction volumes, making it ideal for securing funds for future settlement or completing immediate sales transactions.
+      <div>Streamline your payment processing by submitting multiple pre-authorization and sale transactions in a single batch file. This approach enhances operational efficiency, reduces manual effort, and ensures accurate handling of high transaction volumes, making it ideal for securing funds for future settlement or completing immediate sales transactions.</div>
     </CardDescription>
     [Learn more](?path=docs/Resources/Guides/Batch/Batch-Capture.md)
   </Card>
