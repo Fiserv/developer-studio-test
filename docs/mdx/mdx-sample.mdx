@@ -80,7 +80,7 @@ Different ways to create links.
    [I'm an inline-style link](https://www.google.com)
 
 2. To link Reference-style
-   [I'm a reference-style link][https://www.google.com "Google's Homepage"]
+   [I'm a reference-style link](https://www.google.com "Google's Homepage")
 
 3. To link to API explorer from documentation pages
    [API page](/api/get/cards/secured?branch=develop&version=11.0.1)
@@ -205,15 +205,11 @@ Table with nested objects, containing descriptions, JSX tags are also allowed.
 
 ![API Explorer Expand All for Nested Objects](../../assets/images/API_Explorer_Expand_All.gif)
 
-## Error Messages
-
-Light mode error message color: #DD3435 <p style={{"color": "#DD3435"}}>This text is light mode error message color.</p>
-Dark mode error message color: #FF453A <p style={{"color": "#FF453A !important"}}>This text is dark mode error message color.</p>
-
-## Footer Color
-
-Light mode color: #e0e0e0 <hr style={{"border-color": "#e0e0e0"}} />
-Dark mode color: #333333 <hr style={{"border-color": "#333333"}} />
+## Styling
+- We are using the pre-defined Design system, that articulates the color scheming for all the presentation tags like Header, Title, Paragraph, Body etc on the page, which also has an equivalent standardized dark color scheming associated.
+- Our objective is to conform to standardized color scheming to provide uniformity as well as stick to Fiserv branding colors, goverened by Point design system
+- Overall this standardization also means less work for the tenants, as they do not have to think & add additional styling in the github content etc.
+- The only exclusion to the rule would be, if the tenant has a strong use case to showcase branding colors which are not matching with the Fiserv color scheming. This scenario is highly unlikely. However, we can discuss on case by case basis, if there is a strong business requirement, & can collaborate to provide a technical solution for customization.
 
 ## Custom components
 
