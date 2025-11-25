@@ -39,7 +39,7 @@ Here's [a copy](download/assets/files/nyan-cat.txt) in case you wanted to have o
 <a href="download/assets/files/tfds_3479.mp4" download>Download Video</a>
 
 #### Test # 3
-[![Download](../../assets/images/nyan.jpg)](../../assets/files/tfds_3479.mp4)
+[![Download](../../assets/images/nyan.jpg)](download/assets/files/tfds_3479.mp4)
 
 #### Test # 5 Notification Test # 5
 >Nyan Cat is 2 cats that nyan.
