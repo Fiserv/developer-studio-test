@@ -1,6 +1,6 @@
 # API links
 
-Proper [hard link](/product/DeveloperStudioTest/api/?type=put&branch=develop&version=11.0.1)
+Proper [hard link](/product/DeveloperStudioTest/api/?type=put&path=/cards&branch=develop&version=11.0.1)
 
 Old query param [hard link](/product/DeveloperStudioTest/api/?type=put&path=/cards&branch=develop&version=11.0.1)
 
