@@ -6,6 +6,6 @@ Old query param [hard link](/product/DeveloperStudioTest/api/?type=post&path=/ca
 
 [Root link](/api/cards?type=put&version=11.0.1)
 
-Incorrect [relative link](../api/cards?type=put&version=11.0.1)
+Incorrect [correct link?](../api/?type=put&path=/cards&version=11.0.1)
 
 Functional [relative link](../../api/cards?type=put&version=11.0.1)
