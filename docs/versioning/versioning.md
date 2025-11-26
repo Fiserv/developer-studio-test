@@ -8,4 +8,4 @@ Incorrect [Root link](/api/cards?type=put&version=11.0.1)
 
 Correct [relative link](../api/?type=put&path=/cards&version=11.0.1)
 
-Incorrect [relative link](../../api/?type=put&path=/cards&version=11.0.1)
+Functional new UI [relative link](../../api/put/cards)
