@@ -13,3 +13,5 @@ Functional new UI [relative link](../../api/put/cards)
 new UI experiment [relative link](/product/DeveloperStudioTest/api/post/cards)
 
 new UI [different product](/product/CommerceHub/api/post/payments-vas/v1/3ds/authenticate)
+
+new UI [tenant support mdx sample -- incorrect](/api/get/cards?version=11.0.1)
