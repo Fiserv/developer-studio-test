@@ -11,3 +11,5 @@ Correct [relative link](../api/?type=put&path=/cards&version=11.0.1)
 Functional new UI [relative link](../../api/put/cards)
 
 new UI experiment [relative link](/product/DeveloperStudioTest/api/post/cards)
+
+new UI [different product](/product/CommerceHub/api/post/payments-vas/v1/3ds/authenticate)
