@@ -1,0 +1,45 @@
+
+
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
+
+const docsFolder = path.join(__dirname, 'docs');
+
+function convertMdToMdx(dir) {
+  fs.readdirSync(dir, { withFileTypes: true }).forEach((entry) => {
+    const fullPath = path.join(dir, entry.name);
+
+    if (entry.isDirectory()) {
+      convertMdToMdx(fullPath);
+    } else if (entry.isFile() && entry.name.endsWith('.md')) {
+      const mdxFile = path.join(dir, entry.name.replace(/\.md$/, '.mdx'));
+
+      // Read .md content
+      let content = fs.readFileSync(fullPath, 'utf-8');
+
+      // ✅ Replace <br> and </br> with <br /> (case-insensitive)
+      content = content.replace(/<\/?br>/gi, '<br />');
+
+      // ✅ Always overwrite .mdx file
+      fs.writeFileSync(mdxFile, content, 'utf-8');
+
+      console.log(`Converted (overwritten if existed): ${fullPath} → ${mdxFile}`);
+    }
+  });
+}
+
+// Start conversion
+convertMdToMdx(docsFolder);
+
+// Add and commit new .mdx files
+try {
+  execSync('git add docs', { stdio: 'inherit' });
+  execSync('git commit -m "Add converted .mdx files from .md (removed <br> tags)"', { stdio: 'inherit' });
+  // execSync('git push origin your-feature-branch', { stdio: 'inherit' });
+  console.log('✅ New .mdx files committed to Git.');
+} catch (error) {
+  console.error('❌ Error during Git commit:', error.message);
+}
+
+// node convert-and-commit-mdx.js
