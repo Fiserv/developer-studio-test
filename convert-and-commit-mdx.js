@@ -21,6 +21,9 @@ function convertMdToMdx(dir) {
       // ✅ Replace <br> and </br> with <br /> (case-insensitive)
       content = content.replace(/<\/?br>/gi, '<br />');
 
+      // ✅ Fix smart quotes
+      content = content.replace(/“/g, '"').replace(/”/g, '"');
+
       // ✅ Always overwrite .mdx file
       fs.writeFileSync(mdxFile, content, 'utf-8');
 
@@ -35,7 +38,8 @@ convertMdToMdx(docsFolder);
 // Add and commit new .mdx files
 
 try {
-  execSync('git add docs', { stdio: 'inherit' });
+  execSync('git add docs convert-and-commit-mdx.js', { stdio: 'inherit' });
+
   // Only commit if there are staged changes
   const status = execSync('git status --porcelain').toString().trim();
   if (status) {
