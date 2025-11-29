@@ -33,13 +33,20 @@ function convertMdToMdx(dir) {
 convertMdToMdx(docsFolder);
 
 // Add and commit new .mdx files
+
 try {
   execSync('git add docs', { stdio: 'inherit' });
-  execSync('git commit -m "Add converted .mdx files from .md (removed <br> tags)"', { stdio: 'inherit' });
-  // execSync('git push origin your-feature-branch', { stdio: 'inherit' });
-  console.log('✅ New .mdx files committed to Git.');
+  // Only commit if there are staged changes
+  const status = execSync('git status --porcelain').toString().trim();
+  if (status) {
+    execSync('git commit -m "Add/Update converted .mdx files from .md and fix content."', { stdio: 'inherit' });
+    console.log('✅ New .mdx files committed to Git.');
+  } else {
+    console.log('ℹ️ No changes to commit.');
+  }
 } catch (error) {
   console.error('❌ Error during Git commit:', error.message);
 }
+
 
 // node convert-and-commit-mdx.js
