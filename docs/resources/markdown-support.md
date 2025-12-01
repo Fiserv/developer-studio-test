@@ -95,8 +95,7 @@ Different ways to create links:
 
 Here's our logo ( hover to see the title text ):
 
-![Fiserv Logo]
-
+![Fiserv Logo](assets/images/Fiserv_Logo.jpg "fiserv logo")
 
 ## <a name="code"/> Code and Syntax Highlighting
 
