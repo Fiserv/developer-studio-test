@@ -1,10 +1,10 @@
 # API links
 
-Proper [hard link](/product/DeveloperStudioTest/api/?type=put&path=/cards&branch=develop&version=11.0.1)
+classic UI [full path link](/product/DeveloperStudioTest/api/?type=put&path=/cards&branch=develop&version=11.0.1)
 
-Incorrect [Root link](/api/cards?type=put&version=11.0.1)
+classic UI [incorrect full path link](/api/cards?type=put&version=11.0.1)
 
-Correct (classic UI) [relative link](../api/?type=put&path=/cards&version=11.0.1)
+classic UI [relative link](../api/?type=put&path=/cards&version=11.0.1)
 
 new UI [relative link](../../api/put/cards)
 
