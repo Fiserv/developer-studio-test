@@ -16,4 +16,4 @@ new UI [different product](/product/CommerceHub/api/post/payments-vas/v1/3ds/aut
 
 new UI [tenant support mdx sample -- incorrect](/api/get/cards?version=11.0.1)
 
-[relative doc link](../docs/?path=docs/introduction/contact-us.md&branch=develop)
+[doc link](?path=docs/introduction/contact-us.md&branch=develop)
