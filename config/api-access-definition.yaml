@@ -28,19 +28,19 @@
 # the delivery of this work
 ################################################################################
 
-- xChildGroupName: "Cards"
+- xChildProductName: "Cards"
   access: private
   groups: []
 - xGroupName: "b2b"
   access: private
   groups: ["Gated_APIs_Minh"]
-- xChildGroupName: "ChildProductName1"
+- xChildProductName: "ChildProductName1"
   sections:
     - xGroupName: "CardService1"
       xProxyName: "UpdateCard"
   access: private
   groups: []
-- xChildGroupName: "Card Service"
+- xChildProductName: "Card Service"
   sections:
     - xGroupName: "GetService"
   access: private
