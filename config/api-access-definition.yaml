@@ -31,10 +31,17 @@
 - xChildGroupName: "Cards"
   access: private
   groups: []
-- xChildGroupName: "ChildProductName1"
-  xGroupName: "CardSErvice1"
-  access: private
-  groups: []
 - xGroupName: "b2b"
   access: private
   groups: ["Gated_APIs_Minh"]
+- xChildGroupName: "ChildProductName1"
+  sections:
+    - xGroupName: "CardService1"
+      xProxyName: "UpdateCard"
+  access: private
+  groups: []
+- xChildGroupName: "Card Service"
+  sections:
+    - xGroupName: "GetService"
+  access: private
+  groups: []
