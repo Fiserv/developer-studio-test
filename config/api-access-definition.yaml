@@ -39,6 +39,7 @@
     - xGroupName: "CardService1"
       sections:
         - xProxyName: "UpdateCard"
+    - xGroupName: "CardService2"
   access: private
   groups: []
 - xChildProductName: "Card Service"
