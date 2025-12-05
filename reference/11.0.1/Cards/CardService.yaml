@@ -116,6 +116,87 @@ paths:
       - ChildProductName3
     post:
       tags:
+      - Check Cards (new)
+      summary: Check Many Cards
+      description: "Modifies the information of many existing debit or credit card account, such as embossing details, flex data details, and account address and name details.<br> For more information about the Cards domain, <a href=\"../docs/?path=docs/fintechs/cards.md\" title=\"Click to open\">click here.</a> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n  </ul>"
+      operationId: CardModOper
+      parameters:
+      - name: EFXHeader
+        in: header
+      # description: "EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter.<br>{ <br>\"TrnId\": \"f262cfa4-9da4-4a10-b48c-2e947ce3e66c\",<br> \"OrganizationId\": \"PRMOrg10\",<br> \"VendorId\": \"112233\",<br> \"Context\":{ \"Channel\": \"WEB\" } <br>}"
+        description: 'EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter.<br>{ <br> "TrnI":"f262cfa4-9da4-4a10-b48c-2e947ce3e66",<br> "OrganizationId": "PRMOrg10",<br> "VendorId": "112233",<br> "Context":{ "Channel": "WEB" } <br>}'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/EFXHeader'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CardModRqType'
+            examples:
+              Sample Banking:
+                $ref: '#/components/examples/PremierCardModRequestExample'
+        required: true
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CardModRsType'
+              examples:
+                Sample Banking:
+                  $ref: '#/components/examples/PremierCardModResponseExample'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusType1'
+              examples:
+                "401":
+                  $ref: '#/components/examples/401-Premier'
+        "422":
+          description: Un-processable Entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusType1'
+              examples:
+                "422":
+                  $ref: '#/components/examples/422-Premier'
+        "500":
+          description: Internal Server Error 
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusType1'
+              examples:
+                "500":
+                  $ref: '#/components/examples/500-Premier'
+        "503":
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusType1'
+              examples:
+                "503":
+                  $ref: '#/components/examples/503-Premier'
+        default:
+          description: See HTTP Status Code Standards
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CardModRsType'
+      x-group-name: CardService2
+      x-proxy-name: UpdateCard2
+      x-child-product-name:
+      - ChildProductName1
+    post:
+      tags:
       - Add Card
       summary: Add a new Card.
       description: "Creates a new EFT card account (debit or credit) for one or multiple parties. EFT Cards are plastic cards used for electronic transactions.  <br> For more information about the Cards domain, <a href=\"../docs/?path=docs/fintechs/cards.md\" title=\"Click to open\">click here.</a>  <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n  </ul>"
