@@ -105,7 +105,7 @@ Different ways to create links.
 Different ways to display images
 
 1. Here's our logo ( hover to see the title text ):
-![Fiserv Logo](../assets/images/cat-dog.png "Cat Dog")
+![Fiserv Logo](../assets/images/Fiserv_Logo.jpg "Fiserv logo")
 
 2. External image with title
 ![External Image 1](https://cloverstatic.com/web/apps/cloverdotcom/release::v2.133.0-ecc0ac9663826/assets/media/clover-mark-green.d9cb217736455be82b63498c3c4286a2.svg "Clover")
