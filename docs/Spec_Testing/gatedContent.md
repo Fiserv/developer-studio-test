@@ -28,6 +28,8 @@ Un-Supported Types : .csv, .html
 
 [Entitled_Access.pdf]D(Entitled_Access.pdf)
 
+[Multi_Access for both RG and MP]D(Multi_Access.pdf)
+
 **Testing**
 [Test_Access.pdf]D(Test_Access.pdf)
 
