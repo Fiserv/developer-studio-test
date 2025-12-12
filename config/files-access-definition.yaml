@@ -30,9 +30,12 @@
 - filePath: "Spec_Testing/Private_Access.pdf"
   access: private
   groups: [TEST_GROUP_RG]
+- filePath: "Spec_Testing/Multi_Access.pdf"
+  access: private
+  groups: [TEST_GROUP_RG, TEST_GROUP_MP]
 - filePath: "Spec_Testing/Entitled_Access.pdf"
   access: private
-  groups: [TEST_GROUP_RG, TEST_GROUP_MP]  
+  groups: [TEST_GROUP_MP]
 - filePath: "Spec_Testing/Test_Access.pdf"
   access: private
   groups: []  
