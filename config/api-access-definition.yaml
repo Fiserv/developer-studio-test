@@ -41,7 +41,7 @@
         - xProxyName: "UpdateCard"
     - xGroupName: "CardService2"
   access: private
-  groups: ["TEST_GROUP_MP"]
+  groups: ["TEST_GROUP_RG"]
 - xChildProductName: "Card Service"
   sections:
     - xGroupName: "Get Service"
