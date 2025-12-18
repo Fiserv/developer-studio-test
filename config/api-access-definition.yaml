@@ -30,7 +30,7 @@
 
 - xChildProductName: "Cards"
   access: private
-  groups: ["TEST_GROUP_MP"]
+  groups: ["TEST_GROUP_AS"]
 - xGroupName: "b2b"
   access: private
   groups: ["Gated_APIs_Minh"]
@@ -41,7 +41,7 @@
         - xProxyName: "UpdateCard"
     - xGroupName: "CardService2"
   access: private
-  groups: ["TEST_GROUP_RG"]
+  groups: ["TEST_GROUP_MP"]
   versions: ["11.0.1"]
 - xChildProductName: "Card Service"
   sections:
