@@ -30,10 +30,10 @@
 
 - xChildProductName: "Cards"
   access: private
-  groups: ["TEST_GROUP_AS"]
+  groups: [TEST_GROUP_RG, TEST_GROUP_MP]
 - xGroupName: "b2b"
   access: private
-  groups: ["Gated_APIs_Minh"]
+  groups: ["TEST_GROUP_MP"]
 - xChildProductName: "ChildProductName1"
   sections:
     - xGroupName: "CardService1"
