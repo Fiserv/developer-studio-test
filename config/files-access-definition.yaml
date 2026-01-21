@@ -35,7 +35,7 @@
   groups: [TEST_GROUP_RG, TEST_GROUP_MP]
 - filePath: "Spec_Testing/Entitled_Access.pdf"
   access: private
-  groups: [TEST_GROUP_MP]
+  groups: [NOT_REAL_GROUP]
 - filePath: "Spec_Testing/Test_Access.pdf"
   access: private
   groups: []  
