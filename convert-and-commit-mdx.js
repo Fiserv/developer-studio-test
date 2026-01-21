@@ -5,6 +5,8 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const docsFolder = path.join(__dirname, 'docs');
+const productName = process.argv[2];
+console.log('productName--->', productName);
 
 function convertMdToMdx(dir) {
   fs.readdirSync(dir, { withFileTypes: true }).forEach((entry) => {
