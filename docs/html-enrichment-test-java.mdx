@@ -1,10 +1,12 @@
 ---
 tags: [tag1, tag2, tag3]
 ---
+<Tags tags={frontmatter.tags} />
+
 # HTML Enrichment Test
 
 ## Image
-<img class="image-center" src="/assets/images/cat-dog.png" >
+<img class="image-center" src="/assets/images/cat-dog.png" />
 
 ## Download
 
@@ -13,14 +15,16 @@ tags: [tag1, tag2, tag3]
 test
 
 ## Tabs
-<!--
-type: tab
-titles: Request, Response
--->
+<Tabs defaultValue="Request">
+  <TabsList>
+    <TabsTrigger value="Request">Request</TabsTrigger>
+    <TabsTrigger value="Response">Response</TabsTrigger>
+  </TabsList>
+  <TabsContent value="Request">
 
-The example below contains the minimum parameters for a successful Data Capture API request using a *PaymentCard*. The full request schemas are available in our [API Explorer](../api/?type=post&path=/payments-vas/v1/card-capture).
+The example below contains the minimum parameters for a successful Data Capture API request using a *PaymentCard*. The full request schemas are available in our [API Explorer](/product/DeveloperStudioTest/api/post/payments-vas/v1/card-capture).
 
-<!-- theme: success -->
+
 > **POST** `/payments-vas/v1/card-capture`
 
 ```json
@@ -41,14 +45,15 @@ The example below contains the minimum parameters for a successful Data Capture 
   }
 }
 ```
+ <br/>
+  </TabsContent>
+  <TabsContent value="Response">
 
-<!--
-type: tab
--->
+
 
 Example of a Data Capture API *(200: Success)* response.
 
-<!-- theme: info -->
+
 > For more information, see the [response handling documentation](?path=docs/Resources/Guides/Response-Codes/Response-Handling.md)
 
 ```json
@@ -74,8 +79,9 @@ Example of a Data Capture API *(200: Success)* response.
   }
 }
 ```
-
-<!-- type: tab-end -->
+ <br/>
+  </TabsContent>
+</Tabs>
 
 ## Code Snippets
 ### json snippet
@@ -145,11 +151,11 @@ await window.fiserv.init({
 ### Text
 ```text
 Content-Type: application/json
-Client-Request-Id: {REQUEST_UUID}
-Api-Key: {API_KEY}
-Timestamp: {TIMESTAMP}
+Client-Request-Id: &#123;REQUEST_UUID&#125;
+Api-Key: &#123;API_KEY&#125;
+Timestamp: &#123;TIMESTAMP&#125;
 Auth-Token-Type: HMAC
-Authorization: {HMAC_MESSAGE_SIGNATURE}
+Authorization: &#123;HMAC_MESSAGE_SIGNATURE&#125;
 ```
 
 ### html

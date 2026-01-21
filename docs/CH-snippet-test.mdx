@@ -44,7 +44,7 @@ const asymmetricallyEncrypt = async (base64PubKey, sourceString) => {
     const encryptionBlock = await asymmetricallyEncrypt(rsaAsymmetricPublicKey, Object.values(cardData).join(""));
     const encoder = new TextEncoder();
     const encryptionBlockFields = Object.keys(cardData)
-        .map(key => `card.${key}:${encoder.encode(cardData[key]).length}`)
+        .map(key => `card.$&#123;key&#125;:${encoder.encode(cardData[key]).length}`)
         .join(',');
     const payload = {
         source: {
