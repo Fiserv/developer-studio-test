@@ -29,7 +29,7 @@
 ################################################################################
 
 header:
-  productionDescription: Welcome to Developer Studio Test Tenant.<br/><img src="assets/images/Fiserv_Logo.jpg" width="300" height="300"/><img src="assets/images/test_gif.gif" width="300" height="300"/>
+  productionDescription: Welcome to Developer Studio Test Tenant.<br/><img src="assets/images/Fiserv_Logo.jpg" width="300" height="300"/><img src="assets/images/test_gif.gif" width="300" height="300"/>\n\n ![API explorer](assets/images/API_Explorer_Expand_All.gif)
 getStarted: /docs/product-layout-getting-started.md
 benefits:
   - title: Transform Customer Experience
