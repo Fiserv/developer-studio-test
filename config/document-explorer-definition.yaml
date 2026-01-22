@@ -54,31 +54,31 @@
     - title: Resources
       sections:
         - title: API Guidelines
-          link: docs/resources/guides/api-guide.md
+          link: docs/resources/guides/api-guide.mdx
         - title: How it works
-          link: docs/resources/guides/how-to-use-stoplight.md
+          link: docs/resources/guides/how-to-use-stoplight.mdx
         - title: Learn how to use Prism Stoplight
-          link: docs/resources/guides/how-to-use-stoplight.md
+          link: docs/resources/guides/how-to-use-stoplight.mdx
         - title: Learn how to use DocIgnore
-          link: docs/resources/guides/how-to-use-docignore.md
+          link: docs/resources/guides/how-to-use-docignore.mdx
         - title: Tutorials
-          link: docs/resources/guides/how-to-use-docignore.md
+          link: docs/resources/guides/how-to-use-docignore.mdx
           sections:
             - title: Markdown Support Guide
-              link: docs/resources/markdown-support.md
+              link: docs/resources/markdown-support.mdx
               sections:
                 - title: Card Support
-                  link: docs/tutorials/markdown/card.md
+                  link: docs/tutorials/markdown/card.mdx
                 - title: Tabs Support
-                  link: docs/tutorials/markdown/tabs.md
+                  link: docs/tutorials/markdown/tabs.mdx
         - title: FAQ
-          link: docs/faq/faq.md
+          link: docs/faq/faq.mdx
 
         - title: Testing
           open: true
           sections: 
             - title: TestingDocs
-              link: docs/SpecTest/SpecTest.md
+              link: docs/SpecTest/SpecTest.mdx
               access: public
               groups: []
 
