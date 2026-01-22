@@ -2,23 +2,23 @@
     - title: Introduction
       sections:
         - title: Contact Studio Support
-          link: docs/introduction/contact-us.md
+          link: docs/introduction/contact-us.mdx
 - sections:
     - title: Getting Started
-      link: docs/getting-started/new-getting-started.md
+      link: docs/getting-started/new-getting-started.mdx
       sections:
         - title: Setup New Tenant
-          link: docs/getting-started/setup-tenant/setup-tenant.md
+          link: docs/getting-started/setup-tenant/setup-tenant.mdx
         - title: Deploy New Tenant
-          link: docs/getting-started/setup-tenant/deploy-tenant.md
+          link: docs/getting-started/setup-tenant/deploy-tenant.mdx
         - title: Register New Tenant
-          link: docs/getting-started/setup-tenant/register-tenant.md
+          link: docs/getting-started/setup-tenant/register-tenant.mdx
         - title: Code New Tenant
-          link: docs/getting-started/code-a-tenant/code-tenant.md
+          link: docs/getting-started/code-a-tenant/code-tenant.mdx
         - title: Preview & Publish Content
-          link: docs/getting-started/preview-and-publish-content/preview-and-publish.md
+          link: docs/getting-started/preview-and-publish-content/preview-and-publish.mdx
     - title: Getting Started Preview
-      link: docs/get-started.md
+      link: docs/get-started.mdx
 #    - title: Commerce Hub Doc
 #      link: /product/CommerceHub/docs/?path=docs/Getting-Started/Getting-Started-General.md
 
@@ -26,7 +26,7 @@
     - title: Release Notes
       sections:
         - title: RN1
-          link: docs/release-notes/rn1.md
+          link: docs/release-notes/rn1.mdx
 
 #- sections:
 #    - title: Nyan dog
@@ -36,11 +36,11 @@
 
 - sections:
     - title: Gated Content
-      link: docs/Spec_Testing/gatedContent.md
+      link: docs/Spec_Testing/gatedContent.mdx
       # open: true  
       sections:
       - title: Gated Content Testing
-        link: docs/Spec_Testing/gatedContent.md 
+        link: docs/Spec_Testing/gatedContent.mdx
       # access: public
       # groups: []
 
@@ -48,7 +48,7 @@
     - title: NotificationToggleTest
       sections:
       - title: NotificationTesting
-        link: docs/NotificationToggleTest/notificationTest.md
+        link: docs/NotificationToggleTest/notificationTest.mdx
 
 - sections:
     - title: Resources
