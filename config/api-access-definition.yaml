@@ -28,8 +28,6 @@
 # the delivery of this work
 ################################################################################
 
-- xChildProductName: "Cards"
-- xGroupName: "b2b"
 - xChildProductName: "ChildProductName1"
   sections:
     - xGroupName: "CardService1"
