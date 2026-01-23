@@ -38,9 +38,6 @@
   groups: []
 - xChildProductName: "Cards"
   access: private
-  groups: ["TEST_GROUP_MP"]
+  groups: []
   sections:
     - xGroupName: "Card Service"
-      sections:
-        - xProxyName: "Add Card"
-        - xProxyName: "Delete Card"
