@@ -39,4 +39,8 @@
   versions: ["11.0.1"]
 - xChildProductName: "Card Service"
   sections:
-    - xGroupName: "Get Service"
+    - xProxyName: "Add Card"
+    - xProxyName: "Delete Card"
+      access: private
+      groups: ["TEST_GROUP_MP"]
+    - xProxyName: "Test Card"
