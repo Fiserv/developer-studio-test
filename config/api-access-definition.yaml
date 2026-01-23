@@ -29,22 +29,14 @@
 ################################################################################
 
 - xChildProductName: "Cards"
-  access: private
-  groups: [TEST_GROUP_RG, TEST_GROUP_MP]
 - xGroupName: "b2b"
-  access: private
-  groups: ["TEST_GROUP_MP"]
 - xChildProductName: "ChildProductName1"
   sections:
     - xGroupName: "CardService1"
       sections:
         - xProxyName: "UpdateCard"
     - xGroupName: "CardService2"
-  access: private
-  groups: ["TEST_GROUP_MP"]
   versions: ["11.0.1"]
 - xChildProductName: "Card Service"
   sections:
     - xGroupName: "Get Service"
-  access: private
-  groups: []
