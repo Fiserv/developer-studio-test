@@ -38,6 +38,4 @@
   groups: []
 - xChildProductName: "Cards"
   access: private
-  groups: []
-  sections:
-    - xGroupName: "Card Service"
+  groups: ["TEST_GROUP_MP"]
