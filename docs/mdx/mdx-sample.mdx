@@ -203,6 +203,29 @@ Table with nested objects, containing descriptions, JSX tags are also allowed.
 
 ---
 
+## Cards with Nested Objects
+
+<div className="flex flex-row gap-4">
+  <Card>  
+    <CardHeader>Batch Authorization Request</CardHeader>  
+    <CardDescription>Streamline your payment processing by submitting multiple pre-authorization and sale transactions in a single batch file. This approach enhances operational efficiency, reduces manual effort, and ensures accurate handling of high transaction volumes, making it ideal for securing funds for future settlement or completing immediate sales transactions.</CardDescription>
+  </Card>
+  <Card>  
+    <CardHeader>Batch Capture Request</CardHeader>  
+    <CardDescription>Efficiently manage your transaction settlements by submitting multiple capture requests in a single, consolidated batch file. This streamlined approach reduces manual processing, enhances operational accuracy, and accelerates the reconciliation of payments, making it ideal for high-volume environments where speed and precision are critical.</CardDescription>
+  </Card>
+  <Card>  
+    <CardHeader>Batch Refund Request</CardHeader>  
+    <CardDescription>Simplify your refund processing by submitting multiple refund requests in a single batch file. This method improves operational efficiency, reduces manual intervention, and ensures accurate handling of high-volume refund transactions, enhancing customer satisfaction and reconciliation processes.</CardDescription>
+  </Card>
+    <Card>  
+    <CardHeader>Acknowledgement File</CardHeader>  
+    <CardDescription>The acknowledgement file provides a summary of the batch processing status, including validation results and any errors encountered during the initial file validation phase. This ensures transparency and allows merchants to address issues promptly.</CardDescription>
+  </Card>
+</div>
+
+---
+
 ![API Explorer Expand All for Nested Objects](../../assets/images/API_Explorer_Expand_All.gif)
 
 ## Styling
@@ -305,5 +328,3 @@ Commerce Hub defines the following file types:
 ---
 
 All components made available by the [Launch Point library](https://launch-point-ui-storybook-dev-launch-point.apps.dtuscedevstudiolower.centralus.aroapp.io) can be used within MDX files without importing them explicitly.
-
-
