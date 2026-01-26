@@ -33,6 +33,8 @@ header:
     <style>
     a {
       color: red;
+      background-color: blue
+      font-size:50px
     }
     </style>
     Welcome to <a href="/product/DeveloperStudioTest">Developer Studio Test</a> Tenant.<br/><img src="assets/images/Fiserv_Logo.jpg" width="300" height="300"/><img src="assets/images/test_gif.gif" width="300" height="300"/>
