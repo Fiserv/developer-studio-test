@@ -29,15 +29,7 @@
 ################################################################################
 
 header:
-  productionDescription: >
-    <style>
-    a {
-      background-color: black;
-      color: blue;
-      font-size:50px;
-    }
-    </style>
-    Welcome to <b><u><a href="/product/DeveloperStudioTest">Developer Studio Test</a></u></b> Tenant.<br/><img src="assets/images/Fiserv_Logo.jpg" width="300" height="300"/><img src="assets/images/test_gif.gif" width="300" height="300"/>
+  productionDescription: Welcome to <b><u><a href="/product/DeveloperStudioTest" style="color: blue; font-size: 50px; background-color: red;">Developer Studio Test</a></u></b> Tenant.<br/><img src="assets/images/Fiserv_Logo.jpg" width="300" height="300"/><img src="assets/images/test_gif.gif" width="300" height="300"/>
 getStarted: /docs/product-layout-getting-started.md
 benefits:
   - title: Transform Customer Experience
