@@ -37,12 +37,11 @@
 - sections:
     - title: Gated Content
       link: docs/Spec_Testing/gatedContent.mdx
-      # open: true  
+      groups: []
       sections:
       - title: Gated Content Testing
         link: docs/Spec_Testing/gatedContent.mdx
-      # access: public
-      # groups: []
+        groups: ["TEST_GROUP_MP"]
 
 - sections:
     - title: NotificationToggleTest
