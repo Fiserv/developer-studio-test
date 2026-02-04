@@ -47,6 +47,7 @@ paths:
         - IndexDetail
       summary: Search IndexDetails by criteria
       x-proxy-name: index-details
+      x-order: 1
       description: Retrieve a list of IndexDetails based on the provided search criteria.
       operationId: searchIndexDetail
       requestBody:
@@ -80,6 +81,7 @@ paths:
       tags:
         - IndexDetail
       x-proxy-name: index-details-adjusted-example
+      x-order: -1
       summary: Search IndexDetails with adjusted values by criteria
       description: Retrieve a list of IndexDetails with adjusted values based on the provided search criteria.
       operationId: searchIndexDetailAdjusted
@@ -121,6 +123,7 @@ paths:
       tags:
         - IndexDetail
       x-proxy-name: index-details-adjusted
+      x-order: 2
       summary: Search IndexDetails with adjusted values by criteria
       description: Retrieve a list of IndexDetails with adjusted values based on the provided search criteria.
       operationId: searchIndexDetailAdjusted
@@ -162,6 +165,7 @@ paths:
       tags:
         - IndexDetail
       x-proxy-name: top-10-index-detalis
+      x-order: 0
       summary: Top 10 IndexDetails
       description: Retrieve top 10 IndexDetails for last month.
       operationId: getTop10
