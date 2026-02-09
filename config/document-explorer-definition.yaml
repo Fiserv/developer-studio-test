@@ -1,9 +1,4 @@
 - sections:
-    - title: Introduction
-      sections:
-        - title: Contact Studio Support
-          link: docs/introduction/contact-us.mdx
-- sections:
     - title: Getting Started
       link: docs/getting-started/new-getting-started.mdx
       sections:
@@ -39,15 +34,15 @@
       link: docs/Spec_Testing/gatedContent.mdx
       groups: []
       sections:
-      - title: Gated Content Testing
-        link: docs/Spec_Testing/gatedContent.mdx
-        groups: ["TEST_GROUP_MP"]
+        - title: Gated Content Testing
+          link: docs/Spec_Testing/gatedContent.mdx
+          groups: ["TEST_GROUP_MP"]
 
 - sections:
     - title: NotificationToggleTest
       sections:
-      - title: NotificationTesting
-        link: docs/NotificationToggleTest/notificationTest.mdx
+        - title: NotificationTesting
+          link: docs/NotificationToggleTest/notificationTest.mdx
 
 - sections:
     - title: Resources
@@ -75,7 +70,7 @@
 
         - title: Testing
           open: true
-          sections: 
+          sections:
             - title: TestingDocs
               link: docs/SpecTest/SpecTest.mdx
               access: public
@@ -84,8 +79,7 @@
 - sections:
     - title: MDX
       sections:
-      - title: MDX files
-        link: docs/mdx/mdx-test.mdx
-      - title: Sample MDX Content
-        link: docs/mdx/mdx-sample.mdx
-
+        - title: MDX files
+          link: docs/mdx/mdx-test.mdx
+        - title: Sample MDX Content
+          link: docs/mdx/mdx-sample.mdx
