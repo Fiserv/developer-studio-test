@@ -38,4 +38,4 @@
   groups: []
 - xChildProductName: "Cards"
   access: private
-  groups: ["TEST_GROUP_MP"]
+  groups: ["TEST_GROUP_MP", "TEST_ADMIN"]
