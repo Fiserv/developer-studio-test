@@ -39,7 +39,7 @@
 - xChildProductName: "Cards"
   access: private
   groups: ["TEST_GROUP_MP", "TEST_ADMIN"]
-- xChildProductName: "Card Server"
+- xChildProductName: "Card Service"
   sections:
     - xGroupName: "Get Service"
       sections:
