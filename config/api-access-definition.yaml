@@ -39,3 +39,10 @@
 - xChildProductName: "Cards"
   access: private
   groups: ["TEST_GROUP_MP", "TEST_ADMIN"]
+- xChildProductName: "Card Server"
+  sections:
+    - xGroupName: "Get Service"
+      sections:
+        - xProxyName: "Get Card"
+  versions: ["11.0.3"]
+  groups: ["TEST_GROUP_MP", "TEST_ADMIN"]
