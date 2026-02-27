@@ -461,6 +461,7 @@ components:
           type: string
           format: date-time
           example: 2024-12-01T00:00:00.000Z
+          deprecated: true
         endPeriod:
           type: string
           format: date-time
