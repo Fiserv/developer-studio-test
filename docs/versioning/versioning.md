@@ -24,4 +24,8 @@ new UI [incorrect full path](/api/get/cards?version=11.0.1)
 
 Commerce Hub [hard code external API](https://developerstudio.fiserv.com/product/CommerceHub/api/post/payments-vas/v1/accounts/balance-inquiry)
 
+Commerce Hub [hard code external doc](https://developerstudio.fiserv.com/product/CommerceHub/docs/Getting-Started/Getting-Started-Dev-Portal.md)
+
 Commerce hub old [hard coded external API](https://developer.fiserv.com/product/CommerceHub/api/?type=post&path=/payments-vas/v1/accounts/balance-inquiry)
+
+Commerce hub old [hard coded external doc](https://developer.fiserv.com/product/CommerceHub/docs?path=docs/Getting-Started/Getting-Started-Dev-Portal.md)
