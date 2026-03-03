@@ -20,6 +20,8 @@ new UI [different product](/product/CommerceHub/api/post/payments-vas/v1/3ds/aut
 
 new UI [incorrect full path](/api/get/cards?version=11.0.1)
 
-## New UI test
+## UI tests
 
 Commerce Hub [hard code external API](https://developerstudio.fiserv.com/product/CommerceHub/api/post/payments-vas/v1/accounts/balance-inquiry)
+
+Commerce hub old [hard coded external API](https://developer.fiserv.com/product/CommerceHub/api/?type=post&path=/payments-vas/v1/accounts/balance-inquiry)
