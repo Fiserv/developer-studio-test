@@ -1,12 +1,18 @@
 # API links
 
+## Classic UI
+
 classic UI [full path link](/product/DeveloperStudioTest/api/?type=put&path=/cards&branch=develop&version=11.0.1)
 
 classic UI [incorrect full path link](/api/cards?type=put&version=11.0.1)
 
 classic UI [relative link](../api/?type=put&path=/cards&version=11.0.1)
 
+## New UI
+
 new UI [relative link](../../api/put/cards?version=11.0.1)
+
+new UI [hard code link](https://developerstudio.fiserv.com/product/DeveloperStudioTest/docs/download-link.md)
 
 new UI [full path link](/product/DeveloperStudioTest/api/post/cards?version=11.0.1)
 
