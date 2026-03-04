@@ -1,0 +1,264 @@
+---
+tags: [Authorization, Charges, Payments, API Reference, Sale]
+---
+
+# Process a payment authorization
+
+<Tags tags={frontmatter.tags} />
+
+Authorizations can be initiated as a sale or pre-authorization, which is defined in the request by sending the `captureFlag` in `transactionDetails`.
+
+- *false:* A pre-authorization transaction, where the customer's funds will be reserved and a [capture](/product/CommerceHub/docs/Payment-Operations/Manage-Payments/Capture.mdx) will be required to withdraw the funds.
+- *true:* A sale or subsequent capture transaction where the customer will be charged the total amount, and funds withdrawn.
+
+<Tabs defaultValue="processing">
+  <TabsList>
+    <TabsTrigger value="processing">Processing</TabsTrigger>
+    <TabsTrigger value="sources">Sources</TabsTrigger>
+    <TabsTrigger value="countries">Countries</TabsTrigger>
+  </TabsList>
+  <TabsContent value="processing">
+
+- [**Authorization only:**](/product/CommerceHub/docs/Payment-Methods/Payment-Methods.mdx) A transaction where the merchant [verifies](/product/CommerceHub/docs/Value-Added-Services/Account-Services/Verification.mdx) a customer's account, also known as a $0 authorization.
+- [**Pre-authorization:**](/product/CommerceHub/docs/Payment-Methods/Payment-Methods.mdx) A transaction where the customer is authorized to have funds withdrawn from their account on a future date.
+- [**Estimated:**](/product/CommerceHub/docs/Payment-Operations/Accept-Payments/Estimated-Auth.mdx) A pre-authorization transaction where the final amount is not known, normally followed by an incremental authorization.
+- [**Sale:**](/product/CommerceHub/docs/Payment-Methods/Payment-Methods.mdx) A transaction where the customer is authorized to have funds withdrawn from their account at the end of the day.
+- [**Capture:**](/product/CommerceHub/docs/Payment-Operations/Manage-Payments/Capture.mdx) A transaction where the merchant requests to have the pending funds from a pre-authorization withdrawn from the customer account at the end of the day.
+- [**Incremental:**](/product/CommerceHub/docs/Payment-Operations/Accept-Payments/Incremental-Auth.mdx) A transaction where the merchant requests to increase the original pre-authorization.
+
+  </TabsContent>
+  <TabsContent value="sources">
+
+Commerce Hub supports the following [payment sources](/product/CommerceHub/docs/Payment-Methods/Payment-Methods.mdx) with the Charges API:
+
+| ApplePay | DecryptedWallet | GooglePay | PaymentCard | PaymentCheck | PaymentEMV | PaymentSession | PaymentToken | PaymentTrack | SamsungPay |
+| :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |
+| &#10004; | &#10004; | &#10004; | &#10004; | &#10004; | &#10004; | &#10004; | &#10004; | &#10004; | &#10004; |
+
+<!-- theme: info -->
+> Additional alternate payment methods are available using Commerce Hub's [Checkouts Orders APIs](/product/CommerceHub/docs/Online-Commerce/Checkouts-Orders/Checkouts-Orders.mdx).
+
+  </TabsContent>
+  <TabsContent value="countries">
+
+Commerce Hub supports authorization transactions in the following countries. Please see the processing restrictions listed below, if any, for each country.
+
+| Countries | | | |
+| ----- | ----- | ----- | ----- |
+| <img src="/product/CommerceHub/assets/images/Flags/AR.svg" alt="AR Flag" width="25" height="16.07"> Argentina | <img src="/product/CommerceHub/assets/images/Flags/BR.svg" alt="BR Flag" width="25" height="17.5"> Brazil (Coming Soon) | <img src="/product/CommerceHub/assets/images/Flags/CA.svg" alt="CA Flag" width="25" height="12.5"> Canada | <img src="/product/CommerceHub/assets/images/Flags/MX.svg" alt="MX Flag" width="25" height="14.29"> Mexico |
+| <img src="/product/CommerceHub/assets/images/Flags/US.svg" alt="US Flag" width="25" height="13.16"> United States | | | |
+
+**Argentina:**
+
+- Does **not** support $0 authorizations, the [Account Verification API](/product/CommerceHub/docs/Value-Added-Services/Account-Services/Verification.mdx) should be used to verify the customer's account.
+- Does **not** support captures, if a pre-authorization is submitted to verify funds, it must be [cancelled](/product/CommerceHub/docs/Payment-Operations/Manage-Payments/Cancel.mdx) the same day, and a sale processed instead to capture the payment.
+
+**Mexico:**
+
+- Does **not** support partial authorization.
+- Does **not** currently support incremental authorization and estimated authorization.
+
+</TabsContent>
+</Tabs>
+
+---
+
+## Request an authorization
+
+<Alert type="info" variant="inline" className="w-full">
+  <AlertIcon />
+  <AlertTitle>ℹ️ Info</AlertTitle>
+  <AlertDescription>
+
+Before making API calls, review the requirements for client identifiers and authentication in [Getting started with RESTful APIs guide](/product/CommerceHub/docs/Developer-Resources/API-Reference/API-Getting-Started.mdx).
+
+  </AlertDescription>
+</Alert>
+
+The example below contains the minimum [parameters](#parameters) for a successful Charges API request. The full request schemas are available in the [API Explorer](/product/CommerceHub/api/post/payments/v1/charges).
+
+<Tabs defaultValue="request">
+  <TabsList>
+    <TabsTrigger value="request">Request</TabsTrigger>
+    <TabsTrigger value="response">Response</TabsTrigger>
+  </TabsList>
+  <TabsContent value="request">
+
+**POST** `/payments/v1/charges`
+
+```json
+{
+  "amount": {
+    "total": 12.04,
+    "currency": "USD"
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "encryptionData": {
+      "encryptionType": "RSA",
+      "encryptionTarget": "MANUAL",
+      "encryptionBlock": "=s3ZmiL1SSZC8QyBpj/Wn+VwpLDgp41IwstEHQS8u4EQJ....",
+      "encryptionBlockFields": "card.cardData:16,card.nameOnCard:10,card.expirationMonth:2,card.expirationYear:4,card.securityCode:3",
+      "keyId": "88000000022"
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true
+  },
+  "transactionInteraction": {
+    "origin": "ECOM",
+    "eciIndicator": "CHANNEL_ENCRYPTED",
+    "posConditionCode": "CARD_NOT_PRESENT_ECOM"
+  },
+  "merchantDetails": {
+    "merchantId": "100008000003683",
+    "terminalId": "10000001"
+  }
+}
+```
+
+  </TabsContent>
+  <TabsContent value="response">
+
+Example of an *AUTHORIZED* Charges API *(201: Created)* response.
+
+<Alert type="info" variant="inline" className="w-full">
+  <AlertIcon />
+  <AlertTitle>ℹ️ Info</AlertTitle>
+  <AlertDescription>
+
+For more information, see the [response handling documentation](/product/CommerceHub/docs/Developer-Resources/Response-Handling/Response-Handling.mdx).
+
+  </AlertDescription>
+</Alert>
+
+```json
+{
+  "gatewayResponse": {
+    "transactionType": "CHARGE",
+    "transactionState": "AUTHORIZED",
+    "transactionOrigin": "ECOM",
+    "transactionProcessingDetails": {
+      "transactionTimestamp": "2021-06-20T23:42:48Z",
+      "orderId": "RKOrdID-525133851837",
+      "apiTraceId": "362866ac81864d7c9d1ff8b5aa6e98db",
+      "clientRequestId": "4345791",
+      "transactionId": "84356531338"
+    }
+  },
+  "source": {
+    "sourceType": "PaymentCard",
+    "card": {
+      "bin": "40055500",
+      "last4": "0019",
+      "scheme": "VISA",
+      "expirationMonth": "10",
+      "expirationYear": "2030"
+    }
+  },
+  "paymentReceipt": {
+    "approvedAmount": {
+      "total": 12.04,
+      "currency": "USD"
+    },
+    "processorResponseDetails": {
+      "approvalStatus": "APPROVED",
+      "approvalCode": "OK5882",
+      "schemeTransactionId": "0225MCC625628",
+      "processor": "FISERV",
+      "host": "NASHVILLE",
+      "responseCode": "000",
+      "responseMessage": "APPROVAL",
+      "hostResponseCode": "00",
+      "hostResponseMessage": "APPROVAL",
+      "localTimestamp": "2021-06-20T23:42:48Z",
+      "bankAssociationDetails": {
+        "associationResponseCode": "000",
+        "transactionTimestamp": "2021-06-20T23:42:48Z"
+      }
+    }
+  },
+  "transactionDetails": {
+    "captureFlag": true
+  }
+}
+```
+
+  </TabsContent>
+</Tabs>
+
+---
+
+## Parameters
+
+This section outlines the key parameters relevant to the API request. These parameters are essential for understanding how to interact with the API effectively. For a complete list of request and response variables, refer to the full request schemas available in the [API Explorer](/product/CommerceHub/api/post/payments/v1/charges).
+
+### Request variables
+
+<Alert type="warning" variant="inline" className="w-full">
+  <AlertIcon />
+  <AlertTitle>⚠️ Warning</AlertTitle>
+  <AlertDescription>
+
+If the merchant account is enabled for a [tokenization service](/product/CommerceHub/docs/Payment-Methods/Tokenization/Tokenization.mdx), `paymentTokens` will be returned in the response. If a multi-use token is required, the [stored credentials details](/product/CommerceHub/docs/Payment-Methods/Tokenization/Stored-Credentials.mdx) must be submitted in the request. To override this behavior, set `createToken` to *false* in `transactionDetails`.
+
+  </AlertDescription>
+</Alert>
+
+<Alert type="warning" variant="inline" className="w-full">
+  <AlertIcon />
+  <AlertTitle>ℹ️ Info</AlertTitle>
+  <AlertDescription>
+
+The merchant can skip BIN lookup by sending `binVerification`: `SKIP_FOR_TOKENIZATION` in the request as part of [transaction details](docs/Resources/Master-Data/Transaction-Details.md). This does not override the behavior for an authorization which will still decline for an invalid BIN.
+
+  </AlertDescription>
+</Alert>
+
+<Tabs defaultValue="amount">
+  <TabsList>
+    <TabsTrigger value="amount">amount</TabsTrigger>
+    <TabsTrigger value="source">source</TabsTrigger>
+    <TabsTrigger value="transactionDetails">transactionDetails</TabsTrigger>
+  </TabsList>
+  <TabsContent value="amount">
+
+The table below identifies the required parameters in the `amount` object.
+
+| Variable | Type | Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `total` | *number* | 12 | Total amount of the transaction. [Sub-component](/product/CommerceHub/docs/Reference/Master-Data/Amount-Components.mdx) values must add up to total amount. |
+| `currency` | *string* | 3 | The requested currency in [ISO 3 Currency Format](/product/CommerceHub/docs/Reference/Data-Codes/Currency-Code.mdx). |
+
+  </TabsContent>
+  <TabsContent value="source">
+
+The below table identifies the required parameters in the `source` object.
+
+| Variable | Type | Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `sourceType` | *string* | 15 | Payment [source type](/product/CommerceHub/docs/Payment-Methods/Payment-Methods.mdx). |
+
+  </TabsContent>
+  <TabsContent value="transactionDetails">
+
+The table below identifies the required parameters in the `transactionDetails` object.
+
+| Variable | Type | Max Length | Description |
+| ----- | :-----: | :-----: | ----- |
+| `captureFlag` | *string* | 5 | Designates if the transaction should be captured *(`true` for sale and `false` for pre-authorization)*. |
+
+  </TabsContent>
+</Tabs>
+
+---
+
+## See also
+
+- [API Explorer](/product/CommerceHub/api/post/payments/v1/charges)
+- [Payment Operations](/product/CommerceHub/docs/Payment-Operations/Accept-Payments/Accept-Payments.mdx)
+- [Payment Methods](/product/CommerceHub/docs/Payment-Methods/Payment-Methods.mdx)
+- [Stored Credentials](/product/CommerceHub/docs/Payment-Methods/Tokenization/Stored-Credentials.mdx)
+- [Transaction Details](/product/CommerceHub/docs/Reference/Master-Data/Transaction-Details.mdx)
+
+---
