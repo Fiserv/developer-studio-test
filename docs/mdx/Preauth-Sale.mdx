@@ -17,7 +17,8 @@ Authorizations can be initiated as a sale or pre-authorization, which is defined
     <TabsTrigger value="sources">Sources</TabsTrigger>
     <TabsTrigger value="countries">Countries</TabsTrigger>
   </TabsList>
-  <TabsContent value="processing">
+
+<TabsContent value="processing">
 
 - [**Authorization only:**](/product/CommerceHub/docs/Payment-Methods/Payment-Methods.mdx) A transaction where the merchant [verifies](/product/CommerceHub/docs/Value-Added-Services/Account-Services/Verification.mdx) a customer's account, also known as a $0 authorization.
 - [**Pre-authorization:**](/product/CommerceHub/docs/Payment-Methods/Payment-Methods.mdx) A transaction where the customer is authorized to have funds withdrawn from their account on a future date.
@@ -26,8 +27,9 @@ Authorizations can be initiated as a sale or pre-authorization, which is defined
 - [**Capture:**](/product/CommerceHub/docs/Payment-Operations/Manage-Payments/Capture.mdx) A transaction where the merchant requests to have the pending funds from a pre-authorization withdrawn from the customer account at the end of the day.
 - [**Incremental:**](/product/CommerceHub/docs/Payment-Operations/Accept-Payments/Incremental-Auth.mdx) A transaction where the merchant requests to increase the original pre-authorization.
 
-  </TabsContent>
-  <TabsContent value="sources">
+</TabsContent>
+
+<TabsContent value="sources">
 
 Commerce Hub supports the following [payment sources](/product/CommerceHub/docs/Payment-Methods/Payment-Methods.mdx) with the Charges API:
 
@@ -38,8 +40,9 @@ Commerce Hub supports the following [payment sources](/product/CommerceHub/docs/
 <!-- theme: info -->
 > Additional alternate payment methods are available using Commerce Hub's [Checkouts Orders APIs](/product/CommerceHub/docs/Online-Commerce/Checkouts-Orders/Checkouts-Orders.mdx).
 
-  </TabsContent>
-  <TabsContent value="countries">
+</TabsContent>
+
+<TabsContent value="countries">
 
 Commerce Hub supports authorization transactions in the following countries. Please see the processing restrictions listed below, if any, for each country.
 
@@ -59,6 +62,7 @@ Commerce Hub supports authorization transactions in the following countries. Ple
 - Does **not** currently support incremental authorization and estimated authorization.
 
 </TabsContent>
+
 </Tabs>
 
 ---
@@ -82,7 +86,8 @@ The example below contains the minimum [parameters](#parameters) for a successfu
     <TabsTrigger value="request">Request</TabsTrigger>
     <TabsTrigger value="response">Response</TabsTrigger>
   </TabsList>
-  <TabsContent value="request">
+
+<TabsContent value="request">
 
 **POST** `/payments/v1/charges`
 
@@ -117,8 +122,9 @@ The example below contains the minimum [parameters](#parameters) for a successfu
 }
 ```
 
-  </TabsContent>
-  <TabsContent value="response">
+</TabsContent>
+
+<TabsContent value="response">
 
 Example of an *AUTHORIZED* Charges API *(201: Created)* response.
 
@@ -184,7 +190,7 @@ For more information, see the [response handling documentation](/product/Commerc
 }
 ```
 
-  </TabsContent>
+</TabsContent>
 </Tabs>
 
 ---
