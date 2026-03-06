@@ -18,8 +18,14 @@
   "getStartedFilePath": "docs/get-started.md",
   "apiVersions": [
     {
-      "version": "11.0.3",
+      "version": "11.0.4",
       "versionType": "major",
+      "releaseNotesPath": "/release-notes/rn2_rajivtest.md",
+      "apiSpecFileNames": ["networkTokens.yaml"]
+    },
+    {
+      "version": "11.0.3",
+      "versionType": "minor",
       "releaseNotesPath": "/release-notes/rn2_rajivtest.md",
       "apiSpecFileNames": ["Cards/CardService"]
     },
