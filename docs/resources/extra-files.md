@@ -2,4 +2,6 @@
 
 Here's [a yaml file](download/assets/files/api.yaml)
 
-![svg image](assets/images/fiserv-logo-white.svg)
+Here's [cat dog](download/../../../assets/files/cat-dog.docx)
+
+![svg image](../../../assets/images/fiserv-logo-white.svg)
