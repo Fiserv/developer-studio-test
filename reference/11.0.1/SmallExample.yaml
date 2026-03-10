@@ -390,6 +390,7 @@ components:
           type: integer
         monthlyIndexValues:
           type: array
+          deprecated: true
           items:
             $ref: '#/components/schemas/MonthIndexValue'
     SearchHistoryResponse:
