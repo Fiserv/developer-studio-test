@@ -28,6 +28,7 @@ This is a [link to example.com](https://example.com).
 - Item 2
     - Nested Item 2a
     - Nested Item 2b
+- Item 3
 
 ## Ordered List
 
