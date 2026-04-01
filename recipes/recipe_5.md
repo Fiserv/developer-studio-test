@@ -1,4 +1,4 @@
-# Heading Level 1
+# Heading Level One
 
 ## Heading Level 2
 
