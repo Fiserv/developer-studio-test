@@ -22,8 +22,6 @@
       sections:
         - title: RN1
           link: docs/release-notes/rn1.mdx
-        - title: Rajiv RN Test
-          link: docs/release-notes/rajiv-rn.md
 
 #- sections:
 #    - title: Nyan dog
