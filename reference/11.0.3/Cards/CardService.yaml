@@ -352,9 +352,9 @@ paths:
               schema:
                 $ref: "#/components/schemas/CardDelRsType"
       deprecated: false
-      x-group-name: Card Service
+      x-group-name: Get Service
       x-proxy-name: Test Card
-      x-child-product-name: Cards
+      x-child-product-name: Card Service
 
     post:
       tags:
