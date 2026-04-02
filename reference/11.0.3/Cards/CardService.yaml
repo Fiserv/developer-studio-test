@@ -360,7 +360,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/CardDelRsType"
-      deprecated: false
+      deprecated: true
       x-group-name: Get Service
       x-proxy-name: Test Card
       x-child-product-name: Card Service
