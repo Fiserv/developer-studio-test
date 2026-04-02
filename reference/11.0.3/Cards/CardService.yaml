@@ -356,86 +356,95 @@ paths:
       x-proxy-name: Get Card
       x-child-product-name: Card Service
 
-    post:
-        tags:
-          - Get Credit Card
-        summary: Get Credit Card
-        description: "Retrieves the details of an existing credit card account.<br> For more information about the Cards domain, <a href=\"../docs/?path=docs/fintechs/cards.md\" title=\"Click to open\">click here.</a> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n  <li><a href=\"../api/?type=put&path=/cards\" title=\"Update Card\">Update Card</a></li></ul>"
-        operationId: CreditCardInqOperSecured
-        parameters:
-          - name: EFXHeader
-            in: header
-            description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open">click here.</a>
-            required: true
-            style: simple
-            explode: false
+    get:
+      tags:
+        - Test Card
+      summary: Test Card.
+      description: "Tester.<br> For more information about the Cards domain, <a href=\"../docs/?path=docs/fintechs/cards.md\" title=\"Click to open\">click here.</a> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n  </ul>"
+      operationId: CardDelOperSecured
+      parameters:
+        - name: EFXHeader
+          in: header
+          description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open">click here.</a>
+          required: true
+          style: simple
+          explode: false
+          schema:
+            $ref: "#/components/schemas/EFXHeader"
+      requestBody:
+        content:
+          application/json:
             schema:
-              $ref: "#/components/schemas/EFXHeader"
-        requestBody:
+              $ref: "#/components/schemas/CardDelRqType"
+            examples:
+              Sample Banking:
+                $ref: "#/components/examples/PremierCardDelRequestExample"
+        required: true
+      responses:
+        "200":
+          description: OK
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/CardInqRqType"
+                $ref: "#/components/schemas/CardDelRsType"
               examples:
                 Sample Banking:
-                  $ref: "#/components/examples/PremierCardInqRequestExample"
-          required: true
-        responses:
-          "200":
-            description: OK
-            content:
-              application/json:
-                schema:
-                  $ref: "#/components/schemas/CardInqRsType"
-                examples:
-                  Sample Banking:
-                    $ref: "#/components/examples/PremierCardInqResponseExample"
-          "401":
-            description: Unauthorized
-            content:
-              application/json:
-                schema:
-                  $ref: "#/components/schemas/StatusType1"
-                examples:
-                  "401":
-                    $ref: "#/components/examples/401-Premier"
-          "422":
-            description: Un-processable Entity
-            content:
-              application/json:
-                schema:
-                  $ref: "#/components/schemas/StatusType1"
-                examples:
-                  "422":
-                    $ref: "#/components/examples/422-Premier"
-          "500":
-            description: Internal Server Error
-            content:
-              application/json:
-                schema:
-                  $ref: "#/components/schemas/StatusType1"
-                examples:
-                  "500":
-                    $ref: "#/components/examples/500-Premier"
-          "503":
-            description: Service Unavailable
-            content:
-              application/json:
-                schema:
-                  $ref: "#/components/schemas/StatusType1"
-                examples:
-                  "503":
-                    $ref: "#/components/examples/503-Premier"
-          default:
-            description: See HTTP Status Code Standards
-            content:
-              application/json:
-                schema:
-                  $ref: "#/components/schemas/CardInqRsType"
-        deprecated: false
-        x-group-name: Get Service
-        x-proxy-name: Get Credit Card
-        x-child-product-name: Card Service
+                  $ref: "#/components/examples/PremierCardDelResponseExample"
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CardDelRsType"
+              examples:
+                Sample Banking:
+                  $ref: "#/components/examples/PremierCardDelResponseExample"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusType1"
+              examples:
+                "401":
+                  $ref: "#/components/examples/401-Premier"
+        "422":
+          description: Un-processable Entity
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusType1"
+              examples:
+                "422":
+                  $ref: "#/components/examples/422-Premier"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusType1"
+              examples:
+                "500":
+                  $ref: "#/components/examples/500-Premier"
+        "503":
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusType1"
+              examples:
+                "503":
+                  $ref: "#/components/examples/503-Premier"
+        default:
+          description: See HTTP Status Code Standards
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CardDelRsType"
+      deprecated: false
+      x-group-name: Get Service
+      x-proxy-name: Test Card
+      x-child-product-name: Card Service
 components:
   schemas:
     EFXHeader:
