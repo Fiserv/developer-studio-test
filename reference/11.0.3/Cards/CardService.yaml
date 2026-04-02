@@ -309,6 +309,15 @@ paths:
               examples:
                 Sample Banking:
                   $ref: "#/components/examples/PremierCardDelResponseExample"
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CardDelRsType"
+              examples:
+                Sample Banking:
+                  $ref: "#/components/examples/PremierCardDelResponseExample"
         "401":
           description: Unauthorized
           content:
