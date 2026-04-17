@@ -2632,6 +2632,7 @@ components:
       name: Content-Type
       schema:
         type: string
+        default: "application/json"
         example: "application/json"
       in: header
       required: true
