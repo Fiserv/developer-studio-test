@@ -20,6 +20,13 @@
 # Zip file download test using image as a link
 [![Download](assets/images/Fiserv_Logo.jpg)](assets/files/developer-studio-test_spec.zip)
 
+# Zip file download test using image as a link (image, dwonload link separate line)
+![DNA](/assets/images/Fiserv_Logo.jpg)[Download Fiserv Logo](download/assets/images/Fiserv_Logo.jpg "download")
+
+# Zip file download test using image as a link (image, dwonload link separate line)
+![DNA](/assets/images/Fiserv_Logo.jpg)
+[Download Fiserv Logo](download/assets/images/Fiserv_Logo.jpg "download")
+
 # Zip file download test using a button
 
 <a href="assets/files/DeveloperStudioTest_postman.zip" download>
