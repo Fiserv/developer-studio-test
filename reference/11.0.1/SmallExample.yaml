@@ -425,6 +425,7 @@ components:
           default: false
           description: fetch stuff if true
           example: 'false'
+          deprecated: true
         startPeriod:
           type: string
           format: date
