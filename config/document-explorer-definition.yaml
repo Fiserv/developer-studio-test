@@ -10,8 +10,10 @@
           link: docs/getting-started/setup-tenant/register-tenant.mdx
         - title: Code New Tenant
           link: docs/getting-started/code-a-tenant/code-tenant.mdx
+          groups: ["TEST_ADMIN"]
         - title: Preview & Publish Content
           link: docs/getting-started/preview-and-publish-content/preview-and-publish.mdx
+          groups: ["TEST_GROUP_MP", "TEST_ADMIN"]
     - title: Getting Started Preview
       link: docs/get-started.mdx
 #    - title: Commerce Hub Doc
