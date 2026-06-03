@@ -46,7 +46,7 @@
       "version": "11.0.0",
       "versionType": "minor",
       "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
-      "apiSpecFileNames": ["Cards/CardService"]
+      "apiSpecFileNames": ["Cards/CardService", "Payments/CreditService"]
     },
     {
       "version": "backup",
