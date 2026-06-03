@@ -95,7 +95,7 @@ paths:
       tags:
         - Add Credit
       summary: Add Credit.
-      description: "Adds a credit transaction entry to an account for cash, check deposits, or merchandise payments. Generally, this API is used for Teller transactions.<br> For more information about the Payments domain, <a href=\"../docs/?path=docs/fintechs/payments.md\" title=\"Click to open\">click here.</a> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/cash-mgt.md\" title=\"Click to open\">Cash Management</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/treasury-services.md\" title=\"Click to open\">Treasury Services</a></li>\n  </ul>"
+      description: "Adds a credit transaction entry to an account for cash, check deposits, or merchandise payments. Generally, this API is used for Teller transactions.<br> For more information about the Payments domain, <a href=\"https://google.com\">Google it</a> or <a href=\"../docs/?path=docs/fintechs/payments.md\" title=\"Click to open\">click here.</a> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/cash-mgt.md\" title=\"Click to open\">Cash Management</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/treasury-services.md\" title=\"Click to open\">Treasury Services</a></li>\n  </ul>"
       operationId: CreditAddOper
       parameters:
         - name: EFXHeader
@@ -3940,7 +3940,7 @@ components:
           $ref: "#/components/schemas/NetworkRefDataType"
         PmtData:
           $ref: "#/components/schemas/PmtDataType"
-      description: Details of the credit transaction
+      description: Details of the credit transaction <a href="https://google.com">on Google</a> or <a href="/docs/faq.md">here</a>.
     CreditAddRqType:
       title: CreditAddRqType
       required:
