@@ -91,6 +91,10 @@
       {
         "name": "enableRecipes",
         "value": true
+      },
+      {
+        "name": "supportsSDKs",
+        "value": true
       }
     ]
   }
