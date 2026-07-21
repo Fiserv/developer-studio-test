@@ -29,7 +29,7 @@ This is a [link to example.com](https://example.com).
     - Nested Item 2a
     - Nested Item 2b
 
-## Ordered List
+## Ordered Lists
 
 1. First item
 2. Second item
