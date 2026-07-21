@@ -7,7 +7,7 @@ A clear and descriptive title summarizing the SDK’s purpose
 A brief overview of what the SDK accomplishes and its relevant use cases
 
 ## Getting Started Guide
-Overview and quick setup
+Overview and quick setup guide
 
 ## Reference Documenation
 Methods, classes, usage examples
