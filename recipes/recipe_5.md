@@ -12,7 +12,7 @@
 
 ---
 
-**Bold text**
+**Bolded text**
 
 *Italic text*
 
