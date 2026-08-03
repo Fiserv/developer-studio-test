@@ -22,7 +22,7 @@ This is a [link to example.com](https://example.com).
 
 ---
 
-## Unordered List
+## Unordered Lists
 
 - Item 1
 - Item 2
