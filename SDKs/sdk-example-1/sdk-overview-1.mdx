@@ -1,0 +1,86 @@
+# Developer Studio Test SDK 1
+
+> The Developer Studio Test SDK 1 provides a simple, secure interface for integrating payment processing into your JavaScript and TypeScript applications.
+
+## Overview
+
+The Developer Studio Test SDK 1 enables developers to accept payments, manage transactions, and handle refunds with minimal configuration. It supports credit cards, digital wallets, and bank transfers out of the box.
+
+<Alert type="info" variant="inline">
+  <AlertIcon />
+  <AlertTitle>Latest Version</AlertTitle>
+  <AlertDescription>Version 2.0 introduces streaming transaction events and a redesigned error handling model. See the [migration guide](?path=SDKs/sdk-example-1/version-history/2.0.mdx) for upgrade instructions.</AlertDescription>
+</Alert>
+
+## Features
+
+<div className="flex flex-row gap-4">
+  <Card>
+    <CardHeader>Payment Processing</CardHeader>
+    <CardDescription>Accept credit cards, debit cards, and digital wallet payments with a unified API surface. Supports one-time and recurring charges.</CardDescription>
+  </Card>
+  <Card>
+    <CardHeader>Transaction Management</CardHeader>
+    <CardDescription>Query, filter, and export transaction history. Built-in support for pagination, date range filtering, and status-based queries.</CardDescription>
+  </Card>
+  <Card>
+    <CardHeader>Refund Handling</CardHeader>
+    <CardDescription>Issue full or partial refunds programmatically. Track refund status with real-time webhook notifications.</CardDescription>
+  </Card>
+</div>
+
+## Installation
+
+```bash
+npm install @devstudio/payments-sdk
+```
+
+Or using Yarn:
+
+```bash
+yarn add @devstudio/payments-sdk
+```
+
+## Quick Start
+
+```javascript
+import { DevStudioPayments } from '@devstudio/payments-sdk';
+
+const client = new DevStudioPayments({
+  apiKey: 'your-api-key',
+  environment: 'sandbox'
+});
+
+const charge = await client.charges.create({
+  amount: 2500,
+  currency: 'USD',
+  source: 'tok_visa_4242',
+  description: 'Order #1234'
+});
+
+console.log(charge.id); // "ch_9f8a7b6c5d4e"
+```
+
+## Supported Environments
+
+| Environment | Description |
+| ----------- | ----------- |
+| Sandbox | Testing and development |
+| Staging | Pre-production validation |
+| Production | Live transactions |
+
+## System Requirements
+
+| Requirement | Minimum Version |
+| ----------- | --------------- |
+| Node.js | 18.0+ |
+| TypeScript | 5.0+ (optional) |
+| npm | 9.0+ |
+
+## Download
+
+You can download the SDK from the [Developer Studio Test SDK 1 GitHub repository](https://github.com/Fiserv).
+
+## Related SDKs
+
+- [Developer Studio Test SDK 2](?path=SDKs/sdk-example-2/sdk-overview-2.mdx) — Analytics and reporting for transaction data

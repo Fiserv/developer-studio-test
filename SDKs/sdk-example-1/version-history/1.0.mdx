@@ -1,0 +1,43 @@
+# Version 1.0 — Initial Release
+
+> Released: March 15, 2024
+
+## Overview
+
+The first stable release of the Developer Studio Test SDK 1, providing a complete JavaScript interface for payment processing, transaction management, and refund handling.
+
+## Features
+
+| Feature | Description |
+| ------- | ----------- |
+| Charge creation | Create one-time charges with credit card, debit card, and digital wallet tokens |
+| Transaction queries | Retrieve individual transactions and list transactions with filtering |
+| Refund processing | Issue full refunds against completed charges |
+| Sandbox environment | Full test environment with simulated payment responses |
+| TypeScript support | Complete type definitions included for all methods and response objects |
+| Error handling | Typed error classes for common failure scenarios |
+
+## Supported Payment Methods
+
+| Method | Token Prefix | Notes |
+| ------ | ------------ | ----- |
+| Visa | `tok_visa_` | Credit and debit |
+| Mastercard | `tok_mc_` | Credit and debit |
+| Digital Wallet | `tok_wallet_` | Requires additional client configuration |
+
+## Installation
+
+```bash
+npm install @devstudio/payments-sdk@1.0.0
+```
+
+## Known Limitations
+
+- Partial refunds are not supported in this release
+- Pagination cursor expires after 24 hours
+- Batch operations are not available
+- Maximum of 100 requests per minute in sandbox
+
+## Next Steps
+
+- [Version 1.1 Release Notes](?path=SDKs/sdk-example-1/version-history/1.1.mdx) — Bug fixes and partial refund support

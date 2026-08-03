@@ -1,0 +1,149 @@
+# Fetching from an Endpoint
+
+> Learn how to retrieve transaction data, account details, and payment history using the Developer Studio Test SDK 1.
+
+## Overview
+
+The SDK provides typed methods for all GET operations. Responses are automatically parsed and validated against the expected schema.
+
+## Examples
+
+<Tabs defaultValue="basic">
+  <TabsList>
+    <TabsTrigger value="basic">Basic Request</TabsTrigger>
+    <TabsTrigger value="authenticated">With Authentication</TabsTrigger>
+    <TabsTrigger value="paginated">With Pagination</TabsTrigger>
+  </TabsList>
+  <TabsContent value="basic">
+
+### Retrieve a Single Transaction
+
+Fetch a transaction by its unique identifier.
+
+```javascript
+import { DevStudioPayments } from '@devstudio/payments-sdk';
+
+const client = new DevStudioPayments({
+  apiKey: 'your-api-key',
+  environment: 'sandbox'
+});
+
+const transaction = await client.transactions.get('txn_abc123');
+
+console.log(transaction.amount);   // 2500
+console.log(transaction.currency); // "USD"
+console.log(transaction.status);   // "completed"
+```
+
+**Response Object:**
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| `id` | string | Unique transaction identifier |
+| `amount` | number | Amount in smallest currency unit (e.g., cents) |
+| `currency` | string | ISO 4217 currency code |
+| `status` | string | One of: `pending`, `completed`, `failed`, `refunded` |
+| `createdAt` | string | ISO 8601 timestamp |
+
+  </TabsContent>
+  <TabsContent value="authenticated">
+
+### Scoped Access with Bearer Tokens
+
+For multi-tenant applications, you can scope requests to a specific merchant account.
+
+```javascript
+import { DevStudioPayments } from '@devstudio/payments-sdk';
+
+const client = new DevStudioPayments({
+  apiKey: 'your-api-key',
+  environment: 'production'
+});
+
+const transaction = await client.transactions.get('txn_abc123', {
+  headers: {
+    'X-Merchant-Id': 'merch_9876'
+  }
+});
+
+console.log(transaction.merchantId); // "merch_9876"
+```
+
+<Alert type="warning" variant="inline">
+  <AlertIcon />
+  <AlertTitle>Authentication Required</AlertTitle>
+  <AlertDescription>Requests without a valid `X-Merchant-Id` header will return a 403 Forbidden error when accessing merchant-scoped resources.</AlertDescription>
+</Alert>
+
+  </TabsContent>
+  <TabsContent value="paginated">
+
+### Paginated List Requests
+
+When fetching collections, the SDK returns a paginated response object.
+
+```javascript
+import { DevStudioPayments } from '@devstudio/payments-sdk';
+
+const client = new DevStudioPayments({
+  apiKey: 'your-api-key',
+  environment: 'sandbox'
+});
+
+const page1 = await client.transactions.list({
+  limit: 25,
+  startDate: '2025-01-01',
+  endDate: '2025-01-31',
+  status: 'completed'
+});
+
+console.log(page1.data.length);   // 25
+console.log(page1.hasMore);       // true
+console.log(page1.nextCursor);    // "cur_xyz789"
+
+// Fetch the next page
+const page2 = await client.transactions.list({
+  limit: 25,
+  cursor: page1.nextCursor
+});
+```
+
+**Pagination Parameters:**
+
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `limit` | number | 20 | Number of records per page (max 100) |
+| `cursor` | string | — | Cursor from a previous response |
+| `startDate` | string | — | Filter by start date (ISO 8601) |
+| `endDate` | string | — | Filter by end date (ISO 8601) |
+| `status` | string | — | Filter by transaction status |
+
+  </TabsContent>
+</Tabs>
+
+## Error Handling
+
+All fetch methods throw typed errors that you can catch and handle.
+
+```javascript
+import { DevStudioPayments, NotFoundError, RateLimitError } from '@devstudio/payments-sdk';
+
+const client = new DevStudioPayments({ apiKey: 'your-api-key' });
+
+try {
+  const transaction = await client.transactions.get('txn_invalid');
+} catch (error) {
+  if (error instanceof NotFoundError) {
+    console.error('Transaction not found:', error.resourceId);
+  } else if (error instanceof RateLimitError) {
+    console.error('Rate limited. Retry after:', error.retryAfter);
+  } else {
+    throw error;
+  }
+}
+```
+
+## Next Steps
+
+- [Posting to an Endpoint](?path=SDKs/sdk-example-1/code-examples/posting-to-endpoint.mdx) — Learn how to create transactions and process payments
+- [Version History](?path=SDKs/sdk-example-1/version-history/2.0.mdx) — See what's new in the latest release

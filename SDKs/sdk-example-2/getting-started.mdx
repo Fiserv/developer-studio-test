@@ -1,0 +1,204 @@
+# Getting Started
+
+> Set up the Developer Studio Test SDK 2 in your project and execute your first query in under five minutes.
+
+## Prerequisites
+
+- A DevStudio platform account with an active API key
+- Java 17+ or Python 3.10+ installed locally
+- Network access to the Query Service endpoint
+
+## Installation
+
+<Tabs defaultValue="java">
+  <TabsList>
+    <TabsTrigger value="java">Java</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+  </TabsList>
+  <TabsContent value="java">
+
+### Maven
+
+Add the dependency to your `pom.xml`:
+
+```xml
+<dependency>
+  <groupId>com.devstudio</groupId>
+  <artifactId>data-sdk</artifactId>
+  <version>3.2.0</version>
+</dependency>
+```
+
+### Gradle
+
+Add to your `build.gradle`:
+
+```groovy
+implementation 'com.devstudio:data-sdk:3.2.0'
+```
+
+  </TabsContent>
+  <TabsContent value="python">
+
+### pip
+
+```bash
+pip install devstudio-data-sdk
+```
+
+### With optional DataFrame support
+
+```bash
+pip install devstudio-data-sdk[pandas]
+```
+
+  </TabsContent>
+</Tabs>
+
+## Configuration
+
+<Tabs defaultValue="java">
+  <TabsList>
+    <TabsTrigger value="java">Java</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+  </TabsList>
+  <TabsContent value="java">
+
+```java
+import com.devstudio.datasdk.DevStudioClient;
+import com.devstudio.datasdk.DevStudioConfig;
+
+DevStudioConfig config = DevStudioConfig.builder()
+    .apiKey("your-api-key")
+    .environment("sandbox")
+    .maxConnections(10)
+    .build();
+
+DevStudioClient client = DevStudioClient.create(config);
+```
+
+  </TabsContent>
+  <TabsContent value="python">
+
+```python
+from devstudio_data_sdk import DevStudioClient
+
+client = DevStudioClient(
+    api_key="your-api-key",
+    environment="sandbox",
+    max_connections=10
+)
+```
+
+  </TabsContent>
+</Tabs>
+
+**Configuration Options:**
+
+| Parameter | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| `apiKey` | string | — | Your DevStudio platform API key (required) |
+| `environment` | string | `"production"` | Target environment: `sandbox`, `staging`, or `production` |
+| `maxConnections` | int | 5 | Maximum number of concurrent connections in the pool |
+| `timeoutMs` | int | 30000 | Request timeout in milliseconds |
+| `retryAttempts` | int | 3 | Number of automatic retry attempts for transient failures |
+
+## Your First Query
+
+<Tabs defaultValue="java">
+  <TabsList>
+    <TabsTrigger value="java">Java</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+  </TabsList>
+  <TabsContent value="java">
+
+```java
+import com.devstudio.datasdk.DevStudioClient;
+import com.devstudio.datasdk.QueryResult;
+import com.devstudio.datasdk.Row;
+
+DevStudioClient client = DevStudioClient.create(
+    DevStudioConfig.builder().apiKey("your-api-key").build()
+);
+
+QueryResult result = client.query(
+    "SELECT customer_id, total_spent, last_purchase_date " +
+    "FROM transactions " +
+    "WHERE total_spent > 1000 " +
+    "ORDER BY total_spent DESC " +
+    "LIMIT 10"
+);
+
+for (Row row : result.getRows()) {
+    System.out.printf("Customer %s: $%.2f%n",
+        row.getString("customer_id"),
+        row.getDouble("total_spent")
+    );
+}
+
+client.close();
+```
+
+  </TabsContent>
+  <TabsContent value="python">
+
+```python
+from devstudio_data_sdk import DevStudioClient
+
+client = DevStudioClient(api_key="your-api-key")
+
+result = client.query("""
+    SELECT customer_id, total_spent, last_purchase_date
+    FROM transactions
+    WHERE total_spent > 1000
+    ORDER BY total_spent DESC
+    LIMIT 10
+""")
+
+for row in result.rows:
+    print(f"Customer {row['customer_id']}: ${row['total_spent']:.2f}")
+
+client.close()
+```
+
+  </TabsContent>
+</Tabs>
+
+<Alert type="info" variant="inline">
+  <AlertIcon />
+  <AlertTitle>Sandbox Data</AlertTitle>
+  <AlertDescription>The sandbox environment includes pre-populated sample datasets. You can start querying immediately without loading your own data.</AlertDescription>
+</Alert>
+
+## Verify Your Setup
+
+Run the built-in connection test to confirm everything is configured correctly:
+
+<Tabs defaultValue="java">
+  <TabsList>
+    <TabsTrigger value="java">Java</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+  </TabsList>
+  <TabsContent value="java">
+
+```java
+boolean connected = client.healthCheck();
+System.out.println("Connected: " + connected); // true
+```
+
+  </TabsContent>
+  <TabsContent value="python">
+
+```python
+connected = client.health_check()
+print(f"Connected: {connected}")  # True
+```
+
+  </TabsContent>
+</Tabs>
+
+## Next Steps
+
+- [Java Code Examples](?path=SDKs/sdk-example-2/java/java-code-examples.mdx) — Advanced Java patterns and streaming
+- [Python Code Examples](?path=SDKs/sdk-example-2/python/python-code-examples.mdx) — DataFrame integration and async usage
+- [SDK Overview](?path=SDKs/sdk-example-2/sdk-overview-2.mdx) — Full feature reference and architecture details

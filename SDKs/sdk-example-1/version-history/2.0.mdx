@@ -1,0 +1,157 @@
+# Version 2.0 — Major Release
+
+> Released: January 10, 2025
+
+<Alert type="warning" variant="inline">
+  <AlertIcon />
+  <AlertTitle>Breaking Changes</AlertTitle>
+  <AlertDescription>This release contains breaking changes to the client initialization and error handling APIs. Review the migration guide below before upgrading.</AlertDescription>
+</Alert>
+
+## Overview
+
+Version 2.0 introduces streaming transaction events, a redesigned error model, and support for batch operations. The client initialization API has been simplified to reduce boilerplate.
+
+## New Features
+
+| Feature | Description |
+| ------- | ----------- |
+| Streaming events | Subscribe to real-time transaction status changes via server-sent events |
+| Batch charges | Submit up to 1,000 charges in a single API call with async processing |
+| Idempotency keys | Built-in idempotency key generation to prevent duplicate charges |
+| Multi-currency | Process charges in 135+ currencies with automatic conversion rates |
+| Staging environment | New pre-production environment for integration testing |
+
+## Breaking Changes
+
+### 1. Client Initialization
+
+The constructor now accepts a single configuration object instead of positional arguments.
+
+**Before (v1.x):**
+
+```javascript
+const client = new DevStudioPayments('your-api-key', 'sandbox');
+```
+
+**After (v2.0):**
+
+```javascript
+const client = new DevStudioPayments({
+  apiKey: 'your-api-key',
+  environment: 'sandbox'
+});
+```
+
+### 2. Error Handling
+
+All SDK errors now extend a base `DevStudioError` class. The `code` property has been replaced with structured error types.
+
+**Before (v1.x):**
+
+```javascript
+catch (error) {
+  if (error.code === 'NOT_FOUND') { ... }
+}
+```
+
+**After (v2.0):**
+
+```javascript
+import { NotFoundError } from '@devstudio/payments-sdk';
+
+catch (error) {
+  if (error instanceof NotFoundError) { ... }
+}
+```
+
+### 3. Response Envelope
+
+List endpoints no longer wrap results in a `results` array. The array is now under `data`.
+
+**Before (v1.x):**
+
+```javascript
+const { results, total } = await client.transactions.list();
+```
+
+**After (v2.0):**
+
+```javascript
+const { data, hasMore, nextCursor } = await client.transactions.list();
+```
+
+## Migration Guide
+
+<Tabs defaultValue="step1">
+  <TabsList>
+    <TabsTrigger value="step1">Step 1: Update Package</TabsTrigger>
+    <TabsTrigger value="step2">Step 2: Fix Initialization</TabsTrigger>
+    <TabsTrigger value="step3">Step 3: Update Error Handling</TabsTrigger>
+  </TabsList>
+  <TabsContent value="step1">
+
+Update the package to the latest version:
+
+```bash
+npm install @devstudio/payments-sdk@2.0.0
+```
+
+Run your test suite to identify breaking changes in your codebase.
+
+  </TabsContent>
+  <TabsContent value="step2">
+
+Find all instances of the old constructor pattern and replace with the new configuration object:
+
+```javascript
+// Search your codebase for this pattern:
+// new DevStudioPayments('key', 'env')
+
+// Replace with:
+new DevStudioPayments({
+  apiKey: 'your-api-key',
+  environment: 'sandbox' // or 'staging' or 'production'
+});
+```
+
+  </TabsContent>
+  <TabsContent value="step3">
+
+Replace string-based error code checks with `instanceof` checks:
+
+```javascript
+import {
+  DevStudioError,
+  NotFoundError,
+  ValidationError,
+  RateLimitError,
+  AuthenticationError
+} from '@devstudio/payments-sdk';
+
+try {
+  await client.charges.create({ ... });
+} catch (error) {
+  if (error instanceof ValidationError) {
+    // Handle invalid input
+  } else if (error instanceof AuthenticationError) {
+    // Handle auth failure
+  } else if (error instanceof DevStudioError) {
+    // Handle other SDK errors
+  }
+}
+```
+
+  </TabsContent>
+</Tabs>
+
+<Alert type="info" variant="inline">
+  <AlertIcon />
+  <AlertTitle>Deprecation Notice</AlertTitle>
+  <AlertDescription>The v1.x SDK will receive security patches until January 2026. No new features will be added to the 1.x branch.</AlertDescription>
+</Alert>
+
+## Previous Versions
+
+- [Version 1.1](?path=SDKs/sdk-example-1/version-history/1.1.mdx) — Bug fixes and partial refunds
+- [Version 1.0](?path=SDKs/sdk-example-1/version-history/1.0.mdx) — Initial release
