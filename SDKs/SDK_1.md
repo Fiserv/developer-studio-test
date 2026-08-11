@@ -4,7 +4,7 @@
 A clear and descriptive title summarizing the SDK’s purpose
 
 ## Description
-A brief overview of what the SDK accomplishes and its relevant use cases.
+A brief overview of what the SDK accomplishes and its relevant use cases
 
 ## Getting Started Guide
 Overview and quick setup
