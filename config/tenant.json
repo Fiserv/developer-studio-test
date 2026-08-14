@@ -53,6 +53,12 @@
       "versionType": "minor",
       "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
       "apiSpecFileNames": ["api-1.0.0"]
+    },
+    {
+      "version": "digital-disbursements",
+      "versionType": "minor",
+      "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
+      "apiSpecFileNames": ["ddp-recipient-services"]
     }
   ],
   "product": {
