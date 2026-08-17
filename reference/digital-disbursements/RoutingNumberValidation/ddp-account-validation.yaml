@@ -1,0 +1,194 @@
+#-------------------------------------
+# Initial Version
+#-------------------------------------
+openapi: 3.0.0
+info:
+  version: 0.0.3
+  title: Digital Disbursement Platform API to validate routing number.
+  description: This Specification document lists the APIs required to validate bank routing number.
+
+servers:
+  - url:  https://qa.api.firstdata.com
+    description: This url is for QA testing.
+  - url:  https://int.api.firstdata.com
+    description: This url is for customer testing.
+  - url: https://prod.api.firstdata.com
+    description: This is production url.
+
+paths:
+  /v1/recipients/{recipientId}/accounts/validate:
+    post:
+      x-group-name: Validation
+      x-proxy-name: Validate ACH
+      x-child-product-name: RoutingNumberValidation
+      tags:
+        -  Digital Disbursement Platform API - Validate ACH Routing Number
+      parameters:
+        - in: header
+          name: Api-Key
+          description: An API key is a string value passed by a client app to the API proxies. The key uniquely identifies the client app.
+          required: true
+          schema: {
+	        type: string,
+	        default: "Api-Key"
+	      }
+        - in: header
+          name: Content-Type
+          description: used to indicate the media type of the resource.
+          required: true
+          schema: {
+           type: string,
+           default: "application/json"
+        }
+          example: application/json
+        - in: path
+          name: recipientId
+          description: Unique Id associated with Recipient Profile while set up.
+          required: true
+          schema: {
+	        type: string,
+	        default: "recipientId"
+	      }
+
+      requestBody:
+        description: Details required for add account for a recipeint. Only ACH routing# validation can be achived using this API. Merchant can send API Routint# in payload and API will return Bank name associated with Routing# if it is valid.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Account'
+
+      responses:
+        '200':
+          description: Account Valid - Success
+          content:
+            application/json:
+              schema:
+                 $ref: '#/components/schemas/ValidationResponse'
+        '400':
+          description: Recipient response - Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '500':
+          description: Recipient response - Internal server error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServerError'
+
+components:
+  schemas:
+##-------------------------------------
+## Response Model
+##-------------------------------------
+##-------------------------------------
+## Object Model
+##------------------------------------
+    Account:
+      description: Account information - can only be ONE of the account types.
+      type: object
+      properties:
+        ach:
+          $ref: '#/components/schemas/ACH'
+
+    ACH:
+      description: Ach information for validation
+      type: object
+      required:
+       - routingNumber
+      properties:
+       routingNumber:
+          type: string
+          description: Number to identify the financial institution
+          example: '999999999'
+
+    ValidationResponse:
+      description: validation response for the account
+      properties:
+       achValidationResponse:
+        $ref: '#/components/schemas/ACHValidationResponse'
+
+    ACHValidationResponse:
+      description: ValidationResponse object structure.
+      type: object
+      required:
+      - status
+      - bankName
+      properties:
+        bankName:
+          type: string
+          example: Bank of America
+        status:
+          type: string
+          example: Approved
+##-------------------------------------
+## Object Model
+##-------------------------------------
+
+#-------------------------------------
+# Common Models
+#-------------------------------------
+    Error:
+      description: (Response Only) Model for error messaging
+      type: object
+      properties:
+        code:
+          type: string
+          description: Uniquely identifies an error condition. Client applications need to read and handle errors based on this.
+        message:
+          type: string
+          description: A generic description of the error condition.
+        category:
+          type: string
+          description: The resource associated with the error condition.
+        developerInfo:
+          type: object
+          description: Information that needs to be understood by the client developers and should not be interpreted for application processing.
+          properties:
+            developerMessage:
+              type: string
+              description: An elaborative description of the error description.
+            moreInfo:
+              type: string
+              description: Link to the error in Developer page.
+            fieldError:
+              description: Detailed information about message format errors.
+              type: array
+              items:
+                properties:
+                  field:
+                    description: The property or attribute associated with the error
+                    type: string
+                  message:
+                    description: Information specific to a property or attribute.
+                    type: string
+      example:
+        code: "40000"
+        message: "Example Error"
+        category: "example"
+        developerInfo:
+          developerMessage: "Invalid Message format in request payload"
+          moreInfo: "https://www.example.com/errors/40000"
+          fieldError:
+            - field: "example id"
+              message: "exampleId is mandatory"
+
+
+#-------------------------------------
+# response Models
+#-------------------------------------
+    BadRequest:
+      description: Bad request
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/Error'
+
+    ServerError:
+      description: An unexpected server error occured.
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/Error'
