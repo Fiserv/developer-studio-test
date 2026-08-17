@@ -59,6 +59,14 @@
       "versionType": "minor",
       "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
       "apiSpecFileNames": ["BE_API_v01_36_1"]
+    },
+    {
+      "version": "digital-disbursements",
+      "versionType": "minor",
+      "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
+      "apiSpecFileNames": ["RecipientServices/ddp-recipient-services",
+                           "RoutingNumberValidation/ddp-account-validation",
+                           "TransactionService/ddp-transaction-services"]
     }
   ],
   "product": {
