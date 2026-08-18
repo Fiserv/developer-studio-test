@@ -12,7 +12,7 @@ Overview and quick setup
 ## Reference Documenation
 Methods, classes, usage examples
 
-## Code Samples (optional)
+## Code Sample (optional)
 
 ## Best Practices
 
