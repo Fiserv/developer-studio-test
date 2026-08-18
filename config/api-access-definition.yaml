@@ -37,8 +37,9 @@
   versions: ["11.0.1"]
   groups: []
 - xChildProductName: "Cards"
-  access: private
   groups: ["TEST_GROUP_MP", "TEST_ADMIN"]
+- version: "11.0.3"
+  groups: ["TEST_GROUP_MP"]
 # - xChildProductName: "Card Service"
 #   sections:
 #     - xGroupName: "Get Service"
