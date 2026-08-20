@@ -1,7 +1,7 @@
 # Sample SDK 1
 
 ## Title
-A clear and descriptive title summarizing the SDK’s purpose
+A clear and descriptive title summarizing the SDK’s purpose.
 
 ## Description
 A brief overview of what the SDK accomplishes and its relevant use cases
