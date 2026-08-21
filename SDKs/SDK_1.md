@@ -14,7 +14,7 @@ Methods, classes, usage examples
 
 ## Code Sample (optional)
 
-## Best Practice
+## Best Practices
 
 ## Related SDKs
 Links to similar or complementary SDKs
