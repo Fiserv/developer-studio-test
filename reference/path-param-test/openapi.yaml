@@ -20,7 +20,7 @@ paths:
             type: string
 
             # Schema-level example
-            example: "67890"
+            # example: "67890"
 
             # Default value (allowed in the schema)
             default: "00000"
