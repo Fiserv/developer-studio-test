@@ -9,8 +9,23 @@ paths:
     get:
       summary: Get a customer
       parameters:
-        - name: customerId
-          in: path
+        - name: parameter-level-example
+          in: header
+          required: true
+
+          # Parameter-level example
+          example: "parameter-level example"
+
+          schema:
+            type: string
+
+            # Schema-level example
+            # example: "67890"
+
+            # Default value (allowed in the schema)
+            # default: "00000"
+        - name: schema-level-example
+          in: header
           required: true
 
           # Parameter-level example
@@ -20,10 +35,25 @@ paths:
             type: string
 
             # Schema-level example
-            # example: "67890"
+            example: "schema-level example"
 
             # Default value (allowed in the schema)
-            default: "00000"
+            # default: "00000"
+        - name: default-value
+          in: header
+          required: true
+
+          # Parameter-level example
+          # example: "12345"
+
+          schema:
+            type: string
+
+            # Schema-level example
+            # example: "schema-level example"
+
+            # Default value (allowed in the schema)
+            default: "default value"
 
       responses:
         '200':
