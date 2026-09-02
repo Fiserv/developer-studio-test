@@ -1,0 +1,84 @@
+# Developer Studio Test SDK 2
+
+> Developer Studio Test SDK 2 is an example of file structure and documentation that tenants can use when setting up the documentation for their SDKs. This example is not based on real-world software and is only presented to inform tenants about the SDK functionality now part of the Developer Studio ecosystem.
+
+## Overview
+
+The Developer Studio Test SDK 2 enables developers to connect to the analytics engine, execute queries against large datasets, and stream results efficiently. It abstracts connection pooling, authentication, and result pagination so you can focus on data logic.
+
+<Alert type="success" variant="inline">
+  <AlertIcon />
+  <AlertTitle>Multi-Language Support</AlertTitle>
+  <AlertDescription>The Developer Studio Test SDK 2 is available for both Java and Python with identical API semantics. Choose the language that fits your application stack.</AlertDescription>
+</Alert>
+
+## Features
+
+<div className="flex flex-row gap-4">
+  <Card>
+    <CardHeader>Query Engine</CardHeader>
+    <CardDescription>Execute SQL-like queries against the data warehouse. Supports filtering, aggregation, joins, and window functions with automatic query optimization.</CardDescription>
+  </Card>
+  <Card>
+    <CardHeader>Streaming Results</CardHeader>
+    <CardDescription>Process large result sets without loading everything into memory. The streaming API delivers rows as they become available from the query engine.</CardDescription>
+  </Card>
+  <Card>
+    <CardHeader>Schema Discovery</CardHeader>
+    <CardDescription>Introspect available datasets, columns, and data types at runtime. Build dynamic queries based on the current schema without hardcoding field names.</CardDescription>
+  </Card>
+</div>
+
+## Supported Platforms
+
+| Language | Minimum Version | Package Manager | Package Name |
+| -------- | --------------- | --------------- | ------------ |
+| Java | 17+ | Maven / Gradle | `com.devstudio:data-sdk` |
+| Python | 3.10+ | pip | `devstudio-data-sdk` |
+
+## Architecture
+
+The SDK communicates with the Query Service over gRPC for streaming operations and REST for management operations.
+
+```
+┌─────────────┐       ┌──────────────────┐       ┌─────────────────┐
+│ Your App    │──────▶│  Developer Studio Test SDK 2   │──────▶│ Query      │
+│ (Java/Py)   │       │  (gRPC + REST)   │       │ Service         │
+└─────────────┘       └──────────────────┘       └─────────────────┘
+                              │
+                              ▼
+                      ┌──────────────────┐
+                      │ Connection Pool  │
+                      │ & Auth Manager   │
+                      └──────────────────┘
+```
+
+## Authentication Methods
+
+| Method | Use Case | Configuration |
+| ------ | -------- | ------------- |
+| API Key | Server-to-server applications | Set `apiKey` in client config |
+| OAuth 2.0 | User-context queries | Set `clientId` and `clientSecret` |
+| Service Account | Automated pipelines | Set path to credentials JSON file |
+
+## Rate Limits
+
+| Tier | Queries/Minute | Max Result Size | Concurrent Streams |
+| ---- | -------------- | --------------- | ------------------ |
+| Free | 10 | 10,000 rows | 1 |
+| Standard | 100 | 1,000,000 rows | 5 |
+| Enterprise | Unlimited | Unlimited | 50 |
+
+## Next Steps
+
+- [Getting Started](?path=SDKs/sdk-example-2/getting-started.mdx) — Install the SDK and run your first query
+- [Java Code Examples](?path=SDKs/sdk-example-2/java/java-code-examples.mdx) — Java-specific usage patterns
+- [Python Code Examples](?path=SDKs/sdk-example-2/python/python-code-examples.mdx) — Python-specific usage patterns
+
+## Download
+
+You can download the SDK from the [Developer Studio Test SDK 2 GitHub repository](https://github.com/Fiserv).
+
+## Related SDKs
+
+- [Developer Studio Test SDK 1](?path=SDKs/sdk-example-1/sdk-overview-1.mdx) — Payment processing for JavaScript/TypeScript applications

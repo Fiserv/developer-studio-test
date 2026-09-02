@@ -1,0 +1,243 @@
+# Python Code Examples
+
+> Developer Studio Test SDK 2 is an example of file structure and documentation that tenants can use when setting up the documentation for their SDKs. This example is not based on real-world software and is only presented to inform tenants about the SDK functionality now part of the Developer Studio ecosystem.
+
+## Initialization
+
+```python
+from devstudio_data_sdk import DevStudioClient
+
+client = DevStudioClient(
+    api_key="your-api-key",
+    environment="production",
+    max_connections=20,
+    timeout_ms=60000,
+    retry_attempts=3
+)
+```
+
+## Parameterized Queries
+
+Use parameterized queries to prevent injection and improve query plan caching.
+
+```python
+from devstudio_data_sdk import DevStudioClient
+
+client = DevStudioClient(api_key="your-api-key")
+
+result = client.query(
+    """
+    SELECT order_id, amount, region
+    FROM orders
+    WHERE amount >= :min_amount
+    AND region = :region
+    AND order_date >= :start_date
+    """,
+    params={
+        "min_amount": 500.00,
+        "region": "north_america",
+        "start_date": "2025-01-01"
+    }
+)
+
+print(f"Total rows: {result.row_count}")
+```
+
+**Parameter Type Mapping:**
+
+| Python Type | SDK Type | Example |
+| ----------- | --------- | ------- |
+| `str` | TEXT | `"north_america"` |
+| `float` | DECIMAL | `500.00` |
+| `int` | INTEGER | `42` |
+| `bool` | BOOLEAN | `True` |
+| `datetime.date` | DATE | `date(2025, 1, 1)` |
+
+## DataFrame Integration
+
+Convert query results directly to pandas DataFrames for analysis.
+
+```python
+from devstudio_data_sdk import DevStudioClient
+
+client = DevStudioClient(api_key="your-api-key")
+
+df = client.query_to_dataframe("""
+    SELECT region, order_date, amount, customer_id
+    FROM orders
+    WHERE order_date >= '2025-01-01'
+    ORDER BY order_date DESC
+    LIMIT 10000
+""")
+
+# Standard pandas operations
+print(df.describe())
+print(df.groupby("region")["amount"].sum())
+
+# Export to CSV
+df.to_csv("quarterly_orders.csv", index=False)
+```
+
+<Alert type="info" variant="inline">
+  <AlertIcon />
+  <AlertTitle>pandas Dependency</AlertTitle>
+  <AlertDescription>DataFrame support requires the pandas extra. Install with: `pip install devstudio-data-sdk[pandas]`</AlertDescription>
+</Alert>
+
+## Streaming Large Result Sets
+
+Process millions of rows without loading the full result set into memory.
+
+```python
+from devstudio_data_sdk import DevStudioClient
+
+client = DevStudioClient(api_key="your-api-key")
+
+stream = client.stream_query(
+    "SELECT * FROM events WHERE event_date = '2025-06-15'"
+)
+
+processed_count = 0
+
+for row in stream:
+    process_event(row["event_type"], row["timestamp"])
+    processed_count += 1
+
+    if processed_count % 10000 == 0:
+        print(f"Processed {processed_count} rows...")
+
+print(f"Complete. Processed {processed_count} total rows.")
+stream.close()
+```
+
+### Context Manager Pattern
+
+```python
+with client.stream_query("SELECT * FROM large_dataset") as stream:
+    for row in stream:
+        handle_row(row)
+# Stream is automatically closed
+```
+
+## Async Usage
+
+For high-concurrency applications, use the async client.
+
+```python
+import asyncio
+from devstudio_data_sdk import AsyncDevStudioClient
+
+async def main():
+    client = AsyncDevStudioClient(
+        api_key="your-api-key",
+        environment="production"
+    )
+
+    # Run multiple queries concurrently
+    results = await asyncio.gather(
+        client.query("SELECT COUNT(*) as total FROM orders"),
+        client.query("SELECT COUNT(*) as total FROM customers"),
+        client.query("SELECT COUNT(*) as total FROM products")
+    )
+
+    for result in results:
+        print(f"Count: {result.rows[0]['total']}")
+
+    await client.close()
+
+asyncio.run(main())
+```
+
+## Aggregation Queries
+
+```python
+from devstudio_data_sdk import DevStudioClient
+
+client = DevStudioClient(api_key="your-api-key")
+
+result = client.query("""
+    SELECT region,
+           COUNT(*) as order_count,
+           SUM(amount) as total_revenue,
+           AVG(amount) as avg_order_value
+    FROM orders
+    WHERE order_date >= '2025-01-01'
+    GROUP BY region
+    ORDER BY total_revenue DESC
+""")
+
+for row in result.rows:
+    print(f"{row['region']}: {row['order_count']} orders, "
+          f"${row['total_revenue']:.2f} revenue")
+```
+
+## Schema Discovery
+
+Inspect available datasets and their columns at runtime.
+
+```python
+from devstudio_data_sdk import DevStudioClient
+
+client = DevStudioClient(api_key="your-api-key")
+
+# List all available datasets
+datasets = client.list_datasets()
+print(f"Available datasets: {datasets}")
+
+# Get schema for a specific dataset
+schema = client.get_schema("orders")
+for column in schema.columns:
+    print(f"  {column.name} ({column.type}) - nullable: {column.nullable}")
+```
+
+## Error Handling
+
+```python
+from devstudio_data_sdk import DevStudioClient
+from devstudio_data_sdk.exceptions import (
+    DatasetNotFoundError,
+    QuerySyntaxError,
+    RateLimitExceededError,
+    DevStudioException
+)
+
+client = DevStudioClient(api_key="your-api-key")
+
+try:
+    result = client.query("SELECT * FROM nonexistent_table")
+except DatasetNotFoundError as e:
+    print(f"Dataset does not exist: {e.dataset_name}")
+except QuerySyntaxError as e:
+    print(f"Invalid query at position {e.position}: {e.detail}")
+except RateLimitExceededError as e:
+    print(f"Rate limited. Retry after {e.retry_after_ms}ms")
+except DevStudioException as e:
+    print(f"Unexpected SDK error: {e.message}")
+    print(f"Request ID: {e.request_id}")
+```
+
+## Connection Lifecycle
+
+```python
+# Option 1: Manual lifecycle
+client = DevStudioClient(api_key="your-api-key")
+# ... use client ...
+client.close()
+
+# Option 2: Context manager
+with DevStudioClient(api_key="your-api-key") as client:
+    result = client.query("SELECT * FROM orders LIMIT 10")
+    # Client is automatically closed when exiting the block
+```
+
+<Alert type="warning" variant="inline">
+  <AlertIcon />
+  <AlertTitle>Connection Pooling</AlertTitle>
+  <AlertDescription>Create a single DevStudioClient instance and reuse it throughout your application. Creating a new client per request wastes resources on connection pool initialization.</AlertDescription>
+</Alert>
+
+## Next Steps
+
+- [Java Code Examples](?path=SDKs/sdk-example-2/java/java-code-examples.mdx) — See the same patterns in Java
+- [Getting Started](?path=SDKs/sdk-example-2/getting-started.mdx) — Installation and initial setup
+- [SDK Overview](?path=SDKs/sdk-example-2/sdk-overview-2.mdx) — Architecture and feature reference
