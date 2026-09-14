@@ -85,3 +85,8 @@
           link: docs/mdx/mdx-test.mdx
         - title: Sample MDX Content
           link: docs/mdx/mdx-sample.mdx
+- sections:
+    - title: New Files Test
+      sections:
+        - title: New File
+          link: docs/getting-started/new-file.md
