@@ -90,3 +90,5 @@
       sections:
         - title: New File
           link: docs/getting-started/new-file.md
+        - title: Another New File
+          link: docs/getting-started/new-file-1.md
