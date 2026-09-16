@@ -1,0 +1,50 @@
+{
+  "title": "Developer Studio Test",
+  "name": "DeveloperStudioTest",
+  "coastURL": "https://fiserv.coastdemo.com/share/66e9b55b18f16b65adf809cd?mode=link&zoom=90&layoutType=web|https://fiserv.coastdemo.com/share/66e9c03018f16b65adfa7b52?mode=link&zoom=90&layoutType=web",
+  "solution": ["financial-institutions", "merchants"],
+  "getStartedFilePath": "docs/get-started.md",
+  "apiVersions": [
+    {
+      "version": "11.0.3",
+      "versionType": "major",
+      "releaseNotesPath": "/release-notes/rn1.mdx",
+      "apiSpecFileNames": ["Cards/CardService"],
+      "groups": ["TEST_GROUP_MP"]
+    }
+  ],
+  "product": {
+    "featured": true,
+    "description": "Developer Studio es un producto de Developer Studio donde los desarrolladores pueden venir al estudio para desarrollar como desarrolladores.",
+    "feature": [
+      {
+        "name": "sandBox",
+        "value": true
+      },
+      {
+        "name": "plugins",
+        "value": false
+      },
+      {
+        "name": "industryOptionsAPIExplorer",
+        "value": true
+      },
+      {
+        "name": "editParameterAPIExplorer",
+        "value": true
+      },
+      {
+        "name": "downloadPostman",
+        "value": false
+      },
+      {
+        "name": "enableRecipes",
+        "value": true
+      },
+      {
+        "name": "enableSDKs",
+        "value": true
+      }
+    ]
+  }
+}
