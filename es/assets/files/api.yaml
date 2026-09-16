@@ -1,0 +1,371 @@
+################################################################################
+# Copyrights © 2021-2022 Fiserv, Inc. or its affiliates. 
+# Fiserv is a trademark of Fiserv, Inc., 
+# registered or used in the United States and foreign countries, 
+# and may or may not be registered in your country.  
+# All trademarks, service marks, 
+# and trade names referenced in this 
+# material are the property of their 
+# respective owners. This work, including its contents 
+# and programming, is confidential and its use 
+# is strictly limited. This work is furnished only 
+# for use by duly authorized licensees of Fiserv, Inc. 
+# or its affiliates, and their designated agents 
+# or employees responsible for installation or 
+# operation of the products. Any other use, 
+# duplication, or dissemination without the 
+# prior written consent of Fiserv, Inc. 
+# or its affiliates is strictly prohibited. 
+# Except as specified by the agreement under 
+# which the materials are furnished, Fiserv, Inc. 
+# and its affiliates do not accept any liabilities 
+# with respect to the information contained herein 
+# and are not responsible for any direct, indirect, 
+# special, consequential or exemplary damages 
+# resulting from the use of this information. 
+# No warranties, either express or implied, 
+# are granted or extended by this work or 
+# the delivery of this work
+################################################################################
+
+openapi: 3.0.2
+info:
+  title: Dev Portal Tenant APIs to test 10.
+  description: To onboard a new tenant into the Fiserv Developer Studio as a new tenant each
+    product must support these APIs so that we can retrieve product specific API specs
+    and documentation.
+  version: 1.0.0
+servers:
+  - url: https://tenants.fiserv.com/
+paths:
+  /v1/products:
+    get:
+      tags:
+        - Tenant
+      x-group-name: Tenant
+      x-proxy-name: apis        
+      summary: Returns tenant provider API (TEST OF WEBHOOK)
+      operationId: TenantProviderID
+      responses:
+        200:
+          description: Tenant provider response. <a href="https://fiserv.com" rel="noopener noreferrer" target="_blank">external link</a> <a href="../docs?path=docs/getting-started/setup-tenant/setup-tenant.md">Setup Tenant</a>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TenantProviderResponse'
+            text/yaml:
+              schema:
+                $ref: '#/components/schemas/TenantProviderResponse'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TenantProviderResponse'
+  /v1/apis:
+    post:
+      tags:
+        - Specs
+      x-group-name: Specs
+      x-proxy-name: apis
+      summary: Returns OpenAPI Spec.
+      operationId: APISpecProviderId
+      requestBody:
+        description: Filter Request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SpecsFilterRequest'
+        required: false
+      responses:
+        200:
+          description: ""
+          content: {}
+      x-codegen-request-body-name: Body
+  /v1/docs:
+    get:
+      tags:
+        - Documents
+      x-group-name: Documents
+      x-proxy-name: docs
+      summary: Returns Docs in markdown format.
+      operationId: DocsAPIId
+      parameters:
+        - in: query
+          name: path
+          schema:
+            type: string
+          required: true
+          description: Markdown document path
+      responses:
+        200:
+          description: ""
+          content: {}
+      x-codegen-request-body-name: Body
+  /v1/layouts:
+    get:
+      tags:
+        - Layout
+      x-group-name: Layout
+      x-proxy-name: layouts
+      summary: Returns the product page layout.
+      operationId: LayoutAPIId
+      responses:
+        200:
+          description: This text will appear as description of your response body.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageLayoutResponse'
+            text/yaml:
+              schema:
+                $ref: '#/components/schemas/PageLayoutResponse'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PageLayoutResponse'
+  /live:
+    get:
+      tags:
+        - HealthCheck
+      x-group-name: HealthCheck
+      x-proxy-name: live
+      summary: Health check probes.
+      operationId: healthCheckId
+      x-links: 
+        link1: 
+          description: Developer Studio
+          flag: external
+          url:  'https://dev-developerstudio.fiserv.com/'
+        link2: 
+          description: Setup tenant
+          flag: internal
+          url:  '../docs?path=docs/getting-started/setup-tenant/setup-tenant.md'
+        link3: 
+          description: Fiserv Portal
+          flag: external
+          url:  'https://fiserv.com'
+      responses:
+        200:
+          description: Health check.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LiveProbeResponse'
+  
+components:
+  schemas:
+    LiveProbeResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Message
+    PageLayoutResponse:
+      type: array
+      items:
+        type: object
+        properties:
+          hero:
+            type: array
+            items:
+              type: object
+              properties:
+                descrption:
+                  type: string
+                  description: Descrption
+                image:
+                  type: string
+                  description: Image
+            description: Hero
+          journey Cards:
+            type: array
+            items:
+              type: object
+              properties:
+                journeyCard:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      contextualNavigationCards:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            contextualNavigationCard:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  description:
+                                    type: string
+                                    description: Description
+                                  link:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        type:
+                                          type: string
+                                          description: Type
+                                        uri:
+                                          type: string
+                                          description: URI
+                                    description: Link
+                                  title:
+                                    type: string
+                                    description: Title
+                              description: ContextualNavigationCard
+                        description: ContextualNavigationCards
+                      description:
+                        type: string
+                        description: Description
+                      link:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            type:
+                              type: string
+                              description: Type
+                            uri:
+                              type: string
+                              description: URI
+                        description: Link
+                      title:
+                        type: string
+                        description: Title
+                  description: JourneyCard
+            description: JourneyCards
+    SpecsFilterRequest:
+      type: object
+      properties:
+        categories:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: Name
+              subcategories:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      description: Name
+                description: Subcategories
+          description: Categories
+    TenantProviderResponse:
+      type: object
+      properties:
+        brand:
+          type: string
+          description: Brand
+        brandDescription:
+          type: string
+          description: BrandDescription
+        brandLogoURL:
+          type: string
+          description: BrandLogoURL
+        categories:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: Name
+              subcategories:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      description: Name
+                    value:
+                      type: string
+                      description: Value
+                description: Subcategories
+              value:
+                type: string
+                description: Value
+          description: Categories
+        name:
+          type: string
+          description: Name
+        product:
+          type: object
+          properties:
+            apiSpecification:
+              type: string
+              description: APISpecification 
+            description:
+              type: string
+              description: Description
+            documentation:
+              type: string
+              description: Documentation
+            featured:
+              type: boolean
+              description: Featured feature
+            layout:
+              type: string
+              description: Layout
+            logoURL:
+              type: string
+              description: LogoURL
+          description: Product
+        solution:
+          type: string
+          description: Solution
+        title:
+          type: string
+          description: Title
+  responses:
+    apiSpecResponseWrapper:
+      description: OpenAPI Spec for the APIs. 
+      content: {}
+    docsResponseWrapper:
+      description: Markdown files.
+      content: {}
+    liveResponse:
+      description: Health check.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/LiveProbeResponse'
+        text/yaml:
+          schema:
+            $ref: '#/components/schemas/LiveProbeResponse'
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/LiveProbeResponse'
+    productPage:
+      description: This text will appear as description of your response body. 
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PageLayoutResponse'
+        text/yaml:
+          schema:
+            $ref: '#/components/schemas/PageLayoutResponse'
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/PageLayoutResponse'
+    tenant:
+      description: This text will appear as description of your response body. 
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/TenantProviderResponse'
+        text/yaml:
+          schema:
+            $ref: '#/components/schemas/TenantProviderResponse'
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/TenantProviderResponse'
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
