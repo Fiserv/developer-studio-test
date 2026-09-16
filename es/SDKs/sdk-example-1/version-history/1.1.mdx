@@ -1,0 +1,55 @@
+# Version 1.1 — Bug Fixes and Enhancements
+
+> Developer Studio Test SDK 1 is an example of file structure and documentation that tenants can use when setting up the documentation for their SDKs. This example is not based on real-world software and is only presented to inform tenants about the SDK functionality now part of the Developer Studio ecosystem.
+
+> Released: June 2, 2024
+
+## Overview
+
+This minor release adds partial refund support, improves error messages, and resolves several issues reported by early adopters.
+
+## New Features
+
+| Feature | Description |
+| ------- | ----------- |
+| Partial refunds | Issue refunds for a portion of the original charge amount |
+| Retry logic | Automatic retry with exponential backoff for transient network errors |
+| Webhook signature verification | Helper method to validate incoming webhook payloads |
+
+## Bug Fixes
+
+| Issue | Description |
+| ----- | ----------- |
+| Cursor expiration | Pagination cursors now persist for 7 days (previously 24 hours) |
+| Currency validation | Fixed false rejection of valid ISO 4217 codes with numeric values |
+| Timeout handling | Resolved issue where connections would hang indefinitely on slow networks |
+| TypeScript generics | Fixed incorrect type inference on `list()` response objects |
+
+## Improvements
+
+- Reduced SDK bundle size by 18% through tree-shaking optimizations
+- Added `toJSON()` method on all response objects for easier serialization
+- Improved error messages to include request IDs for support troubleshooting
+
+## Partial Refund Example
+
+```javascript
+const refund = await client.refunds.create({
+  chargeId: 'ch_a1b2c3d4',
+  amount: 1500, // Refund $15.00 of the original charge
+  reason: 'product_return'
+});
+```
+
+## Upgrade Notes
+
+This is a backwards-compatible release. No code changes are required when upgrading from 1.0.
+
+```bash
+npm install @devstudio/payments-sdk@1.1.0
+```
+
+## Next Steps
+
+- [Version 2.0 Release Notes](?path=SDKs/sdk-example-1/version-history/2.0.mdx) — Major release with breaking changes
+- [Version 1.0 Release Notes](?path=SDKs/sdk-example-1/version-history/1.0.mdx) — Initial release
