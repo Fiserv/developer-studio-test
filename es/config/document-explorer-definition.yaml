@@ -1,7 +1,0 @@
-- sections:
-    - title: Getting Started
-      sections:
-        - title: Setup New Tenant
-      link: docs/getting-started/new-getting-started.mdx
-    - title: Getting Started Preview
-      link: docs/get-started.mdx
