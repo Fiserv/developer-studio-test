@@ -9,6 +9,12 @@ paths:
     get:
       summary: Get a customer
       parameters:
+        - name: customerId
+          in: path
+          required: true
+          description: 'Customer Id'
+          schema:
+            type: string
         - name: parameter-level-example
           in: header
           required: true
@@ -66,5 +72,5 @@ paths:
                   customerId:
                     type: string
       x-proxy-name: Get Customer
-      x-group-name: Path Param Test
+      x-group-name: Param Test
  
