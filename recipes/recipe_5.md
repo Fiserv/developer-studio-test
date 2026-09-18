@@ -1,4 +1,4 @@
-# Heading Level 1
+# Heading Level One
 
 ## Heading Level 2
 
@@ -12,7 +12,7 @@
 
 ---
 
-**Bold text**
+**Bolded text**
 
 *Italic text*
 
@@ -22,14 +22,14 @@ This is a [link to example.com](https://example.com).
 
 ---
 
-## Unordered List
+## Unordered Lists
 
 - Item 1
 - Item 2
     - Nested Item 2a
     - Nested Item 2b
 
-## Ordered List
+## Ordered Lists
 
 1. First item
 2. Second item

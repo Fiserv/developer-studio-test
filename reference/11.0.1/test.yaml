@@ -39,6 +39,7 @@ paths:
       summary: Create a petro transaction
       description: Must include a siteLocationId, pumpNumber, funding source
       parameters:
+      - $ref: '#/components/parameters/ContentTypeHeader'
       - $ref: '#/components/parameters/ApiKeyParam'
       - $ref: '#/components/parameters/TimestampParam'
       - $ref: '#/components/parameters/AuthorizationParam'
@@ -2626,6 +2627,16 @@ components:
   # Parameter Models
   #-------------------------------------
   parameters:
+    ContentTypeHeader:
+      x-model-version: 1.0
+      name: Content-Type
+      schema:
+        type: string
+        default: "application/json"
+        example: "application/json"
+      in: header
+      required: true
+      description: "The content type. Valid value (application/json)."
     AcceptLanguageParam:
       name: Accept-Language
       in: header
