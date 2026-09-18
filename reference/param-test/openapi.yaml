@@ -67,4 +67,4 @@ paths:
                     type: string
       x-proxy-name: Get Customer
       x-group-name: Path Param Test
-
+ 
