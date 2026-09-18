@@ -15,6 +15,7 @@ paths:
           description: 'Customer Id'
           schema:
             type: string
+            example: "12345"
         - name: parameter-level-example
           in: header
           required: true
