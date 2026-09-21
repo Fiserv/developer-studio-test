@@ -75,4 +75,3 @@ paths:
                     example: "123456"
       x-proxy-name: Parameters
       x-group-name: Test Parameters
- 
