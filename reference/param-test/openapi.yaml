@@ -15,7 +15,7 @@ paths:
           description: 'Parameter Id'
           schema:
             type: string
-            example: "123456"
+            example: "1234567"
         - name: parameter-level-example
           in: header
           required: true
@@ -72,6 +72,7 @@ paths:
                 properties:
                   parameterId:
                     type: string
-                    example: "123456"
+                    example: "1234567"
       x-proxy-name: Parameters
       x-group-name: Test Parameters
+
