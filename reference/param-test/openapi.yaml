@@ -5,17 +5,17 @@ info:
   version: 1.0.0
 
 paths:
-  /customers/{customerId}:
+  /api/parameter/{parameterId}:
     get:
-      summary: Get a customer
+      summary: API with parameter
       parameters:
-        - name: customerId
+        - name: parameterId
           in: path
           required: true
-          description: 'Customer Id'
+          description: 'Parameter Id'
           schema:
             type: string
-            example: "12345"
+            example: "123456"
         - name: parameter-level-example
           in: header
           required: true
@@ -70,8 +70,9 @@ paths:
               schema:
                 type: object
                 properties:
-                  customerId:
+                  parameterId:
                     type: string
-      x-proxy-name: Get Customer
-      x-group-name: Param Test
+                    example: "123456"
+      x-proxy-name: Parameters
+      x-group-name: Test Parameters
  
