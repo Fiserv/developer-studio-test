@@ -94,3 +94,5 @@
           link: docs/getting-started/new-file-1.md
         - title: The Newest File
           link: docs/getting-started/new-file-2.md
+        - title: The Very Newest File
+          link: docs/getting-started/new-file3.md
