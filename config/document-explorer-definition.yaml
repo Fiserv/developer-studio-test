@@ -45,6 +45,8 @@
       sections:
         - title: NotificationTesting
           link: docs/NotificationToggleTest/notificationTest.mdx
+        - title: New Tag Testing
+          link: docs/NotificationToggleTest/new-tag-doc.mdx
 
 - sections:
     - title: Resources
