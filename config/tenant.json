@@ -18,6 +18,12 @@
   "getStartedFilePath": "docs/get-started.md",
   "apiVersions": [
     {
+      "version": "12.0.0",
+      "versionType": "minor",
+      "releaseNotesPath": "/release-notes/release-notes-12.0.0.md",
+      "apiSpecFileNames": ["Transactions/transactions-accounts-fraud-services"]
+    },
+    {
       "version": "11.0.3",
       "versionType": "major",
       "releaseNotesPath": "/release-notes/rn2_rajivtest.md",
