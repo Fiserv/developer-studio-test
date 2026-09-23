@@ -1,0 +1,198 @@
+openapi: 3.0.0
+info:
+  title: Test Banking API
+  version: 12.0.0
+  description: Test API for account, transaction, and fraud workflows.
+
+servers:
+  - url: https://api.example.com/v1
+
+tags:
+  - name: Accounts
+  - name: Transactions
+  - name: Fraud
+
+paths:
+  /accounts:
+    post:
+      tags: [Accounts]
+      summary: Create Account
+      operationId: createAccount
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Account"
+      responses:
+        "201":
+          description: Account created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Account"
+
+  /accounts/{accountId}:
+    parameters:
+      - name: accountId
+        in: path
+        required: true
+        schema:
+          type: string
+    put:
+      tags: [Accounts]
+      summary: Update Account
+      operationId: updateAccount
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Account"
+      responses:
+        "200":
+          description: Account updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Account"
+    delete:
+      tags: [Accounts]
+      summary: Delete Account
+      operationId: deleteAccount
+      responses:
+        "204":
+          description: Account deleted
+
+  /transactions:
+    post:
+      tags: [Transactions]
+      summary: Create Transaction
+      operationId: createTransaction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Transaction"
+      responses:
+        "201":
+          description: Transaction created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Transaction"
+
+  /transactions/{transactionId}:
+    get:
+      tags: [Transactions]
+      summary: Get Transaction
+      operationId: getTransaction
+      parameters:
+        - name: transactionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Transaction found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Transaction"
+
+  /fraud-reports:
+    post:
+      tags: [Fraud]
+      summary: Report Fraud
+      operationId: reportFraud
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FraudReport"
+      responses:
+        "201":
+          description: Fraud report created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FraudReport"
+
+  /transactions/{transactionId}/refund:
+    post:
+      tags: [Fraud]
+      summary: Refund Transaction
+      operationId: refundTransaction
+      parameters:
+        - name: transactionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Transaction refunded
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Transaction"
+
+components:
+  schemas:
+    Account:
+      type: object
+      required: [name, accountType]
+      properties:
+        id:
+          type: string
+          example: acc_12345
+        name:
+          type: string
+          example: Jane Doe
+        accountType:
+          type: string
+          example: checking
+        status:
+          type: string
+          example: active
+
+    Transaction:
+      type: object
+      required: [accountId, amount, currency]
+      properties:
+        id:
+          type: string
+          example: txn_12345
+        accountId:
+          type: string
+          example: acc_12345
+        amount:
+          type: number
+          format: double
+          example: 25.50
+        currency:
+          type: string
+          example: USD
+        status:
+          type: string
+          example: completed
+
+    FraudReport:
+      type: object
+      required: [transactionId, reason]
+      properties:
+        id:
+          type: string
+          example: fraud_12345
+        transactionId:
+          type: string
+          example: txn_12345
+        reason:
+          type: string
+          example: Unauthorized transaction
+        status:
+          type: string
+          example: reported
