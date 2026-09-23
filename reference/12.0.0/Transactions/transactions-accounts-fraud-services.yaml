@@ -31,6 +31,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Account"
+      x-group-name: Accounts
+      x-proxy-name: Create Account
 
   /accounts/{accountId}:
     parameters:
@@ -56,6 +58,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Account"
+      x-group-name: Accounts
+      x-proxy-name: Update Account
     delete:
       tags: [Accounts]
       summary: Delete Account
@@ -63,6 +67,8 @@ paths:
       responses:
         "204":
           description: Account deleted
+      x-group-name: Accounts
+      x-proxy-name: Delete Account
 
   /transactions:
     post:
@@ -82,6 +88,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Transaction"
+      x-group-name: Transactions
+      x-proxy-name: Create Transaction
 
   /transactions/{transactionId}:
     get:
@@ -101,6 +109,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Transaction"
+      x-group-name: Transactions
+      x-proxy-name: Get Transaction
 
   /fraud-reports:
     post:
@@ -120,6 +130,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/FraudReport"
+      x-group-name: Fraud
+      x-proxy-name: Report Fraud
 
   /transactions/{transactionId}/refund:
     post:
@@ -139,6 +151,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Transaction"
+      x-group-name: Fraud
+      x-proxy-name: Refund Transaction
 
 components:
   schemas:
