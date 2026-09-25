@@ -1,0 +1,100 @@
+- sections:
+    - title: Getting Started
+      link: docs/getting-started/new-getting-started.mdx
+      sections:
+        - title: Setup New Tenant
+          link: docs/getting-started/setup-tenant/setup-tenant.mdx
+        - title: Deploy New Tenant
+          link: docs/getting-started/setup-tenant/deploy-tenant.mdx
+        - title: Register New Tenant
+          link: docs/getting-started/setup-tenant/register-tenant.mdx
+        - title: Code New Tenant
+          link: docs/getting-started/code-a-tenant/code-tenant.mdx
+          groups: ["TEST_ADMIN"]
+        - title: Preview & Publish Content
+          link: docs/getting-started/preview-and-publish-content/preview-and-publish.mdx
+          groups: ["TEST_GROUP_MP", "TEST_ADMIN"]
+    - title: Getting Started Preview
+      link: docs/get-started.mdx
+#    - title: Commerce Hub Doc
+#      link: /product/CommerceHub/docs/?path=docs/Getting-Started/Getting-Started-General.md
+
+- sections:
+    - title: Release Notes
+      sections:
+        - title: RN1
+          link: docs/release-notes/rn1.mdx
+
+#- sections:
+#    - title: Nyan dog
+#      link: docs/resources/nyan-dog.md
+#    - title: Nyan cat download
+#      link: download/assets/files/nyan-cat.txt
+
+- sections:
+    - title: Gated Content
+      link: docs/Spec_Testing/gatedContent.mdx
+      groups: []
+      sections:
+        - title: Gated Content Testing
+          link: docs/Spec_Testing/gatedContent.mdx
+          groups: ["TEST_GROUP_MP"]
+
+- sections:
+    - title: NotificationToggleTest
+      sections:
+        - title: NotificationTesting
+          link: docs/NotificationToggleTest/notificationTest.mdx
+        - title: New Tag Testing
+          link: docs/NotificationToggleTest/new-tag-doc.mdx
+
+- sections:
+    - title: Resources
+      sections:
+        - title: API Guidelines
+          link: docs/resources/guides/api-guide.mdx
+        - title: How it works
+          link: docs/resources/guides/how-to-use-stoplight.mdx
+        - title: Learn how to use Prism Stoplight
+          link: docs/resources/guides/how-to-use-stoplight.mdx
+        - title: Learn how to use DocIgnore
+          link: docs/resources/guides/how-to-use-docignore.mdx
+        - title: Tutorials
+          link: docs/resources/guides/how-to-use-docignore.mdx
+          sections:
+            - title: Markdown Support Guide
+              link: docs/resources/markdown-support.mdx
+              sections:
+                - title: Card Support
+                  link: docs/tutorials/markdown/card.mdx
+                - title: Tabs Support
+                  link: docs/tutorials/markdown/tabs.mdx
+        - title: FAQ
+          link: docs/faq/faq.mdx
+
+        - title: Testing
+          open: true
+          sections:
+            - title: TestingDocs
+              link: docs/SpecTest/SpecTest.mdx
+              access: public
+              groups: []
+
+- sections:
+    - title: MDX
+      sections:
+        - title: MDX files
+          link: docs/mdx/mdx-test.mdx
+        - title: Sample MDX Content
+          link: docs/mdx/mdx-sample.mdx
+- sections:
+    - title: New Files Test
+      sections:
+        - title: New File
+          link: docs/getting-started/new-file.md
+        - title: Another New File
+          link: docs/getting-started/new-file-1.md
+        - title: The Newest File
+          link: docs/getting-started/new-file-2.md
+        - title: The Very Newest File
+          link: docs/getting-started/new-file3.md
