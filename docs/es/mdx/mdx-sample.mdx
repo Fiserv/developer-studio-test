@@ -1,0 +1,330 @@
+# Using Markdown and MDX in Documentation
+
+> Markdown is a text-to-HTML conversion tool for web writers. MDX adds the ability to use JSX components within Markdown documents.
+
+> Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid JSX.
+
+For example, this entire page was created using Markdown!
+
+Below is a quick reference of all the syntax that is supported by MDX.
+
+## Heading
+
+```mdx
+# H1
+
+## H2
+
+### H3
+
+#### H4
+
+##### H5
+
+###### H6
+```
+
+# H1
+
+## H2
+
+### H3
+
+#### H4
+
+##### H5
+
+###### H6
+
+## Emphasis
+
+```mdx
+Emphasis, aka italics, with *asterisks* or _underscores_.
+
+Strong emphasis, aka bold, with **asterisks** or __underscores__.
+
+Combined emphasis with **asterisks and _underscores_**.
+
+Strikethrough uses two tildes. ~~Scratch this.~~
+```
+
+Emphasis, aka italics, with *asterisks* or _underscores_.
+
+Strong emphasis, aka bold, with **asterisks** or __underscores__.
+
+Combined emphasis with **asterisks and _underscores_**.
+
+Strikethrough uses two tildes. ~~Scratch this.~~
+
+## Lists
+
+> In this example, leading and trailing spaces are shown with with dots: ⋅⋅⋅
+
+```mdx
+1. First ordered list item
+2. Another item
+   ..- Unordered sub-list
+3. Actual numbers don't matter, just that it's a number
+   ..1. Ordered sub-list
+4. And another item
+
+...You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
+```
+
+## Links
+
+Different ways to create links.
+
+```mdx
+1. To link Inline-style
+   [I'm an inline-style link](https://www.google.com)
+
+2. To link Reference-style
+   [I'm a reference-style link](https://www.google.com "Google's Homepage")
+
+3. To link to API explorer from documentation pages
+   [Charge](/product/CommerceHub/api/post/payments-vas/v1/3ds/authenticate)
+
+4. To link to another document
+   [Configure Your Tenant](/product/TenantSupport/docs/getting-started/configure-tenant.md)
+
+5. To create anchor link within the page. You can place anchor by declaring <a name = "portal" />. Now you can reference this link anywhere within the page by declaring link such as [Dev Portal](#portal)
+```
+
+1. To link Inline-style
+   [I'm an inline-style link](https://www.google.com)
+
+2. To link Reference-style
+   [I'm a reference-style link][https://www.google.com "Google's Homepage"]
+
+3. To link to API explorer from documentation pages
+   [Charge](/product/CommerceHub/api/post/payments-vas/v1/3ds/authenticate)
+
+4. To link to another document
+   [Configure Your Tenant](/product/TenantSupport/docs/getting-started/configure-tenant.md)
+
+5. To create anchor link within the page. You can place anchor by declaring <a name = "portal" />. Now you can reference this link anywhere within the page by declaring link such as [Dev Portal](#portal)
+
+## Images
+
+Here's our logo ( hover to see the title text ):
+
+![Fiserv Logo](../../assets/images/Fiserv_Logo.jpg "Fiserv Logo")
+
+## Code and Syntax Highlighting
+
+Inline `code` has `back-ticks around` it.
+
+> Here is the example for javascript code.
+
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+```
+
+> Use language tags to change the syntax highlighting.
+
+```json
+{
+  "JSON": "Syntax Highlighting"
+}
+```
+
+## Tables
+
+Tables aren't part of the core Markdown spec, but they are part of GFM and _Markdown Here_ supports them. They are an easy way of adding tables to your email -- a task that would otherwise require copy-pasting from another application.
+
+```mdx
+Colons can be used to align columns.
+
+| Tables        |      Are      |  Cool |
+| ------------- | :-----------: | ----: |
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      |   centered    |   $12 |
+| zebra stripes |   are neat    |    $1 |
+
+The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
+
+| Markdown | Less      | Pretty     |
+| -------- | --------- | ---------- |
+| _Still_  | `renders` | **nicely** |
+| 1        | 2         | 3          |
+```
+
+| Markdown | Less      | Pretty     |
+| -------- | --------- | ---------- |
+| _Still_  | `renders` | **nicely** |
+| 1        | 2         | 3          |
+
+## Blockquotes
+
+> This is a regular blockquote.
+
+```mdx
+> Blockquotes are very handy in email to emulate reply text.
+> This line is part of the same quote.
+
+Quote break.
+
+> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
+```
+
+## Horizontal Rule
+
+```mdx
+Three or more...
+
+---
+
+Hyphens
+
+---
+
+Asterisks
+
+---
+
+Underscores
+```
+
+## Table with Nested Object
+
+Table with nested objects, containing descriptions, JSX tags are also allowed.
+
+| Name     | Description                                              |                                                              Example                                                               |
+| -------- | -------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------: |
+| Headers  | Large text refer to Header section for more detail       |                                                          <h1> Hello </h1>                                                          |
+| Emphasis | italics, bold, or strikethrough                          |                                   _italics_, **bold**, ~~strikethrough~~, **bold and _italics_**                                   |
+| Lists    | Refer to Lists section for more details                  |                                                1. List item 1 <br/> 2. List item 2                                                 |
+| Links    | Hyperlinks, refer to above Link section for more details |                To link to API explorer from documentation pages API page [API page](/api/get/cards/secured?branch=develop&version=11.0.1)                |
+| Images   | Visual representation                                    |                                 ![Fiserv Logo](../../assets/images/Fiserv_Logo.jpg "Fiserv Logo")                                  |
+| Code     | code blocks, syntax highlighting                         |                   <pre> String main(void) <br/> { <b>this is a pre block </b> } </pre> `rendering code snippets`                   |
+| Tables   | contains rows and columns                                | <table><thead><tr><td>Table</td><td>Mini Description</td></tr></thead><tbody><tr><td>Type</td><td>String</td></tr></tbody></table> |
+
+---
+
+## Cards with Nested Objects
+
+<div className="flex flex-row gap-4">
+  <Card>  
+    <CardHeader>Batch Authorization Request</CardHeader>  
+    <CardDescription>Streamline your payment processing by submitting multiple pre-authorization and sale transactions in a single batch file. This approach enhances operational efficiency, reduces manual effort, and ensures accurate handling of high transaction volumes, making it ideal for securing funds for future settlement or completing immediate sales transactions.</CardDescription>
+  </Card>
+  <Card>  
+    <CardHeader>Batch Capture Request</CardHeader>  
+    <CardDescription>Efficiently manage your transaction settlements by submitting multiple capture requests in a single, consolidated batch file. This streamlined approach reduces manual processing, enhances operational accuracy, and accelerates the reconciliation of payments, making it ideal for high-volume environments where speed and precision are critical.</CardDescription>
+  </Card>
+  <Card>  
+    <CardHeader>Batch Refund Request</CardHeader>  
+    <CardDescription>Simplify your refund processing by submitting multiple refund requests in a single batch file. This method improves operational efficiency, reduces manual intervention, and ensures accurate handling of high-volume refund transactions, enhancing customer satisfaction and reconciliation processes.</CardDescription>
+  </Card>
+    <Card>  
+    <CardHeader>Acknowledgement File</CardHeader>  
+    <CardDescription>The acknowledgement file provides a summary of the batch processing status, including validation results and any errors encountered during the initial file validation phase. This ensures transparency and allows merchants to address issues promptly.</CardDescription>
+  </Card>
+</div>
+
+---
+
+![API Explorer Expand All for Nested Objects](../../assets/images/API_Explorer_Expand_All.gif)
+
+## Styling
+- We are using the pre-defined Design system, that articulates the color scheming for all the presentation tags like Header, Title, Paragraph, Body etc on the page, which also has an equivalent standardized dark color scheming associated.
+- Our objective is to conform to standardized color scheming to provide uniformity as well as stick to Fiserv branding colors, goverened by Point design system
+- Overall this standardization also means less work for the tenants, as they do not have to think & add additional styling in the github content etc.
+- The only exclusion to the rule would be, if the tenant has a strong use case to showcase branding colors which are not matching with the Fiserv color scheming. This scenario is highly unlikely. However, we can discuss on case by case basis, if there is a strong business requirement, & can collaborate to provide a technical solution for customization.
+
+## Custom components
+
+You can also use custom components within MDX files. For example, the `Alert` component below is used to display an alert box.
+
+```mdx
+<Alert type="info" variant="inline">
+  <AlertIcon />
+  <AlertTitle>Info</AlertTitle>
+  <AlertDescription>This is an info alert.</AlertDescription>
+</Alert>
+
+<Alert type="success" variant="inline">
+  <AlertIcon />
+  <AlertTitle>Success</AlertTitle>
+  <AlertDescription>This is a success alert.</AlertDescription>
+</Alert>
+
+<Alert type="error" variant="inline">
+  <AlertIcon />
+  <AlertTitle>Error</AlertTitle>
+  <AlertDescription>This is an error alert.</AlertDescription>
+</Alert>
+
+<Alert type="warning" variant="inline">
+  <AlertIcon />
+  <AlertTitle>Warning</AlertTitle>
+  <AlertDescription>This is a warning alert.</AlertDescription>
+</Alert>
+```
+
+<Alert type="info" variant="inline">
+  <AlertIcon />
+  <AlertTitle>Info</AlertTitle>
+  <AlertDescription>This is an info alert.</AlertDescription>
+</Alert>
+
+<Alert type="success" variant="inline">
+  <AlertIcon />
+  <AlertTitle>Success</AlertTitle>
+  <AlertDescription>This is a success alert.</AlertDescription>
+</Alert>
+
+<Alert type="error" variant="inline">
+  <AlertIcon />
+  <AlertTitle>Error</AlertTitle>
+  <AlertDescription>This is an error alert.</AlertDescription>
+</Alert>
+
+<Alert type="warning" variant="inline">
+  <AlertIcon />
+  <AlertTitle>Warning</AlertTitle>
+  <AlertDescription>This is a warning alert.</AlertDescription>
+</Alert>
+
+
+```mdx
+Tabs Example
+```
+<Tabs defaultValue="Placeholders">
+  <TabsList>
+    <TabsTrigger value="Placeholders">Placeholders</TabsTrigger>
+    <TabsTrigger value="File-types">File types</TabsTrigger>
+  </TabsList>
+  <TabsContent value="Placeholders">
+
+The following placeholders are required when creating the text file name.
+
+| Placeholder | Description |
+| ----- | ----- |
+| `job_name` | Sterling File Gateway *(SFG)* assigned value. |
+| `environment` | Defines the processing environment as *TEST* or *PROD*. |
+| `client_id` | Commerce Hub assigned client identifier for the merchant. |
+| `seq` | File submission sequence number for a given date. Four-digit number, left-padded with zeros. |
+| `fileType` | Three digit value identifying the file type, left padded with zeros. |
+| `date` | File submission date in `YYYYMMDD` format. |
+| `time` | File submission 24-hour time in `HHMMSS` format. |
+
+  </TabsContent>
+  <TabsContent value="File-types">
+
+Commerce Hub defines the following file types:
+
+| File type | Description | Example filename |
+| ----- | ----- | ----- |
+| **001** | Capture and refund request file submitted by merchant containing one or more transactions to be processed by Commerce Hub. | `inbound_job.TEST.ClientOne_0001.001.20250528.121052.txt` |
+| **002** | Capture and refund acknowledgement file generated by Commerce Hub indicating the receipt of the batch request file. | `outbound_job.TEST.ClientOne_0001.002.20250528.121158.txt` |
+| **003** | Capture and refund result file generated by Commerce Hub containing the processing result of the transaction records provided in the batch request file. | `outbound_job.TEST.ClientOne_0001.003.20250528.121538.txt` |
+
+  </TabsContent>
+</Tabs>
+
+---
+
+All components made available by the [Launch Point library](https://launch-point-ui-storybook-dev-launch-point.apps.dtuscedevstudiolower.centralus.aroapp.io) can be used within MDX files without importing them explicitly.
