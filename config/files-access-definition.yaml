@@ -38,7 +38,10 @@
   groups: [NOT_REAL_GROUP]
 - filePath: "Spec_Testing/Test_Access.pdf"
   access: private
-  groups: []  
+  groups: []
+- filePath: "Spec_Testing/TEST_ADMIN_Access.pdf"
+  access: private
+  groups: ["TEST_ADMIN"]
 - filePath: "Spec_Testing/Public_Access.pdf"
   access: public
 - filePath: "Spec_Testing/Public_Access.txt"
@@ -50,13 +53,12 @@
 - filePath: "Spec_Testing/Public_Access.zip"
   access: public
 - filePath: "Spec_Testing/Public_Access.ppt"
-  access: public  
+  access: public
 # - filePath: "Spec_Testing/Public_Access.html"
-#   access: public  
+#   access: public
 # - filePath: "SpecTest/Test_Equinox_PIMS.csv"
 #   access: private
-#   groups: [UCOMM_MOBILE_GATEWAY]  
-
+#   groups: [UCOMM_MOBILE_GATEWAY]
 
 #   groups: [Test_Group_RG]
 # - filePath: "Spec_Testing/Public_Access_no_.pdf"
@@ -65,8 +67,8 @@
 #   access: private
 #   groups: []
 # - filePath: "Spec_Testing/public_access_But_accessGroup_invalid.pdf"
-#   access: public  
+#   access: public
 #   groups: [Access_Group_not_in_DB]
 # - filePath: "Spec_Testing/Public_Access_But_accessGroup_invalid.pdf"
-#   access: private  
+#   access: private
 #   groups: [Access_Group_not_in_DB]

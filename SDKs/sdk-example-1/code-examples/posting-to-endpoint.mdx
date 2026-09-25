@@ -1,0 +1,170 @@
+# Posting to an Endpoint
+
+> Developer Studio Test SDK 1 is an example of file structure and documentation that tenants can use when setting up the documentation for their SDKs. This example is not based on real-world software and is only presented to inform tenants about the SDK functionality now part of the Developer Studio ecosystem.
+
+## Overview
+
+POST operations in the SDK are used to create new resources such as charges, refunds, and customer records. All create methods return the newly created resource with a server-assigned identifier.
+
+## Examples
+
+<Tabs defaultValue="charge">
+  <TabsList>
+    <TabsTrigger value="charge">Create a Charge</TabsTrigger>
+    <TabsTrigger value="refund">Issue a Refund</TabsTrigger>
+    <TabsTrigger value="async">Async Operations</TabsTrigger>
+  </TabsList>
+  <TabsContent value="charge">
+
+### Create a Payment Charge
+
+Submit a charge request to process a payment.
+
+```javascript
+import { DevStudioPayments } from '@devstudio/payments-sdk';
+
+const client = new DevStudioPayments({
+  apiKey: 'your-api-key',
+  environment: 'sandbox'
+});
+
+const charge = await client.charges.create({
+  amount: 4999,
+  currency: 'USD',
+  source: 'tok_visa_4242',
+  description: 'Premium subscription - Monthly',
+  metadata: {
+    orderId: 'ord_12345',
+    customerId: 'cust_67890'
+  }
+});
+
+console.log(charge.id);     // "ch_a1b2c3d4"
+console.log(charge.status); // "succeeded"
+```
+
+**Request Parameters:**
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `amount` | number | Yes | Amount in smallest currency unit |
+| `currency` | string | Yes | ISO 4217 currency code |
+| `source` | string | Yes | Payment token from client-side tokenization |
+| `description` | string | No | Human-readable description |
+| `metadata` | object | No | Key-value pairs for your internal tracking |
+
+  </TabsContent>
+  <TabsContent value="refund">
+
+### Issue a Refund
+
+Process a full or partial refund against an existing charge.
+
+```javascript
+import { DevStudioPayments } from '@devstudio/payments-sdk';
+
+const client = new DevStudioPayments({
+  apiKey: 'your-api-key',
+  environment: 'sandbox'
+});
+
+// Full refund
+const fullRefund = await client.refunds.create({
+  chargeId: 'ch_a1b2c3d4',
+  reason: 'customer_request'
+});
+
+// Partial refund
+const partialRefund = await client.refunds.create({
+  chargeId: 'ch_a1b2c3d4',
+  amount: 1500,
+  reason: 'product_return'
+});
+
+console.log(partialRefund.status); // "pending"
+```
+
+<Alert type="info" variant="inline">
+  <AlertIcon />
+  <AlertTitle>Refund Timing</AlertTitle>
+  <AlertDescription>Refunds are processed asynchronously. Use webhooks or poll the refund status endpoint to track completion. Most refunds settle within 5-10 business days.</AlertDescription>
+</Alert>
+
+  </TabsContent>
+  <TabsContent value="async">
+
+### Async Batch Operations
+
+For high-volume use cases, submit a batch of charges and receive results via webhook.
+
+```javascript
+import { DevStudioPayments } from '@devstudio/payments-sdk';
+
+const client = new DevStudioPayments({
+  apiKey: 'your-api-key',
+  environment: 'production'
+});
+
+const batch = await client.charges.createBatch({
+  callbackUrl: '/webhooks/batch-complete',
+  charges: [
+    { amount: 1000, currency: 'USD', source: 'tok_visa_1111' },
+    { amount: 2500, currency: 'USD', source: 'tok_visa_2222' },
+    { amount: 750, currency: 'EUR', source: 'tok_mc_3333' }
+  ]
+});
+
+console.log(batch.batchId);    // "batch_x1y2z3"
+console.log(batch.status);     // "processing"
+console.log(batch.totalCount); // 3
+```
+
+**Batch Response Object:**
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| `batchId` | string | Unique batch identifier |
+| `status` | string | One of: `processing`, `completed`, `partial_failure` |
+| `totalCount` | number | Total number of charges submitted |
+| `callbackUrl` | string | URL that will receive the completion webhook |
+
+  </TabsContent>
+</Tabs>
+
+## Validation Errors
+
+The SDK validates request parameters before sending. Invalid requests throw a `ValidationError`.
+
+```javascript
+import { DevStudioPayments, ValidationError } from '@devstudio/payments-sdk';
+
+const client = new DevStudioPayments({ apiKey: 'your-api-key' });
+
+try {
+  const charge = await client.charges.create({
+    amount: -100,       // Invalid: must be positive
+    currency: 'INVALID' // Invalid: not a valid ISO code
+  });
+} catch (error) {
+  if (error instanceof ValidationError) {
+    console.error('Validation failed:');
+    error.fields.forEach(field => {
+      console.error(`  ${field.name}: ${field.message}`);
+    });
+    // Output:
+    //   amount: Must be a positive integer
+    //   currency: Must be a valid ISO 4217 currency code
+  }
+}
+```
+
+<Alert type="error" variant="inline">
+  <AlertIcon />
+  <AlertTitle>Idempotency</AlertTitle>
+  <AlertDescription>Always include an idempotency key for charge creation in production to prevent duplicate charges during network retries. Pass `idempotencyKey` in the request options.</AlertDescription>
+</Alert>
+
+## Next Steps
+
+- [Fetching from an Endpoint](?path=SDKs/sdk-example-1/code-examples/fetching-from-endpoint.mdx) — Retrieve transaction data and payment history
+- [SDK Overview](?path=SDKs/sdk-example-1/sdk-overview-1.mdx) — Return to the main SDK documentation

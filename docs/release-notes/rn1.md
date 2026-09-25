@@ -15,3 +15,5 @@ titles: Premier, Precision, Signature, Cleartouch, Finxact, Onboard Advisor, DNA
 | <a href="/api/?type=post&path=/cards" title="Click to open"> Get Card Details-DDA, Get Card Details-SDA</a> |We added the following fields to support the integration with a financial literacy feature. <br />  `DepositAcctInfo/FinancialLiteracy` <br />`DepositAcctInfo/FinancialLiteracy/IsRoundUp` <br />`DepositAcctInfo/FinancialLiteracy/IsFunding` <br />| CERT |">
 
 <!-- type: tab-end -->
+
+# Calssic UI test

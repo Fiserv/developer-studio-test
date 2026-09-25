@@ -5,14 +5,14 @@ info:
   description: Card services provides administration in respect to creation, modification, inquiry, and deletion of any type of EFT cards used by the holders. It supports operations managing the credit, debit, prepaid and private label cards.
   contact:
     name: Tracy Dahle
-    email: Tracy.Dahle@fiserv.com
+    email: John.Doe@example.com
   version: 11.0.0
 servers:
   - url: http://swaggerhub.onefiserv.net/virts/Bank_Sol_Org/CardService/11.0.0
     description: SwaggerHub API Auto Mocking
   - url: https://connect.fiserv.com/v1
     description: v1 endpoint
-  - {url: 'https://connect.fiserv.com/v2', description: 'v2 endpoint'}
+  - { url: "https://connect.fiserv.com/v2", description: "v2 endpoint" }
   - url: https://{core}.{environment}.efx.banksol.onefiserv.net/cards
     variables:
       core:
@@ -46,15 +46,15 @@ paths:
           style: simple
           explode: false
           schema:
-            $ref: '#/components/schemas/EFXHeader'
+            $ref: "#/components/schemas/EFXHeader"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CardModRqType'
+              $ref: "#/components/schemas/CardModRqType"
             examples:
               Sample Banking:
-                $ref: '#/components/examples/PremierCardModRequestExample'
+                $ref: "#/components/examples/PremierCardModRequestExample"
         required: true
       responses:
         "200":
@@ -62,52 +62,52 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CardModRsType'
+                $ref: "#/components/schemas/CardModRsType"
               examples:
                 Sample Banking:
-                  $ref: '#/components/examples/PremierCardModResponseExample'
+                  $ref: "#/components/examples/PremierCardModResponseExample"
         "401":
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "401":
-                  $ref: '#/components/examples/401-Premier'
+                  $ref: "#/components/examples/401-Premier"
         "422":
           description: Un-processable Entity
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "422":
-                  $ref: '#/components/examples/422-Premier'
+                  $ref: "#/components/examples/422-Premier"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "500":
-                  $ref: '#/components/examples/500-Premier'
+                  $ref: "#/components/examples/500-Premier"
         "503":
           description: Service Unavailable
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "503":
-                  $ref: '#/components/examples/503-Premier'
+                  $ref: "#/components/examples/503-Premier"
         default:
           description: See HTTP Status Code Standards
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CardModRsType'
+                $ref: "#/components/schemas/CardModRsType"
       x-group-name: CardService1
       x-proxy-name: UpdateCard
       x-child-product-name:
@@ -118,7 +118,7 @@ paths:
       tags:
         - Add Card
       summary: Add a new Card.
-      description: "Creates a new EFT card account (debit or credit) for one or multiple parties. EFT Cards are plastic cards used for electronic transactions.  <br> For more information about the Cards domain, <a href=\"../docs/?path=docs/fintechs/cards.md\" title=\"Click to open\">click here.</a>  <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n  </ul>"
+      description: "Creates a new EFT card account (debit or credit) for one or multiple parties. EFT Cards are plastic cards used for electronic transactions.  <br> For more information about the Cards domain, <a href=\"../docs/?path=docs/fintechs/cards.md\" title=\"Click to open\">click here.</a>  <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n  <li><a href=\"../api/?type=put&path=/cards\" title=\"Update Card\">Update Card</a></li></ul>"
       operationId: CardAddOper
       parameters:
         - name: EFXHeader
@@ -128,15 +128,15 @@ paths:
           style: simple
           explode: false
           schema:
-            $ref: '#/components/schemas/EFXHeader'
+            $ref: "#/components/schemas/EFXHeader"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CardAddRqType'
+              $ref: "#/components/schemas/CardAddRqType"
             examples:
               Sample Banking:
-                $ref: '#/components/examples/PremierCardAddRequestExample'
+                $ref: "#/components/examples/PremierCardAddRequestExample"
         required: true
       responses:
         "201":
@@ -144,52 +144,52 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CardAddRsType'
+                $ref: "#/components/schemas/CardAddRsType"
               examples:
                 Sample Banking:
-                  $ref: '#/components/examples/PremierCardAddResponseExample'
+                  $ref: "#/components/examples/PremierCardAddResponseExample"
         "401":
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "401":
-                  $ref: '#/components/examples/401-Premier'
+                  $ref: "#/components/examples/401-Premier"
         "422":
           description: Un-processable Entity
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "422":
-                  $ref: '#/components/examples/422-Premier'
+                  $ref: "#/components/examples/422-Premier"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "500":
-                  $ref: '#/components/examples/500-Premier'
+                  $ref: "#/components/examples/500-Premier"
         "503":
           description: Service Unavailable
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "503":
-                  $ref: '#/components/examples/503-Premier'
+                  $ref: "#/components/examples/503-Premier"
         default:
           description: See HTTP Status Code Standards
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CardAddRsType'
+                $ref: "#/components/schemas/CardAddRsType"
       x-group-name: Card Service
       x-proxy-name: "Add Card"
       x-child-product-name: Cards
@@ -208,15 +208,15 @@ paths:
           style: simple
           explode: false
           schema:
-            $ref: '#/components/schemas/EFXHeader'
+            $ref: "#/components/schemas/EFXHeader"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CardDelRqType'
+              $ref: "#/components/schemas/CardDelRqType"
             examples:
               Sample Banking:
-                $ref: '#/components/examples/PremierCardDelRequestExample'
+                $ref: "#/components/examples/PremierCardDelRequestExample"
         required: true
       responses:
         "200":
@@ -224,61 +224,144 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CardDelRsType'
+                $ref: "#/components/schemas/CardDelRsType"
               examples:
                 Sample Banking:
-                  $ref: '#/components/examples/PremierCardDelResponseExample'
+                  $ref: "#/components/examples/PremierCardDelResponseExample"
         "401":
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "401":
-                  $ref: '#/components/examples/401-Premier'
+                  $ref: "#/components/examples/401-Premier"
         "422":
           description: Un-processable Entity
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "422":
-                  $ref: '#/components/examples/422-Premier'
+                  $ref: "#/components/examples/422-Premier"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "500":
-                  $ref: '#/components/examples/500-Premier'
+                  $ref: "#/components/examples/500-Premier"
         "503":
           description: Service Unavailable
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "503":
-                  $ref: '#/components/examples/503-Premier'
+                  $ref: "#/components/examples/503-Premier"
         default:
           description: See HTTP Status Code Standards
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CardDelRsType'
+                $ref: "#/components/schemas/CardDelRsType"
       deprecated: false
       x-group-name: Card Service
       x-proxy-name: Delete Card
       x-child-product-name: Cards
 
+    post:
+      tags:
+        - Get Card
+      summary: Get Card.
+      description: "Retrieves the details of an existing debit or credit card account.<br> For more information about the Cards domain, <a href=\"../docs/?path=docs/fintechs/cards.md\" title=\"Click to open\">click here.</a> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n  <li><a href=\"../api/?type=put&path=/cards\" title=\"Update Card\">Update Card</a></li></ul>"
+      operationId: CardInqOperSecured
+      x-order: 2
+      parameters:
+        - name: EFXHeader
+          in: header
+          description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open">click here.</a>
+          required: true
+          style: simple
+          explode: false
+          schema:
+            $ref: "#/components/schemas/EFXHeader"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CardInqRqType"
+            examples:
+              Sample Banking:
+                $ref: "#/components/examples/PremierCardInqRequestExample"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CardInqRsType"
+              examples:
+                Sample Banking:
+                  $ref: "#/components/examples/PremierCardInqResponseExample"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusType1"
+              examples:
+                "401":
+                  $ref: "#/components/examples/401-Premier"
+        "422":
+          description: Un-processable Entity
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusType1"
+              examples:
+                "422":
+                  $ref: "#/components/examples/422-Premier"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusType1"
+              examples:
+                "500":
+                  $ref: "#/components/examples/500-Premier"
+        "503":
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusType1"
+              examples:
+                "503":
+                  $ref: "#/components/examples/503-Premier"
+        default:
+          description: See HTTP Status Code Standards
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CardInqRsType"
+      deprecated: false
+      x-group-name: Get Service
+      x-proxy-name: Get Card
+      x-child-product-name: Card Service
+
     get:
       tags:
         - Test Card
       summary: Test Card.
+      x-order: 1
       description: "Tester.<br> For more information about the Cards domain, <a href=\"../docs/?path=docs/fintechs/cards.md\" title=\"Click to open\">click here.</a> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n  </ul>"
       operationId: CardDelOperSecured
       parameters:
@@ -289,15 +372,15 @@ paths:
           style: simple
           explode: false
           schema:
-            $ref: '#/components/schemas/EFXHeader'
+            $ref: "#/components/schemas/EFXHeader"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CardDelRqType'
+              $ref: "#/components/schemas/CardDelRqType"
             examples:
               Sample Banking:
-                $ref: '#/components/examples/PremierCardDelRequestExample'
+                $ref: "#/components/examples/PremierCardDelRequestExample"
         required: true
       responses:
         "200":
@@ -305,136 +388,64 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CardDelRsType'
+                $ref: "#/components/schemas/CardDelRsType"
               examples:
                 Sample Banking:
-                  $ref: '#/components/examples/PremierCardDelResponseExample'
+                  $ref: "#/components/examples/PremierCardDelResponseExample"
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CardDelRsType"
+              examples:
+                Sample Banking:
+                  $ref: "#/components/examples/PremierCardDelResponseExample"
         "401":
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "401":
-                  $ref: '#/components/examples/401-Premier'
+                  $ref: "#/components/examples/401-Premier"
         "422":
           description: Un-processable Entity
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "422":
-                  $ref: '#/components/examples/422-Premier'
+                  $ref: "#/components/examples/422-Premier"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "500":
-                  $ref: '#/components/examples/500-Premier'
+                  $ref: "#/components/examples/500-Premier"
         "503":
           description: Service Unavailable
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "503":
-                  $ref: '#/components/examples/503-Premier'
+                  $ref: "#/components/examples/503-Premier"
         default:
           description: See HTTP Status Code Standards
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CardDelRsType'
-      deprecated: false
-      x-group-name: Card Service
-      x-proxy-name: Test Card
-      x-child-product-name: Cards
-
-    post:
-      tags:
-        - Get Card
-      summary: Get Card.
-      description: "Retrieves the details of an existing debit or credit card account.<br> For more information about the Cards domain, <a href=\"../docs/?path=docs/fintechs/cards.md\" title=\"Click to open\">click here.</a> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n  </ul>"
-      operationId: CardInqOperSecured
-      parameters:
-        - name: EFXHeader
-          in: header
-          description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open">click here.</a>
-          required: true
-          style: simple
-          explode: false
-          schema:
-            $ref: '#/components/schemas/EFXHeader'
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CardInqRqType'
-            examples:
-              Sample Banking:
-                $ref: '#/components/examples/PremierCardInqRequestExample'
-        required: true
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CardInqRsType'
-              examples:
-                Sample Banking:
-                  $ref: '#/components/examples/PremierCardInqResponseExample'
-        "401":
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StatusType1'
-              examples:
-                "401":
-                  $ref: '#/components/examples/401-Premier'
-        "422":
-          description: Un-processable Entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StatusType1'
-              examples:
-                "422":
-                  $ref: '#/components/examples/422-Premier'
-        "500":
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StatusType1'
-              examples:
-                "500":
-                  $ref: '#/components/examples/500-Premier'
-        "503":
-          description: Service Unavailable
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StatusType1'
-              examples:
-                "503":
-                  $ref: '#/components/examples/503-Premier'
-        default:
-          description: See HTTP Status Code Standards
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CardInqRsType'
+                $ref: "#/components/schemas/CardDelRsType"
       deprecated: false
       x-group-name: Get Service
-      x-proxy-name: Get Card
+      x-proxy-name: Test Card
       x-child-product-name: Card Service
 components:
   schemas:
@@ -452,7 +463,7 @@ components:
           type: string
           description: An identifier, supplied by Fiserv, that represents the vendor using  this API service.
         Context:
-          $ref: '#/components/schemas/Context'
+          $ref: "#/components/schemas/Context"
       example: '{ "TrnId": "f262cfa4-9da4-4a10-b48c-2e947ce3e66c", "OrganizationId": "PRMOrg10", "VendorId": "112233", "Context":{ "Channel": "WEB" } }'
     Context:
       type: object
@@ -605,7 +616,7 @@ components:
     DayOfWeekType:
       title: DayOfWeekType
       type: string
-      description: 'Day of the week. '
+      description: "Day of the week. "
       enum:
         - Monday
         - Tuesday
@@ -617,7 +628,7 @@ components:
     DayOfMonthType:
       title: DayOfMonthType
       type: integer
-      description: 'Day of the month. '
+      description: "Day of the month. "
       example: 1
       enum:
         - 1
@@ -668,7 +679,7 @@ components:
       type: object
       description: Accrual Frequency Description
       allOf:
-        - $ref: '#/components/schemas/RecurRuleType'
+        - $ref: "#/components/schemas/RecurRuleType"
         - type: object
     CurCodeTypeType:
       title: CurCodeTypeType
@@ -688,7 +699,7 @@ components:
       type: object
       properties:
         CurCodeType:
-          $ref: '#/components/schemas/CurCodeTypeType'
+          $ref: "#/components/schemas/CurCodeTypeType"
         CurCodeValue:
           maxLength: 80
           type: string
@@ -704,7 +715,7 @@ components:
           description: Transaction limit amount in the decimal format.
           example: 10
         CurCode:
-          $ref: '#/components/schemas/CurCodeType'
+          $ref: "#/components/schemas/CurCodeType"
       description: Details of the transaction limit amount applicable for the party.
     AcctBalType:
       title: AcctBalType
@@ -721,7 +732,7 @@ components:
           type: string
           description: Balance Type Enumeration Description.
         CurAmt:
-          $ref: '#/components/schemas/CurAmtType'
+          $ref: "#/components/schemas/CurAmtType"
         ExpDt:
           type: string
           description: Expiration Date.
@@ -736,7 +747,7 @@ components:
       properties:
         AcctIdentType:
           type: string
-          description: 'Account Identification Type. Valid values include: AcctNum, AliasAcct, PORT, etc.'
+          description: "Account Identification Type. Valid values include: AcctNum, AliasAcct, PORT, etc."
         AcctIdentValue:
           maxLength: 36
           type: string
@@ -754,21 +765,21 @@ components:
           type: string
           description: Language Enumeration Description.
         CurCode:
-          $ref: '#/components/schemas/CurCodeType'
-      description: '[FSV]Account Preferences.'
+          $ref: "#/components/schemas/CurCodeType"
+      description: "[FSV]Account Preferences."
     InitialAmountType:
       title: InitialAmountType
       type: object
       description: Details of the initial currency amount.
       allOf:
-        - $ref: '#/components/schemas/CurAmtType'
+        - $ref: "#/components/schemas/CurAmtType"
         - type: object
     BalanceAtClosingAmtType:
       title: BalanceAtClosingAmtType
       type: object
       description: Details of the balance at closing currency amount.
       allOf:
-        - $ref: '#/components/schemas/CurAmtType'
+        - $ref: "#/components/schemas/CurAmtType"
         - type: object
     TermUnitsType:
       title: TermUnitsType
@@ -792,7 +803,7 @@ components:
           description: Count. Sometimes specifies the duration of the time frame base on the units specified.
           format: int64
         TermUnits:
-          $ref: '#/components/schemas/TermUnitsType'
+          $ref: "#/components/schemas/TermUnitsType"
         TermUnitsEnumDesc:
           maxLength: 80
           type: string
@@ -803,7 +814,7 @@ components:
       type: object
       description: Details of the fee collected currency amount.
       allOf:
-        - $ref: '#/components/schemas/CurAmtType'
+        - $ref: "#/components/schemas/CurAmtType"
         - type: object
     RefDataType:
       title: RefDataType
@@ -858,7 +869,7 @@ components:
           type: string
           description: Client-defined Responsibility Code to identify the officer responsible for the account
         RelationshipRole:
-          $ref: '#/components/schemas/RelationshipRoleType'
+          $ref: "#/components/schemas/RelationshipRoleType"
       description: Information about financial institution officers who have management-related responsibilities of the Party, Account or Card.
     AddtlTitlesType:
       title: AddtlTitlesType
@@ -923,7 +934,7 @@ components:
           description: Alternate Statement Option.
       description: Statement Time Frame Description
       allOf:
-        - $ref: '#/components/schemas/RecurRuleType'
+        - $ref: "#/components/schemas/RecurRuleType"
         - type: object
     RegDDAPYCodeType:
       title: RegDDAPYCodeType
@@ -948,7 +959,7 @@ components:
         StmtDisclosureInd:
           type: boolean
           description: Statement Disclosure Indicator.
-      description: ' Statement Disclosure Data'
+      description: " Statement Disclosure Data"
     StmtOptionsType:
       title: StmtOptionsType
       type: object
@@ -967,7 +978,7 @@ components:
           type: array
           description: Statement Time Frame.
           items:
-            $ref: '#/components/schemas/StmtTimeFrameType'
+            $ref: "#/components/schemas/StmtTimeFrameType"
         NextStmtDt:
           type: string
           description: Next Statement Date.
@@ -1004,7 +1015,7 @@ components:
           format: int64
         SpecialStmtCode:
           type: string
-          description: 'Special Statement Code. Used to indicate a special statement drop. Valid values: FinalStmt, Transcript, None.'
+          description: "Special Statement Code. Used to indicate a special statement drop. Valid values: FinalStmt, Transcript, None."
         SpecialStmtCodeEnumDesc:
           maxLength: 80
           type: string
@@ -1062,13 +1073,13 @@ components:
           type: string
           description: Print Reg E Statement Enumeration Description.
         RegDDAPYCode:
-          $ref: '#/components/schemas/RegDDAPYCodeType'
+          $ref: "#/components/schemas/RegDDAPYCodeType"
         RegDDAPYCodeEnumDesc:
           maxLength: 80
           type: string
           description: Regulation DD APY Code Enumeration Description.
         StmtDisclosureData:
-          $ref: '#/components/schemas/StmtDisclosureDataType'
+          $ref: "#/components/schemas/StmtDisclosureDataType"
         StmtGroup:
           maxLength: 80
           type: string
@@ -1077,7 +1088,7 @@ components:
           type: array
           description: Statement  Options.
           items:
-            $ref: '#/components/schemas/StmtOptionsType'
+            $ref: "#/components/schemas/StmtOptionsType"
       description: Account Statement Data
     NoticeDataType:
       title: NoticeDataType
@@ -1121,14 +1132,14 @@ components:
       type: object
       description: Details of the low currency amount.
       allOf:
-        - $ref: '#/components/schemas/CurAmtType'
+        - $ref: "#/components/schemas/CurAmtType"
         - type: object
     HighCurAmtType:
       title: HighCurAmtType
       type: object
       description: Details of the high currency amount.
       allOf:
-        - $ref: '#/components/schemas/CurAmtType'
+        - $ref: "#/components/schemas/CurAmtType"
         - type: object
     MarginTypeType:
       title: MarginTypeType
@@ -1146,11 +1157,11 @@ components:
           type: string
           description: Tier.
         LowCurAmt:
-          $ref: '#/components/schemas/LowCurAmtType'
+          $ref: "#/components/schemas/LowCurAmtType"
         HighCurAmt:
-          $ref: '#/components/schemas/HighCurAmtType'
+          $ref: "#/components/schemas/HighCurAmtType"
         Term:
-          $ref: '#/components/schemas/TermType'
+          $ref: "#/components/schemas/TermType"
         Rate:
           type: number
           description: Rate.
@@ -1163,7 +1174,7 @@ components:
           type: string
           description: Rate Index Enumeration Description.
         MarginType:
-          $ref: '#/components/schemas/MarginTypeType'
+          $ref: "#/components/schemas/MarginTypeType"
         MarginTypeEnumDesc:
           maxLength: 80
           type: string
@@ -1206,7 +1217,7 @@ components:
       type: object
       description: Cap frquency details
       allOf:
-        - $ref: '#/components/schemas/RecurRuleType'
+        - $ref: "#/components/schemas/RecurRuleType"
         - type: object
     BalCutOffDataType:
       title: BalCutOffDataType
@@ -1246,7 +1257,7 @@ components:
           type: array
           description: Rate Matrix Tier. Identifies one or more rates applicable to the product. Each occurrence (tier) contains a rate applicable to the product. A tier rate is based on balance, term of account, both, or neither. When the tier is based on neither balance or term, there is typically only one tier, therefore one rate, for the product.
           items:
-            $ref: '#/components/schemas/RateMatrixTierType'
+            $ref: "#/components/schemas/RateMatrixTierType"
         BasedOnCode:
           maxLength: 80
           type: string
@@ -1263,12 +1274,12 @@ components:
             Based On Value. The value of the BasedOnCode at the time of the request. For example; BasedOnCode is Prime, this is the value of the Prime rate at the time the request is made
             .
         AccrualFrequency:
-          $ref: '#/components/schemas/AccrualFrequencyType'
+          $ref: "#/components/schemas/AccrualFrequencyType"
         APYRecurType:
-          $ref: '#/components/schemas/APYRecurTypeType'
+          $ref: "#/components/schemas/APYRecurTypeType"
         AccrualMethod:
           type: string
-          description: 'Accrual Method. For example: Daily, Simple, Continuous.'
+          description: "Accrual Method. For example: Daily, Simple, Continuous."
         AccrualMethodEnumDesc:
           maxLength: 80
           type: string
@@ -1290,7 +1301,7 @@ components:
           description: Accrual On Balance Enumeration Description.
         DailyAccrual:
           type: string
-          description: 'Daily Accrual. Indicates how ''daily'' is determined when interest is accrued on a daily basis. Valid values: Standard360, Actual365, Actual366.'
+          description: "Daily Accrual. Indicates how 'daily' is determined when interest is accrued on a daily basis. Valid values: Standard360, Actual365, Actual366."
         DailyAccrualEnumDesc:
           maxLength: 80
           type: string
@@ -1302,7 +1313,7 @@ components:
           type: number
           description: Minimum Interest. For Loan Products this is the minimum amount that must be repaid to the account before a payoff may occurr.
         CapFrequency:
-          $ref: '#/components/schemas/CapFrequencyType'
+          $ref: "#/components/schemas/CapFrequencyType"
         CompoundInd:
           type: boolean
           description: Compounding Indicator.
@@ -1330,9 +1341,9 @@ components:
           type: string
           description: Tier Amount Type Enumeration Description
         BalCutOffData:
-          $ref: '#/components/schemas/BalCutOffDataType'
+          $ref: "#/components/schemas/BalCutOffDataType"
         SplitRateData:
-          $ref: '#/components/schemas/SplitRateDataType'
+          $ref: "#/components/schemas/SplitRateDataType"
         IntRateCalcOption:
           type: string
           description: Interest Rate Calculation Option. Indicates whether the interest rate should be calculated at the time of the first disbursement or when the loan account is opened.
@@ -1359,14 +1370,14 @@ components:
           type: number
           description: Maturity Interest Rate. Value of the Interest Rate that applies after maturity.
         MaturityIntRecurType:
-          $ref: '#/components/schemas/MaturityIntRecurTypeType'
+          $ref: "#/components/schemas/MaturityIntRecurTypeType"
         MaturityIntRecurTypeEnumDesc:
           maxLength: 80
           type: string
           description: Maturity Interest Recurrency Type. Indicates the length of time the calculation of after maturity interest must be performed.
         MaturityIntInterval:
           type: integer
-          description: 'Maturity Interest Calculation Interval. Number of units between occurrences. Should be an integer. If  ‘Daily’: Number of days between occurrences.'
+          description: "Maturity Interest Calculation Interval. Number of units between occurrences. Should be an integer. If  ‘Daily’: Number of days between occurrences."
           format: int64
       description: Maturity Interest Calculation Data
     PromotionalRateType:
@@ -1391,7 +1402,7 @@ components:
           description: Number of Days of the Promotional Rate.
           format: int64
         MarginType:
-          $ref: '#/components/schemas/MarginTypeType'
+          $ref: "#/components/schemas/MarginTypeType"
         MarginTypeEnumDesc:
           maxLength: 80
           type: string
@@ -1494,7 +1505,7 @@ components:
           description: Rate Change Identifier.
         RateChangeControl:
           type: string
-          description: 'Interest Rate Change Control. Used to indicate the type of interest rate for example: Fixed, Index, IndexReview, StepReview, etc.'
+          description: "Interest Rate Change Control. Used to indicate the type of interest rate for example: Fixed, Index, IndexReview, StepReview, etc."
         RateChangeControlEnumDesc:
           maxLength: 80
           type: string
@@ -1525,7 +1536,7 @@ components:
           type: array
           description: Step Rate Table. Contains the collection of step rates.
           items:
-            $ref: '#/components/schemas/StepRateType'
+            $ref: "#/components/schemas/StepRateType"
         RateChangeNbr:
           type: integer
           description: Number of Rate Changes per term.
@@ -1549,7 +1560,7 @@ components:
             Based On Value. The value of the BasedOnCode at the time of the request. For example; BasedOnCode is Prime, this is the value of the Prime rate at the time the request is made
             .
         VarianceFactorType:
-          $ref: '#/components/schemas/VarianceFactorTypeType'
+          $ref: "#/components/schemas/VarianceFactorTypeType"
         VarianceFactorTypeEnumDesc:
           maxLength: 80
           type: string
@@ -1564,7 +1575,7 @@ components:
           type: array
           description: Pending Rate.
           items:
-            $ref: '#/components/schemas/PendingRateType'
+            $ref: "#/components/schemas/PendingRateType"
         ExpDt:
           type: string
           description: Expiration Date.
@@ -1591,7 +1602,7 @@ components:
           type: array
           description: Change Range Maximum and Minimum. Used for systems that define min and maxium up and down rate changes.
           items:
-            $ref: '#/components/schemas/RateChangeRangeMaxMinType'
+            $ref: "#/components/schemas/RateChangeRangeMaxMinType"
         MinRateDecreaseLife:
           type: number
           description: Minimum Rate Decrease Life. Minimum amount that the interest rate may decrease over the life of the account (a loan for example).
@@ -1599,7 +1610,7 @@ components:
           type: number
           description: Maximum Rate Increase Life. The maximum percent the interest rate may decrease over the life of the account (a loan for example).
         RoundingOption:
-          $ref: '#/components/schemas/RoundingOptionType'
+          $ref: "#/components/schemas/RoundingOptionType"
         RoundingOptionEnumDesc:
           maxLength: 80
           type: string
@@ -1628,20 +1639,20 @@ components:
           description: Fixed Rate Lead Days. Number of days prior to the fixed rate conversion date to notify the customer that the loan may be converted to a fixed rate.
           format: int64
         RateChangeRecurType:
-          $ref: '#/components/schemas/RateChangeRecurTypeType'
+          $ref: "#/components/schemas/RateChangeRecurTypeType"
         RateChangeRecurTypeEnumDesc:
           maxLength: 80
           type: string
           description: Rate Change Recurrence Type Enumeration Description.
         RecurInterval:
           type: integer
-          description: 'Recurrence Interval. Number of units between occurrences. Should be an integer. If  ‘Daily’: Number of days between occurrences. If   ‘Weekly’: Number of weeks between occurrences. If   ''Monthly’: Number of months between occurrences. If   ‘Yearly’: Number of years between occurrences. If not provided, assume default value of 1, i.e. every day, every week, every month, or every year. If ''Cycle'' : Number of the designated cycle.'
+          description: "Recurrence Interval. Number of units between occurrences. Should be an integer. If  ‘Daily’: Number of days between occurrences. If   ‘Weekly’: Number of weeks between occurrences. If   'Monthly’: Number of months between occurrences. If   ‘Yearly’: Number of years between occurrences. If not provided, assume default value of 1, i.e. every day, every week, every month, or every year. If 'Cycle' : Number of the designated cycle."
           format: int64
         DayOfMonth:
-          $ref: '#/components/schemas/DayOfMonthType'
+          $ref: "#/components/schemas/DayOfMonthType"
         Month:
           type: integer
-          description: 'Month. Numeric value representing the month of recurrence. Valid values: integers between 1 and 12 inclusive.'
+          description: "Month. Numeric value representing the month of recurrence. Valid values: integers between 1 and 12 inclusive."
           format: int64
         LeadDays:
           type: integer
@@ -1706,7 +1717,7 @@ components:
           description: Count. Sometimes specifies the duration of the time frame base on the units specified.
           format: int64
         Units:
-          $ref: '#/components/schemas/UnitsType'
+          $ref: "#/components/schemas/UnitsType"
         UnitsEnumDesc:
           maxLength: 80
           type: string
@@ -1723,7 +1734,7 @@ components:
           description: Count. Sometimes specifies the duration of the time frame base on the units specified.
           format: int64
         Units:
-          $ref: '#/components/schemas/UnitsType'
+          $ref: "#/components/schemas/UnitsType"
         UnitsEnumDesc:
           maxLength: 80
           type: string
@@ -1754,9 +1765,9 @@ components:
           type: string
           description: Account Period Type Enumeration Description.
         TotalInPeriod:
-          $ref: '#/components/schemas/TotalInPeriodType'
+          $ref: "#/components/schemas/TotalInPeriodType"
         InPeriod:
-          $ref: '#/components/schemas/InPeriodType'
+          $ref: "#/components/schemas/InPeriodType"
         LastOccurInd:
           type: boolean
           description: Last Occurrence Indicator.
@@ -1882,7 +1893,7 @@ components:
       type: object
       properties:
         DayOfMonth:
-          $ref: '#/components/schemas/DayOfMonthType'
+          $ref: "#/components/schemas/DayOfMonthType"
         Month:
           type: integer
           description: Month number of the year. Can be any number between 1 to 12.
@@ -1912,7 +1923,7 @@ components:
           type: array
           description: Recurrent rule details.
           items:
-            $ref: '#/components/schemas/RecurRuleType'
+            $ref: "#/components/schemas/RecurRuleType"
       description: Time frame for the applicable fee.
     PhoneNumType:
       title: PhoneNumType
@@ -1942,7 +1953,7 @@ components:
           type: array
           description: Information about financial institution officers who have management-related responsibilities of the Party, Account or Card.
           items:
-            $ref: '#/components/schemas/RelationshipMgrType'
+            $ref: "#/components/schemas/RelationshipMgrType"
         OriginatingBranch:
           maxLength: 32
           type: string
@@ -1969,7 +1980,7 @@ components:
               - Inquiry
               - Mailing
         AddrFormatType:
-          $ref: '#/components/schemas/AddrFormatTypeType'
+          $ref: "#/components/schemas/AddrFormatTypeType"
         Addr1:
           maxLength: 64
           type: string
@@ -1991,11 +2002,11 @@ components:
           type: string
           description: Postal code or Zip code of the cardholder.
         CountryCode:
-          $ref: '#/components/schemas/CountryCodeType'
+          $ref: "#/components/schemas/CountryCodeType"
         AddrType:
-          $ref: '#/components/schemas/AddrTypeType'
+          $ref: "#/components/schemas/AddrTypeType"
         TimeFrame:
-          $ref: '#/components/schemas/PostAddrType_TimeFrame'
+          $ref: "#/components/schemas/PostAddrType_TimeFrame"
         Retention:
           type: boolean
           description: Flag to indicate if the address should be retained after its timeframe.
@@ -2015,7 +2026,7 @@ components:
           type: string
           description: Handling code to specify the handling process of the notification and statement forms.
         HandlingCodeOption:
-          $ref: '#/components/schemas/HandlingCodeOptionType'
+          $ref: "#/components/schemas/HandlingCodeOptionType"
         MSACode:
           type: integer
           description: MSA Code identifes a Metropolitan Statistical Area for postal delivery purposes. This code is defined by the U.S. Office of Management and Budget (OMB), and used by the U.S. Census Bureau and other federal government agencies for statistical purposes.
@@ -2037,7 +2048,7 @@ components:
           type: string
           description: Tax Type Enumeration Description.
         CurAmt:
-          $ref: '#/components/schemas/CurAmtType'
+          $ref: "#/components/schemas/CurAmtType"
         Rate:
           type: number
           description: Rate.
@@ -2059,7 +2070,7 @@ components:
           type: array
           description: Tax Data.
           items:
-            $ref: '#/components/schemas/TaxDataType'
+            $ref: "#/components/schemas/TaxDataType"
         TaxIdent:
           maxLength: 12
           type: string
@@ -2112,7 +2123,7 @@ components:
       type: object
       properties:
         WithholdingType:
-          $ref: '#/components/schemas/WithholdingTypeType'
+          $ref: "#/components/schemas/WithholdingTypeType"
         WithholdingTypeEnumDesc:
           maxLength: 80
           type: string
@@ -2136,14 +2147,14 @@ components:
           type: string
           description: Report Amount Type.
         CurAmt:
-          $ref: '#/components/schemas/CurAmtType'
+          $ref: "#/components/schemas/CurAmtType"
     IntReporting1099DataType:
       title: IntReporting1099DataType
       type: object
       properties:
         IRSReportOption:
           type: string
-          description: 'IRS Report Option. Indicates the people must be included in the report: Primary, Secondary and Both.'
+          description: "IRS Report Option. Indicates the people must be included in the report: Primary, Secondary and Both."
         DischargeEventCode:
           type: string
           description: Discharge Event Code. Indicates why the debt was discharged. This field is only available when the Report 1099-C or Report Combined 1099-CA.
@@ -2158,7 +2169,7 @@ components:
           type: array
           description: Report Amount.
           items:
-            $ref: '#/components/schemas/ReportAmtType'
+            $ref: "#/components/schemas/ReportAmtType"
         AcquisitionDt:
           type: string
           description: Acquisition Date.
@@ -2230,7 +2241,7 @@ components:
       type: object
       description: Details of the Pre Pay Maximun currency amount.
       allOf:
-        - $ref: '#/components/schemas/CurAmtType'
+        - $ref: "#/components/schemas/CurAmtType"
         - type: object
     FeeBillingOptionType:
       title: FeeBillingOptionType
@@ -2248,11 +2259,11 @@ components:
           type: string
           description: Tier.
         LowCurAmt:
-          $ref: '#/components/schemas/LowCurAmtType'
+          $ref: "#/components/schemas/LowCurAmtType"
         HighCurAmt:
-          $ref: '#/components/schemas/HighCurAmtType'
+          $ref: "#/components/schemas/HighCurAmtType"
         CurAmt:
-          $ref: '#/components/schemas/CurAmtType'
+          $ref: "#/components/schemas/CurAmtType"
         BalPercent:
           type: number
           description: Balance Percent.
@@ -2261,14 +2272,14 @@ components:
       type: object
       description: Details of the Minimum currency amount.
       allOf:
-        - $ref: '#/components/schemas/CurAmtType'
+        - $ref: "#/components/schemas/CurAmtType"
         - type: object
     MaxCurAmtType:
       title: MaxCurAmtType
       type: object
       description: Details of the Maximum currency amount.
       allOf:
-        - $ref: '#/components/schemas/CurAmtType'
+        - $ref: "#/components/schemas/CurAmtType"
         - type: object
     EarningMethodType:
       title: EarningMethodType
@@ -2290,7 +2301,7 @@ components:
       type: object
       properties:
         EarningMethod:
-          $ref: '#/components/schemas/EarningMethodType'
+          $ref: "#/components/schemas/EarningMethodType"
         EarningMethodEnumDesc:
           maxLength: 80
           type: string
@@ -2305,7 +2316,7 @@ components:
           description: Expiration Date.
           format: date
         Term:
-          $ref: '#/components/schemas/TermType'
+          $ref: "#/components/schemas/TermType"
         Rate:
           type: number
           description: Rate.
@@ -2332,10 +2343,10 @@ components:
           description: Tier Identification.
         TierIntervalCount:
           type: integer
-          description: 'Tier Interval Count.  If   ''Months’: Number of months. Should be an integer.'
+          description: "Tier Interval Count.  If   'Months’: Number of months. Should be an integer."
           format: int64
         CurAmt:
-          $ref: '#/components/schemas/CurAmtType'
+          $ref: "#/components/schemas/CurAmtType"
         BalPercent:
           type: number
           description: Balance Percent.
@@ -2344,7 +2355,7 @@ components:
       type: object
       properties:
         EarlyPayoffTierType:
-          $ref: '#/components/schemas/EarlyPayoffTierTypeType'
+          $ref: "#/components/schemas/EarlyPayoffTierTypeType"
         EarlyPayoffTierNum:
           type: integer
           description: Early Payoff Table Tier Number. Indicates the number of tiers in the table.
@@ -2353,7 +2364,7 @@ components:
           type: array
           description: Early Payoff Tier Data.
           items:
-            $ref: '#/components/schemas/EarlyPayoffTierDataType'
+            $ref: "#/components/schemas/EarlyPayoffTierDataType"
       description: Early Payoff Table Data
     FeeWaiverType:
       title: FeeWaiverType
@@ -2381,7 +2392,7 @@ components:
       type: object
       description: Details of the Face Value currency amount.
       allOf:
-        - $ref: '#/components/schemas/CurAmtType'
+        - $ref: "#/components/schemas/CurAmtType"
         - type: object
     FeeType:
       title: FeeType
@@ -2425,7 +2436,7 @@ components:
           type: string
           description: Fee Priority Option. Processing option used for the fee type.
         FeeCalcOption:
-          $ref: '#/components/schemas/FeeCalcOptionType'
+          $ref: "#/components/schemas/FeeCalcOptionType"
         FeeCalcOptionEnumDesc:
           maxLength: 80
           type: string
@@ -2446,18 +2457,18 @@ components:
           type: string
           description: Fee Aggregation Option Enumeration Description.
         PrePayMaxAmt:
-          $ref: '#/components/schemas/PrePayMaxAmtType'
+          $ref: "#/components/schemas/PrePayMaxAmtType"
         PrePayBalPercent:
           type: number
           description: Pre Payment Balance Percent. Prepayment above this amount are subject to prepay fee.
         FeeBillingOption:
-          $ref: '#/components/schemas/FeeBillingOptionType'
+          $ref: "#/components/schemas/FeeBillingOptionType"
         FeeBillingOptionEnumDesc:
           maxLength: 80
           type: string
           description: Fee Billing Option Enumeration Description.
         CurAmt:
-          $ref: '#/components/schemas/CurAmtType'
+          $ref: "#/components/schemas/CurAmtType"
         BalPercent:
           type: number
           description: Balance Percent.
@@ -2465,18 +2476,18 @@ components:
           type: array
           description: Fee Tier.
           items:
-            $ref: '#/components/schemas/FeeTierType'
+            $ref: "#/components/schemas/FeeTierType"
         FeeCalcProgram:
           maxLength: 36
           type: string
           description: Fee Calculation Program.
         MinCurAmt:
-          $ref: '#/components/schemas/MinCurAmtType'
+          $ref: "#/components/schemas/MinCurAmtType"
         MaxCurAmt:
-          $ref: '#/components/schemas/MaxCurAmtType'
+          $ref: "#/components/schemas/MaxCurAmtType"
         DailyAccrual:
           type: string
-          description: 'Daily Accrual. Indicates how ''daily'' is determined when interest is accrued on a daily basis. Valid values: Standard360, Actual365, Actual366.'
+          description: "Daily Accrual. Indicates how 'daily' is determined when interest is accrued on a daily basis. Valid values: Standard360, Actual365, Actual366."
         DailyAccrualEnumDesc:
           maxLength: 80
           type: string
@@ -2498,9 +2509,9 @@ components:
           description: Last Fee Date.
           format: date
         TimeFrame:
-          $ref: '#/components/schemas/TimeFrameType'
+          $ref: "#/components/schemas/TimeFrameType"
         FeeEarningData:
-          $ref: '#/components/schemas/FeeEarningDataType'
+          $ref: "#/components/schemas/FeeEarningDataType"
         EarlyPayoffInd:
           type: boolean
           description: Early Payoff Table Indicator. Indicator that identifies whether to use an early payoff fee table to determine the fee amount when paying off a loan.
@@ -2513,32 +2524,32 @@ components:
           description: Early Payoff Months. Number of months a payoff fee can be assessed.
           format: int64
         EarlyPayoffTable:
-          $ref: '#/components/schemas/EarlyPayoffTableType'
+          $ref: "#/components/schemas/EarlyPayoffTableType"
         RefData:
-          $ref: '#/components/schemas/RefDataType'
+          $ref: "#/components/schemas/RefDataType"
         WaiveFeeInd:
           type: boolean
           description: Waived Fee Indicator.
         FeeWaiver:
-          $ref: '#/components/schemas/FeeWaiverType'
+          $ref: "#/components/schemas/FeeWaiverType"
         Company:
           maxLength: 60
           type: string
           description: Company. Name of the company.
         FaceValueAmt:
-          $ref: '#/components/schemas/FaceValueAmtType'
+          $ref: "#/components/schemas/FaceValueAmtType"
         ReportingOptionCode:
           maxLength: 80
           type: string
           description: Reporting Option Code.
         FeeCollectedAmt:
-          $ref: '#/components/schemas/FeeCollectedAmtType'
+          $ref: "#/components/schemas/FeeCollectedAmtType"
     LoanAmtType:
       title: LoanAmtType
       type: object
       description: Details of the Loan currency amount.
       allOf:
-        - $ref: '#/components/schemas/CurAmtType'
+        - $ref: "#/components/schemas/CurAmtType"
         - type: object
     CreditRiskType:
       title: CreditRiskType
@@ -2570,7 +2581,7 @@ components:
           description: Score Generated Date. Date when internal score was generated.
           format: date
         LoanAmt:
-          $ref: '#/components/schemas/LoanAmtType'
+          $ref: "#/components/schemas/LoanAmtType"
         LoanPct:
           type: number
           description: Loan Percentage.Percent of the loan rated.
@@ -2597,7 +2608,7 @@ components:
     TranHistoryOptionType:
       title: TranHistoryOptionType
       type: string
-      description: 'Valid values: None, DoNotRetain, Retain'
+      description: "Valid values: None, DoNotRetain, Retain"
       enum:
         - None
         - DoNotRetain
@@ -2651,7 +2662,7 @@ components:
       type: object
       properties:
         CardIdent:
-          $ref: '#/components/schemas/CardIdentType'
+          $ref: "#/components/schemas/CardIdentType"
       description: Unique information to identify a card record
     AcctKeysType:
       title: AcctKeysType
@@ -2672,28 +2683,28 @@ components:
             For more information on account types, refer to the Account Types section in <a href="../docs?path=docs/api-glossary.md"  title="Click to open">Glossary </a>.
       description: Details of the account keys to identify an account record.
       allOf:
-        - $ref: '#/components/schemas/BaseKeysType'
+        - $ref: "#/components/schemas/BaseKeysType"
         - type: object
     SweepAcctKeysType:
       title: SweepAcctKeysType
       type: object
       description: Sweep Account Description
       allOf:
-        - $ref: '#/components/schemas/AcctKeysType'
+        - $ref: "#/components/schemas/AcctKeysType"
         - type: object
     MasterAcctKeysType:
       title: MasterAcctKeysType
       type: object
       description: Master Account Description
       allOf:
-        - $ref: '#/components/schemas/AcctKeysType'
+        - $ref: "#/components/schemas/AcctKeysType"
         - type: object
     LinkAcctKeysType:
       title: LinkAcctKeysType
       type: object
       description: Link Account Description
       allOf:
-        - $ref: '#/components/schemas/AcctKeysType'
+        - $ref: "#/components/schemas/AcctKeysType"
         - type: object
     CashMgmtRelDataType:
       title: CashMgmtRelDataType
@@ -2714,11 +2725,11 @@ components:
           type: boolean
           description: Zero Balance Account Indicator.
         SweepAcctKeys:
-          $ref: '#/components/schemas/SweepAcctKeysType'
+          $ref: "#/components/schemas/SweepAcctKeysType"
         MasterAcctKeys:
-          $ref: '#/components/schemas/MasterAcctKeysType'
+          $ref: "#/components/schemas/MasterAcctKeysType"
         LinkAcctKeys:
-          $ref: '#/components/schemas/LinkAcctKeysType'
+          $ref: "#/components/schemas/LinkAcctKeysType"
       description: Cash Management Data
     ReminderType:
       title: ReminderType
@@ -2774,7 +2785,7 @@ components:
       type: object
       description: Renewal Frequency Description
       allOf:
-        - $ref: '#/components/schemas/RecurRuleType'
+        - $ref: "#/components/schemas/RecurRuleType"
         - type: object
     RenewalDataType:
       title: RenewalDataType
@@ -2820,7 +2831,7 @@ components:
           type: string
           description: Next Earning Date Option.
         RenewalFrequency:
-          $ref: '#/components/schemas/RenewalFrequencyType'
+          $ref: "#/components/schemas/RenewalFrequencyType"
         LastRenewalDt:
           type: string
           description: Last Renewal Date.
@@ -2872,14 +2883,14 @@ components:
           type: string
           description: Agreement Identifier.
         PartyKeys:
-          $ref: '#/components/schemas/PartyKeysType'
+          $ref: "#/components/schemas/PartyKeysType"
       description: Agreement Data.
     RewardAcctType:
       title: RewardAcctType
       type: object
       description: Reward Account Description
       allOf:
-        - $ref: '#/components/schemas/AcctKeysType'
+        - $ref: "#/components/schemas/AcctKeysType"
         - type: object
     RewardsDataType:
       title: RewardsDataType
@@ -2892,7 +2903,7 @@ components:
           type: string
           description: Reward Disposition Type. Indicates how the reward is cashed.
         RewardAcct:
-          $ref: '#/components/schemas/RewardAcctType'
+          $ref: "#/components/schemas/RewardAcctType"
         PromoPeriods:
           type: integer
           description: Promotional Periods. Number of periods in which the reward is paid.
@@ -2904,7 +2915,7 @@ components:
         Brand:
           maxLength: 80
           type: string
-          description: '[FSVR]Brand.'
+          description: "[FSVR]Brand."
         GoodThruDt:
           type: string
           description: Good Thru Date. Indicates the processing date of the system.
@@ -2921,9 +2932,9 @@ components:
           description: Account Detail Status Date. Indicates the current status date of the account.
           format: date
         CurCode:
-          $ref: '#/components/schemas/CurCodeType'
+          $ref: "#/components/schemas/CurCodeType"
         AcctPref:
-          $ref: '#/components/schemas/AcctPrefType'
+          $ref: "#/components/schemas/AcctPrefType"
         AcctApplIdent:
           maxLength: 36
           type: string
@@ -2934,7 +2945,7 @@ components:
           description: Campaign Identifier. Indicates sales campaign from which correspondence was generated.
         Ownership:
           type: string
-          description: '[IFX]Ownership. Valid values: Individual, JointAnd, JointOr.'
+          description: "[IFX]Ownership. Valid values: Individual, JointAnd, JointOr."
         OwnershipEnumDesc:
           maxLength: 80
           type: string
@@ -2943,7 +2954,7 @@ components:
           type: array
           description: Account Identification. Other account identification used as part of the Account object key in addition to the Account Identifier (AcctId).
           items:
-            $ref: '#/components/schemas/AcctIdentType'
+            $ref: "#/components/schemas/AcctIdentType"
         ProductIdent:
           maxLength: 42
           type: string
@@ -2984,13 +2995,13 @@ components:
           description: Promotional Code Enumeration Description.
         AcctUse:
           type: string
-          description: 'Account Use. U.S. Institutions should use this for Regulation D reporting purposes. Valid values include: Business, Retail'
+          description: "Account Use. U.S. Institutions should use this for Regulation D reporting purposes. Valid values include: Business, Retail"
         AcctUseEnumDesc:
           maxLength: 80
           type: string
           description: Account Use Enumeration Description.
         InitialAmount:
-          $ref: '#/components/schemas/InitialAmountType'
+          $ref: "#/components/schemas/InitialAmountType"
         OpenDt:
           type: string
           description: Open Date.
@@ -3012,17 +3023,17 @@ components:
           type: string
           description: Closed Reason Enumeration Description.
         BalanceAtClosingAmt:
-          $ref: '#/components/schemas/BalanceAtClosingAmtType'
+          $ref: "#/components/schemas/BalanceAtClosingAmtType"
         Term:
-          $ref: '#/components/schemas/TermType'
+          $ref: "#/components/schemas/TermType"
         TermToMaturity:
-          $ref: '#/components/schemas/TermType'
+          $ref: "#/components/schemas/TermType"
         MaturityDt:
           type: string
           description: Maturity Date.
           format: date
         FeeCollectedAmt:
-          $ref: '#/components/schemas/FeeCollectedAmtType'
+          $ref: "#/components/schemas/FeeCollectedAmtType"
         LastContactDt:
           pattern: ^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$
           type: string
@@ -3032,12 +3043,12 @@ components:
           type: array
           description: Date Data. Use to contain dates associated to the object.
           items:
-            $ref: '#/components/schemas/DateDataType'
+            $ref: "#/components/schemas/DateDataType"
         RelationshipMgr:
           type: array
           description: Relationship Manager. Stores information about the FI officers that have management responsibility of the Party, the Account or the Card.
           items:
-            $ref: '#/components/schemas/RelationshipMgrType'
+            $ref: "#/components/schemas/RelationshipMgrType"
         OriginatingBranch:
           maxLength: 32
           type: string
@@ -3088,9 +3099,9 @@ components:
           type: array
           description: Additional Account Titles.
           items:
-            $ref: '#/components/schemas/AddtlTitlesType'
+            $ref: "#/components/schemas/AddtlTitlesType"
         HandlingCodeOption:
-          $ref: '#/components/schemas/HandlingCodeOptionType'
+          $ref: "#/components/schemas/HandlingCodeOptionType"
         HandlingCodeOptionEnumDesc:
           maxLength: 80
           type: string
@@ -3151,9 +3162,9 @@ components:
           type: array
           description: Client Defined Data.Data whose definition, type and values are defined by the client or user.
           items:
-            $ref: '#/components/schemas/ClientDefinedDataType'
+            $ref: "#/components/schemas/ClientDefinedDataType"
         AcctStmtData:
-          $ref: '#/components/schemas/AcctStmtDataType'
+          $ref: "#/components/schemas/AcctStmtDataType"
         NoticeHandlingCode:
           maxLength: 80
           type: string
@@ -3162,7 +3173,7 @@ components:
           type: array
           description: Account Notice Data.
           items:
-            $ref: '#/components/schemas/NoticeDataType'
+            $ref: "#/components/schemas/NoticeDataType"
         ProdIntRateId:
           maxLength: 36
           type: string
@@ -3178,31 +3189,31 @@ components:
           type: number
           description: Effective Rate. Current Effective rate of the account. The effective annual interest rate is the interest rate that is actually earned or paid on an investment, loan or other financial product due to the result of compounding over a given time period. It is also called the effective interest rate, the effective rate or the annual equivalent rate.
         IntRateData:
-          $ref: '#/components/schemas/IntRateDataType'
+          $ref: "#/components/schemas/IntRateDataType"
         MaturityIntCalcData:
-          $ref: '#/components/schemas/MaturityIntCalcDataType'
+          $ref: "#/components/schemas/MaturityIntCalcDataType"
         PromotionalRate:
-          $ref: '#/components/schemas/PromotionalRateType'
+          $ref: "#/components/schemas/PromotionalRateType"
         RateChangeData:
           type: array
           description: Rate Change Data. Used to indicate how the interest rate is calculated and changed.
           items:
-            $ref: '#/components/schemas/RateChangeDataType'
+            $ref: "#/components/schemas/RateChangeDataType"
         AcctBal:
           type: array
-          description: 'Account Balance. Defines balances a financial institution account may carry (ex: ledger, available, collected, etc.).'
+          description: "Account Balance. Defines balances a financial institution account may carry (ex: ledger, available, collected, etc.)."
           items:
-            $ref: '#/components/schemas/AcctBalType'
+            $ref: "#/components/schemas/AcctBalType"
         AcctPeriodData:
           type: array
           description: Account Period Data. Provides a summary of account periodic data such as last interest payment, non sufficient funds, overdraft activity year to date, current month.
           items:
-            $ref: '#/components/schemas/AcctPeriodDataType'
+            $ref: "#/components/schemas/AcctPeriodDataType"
         TranCounter:
           type: array
           description: Transaction Counter.
           items:
-            $ref: '#/components/schemas/TranCounterType'
+            $ref: "#/components/schemas/TranCounterType"
         AlternateAddrInd:
           type: boolean
           description: Alternate Address Indicator. Indicates that the account or party have an active secondary address.
@@ -3214,19 +3225,19 @@ components:
           type: array
           description: Postal Address.
           items:
-            $ref: '#/components/schemas/PostAddrType'
+            $ref: "#/components/schemas/PostAddrType"
         AcctPhoneNum:
           type: array
           description: Account Phone Number.
           items:
-            $ref: '#/components/schemas/PhoneNumType'
+            $ref: "#/components/schemas/PhoneNumType"
         TaxWithheldData:
           type: array
           description: Tax Withheld Dta. Provides tax data withheld by the FI for a specific tax year.
           items:
-            $ref: '#/components/schemas/TaxWithheldDataType'
+            $ref: "#/components/schemas/TaxWithheldDataType"
         TaxIdentType:
-          $ref: '#/components/schemas/TaxIdentTypeType'
+          $ref: "#/components/schemas/TaxIdentTypeType"
         TaxIdentTypeEnumDesc:
           maxLength: 80
           type: string
@@ -3247,7 +3258,7 @@ components:
           type: string
           description: Tax Exempt Enumeration Description.
         USATaxIdCert:
-          $ref: '#/components/schemas/USATaxIdCertType'
+          $ref: "#/components/schemas/USATaxIdCertType"
         WithholdingOption:
           type: string
           description: Withholding Option.Identifies what tax should be withheld for the Party.
@@ -3259,7 +3270,7 @@ components:
           type: array
           description: Withholding Data. Used to describe Withholding Data use to process interest withholding such as withholding percent.
           items:
-            $ref: '#/components/schemas/WithholdingDataType'
+            $ref: "#/components/schemas/WithholdingDataType"
         IntReportingInd:
           type: boolean
           description: Interest Reporting Indicator. Identifies what tax should be reported for the Party.
@@ -3271,17 +3282,17 @@ components:
           type: string
           description: Interest Reporting Code Enumeration Description.
         IntReporting1099Data:
-          $ref: '#/components/schemas/IntReporting1099DataType'
+          $ref: "#/components/schemas/IntReporting1099DataType"
         Fee:
           type: array
           description: Fee.
           items:
-            $ref: '#/components/schemas/FeeType'
+            $ref: "#/components/schemas/FeeType"
         CreditRisk:
           type: array
           description: Credit Risk. Contains information about the credit risk of the party.
           items:
-            $ref: '#/components/schemas/CreditRiskType'
+            $ref: "#/components/schemas/CreditRiskType"
         RiskRanking:
           maxLength: 80
           type: string
@@ -3375,13 +3386,13 @@ components:
           type: string
           description: Cost Center Enumeration Description.
         RetentionOption:
-          $ref: '#/components/schemas/RetentionOptionType'
+          $ref: "#/components/schemas/RetentionOptionType"
         RetentionOptionEnumDesc:
           maxLength: 80
           type: string
           description: Retention Option Enumeration Descripiton.
         TranHistoryOption:
-          $ref: '#/components/schemas/TranHistoryOptionType'
+          $ref: "#/components/schemas/TranHistoryOptionType"
         TranHistoryOptionEnumDesc:
           maxLength: 80
           type: string
@@ -3390,12 +3401,12 @@ components:
           type: boolean
           description: Relationship Pricing Indicator.
         RelationshipPricingAcctData:
-          $ref: '#/components/schemas/RelationshipPricingAcctDataType'
+          $ref: "#/components/schemas/RelationshipPricingAcctDataType"
         SweepBalRelationshipInd:
           type: boolean
           description: Sweep Balance Relationship Indicator.
         CashMgmtRelData:
-          $ref: '#/components/schemas/CashMgmtRelDataType'
+          $ref: "#/components/schemas/CashMgmtRelDataType"
         RestrictedInd:
           type: boolean
           description: Restricted Indicator. Indicates whether the account information is restricted for view by the requester.
@@ -3407,19 +3418,19 @@ components:
           type: array
           description: Reminder. Use to determine if the account has memo and ticklers linked to the account.
           items:
-            $ref: '#/components/schemas/ReminderType'
+            $ref: "#/components/schemas/ReminderType"
         AcctMemoData:
           type: array
           description: Account Memo Data. This aggregation contains memoranda and warnings defined at the account level and sometimes is of required view when doing account inquiries.
           items:
-            $ref: '#/components/schemas/AcctMemoDataType'
+            $ref: "#/components/schemas/AcctMemoDataType"
         UpdateContactCode:
-          $ref: '#/components/schemas/UpdateContactCodeType'
+          $ref: "#/components/schemas/UpdateContactCodeType"
         NOWEnabledInd:
           type: boolean
           description: NOW Enabled Indicator. Use to determine whether account can be used for NOW Network.
         RenewalData:
-          $ref: '#/components/schemas/RenewalDataType'
+          $ref: "#/components/schemas/RenewalDataType"
         AcctMajorType:
           type: string
           description: Account Major Type.
@@ -3431,7 +3442,7 @@ components:
           type: array
           description: Agreement Data.
           items:
-            $ref: '#/components/schemas/AgreementDataType'
+            $ref: "#/components/schemas/AgreementDataType"
         IsPassbookInd:
           type: boolean
           description: Is Passbook Indicator.
@@ -3446,12 +3457,12 @@ components:
           type: string
           description: Call Report Code.
         AccessLevelData:
-          $ref: '#/components/schemas/AccessLevelDataType'
+          $ref: "#/components/schemas/AccessLevelDataType"
         RewardsData:
           type: array
           description: Rewards Data.
           items:
-            $ref: '#/components/schemas/RewardsDataType'
+            $ref: "#/components/schemas/RewardsDataType"
       description: Account Information
     PmtPostingRestrictionsType:
       title: PmtPostingRestrictionsType
@@ -3517,7 +3528,7 @@ components:
           type: string
           description: Composite Sequence Identifier. Used to sequence multiple occurrences of the same Composite Currency Amount Type. For example if multiple CompositeCurAmtType = “Fee” this element would sequence the Fee. E.g. Fee1, Fee2, etc.
         CurAmt:
-          $ref: '#/components/schemas/CurAmtType'
+          $ref: "#/components/schemas/CurAmtType"
     DuePmtType:
       title: DuePmtType
       type: object
@@ -3528,7 +3539,7 @@ components:
             [FSVR]Payment Composite Amount.
             [SIG]Payment Composite Amount.
           items:
-            $ref: '#/components/schemas/PmtCompositeAmtType'
+            $ref: "#/components/schemas/PmtCompositeAmtType"
         DueDt:
           pattern: ^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$
           type: string
@@ -3559,9 +3570,9 @@ components:
             [FSVR]Payment Composite Amount.
             [SIG]Payment Composite Amount.
           items:
-            $ref: '#/components/schemas/PmtCompositeAmtType'
+            $ref: "#/components/schemas/PmtCompositeAmtType"
         BillStatus:
-          $ref: '#/components/schemas/BillStatusType'
+          $ref: "#/components/schemas/BillStatusType"
         PmtDt:
           type: string
           description: Payment Date.
@@ -3577,7 +3588,7 @@ components:
             [FSVR]Payment Composite Amount.
             [SIG]Payment Composite Amount.
           items:
-            $ref: '#/components/schemas/PmtCompositeAmtType'
+            $ref: "#/components/schemas/PmtCompositeAmtType"
         PmtDt:
           type: string
           description: Payment Date.
@@ -3603,7 +3614,7 @@ components:
         RetirementPlanType:
           maxLength: 80
           type: string
-          description: 'Retirement Plan Type. Retirement Plan Type. Indicator that specifies that you are adding an account from one of the following categories:  Individual Retirement Account, Simplified Employee Pension Account, HR-10 Account (Keogh), SIMPLE IRA.'
+          description: "Retirement Plan Type. Retirement Plan Type. Indicator that specifies that you are adding an account from one of the following categories:  Individual Retirement Account, Simplified Employee Pension Account, HR-10 Account (Keogh), SIMPLE IRA."
         RetirementPlanTypeEnumDesc:
           maxLength: 80
           type: string
@@ -3634,9 +3645,9 @@ components:
           type: string
           description: Charge Off Code Enumeration Description.
         PmtPostingRestrictions:
-          $ref: '#/components/schemas/PmtPostingRestrictionsType'
+          $ref: "#/components/schemas/PmtPostingRestrictionsType"
         AdvPostingRestrictions:
-          $ref: '#/components/schemas/AdvPostingRestrictionsType'
+          $ref: "#/components/schemas/AdvPostingRestrictionsType"
         CardType:
           maxLength: 80
           type: string
@@ -3659,14 +3670,14 @@ components:
           type: string
           description: Box Number.
         DuePmt:
-          $ref: '#/components/schemas/DuePmtType'
+          $ref: "#/components/schemas/DuePmtType"
         NextPmt:
-          $ref: '#/components/schemas/NextPmtType'
+          $ref: "#/components/schemas/NextPmtType"
         LastPmt:
-          $ref: '#/components/schemas/LastPmtType'
+          $ref: "#/components/schemas/LastPmtType"
       description: Account Summary Description
       allOf:
-        - $ref: '#/components/schemas/AcctInfoType'
+        - $ref: "#/components/schemas/AcctInfoType"
         - type: object
     AcctRefType:
       title: AcctRefType
@@ -3675,7 +3686,7 @@ components:
       type: object
       properties:
         AcctKeys:
-          $ref: '#/components/schemas/AcctKeysType'
+          $ref: "#/components/schemas/AcctKeysType"
       description: Account reference information.
     FinancialTrnOptionType:
       title: FinancialTrnOptionType
@@ -3707,7 +3718,7 @@ components:
       type: object
       properties:
         AcctRef:
-          $ref: '#/components/schemas/AcctRefType'
+          $ref: "#/components/schemas/AcctRefType"
         Nickname:
           maxLength: 80
           type: string
@@ -3750,7 +3761,7 @@ components:
       type: object
       properties:
         TrnTypeValue:
-          $ref: '#/components/schemas/TrnTypeValueType'
+          $ref: "#/components/schemas/TrnTypeValueType"
         TrnSubType:
           maxLength: 15
           type: string
@@ -3763,9 +3774,9 @@ components:
               - POS
               - ATM
         LimitType:
-          $ref: '#/components/schemas/LimitTypeType'
+          $ref: "#/components/schemas/LimitTypeType"
         CurAmt:
-          $ref: '#/components/schemas/CurAmtType'
+          $ref: "#/components/schemas/CurAmtType"
       description: Details of the card transaction limit.
     SeverityType:
       title: SeverityType
@@ -3804,7 +3815,7 @@ components:
           type: string
           description: Brief information about the EFX status code. Refer to the <a href="../docs?path=docs/response-codes.md" title="Click to open">Response Codes</a> for more information.
         Severity:
-          $ref: '#/components/schemas/SeverityType'
+          $ref: "#/components/schemas/SeverityType"
         SvcProviderName:
           maxLength: 1024
           type: string
@@ -3812,7 +3823,7 @@ components:
         ServerStatusCode:
           maxLength: 20
           type: string
-          description: 'Server status code of the service provider''s application.  '
+          description: "Server status code of the service provider's application.  "
         ServerStatusDesc:
           maxLength: 255
           type: string
@@ -3827,22 +3838,22 @@ components:
           description: Email identification.
       description: Email address of the cardholder.
       allOf:
-        - $ref: '#/components/schemas/LocatorType'
+        - $ref: "#/components/schemas/LocatorType"
         - type: object
     AlertContactType:
       title: AlertContactType
       type: object
       properties:
         PhoneNum:
-          $ref: '#/components/schemas/PhoneNumType'
+          $ref: "#/components/schemas/PhoneNumType"
         Email:
-          $ref: '#/components/schemas/EmailType'
+          $ref: "#/components/schemas/EmailType"
     AuthLimitAmtType:
       title: AuthLimitAmtType
       type: object
       description: Details of the Authorization Limit currency amount.
       allOf:
-        - $ref: '#/components/schemas/CurAmtType'
+        - $ref: "#/components/schemas/CurAmtType"
         - type: object
     AtmPosOverdraftType:
       title: AtmPosOverdraftType
@@ -3857,7 +3868,7 @@ components:
       type: object
       description: Information about the elements that corresponds to the override exception code.
       allOf:
-        - $ref: '#/components/schemas/SubjectElementType'
+        - $ref: "#/components/schemas/SubjectElementType"
         - type: object
     OverrideExceptionType:
       title: OverrideExceptionType
@@ -3875,7 +3886,7 @@ components:
           type: string
           description: Override exception code to be overridden. This can be the ServerStatusCode from the Message Status section.
         OvrdElement:
-          $ref: '#/components/schemas/OvrdElementType'
+          $ref: "#/components/schemas/OvrdElementType"
     OvrdExceptionDataType:
       title: OvrdExceptionDataType
       type: object
@@ -3884,7 +3895,7 @@ components:
           type: array
           description: List of the exceptions that can be overridden.
           items:
-            $ref: '#/components/schemas/OverrideExceptionType'
+            $ref: "#/components/schemas/OverrideExceptionType"
       description: Details of the exceptions that can be manually acknowledged by the client.
     MemberDataType:
       title: MemberDataType
@@ -3898,7 +3909,7 @@ components:
           maxLength: 36
           type: string
           description: Member Number.
-      description: '[IFXR]Member Data.'
+      description: "[IFXR]Member Data."
     WebAddrType:
       title: WebAddrType
       type: object
@@ -3927,13 +3938,13 @@ components:
       type: object
       properties:
         PhoneNum:
-          $ref: '#/components/schemas/PhoneNumType'
+          $ref: "#/components/schemas/PhoneNumType"
         PostAddr:
-          $ref: '#/components/schemas/PostAddrType'
+          $ref: "#/components/schemas/PostAddrType"
         Email:
-          $ref: '#/components/schemas/EmailType'
+          $ref: "#/components/schemas/EmailType"
         WebAddr:
-          $ref: '#/components/schemas/WebAddrType'
+          $ref: "#/components/schemas/WebAddrType"
         ContactIdent:
           maxLength: 36
           type: string
@@ -3956,7 +3967,7 @@ components:
       type: object
       properties:
         CountryCode:
-          $ref: '#/components/schemas/CountryCodeType'
+          $ref: "#/components/schemas/CountryCodeType"
         StateProv:
           maxLength: 80
           type: string
@@ -3974,7 +3985,7 @@ components:
       properties:
         IssuedIdentType:
           type: string
-          description: 'Issued Identification Type. Valid values: DrvrsLicNb, BirthCertificate, HealthCard, Military, AlnRegnNb, IdntyCardNb, VoterRegistration, PsptNb, MplyrIdNb, TaxIdNb,  SclSctyNb, NRAPersonal, NRABusiness, Other.'
+          description: "Issued Identification Type. Valid values: DrvrsLicNb, BirthCertificate, HealthCard, Military, AlnRegnNb, IdntyCardNb, VoterRegistration, PsptNb, MplyrIdNb, TaxIdNb,  SclSctyNb, NRAPersonal, NRABusiness, Other."
         IssuedIdentTypeEnumDesc:
           maxLength: 80
           type: string
@@ -4025,7 +4036,7 @@ components:
           type: string
           description: Verification Detail Text.
         GovIssuedIdent:
-          $ref: '#/components/schemas/GovIssuedIdentType'
+          $ref: "#/components/schemas/GovIssuedIdentType"
     SecretDataType:
       title: SecretDataType
       required:
@@ -4048,7 +4059,7 @@ components:
       type: object
       properties:
         MemberData:
-          $ref: '#/components/schemas/MemberDataType'
+          $ref: "#/components/schemas/MemberDataType"
         PartySelType:
           maxLength: 80
           type: string
@@ -4064,9 +4075,9 @@ components:
           type: array
           description: Contact. This aggregate contains a person's or organization's contact information
           items:
-            $ref: '#/components/schemas/ContactType'
+            $ref: "#/components/schemas/ContactType"
         TaxIdentType:
-          $ref: '#/components/schemas/TaxIdentTypeType'
+          $ref: "#/components/schemas/TaxIdentTypeType"
         TaxIdentTypeEnumDesc:
           maxLength: 80
           type: string
@@ -4083,7 +4094,7 @@ components:
           type: array
           description: Issued Identification. Used to include issued identifications. If the identification is government issued, the GovIssuedIdent aggregate must be included.
           items:
-            $ref: '#/components/schemas/IssuedIdentType'
+            $ref: "#/components/schemas/IssuedIdentType"
         OEDCode:
           type: string
           description: Officer, Employee, DIrector Code. Indicates if the party is an employee of the Bank.
@@ -4105,7 +4116,7 @@ components:
           type: array
           description: Secret Data.
           items:
-            $ref: '#/components/schemas/SecretDataType'
+            $ref: "#/components/schemas/SecretDataType"
         OriginatingBranch:
           maxLength: 32
           type: string
@@ -4142,7 +4153,7 @@ components:
           maxLength: 80
           type: string
           description: Socio Economic Code Enumeration Description.
-      description: '[IFXR]Party Information.'
+      description: "[IFXR]Party Information."
     NameTypeType:
       title: NameTypeType
       type: string
@@ -4154,7 +4165,7 @@ components:
     NameFormatType:
       title: NameFormatType
       type: string
-      description: 'Format of the name. '
+      description: "Format of the name. "
       enum:
         - None
         - NonPersonal
@@ -4172,7 +4183,7 @@ components:
       type: object
       properties:
         NameType:
-          $ref: '#/components/schemas/NameTypeType'
+          $ref: "#/components/schemas/NameTypeType"
         NameTypeEnumDesc:
           maxLength: 80
           type: string
@@ -4212,7 +4223,7 @@ components:
           type: string
           description: Legal Name. Legal Name of the Organization.
         NameFormat:
-          $ref: '#/components/schemas/NameFormatType'
+          $ref: "#/components/schemas/NameFormatType"
         NameFormatEnumDesc:
           maxLength: 80
           type: string
@@ -4226,14 +4237,14 @@ components:
       type: object
       properties:
         PersonName:
-          $ref: '#/components/schemas/PersonNameType'
+          $ref: "#/components/schemas/PersonNameType"
         BirthDt:
           type: string
           description: Birth Date.
           format: date
       description: Person Party List Description.
       allOf:
-        - $ref: '#/components/schemas/PartyListInfoType'
+        - $ref: "#/components/schemas/PartyListInfoType"
         - type: object
     OrgNameType:
       title: OrgNameType
@@ -4242,7 +4253,7 @@ components:
       type: object
       properties:
         NameType:
-          $ref: '#/components/schemas/NameTypeType'
+          $ref: "#/components/schemas/NameTypeType"
         NameTypeEnumDesc:
           maxLength: 80
           type: string
@@ -4264,7 +4275,7 @@ components:
           type: string
           description: Legal Name. Legal Name of the Organization.
         NameFormat:
-          $ref: '#/components/schemas/NameFormatType'
+          $ref: "#/components/schemas/NameFormatType"
         NameFormatEnumDesc:
           maxLength: 80
           type: string
@@ -4278,7 +4289,7 @@ components:
       type: object
       properties:
         OrgName:
-          $ref: '#/components/schemas/OrgNameType'
+          $ref: "#/components/schemas/OrgNameType"
         RecipientGIIN:
           maxLength: 19
           type: string
@@ -4291,7 +4302,7 @@ components:
           description: Beneficial Owner Required Indicator.
       description: Organization Party List Information*
       allOf:
-        - $ref: '#/components/schemas/PartyListInfoType'
+        - $ref: "#/components/schemas/PartyListInfoType"
         - type: object
     PartyRefType:
       title: PartyRefType
@@ -4300,12 +4311,12 @@ components:
       type: object
       properties:
         PartyKeys:
-          $ref: '#/components/schemas/PartyKeysType'
+          $ref: "#/components/schemas/PartyKeysType"
       description: Reference information of the party object that is part of the relationship
     CardSurchargeOptionType:
       title: CardSurchargeOptionType
       type: string
-      description: 'Card surcharge option that indicates if surcharges are applicable on the card. '
+      description: "Card surcharge option that indicates if surcharges are applicable on the card. "
       enum:
         - Charge
         - DoNotCharge
@@ -4315,7 +4326,7 @@ components:
       type: object
       description: Details of the maximum surcharge waiver amount in a calendar month.
       allOf:
-        - $ref: '#/components/schemas/CurAmtType'
+        - $ref: "#/components/schemas/CurAmtType"
         - type: object
     CardFeeType:
       title: CardFeeType
@@ -4334,7 +4345,7 @@ components:
           type: string
           description: Fee plan to charge the card fee.
         TimeFrame:
-          $ref: '#/components/schemas/TimeFrameType'
+          $ref: "#/components/schemas/TimeFrameType"
       description: Details of the charges and fees applicable to the card.
     ChargeFeeAcctType:
       title: ChargeFeeAcctType
@@ -4387,7 +4398,7 @@ components:
     EmbossingPrintOptionType:
       title: EmbossingPrintOptionType
       type: string
-      description: 'Print order for the secondary embossing name. '
+      description: "Print order for the secondary embossing name. "
       enum:
         - FirstLine
         - SecondLine
@@ -4397,14 +4408,14 @@ components:
       type: object
       description: Card Transaction Limit Description
       allOf:
-        - $ref: '#/components/schemas/AcctTrnLimitType'
+        - $ref: "#/components/schemas/AcctTrnLimitType"
         - type: object
     MaxCreditLimitAmtType:
       title: MaxCreditLimitAmtType
       type: object
       description: Maximum amount the cardhlder can spend using a debit card in a day.
       allOf:
-        - $ref: '#/components/schemas/CurAmtType'
+        - $ref: "#/components/schemas/CurAmtType"
         - type: object
     GenerateCardOrderType:
       title: GenerateCardOrderType
@@ -4512,7 +4523,7 @@ components:
     CardAmtSourceType:
       title: CardAmtSourceType
       type: string
-      description: 'Further classifies the amount in the period by source type. '
+      description: "Further classifies the amount in the period by source type. "
       enum:
         - POS
         - ATM
@@ -4538,9 +4549,9 @@ components:
       type: object
       properties:
         CardAmtType:
-          $ref: '#/components/schemas/CardAmtTypeType'
+          $ref: "#/components/schemas/CardAmtTypeType"
         CardPeriodType:
-          $ref: '#/components/schemas/CardPeriodTypeType'
+          $ref: "#/components/schemas/CardPeriodTypeType"
         Amt:
           type: number
           description: Amount in decimal format.
@@ -4557,7 +4568,7 @@ components:
           type: array
           description: Alert Contact.
           items:
-            $ref: '#/components/schemas/AlertContactType'
+            $ref: "#/components/schemas/AlertContactType"
       description: Text Alert Data.
     CardInfoType:
       title: CardInfoType
@@ -4580,12 +4591,12 @@ components:
           type: string
           description: Unique identifier of a product. This value is used to indicate the processing options of the card.
         CardIdent:
-          $ref: '#/components/schemas/CardIdentType'
+          $ref: "#/components/schemas/CardIdentType"
         RelationshipMgr:
           type: array
           description: Information about financial institution officers who have management-related responsibilities of the Party, Account or Card.
           items:
-            $ref: '#/components/schemas/RelationshipMgrType'
+            $ref: "#/components/schemas/RelationshipMgrType"
         CardDtlStatus:
           type: string
           description: |-
@@ -4603,28 +4614,28 @@ components:
           type: array
           description: Details of the charges and fees applicable to the card
           items:
-            $ref: '#/components/schemas/CardFeeType'
+            $ref: "#/components/schemas/CardFeeType"
         ChargeFeeAcct:
-          $ref: '#/components/schemas/ChargeFeeAcctType'
+          $ref: "#/components/schemas/ChargeFeeAcctType"
         OpenDt:
           type: string
-          description: 'Card opening date when the card record was created. <br> Format: yyyy-mm-dd'
+          description: "Card opening date when the card record was created. <br> Format: yyyy-mm-dd"
           format: date
           example: 2021-12-31
         ExpDt:
           type: string
-          description: 'Card expiration date after which the card becomes inactive. Format: yyyy-mm-dd'
+          description: "Card expiration date after which the card becomes inactive. Format: yyyy-mm-dd"
           format: date
           example: 2025-12-31
         NextIssueDt:
           pattern: ^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$
           type: string
-          description: 'Next card issuing date. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS'
+          description: "Next card issuing date. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS"
           example: 2021-01-31T23:59:59.999
         CardCategory:
-          $ref: '#/components/schemas/CardCategoryType'
+          $ref: "#/components/schemas/CardCategoryType"
         PersonEmbossingName:
-          $ref: '#/components/schemas/PersonEmbossingNameType'
+          $ref: "#/components/schemas/PersonEmbossingNameType"
         EmbossingName:
           maxLength: 80
           type: string
@@ -4637,33 +4648,33 @@ components:
           type: array
           description: Postal address details of cardholder
           items:
-            $ref: '#/components/schemas/PostAddrType'
+            $ref: "#/components/schemas/PostAddrType"
         CardTrnLimit:
           type: array
           description: Details of the card transaction limit.
           items:
-            $ref: '#/components/schemas/CardTrnLimitType'
+            $ref: "#/components/schemas/CardTrnLimitType"
         MaxCreditLimitAmt:
-          $ref: '#/components/schemas/MaxCreditLimitAmtType'
+          $ref: "#/components/schemas/MaxCreditLimitAmtType"
         AtmPosOverdraft:
-          $ref: '#/components/schemas/AtmPosOverdraftType'
+          $ref: "#/components/schemas/AtmPosOverdraftType"
         GenerateCardOrder:
-          $ref: '#/components/schemas/GenerateCardOrderType'
+          $ref: "#/components/schemas/GenerateCardOrderType"
         GeneratePINMailer:
-          $ref: '#/components/schemas/GeneratePINMailerType'
+          $ref: "#/components/schemas/GeneratePINMailerType"
         CardPref:
-          $ref: '#/components/schemas/CardPrefType'
+          $ref: "#/components/schemas/CardPrefType"
         DateData:
           type: array
           description: Details of transactions done at a particular date
           items:
-            $ref: '#/components/schemas/DateDataType'
+            $ref: "#/components/schemas/DateDataType"
         CardVerifyData:
-          $ref: '#/components/schemas/CardVerifyDataType'
+          $ref: "#/components/schemas/CardVerifyDataType"
         PreviousExpDt:
           pattern: ^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$
           type: string
-          description: 'Expiry date of the previous card. This date is used as a reference to order a new card and sometimes to verify the expiry date of the issued card if the card is not in use. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS'
+          description: "Expiry date of the previous card. This date is used as a reference to order a new card and sometimes to verify the expiry date of the issued card if the card is not in use. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS"
           example: 2021-01-31T23:59:59.999
         OriginatingBranch:
           maxLength: 32
@@ -4677,7 +4688,7 @@ components:
           type: array
           description: Periodic details of a card recurring at regular intervals
           items:
-            $ref: '#/components/schemas/CardPeriodDataType'
+            $ref: "#/components/schemas/CardPeriodDataType"
         DocDistributionOption:
           maxLength: 80
           type: string
@@ -4712,7 +4723,7 @@ components:
           type: array
           description: Details of the accounts to be linked to a debit card.
           items:
-            $ref: '#/components/schemas/AcctLinkDataType'
+            $ref: "#/components/schemas/AcctLinkDataType"
       description: Detailed information about the card.
     CardRefType:
       title: CardRefType
@@ -4721,7 +4732,7 @@ components:
       type: object
       properties:
         CardKeys:
-          $ref: '#/components/schemas/CardKeysType'
+          $ref: "#/components/schemas/CardKeysType"
       description: Reference information of a card
     PartyCardRelInfoType:
       title: PartyCardRelInfoType
@@ -4731,9 +4742,9 @@ components:
       type: object
       properties:
         PartyRef:
-          $ref: '#/components/schemas/PartyRefType'
+          $ref: "#/components/schemas/PartyRefType"
         CardRef:
-          $ref: '#/components/schemas/CardRefType'
+          $ref: "#/components/schemas/CardRefType"
         PartyCardRelType:
           type: string
           description: |-
@@ -4749,7 +4760,7 @@ components:
               - Custodian
               - DoingBusinessAs
         PartyCardRelOrder:
-          $ref: '#/components/schemas/PartyAcctRelOrderType'
+          $ref: "#/components/schemas/PartyAcctRelOrderType"
         OwnerInd:
           type: boolean
           description: Flag to indicate the primary owner.
@@ -4767,14 +4778,14 @@ components:
           type: boolean
           description: Flag to indicate if the exceptions should be auto-acknowledged by the system. If this value is set to True, then any exception that can be overridden will be automatically acknowledged by the system and exceptions that cannot be overridden will be returned in the Status aggregate of the response message.
         OvrdExceptionData:
-          $ref: '#/components/schemas/OvrdExceptionDataType'
+          $ref: "#/components/schemas/OvrdExceptionDataType"
         PartyCardRelInfo:
           type: array
           description: Details of the parties and their relationship with the card.
           items:
-            $ref: '#/components/schemas/PartyCardRelInfoType'
+            $ref: "#/components/schemas/PartyCardRelInfoType"
         CardInfo:
-          $ref: '#/components/schemas/CardInfoType'
+          $ref: "#/components/schemas/CardInfoType"
     StatusType:
       title: StatusType
       required:
@@ -4793,7 +4804,7 @@ components:
           type: string
           description: EFX Standard Status code for the result of API response. Refer to the <a href="../docs?path=docs/response-codes.md" title="Click to open">Response Codes</a> section for more information.
         Severity:
-          $ref: '#/components/schemas/SeverityType'
+          $ref: "#/components/schemas/SeverityType"
         SvcProviderName:
           maxLength: 1024
           type: string
@@ -4816,7 +4827,7 @@ components:
           type: array
           description: Details of the additional status of the response message. This aggrigate can appear once for each additional status that the server is expected to provide.
           items:
-            $ref: '#/components/schemas/AdditionalStatusType'
+            $ref: "#/components/schemas/AdditionalStatusType"
       description: Details of the API response messages.
     StatusType1:
       title: Status Type for Error messages
@@ -4825,7 +4836,7 @@ components:
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
     CardStatusCodeType:
       title: CardStatusCodeType
       type: string
@@ -4842,11 +4853,11 @@ components:
       type: object
       properties:
         CardStatusCode:
-          $ref: '#/components/schemas/CardStatusCodeType'
+          $ref: "#/components/schemas/CardStatusCodeType"
         EffDt:
           pattern: ^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$
           type: string
-          description: 'Effective date and time when the card status is changed. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS'
+          description: "Effective date and time when the card status is changed. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS"
           example: 2021-01-31T23:59:59.999
       description: Details of the card status returned in the result of API call.
     CardStatusRecType:
@@ -4857,9 +4868,9 @@ components:
       type: object
       properties:
         CardKeys:
-          $ref: '#/components/schemas/CardStatusRecType_CardKeys'
+          $ref: "#/components/schemas/CardStatusRecType_CardKeys"
         CardStatus:
-          $ref: '#/components/schemas/CardStatusType'
+          $ref: "#/components/schemas/CardStatusType"
       description: Details of the card status record.
     CardAddRsType:
       title: CardAddRsType
@@ -4868,9 +4879,9 @@ components:
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
         CardStatusRec:
-          $ref: '#/components/schemas/CardStatusRecType'
+          $ref: "#/components/schemas/CardStatusRecType"
     CardDelRqType:
       title: CardDelRqType
       required:
@@ -4878,7 +4889,7 @@ components:
       type: object
       properties:
         CardKeys:
-          $ref: '#/components/schemas/CardKeysType'
+          $ref: "#/components/schemas/CardKeysType"
     CardDelRsType:
       title: CardDelRsType
       required:
@@ -4886,9 +4897,9 @@ components:
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
         CardStatusRec:
-          $ref: '#/components/schemas/CardStatusRecType'
+          $ref: "#/components/schemas/CardStatusRecType"
     CardSelType:
       title: CardSelType
       required:
@@ -4896,7 +4907,7 @@ components:
       type: object
       properties:
         CardKeys:
-          $ref: '#/components/schemas/CardKeysType'
+          $ref: "#/components/schemas/CardKeysType"
       description: Criteria to select the card record.
     CardInqRqType:
       title: CardInqRqType
@@ -4905,7 +4916,7 @@ components:
       type: object
       properties:
         CardSel:
-          $ref: '#/components/schemas/CardSelType'
+          $ref: "#/components/schemas/CardSelType"
     CardRecType:
       title: CardRecType
       required:
@@ -4915,11 +4926,11 @@ components:
       type: object
       properties:
         CardKeys:
-          $ref: '#/components/schemas/CardKeysType'
+          $ref: "#/components/schemas/CardKeysType"
         CardInfo:
-          $ref: '#/components/schemas/CardInfoType'
+          $ref: "#/components/schemas/CardInfoType"
         CardStatus:
-          $ref: '#/components/schemas/CardStatusType'
+          $ref: "#/components/schemas/CardStatusType"
     CardInqRsType:
       title: CardInqRsType
       required:
@@ -4927,12 +4938,12 @@ components:
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
         CardRec:
           type: array
           description: Details of the card record.
           items:
-            $ref: '#/components/schemas/CardRecType'
+            $ref: "#/components/schemas/CardRecType"
     PartyAcctRelDataType:
       title: PartyAcctRelDataType
       required:
@@ -4947,7 +4958,7 @@ components:
           type: string
           description: Party-to-Account Relationship Description.
         PartyAcctRelOrder:
-          $ref: '#/components/schemas/PartyAcctRelOrderType'
+          $ref: "#/components/schemas/PartyAcctRelOrderType"
         OwnershipType:
           type: string
           description: Ownership Type.
@@ -4987,7 +4998,7 @@ components:
           type: string
           description: Card Detail Status. Indicates the current status of the Card.
         CardCategory:
-          $ref: '#/components/schemas/CardCategoryType'
+          $ref: "#/components/schemas/CardCategoryType"
         OpenDt:
           type: string
           description: Open Date.
@@ -5005,12 +5016,12 @@ components:
           type: string
           description: Name that customer can assign to the objects for easy identification.
         PartyKeys:
-          $ref: '#/components/schemas/PartyKeysType'
+          $ref: "#/components/schemas/PartyKeysType"
         PartyAcctRelData:
           type: array
           description: Party Account Relation Data.
           items:
-            $ref: '#/components/schemas/PartyAcctRelDataType'
+            $ref: "#/components/schemas/PartyAcctRelDataType"
         ShortName:
           maxLength: 40
           type: string
@@ -5056,17 +5067,17 @@ components:
       type: object
       properties:
         CardKeys:
-          $ref: '#/components/schemas/CardKeysType'
+          $ref: "#/components/schemas/CardKeysType"
         PartyKeys:
-          $ref: '#/components/schemas/PartyKeysType'
+          $ref: "#/components/schemas/PartyKeysType"
         AcctKeys:
-          $ref: '#/components/schemas/AcctKeysType'
+          $ref: "#/components/schemas/AcctKeysType"
         Name:
           maxLength: 80
           type: string
           description: Name.
         PersonNameSel:
-          $ref: '#/components/schemas/PersonNameSelType'
+          $ref: "#/components/schemas/PersonNameSelType"
     CardListInqRqType:
       title: CardListInqRqType
       required:
@@ -5074,9 +5085,9 @@ components:
       type: object
       properties:
         RecCtrlIn:
-          $ref: '#/components/schemas/RecCtrlInType'
+          $ref: "#/components/schemas/RecCtrlInType"
         CardListSel:
-          $ref: '#/components/schemas/CardListSelType'
+          $ref: "#/components/schemas/CardListSelType"
     RecCtrlOutType:
       title: RecCtrlOutType
       required:
@@ -5108,11 +5119,11 @@ components:
       type: object
       properties:
         CardKeys:
-          $ref: '#/components/schemas/CardKeysType'
+          $ref: "#/components/schemas/CardKeysType"
         CardListInfo:
-          $ref: '#/components/schemas/CardListInfoType'
+          $ref: "#/components/schemas/CardListInfoType"
         CardStatus:
-          $ref: '#/components/schemas/CardStatusType'
+          $ref: "#/components/schemas/CardStatusType"
     CardListInqRsType:
       title: CardListInqRsType
       required:
@@ -5120,14 +5131,14 @@ components:
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
         RecCtrlOut:
-          $ref: '#/components/schemas/RecCtrlOutType'
+          $ref: "#/components/schemas/RecCtrlOutType"
         CardListRec:
           type: array
           description: Card List Record.
           items:
-            $ref: '#/components/schemas/CardListRecType'
+            $ref: "#/components/schemas/CardListRecType"
     CardModRqType:
       title: CardModRqType
       required:
@@ -5139,11 +5150,11 @@ components:
           type: boolean
           description: Flag to indicate if the exceptions should be auto-acknowledged by the system. If this value is set to True, then any exception that can be overridden will be automatically acknowledged by the system and exceptions that cannot be overridden will be returned in the Status aggregate of the response message.
         OvrdExceptionData:
-          $ref: '#/components/schemas/OvrdExceptionDataType'
+          $ref: "#/components/schemas/OvrdExceptionDataType"
         CardKeys:
-          $ref: '#/components/schemas/CardKeysType'
+          $ref: "#/components/schemas/CardKeysType"
         CardInfo:
-          $ref: '#/components/schemas/CardInfoType'
+          $ref: "#/components/schemas/CardInfoType"
     CardModRsType:
       title: CardModRsType
       required:
@@ -5151,21 +5162,21 @@ components:
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
         CardStatusRec:
-          $ref: '#/components/schemas/CardStatusRecType'
+          $ref: "#/components/schemas/CardStatusRecType"
     PostAddrType_TimeFrame:
       type: object
       properties:
         StartDt:
           pattern: ^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$
           type: string
-          description: 'Start date and time value. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS'
+          description: "Start date and time value. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS"
           example: 2021-01-31T23:59:59.999
         EndDt:
           pattern: ^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$
           type: string
-          description: 'End date and time value. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS'
+          description: "End date and time value. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS"
           example: 2021-01-31T23:59:59.999
       description: Details of the time frame when the address is active.
     CardStatusRecType_CardKeys:

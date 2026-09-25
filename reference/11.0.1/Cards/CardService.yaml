@@ -5,7 +5,7 @@ info:
   description: Card services provides administration in respect to creation, modification, inquiry, and deletion of any type of EFT cards used by the holders. It supports operations managing the credit, debit, prepaid and private label cards.
   contact:
     name: Tracy Dahle
-    email: Tracy.Dahle@fiserv.com
+    email: John.Doe@example.com
   version: 11.0.0
 servers:
   - url: http://swaggerhub.onefiserv.net/virts/Bank_Sol_Org/CardService/11.0.0

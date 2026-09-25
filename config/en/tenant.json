@@ -1,0 +1,114 @@
+{
+  "title": "Developer Studio Test",
+  "name": "DeveloperStudioTest",
+  "coastURL": "https://fiserv.coastdemo.com/share/66e9b55b18f16b65adf809cd?mode=link&zoom=90&layoutType=web|https://fiserv.coastdemo.com/share/66e9c03018f16b65adfa7b52?mode=link&zoom=90&layoutType=web",
+  "solution": ["financial-institutions", "merchants"],
+  "categories": [
+    {
+      "name": "businessTypes",
+      "value": "Business Types",
+      "subcategories": [
+        {
+          "name": "valueAddedServices",
+          "value": "Value Added Services"
+        }
+      ]
+    }
+  ],
+  "getStartedFilePath": "docs/get-started.md",
+  "apiVersions": [
+    {
+      "version": "12.0.0",
+      "versionType": "minor",
+      "releaseNotesPath": "/release-notes/release-notes-12.0.0.md",
+      "apiSpecFileNames": ["Transactions/transactions-accounts-fraud-services"]
+    },
+    {
+      "version": "11.0.3",
+      "versionType": "major",
+      "releaseNotesPath": "/release-notes/rn2_rajivtest.md",
+      "apiSpecFileNames": ["Cards/CardService"],
+      "groups": ["TEST_GROUP_MP"]
+    },
+    {
+      "version": "11.0.2",
+      "versionType": "minor",
+      "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
+      "apiSpecFileNames": ["new1-apis", "new2-apis"]
+    },
+    {
+      "version": "11.0.1",
+      "versionType": "minor",
+      "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
+      "apiSpecFileNames": [
+        "Cards/CardService",
+        "SmallExample",
+        "baas_v1.0.0",
+        "b2b_v1.0.0",
+        "b2b_v1.0.0_no-security-schemes",
+        "test"
+      ]
+    },
+    {
+      "version": "11.0.0",
+      "versionType": "minor",
+      "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
+      "apiSpecFileNames": ["Cards/CardService", "Payments/CreditService"]
+    },
+    {
+      "version": "backup",
+      "versionType": "minor",
+      "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
+      "apiSpecFileNames": ["api-1.0.0"]
+    },
+    {
+      "version": "param-test",
+      "versionType": "minor",
+      "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
+      "apiSpecFileNames": ["openapi"]
+    }
+  ],
+  "product": {
+    "featured": true,
+    "description": "Developer Studio is a product of Developer Studio where developers can come to the studio to develop like devs.",
+    "longDescription": "Welcome to Developer Studio Test Tenant. Download a copy of <a download href='assets/files/DeveloperStudioTest_spec.zip'>nyan cat</a> or even <a href='download/assets/images/cat-dog.png' download>a second copy</a>!<br><br><img src='assets/images/nyan.jpg' width='300' height='300'/><img src='assets/images/cat-dog.png' width='300' height='300'/>",
+    "apiSpecification": "/v1/apis/DeveloperStudioTest",
+    "layout": "/v1/layouts/DeveloperStudioTest",
+    "documentation": "/v1/docs/DeveloperStudioTest",
+    "documenttree": "/v1/docs/DeveloperStudioTest",
+    "documenttreeV2": "/v2/docs/DeveloperStudioTest",
+    "sandbox": "/v1/sandboxrun/DeveloperStudioTest",
+    "accessConfig": "/v1/fileAccess/DeveloperStudioTest",
+    "assets": "/v1/assets/DeveloperStudioTest",
+    "feature": [
+      {
+        "name": "sandBox",
+        "value": true
+      },
+      {
+        "name": "plugins",
+        "value": false
+      },
+      {
+        "name": "industryOptionsAPIExplorer",
+        "value": true
+      },
+      {
+        "name": "editParameterAPIExplorer",
+        "value": true
+      },
+      {
+        "name": "downloadPostman",
+        "value": false
+      },
+      {
+        "name": "enableRecipes",
+        "value": true
+      },
+      {
+        "name": "enableSDKs",
+        "value": true
+      }
+    ]
+  }
+}
