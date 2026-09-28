@@ -1,4 +1,4 @@
 {
-    "localizationSupported": true,
+    "localizationSupported": false,
     "supportedLocales": ["en", "es"]
 }
