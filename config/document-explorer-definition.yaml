@@ -24,6 +24,8 @@
       sections:
         - title: RN1
           link: docs/release-notes/rn1.mdx
+        - title: RN2
+          link: docs/release-notes/rn1.mdx
 
 #- sections:
 #    - title: Nyan dog
