@@ -100,3 +100,9 @@
           link: docs/getting-started/new-file-2.md
         - title: The Very Newest File
           link: docs/getting-started/new-file3.md
+
+- sections:
+    - title: tfds-9405
+      sections:
+        - title: New file test 1
+          link: docs/tfds-9405/new-file-test-1.md
