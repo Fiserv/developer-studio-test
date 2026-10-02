@@ -18,10 +18,10 @@
   "getStartedFilePath": "docs/get-started.md",
   "apiVersions": [
     {
-      "version": "12.0.0",
+      "version": "AUTOMATION.DO.NOT.DELETE",
       "versionType": "minor",
       "releaseNotesPath": "/release-notes/release-notes-12.0.0.md",
-      "apiSpecFileNames": ["Transactions/transactions-accounts-fraud-services"]
+      "apiSpecFileNames": ["automation-testing-api-file"]
     },
     {
       "version": "11.0.3",
