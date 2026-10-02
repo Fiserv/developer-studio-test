@@ -130,6 +130,15 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/FraudReport"
+        "400":
+          description: Invalid fraud report
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
       x-group-name: Fraud
       x-proxy-name: Report Fraud
 
