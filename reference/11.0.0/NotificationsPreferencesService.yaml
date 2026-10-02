@@ -5,78 +5,78 @@ info:
   description: Registration services to onboard users and preferences allowing them to receive transactional and security notifications in their email, SMS and push channels.
   contact:
     name: Todd Lupiani
-    email: todd.lupiani@fiserv.com
+    email: John.Doe@example.com
   version: 11.0.0
 servers:
-- url: //openbanking-uat-alerthub.apps.fog.onefiserv.net/
+  - url: //openbanking-uat-alerthub.apps.fog.onefiserv.net/
 paths:
   /openbanking/api/v{version}/history/{userId}:
     get:
       tags:
-      - History
+        - History
       summary: Get History.
       description: "Retrieves alert history of an enrolled user for a specified date range. Alert History record comprises of date/time, type of alert and the delivery end point the alert was sent. <br> <b>Note:</b> User refers to the customers enrolled by the financial institution for alerts service offered under Notifi. <br> For more information about the Notifications and Preferences domain <a href=\"../docs/?path=docs/fintechs/notifi.md\" title=\"Click to open\">click here.</a> <br> <b>Note:</b> API testing for this API is currently not available. However, you can still view the sample response payload by clicking the <b>Response Schema</b> tab below. <br><br> <i>This API is applicable only for the Notifi product provided by Fiserv</i> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/cash-mgt.md\">Cash Management</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/treasury-services.md\">Treasury Services</a></li>\n  </ul>"
       operationId: RetrieveHistory
       parameters:
-      - name: userId
-        in: path
-        description: Unique identification number of a user.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: integer
-          format: int64
-          example: 418555
-      - name: start
-        in: query
-        description: Start date and time range to retrieve the alert records delivered to a user.
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-          format: date-time
-          example: 2021-12-31T23:11:32.0643595Z
-      - name: end
-        in: query
-        description: End date and time range to retrieve the alert records delivered to a user.
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-          format: date-time
-          example: 2021-12-31T23:11:32.0643595Z
-      - name: version
-        in: path
-        description: Version of API.<br> The default version is 1.0
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: "1.0"
-          default: "1.0"
-      - name: Authorization
-        in: header
-        description: Access token to securely access the Notifi APIs. To generate the access token, refer to <a href="?type=post&path=/openbanking/api/v{version}/token" title="Click to open">Generate Token</a> API. <br><br> <b>Note:</b> Access token should be inserted in "Bearer<space>{access token value}" format.
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: Bearer eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiSm9lIENvZGVyIn0.5dlp7GmziL2QS06sZgK4mtaqv0_xX4oFUuTDh1zHK4U
+        - name: userId
+          in: path
+          description: Unique identification number of a user.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: integer
+            format: int64
+            example: 418555
+        - name: start
+          in: query
+          description: Start date and time range to retrieve the alert records delivered to a user.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            format: date-time
+            example: 2021-12-31T23:11:32.0643595Z
+        - name: end
+          in: query
+          description: End date and time range to retrieve the alert records delivered to a user.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            format: date-time
+            example: 2021-12-31T23:11:32.0643595Z
+        - name: version
+          in: path
+          description: Version of API.<br> The default version is 1.0
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            example: "1.0"
+            default: "1.0"
+        - name: Authorization
+          in: header
+          description: Access token to securely access the Notifi APIs. To generate the access token, refer to <a href="?type=post&path=/openbanking/api/v{version}/token" title="Click to open">Generate Token</a> API. <br><br> <b>Note:</b> Access token should be inserted in "Bearer<space>{access token value}" format.
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+            example: Bearer eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiSm9lIENvZGVyIn0.5dlp7GmziL2QS06sZgK4mtaqv0_xX4oFUuTDh1zHK4U
       responses:
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/History'
+                $ref: "#/components/schemas/History"
               examples:
                 Sample Banking:
-                  $ref: '#/components/examples/GetHistoryExampleRs'
+                  $ref: "#/components/examples/GetHistoryExampleRs"
         "400":
           description: Bad Request
         "401":
@@ -93,49 +93,49 @@ paths:
   /openbanking/api/v{version}/tenants/{organizationId}:
     get:
       tags:
-      - Tenants
+        - Tenants
       summary: Get Tenant.
       description: "Retrieves the details of tenant associated to an organization. Tenant represents the financial institution integrated with Notifi Alerts service.<br> For more information about the Notifications and Preferences domain <a href=\"../docs/?path=docs/fintechs/notifi.md\" title=\"Click to open\">click here.</a><br> <b>Note:</b> API testing for this API is currently not available. However, you can still view the sample response payload by clicking the <b>Response Schema</b> tab below. <br><br> <i>This API is applicable only for the Notifi product provided by Fiserv</i> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/cash-mgt.md\">Cash Management</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/treasury-services.md\">Treasury Services</a></li>\n  </ul>"
       operationId: RetrieveOrganization
       parameters:
-      - name: organizationId
-        in: path
-        description: Unique identification of the organization.<br><br> <b>Note:</b> Organization ID is provided once the client is onboarded to Notifi Alerts service.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: NewFz1888
-      - name: version
-        in: path
-        description: Version of API <br> The default version is 1.0
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: "1.0"
-          default: "1.0"
-      - name: Authorization
-        in: header
-        description: Access token to securely access the Notifi APIs. To generate the access token, refer to <a href="?type=post&path=/openbanking/api/v{version}/token" title="Click to open">Generate Token</a> API. <br><br> <b>Note:</b> Access token should be inserted in "Bearer<space>{access token value}" format.
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: Bearer eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiSm9lIENvZGVyIn0.5dlp7GmziL2QS06sZgK4mtaqv0_xX4oFUuTDh1zHK4U
+        - name: organizationId
+          in: path
+          description: Unique identification of the organization.<br><br> <b>Note:</b> Organization ID is provided once the client is onboarded to Notifi Alerts service.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            example: NewFz1888
+        - name: version
+          in: path
+          description: Version of API <br> The default version is 1.0
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            example: "1.0"
+            default: "1.0"
+        - name: Authorization
+          in: header
+          description: Access token to securely access the Notifi APIs. To generate the access token, refer to <a href="?type=post&path=/openbanking/api/v{version}/token" title="Click to open">Generate Token</a> API. <br><br> <b>Note:</b> Access token should be inserted in "Bearer<space>{access token value}" format.
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+            example: Bearer eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiSm9lIENvZGVyIn0.5dlp7GmziL2QS06sZgK4mtaqv0_xX4oFUuTDh1zHK4U
       responses:
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Tenant'
+                $ref: "#/components/schemas/Tenant"
               examples:
                 Sample Banking:
-                  $ref: '#/components/examples/GetTenantExampleRs'
+                  $ref: "#/components/examples/GetTenantExampleRs"
         "400":
           description: Bad Request
         "401":
@@ -152,58 +152,58 @@ paths:
   /openbanking/api/v{version}/token:
     post:
       tags:
-      - Token
+        - Token
       summary: Generate Token.
       description: "Generates a security token using client ID and secret for a scoped organization. Token is used to access the Notifi Alerts service. A generated token is valid for defined amount of time, token can be reused until it expires. The default token expiration time is set to 60 mins and can be changed. <br> Client ID, Organization ID and Client Secret key are provided when an organization is onboarded to Notifi Alerts service.<br> For more information about the Notifications and Preferences domain <a href=\"../docs/?path=docs/fintechs/notifi.md\" title=\"Click to open\">click here.</a> <br> <b>Note:</b> API testing for this API is currently not available. However, you can still view the sample response payload by clicking the <b>Response Schema</b> tab below. <br><br> <i>This API is applicable only for the Notifi product provided by Fiserv</i> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/cash-mgt.md\">Cash Management</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/treasury-services.md\">Treasury Services</a></li>\n  </ul>"
       operationId: GenerateToken
       parameters:
-      - name: clientId
-        in: query
-        description: Unique identification of a client for which a token is to be generated
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-          example: autoclientsuper
-      - name: clientSecret
-        in: query
-        description: Secret key provided after the client is onboarded
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-          example: s5d4s5d7gfs587sdf4sddsf4
-      - name: organizationId
-        in: query
-        description: Identifier of an organization to which the client belongs
-        required: false
-        style: form
-        explode: true
-        schema:
-          type: string
-          example: NewFz1888
-      - name: version
-        in: path
-        description: Version of API <br> The default version is 1.0
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: "1.0"
-          default: "1.0"
+        - name: clientId
+          in: query
+          description: Unique identification of a client for which a token is to be generated
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: autoclientsuper
+        - name: clientSecret
+          in: query
+          description: Secret key provided after the client is onboarded
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: s5d4s5d7gfs587sdf4sddsf4
+        - name: organizationId
+          in: query
+          description: Identifier of an organization to which the client belongs
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: NewFz1888
+        - name: version
+          in: path
+          description: Version of API <br> The default version is 1.0
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            example: "1.0"
+            default: "1.0"
       responses:
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Token'
+                $ref: "#/components/schemas/Token"
               examples:
                 Sample Banking:
-                  $ref: '#/components/examples/GetTokenExampleRs'
+                  $ref: "#/components/examples/GetTokenExampleRs"
         "400":
           description: Bad Request
         "401":
@@ -220,50 +220,50 @@ paths:
   /openbanking/api/v{version}/users/{userId}:
     get:
       tags:
-      - Users
+        - Users
       summary: Get User.
       description: "Retrieves the details of user enrolled with Notifi using the User ID. User refers to the customers enrolled by the financial institution for alerts service offered under Notifi. <br> For more information about the Notifications and Preferences domain, <a href=\"../docs/?path=docs/fintechs/notifi.md\" title=\"Click to open\">click here.</a> <br> <b>Note:</b> API testing for this API is currently not available. However, you can still view the sample response payload by clicking the <b>Response Schema</b> tab below. <br><br> <i>This API is applicable only for the Notifi product provided by Fiserv</i> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/cash-mgt.md\">Cash Management</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/treasury-services.md\">Treasury Services</a></li>\n  </ul>"
       operationId: RetrieveUser
       parameters:
-      - name: userId
-        in: path
-        description: Identifier number of the user enrolled with Notifi
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: integer
-          format: int64
-          example: 418385
-      - name: version
-        in: path
-        description: Version of API <br> The default version is 1.0
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: "1.0"
-          default: "1.0"
-      - name: Authorization
-        in: header
-        description: Access token to securely access the Notifi APIs. To generate the access token, refer to <a href="?type=post&path=/openbanking/api/v{version}/token" title="Click to open">Generate Token</a> API. <br><br> <b>Note:</b> Access token should be inserted in "Bearer<space>{access token value}" format.
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: Bearer eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiSm9lIENvZGVyIn0.5dlp7GmziL2QS06sZgK4mtaqv0_xX4oFUuTDh1zHK4U
+        - name: userId
+          in: path
+          description: Identifier number of the user enrolled with Notifi
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: integer
+            format: int64
+            example: 418385
+        - name: version
+          in: path
+          description: Version of API <br> The default version is 1.0
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            example: "1.0"
+            default: "1.0"
+        - name: Authorization
+          in: header
+          description: Access token to securely access the Notifi APIs. To generate the access token, refer to <a href="?type=post&path=/openbanking/api/v{version}/token" title="Click to open">Generate Token</a> API. <br><br> <b>Note:</b> Access token should be inserted in "Bearer<space>{access token value}" format.
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+            example: Bearer eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiSm9lIENvZGVyIn0.5dlp7GmziL2QS06sZgK4mtaqv0_xX4oFUuTDh1zHK4U
       responses:
         "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                $ref: "#/components/schemas/User"
               examples:
                 Sample Banking:
-                  $ref: '#/components/examples/GetUserExampleRs'
+                  $ref: "#/components/examples/GetUserExampleRs"
         "400":
           description: Bad Request
         "401":
@@ -279,49 +279,49 @@ paths:
       x-child-product-name: Notifications and Preferences
     put:
       tags:
-      - Users
+        - Users
       summary: Update User.
       description: "Modifies the details of a user enrolled with the Notifi Alert service. <br> <b>Notes:</b><br>\n  -  Fields which do not require modification should be omitted<br>\n  -  Delivery details of only SMS and Email endpoints can be modified<br>\n  -  New subscriptions can be added, and existing subscriptions can be modified<br>\n\nFor more information about the Notifications and Preferences domain <a href=\"../docs/?path=docs/fintechs/notifi.md\" title=\"Click to open\">click here.</a>  <br><br> <i>This API is applicable only for the Notifi product provided by Fiserv</i> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/cash-mgt.md\">Cash Management</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/treasury-services.md\">Treasury Services</a></li>\n  </ul>"
       operationId: UpdateUser
       parameters:
-      - name: userId
-        in: path
-        description: Identifier of user whose details are to be updated
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: integer
-          format: int64
-          example: 418385
-      - name: version
-        in: path
-        description: Version of API <br> The default version is 1.0
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: "1.0"
-          default: "1.0"
-      - name: Authorization
-        in: header
-        description: Access token to securely access the Notifi APIs. To generate the access token, refer to <a href="?type=post&path=/openbanking/api/v{version}/token" title="Click to open">Generate Token</a> API. <br><br> <b>Note:</b> Access token should be inserted in "Bearer<space>{access token value}" format.
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: Bearer eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiSm9lIENvZGVyIn0.5dlp7GmziL2QS06sZgK4mtaqv0_xX4oFUuTDh1zHK4U
+        - name: userId
+          in: path
+          description: Identifier of user whose details are to be updated
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: integer
+            format: int64
+            example: 418385
+        - name: version
+          in: path
+          description: Version of API <br> The default version is 1.0
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            example: "1.0"
+            default: "1.0"
+        - name: Authorization
+          in: header
+          description: Access token to securely access the Notifi APIs. To generate the access token, refer to <a href="?type=post&path=/openbanking/api/v{version}/token" title="Click to open">Generate Token</a> API. <br><br> <b>Note:</b> Access token should be inserted in "Bearer<space>{access token value}" format.
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+            example: Bearer eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiSm9lIENvZGVyIn0.5dlp7GmziL2QS06sZgK4mtaqv0_xX4oFUuTDh1zHK4U
       requestBody:
         description: The updated user enrollment data
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/User'
+              $ref: "#/components/schemas/User"
             examples:
               Sample Banking:
-                $ref: '#/components/examples/UpdateUserExampleRq'
+                $ref: "#/components/examples/UpdateUserExampleRq"
       responses:
         "200":
           description: Success
@@ -331,10 +331,10 @@ paths:
                 uniqueItems: false
                 type: array
                 items:
-                  $ref: '#/components/schemas/User'
+                  $ref: "#/components/schemas/User"
               examples:
                 Sample Banking:
-                  $ref: '#/components/examples/UpdateUserExampleRs'
+                  $ref: "#/components/examples/UpdateUserExampleRs"
         "400":
           description: Bad Request
         "401":
@@ -350,40 +350,40 @@ paths:
       x-child-product-name: Notifications and Preferences
     delete:
       tags:
-      - Users
+        - Users
       summary: Delete User.
       description: "Deletes a user record enrolled to Notifi API service. <br> For more information about the Notifications and Preferences domain <a href=\"../docs/?path=docs/fintechs/notifi.md\" title=\"Click to open\">click here.</a> <br> <b>Note:</b> API testing for this API is currently not available. However, you can still view the sample response payload by clicking the <b>Response Schema</b> tab below. <br><br> <i>This API is applicable only for the Notifi product provided by Fiserv</i> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/cash-mgt.md\">Cash Management</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/treasury-services.md\">Treasury Services</a></li>\n  </ul>"
       operationId: Delete
       parameters:
-      - name: userId
-        in: path
-        description: Identifier for user enrolled with Notifi Alerts service
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: integer
-          format: int64
-          example: 418379
-      - name: version
-        in: path
-        description: Version of API <br> The default version is 1.0
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: "1.0"
-          default: "1.0"
-      - name: Authorization
-        in: header
-        description: Access token to securely access the Notifi APIs. To generate the access token, refer to <a href="?type=post&path=/openbanking/api/v{version}/token" title="Click to open">Generate Token</a> API. <br><br> <b>Note:</b> Access token should be inserted in "Bearer<space>{access token value}" format.
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: Bearer eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiSm9lIENvZGVyIn0.5dlp7GmziL2QS06sZgK4mtaqv0_xX4oFUuTDh1zHK4U
+        - name: userId
+          in: path
+          description: Identifier for user enrolled with Notifi Alerts service
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: integer
+            format: int64
+            example: 418379
+        - name: version
+          in: path
+          description: Version of API <br> The default version is 1.0
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            example: "1.0"
+            default: "1.0"
+        - name: Authorization
+          in: header
+          description: Access token to securely access the Notifi APIs. To generate the access token, refer to <a href="?type=post&path=/openbanking/api/v{version}/token" title="Click to open">Generate Token</a> API. <br><br> <b>Note:</b> Access token should be inserted in "Bearer<space>{access token value}" format.
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+            example: Bearer eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiSm9lIENvZGVyIn0.5dlp7GmziL2QS06sZgK4mtaqv0_xX4oFUuTDh1zHK4U
       responses:
         "204":
           description: Success
@@ -403,39 +403,39 @@ paths:
   /openbanking/api/v{version}/users/search:
     post:
       tags:
-      - Users
+        - Users
       summary: Search User.
       description: "Retrieves a user record enrolled with the Notifi Alerts service using UserID and user properties. <br> For more information about the Notifications and Preferences domain <a href=\"../docs/?path=docs/fintechs/notifi.md\" title=\"Click to open\">click here.</a>  <br><br> <i>This API is applicable only for the Notifi product provided by Fiserv</i> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/cash-mgt.md\">Cash Management</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/treasury-services.md\">Treasury Services</a></li>\n  </ul>"
       operationId: SearchUser
       parameters:
-      - name: version
-        in: path
-        description: Version of API <br> The default version is 1.0
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: "1.0"
-          default: "1.0"
-      - name: Authorization
-        in: header
-        description: Access token to securely access the Notifi APIs. To generate the access token, refer to <a href="?type=post&path=/openbanking/api/v{version}/token" title="Click to open">Generate Token</a> API. <br><br> <b>Note:</b> Access token should be inserted in "Bearer<space>{access token value}" format.
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: Bearer eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiSm9lIENvZGVyIn0.5dlp7GmziL2QS06sZgK4mtaqv0_xX4oFUuTDh1zHK4U
+        - name: version
+          in: path
+          description: Version of API <br> The default version is 1.0
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            example: "1.0"
+            default: "1.0"
+        - name: Authorization
+          in: header
+          description: Access token to securely access the Notifi APIs. To generate the access token, refer to <a href="?type=post&path=/openbanking/api/v{version}/token" title="Click to open">Generate Token</a> API. <br><br> <b>Note:</b> Access token should be inserted in "Bearer<space>{access token value}" format.
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+            example: Bearer eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiSm9lIENvZGVyIn0.5dlp7GmziL2QS06sZgK4mtaqv0_xX4oFUuTDh1zHK4U
       requestBody:
         description: The user details to search by.
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/User'
+              $ref: "#/components/schemas/User"
             examples:
               Sample Banking:
-                $ref: '#/components/examples/SearchUserExampleRq'
+                $ref: "#/components/examples/SearchUserExampleRq"
       responses:
         "200":
           description: Success
@@ -445,10 +445,10 @@ paths:
                 uniqueItems: false
                 type: array
                 items:
-                  $ref: '#/components/schemas/User'
+                  $ref: "#/components/schemas/User"
               examples:
                 Sample Banking:
-                  $ref: '#/components/examples/SearchUserExampleRs'
+                  $ref: "#/components/examples/SearchUserExampleRs"
         "400":
           description: Bad Request
         "401":
@@ -465,39 +465,39 @@ paths:
   /openbanking/api/v{version}/users:
     post:
       tags:
-      - Users
+        - Users
       summary: Add User.
       description: "Creates a new user record to send the alerts. Endpoints can be configured during user enrollment which by default, will be in activated and enabled state.<br> For more information about the Notifications and Preferences domain <a href=\"../docs/?path=docs/fintechs/notifi.md\" title=\"Click to open\">click here.</a>  <br><br> <i>This API is applicable only for the Notifi product provided by Fiserv</i> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/cash-mgt.md\">Cash Management</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/treasury-services.md\">Treasury Services</a></li>\n  </ul>"
       operationId: CreateUser
       parameters:
-      - name: version
-        in: path
-        description: Version of API <br> The default version is 1.0
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: "1.0"
-          default: "1.0"
-      - name: Authorization
-        in: header
-        description: Access token to securely access the Notifi APIs. To generate the access token, refer to <a href="?type=post&path=/openbanking/api/v{version}/token" title="Click to open">Generate Token</a> API. <br><br> <b>Note:</b> Access token should be inserted in "Bearer {access token value}" format.
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-          example: Bearer eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiSm9lIENvZGVyIn0.5dlp7GmziL2QS06sZgK4mtaqv0_xX4oFUuTDh1zHK4U
+        - name: version
+          in: path
+          description: Version of API <br> The default version is 1.0
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            example: "1.0"
+            default: "1.0"
+        - name: Authorization
+          in: header
+          description: Access token to securely access the Notifi APIs. To generate the access token, refer to <a href="?type=post&path=/openbanking/api/v{version}/token" title="Click to open">Generate Token</a> API. <br><br> <b>Note:</b> Access token should be inserted in "Bearer {access token value}" format.
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+            example: Bearer eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiSm9lIENvZGVyIn0.5dlp7GmziL2QS06sZgK4mtaqv0_xX4oFUuTDh1zHK4U
       requestBody:
         description: The user to be enrolled.
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/User'
+              $ref: "#/components/schemas/User"
             examples:
               Sample Banking:
-                $ref: '#/components/examples/CreateUserExampleRq'
+                $ref: "#/components/examples/CreateUserExampleRq"
       responses:
         "201":
           description: Success
@@ -507,10 +507,10 @@ paths:
                 uniqueItems: false
                 type: array
                 items:
-                  $ref: '#/components/schemas/User'
+                  $ref: "#/components/schemas/User"
               examples:
                 Sample Banking:
-                  $ref: '#/components/examples/CreateUserExampleRs'
+                  $ref: "#/components/examples/CreateUserExampleRs"
         "400":
           description: Bad Request
         "401":
@@ -534,7 +534,7 @@ components:
           type: array
           description: List of alerts delivered to a user
           items:
-            $ref: '#/components/schemas/Alert'
+            $ref: "#/components/schemas/Alert"
       description: History of alerts delivered to a user for the requested date range
     Alert:
       type: object
@@ -589,7 +589,7 @@ components:
           type: string
           description: Phone number to which the alert is delivered
         device:
-          $ref: '#/components/schemas/Device'
+          $ref: "#/components/schemas/Device"
         message:
           type: string
           description: Message delivered to the user in an alert. <br> <b>Note:</b> If endpoint is set to Email, then message is delivered in HTML format.
@@ -640,7 +640,7 @@ components:
           example: Tenant FI
         timeZone:
           type: string
-          description: 'Time zone of the tenant. '
+          description: "Time zone of the tenant. "
           example: Eastern Standard Time
         shortCode:
           type: string
@@ -666,13 +666,13 @@ components:
           type: array
           description: Type of alerts associated with the tenant <br> <b>Note:</b> Alert Types is configured to the tenant at the time of onboarding.
           items:
-            $ref: '#/components/schemas/AlertType'
+            $ref: "#/components/schemas/AlertType"
         endpointTypes:
           uniqueItems: false
           type: array
           description: Type of endpoints associated with the tenant
           items:
-            $ref: '#/components/schemas/EndpointType'
+            $ref: "#/components/schemas/EndpointType"
       description: Details of tenant integrated with the Notifi Alerts service
     AlertType:
       type: object
@@ -706,7 +706,7 @@ components:
           type: array
           description: Type of endpoints associated with the tenant
           items:
-            $ref: '#/components/schemas/EndpointType'
+            $ref: "#/components/schemas/EndpointType"
     EndpointType:
       type: object
       properties:
@@ -792,13 +792,13 @@ components:
           type: array
           description: Endpoints activated for a user to receive alerts
           items:
-            $ref: '#/components/schemas/Endpoint'
+            $ref: "#/components/schemas/Endpoint"
         subscriptions:
           uniqueItems: false
           type: array
           description: Subscription details associated with the user
           items:
-            $ref: '#/components/schemas/Subscription'
+            $ref: "#/components/schemas/Subscription"
       description: Details of the user enrolled in Notifi
     Endpoint:
       type: object
@@ -831,7 +831,7 @@ components:
           type: string
           description: Regional location of the phone number
         device:
-          $ref: '#/components/schemas/Device'
+          $ref: "#/components/schemas/Device"
         enabled:
           type: boolean
           description: Flag to indicate whether the endpoint is enabled.
@@ -882,7 +882,7 @@ components:
           type: array
           description: Unique identifiers of endpoints associated to the subscription <br> <b>Note:</b> Only activated endpoints are added to a subscription and every subscription should have at least one activated endpoint.
           example:
-          - 270147
+            - 270147
           items:
             type: integer
             format: int64
@@ -891,19 +891,19 @@ components:
     GetHistoryExampleRs:
       value:
         alerts:
-        - userId: 418379
-          subscriptionId: 800922
-          tenantId: 11991
-          organizationId: EventPublisher1808
-          payloadId: 65297c51-d061-4956-b742-6db6c91fa873
-          alertType: ABOVEBALTHRESH
-          description: Auto Test
-          timeZone: Eastern Standard Time
-          endpointType: Email
-          emailAddress: shurong.manning@fiserv.com
-          message: Transaction Date Nov/19/2021. Transaction Amount. Your account 0501 balance recently exceeded the threshold you set of $10.00. Your balance on Nov 19, 2021 is $1,500.00 Thank you for your business! Sincerely, Your FiservTeam
-          deliveredDate: 2021-11-19T10:20:41.991+0000
-          deliveryStatus: Success
+          - userId: 418379
+            subscriptionId: 800922
+            tenantId: 11991
+            organizationId: EventPublisher1808
+            payloadId: 65297c51-d061-4956-b742-6db6c91fa873
+            alertType: ABOVEBALTHRESH
+            description: Auto Test
+            timeZone: Eastern Standard Time
+            endpointType: Email
+            emailAddress: John.Doe@example.com
+            message: Transaction Date Nov/19/2021. Transaction Amount. Your account 0501 balance recently exceeded the threshold you set of $10.00. Your balance on Nov 19, 2021 is $1,500.00 Thank you for your business! Sincerely, Your FiservTeam
+            deliveredDate: 2021-11-19T10:20:41.991+0000
+            deliveryStatus: Success
     GetTenantExampleRs:
       value:
         tenantId: 39
@@ -912,17 +912,26 @@ components:
         timeZone: Eastern Standard Time
         shortCode: "80248"
         internationalShortCode: "447537431347"
-        emailFrom: notifitestAPI@fiserv.com
+        emailFrom: John.Doe@example.com
         activationCodeDurationInMinutes: 60
         enabled: true
         alertTypes:
-        - name: BELOWBALTHRESH
-          description: Auto Test
-          category: Balance
-          accountLevel: true
-          thresholdNeeded: true
-          enabled: true
-          endpointTypes:
+          - name: BELOWBALTHRESH
+            description: Auto Test
+            category: Balance
+            accountLevel: true
+            thresholdNeeded: true
+            enabled: true
+            endpointTypes:
+              - name: Email
+                enabled: true
+              - name: SMS
+                enabled: true
+              - name: Push
+                enabled: true
+              - name: SecuredInbox
+                enabled: true
+        endpointTypes:
           - name: Email
             enabled: true
           - name: SMS
@@ -931,15 +940,6 @@ components:
             enabled: true
           - name: SecuredInbox
             enabled: true
-        endpointTypes:
-        - name: Email
-          enabled: true
-        - name: SMS
-          enabled: true
-        - name: Push
-          enabled: true
-        - name: SecuredInbox
-          enabled: true
     GetTokenExampleRs:
       value:
         clientId: autoclientsuper
@@ -971,53 +971,53 @@ components:
         timeZone: Eastern Standard Time
         enabled: true
         endpoints:
-        - endpointId: 270147
-          userId: 418386
-          endpointType: Email
-          emailAddress: shurong.manning@fiserv.com
-          enabled: true
-          activated: true
-          registered: true
-          deleted: false
+          - endpointId: 270147
+            userId: 418386
+            endpointType: Email
+            emailAddress: John.Doe@example.com
+            enabled: true
+            activated: true
+            registered: true
+            deleted: false
         subscriptions:
-        - subscriptionId: 0
-          userId: 418386
-          alertType: FEES
-          accountNumber: "12345"
-          accountType: DDA
-          threshold: "10"
-          enabled: true
-          deleted: false
-          endpoints:
-          - 270147
+          - subscriptionId: 0
+            userId: 418386
+            alertType: FEES
+            accountNumber: "12345"
+            accountType: DDA
+            threshold: "10"
+            enabled: true
+            deleted: false
+            endpoints:
+              - 270147
     UpdateUserExampleRs:
       value:
-      - userId: 418386
-        tenantId: 39
-        organizationId: OrgAllTypes
-        bankingUserId: anythinggoes
-        eventUserId: anythinggoes1
-        relationship: Retail
-        timeZone: Eastern Standard Time
-        enabled: true
-        endpoints:
-        - endpointId: 270147
-          userId: 418386
-          endpointType: Email
-          emailAddress: shurong.manning@fiserv.com
-          enabled: true
-          activated: true
-          registered: true
-        subscriptions:
-        - subscriptionId: 800923
-          userId: 418386
-          alertType: FEES
-          accountNumber: "12345"
-          accountType: DDA
-          threshold: "10"
+        - userId: 418386
+          tenantId: 39
+          organizationId: OrgAllTypes
+          bankingUserId: anythinggoes
+          eventUserId: anythinggoes1
+          relationship: Retail
+          timeZone: Eastern Standard Time
           enabled: true
           endpoints:
-          - 270147
+            - endpointId: 270147
+              userId: 418386
+              endpointType: Email
+              emailAddress: John.Doe@example.com
+              enabled: true
+              activated: true
+              registered: true
+          subscriptions:
+            - subscriptionId: 800923
+              userId: 418386
+              alertType: FEES
+              accountNumber: "12345"
+              accountType: DDA
+              threshold: "10"
+              enabled: true
+              endpoints:
+                - 270147
     SearchUserExampleRq:
       value:
         userId: 418380
@@ -1032,26 +1032,26 @@ components:
         subscriptions: []
     SearchUserExampleRs:
       value:
-      - userId: 418555
-        tenantId: 39
-        organizationId: OrgAllTypes
-        bankingUserId: anythinggoes
-        eventUserId: anythinggoes1
-        relationship: Retail
-        timeZone: Eastern Standard Time
-        enabled: true
-        endpoints: []
-        subscriptions: []
-      - userId: 418555
-        tenantId: 39
-        organizationId: OrgAllTypes
-        bankingUserId: anythinggoes
-        eventUserId: anythinggoes1
-        relationship: Retail
-        timeZone: Eastern Standard Time
-        enabled: true
-        endpoints: []
-        subscriptions: []
+        - userId: 418555
+          tenantId: 39
+          organizationId: OrgAllTypes
+          bankingUserId: anythinggoes
+          eventUserId: anythinggoes1
+          relationship: Retail
+          timeZone: Eastern Standard Time
+          enabled: true
+          endpoints: []
+          subscriptions: []
+        - userId: 418555
+          tenantId: 39
+          organizationId: OrgAllTypes
+          bankingUserId: anythinggoes
+          eventUserId: anythinggoes1
+          relationship: Retail
+          timeZone: Eastern Standard Time
+          enabled: true
+          endpoints: []
+          subscriptions: []
     CreateUserExampleRq:
       value:
         userId: 0
@@ -1063,31 +1063,31 @@ components:
         timeZone: Eastern Standard Time
         enabled: true
         endpoints:
-        - endpointId: 0
-          userId: 0
-          endpointType: Email
-          emailAddress: shurong.manning@fiserv.com
-          enabled: true
-          activated: true
-          registered: false
-          deleted: false
+          - endpointId: 0
+            userId: 0
+            endpointType: Email
+            emailAddress: John.Doe@example.com
+            enabled: true
+            activated: true
+            registered: false
+            deleted: false
         subscriptions: []
     CreateUserExampleRs:
       value:
-      - userId: 418381
-        tenantId: 39
-        organizationId: OrgAllTypes
-        bankingUserId: anythinggoes
-        eventUserId: anythinggoes1
-        relationship: Retail
-        timeZone: Eastern Standard Time
-        enabled: true
-        endpoints:
-        - endpointId: 277265
-          userId: 418555
-          endpointType: Email
-          emailAddress: shurong.manning@fiserv.com
+        - userId: 418381
+          tenantId: 39
+          organizationId: OrgAllTypes
+          bankingUserId: anythinggoes
+          eventUserId: anythinggoes1
+          relationship: Retail
+          timeZone: Eastern Standard Time
           enabled: true
-          activated: true
-          registered: true
-        subscriptions: []
+          endpoints:
+            - endpointId: 277265
+              userId: 418555
+              endpointType: Email
+              emailAddress: John.Doe@example.com
+              enabled: true
+              activated: true
+              registered: true
+          subscriptions: []

@@ -1,0 +1,78 @@
+openapi: 3.0.3
+
+info:
+  title: Sample API
+  version: 1.0.0
+
+paths:
+  /api/parameter/{parameterId}:
+    get:
+      summary: API with parameter
+      parameters:
+        - name: parameterId
+          in: path
+          required: true
+          description: 'Parameter Id'
+          schema:
+            type: string
+            example: "12345"
+        - name: parameter-level-example
+          in: header
+          required: true
+
+          # Parameter-level example
+          example: "parameter-level example"
+
+          schema:
+            type: string
+
+            # Schema-level example
+            # example: "67890"
+
+            # Default value (allowed in the schema)
+            # default: "00000"
+        - name: schema-level-example
+          in: header
+          required: true
+
+          # Parameter-level example
+          # example: "12345"
+
+          schema:
+            type: string
+
+            # Schema-level example
+            example: "schema-level example"
+
+            # Default value (allowed in the schema)
+            # default: "00000"
+        - name: default-value
+          in: header
+          required: true
+
+          # Parameter-level example
+          # example: "12345"
+
+          schema:
+            type: string
+
+            # Schema-level example
+            # example: "schema-level example"
+
+            # Default value (allowed in the schema)
+            default: "default value"
+
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  parameterId:
+                    type: string
+                    example: "1234567"
+      x-proxy-name: Parameters
+      x-group-name: Test Parameters
+

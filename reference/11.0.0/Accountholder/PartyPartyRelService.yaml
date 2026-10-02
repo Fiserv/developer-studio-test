@@ -3,13 +3,13 @@ info:
   title: Party Parties Service
   description: >-
     The Party-to-Party Relationship service supports operations that manage information related to the existence and nature of relationship between two parties.<br>
-    
+
     It supports adding, modifying, and deleting party-to-party relationship and provide an option to return a subset of party information. It also gives an option to manage relationship properties such as relationship type and establishment date.<br>
-    
+
     Party refers to a person or organization, who has a relationship with the financial institution.
-  contact: 
+  contact:
     name: Kavita Kulkarni
-    email: Kavita.Kulkarni@Fiserv.com
+    email: John.Doe@example.com
   version: "11.0.0"
 paths:
   # /partyparties:
@@ -24,7 +24,7 @@ paths:
   #       in: header
   #       description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open">click here.</a>
   #       required: true
-  #       schema:    
+  #       schema:
   #         $ref: '#/components/schemas/EFXHeader'
   #     requestBody:
   #       content:
@@ -43,7 +43,7 @@ paths:
   #         description: Unauthorized
   #         content:
   #           application/json:
-  #             schema: 
+  #             schema:
   #               $ref: "#/components/schemas/PartyPartyRelAddRsType"
   #             examples:
   #               401:
@@ -52,7 +52,7 @@ paths:
   #         description: Un-processable Entity
   #         content:
   #           application/json:
-  #             schema: 
+  #             schema:
   #               $ref: "#/components/schemas/PartyPartyRelAddRsType"
   #             examples:
   #               422:
@@ -61,7 +61,7 @@ paths:
   #         description: Internal Server Error
   #         content:
   #           application/json:
-  #             schema: 
+  #             schema:
   #               $ref: "#/components/schemas/PartyPartyRelAddRsType"
   #             examples:
   #               500:
@@ -70,16 +70,16 @@ paths:
   #         description: Service Unavailable
   #         content:
   #           application/json:
-  #             schema: 
+  #             schema:
   #               $ref: "#/components/schemas/PartyPartyRelAddRsType"
   #             examples:
   #               503:
   #                 $ref: "#/components/examples/503-Premier"
-  #       default: 
+  #       default:
   #         description: "Unexpected error"
   #         content:
   #           application/json:
-  #             schema: 
+  #             schema:
   #               $ref: "#/components/schemas/PartyPartyRelAddRsType"
   /partyparties/secured:
     post:
@@ -102,37 +102,37 @@ paths:
             <li><a href="../docs/?path=docs/banks-and-CU/riskMgt.md" title="Click to open">Risk and Performance Management</a></li>
           </ul>
       parameters:
-      - name: EFXHeader
-        in: header
-        description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open">click here.</a>
-        required: true
-        schema:    
-          $ref: '#/components/schemas/EFXHeader'
+        - name: EFXHeader
+          in: header
+          description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open">click here.</a>
+          required: true
+          schema:
+            $ref: "#/components/schemas/EFXHeader"
       requestBody:
         content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PartyPartyRelInqRqType'
-              examples:
-                Sample Banking:
-                  $ref: '#/components/examples/PremierPartyPartyRelInqRequest'
-        required: true      
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PartyPartyRelInqRqType"
+            examples:
+              Sample Banking:
+                $ref: "#/components/examples/PremierPartyPartyRelInqRequest"
+        required: true
       responses:
         "200":
           description: Ok
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PartyPartyRelInqRsType'
+                $ref: "#/components/schemas/PartyPartyRelInqRsType"
               examples:
                 Sample Banking:
-                  $ref: '#/components/examples/PremierPartyPartyRelInqResponse'
+                  $ref: "#/components/examples/PremierPartyPartyRelInqResponse"
         "401":
           description: Unauthorized
           content:
             application/json:
-              schema: 
-                $ref: '#/components/schemas/StatusType1'
+              schema:
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 401:
                   $ref: "#/components/examples/401-Premier"
@@ -140,8 +140,8 @@ paths:
           description: Un-processable Entity
           content:
             application/json:
-              schema: 
-                $ref: '#/components/schemas/StatusType1'
+              schema:
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 422:
                   $ref: "#/components/examples/422-Premier"
@@ -149,8 +149,8 @@ paths:
           description: Internal Server Error
           content:
             application/json:
-              schema: 
-                $ref: '#/components/schemas/StatusType1'
+              schema:
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 500:
                   $ref: "#/components/examples/500-Premier"
@@ -158,16 +158,16 @@ paths:
           description: Service Unavailable
           content:
             application/json:
-              schema: 
-                $ref: '#/components/schemas/StatusType1'
+              schema:
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 503:
                   $ref: "#/components/examples/503-Premier"
-        default: 
+        default:
           description: "Unexpected error"
           content:
             application/json:
-              schema: 
+              schema:
                 $ref: "#/components/schemas/PartyPartyRelInqRsType"
     # put:
     #   tags:
@@ -180,14 +180,14 @@ paths:
     #     in: header
     #     description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open">click here.</a>
     #     required: true
-    #     schema:    
+    #     schema:
     #       $ref: '#/components/schemas/EFXHeader'
     #   requestBody:
     #     content:
     #         application/json:
     #           schema:
     #             $ref: '#/components/schemas/PartyPartyRelDelRqType'
-    #     required: true      
+    #     required: true
     #   responses:
     #     "200":
     #       description: Ok
@@ -199,7 +199,7 @@ paths:
     #       description: Unauthorized
     #       content:
     #         application/json:
-    #           schema: 
+    #           schema:
     #             $ref: "#/components/schemas/PartyPartyRelDelRsType"
     #           examples:
     #             401:
@@ -208,7 +208,7 @@ paths:
     #       description: Un-processable Entity
     #       content:
     #         application/json:
-    #           schema: 
+    #           schema:
     #             $ref: "#/components/schemas/PartyPartyRelDelRsType"
     #           examples:
     #             422:
@@ -217,7 +217,7 @@ paths:
     #       description: Internal Server Error
     #       content:
     #         application/json:
-    #           schema: 
+    #           schema:
     #             $ref: "#/components/schemas/PartyPartyRelDelRsType"
     #           examples:
     #             500:
@@ -226,21 +226,20 @@ paths:
     #       description: Service Unavailable
     #       content:
     #         application/json:
-    #           schema: 
+    #           schema:
     #             $ref: "#/components/schemas/PartyPartyRelDelRsType"
     #           examples:
     #             503:
     #               $ref: "#/components/examples/503-Premier"
-    #     default: 
+    #     default:
     #       description: "Unexpected error"
     #       content:
     #         application/json:
-    #           schema: 
+    #           schema:
     #             $ref: "#/components/schemas/PartyPartyRelDelRsType"
 
 components:
   schemas:
-        
     EFXHeader:
       type: string
       example: '{ "TrnId": "f262cfa4-9da4-4a10-b48c-2e947ce3e66c", "OrganizationId": "PRMOrg10", "VendorId": "112233", "Context":{ "Channel": "WEB" } }'
@@ -255,10 +254,10 @@ components:
         VendorId:
           type: string
           description: >-
-              An identifier, supplied by Fiserv, that represents the vendor using  this API service. 
+            An identifier, supplied by Fiserv, that represents the vendor using  this API service.
         Context:
-          $ref: '#/components/schemas/Context'
-           
+          $ref: "#/components/schemas/Context"
+
     Context:
       type: object
       properties:
@@ -277,7 +276,7 @@ components:
             making the service request.
           type: string
           pattern: '^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$'
-          #  format: date-time 
+          #  format: date-time
         ClientTerminalSeqNum:
           description: >-
             Also known as Trace Number or Sequence in some systems. Used to
@@ -326,7 +325,7 @@ components:
           type: string
           maxLength: 32
         TerminalStateProv:
-          description: 'State Province. ISO 3166-2:US codes.'
+          description: "State Province. ISO 3166-2:US codes."
           type: string
           maxLength: 32
         TerminalPostalCode:
@@ -334,7 +333,7 @@ components:
           type: string
           maxLength: 11
         TerminalCountryCodeSource:
-          description: 'Country code source.ISO3166-Numeric, ISO3166-Alpha-3'
+          description: "Country code source.ISO3166-Numeric, ISO3166-Alpha-3"
           type: string
           enum:
             - ISO3166Numeric
@@ -392,7 +391,7 @@ components:
           type: string
           maxLength: 36
         AcquirerCountryCodeSource:
-          description: 'Country code source.ISO3166-Numeric, ISO3166-Alpha-3'
+          description: "Country code source.ISO3166-Numeric, ISO3166-Alpha-3"
           type: string
           enum:
             - US
@@ -445,7 +444,7 @@ components:
         - Label
         - Parsed
       type: string
-      description: ''
+      description: ""
     AddrTypeType:
       title: AddrTypeType
       enum:
@@ -456,7 +455,7 @@ components:
         - Previous
         - Physical
       type: string
-      description: ''
+      description: ""
     DayOfMonthType:
       title: DayOfMonthType
       enum:
@@ -492,7 +491,7 @@ components:
         - 30
         - 31
       type: integer
-      description: ''
+      description: ""
       example: 1
     DayOfWeekType:
       title: DayOfWeekType
@@ -505,7 +504,7 @@ components:
         - Saturday
         - Sunday
       type: string
-      description: ''
+      description: ""
     HandlingCodeOptionType:
       title: HandlingCodeOptionType
       enum:
@@ -520,7 +519,7 @@ components:
         - UsePortfolio
         - UseDefault
       type: string
-      description: ''
+      description: ""
     NameFormatType:
       title: NameFormatType
       enum:
@@ -534,7 +533,7 @@ components:
         - PrintedSeasonalOnly
         - PrintedAddressOnly
       type: string
-      description: ''
+      description: ""
     NameTypeType:
       title: NameTypeType
       enum:
@@ -559,7 +558,7 @@ components:
         - OrgNum
         - PersonNum
       type: string
-      description: ''
+      description: ""
     PartyPartyRelStatusCodeType:
       title: PartyPartyRelStatusCodeType
       enum:
@@ -569,7 +568,7 @@ components:
       description: >-
         Relationship status code.<br>
           Valid value is:
-          - Valid 
+          - Valid
     RelationshipRoleType:
       title: RelationshipRoleType
       enum:
@@ -579,7 +578,7 @@ components:
         - FourthOfficer
         - ReferralOfficer
       type: string
-      description: ''
+      description: ""
     SeverityType:
       title: SeverityType
       enum:
@@ -587,7 +586,7 @@ components:
         - Warning
         - Info
       type: string
-      description: ''
+      description: ""
     TaxIdentTypeType:
       title: TaxIdentTypeType
       enum:
@@ -599,7 +598,7 @@ components:
         - ATIN
         - Other
       type: string
-      description: ''
+      description: ""
     SubjectElementType:
       title: SubjectElementType
       type: object
@@ -629,7 +628,7 @@ components:
             error. This field is intended to provide a human readable visual
             hint as to the value in error. It should not be provided for fields
             that cannot be represented as a string (i.e., binary data).
-      description: ''
+      description: ""
     AdditionalStatusType:
       title: AdditionalStatusType
       type: object
@@ -637,15 +636,13 @@ components:
         StatusCode:
           maxLength: 20
           type: string
-          description: 
-            EFX Standard Status code for the result of API response. Refer to the <a href="../docs?path=docs/response-codes.md" title="Click to open">Response Codes</a> section to view the list of all possible status codes.
+          description: EFX Standard Status code for the result of API response. Refer to the <a href="../docs?path=docs/response-codes.md" title="Click to open">Response Codes</a> section to view the list of all possible status codes.
         StatusDesc:
           maxLength: 255
           type: string
-          description: 
-            Brief information about the EFX status code. Refer to the <a href="../docs?path=docs/response-codes.md" title="Click to open">Response Codes</a> for more information.
+          description: Brief information about the EFX status code. Refer to the <a href="../docs?path=docs/response-codes.md" title="Click to open">Response Codes</a> for more information.
         Severity:
-          $ref: '#/components/schemas/SeverityType'
+          $ref: "#/components/schemas/SeverityType"
         SvcProviderName:
           maxLength: 1024
           type: string
@@ -674,13 +671,13 @@ components:
         SubjectElement:
           type: array
           items:
-            $ref: '#/components/schemas/SubjectElementType'
+            $ref: "#/components/schemas/SubjectElementType"
           description: >-
             Subject Element aggregate provides information about which elements
             caused the status. The aggregate is repeating to allow for a
             relationship between one or more elements if the combination causes
             the status code.
-      description: ''
+      description: ""
     AddrDefinedDataType:
       title: AddrDefinedDataType
       required:
@@ -699,15 +696,15 @@ components:
             error. This field is intended to provide a human readable visual
             hint as to the value in error. It should not be provided for fields
             that cannot be represented as a string (i.e., binary data).
-      description: ''
+      description: ""
     BaseKeysType:
       title: BaseKeysType
       type: string
-      description: ''
+      description: ""
     LocatorType:
       title: LocatorType
       type: string
-      description: ''
+      description: ""
     CountryCodeType:
       title: CountryCodeType
       required:
@@ -729,11 +726,11 @@ components:
           maxLength: 80
           type: string
           description: Country Code Value Enumeration Description.
-      description: ''
+      description: ""
     PhoneNumType:
       title: PhoneNumType
       allOf:
-        - $ref: '#/components/schemas/LocatorType'
+        - $ref: "#/components/schemas/LocatorType"
         - required:
             - PhoneType
           type: object
@@ -770,13 +767,13 @@ components:
               type: string
               description: Phone Description.
             CountryCode:
-              $ref: '#/components/schemas/CountryCodeType'
+              $ref: "#/components/schemas/CountryCodeType"
             UpDt:
               type: string
               pattern: '^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$'
-              #  format: date-time 
+              #  format: date-time
               description: Update Date.
-      description: ''
+      description: ""
     RelationshipMgrType:
       title: RelationshipMgrType
       required:
@@ -794,12 +791,12 @@ components:
           type: string
           description: Relationship Manager Identifier Enumeration Description.
         RelationshipRole:
-          $ref: '#/components/schemas/RelationshipRoleType'
+          $ref: "#/components/schemas/RelationshipRoleType"
         RelationshipRoleEnumDesc:
           maxLength: 80
           type: string
           description: Relationship Role Enumeration Description.
-      description: ''
+      description: ""
     LabelAddrType:
       title: LabelAddrType
       type: object
@@ -828,20 +825,20 @@ components:
           maxLength: 64
           type: string
           description: Address Line 6.
-      description: ''
+      description: ""
     StartDayMonthType:
       title: StartDayMonthType
       type: object
       properties:
         DayOfMonth:
-          $ref: '#/components/schemas/DayOfMonthType'
+          $ref: "#/components/schemas/DayOfMonthType"
         Month:
           type: integer
           description: >-
             Month. Numeric value representing the month of recurrence. Valid
             values: integers between 1 and 12 inclusive.
           format: int64
-      description: ''
+      description: ""
     DurationType:
       title: DurationType
       type: object
@@ -859,7 +856,7 @@ components:
           maxLength: 80
           type: string
           description: Unit Enumeration Description.
-      description: ''
+      description: ""
     RecurRuleType:
       title: RecurRuleType
       type: object
@@ -890,11 +887,11 @@ components:
             month, First Monday of the year. DayOfWeek must also be provided.
           format: int64
         DayOfWeek:
-          $ref: '#/components/schemas/DayOfWeekType'
+          $ref: "#/components/schemas/DayOfWeekType"
         DayOfMonth:
-          $ref: '#/components/schemas/DayOfMonthType'
+          $ref: "#/components/schemas/DayOfMonthType"
         SecondDayOfMonth:
-          $ref: '#/components/schemas/DayOfMonthType'
+          $ref: "#/components/schemas/DayOfMonthType"
         Month:
           type: integer
           description: >-
@@ -930,7 +927,7 @@ components:
             Adjustment Days Basis. Used in combination with Adjustment Days
             (AdjDays). It indicates a basis for an adjustment such as: Due Date
             (DueDt), Statement Date (StmtDt).
-      description: ''
+      description: ""
     TimeFrameType:
       title: TimeFrameType
       type: object
@@ -938,29 +935,29 @@ components:
         StartDt:
           type: string
           pattern: '^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$'
-          #  format: date-time 
+          #  format: date-time
           description: Start Date.
         StartDayMonth:
-          $ref: '#/components/schemas/StartDayMonthType'
+          $ref: "#/components/schemas/StartDayMonthType"
         EndDt:
           type: string
           pattern: '^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$'
-          #  format: date-time 
+          #  format: date-time
           description: End Date.
         EndDayMonth:
-          $ref: '#/components/schemas/StartDayMonthType'
+          $ref: "#/components/schemas/StartDayMonthType"
         Duration:
-          $ref: '#/components/schemas/DurationType'
+          $ref: "#/components/schemas/DurationType"
         RecurRule:
           type: array
           items:
-            $ref: '#/components/schemas/RecurRuleType'
+            $ref: "#/components/schemas/RecurRuleType"
           description: Recurrence Rule.
-      description: ''
+      description: ""
     PostAddrType:
       title: PostAddrType
       allOf:
-        - $ref: '#/components/schemas/LocatorType'
+        - $ref: "#/components/schemas/LocatorType"
         - required:
             - AddrType
           type: object
@@ -972,7 +969,7 @@ components:
             RelationshipMgr:
               type: array
               items:
-                $ref: '#/components/schemas/RelationshipMgrType'
+                $ref: "#/components/schemas/RelationshipMgrType"
               description: >-
                 Relationship Manager. Stores information about the FI officers
                 that have management responsibility of the Party, the Account or
@@ -1029,7 +1026,7 @@ components:
               type: string
               description: Address Use  Enumeration Description.
             AddrFormatType:
-              $ref: '#/components/schemas/AddrFormatTypeType'
+              $ref: "#/components/schemas/AddrFormatTypeType"
             AddrFormatTypeEnumDesc:
               maxLength: 80
               type: string
@@ -1089,11 +1086,11 @@ components:
                 Military Region. Identifier that replaces State and City for
                 military addresses
             LabelAddr:
-              $ref: '#/components/schemas/LabelAddrType'
+              $ref: "#/components/schemas/LabelAddrType"
             AddrDefinedData:
               type: array
               items:
-                $ref: '#/components/schemas/AddrDefinedDataType'
+                $ref: "#/components/schemas/AddrDefinedDataType"
               description: Address Defined Data.
             City:
               maxLength: 32
@@ -1106,7 +1103,7 @@ components:
             StateProv:
               maxLength: 80
               type: string
-              description: 'State/Province. ISO 3166-2:US codes.'
+              description: "State/Province. ISO 3166-2:US codes."
             StateProvEnumDesc:
               maxLength: 80
               type: string
@@ -1120,13 +1117,13 @@ components:
               type: string
               description: County.
             CountryCode:
-              $ref: '#/components/schemas/CountryCodeType'
+              $ref: "#/components/schemas/CountryCodeType"
             POBox:
               maxLength: 16
               type: string
               description: PO Box.
             AddrType:
-              $ref: '#/components/schemas/AddrTypeType'
+              $ref: "#/components/schemas/AddrTypeType"
             AddrTypeEnumDesc:
               maxLength: 80
               type: string
@@ -1142,7 +1139,7 @@ components:
               type: string
               description: Address Location Enumeration Description.
             TimeFrame:
-              $ref: '#/components/schemas/TimeFrameType'
+              $ref: "#/components/schemas/TimeFrameType"
             ExpDt:
               type: string
               description: Expiration Date.
@@ -1168,7 +1165,7 @@ components:
             UpDt:
               type: string
               pattern: '^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$'
-              #  format: date-time 
+              #  format: date-time
               description: Update Date.
             Comment:
               maxLength: 300
@@ -1202,7 +1199,7 @@ components:
               type: string
               description: Handling Code Enumeration Description.
             HandlingCodeOption:
-              $ref: '#/components/schemas/HandlingCodeOptionType'
+              $ref: "#/components/schemas/HandlingCodeOptionType"
             HandlingCodeOptionEnumDesc:
               maxLength: 80
               type: string
@@ -1221,7 +1218,7 @@ components:
             MaintDt:
               type: string
               pattern: '^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$'
-              #  format: date-time 
+              #  format: date-time
               description: Maintenance Date.
             MaintBy:
               maxLength: 80
@@ -1237,15 +1234,15 @@ components:
             PhoneNum:
               type: array
               items:
-                $ref: '#/components/schemas/PhoneNumType'
+                $ref: "#/components/schemas/PhoneNumType"
               description: Phone Number.
             IncAddrFormat:
               type: boolean
-      description: ''
+      description: ""
     EmailType:
       title: EmailType
       allOf:
-        - $ref: '#/components/schemas/LocatorType'
+        - $ref: "#/components/schemas/LocatorType"
         - type: object
           properties:
             EmailIdent:
@@ -1266,7 +1263,7 @@ components:
             PreferredEmail:
               type: boolean
               description: Preferred Email.
-      description: ''
+      description: ""
     WebAddrType:
       title: WebAddrType
       type: object
@@ -1291,19 +1288,19 @@ components:
         PreferredWebAddr:
           type: boolean
           description: Preferred Web Address.
-      description: ''
+      description: ""
     ContactType:
       title: ContactType
       type: object
       properties:
         PhoneNum:
-          $ref: '#/components/schemas/PhoneNumType'
+          $ref: "#/components/schemas/PhoneNumType"
         PostAddr:
-          $ref: '#/components/schemas/PostAddrType'
+          $ref: "#/components/schemas/PostAddrType"
         Email:
-          $ref: '#/components/schemas/EmailType'
+          $ref: "#/components/schemas/EmailType"
         WebAddr:
-          $ref: '#/components/schemas/WebAddrType'
+          $ref: "#/components/schemas/WebAddrType"
         ContactName:
           maxLength: 40
           type: string
@@ -1317,7 +1314,7 @@ components:
           description: >-
             Do Not Solicit Indicator. Use to determine whether contact
             information can be used for solicitation.
-      description: ''
+      description: ""
     GovIssuedIdentType:
       title: GovIssuedIdentType
       required:
@@ -1325,22 +1322,22 @@ components:
       type: object
       properties:
         CountryCode:
-          $ref: '#/components/schemas/CountryCodeType'
+          $ref: "#/components/schemas/CountryCodeType"
         StateProv:
           maxLength: 80
           type: string
-          description: 'State/Province. ISO 3166-2:US codes.'
+          description: "State/Province. ISO 3166-2:US codes."
         StateProvEnumDesc:
           maxLength: 80
           type: string
           description: State Province Enumeration Description.
-      description: ''
+      description: ""
     OvrdElementType:
       title: OvrdElementType
       allOf:
-        - $ref: '#/components/schemas/SubjectElementType'
+        - $ref: "#/components/schemas/SubjectElementType"
         - type: object
-      description: ''
+      description: ""
     OverrideExceptionType:
       title: OverrideExceptionType
       type: object
@@ -1360,8 +1357,8 @@ components:
             overridden. This would be the ServerStatusCode from the Status
             response.
         OvrdElement:
-          $ref: '#/components/schemas/OvrdElementType'
-      description: ''
+          $ref: "#/components/schemas/OvrdElementType"
+      description: ""
     OvrdExceptionDataType:
       title: OvrdExceptionDataType
       type: object
@@ -1369,9 +1366,9 @@ components:
         OverrideException:
           type: array
           items:
-            $ref: '#/components/schemas/OverrideExceptionType'
+            $ref: "#/components/schemas/OverrideExceptionType"
           description: Override Exception.
-      description: ''
+      description: ""
     SvcIdentType:
       title: SvcIdentType
       type: object
@@ -1391,7 +1388,7 @@ components:
           maxLength: 32
           type: string
           description: Service Name.
-      description: ''
+      description: ""
     PartyKeysType:
       title: PartyKeysType
       allOf:
@@ -1425,7 +1422,7 @@ components:
           maxLength: 36
           type: string
           description: Member Number.
-      description: '[IFXR]Member Data.'
+      description: "[IFXR]Member Data."
     IssuedIdentType:
       title: IssuedIdentType
       required:
@@ -1472,7 +1469,7 @@ components:
         IssueDt:
           type: string
           pattern: '^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$'
-          #  format: date-time 
+          #  format: date-time
           description: Issue Date.
         ExpDt:
           type: string
@@ -1491,8 +1488,8 @@ components:
           type: string
           description: Verification Detail Text.
         GovIssuedIdent:
-          $ref: '#/components/schemas/GovIssuedIdentType'
-      description: ''
+          $ref: "#/components/schemas/GovIssuedIdentType"
+      description: ""
     SecretDataType:
       title: SecretDataType
       required:
@@ -1510,13 +1507,13 @@ components:
           maxLength: 80
           type: string
           description: Secret Value.
-      description: ''
+      description: ""
     PartyListInfoType:
       title: PartyListInfoType
       type: object
       properties:
         MemberData:
-          $ref: '#/components/schemas/MemberDataType'
+          $ref: "#/components/schemas/MemberDataType"
         PartySelType:
           maxLength: 80
           type: string
@@ -1531,12 +1528,12 @@ components:
         Contact:
           type: array
           items:
-            $ref: '#/components/schemas/ContactType'
+            $ref: "#/components/schemas/ContactType"
           description: >-
             Contact. This aggregate contains a person's or organization's
             contact information
         TaxIdentType:
-          $ref: '#/components/schemas/TaxIdentTypeType'
+          $ref: "#/components/schemas/TaxIdentTypeType"
         TaxIdentTypeEnumDesc:
           maxLength: 80
           type: string
@@ -1552,7 +1549,7 @@ components:
         IssuedIdent:
           type: array
           items:
-            $ref: '#/components/schemas/IssuedIdentType'
+            $ref: "#/components/schemas/IssuedIdentType"
           description: >-
             Issued Identification. Used to include issued identifications. If
             the identification is government issued, the GovIssuedIdent
@@ -1585,7 +1582,7 @@ components:
         SecretData:
           type: array
           items:
-            $ref: '#/components/schemas/SecretDataType'
+            $ref: "#/components/schemas/SecretDataType"
           description: Secret Data.
         OriginatingBranch:
           maxLength: 32
@@ -1632,7 +1629,7 @@ components:
           maxLength: 80
           type: string
           description: Socio Economic Code Enumeration Description.
-      description: '[IFXR]Party Information.'
+      description: "[IFXR]Party Information."
     PersonNameType:
       title: PersonNameType
       required:
@@ -1640,7 +1637,7 @@ components:
       type: object
       properties:
         NameType:
-          $ref: '#/components/schemas/NameTypeType'
+          $ref: "#/components/schemas/NameTypeType"
         # NameTypeEnumDesc:
         #   maxLength: 80
         #   type: string
@@ -1700,7 +1697,7 @@ components:
         - type: object
           properties:
             PersonName:
-              $ref: '#/components/schemas/PersonNameType'
+              $ref: "#/components/schemas/PersonNameType"
             # BirthDt:
             #   type: string
             #   description: Birth Date.
@@ -1716,7 +1713,7 @@ components:
       type: object
       properties:
         NameType:
-          $ref: '#/components/schemas/NameTypeType'
+          $ref: "#/components/schemas/NameTypeType"
         # NameTypeEnumDesc:
         #   maxLength: 80
         #   type: string
@@ -1758,7 +1755,7 @@ components:
         - type: object
           properties:
             OrgName:
-              $ref: '#/components/schemas/OrgNameType'
+              $ref: "#/components/schemas/OrgNameType"
             # RecipientGIIN:
             #   maxLength: 19
             #   type: string
@@ -1786,11 +1783,11 @@ components:
       type: object
       properties:
         PartyKeys:
-          $ref: '#/components/schemas/PartyKeysType'
+          $ref: "#/components/schemas/PartyKeysType"
         PersonPartyListInfo:
-          $ref: '#/components/schemas/PersonPartyListInfoType'
+          $ref: "#/components/schemas/PersonPartyListInfoType"
         OrgPartyListInfo:
-          $ref: '#/components/schemas/OrgPartyListInfoType'
+          $ref: "#/components/schemas/OrgPartyListInfoType"
       description: >-
         Reference details of a party that is part of the relationship
     RelPartyRefType:
@@ -1829,7 +1826,7 @@ components:
             RelEstablishDt:
               type: string
               pattern: '^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$'
-              #  #  format: date-time                
+              #  #  format: date-time
               description: >-
                 Date on which the relationship was established.
                 <br>
@@ -1867,9 +1864,9 @@ components:
       type: object
       properties:
         PartyRef:
-          $ref: '#/components/schemas/PartyRefType'
+          $ref: "#/components/schemas/PartyRefType"
         RelPartyRef:
-          $ref: '#/components/schemas/RelPartyRefType'
+          $ref: "#/components/schemas/RelPartyRefType"
       description: >-
         Relationship information between two parties.
     PartyPartyRelAddRqType:
@@ -1884,14 +1881,14 @@ components:
             Override AutoAcknowledge Indicator. Used when the midleware is in
             charge of  auto-acknowledgement of exceptions.
         OvrdExceptionData:
-          $ref: '#/components/schemas/OvrdExceptionDataType'
+          $ref: "#/components/schemas/OvrdExceptionDataType"
         PartyPartyRelInfo:
-          $ref: '#/components/schemas/PartyPartyRelInfoType'
-      description: ''
+          $ref: "#/components/schemas/PartyPartyRelInfoType"
+      description: ""
     RelPartyKeysType:
       title: RelPartyKeysType
       allOf:
-        - $ref: '#/components/schemas/PartyKeysType'
+        - $ref: "#/components/schemas/PartyKeysType"
         - type: object
       description: >-
         Unique information to identify the related party
@@ -1908,9 +1905,9 @@ components:
             #   type: string
             #   description: Party to Party Relationship Identifier.
             PartyKeys:
-              $ref: '#/components/schemas/PartyKeysType'
+              $ref: "#/components/schemas/PartyKeysType"
             RelPartyKeys:
-              $ref: '#/components/schemas/RelPartyKeysType'
+              $ref: "#/components/schemas/RelPartyKeysType"
             # PartyRelRole:
             #   maxLength: 40
             #   type: string
@@ -1932,10 +1929,10 @@ components:
             Override AutoAcknowledge Indicator. Used when the midleware is in
             charge of  auto-acknowledgement of exceptions.
         OvrdExceptionData:
-          $ref: '#/components/schemas/OvrdExceptionDataType'
+          $ref: "#/components/schemas/OvrdExceptionDataType"
         PartyPartyRelKeys:
-          $ref: '#/components/schemas/PartyPartyRelKeysType'
-      description: ''
+          $ref: "#/components/schemas/PartyPartyRelKeysType"
+      description: ""
     RecCtrlInType:
       title: RecCtrlInType
       type: object
@@ -1953,7 +1950,7 @@ components:
           description: >-
             Cursor. Next Record Pointer Included in the response only if
             additional records are available.
-      description: ''
+      description: ""
     PartyPartyRelSelType:
       title: PartyPartyRelSelType
       type: object
@@ -1961,9 +1958,9 @@ components:
         # PartyPartyRelKeys:
         #   $ref: '#/components/schemas/PartyPartyRelKeysType'
         PartyKeys:
-          $ref: '#/components/schemas/PartyKeysType'
+          $ref: "#/components/schemas/PartyKeysType"
       description: >-
-          Criteria to select the relationship between two parties
+        Criteria to select the relationship between two parties
     PartyPartyRelInqRqType:
       title: PartyPartyRelInqRqType
       required:
@@ -1973,8 +1970,8 @@ components:
         # RecCtrlIn:
         #   $ref: '#/components/schemas/RecCtrlInType'
         PartyPartyRelSel:
-          $ref: '#/components/schemas/PartyPartyRelSelType'
-      description: ''
+          $ref: "#/components/schemas/PartyPartyRelSelType"
+      description: ""
     PartyPartyRelModRqType:
       title: PartyPartyRelModRqType
       required:
@@ -1988,12 +1985,12 @@ components:
             Override AutoAcknowledge Indicator. Used when the midleware is in
             charge of  auto-acknowledgement of exceptions.
         OvrdExceptionData:
-          $ref: '#/components/schemas/OvrdExceptionDataType'
+          $ref: "#/components/schemas/OvrdExceptionDataType"
         PartyPartyRelKeys:
-          $ref: '#/components/schemas/PartyPartyRelKeysType'
+          $ref: "#/components/schemas/PartyPartyRelKeysType"
         PartyPartyRelInfo:
-          $ref: '#/components/schemas/PartyPartyRelInfoType'
-      description: ''
+          $ref: "#/components/schemas/PartyPartyRelInfoType"
+      description: ""
     StatusType:
       title: StatusType
       required:
@@ -2008,15 +2005,13 @@ components:
         StatusCode:
           maxLength: 20
           type: string
-          description: 
-            EFX Standard Status code for the result of API response. Refer to the <a href="../docs?path=docs/response-codes.md" title="Click to open">Response Codes</a> section to view the list of all possible status codes.
+          description: EFX Standard Status code for the result of API response. Refer to the <a href="../docs?path=docs/response-codes.md" title="Click to open">Response Codes</a> section to view the list of all possible status codes.
         StatusDesc:
           maxLength: 255
           type: string
-          description:
-            EFX Standard Status code for the result of API response. Refer to the <a href="../docs?path=docs/response-codes.md" title="Click to open">Response Codes</a> section for more information.
+          description: EFX Standard Status code for the result of API response. Refer to the <a href="../docs?path=docs/response-codes.md" title="Click to open">Response Codes</a> section for more information.
         Severity:
-          $ref: '#/components/schemas/SeverityType'
+          $ref: "#/components/schemas/SeverityType"
         SvcProviderName:
           maxLength: 1024
           type: string
@@ -2048,7 +2043,7 @@ components:
         SubjectElement:
           type: array
           items:
-            $ref: '#/components/schemas/SubjectElementType'
+            $ref: "#/components/schemas/SubjectElementType"
           description: >-
             Subject Element aggregate provides information about which elements
             caused the status. The aggregate is repeating to allow for a
@@ -2064,7 +2059,7 @@ components:
         AdditionalStatus:
           type: array
           items:
-            $ref: '#/components/schemas/AdditionalStatusType'
+            $ref: "#/components/schemas/AdditionalStatusType"
           description: >-
             Additional Status aggregate may appear once for each additional
             status that the server intends to provide.
@@ -2076,7 +2071,7 @@ components:
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
     PartyPartyRelStatusType:
       title: PartyPartyRelStatusType
       required:
@@ -2084,11 +2079,11 @@ components:
       type: object
       properties:
         PartyPartyRelStatusCode:
-          $ref: '#/components/schemas/PartyPartyRelStatusCodeType'
+          $ref: "#/components/schemas/PartyPartyRelStatusCodeType"
         EffDt:
           type: string
           pattern: '^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$'
-          #  format: date-time  
+          #  format: date-time
           description: >-
             Effective date and time when the relationship status is changed.<br> 
             Format: yyyy-mm-ddThh:mm:ss.sss<br>
@@ -2103,12 +2098,12 @@ components:
       type: object
       properties:
         SvcIdent:
-          $ref: '#/components/schemas/SvcIdentType'
+          $ref: "#/components/schemas/SvcIdentType"
         PartyPartyRelKeys:
-          $ref: '#/components/schemas/PartyPartyRelKeysType'
+          $ref: "#/components/schemas/PartyPartyRelKeysType"
         PartyPartyRelStatus:
-          $ref: '#/components/schemas/PartyPartyRelStatusType'
-      description: ''
+          $ref: "#/components/schemas/PartyPartyRelStatusType"
+      description: ""
     PartyPartyRelAddRsType:
       title: PartyPartyRelAddRsType
       required:
@@ -2116,10 +2111,10 @@ components:
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
         PartyPartyRelStatusRec:
-          $ref: '#/components/schemas/PartyPartyRelStatusRecType'
-      description: ''
+          $ref: "#/components/schemas/PartyPartyRelStatusRecType"
+      description: ""
     PartyPartyRelDelRsType:
       title: PartyPartyRelDelRsType
       required:
@@ -2127,10 +2122,10 @@ components:
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
         PartyPartyRelStatusRec:
-          $ref: '#/components/schemas/PartyPartyRelStatusRecType'
-      description: ''
+          $ref: "#/components/schemas/PartyPartyRelStatusRecType"
+      description: ""
     RecCtrlOutType: #
       title: RecCtrlOutType
       required:
@@ -2147,7 +2142,7 @@ components:
         #   description: >-
         #     Matched Record Count. Total number of records matching the selection
         #     criteria.
-          # format: int64
+        # format: int64
         # RemainRecCount:
         #   type: integer
         #   description: >-
@@ -2161,7 +2156,7 @@ components:
         #     Cursor. Next Record Pointer Included in the response only if
         #     additional records are available.
       description: >-
-        Information retrieved for the criteria specified in the RecCtrlIn aggregate of the request message 
+        Information retrieved for the criteria specified in the RecCtrlIn aggregate of the request message
     PartyPartyRelRecType:
       title: PartyPartyRelRecType
       required:
@@ -2171,27 +2166,27 @@ components:
       type: object
       properties:
         PartyPartyRelKeys:
-          $ref: '#/components/schemas/PartyPartyRelKeysType'
+          $ref: "#/components/schemas/PartyPartyRelKeysType"
         PartyPartyRelInfo:
-          $ref: '#/components/schemas/PartyPartyRelInfoType'
+          $ref: "#/components/schemas/PartyPartyRelInfoType"
         PartyPartyRelStatus:
-          $ref: '#/components/schemas/PartyPartyRelStatusType'
-      description: ''
+          $ref: "#/components/schemas/PartyPartyRelStatusType"
+      description: ""
     PartyPartyRelInqRsType:
       title: PartyPartyRelInqRsType
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
         RecCtrlOut:
-          $ref: '#/components/schemas/RecCtrlOutType'
+          $ref: "#/components/schemas/RecCtrlOutType"
         PartyPartyRelRec:
           type: array
           items:
-            $ref: '#/components/schemas/PartyPartyRelRecType'
+            $ref: "#/components/schemas/PartyPartyRelRecType"
           description: >-
             Relationship record details between two parties
-      description: ''
+      description: ""
     PartyPartyRelModRsType:
       title: PartyPartyRelModRsType
       required:
@@ -2199,56 +2194,56 @@ components:
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
         PartyPartyRelStatusRec:
-          $ref: '#/components/schemas/PartyPartyRelStatusRecType'
-      description: ''
+          $ref: "#/components/schemas/PartyPartyRelStatusRecType"
+      description: ""
   examples:
     401-Premier:
       value:
         Status:
-          StatusCode: '1740'
+          StatusCode: "1740"
           StatusDesc: Authentication Failed
           Severity: Error
           SvcProviderName: Premier
-          ServerStatusCode: '401'
+          ServerStatusCode: "401"
           ServerStatusDesc: Unauthorized
     422-Premier:
       value:
         Status:
-          StatusCode: '1090'
+          StatusCode: "1090"
           StatusDesc: Invalid Value
           Severity: Error
           SvcProviderName: Premier
-          ServerStatusCode: '422'
+          ServerStatusCode: "422"
           ServerStatusDesc: Unprocessable Entity
     500-Premier:
       value:
         Status:
-          StatusCode: '100'
+          StatusCode: "100"
           StatusDesc: General Error
           Severity: Error
           SvcProviderName: Premier
-          ServerStatusCode: '500'
+          ServerStatusCode: "500"
           ServerStatusDesc: Internal Server Error
     503-Premier:
       value:
         Status:
-          StatusCode: '300'
+          StatusCode: "300"
           StatusDesc: System Not Available
           Severity: Error
           SvcProviderName: Premier
-          ServerStatusCode: '503'
+          ServerStatusCode: "503"
           ServerStatusDesc: Service Unavailable
     PremierPartyPartyRelInqRequest:
       value:
         PartyPartyRelSel:
           PartyKeys:
-            PartyId: '6'
+            PartyId: "6"
     PremierPartyPartyRelInqResponse:
       value:
         Status:
-          StatusCode: '0'
+          StatusCode: "0"
           StatusDesc: Success
           Severity: Info
           SvcProviderName: Premier
@@ -2257,24 +2252,24 @@ components:
         PartyPartyRelRec:
           - PartyPartyRelKeys:
               PartyKeys:
-                PartyId: '6'
+                PartyId: "6"
               RelPartyKeys:
-                PartyId: '10'
+                PartyId: "10"
             PartyPartyRelInfo:
               PartyRef:
                 PartyKeys:
-                  PartyId: '6'
+                  PartyId: "6"
                 PersonPartyListInfo:
                   PersonName:
                     NameType: Primary
                     FullName: GEORGE WASHINGTON
               RelPartyRef:
                 PartyKeys:
-                  PartyId: '10'
+                  PartyId: "10"
                 PartyRelType: Mother
                 PartyRelTypeEnumDesc: Mother
-                RelEstablishDt: '2021-08-04'
+                RelEstablishDt: "2021-08-04"
                 Name: NAME2 NAME23
             PartyPartyRelStatus:
               PartyPartyRelStatusCode: Valid
-              EffDt: '2021-08-04T08:28:01.971'
+              EffDt: "2021-08-04T08:28:01.971"
