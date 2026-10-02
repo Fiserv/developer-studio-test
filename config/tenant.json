@@ -18,7 +18,7 @@
   "getStartedFilePath": "docs/get-started.md",
   "apiVersions": [
     {
-      "version": "AUTOMATION.DO.NOT.DELETE",
+      "version": "AUTOMATION-1.0.0",
       "versionType": "minor",
       "releaseNotesPath": "/release-notes/release-notes-12.0.0.md",
       "apiSpecFileNames": ["automation-testing-api-file"]

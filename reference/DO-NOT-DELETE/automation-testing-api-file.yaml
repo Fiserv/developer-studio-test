@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Test Management API
-  version: AUTOMATION-DO-NOT-DELETE-1.0.0
+  version: AUTOMATION-1.0.0
   description: Manage test cases, test plans, test results, and release test results.
 
 servers:
