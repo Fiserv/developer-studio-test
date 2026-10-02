@@ -1,0 +1,383 @@
+openapi: 3.0.0
+info:
+  title: Test Management API
+  version: AUTOMATION-DO-NOT-DELETE-1.0.0
+  description: Manage test cases, test plans, test results, and release test results.
+
+servers:
+  - url: https://api.example.com/v1
+
+tags:
+  - name: Test Cases
+  - name: Test Plans
+  - name: Test Results
+  - name: Release Test Results
+
+paths:
+  /test-cases:
+    get:
+      tags: [Test Cases]
+      summary: List Test Cases
+      operationId: listTestCases
+      responses:
+        "200":
+          description: Test cases returned
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/TestCase"
+      x-group-name: Test Cases
+      x-proxy-name: List Test Cases
+    post:
+      tags: [Test Cases]
+      summary: Create Test Case
+      operationId: createTestCase
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TestCase"
+      responses:
+        "201":
+          description: Test case created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TestCase"
+      x-group-name: Test Cases
+      x-proxy-name: Create Test Case
+
+  /test-cases/{testCaseId}:
+    parameters:
+      - name: testCaseId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Test Cases]
+      summary: Get Test Case
+      operationId: getTestCase
+      responses:
+        "200":
+          description: Test case returned
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TestCase"
+      x-group-name: Test Cases
+      x-proxy-name: Get Test Case
+    put:
+      tags: [Test Cases]
+      summary: Update Test Case
+      operationId: updateTestCase
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TestCase"
+      responses:
+        "200":
+          description: Test case updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TestCase"
+      x-group-name: Test Cases
+      x-proxy-name: Update Test Case
+
+  /test-plans:
+    get:
+      tags: [Test Plans]
+      summary: List Test Plans
+      operationId: listTestPlans
+      responses:
+        "200":
+          description: Test plans returned
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/TestPlan"
+      x-group-name: Test Plans
+      x-proxy-name: List Test Plans
+    post:
+      tags: [Test Plans]
+      summary: Create Test Plan
+      operationId: createTestPlan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TestPlan"
+      responses:
+        "201":
+          description: Test plan created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TestPlan"
+      x-group-name: Test Plans
+      x-proxy-name: Create Test Plan
+
+  /test-plans/{testPlanId}:
+    parameters:
+      - name: testPlanId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Test Plans]
+      summary: Get Test Plan
+      operationId: getTestPlan
+      responses:
+        "200":
+          description: Test plan returned
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TestPlan"
+      x-group-name: Test Plans
+      x-proxy-name: Get Test Plan
+    put:
+      tags: [Test Plans]
+      summary: Update Test Plan
+      operationId: updateTestPlan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TestPlan"
+      responses:
+        "200":
+          description: Test plan updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TestPlan"
+      x-group-name: Test Plans
+      x-proxy-name: Update Test Plan
+
+  /test-results:
+    get:
+      tags: [Test Results]
+      summary: List Test Results
+      operationId: listTestResults
+      responses:
+        "200":
+          description: Test results returned
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/TestResult"
+      x-group-name: Test Results
+      x-proxy-name: List Test Results
+    post:
+      tags: [Test Results]
+      summary: Create Test Result
+      operationId: createTestResult
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TestResult"
+      responses:
+        "201":
+          description: Test result created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TestResult"
+      x-group-name: Test Results
+      x-proxy-name: Create Test Result
+
+  /test-results/{testResultId}:
+    parameters:
+      - name: testResultId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Test Results]
+      summary: Get Test Result
+      operationId: getTestResult
+      responses:
+        "200":
+          description: Test result returned
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TestResult"
+      x-group-name: Test Results
+      x-proxy-name: Get Test Result
+    put:
+      tags: [Test Results]
+      summary: Update Test Result
+      operationId: updateTestResult
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TestResult"
+      responses:
+        "200":
+          description: Test result updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TestResult"
+      x-group-name: Test Results
+      x-proxy-name: Update Test Result
+
+  /release-test-results:
+    get:
+      tags: [Release Test Results]
+      summary: List Release Test Results
+      operationId: listReleaseTestResults
+      responses:
+        "200":
+          description: Release test results returned
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ReleaseTestResult"
+      x-group-name: Release Test Results
+      x-proxy-name: List Release Test Results
+    post:
+      tags: [Release Test Results]
+      summary: Create Release Test Result
+      operationId: createReleaseTestResult
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ReleaseTestResult"
+      responses:
+        "201":
+          description: Release test result created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReleaseTestResult"
+      x-group-name: Release Test Results
+      x-proxy-name: Create Release Test Result
+
+  /release-test-results/{releaseTestResultId}:
+    parameters:
+      - name: releaseTestResultId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Release Test Results]
+      summary: Get Release Test Result
+      operationId: getReleaseTestResult
+      responses:
+        "200":
+          description: Release test result returned
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReleaseTestResult"
+      x-group-name: Release Test Results
+      x-proxy-name: Get Release Test Result
+    put:
+      tags: [Release Test Results]
+      summary: Update Release Test Result
+      operationId: updateReleaseTestResult
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ReleaseTestResult"
+      responses:
+        "200":
+          description: Release test result updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReleaseTestResult"
+      x-group-name: Release Test Results
+      x-proxy-name: Update Release Test Result
+
+components:
+  schemas:
+    TestCase:
+      type: object
+      required: [title]
+      properties:
+        id:
+          type: string
+          example: tc_12345
+        title:
+          type: string
+          example: User can sign in with valid credentials
+        description:
+          type: string
+        expectedResult:
+          type: string
+          example: The dashboard is displayed
+
+    TestPlan:
+      type: object
+      required: [name]
+      properties:
+        id:
+          type: string
+          example: tp_12345
+        name:
+          type: string
+          example: Authentication regression
+        testCaseIds:
+          type: array
+          items:
+            type: string
+          example: [tc_12345]
+
+    TestResult:
+      type: object
+      required: [testCaseId, status]
+      properties:
+        id:
+          type: string
+          example: tr_12345
+        testCaseId:
+          type: string
+          example: tc_12345
+        status:
+          type: string
+          enum: [passed, failed, skipped]
+        notes:
+          type: string
+
+    ReleaseTestResult:
+      type: object
+      required: [releaseId, testResultId]
+      properties:
+        id:
+          type: string
+          example: rtr_12345
+        releaseId:
+          type: string
+          example: release_12
+        testResultId:
+          type: string
+          example: tr_12345
