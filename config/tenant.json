@@ -18,17 +18,17 @@
   "getStartedFilePath": "docs/get-started.md",
   "apiVersions": [
     {
-      "version": "AUTOMATION-1.0.0",
-      "versionType": "minor",
-      "releaseNotesPath": "/release-notes/release-notes-12.0.0.md",
-      "apiSpecFileNames": ["automation-testing-api-file"]
-    },
-    {
       "version": "11.0.3",
       "versionType": "major",
       "releaseNotesPath": "/release-notes/rn2_rajivtest.md",
       "apiSpecFileNames": ["Cards/CardService"],
       "groups": ["TEST_GROUP_MP"]
+    },
+    {
+      "version": "AUTOMATION-1.0.0",
+      "versionType": "minor",
+      "releaseNotesPath": "/release-notes/release-notes-12.0.0.md",
+      "apiSpecFileNames": ["automation-testing-api-file"]
     },
     {
       "version": "11.0.2",
