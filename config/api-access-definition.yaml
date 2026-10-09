@@ -1,4 +1,4 @@
-################################################################################
+###############################################################################
 # Copyrights © 2021-2022 Fiserv, Inc. or its affiliates.
 # Fiserv is a trademark of Fiserv, Inc.,
 # registered or used in the United States and foreign countries,
@@ -28,23 +28,20 @@
 # the delivery of this work
 ################################################################################
 
-- xChildProductName: "Cards"
-  access: private
-  groups: [TEST_GROUP_RG, TEST_GROUP_MP]
-- xGroupName: "b2b"
-  access: private
-  groups: ["TEST_GROUP_MP"]
 - xChildProductName: "ChildProductName1"
   sections:
     - xGroupName: "CardService1"
       sections:
         - xProxyName: "UpdateCard"
     - xGroupName: "CardService2"
-  access: private
-  groups: ["TEST_GROUP_MP"]
   versions: ["11.0.1"]
-- xChildProductName: "Card Service"
-  sections:
-    - xGroupName: "Get Service"
-  access: private
   groups: []
+- xChildProductName: "Cards"
+  groups: ["TEST_GROUP_MP", "TEST_ADMIN"]
+# - xChildProductName: "Card Service"
+#   sections:
+#     - xGroupName: "Get Service"
+#       sections:
+#         - xProxyName: "Get Card"
+#   versions: ["11.0.3"]
+#   groups: ["TEST_GROUP_MP", "TEST_ADMIN"]
