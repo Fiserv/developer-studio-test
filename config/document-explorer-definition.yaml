@@ -48,7 +48,7 @@
         - title: NotificationTesting
           link: docs/NotificationToggleTest/notificationTest.mdx
         - title: New Tag Testing
-          link: docs/NotificationToggleTest/new-tag-doc.mdx
+          link: docs/NotificationToggleTest/new-tag-test-flag-is-false.md
 
 - sections:
     - title: Resources
