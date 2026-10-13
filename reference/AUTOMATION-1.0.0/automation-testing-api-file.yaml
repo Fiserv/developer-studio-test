@@ -89,6 +89,15 @@ paths:
                 $ref: "#/components/schemas/TestCase"
       x-group-name: Test Cases
       x-proxy-name: Update Test Case
+    delete:
+      tags: [Test Cases]
+      summary: Delete Test Case
+      operationId: deleteTestCase
+      responses:
+        "204":
+          description: Test case deleted
+      x-group-name: Test Cases
+      x-proxy-name: Delete Test Case
 
   /test-plans:
     get:
