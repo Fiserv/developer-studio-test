@@ -12,6 +12,7 @@ tags:
   - name: Test Plans
   - name: Test Results
   - name: Release Test Results
+  - name: Test Reports
 
 paths:
   /test-cases:
@@ -327,6 +328,42 @@ paths:
       x-group-name: Release Test Results
       x-proxy-name: Update Release Test Result
 
+  /test-reports:
+    post:
+      tags: [Test Reports]
+      summary: Generate Test Report
+      operationId: generateTestReport
+      responses:
+        "201":
+          description: Test report generated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TestReport"
+      x-group-name: Test Reports
+      x-proxy-name: Generate Test Report
+
+  /test-reports/{testReportId}:
+    parameters:
+      - name: testReportId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Test Reports]
+      summary: Get Test Report
+      operationId: getTestReport
+      responses:
+        "200":
+          description: Test report returned
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TestReport"
+      x-group-name: Test Reports
+      x-proxy-name: Get Test Report
+
 components:
   schemas:
     TestCase:
@@ -390,3 +427,16 @@ components:
         testResultId:
           type: string
           example: tr_12345
+
+    TestReport:
+      type: object
+      required: [id]
+      properties:
+        id:
+          type: string
+          example: report_12345
+        generatedAt:
+          type: string
+          format: date-time
+        summary:
+          type: string
