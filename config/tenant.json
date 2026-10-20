@@ -66,6 +66,18 @@
       "versionType": "minor",
       "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
       "apiSpecFileNames": ["openapi"]
+    },
+    {
+      "version": "1.0.0",
+      "versionType": "minor",
+      "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
+      "apiSpecFileNames": ["api-1.0.0.yaml"]
+    },
+    {
+      "version": "1.0.1",
+      "versionType": "minor",
+      "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
+      "apiSpecFileNames": ["api-1.0.1.yaml"]
     }
   ],
   "product": {
