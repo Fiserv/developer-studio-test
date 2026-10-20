@@ -1,0 +1,6 @@
+- sections:
+    - title: Getting Started
+      link: docs/es/get-started.mdx
+      sections:
+        - title: Setup New Tenant
+          link: docs/es/faq/faq.mdx

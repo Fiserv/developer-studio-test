@@ -5,36 +5,36 @@ info:
   description: "The Host System service supports an inquiry that retrieves the processing statuses of the host system.         \n"
   contact:
     name: Isabelle Mathon
-    email: Isabelle.Mathon@fiserv.com
+    email: John.Doe@example.com
   version: 11.0.0_Secured
 servers:
-- url: /
+  - url: /
 paths:
   /hostSystem: {}
   /hostSystem/secured:
     post:
       tags:
-      - Get Host System Status
+        - Get Host System Status
       summary: Get Host System Status.
       description: "Retrieves the status of host system from a core. \n<br> For more information about the Operations and Servicing domain <a href=\"../docs/?path=docs/fintechs/servicing.md\" title=\"Click to open\">click here.</a> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n  </ul>"
       operationId: hostSystemInqSecured
       parameters:
-      - name: EFXHeader
-        in: header
-        description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open"> click here.</a>
-        required: true
-        style: simple
-        explode: false
-        schema:
-          $ref: '#/components/schemas/EFXHeader'
+        - name: EFXHeader
+          in: header
+          description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open"> click here.</a>
+          required: true
+          style: simple
+          explode: false
+          schema:
+            $ref: "#/components/schemas/EFXHeader"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/HostSystemInqRqType'
+              $ref: "#/components/schemas/HostSystemInqRqType"
             examples:
               Sample Banking:
-                $ref: '#/components/examples/HostSystemInqRequest-Premier'
+                $ref: "#/components/examples/HostSystemInqRequest-Premier"
         required: true
       responses:
         "200":
@@ -42,52 +42,52 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HostSystemInqRsType'
+                $ref: "#/components/schemas/HostSystemInqRsType"
               examples:
                 Sample Banking:
-                  $ref: '#/components/examples/HostSystemInqResponse-Premier'
+                  $ref: "#/components/examples/HostSystemInqResponse-Premier"
         "401":
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "401":
-                  $ref: '#/components/examples/401-Premier'
+                  $ref: "#/components/examples/401-Premier"
         "422":
           description: Un-processable Entity
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "422":
-                  $ref: '#/components/examples/422-Premier'
+                  $ref: "#/components/examples/422-Premier"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "500":
-                  $ref: '#/components/examples/500-Premier'
+                  $ref: "#/components/examples/500-Premier"
         "503":
           description: Service Unavailable
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "503":
-                  $ref: '#/components/examples/503-Premier'
+                  $ref: "#/components/examples/503-Premier"
         default:
           description: See HTTP Status Code Standards
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HostSystemInqRsType'
+                $ref: "#/components/schemas/HostSystemInqRsType"
       x-group-name: Host System Service
       x-proxy-name: Get Host System Status
       x-child-product-name: Operations and Servicing
@@ -95,7 +95,7 @@ components:
   schemas:
     EFXHeader:
       required:
-      - OrganizationId
+        - OrganizationId
       type: string
       properties:
         OrganizationId:
@@ -107,7 +107,7 @@ components:
           type: string
           description: An identifier, supplied by Fiserv, that represents the vendor using  this API service.
         Context:
-          $ref: '#/components/schemas/Context'
+          $ref: "#/components/schemas/Context"
       example: '{ "TrnId": "f262cfa4-9da4-4a10-b48c-2e947ce3e66c", "OrganizationId": "PRMOrg10", "VendorId": "112233", "Context":{ "Channel": "WEB" } }'
     Context:
       type: object
@@ -165,8 +165,8 @@ components:
           type: string
           description: Country code source.ISO3166-Numeric, ISO3166-Alpha-3
           enum:
-          - ISO3166Numeric
-          - ISO3166Alpha3
+            - ISO3166Numeric
+            - ISO3166Alpha3
         TerminalCountryCodeValue:
           maxLength: 80
           type: string
@@ -200,8 +200,8 @@ components:
           type: string
           description: Country code source.ISO3166-Numeric, ISO3166-Alpha-3
           enum:
-          - US
-          - IND
+            - US
+            - IND
         AcquirerCountryCodeValue:
           type: string
         MerchNum:
@@ -229,28 +229,28 @@ components:
         AMPMCode:
           type: string
           enum:
-          - AM
-          - PM
+            - AM
+            - PM
         ReentryType:
           type: string
           enum:
-          - Manual
-          - Auto
+            - Manual
+            - Auto
     ChannelNameType:
       title: ChannelNameType
       type: string
       description: Channel name of the host system
       example: NOW
       enum:
-      - NOW
+        - NOW
     ChannelStatusType:
       title: ChannelStatusType
       type: string
       description: Current status of the channel
       enum:
-      - Active
-      - Inactive
-      - InquiryOnly
+        - Active
+        - Inactive
+        - InquiryOnly
     HostSystemStatusCodeType:
       title: HostSystemStatusCodeType
       type: string
@@ -258,16 +258,16 @@ components:
         Status code of the host system. <br> Valid value is:
           - Valid
       enum:
-      - Valid
-      - Deleted
+        - Valid
+        - Deleted
     SeverityType:
       title: SeverityType
       type: string
       description: Severity type of the EFX status code. Refer to the <a href="../docs?path=docs/response-codes.md" title="Click to open">Response Codes</a> section for more information.
       enum:
-      - Error
-      - Warning
-      - Info
+        - Error
+        - Warning
+        - Info
     SubjectElementType:
       title: SubjectElementType
       type: object
@@ -297,7 +297,7 @@ components:
           type: string
           description: Brief information about the EFX status code. Refer to the <a href="../docs?path=docs/response-codes.md" title="Click to open">Response Codes</a> for more information.
         Severity:
-          $ref: '#/components/schemas/SeverityType'
+          $ref: "#/components/schemas/SeverityType"
         SvcProviderName:
           maxLength: 1024
           type: string
@@ -311,7 +311,7 @@ components:
         ServerStatusCode:
           maxLength: 20
           type: string
-          description: 'Server status code of the service provider''s application.  '
+          description: "Server status code of the service provider's application.  "
         ServerStatusDesc:
           maxLength: 255
           type: string
@@ -323,27 +323,27 @@ components:
           type: array
           description: Information about the elements that caused the status.
           items:
-            $ref: '#/components/schemas/SubjectElementType'
+            $ref: "#/components/schemas/SubjectElementType"
     BaseKeysType:
       title: BaseKeysType
       type: string
     HostChannelDataType:
       title: HostChannelDataType
       required:
-      - ChannelName
-      - ChannelStatus
+        - ChannelName
+        - ChannelStatus
       type: object
       properties:
         ChannelName:
-          $ref: '#/components/schemas/ChannelNameType'
+          $ref: "#/components/schemas/ChannelNameType"
         ChannelStatus:
-          $ref: '#/components/schemas/ChannelStatusType'
+          $ref: "#/components/schemas/ChannelStatusType"
       description: Details of the host channel
     HostSystemDataType:
       title: HostSystemDataType
       required:
-      - SystemName
-      - SystemStatus
+        - SystemName
+        - SystemStatus
       type: object
       properties:
         SystemName:
@@ -369,7 +369,7 @@ components:
           type: array
           description: Host system data
           items:
-            $ref: '#/components/schemas/HostSystemDataType'
+            $ref: "#/components/schemas/HostSystemDataType"
       description: Information related to the host system
     HostSystemSelType:
       title: HostSystemSelType
@@ -390,18 +390,18 @@ components:
     HostSystemInqRqType:
       title: HostSystemInqRqType
       required:
-      - HostSystemSel
+        - HostSystemSel
       type: object
       properties:
         HostSystemSel:
-          $ref: '#/components/schemas/HostSystemSelType'
+          $ref: "#/components/schemas/HostSystemSelType"
     StatusType:
       title: StatusType
       required:
-      - Severity
-      - StatusCode
-      - StatusDesc
-      - SvcProviderName
+        - Severity
+        - StatusCode
+        - StatusDesc
+        - SvcProviderName
       type: object
       properties:
         Id:
@@ -416,7 +416,7 @@ components:
           type: string
           description: Brief information about the EFX status code. Refer to the <a href="../docs?path=docs/response-codes.md" title="Click to open">Response Codes</a> section for more information.
         Severity:
-          $ref: '#/components/schemas/SeverityType'
+          $ref: "#/components/schemas/SeverityType"
         SvcProviderName:
           maxLength: 1024
           type: string
@@ -445,7 +445,7 @@ components:
           type: array
           description: Information about the elements that caused the status.
           items:
-            $ref: '#/components/schemas/SubjectElementType'
+            $ref: "#/components/schemas/SubjectElementType"
         ContentHTML:
           type: string
           description: Response status in HTML format. This parameter returns only in some cases.
@@ -453,66 +453,66 @@ components:
           type: array
           description: Details of the additional status of the response message. This aggrigate can appear once for each additional status that the server is expected to provide.
           items:
-            $ref: '#/components/schemas/AdditionalStatusType'
+            $ref: "#/components/schemas/AdditionalStatusType"
       description: Details of the API response messages.
     StatusType1:
       title: Status Type for Error messages
       required:
-      - Status
+        - Status
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
     HostSystemKeysType:
       title: HostSystemKeysType
       description: Unique information to identify the host system
       allOf:
-      - required:
-        - HostSystemId
-        type: object
-        properties:
-          HostSystemId:
-            maxLength: 36
-            type: string
-            description: Unique identification number of host system
+        - required:
+            - HostSystemId
+          type: object
+          properties:
+            HostSystemId:
+              maxLength: 36
+              type: string
+              description: Unique identification number of host system
     HostSystemStatusType:
       title: HostSystemStatusType
       required:
-      - HostSystemStatusCode
+        - HostSystemStatusCode
       type: object
       properties:
         HostSystemStatusCode:
-          $ref: '#/components/schemas/HostSystemStatusCodeType'
+          $ref: "#/components/schemas/HostSystemStatusCodeType"
         EffDt:
           pattern: ^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$
           type: string
-          description: 'Effective date and time when the host system status is changed. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS'
+          description: "Effective date and time when the host system status is changed. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS"
           example: 2021-01-31T23:59:59.999
       description: Host system status details
     HostSystemRecType:
       title: HostSystemRecType
       required:
-      - HostSystemInfo
-      - HostSystemStatus
+        - HostSystemInfo
+        - HostSystemStatus
       type: object
       properties:
         HostSystemKeys:
-          $ref: '#/components/schemas/HostSystemKeysType'
+          $ref: "#/components/schemas/HostSystemKeysType"
         HostSystemInfo:
-          $ref: '#/components/schemas/HostSystemInfoType'
+          $ref: "#/components/schemas/HostSystemInfoType"
         HostSystemStatus:
-          $ref: '#/components/schemas/HostSystemStatusType'
+          $ref: "#/components/schemas/HostSystemStatusType"
       description: Host system transfer record details
     HostSystemInqRsType:
       title: HostSystemInqRsType
       required:
-      - Status
+        - Status
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
         HostSystemRec:
-          $ref: '#/components/schemas/HostSystemRecType'
+          $ref: "#/components/schemas/HostSystemRecType"
   examples:
     PremierHeaderExample:
       value:
@@ -561,7 +561,7 @@ components:
       value:
         HostSystemSel:
           SystemName:
-          - type: All
+            - type: All
     HostSystemInqResponse-Premier:
       value:
         Status:
@@ -574,16 +574,16 @@ components:
             HostSystemId: Premier
           HostSystemInfo:
             HostSystemData:
-            - SystemName: AMS
-              SystemStatus: Active
-            - SystemName: InquirySystem
-              SystemStatus: Active
-            - SystemName: MemoPostSystem
-              SystemStatus: Active
-            - SystemName: MaintenanceSystem
-              SystemStatus: Active
-            - SystemName: All
-              SystemStatus: Active
+              - SystemName: AMS
+                SystemStatus: Active
+              - SystemName: InquirySystem
+                SystemStatus: Active
+              - SystemName: MemoPostSystem
+                SystemStatus: Active
+              - SystemName: MaintenanceSystem
+                SystemStatus: Active
+              - SystemName: All
+                SystemStatus: Active
           HostSystemStatus:
             HostSystemStatusCode: Valid
             EffDt: 2021-10-01T22:08:21.538

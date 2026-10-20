@@ -1,0 +1,186 @@
+# Java Code Examples
+
+> Developer Studio Test SDK 2 is an example of file structure and documentation that tenants can use when setting up the documentation for their SDKs. This example is not based on real-world software and is only presented to inform tenants about the SDK functionality now part of the Developer Studio ecosystem.
+
+## Initialization
+
+```java
+import com.devstudio.datasdk.DevStudioClient;
+import com.devstudio.datasdk.DevStudioConfig;
+
+DevStudioConfig config = DevStudioConfig.builder()
+    .apiKey("your-api-key")
+    .environment("production")
+    .maxConnections(20)
+    .timeoutMs(60000)
+    .retryAttempts(3)
+    .build();
+
+DevStudioClient client = DevStudioClient.create(config);
+```
+
+## Parameterized Queries
+
+Use parameterized queries to prevent injection and improve query plan caching.
+
+```java
+import com.devstudio.datasdk.QueryResult;
+import com.devstudio.datasdk.QueryParams;
+
+QueryParams params = QueryParams.builder()
+    .set("minAmount", 500.00)
+    .set("region", "north_america")
+    .set("startDate", "2025-01-01")
+    .build();
+
+QueryResult result = client.query(
+    "SELECT order_id, amount, region " +
+    "FROM orders " +
+    "WHERE amount >= :minAmount " +
+    "AND region = :region " +
+    "AND order_date >= :startDate",
+    params
+);
+
+System.out.println("Total rows: " + result.getRowCount());
+```
+
+**Query Parameter Types:**
+
+| Java Type | SDK Type | Example |
+| --------- | --------- | ------- |
+| `String` | TEXT | `"north_america"` |
+| `Double` | DECIMAL | `500.00` |
+| `Integer` | INTEGER | `42` |
+| `Boolean` | BOOLEAN | `true` |
+| `LocalDate` | DATE | `LocalDate.of(2025, 1, 1)` |
+
+## Streaming Large Result Sets
+
+For queries that return millions of rows, use the streaming API to process results without loading everything into memory.
+
+```java
+import com.devstudio.datasdk.StreamingQuery;
+import com.devstudio.datasdk.Row;
+
+StreamingQuery stream = client.streamQuery(
+    "SELECT * FROM events WHERE event_date = '2025-06-15'"
+);
+
+long processedCount = 0;
+
+try (stream) {
+    while (stream.hasNext()) {
+        Row row = stream.next();
+        processEvent(row.getString("event_type"), row.getLong("timestamp"));
+        processedCount++;
+
+        if (processedCount % 10000 == 0) {
+            System.out.printf("Processed %d rows...%n", processedCount);
+        }
+    }
+}
+
+System.out.printf("Complete. Processed %d total rows.%n", processedCount);
+```
+
+<Alert type="warning" variant="inline">
+  <AlertIcon />
+  <AlertTitle>Resource Management</AlertTitle>
+  <AlertDescription>Always close streaming queries when done. Use try-with-resources to ensure the stream is properly closed even if an exception occurs.</AlertDescription>
+</Alert>
+
+## Aggregation Queries
+
+```java
+import com.devstudio.datasdk.QueryResult;
+import com.devstudio.datasdk.Row;
+
+QueryResult result = client.query(
+    "SELECT region, " +
+    "       COUNT(*) as order_count, " +
+    "       SUM(amount) as total_revenue, " +
+    "       AVG(amount) as avg_order_value " +
+    "FROM orders " +
+    "WHERE order_date >= '2025-01-01' " +
+    "GROUP BY region " +
+    "ORDER BY total_revenue DESC"
+);
+
+System.out.println("| Region | Orders | Revenue | Avg Value |");
+System.out.println("|--------|--------|---------|-----------|");
+
+for (Row row : result.getRows()) {
+    System.out.printf("| %s | %d | $%.2f | $%.2f |%n",
+        row.getString("region"),
+        row.getLong("order_count"),
+        row.getDouble("total_revenue"),
+        row.getDouble("avg_order_value")
+    );
+}
+```
+
+## Schema Discovery
+
+Inspect available datasets and their columns at runtime.
+
+```java
+import com.devstudio.datasdk.Schema;
+import com.devstudio.datasdk.Column;
+
+List<String> datasets = client.listDatasets();
+System.out.println("Available datasets: " + datasets);
+
+Schema schema = client.getSchema("orders");
+for (Column column : schema.getColumns()) {
+    System.out.printf("  %s (%s) - nullable: %s%n",
+        column.getName(),
+        column.getType(),
+        column.isNullable()
+    );
+}
+```
+
+## Error Handling
+
+```java
+import com.devstudio.datasdk.exceptions.*;
+
+try {
+    QueryResult result = client.query("SELECT * FROM nonexistent_table");
+} catch (DatasetNotFoundError e) {
+    System.err.println("Dataset does not exist: " + e.getDatasetName());
+} catch (QuerySyntaxError e) {
+    System.err.println("Invalid query at position " + e.getPosition() + ": " + e.getDetail());
+} catch (RateLimitExceededError e) {
+    System.err.println("Rate limited. Retry after " + e.getRetryAfterMs() + "ms");
+} catch (DevStudioException e) {
+    System.err.println("Unexpected SDK error: " + e.getMessage());
+    System.err.println("Request ID: " + e.getRequestId());
+}
+```
+
+## Connection Lifecycle
+
+```java
+// Create client at application startup
+DevStudioClient client = DevStudioClient.create(config);
+
+// Use throughout application lifetime
+// ...
+
+// Shut down gracefully
+client.close(); // Drains connection pool and cancels pending streams
+```
+
+<Alert type="info" variant="inline">
+  <AlertIcon />
+  <AlertTitle>Thread Safety</AlertTitle>
+  <AlertDescription>The DevStudioClient is thread-safe and designed to be shared across your application. Create a single instance and reuse it rather than creating a new client per request.</AlertDescription>
+</Alert>
+
+## Next Steps
+
+- [Python Code Examples](?path=SDKs/sdk-example-2/python/python-code-examples.mdx) — See the same patterns in Python
+- [Getting Started](?path=SDKs/sdk-example-2/getting-started.mdx) — Installation and initial setup
+- [SDK Overview](?path=SDKs/sdk-example-2/sdk-overview-2.mdx) — Architecture and feature reference
