@@ -78,6 +78,12 @@
       "versionType": "minor",
       "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
       "apiSpecFileNames": ["api-1.0.1.yaml"]
+    },
+    {
+      "version": "yaml-escaping",
+      "versionType": "minor",
+      "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
+      "apiSpecFileNames": ["UserSaveAdjustmentsResource"]
     }
   ],
   "product": {
