@@ -1,0 +1,30 @@
+openapi: "3.1.0"
+info:
+  title: Test API with Invalid Escape Characters
+  version: 1.0.0
+  description: This spec contains invalid YAML escape sequences to test sanitization
+paths:
+  /test:
+    post:
+      summary: Test endpoint
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: string
+                  description: Field with problematic escape sequences
+                  example: "\"\\K\\5\\k\\mN\\E\\'\\-|AC\\j1\\\t\\P\\/\\b$\x16T\\\x01\x7F\\\x0E\\[\\\\x1DK\\R\\H\\\a\x03\x19I\\v\\8\\\x13\\ \\no\\$M\\\x04\"@de2si9c0ai67lldezyvfts3qbvwb7cqvie8pgfl.bgrwee9.4.2.m.8.o.m.0.m.0kgx5uclac1j9ji0hjt55r5b9txrjc8ougegcy7n2krot429o91hck3b46ac35l5es76cerw7ty0nrnu31tuddq.9x1.n"
+      responses:
+        '200':
+          description: Success response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"

@@ -83,7 +83,7 @@
       "version": "yaml-escaping",
       "versionType": "minor",
       "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
-      "apiSpecFileNames": ["UserSaveAdjustmentsResource"]
+      "apiSpecFileNames": ["invalid-escape-spec"]
     }
   ],
   "product": {
