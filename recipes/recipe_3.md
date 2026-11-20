@@ -26,5 +26,5 @@ Real-world scenarios where the recipe is applicable
 
 ## Related Recipes
 Links to similar or complementary recipes
-[recipe 1](?path=docs/recipes/recipe_1.md)
-[recipe 2](?path=docs/recipes/recipe_2.md)
+[recipe 1](?path=recipes/recipe_1.md)
+[recipe 2](?path=recipes/recipe_2.md)

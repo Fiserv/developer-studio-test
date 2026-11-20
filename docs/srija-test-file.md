@@ -5,3 +5,5 @@
 Here I will fill up some file content for testing purposes
 
 Another modified test
+
+[Try it out](/product/ConnectedCommerce/api/post/v1/tokens)

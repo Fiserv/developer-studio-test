@@ -634,7 +634,7 @@ paths:
   /v1/paid/users:
     post:
       x-group-name: b2b
-      x-proxy-name: Create User
+      x-proxy-name: Create Paid User
       summary: Create User
       description: Create a user for whom disbursements will be created.
       operationId: create-user-1

@@ -203,6 +203,9 @@ axios(requestOptions)
 ## See also
 
 - [API Explorer](../api/?type=post&path=/payments/v1/charges)
+- [API Explorer2](../api?type=post&path=/payments/v1/charges)
+- [API Explorer3](/api?type=post&path=/payments/v1/charges)
+- [API Explorer4](/product/DeveloperStudioTest/api/post/cards/secured)
 - [Authentication Header](?path=docs/Resources/API-Documents/Authentication-Header.md)
 - [Payment Request](?path=docs/Resources/API-Documents/Payments/Payments.md)
 - [Postman Testing](?path=docs/Resources/Guides/Testing/Postman-Testing.md)
