@@ -2,11 +2,11 @@ openapi: "3.1.0"
 info:
   title: Test API with Invalid Escape Characters
   version: 1.0.0
-  description: This spec contains invalid YAML escape sequences to test sanitization
+  description: This spec contains complex YAML escape sequences to test sanitization. Some are valid, some are invalid
 paths:
-  /test-valid-escape-chars:
+  /test-valid-escape-chars-v1:
     post:
-      summary: Test endpoint with valid escaped chars
+      summary: Test endpoint with valid escaped chars (tenant unknown)
       requestBody:
         content:
           application/json:
@@ -17,6 +17,31 @@ paths:
                   type: string
                   description: Field with problematic but valid escape sequences
                   example: "\"\\K\\5\\k\\mN\\E\\'\\-|AC\\j1\\\t\\P\\/\\b$\x16T\\\x01\x7F\\\x0E\\[\\\\x1DK\\R\\H\\\a\x03\x19I\\v\\8\\\x13\\ \\no\\$M\\\x04\"@de2si9c0ai67lldezyvfts3qbvwb7cqvie8pgfl.bgrwee9.4.2.m.8.o.m.0.m.0kgx5uclac1j9ji0hjt55r5b9txrjc8ougegcy7n2krot429o91hck3b46ac35l5es76cerw7ty0nrnu31tuddq.9x1.n"
+      responses:
+        '200':
+          description: Success response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+  /test-valid-escape-chars-v2:
+    post:
+      summary: Test endpoint with valid escaped chars (from IssuerSolutions reference/1.0.0/uncategorized/UserSaveAdjustmentsResource.yaml)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: string
+                  description: Field with problematic but valid escape sequences
+                  example: "\"\x14\\[$;\\5\x1C,&\\9\\\bS\\<\\\x7FF\\w\v_U\\\x15\\C\\/\\Q_\\\
+                    -!\x113\x18bV\\W\\g\"@[210.227.220.184]"
       responses:
         '200':
           description: Success response
