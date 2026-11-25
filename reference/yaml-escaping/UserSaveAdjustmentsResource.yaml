@@ -1,0 +1,767 @@
+openapi: 3.0.1
+info:
+  title: fs-devportal-services-1
+  description: Welcome to the Financial Services API documentation
+  version: '1'
+servers:
+- url: https://cat-api.firstdata.com/fs
+paths:
+  /collectionsClientConfig/v1/saveActionCodes:
+    post:
+      tags:
+      - UserSaveAdjustmentsResource
+      summary: Save Action Codes
+      description: Save Action Code Config
+      operationId: saveActionCodes_v1_collectionsClientConfig
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActionCodeSaveRequest'
+        required: false
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClientInfoSaveResponse'
+      deprecated: false
+      x-proxy-name: saveActionCodes
+      x-region:
+      - North America
+      x-display: UserSaveAdjustmentsResource
+      x-codegen-request-body-name: body
+      x-group-name: UserSaveAdjustmentsResource
+  /collectionsClientConfig/v1/saveAdjustment:
+    post:
+      tags:
+      - UserSaveAdjustmentsResource
+      summary: Save Adjustments
+      description: Save Adjustment Config
+      operationId: saveAdjustment_v1_collectionsClientConfig
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdjustmentSaveRequest'
+        required: false
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClientInfoSaveResponse'
+      deprecated: false
+      x-proxy-name: saveAdjustment
+      x-region:
+      - North America
+      x-display: UserSaveAdjustmentsResource
+      x-codegen-request-body-name: body
+      x-group-name: UserSaveAdjustmentsResource
+components:
+  schemas:
+    AccessCspa:
+      required:
+      - active
+      - cspa
+      - description
+      type: object
+      properties:
+        cspa:
+          pattern: ([$]ALL|[0-9]{4})-([$]ALL|[0-9]{4})-([$]ALL|[0-9]{4})-([$]ALL|[0-9]{4})
+          type: string
+          example: $ALL-7997-$ALL-$ALL
+        active:
+          type: boolean
+        description:
+          type: string
+    AccessGetConfigRequest:
+      type: object
+      properties:
+        common:
+          $ref: '#/components/schemas/CxAccountHeader'
+        id:
+          type: string
+          description: id of key used to store data, set by JWT values
+    AccessGetConfigResponse:
+      type: object
+      properties:
+        processorInfo:
+          $ref: '#/components/schemas/ProcessorInfo'
+        x500IdCspaList:
+          type: array
+          items:
+            $ref: '#/components/schemas/AccessCspa'
+        tokenX500Id:
+          type: string
+    AccessSaveConfigRequest:
+      type: object
+      properties:
+        common:
+          $ref: '#/components/schemas/CxAccountHeader'
+        id:
+          type: string
+          description: id of key used to store data, set by JWT values
+        x500IdToCspa:
+          $ref: '#/components/schemas/AccessX500IdToCspa'
+    AccessSaveConfigResponse:
+      type: object
+      properties:
+        processorInfo:
+          $ref: '#/components/schemas/ProcessorInfo'
+        x500IdToCspa:
+          $ref: '#/components/schemas/AccessX500IdToCspa'
+    AccessX500IdToCspa:
+      required:
+      - x500Id
+      type: object
+      properties:
+        x500Id:
+          pattern: '[A-z0-9]{8}'
+          type: string
+          example: UD_DYcrE
+        x500IdCspaList:
+          type: array
+          items:
+            $ref: '#/components/schemas/AccessCspa'
+    Action Code:
+      required:
+      - actionCode
+      - actionCodeDescription
+      type: object
+      properties:
+        actionCode:
+          pattern: '[A-Za-z]{2}'
+          type: string
+          description: Action Code
+          example: VQ
+        actionCodeDescription:
+          pattern: '[A-Za-z0-9-.,$ ]{0,64}'
+          type: string
+          description: Action Code Description
+          example: uRaaqV3L9l H5P-heaIfyNtJ8-kSEq47v8qpFoWZJIVre2INAKg4
+        actionTypes:
+          type: array
+          description: List of Action Types
+          items:
+            $ref: '#/components/schemas/Action Types'
+        countAsContact:
+          type: boolean
+          description: Count As Contact
+        active:
+          type: boolean
+          description: record is active/inactive
+    Action Types:
+      required:
+      - actionTypeDescription
+      - actionTypeName
+      type: object
+      properties:
+        actionTypeName:
+          pattern: '[A-Za-z0-9-.,$ ]{0,32}'
+          type: string
+          description: Action Type Name
+          example: WGoCAXNBEFs
+        actionTypeDescription:
+          pattern: '[A-Za-z0-9-.,$ ]{0,64}'
+          type: string
+          description: Action Type Name
+          example: VcqpnbGcmlAwrQkSv
+        nextWorkDateVariable:
+          pattern: '[0-9]{0,8}'
+          type: string
+          description: Next Work Date Variable
+          example: '13'
+        memoText:
+          pattern: '[A-Za-z0-9-.,$ {}:?!]{0,128}'
+          type: string
+          description: Memo Text
+          example: aCI7$EQw4508ZET10?ieB?FjTHXTn8em$Y:rPa7?A.p97gL?1T2{NO2vt!xzp
+        chronicleBehaviorIdentifier:
+          pattern: '[A-Za-z0-9-.,$ ]{3}'
+          type: string
+          description: Chronicle Behavior Identifier
+          example: GdC
+        externalStatusCode:
+          pattern: '[A-Za-z0-9-.,$ ]{0,16}'
+          type: string
+          description: External Status Code
+          example: JrgFv
+        externalStatusReason:
+          pattern: '[A-Za-z0-9-.,$ ]{0,32}'
+          type: string
+          description: External Status Reason
+          example: UfPlOfc9wh
+        letterId:
+          pattern: '[A-Za-z0-9-.,$ ]{0,16}'
+          type: string
+          description: Letter Id
+          example: ZEE3m.O6t
+    ActionCodeSaveRequest:
+      type: object
+      properties:
+        common:
+          $ref: '#/components/schemas/CxAccountHeader'
+        actionCodes:
+          type: array
+          description: List of Action Codes
+          items:
+            $ref: '#/components/schemas/Action Code'
+        id:
+          type: string
+          description: id of key to store data, set by JWT values
+    Adjustment:
+      required:
+      - adjustmentBatchCode
+      - adjustmentDescription
+      - adjustmentTranCode
+      - originalTranCode
+      type: object
+      properties:
+        adjustmentDescription:
+          pattern: '[A-Za-z0-9-.,$ ]{0,64}'
+          type: string
+          description: Adjustment Description
+          example: 1Pxinq6I3g
+        adjustmentBatchCode:
+          pattern: '[A-Za-z]{0,2}'
+          type: string
+          description: Adjustment Batch Code
+          example: Is
+        adjustmentTranCode:
+          pattern: '[0-9]{0,3}'
+          type: string
+          description: Adjustment Transaction Code
+          example: '3'
+        originalTranCode:
+          pattern: '[0-9]{0,3}'
+          type: string
+          description: Adjustment Original Transaction Code
+          example: '607'
+        active:
+          type: boolean
+          description: record is active/inactive
+    AdjustmentGroup:
+      required:
+      - groupId
+      - groupName
+      type: object
+      properties:
+        groupId:
+          pattern: '[A-Za-z0-9-.,$ ]{0,64}'
+          type: string
+          description: Adjustment Group Id
+          example: xQRDQ2np44BOtZG,D7bnok-
+        groupName:
+          pattern: '[A-Za-z0-9-.,$ ]{0,64}'
+          type: string
+          description: Adjustment Group Name
+          example: -dmguhGA1AlD
+        active:
+          type: boolean
+          description: record is active/inactive
+    AdjustmentSaveRequest:
+      type: object
+      properties:
+        common:
+          $ref: '#/components/schemas/CxAccountHeader'
+        adjustments:
+          $ref: '#/components/schemas/Adjustments'
+        id:
+          type: string
+          description: id of key to store data, set by JWT values
+    Adjustments:
+      type: object
+      properties:
+        adjustmentCodes:
+          type: array
+          description: List of Adjustment
+          items:
+            $ref: '#/components/schemas/Adjustment'
+        adjustmentGroups:
+          type: array
+          description: List of AdjustmentGroup
+          items:
+            $ref: '#/components/schemas/AdjustmentGroup'
+    ClientChangeHistoryResponse:
+      type: object
+      properties:
+        processorInfo:
+          $ref: '#/components/schemas/ProcessorInfo'
+        status:
+          type: string
+        configChangeHistoryList:
+          type: array
+          items:
+            $ref: '#/components/schemas/CxConfigChangeHistoryData'
+    ClientConfigChangeHistoryRequest:
+      type: object
+      properties:
+        common:
+          $ref: '#/components/schemas/CxAccountHeader'
+        configChangeHistoryList:
+          type: array
+          items:
+            $ref: '#/components/schemas/CxConfigChangeHistoryData'
+    ClientConfigResponse:
+      type: object
+      properties:
+        processorInfo:
+          $ref: '#/components/schemas/ProcessorInfo'
+        configs:
+          $ref: '#/components/schemas/CxConfigs'
+    ClientInfo:
+      type: object
+      properties:
+        debtMgmtCompanyInfo:
+          type: array
+          description: Debt Management Information
+          items:
+            $ref: '#/components/schemas/DebtMgmtCompanyInfo'
+        adjustments:
+          $ref: '#/components/schemas/Adjustments'
+        actionCodes:
+          type: array
+          description: Action Codes
+          items:
+            $ref: '#/components/schemas/Action Code'
+    ClientInfoGetResponse:
+      type: object
+      properties:
+        processorInfo:
+          $ref: '#/components/schemas/ProcessorInfo'
+        responseStatus:
+          type: string
+        clientInfo:
+          $ref: '#/components/schemas/ClientInfo'
+    ClientInfoSaveResponse:
+      type: object
+      properties:
+        processorInfo:
+          $ref: '#/components/schemas/ProcessorInfo'
+        responseStatus:
+          type: string
+        clientInfo:
+          $ref: '#/components/schemas/ClientInfo'
+    CxAccountHeader:
+      type: object
+      properties:
+        user:
+          type: string
+          description: Setting this value will assign OCS user id for internal ODS
+            Calls for auditing.
+        agent:
+          type: string
+          description: Agent, copyBookList = [{copybook:"CCNDPUBS", fields:[{name:"'PMXDS'-RI-ACCT-LVL-3",
+            length:"4", eventTypes:[""]}]}, {copybook:"CCTOKNWS", fields:[{name:"'XXX'-AGENT-NR",
+            length:"4", eventTypes:["TOKEN"]}]}, {copybook:"MCATDSHB", fields:[{name:"&T.AGENT",
+            length:"4", eventTypes:["TRAN"]}]}, {copybook:"MCPIPDAT", fields:[{name:"&T.AGENT",
+            length:"4", eventTypes:["TRAN"]}]}, {copybook:"FRFALLOG", fields:[{name:"FFSL-AGENT-NUM",
+            length:"4", eventTypes:["FRFAD"]}]}], eventTypeList:["ALL"]
+          example: '4000'
+        cycle:
+          type: string
+          description: Setting this value will assign cycle destination for backend
+            system, copyBookList = [{copybook:"MCATDSHB", fields:[{name:"&T.CYCLE",
+            length:"1", eventTypes:["TRAN"]}]}, {copybook:"MCPIPDAT", fields:[{name:"&T.CENTER",
+            length:"1", eventTypes:["TRAN"]}]}], eventTypeList:["TRAN"]
+          example: T
+        clientNumber:
+          type: string
+          description: Client Number, copyBookList = [{copybook:"CCNDPUBS", fields:[{name:"'PMXDS'-RI-CLIENT-ID",
+            length:"4", eventTypes:[""]}]}, {copybook:"CCTOKNWS", fields:[{name:"'XXX'-CLIENT-NR",
+            length:"4", eventTypes:["TOKEN"]}]}, {copybook:"MCATDSHB", fields:[{name:"&T.CLIENT",
+            length:"4", eventTypes:["TRAN"]}]}, {copybook:"MCPIPDAT", fields:[{name:"&T.CLIENT",
+            length:"4", eventTypes:["TRAN"]}]}, {copybook:"FRFALLOG", fields:[{name:"FFSL-CLIENT-NUMBER",
+            length:"5", eventTypes:["FRFAD"]}]}], eventTypeList:["ALL"]
+          example: '1000'
+        system:
+          type: string
+          description: A client often has more than one Billing System/Prin.  A client
+            uses Billing System/Prins to segregate their expenses on their General
+            Ledger for accounting purposes.System, copyBookList = [{copybook:"CCNDPUBS",
+            fields:[{name:"'PMXDS'-RI-ACCT-LVL-1", length:"4", eventTypes:[""]}]},
+            {copybook:"CCTOKNWS", fields:[{name:"'XXX'-SYSTEM-NR", length:"4", eventTypes:["TOKEN"]}]},
+            {copybook:"MCATDSHB", fields:[{name:"&T.SYS", length:"4", eventTypes:["TRAN"]}]},
+            {copybook:"MCPIPDAT", fields:[{name:"&T.SYS", length:"4", eventTypes:["TRAN"]}]},
+            {copybook:"FRFALLOG", fields:[{name:"FFSL-SYSTEM-NUM", length:"4", eventTypes:["FRFAD"]}]}],
+            eventTypeList:["ALL"]
+          example: '2000'
+        prin:
+          type: string
+          description: A client often has more than one Billing System/Prin.  A client
+            uses Billing System/Prins to segregate their expenses on their General
+            Ledger for accounting purposes.Principal, copyBookList = [{copybook:"CCNDPUBS",
+            fields:[{name:"'PMXDS'-RI-ACCT-LVL-2", length:"4", eventTypes:[""]}]},
+            {copybook:"CCTOKNWS", fields:[{name:"'XXX'-PRIN-NR", length:"4", eventTypes:["TOKEN"]}]},
+            {copybook:"MCATDSHB", fields:[{name:"&T.PRIN", length:"4", eventTypes:["TRAN"]}]},
+            {copybook:"MCPIPDAT", fields:[{name:"&T.PRIN", length:"4", eventTypes:["TRAN"]}]},
+            {copybook:"FRFALLOG", fields:[{name:"FFSL-PRIN-NUM", length:"4", eventTypes:["FRFAD"]}]}],
+            eventTypeList:["ALL"]
+          example: '3000'
+        debug:
+          type: boolean
+          description: Setting this value to false will disable additional error details
+            from backend calls.
+        org:
+          type: string
+          description: Setting this value will assign to the organization identifier.
+        processor:
+          type: boolean
+          description: Setting this value to true will return processor information
+            on the response. Defaults to false
+        contentType:
+          type: string
+        retry:
+          type: integer
+          description: Transactions on the Fiserv system that do not complete within
+            the "timeout" interval can be retried the number of times specified in
+            this parameter.The default value is "0", meaning a transaction will not
+            be retried. If an application calling the API does not wish to have the
+            Fiserv system retry the transaction, they must specify a "0" in this parameter.
+          format: int64
+          example: 0
+        timeout:
+          type: integer
+          description: This parameter dictates the duration by which the REST layer
+            will wait for a transaction to complete before attempting a retry. The
+            default value for this parameter is 45000 milliseconds.
+          format: int64
+          example: 45000
+        siteId:
+          type: string
+          description: 'This field will be used by the service to determine the First
+            Track, First Dispute, Fraud Detection Work Center destination. Site Id
+            will be provided by these applications to the calling applications '
+          example: '4201'
+        externalCustomerId:
+          type: string
+          description: Client specific, external to FiServ, customer identifier.
+        accountId:
+          type: string
+          description: Account identifier on the system of record.
+          example: '8888888888888888'
+        presentationId:
+          type: string
+          description: Presentment account identifier, also can be referred to as
+            a card number.
+        privileges:
+          type: array
+          description: ESS Role Privileges
+          items:
+            type: string
+        appId:
+          type: string
+          description: applicationId from login and appId from token
+    CxComponent:
+      required:
+      - component
+      - jsonValue
+      type: object
+      properties:
+        component:
+          pattern: '[A-Za-z0-9_-]+'
+          type: string
+          description: Component Name
+          example: ScJh40XBKHQ_pNDoZ50PXLu7JJS2IsxuA9jvoRm441B25GfaRnG9UcAQuf9yrqL
+        jsonValue:
+          type: object
+          example: {}
+    CxConfig:
+      type: object
+      properties:
+        cspas:
+          type: array
+          description: List of CSPAs
+          items:
+            $ref: '#/components/schemas/CxCspas'
+    CxConfigChangeHistoryData:
+      type: object
+      properties:
+        date:
+          type: string
+          description: Date
+        time:
+          type: string
+          description: Time
+        operatorId:
+          type: string
+          description: Operator Id
+        cspaLevel:
+          pattern: '[A-Za-z0-9-$]+'
+          type: string
+          description: CSPA Level
+          example: 5-kgcxrnak3UWwlim67FaLQfgGjIMKqKMlFCUDz9Cn5k3kjqVg6aWWbEkdlybr3X0ckrfyMLcVOMUy1aV$44
+        action:
+          type: string
+          description: Action
+        changedCategory:
+          type: string
+          description: Changed Category
+        changedSection:
+          type: string
+          description: Changed Section
+        changedItem:
+          type: string
+          description: Changed Item
+        oldValue:
+          type: string
+          description: oldValue
+        newValue:
+          type: string
+          description: newValue
+    CxConfigs:
+      type: object
+      properties:
+        clientConfig:
+          $ref: '#/components/schemas/CxConfig'
+        callerAccountEntitlements:
+          $ref: '#/components/schemas/CxConfig'
+        codeToText:
+          $ref: '#/components/schemas/CxConfig'
+    CxCspas:
+      required:
+      - active
+      - cspa
+      - description
+      type: object
+      properties:
+        cspa:
+          pattern: ([$]ALL|[0-9]{4})-([$]ALL|[0-9]{4})-([$]ALL|[0-9]{4})-([$]ALL|[0-9]{4})
+          type: string
+          description: CSPA Name
+          example: 1708-1994-$ALL-$ALL
+        components:
+          type: array
+          description: List of Components
+          items:
+            $ref: '#/components/schemas/CxComponent'
+        description:
+          pattern: '[A-Za-z0-9-$ ]{0,100}'
+          type: string
+          description: Description of CSPA
+          example: DmiLEuE5uKlsR4bm$44
+        active:
+          type: boolean
+          description: Active or Inactive state
+    DebtMgmtCompanyInfo:
+      required:
+      - companyName
+      type: object
+      properties:
+        companyName:
+          pattern: '[A-Za-z0-9-.,$ ]{0,64}'
+          type: string
+          description: Debt management company name
+          example: AGB,ZmjQ3Y82m0QaqfFpL
+        companyAddressLine1:
+          pattern: '[A-Za-z0-9-.,$ ]{0,64}'
+          type: string
+          description: Debt management address line 1
+          example: .D3M26OuLcYV30n$xtm1r8AL CsFUlCyoWoB7pPQ rCzRg3
+        companyAddressLine2:
+          pattern: '[A-Za-z0-9-.,$ ]{0,64}'
+          type: string
+          description: Debt management address line 2
+          example: UKJjdGkZeM5jHcK9243EK7cksh
+        companyCity:
+          pattern: '[A-Za-z0-9-.,$ ]{0,32}'
+          type: string
+          description: Debt management company city
+          example: qqhoQHwMavAN
+        companyPhone:
+          pattern: '[A-Za-z0-9-.,$ ]{0,32}'
+          type: string
+          description: Debt management company phone
+          example: z4paELk,,6S,zLOTJN
+        companyFax:
+          pattern: '[A-Za-z0-9-.,$ ]{0,32}'
+          type: string
+          description: Debt management company fax
+          example: 3voJ6
+        companyContact:
+          pattern: '[A-Za-z0-9-.,$ ]{0,32}'
+          type: string
+          description: Debt management company contact
+          example: Qkp9zUshrox3Y,dq$NtH9G,I77
+        companyState:
+          pattern: '[A-Za-z0-9-.,$ ]{0,32}'
+          type: string
+          description: Debt management company State
+          example: NXRHTT
+        companyZip:
+          pattern: '[A-Za-z0-9-.,$ ]{0,32}'
+          type: string
+          description: Debt management company Zip
+          example: bJHVusHMHP5UaL9$f6HhV4HSHXMDAsu
+        companyEmail:
+          pattern: (?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])
+          type: string
+          description: Debt management company email
+          example: "\"\\K\\5\\k\\mN\\E\\'\\-|AC\\j1\\\t\\P\\/\\b$\x16T\\\x01\x7F\\\
+            \x0E\\[\\\x1DK\\R\\H\\\a\x03\x19I\\v\\8\\\x13\\ \\no\\$M\\\x04\"@de2si9c0ai67lldezyvfts3qbvwb7cqvie8pgfl.bgrwee9.4.2.m.8.o.m.0.m.0kgx5uclac1j9ji0hjt55r5b9txrjc8ougegcy7n2krot429o91hck3b46ac35l5es76cerw7ty0nrnu31tuddq.9x1.n"
+        active:
+          type: boolean
+          description: Debt management record is active/inactive
+    DebtMgmtSaveRequest:
+      type: object
+      properties:
+        common:
+          $ref: '#/components/schemas/CxAccountHeader'
+        debtMgmtCompanyInfo:
+          type: array
+          description: List of debt management companies
+          items:
+            $ref: '#/components/schemas/DebtMgmtCompanyInfo'
+        id:
+          type: string
+          description: id of key to store data, set by JWT values
+    DeleteElement:
+      type: object
+      properties:
+        cspa:
+          pattern: ([$]ALL|[0-9]{4})-([$]ALL|[0-9]{4})-([$]ALL|[0-9]{4})-([$]ALL|[0-9]{4})
+          type: string
+          example: $ALL-0274-$ALL-$ALL
+    GetClientChangeHistoryRequest:
+      type: object
+      properties:
+        common:
+          $ref: '#/components/schemas/CxAccountHeader'
+        startDate:
+          type: string
+          description: Start Date
+        endDate:
+          type: string
+          description: End Date
+        cspaList:
+          type: array
+          description: CSPA List
+          items:
+            type: string
+        changedCategoryList:
+          type: array
+          description: Changed Screens
+          items:
+            type: string
+    GetClientConfigRequest:
+      type: object
+      properties:
+        common:
+          $ref: '#/components/schemas/CxAccountHeader'
+        id:
+          type: string
+          description: id of key used to store data, set by JWT values
+        selectConfig:
+          pattern: (clientConfig|codeToText|callerAccountEntitlements)
+          type: string
+          description: Param to filter output by config name
+          example: codeToText
+        selectCspa:
+          pattern: ([$]ALL|[0-9]{4})-([$]ALL|[0-9]{4})-([$]ALL|[0-9]{4})-([$]ALL|[0-9]{4})
+          type: string
+          description: Param to filter output by CSPA name
+          example: $ALL-$ALL-$ALL-2930
+        selectComponent:
+          pattern: '[A-Za-z0-9_-]+'
+          type: string
+          description: Param to filter output by component name
+          example: rDNtJz34bokcczgA2mmv7En8qpbIspigkc4qSyruGJL025Xql8Mfw
+    JsonNode:
+      type: object
+    ProcessorInfo:
+      type: object
+      properties:
+        system:
+          type: string
+          description: System where the Processing took Place.
+        cycle:
+          type: string
+          description: Cycle where the Processing took Place.
+        tor:
+          type: string
+          description: Terminal Owning Region in CICS where the transaction was initially
+            received.
+        mode:
+          type: string
+          description: Capabilities of the processing environment. READ/WRITE or  READ
+            ONLY.
+    SaveClientConfigRequest:
+      type: object
+      properties:
+        common:
+          $ref: '#/components/schemas/CxAccountHeader'
+        id:
+          type: string
+          description: id of key to store data, set by JWT values
+        clientConfig:
+          $ref: '#/components/schemas/CxConfig'
+        callerAccountEntitlements:
+          $ref: '#/components/schemas/CxConfig'
+        codeToText:
+          $ref: '#/components/schemas/CxConfig'
+        selectConfig:
+          pattern: (clientConfig|codeToText|callerAccountEntitlements)
+          type: string
+          description: Param to filter output by config name
+          example: codeToText
+        selectCspa:
+          pattern: ([$]ALL|[0-9]{4})-([$]ALL|[0-9]{4})-([$]ALL|[0-9]{4})-([$]ALL|[0-9]{4})
+          type: string
+          description: Param to filter output by CSPA name
+          example: $ALL-7135-0500-$ALL
+        selectComponent:
+          pattern: '[A-Za-z0-9_-]+'
+          type: string
+          description: Param to filter output by component name
+          example: v7e1d6f4fxYMHGJ5sdHOyBQ2Tq0TduWS-ezAmGMdsuL8_GmBATDm
+        defaultCspa:
+          pattern: ([$]ALL|[0-9]{4})-([$]ALL|[0-9]{4})-([$]ALL|[0-9]{4})-([$]ALL|[0-9]{4})
+          type: string
+          description: set default CSPA
+          example: 4698-$ALL-$ALL-9806
+        delete:
+          type: array
+          description: Delete Data Elements
+          items:
+            $ref: '#/components/schemas/DeleteElement'
+    UserClientConfigRequest:
+      type: object
+      properties:
+        common:
+          $ref: '#/components/schemas/CxAccountHeader'
+        id:
+          type: string
+          description: id of key used to store data, set by JWT values
+        selectConfig:
+          pattern: (clientConfig|codeToText|callerAccountEntitlements)
+          type: string
+          description: Param to filter output by config name
+          example: callerAccountEntitlements
+        selectComponent:
+          pattern: '[A-Za-z0-9_-]+'
+          type: string
+          description: Param to filter output by component name
+          example: DsJJTRDwvuFVVO2y-gtWMiqeLB6UwfgvPrwF2M_FVYUD2Z1OGBc8IWleKqgXja1wIj58IO_iTY4o-xv0wCF8DUG5AJ
+    UserClientConfigResponse:
+      type: object
+      properties:
+        processorInfo:
+          $ref: '#/components/schemas/ProcessorInfo'
+        clientConfig:
+          $ref: '#/components/schemas/UserConfig'
+        callerAccountEntitlements:
+          $ref: '#/components/schemas/UserConfig'
+        codeToText:
+          $ref: '#/components/schemas/UserConfig'
+    UserConfig:
+      type: object
+      properties:
+        components:
+          type: array
+          description: List of components returned to user.
+          items:
+            $ref: '#/components/schemas/CxComponent'
+x-original-swagger-version: '2.0'

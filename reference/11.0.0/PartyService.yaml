@@ -5,254 +5,254 @@ info:
   description: The Party service provides support for operations that manage Party data and properties related to the Party such as names, addresses, issued identifications, tax data, phone numbers and email addresses.<br> Party refers to a person or organization, who has a relationship with the financial institution.
   contact:
     name: Kavita Kulkarni
-    email: Roopam.Cullum@Fiserv.com
+    email: John.Doe@example.com
   version: 11.0.0
 servers:
-- url: /
+  - url: /
 paths:
   /parties:
     put:
       tags:
-      - Update Party
+        - Update Party
       summary: Update Party.
       description: "Modifies the existing information of a Party, such as personal details, relationship details, secret data, default language and tax-related details. <br> For the modification request, Party Information should be provided in a dedicated person or organization aggregate.<br> For more information about the Accountholder domain, <a href=\"../docs/?path=docs/fintechs/accountholder.md\" title=\"Click to open\">click here.</a> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n  </ul>"
       operationId: UpdateParty
       parameters:
-      - name: EFXHeader
-        in: header
-        description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open">click here.</a>
-        required: true
-        style: simple
-        explode: false
-        schema:
-          $ref: '#/components/schemas/EFXHeader'
+        - name: EFXHeader
+          in: header
+          description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open">click here.</a>
+          required: true
+          style: simple
+          explode: false
+          schema:
+            $ref: "#/components/schemas/EFXHeader"
       requestBody:
         description: PartyModRq
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PartyModRqType'
+              $ref: "#/components/schemas/PartyModRqType"
             examples:
               Sample Banking:
-                $ref: '#/components/examples/PremierPartyModRequest'
+                $ref: "#/components/examples/PremierPartyModRequest"
       responses:
         "200":
           description: Ok
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PartyModRsType'
+                $ref: "#/components/schemas/PartyModRsType"
               examples:
                 Sample Banking:
-                  $ref: '#/components/examples/PremierPartyModResponse'
+                  $ref: "#/components/examples/PremierPartyModResponse"
         "401":
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "401":
-                  $ref: '#/components/examples/401-Premier'
+                  $ref: "#/components/examples/401-Premier"
         "422":
           description: Un-processable Entity
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "422":
-                  $ref: '#/components/examples/422-Premier'
+                  $ref: "#/components/examples/422-Premier"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "500":
-                  $ref: '#/components/examples/500-Premier'
+                  $ref: "#/components/examples/500-Premier"
         "503":
           description: Service Unavailable
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "503":
-                  $ref: '#/components/examples/503-Premier'
+                  $ref: "#/components/examples/503-Premier"
         default:
           description: Unexpected error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PartyModRsType'
+                $ref: "#/components/schemas/PartyModRsType"
       x-group-name: Party Service
       x-proxy-name: Update Party
       x-child-product-name: Accountholder
     post:
       tags:
-      - Add Party
+        - Add Party
       summary: Add Party.
       description: "Creates a new Party or customer record.<br> Party refers to a person or organization, who has a relationship with the financial institution.<br> For more information about the Accountholder domain, <a href=\"../docs/?path=docs/fintechs/accountholder.md\" title=\"Click to open\">click here.</a> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n  </ul>"
       operationId: addParty
       parameters:
-      - name: EFXHeader
-        in: header
-        description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open">click here.</a>
-        required: true
-        style: simple
-        explode: false
-        schema:
-          $ref: '#/components/schemas/EFXHeader'
+        - name: EFXHeader
+          in: header
+          description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open">click here.</a>
+          required: true
+          style: simple
+          explode: false
+          schema:
+            $ref: "#/components/schemas/EFXHeader"
       requestBody:
         description: PartyRec
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PartyAddRqType'
+              $ref: "#/components/schemas/PartyAddRqType"
             examples:
               Sample Banking:
-                $ref: '#/components/examples/PremierPartyAddRequest'
+                $ref: "#/components/examples/PremierPartyAddRequest"
       responses:
         "200":
           description: Ok
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PartyAddRsType'
+                $ref: "#/components/schemas/PartyAddRsType"
               examples:
                 Sample Banking:
-                  $ref: '#/components/examples/PremierPartyAddResponse'
+                  $ref: "#/components/examples/PremierPartyAddResponse"
         "401":
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "401":
-                  $ref: '#/components/examples/401-Premier'
+                  $ref: "#/components/examples/401-Premier"
         "422":
           description: Un-processable Entity
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "422":
-                  $ref: '#/components/examples/422-Premier'
+                  $ref: "#/components/examples/422-Premier"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "500":
-                  $ref: '#/components/examples/500-Premier'
+                  $ref: "#/components/examples/500-Premier"
         "503":
           description: Service Unavailable
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "503":
-                  $ref: '#/components/examples/503-Premier'
+                  $ref: "#/components/examples/503-Premier"
         default:
           description: Unexpected error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PartyAddRsType'
+                $ref: "#/components/schemas/PartyAddRsType"
       x-group-name: Party Service
       x-proxy-name: Add Party
       x-child-product-name: Accountholder
   /parties/secured:
     post:
       tags:
-      - Get Party
+        - Get Party
       summary: Get Party.
       description: "Retrieves the information related to a Party or customer using the unique identifier of a Party (PartyId).<br> For more information about the Accountholder domain, <a href=\"../docs/?path=docs/fintechs/accountholder.md\" title=\"Click to open\">click here.</a> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/riskMgt.md\" title=\"Click to open\">Risk and Performance Management</a></li>\n  </ul>"
       operationId: getPartyInqSecure
       parameters:
-      - name: EFXHeader
-        in: header
-        description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open">click here.</a>
-        required: true
-        style: simple
-        explode: false
-        schema:
-          $ref: '#/components/schemas/EFXHeader'
+        - name: EFXHeader
+          in: header
+          description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open">click here.</a>
+          required: true
+          style: simple
+          explode: false
+          schema:
+            $ref: "#/components/schemas/EFXHeader"
       requestBody:
         description: PartyRec
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PartyInqRqType'
+              $ref: "#/components/schemas/PartyInqRqType"
             examples:
               Sample Banking:
-                $ref: '#/components/examples/PremierPartyInqRequest'
+                $ref: "#/components/examples/PremierPartyInqRequest"
       responses:
         "200":
           description: Ok
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PartyInqRsType'
+                $ref: "#/components/schemas/PartyInqRsType"
               examples:
                 Sample Banking:
-                  $ref: '#/components/examples/PremierPartyInqResponse'
+                  $ref: "#/components/examples/PremierPartyInqResponse"
         "401":
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "401":
-                  $ref: '#/components/examples/401-Premier'
+                  $ref: "#/components/examples/401-Premier"
         "422":
           description: Un-processable Entity
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "422":
-                  $ref: '#/components/examples/422-Premier'
+                  $ref: "#/components/examples/422-Premier"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "500":
-                  $ref: '#/components/examples/500-Premier'
+                  $ref: "#/components/examples/500-Premier"
         "503":
           description: Service Unavailable
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "503":
-                  $ref: '#/components/examples/503-Premier'
+                  $ref: "#/components/examples/503-Premier"
         default:
           description: Unexpected error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PartyInqRsType'
+                $ref: "#/components/schemas/PartyInqRsType"
       x-group-name: Party Service
       x-proxy-name: Get Party
       x-child-product-name: Accountholder
   /parties/secured/list:
     post:
       tags:
-      - Get Party List
+        - Get Party List
       summary: Get Party List.
       description: "Retrieves the list of Party records using the various search criteria, such as Party name, address, tax ID, date of birth, issued identification and social security number.<br> For more information about the Accountholder domain, <a href=\"../docs/?path=docs/fintechs/accountholder.md\" title=\"Click to open\">click here.</a> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/riskMgt.md\" title=\"Click to open\">Risk and Performance Management</a></li>\n  </ul>"
       operationId: getPartyListInqSecured
@@ -261,62 +261,62 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PartyListInqRqType'
+              $ref: "#/components/schemas/PartyListInqRqType"
             examples:
               Sample Banking:
-                $ref: '#/components/examples/PremierPartyListInqRequest'
+                $ref: "#/components/examples/PremierPartyListInqRequest"
       responses:
         "200":
           description: Ok
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PartyListInqRsType'
+                $ref: "#/components/schemas/PartyListInqRsType"
               examples:
                 Sample Banking:
-                  $ref: '#/components/examples/PremierPartyListInqResponse'
+                  $ref: "#/components/examples/PremierPartyListInqResponse"
         "401":
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "401":
-                  $ref: '#/components/examples/401-Premier'
+                  $ref: "#/components/examples/401-Premier"
         "422":
           description: Un-processable Entity
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "422":
-                  $ref: '#/components/examples/422-Premier'
+                  $ref: "#/components/examples/422-Premier"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "500":
-                  $ref: '#/components/examples/500-Premier'
+                  $ref: "#/components/examples/500-Premier"
         "503":
           description: Service Unavailable
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "503":
-                  $ref: '#/components/examples/503-Premier'
+                  $ref: "#/components/examples/503-Premier"
         default:
           description: Unexpected error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PartyListInqRsType'
+                $ref: "#/components/schemas/PartyListInqRsType"
       x-group-name: Party Service
       x-proxy-name: Get Party List
       x-child-product-name: Accountholder
@@ -324,7 +324,7 @@ components:
   schemas:
     EFXHeader:
       required:
-      - OrganizationId
+        - OrganizationId
       type: string
       properties:
         OrganizationId:
@@ -334,9 +334,9 @@ components:
           type: string
         VendorId:
           type: string
-          description: 'An identifier, supplied by Fiserv, that represents the vendor using  this API service. '
+          description: "An identifier, supplied by Fiserv, that represents the vendor using  this API service. "
         Context:
-          $ref: '#/components/schemas/Context'
+          $ref: "#/components/schemas/Context"
       example: '{ "TrnId": "f262cfa4-9da4-4a10-b48c-2e947ce3e66c", "OrganizationId": "PRMOrg10", "VendorId": "112233", "Context":{ "Channel": "WEB" } }'
     Context:
       type: object
@@ -394,8 +394,8 @@ components:
           type: string
           description: Country code source.ISO3166-Numeric, ISO3166-Alpha-3
           enum:
-          - ISO3166Numeric
-          - ISO3166Alpha3
+            - ISO3166Numeric
+            - ISO3166Alpha3
         TerminalCountryCodeValue:
           maxLength: 80
           type: string
@@ -429,8 +429,8 @@ components:
           type: string
           description: Country code source.ISO3166-Numeric, ISO3166-Alpha-3
           enum:
-          - US
-          - IND
+            - US
+            - IND
         AcquirerCountryCodeValue:
           type: string
         MerchNum:
@@ -458,13 +458,13 @@ components:
         AMPMCode:
           type: string
           enum:
-          - AM
-          - PM
+            - AM
+            - PM
         ReentryType:
           type: string
           enum:
-          - Manual
-          - Auto
+            - Manual
+            - Auto
     AccessLevelDataType:
       title: AccessLevelDataType
       type: object
@@ -483,7 +483,7 @@ components:
       properties:
         AcctIdentType:
           type: string
-          description: 'Account Identification Type. Valid values include: AcctNum, AliasAcct, PORT, etc.'
+          description: "Account Identification Type. Valid values include: AcctNum, AliasAcct, PORT, etc."
         AcctIdentValue:
           maxLength: 36
           type: string
@@ -514,7 +514,7 @@ components:
       properties:
         CardIdentType:
           type: string
-          description: 'Card Identification Type. Valid values include: PORT.'
+          description: "Card Identification Type. Valid values include: PORT."
         CardIdentValue:
           maxLength: 36
           type: string
@@ -522,43 +522,43 @@ components:
     CardKeysType:
       title: CardKeysType
       allOf:
-      - $ref: '#/components/schemas/BaseKeysType'
-      - type: object
-        properties:
-          SvcIdent:
-            $ref: '#/components/schemas/SvcIdentType'
-          ISOCode:
-            maxLength: 80
-            type: string
-            description: ISO Card Code. Some systems like Precision instead of ISO Number they use a code to refer to the ISO Number of the card.
-          CardNum:
-            maxLength: 32
-            type: string
-            description: Card Number. This number does not include the ISO component of the card identification.
-          CardId:
-            maxLength: 36
-            type: string
-            description: Card Identifier. Uniquely identifies a card held at a financial institution (this is the card number as it appears on the card).
-          CardSeqNum:
-            maxLength: 3
-            type: string
-            description: Card Sequence Number. Typically refers to the member number (if applicable).
-          CardIdent:
-            $ref: '#/components/schemas/CardIdentType'
+        - $ref: "#/components/schemas/BaseKeysType"
+        - type: object
+          properties:
+            SvcIdent:
+              $ref: "#/components/schemas/SvcIdentType"
+            ISOCode:
+              maxLength: 80
+              type: string
+              description: ISO Card Code. Some systems like Precision instead of ISO Number they use a code to refer to the ISO Number of the card.
+            CardNum:
+              maxLength: 32
+              type: string
+              description: Card Number. This number does not include the ISO component of the card identification.
+            CardId:
+              maxLength: 36
+              type: string
+              description: Card Identifier. Uniquely identifies a card held at a financial institution (this is the card number as it appears on the card).
+            CardSeqNum:
+              maxLength: 3
+              type: string
+              description: Card Sequence Number. Typically refers to the member number (if applicable).
+            CardIdent:
+              $ref: "#/components/schemas/CardIdentType"
     CurCodeTypeType:
       title: CurCodeTypeType
       type: string
       enum:
-      - ISO4217-Alpha
-      - ISO4217-Numeric
+        - ISO4217-Alpha
+        - ISO4217-Numeric
     CurCodeType:
       title: CurCodeType
       required:
-      - CurCodeValue
+        - CurCodeValue
       type: object
       properties:
         CurCodeType:
-          $ref: '#/components/schemas/CurCodeTypeType'
+          $ref: "#/components/schemas/CurCodeTypeType"
         CurCodeTypeEnumDesc:
           maxLength: 80
           type: string
@@ -570,54 +570,54 @@ components:
     AcctKeysType:
       title: AcctKeysType
       allOf:
-      - $ref: '#/components/schemas/BaseKeysType'
-      - type: object
-        properties:
-          AcctId:
-            maxLength: 36
-            type: string
-            description: Account Identifier. Uniquely identifies an account held at a financial institution.
-          SubAcctId:
-            maxLength: 36
-            type: string
-            description: Sub Account Identifier.
-          AcctType:
-            type: string
-            description: Account Type. Classifies the type of product with which an account is associated. This element is required when adding a new account and by using this value we can identify if the account is a savings, a checking, a time deposit, loan account, etc.
-          CardKeys:
-            type: array
-            description: Card Keys.  Contains data that describes the key of the Card record.
-            items:
-              $ref: '#/components/schemas/CardKeysType'
-          AcctIdent:
-            type: array
-            description: Account Identification. Other account identification used as part of the Account object key in addition to the Account Identifier (AcctId).
-            items:
-              $ref: '#/components/schemas/AcctIdentType'
-          CurCode:
-            type: array
-            description: Currency Code.
-            items:
-              $ref: '#/components/schemas/CurCodeType'
-          FIIdentType:
-            type: array
-            description: Financial Institution Identification Type.
-            items:
-              type: object
-          FIIdent:
-            maxLength: 34
-            type: array
-            description: Financial Institution Identification.
-            items:
+        - $ref: "#/components/schemas/BaseKeysType"
+        - type: object
+          properties:
+            AcctId:
+              maxLength: 36
+              type: string
+              description: Account Identifier. Uniquely identifies an account held at a financial institution.
+            SubAcctId:
+              maxLength: 36
+              type: string
+              description: Sub Account Identifier.
+            AcctType:
+              type: string
+              description: Account Type. Classifies the type of product with which an account is associated. This element is required when adding a new account and by using this value we can identify if the account is a savings, a checking, a time deposit, loan account, etc.
+            CardKeys:
+              type: array
+              description: Card Keys.  Contains data that describes the key of the Card record.
+              items:
+                $ref: "#/components/schemas/CardKeysType"
+            AcctIdent:
+              type: array
+              description: Account Identification. Other account identification used as part of the Account object key in addition to the Account Identifier (AcctId).
+              items:
+                $ref: "#/components/schemas/AcctIdentType"
+            CurCode:
+              type: array
+              description: Currency Code.
+              items:
+                $ref: "#/components/schemas/CurCodeType"
+            FIIdentType:
+              type: array
+              description: Financial Institution Identification Type.
+              items:
+                type: object
+            FIIdent:
               maxLength: 34
-              type: string
-          BranchIdent:
-            maxLength: 22
-            type: array
-            description: Branch Identification. Other identification used as part of the Branch object key.
-            items:
+              type: array
+              description: Financial Institution Identification.
+              items:
+                maxLength: 34
+                type: string
+            BranchIdent:
               maxLength: 22
-              type: string
+              type: array
+              description: Branch Identification. Other identification used as part of the Branch object key.
+              items:
+                maxLength: 22
+                type: string
     CurAmtType:
       title: CurAmtType
       type: object
@@ -626,17 +626,17 @@ components:
           type: number
           description: Amount.
         CurCode:
-          $ref: '#/components/schemas/CurCodeType'
+          $ref: "#/components/schemas/CurCodeType"
     FinancialAmtType:
       title: FinancialAmtType
       allOf:
-      - $ref: '#/components/schemas/CurAmtType'
-      - type: object
+        - $ref: "#/components/schemas/CurAmtType"
+        - type: object
     AcctSummaryType:
       title: AcctSummaryType
       required:
-      - AcctType
-      - FinancialAmt
+        - AcctType
+        - FinancialAmt
       type: object
       properties:
         AcctType:
@@ -647,15 +647,15 @@ components:
           type: string
           description: Account Type Enumeration Description.
         FinancialAmt:
-          $ref: '#/components/schemas/FinancialAmtType'
+          $ref: "#/components/schemas/FinancialAmtType"
     SeverityType:
       title: SeverityType
       type: string
       description: Severity type of the EFX status code. Refer to the <a href="../docs?path=docs/response-codes.md" title="Click to open">Response Codes</a> section for more information.
       enum:
-      - Error
-      - Warning
-      - Info
+        - Error
+        - Warning
+        - Info
     SubjectElementType:
       title: SubjectElementType
       type: object
@@ -685,7 +685,7 @@ components:
           type: string
           description: Brief information about the EFX status code. Refer to the <a href="../docs?path=docs/response-codes.md" title="Click to open">Response Codes</a> for more information.
         Severity:
-          $ref: '#/components/schemas/SeverityType'
+          $ref: "#/components/schemas/SeverityType"
         SvcProviderName:
           maxLength: 1024
           type: string
@@ -699,7 +699,7 @@ components:
         ServerStatusCode:
           maxLength: 20
           type: string
-          description: 'Server status code of the service provider''s application.  '
+          description: "Server status code of the service provider's application.  "
         ServerStatusDesc:
           maxLength: 255
           type: string
@@ -711,11 +711,11 @@ components:
           type: array
           description: Information about the elements that caused the status.
           items:
-            $ref: '#/components/schemas/SubjectElementType'
+            $ref: "#/components/schemas/SubjectElementType"
     AddrDefinedDataType:
       title: AddrDefinedDataType
       required:
-      - DataIdent
+        - DataIdent
       type: object
       properties:
         DataIdent:
@@ -733,62 +733,62 @@ components:
         Type of address format. <br> Valid value is:
           - Label
       enum:
-      - Label
-      - Parsed
+        - Label
+        - Parsed
     AddrTypeType:
       title: AddrTypeType
       type: string
       description: "Type of the address. <br> Valid values are: \n  - Primary\n  - Secondary\n  - Seasonal"
       enum:
-      - Primary
-      - PrimaryPending
-      - Secondary
-      - Seasonal
-      - Previous
-      - Physical
+        - Primary
+        - PrimaryPending
+        - Secondary
+        - Seasonal
+        - Previous
+        - Physical
     AnnualIncomeType:
       title: AnnualIncomeType
       allOf:
-      - $ref: '#/components/schemas/CurAmtType'
-      - type: object
+        - $ref: "#/components/schemas/CurAmtType"
+        - type: object
     PartyIdentTypeType:
       title: PartyIdentTypeType
       type: string
       enum:
-      - TaxIdent
-      - IBId
-      - Name
-      - MemberNum
-      - OrgNum
-      - PersonNum
+        - TaxIdent
+        - IBId
+        - Name
+        - MemberNum
+        - OrgNum
+        - PersonNum
     PartyKeysType:
       title: PartyKeysType
       description: Unique information to identify the party record
       allOf:
-      - type: object
-        properties:
-          PartyId:
-            maxLength: 36
-            type: string
-            description: Unique identification number of a party record
+        - type: object
+          properties:
+            PartyId:
+              maxLength: 36
+              type: string
+              description: Unique identification number of a party record
     RelPartyKeysType:
       title: RelPartyKeysType
       allOf:
-      - $ref: '#/components/schemas/PartyKeysType'
-      - type: object
+        - $ref: "#/components/schemas/PartyKeysType"
+        - type: object
     BeneficialOwnerDataType:
       title: BeneficialOwnerDataType
       type: object
       properties:
         RelPartyKeys:
-          $ref: '#/components/schemas/RelPartyKeysType'
+          $ref: "#/components/schemas/RelPartyKeysType"
         FullName:
           maxLength: 96
           type: string
           description: Full Name.
         RelationshipType:
           type: string
-          description: 'Relationship Type. Indicates the relationship value. Valid values are: Control Person or Beneficial Owner.'
+          description: "Relationship Type. Indicates the relationship value. Valid values are: Control Person or Beneficial Owner."
         ControlCode:
           maxLength: 80
           type: string
@@ -831,13 +831,13 @@ components:
           - ITIN
           - ATIN
       enum:
-      - None
-      - SSN
-      - EIN
-      - Foreign
-      - ITIN
-      - ATIN
-      - Other
+        - None
+        - SSN
+        - EIN
+        - Foreign
+        - ITIN
+        - ATIN
+        - Other
     LocatorType:
       title: LocatorType
       type: string
@@ -849,15 +849,15 @@ components:
           - Officer
           - ReferralOfficer
       enum:
-      - Officer
-      - SecondOfficer
-      - ThirdOfficer
-      - FourthOfficer
-      - ReferralOfficer
+        - Officer
+        - SecondOfficer
+        - ThirdOfficer
+        - FourthOfficer
+        - ReferralOfficer
     RelationshipMgrType:
       title: RelationshipMgrType
       required:
-      - RelationshipMgrIdent
+        - RelationshipMgrIdent
       type: object
       properties:
         RelationshipMgrIdent:
@@ -865,7 +865,7 @@ components:
           type: string
           description: Unique identifier of a relationship manager
         RelationshipRole:
-          $ref: '#/components/schemas/RelationshipRoleType'
+          $ref: "#/components/schemas/RelationshipRoleType"
     LabelAddrType:
       title: LabelAddrType
       type: object
@@ -897,7 +897,7 @@ components:
     CountryCodeType:
       title: CountryCodeType
       required:
-      - CountryCodeValue
+        - CountryCodeValue
       type: object
       properties:
         CountryCodeSource:
@@ -917,46 +917,46 @@ components:
       type: integer
       example: 1
       enum:
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
-      - 6
-      - 7
-      - 8
-      - 9
-      - 10
-      - 11
-      - 12
-      - 13
-      - 14
-      - 15
-      - 16
-      - 17
-      - 18
-      - 19
-      - 20
-      - 21
-      - 22
-      - 23
-      - 24
-      - 25
-      - 26
-      - 27
-      - 28
-      - 29
-      - 30
-      - 31
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10
+        - 11
+        - 12
+        - 13
+        - 14
+        - 15
+        - 16
+        - 17
+        - 18
+        - 19
+        - 20
+        - 21
+        - 22
+        - 23
+        - 24
+        - 25
+        - 26
+        - 27
+        - 28
+        - 29
+        - 30
+        - 31
     StartDayMonthType:
       title: StartDayMonthType
       type: object
       properties:
         DayOfMonth:
-          $ref: '#/components/schemas/DayOfMonthType'
+          $ref: "#/components/schemas/DayOfMonthType"
         Month:
           type: integer
-          description: 'Month. Numeric value representing the month of recurrence. Valid values: integers between 1 and 12 inclusive.'
+          description: "Month. Numeric value representing the month of recurrence. Valid values: integers between 1 and 12 inclusive."
           format: int64
     DurationType:
       title: DurationType
@@ -977,13 +977,13 @@ components:
       title: DayOfWeekType
       type: string
       enum:
-      - Monday
-      - Tuesday
-      - Wednesday
-      - Thursday
-      - Friday
-      - Saturday
-      - Sunday
+        - Monday
+        - Tuesday
+        - Wednesday
+        - Thursday
+        - Friday
+        - Saturday
+        - Sunday
     RecurRuleType:
       title: RecurRuleType
       type: object
@@ -997,21 +997,21 @@ components:
           description: Recurrence Type Enumeration Description.
         RecurInterval:
           type: integer
-          description: 'Recurrence Interval. Number of units between occurrences. Should be an integer. If  ‘Daily’: Number of days between occurrences. If   ‘Weekly’: Number of weeks between occurrences. If   ''Monthly’: Number of months between occurrences. If   ‘Yearly’: Number of years between occurrences. If not provided, assume default value of 1, i.e. every day, every week, every month, or every year. If ''Cycle'' : Number of the designated cycle.'
+          description: "Recurrence Interval. Number of units between occurrences. Should be an integer. If  ‘Daily’: Number of days between occurrences. If   ‘Weekly’: Number of weeks between occurrences. If   'Monthly’: Number of months between occurrences. If   ‘Yearly’: Number of years between occurrences. If not provided, assume default value of 1, i.e. every day, every week, every month, or every year. If 'Cycle' : Number of the designated cycle."
           format: int64
         RecurInstance:
           type: integer
           description: Recurrent Instance. Numeric value representing the instance of the days(s) of the week of recurrence, i.e. Second Wednesday of the month, First Monday of the year. DayOfWeek must also be provided.
           format: int64
         DayOfWeek:
-          $ref: '#/components/schemas/DayOfWeekType'
+          $ref: "#/components/schemas/DayOfWeekType"
         DayOfMonth:
-          $ref: '#/components/schemas/DayOfMonthType'
+          $ref: "#/components/schemas/DayOfMonthType"
         SecondDayOfMonth:
-          $ref: '#/components/schemas/DayOfMonthType'
+          $ref: "#/components/schemas/DayOfMonthType"
         Month:
           type: integer
-          description: 'Month. Numeric value representing the month of recurrence. Valid values: integers between 1 and 12 inclusive.'
+          description: "Month. Numeric value representing the month of recurrence. Valid values: integers between 1 and 12 inclusive."
           format: int64
         RecurStartDate:
           type: string
@@ -1035,7 +1035,7 @@ components:
           format: int64
         AdjDaysBasis:
           type: string
-          description: 'Adjustment Days Basis. Used in combination with Adjustment Days (AdjDays). It indicates a basis for an adjustment such as: Due Date (DueDt), Statement Date (StmtDt).'
+          description: "Adjustment Days Basis. Used in combination with Adjustment Days (AdjDays). It indicates a basis for an adjustment such as: Due Date (DueDt), Statement Date (StmtDt)."
         WeekendOption:
           type: string
           description: Weekend Option. Describes how certain functionality, e.g. Transfers are processed on the Weekend.
@@ -1050,12 +1050,12 @@ components:
         StartDt:
           pattern: ^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$
           type: string
-          description: 'Start date and time value. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS'
+          description: "Start date and time value. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS"
           example: 2021-01-31T23:59:59.999
         EndDt:
           pattern: ^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$
           type: string
-          description: 'End date and time value. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS'
+          description: "End date and time value. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS"
           example: 2021-01-31T23:59:59.999
       description: Details of the time frame when the address is active.
     HandlingCodeOptionType:
@@ -1073,143 +1073,143 @@ components:
           - DoNotPrint
           - UsePortfolio
       enum:
-      - StatementsNoticesChecks
-      - Statements
-      - StatementsNotices
-      - StatementsChecks
-      - Notices
-      - NoticesChecks
-      - Checks
-      - DoNotPrint
-      - UsePortfolio
-      - UseDefault
+        - StatementsNoticesChecks
+        - Statements
+        - StatementsNotices
+        - StatementsChecks
+        - Notices
+        - NoticesChecks
+        - Checks
+        - DoNotPrint
+        - UsePortfolio
+        - UseDefault
     PhoneNumType:
       title: PhoneNumType
       description: Phone number details of a party.
       allOf:
-      - required:
-        - PhoneType
-        type: object
-        properties:
-          PhoneType:
-            type: string
-            description: |-
-              Type of a phone. <br> Valid values are:
-                - Home
-                - Work
-                - Mobile
-                - Fax
-                - Pager
-                - Modem
-                - Other
-          PhoneTypeEnumDesc:
-            maxLength: 80
-            type: string
-            description: Description of the enumeration value in the PhoneType field.
-          Phone:
-            type: string
-            description: Phone number
-          PreferredPhone:
-            type: boolean
-            description: Flag to indicate phone number is a preferred phone number to contact
-          PhoneDesc:
-            maxLength: 30
-            type: string
-            description: Description of phone
+        - required:
+            - PhoneType
+          type: object
+          properties:
+            PhoneType:
+              type: string
+              description: |-
+                Type of a phone. <br> Valid values are:
+                  - Home
+                  - Work
+                  - Mobile
+                  - Fax
+                  - Pager
+                  - Modem
+                  - Other
+            PhoneTypeEnumDesc:
+              maxLength: 80
+              type: string
+              description: Description of the enumeration value in the PhoneType field.
+            Phone:
+              type: string
+              description: Phone number
+            PreferredPhone:
+              type: boolean
+              description: Flag to indicate phone number is a preferred phone number to contact
+            PhoneDesc:
+              maxLength: 30
+              type: string
+              description: Description of phone
     PostAddrType:
       title: PostAddrType
       description: Postal address details of a party
       allOf:
-      - $ref: '#/components/schemas/LocatorType'
-      - required:
-        - AddrType
-        type: object
-        properties:
-          OpenDt:
-            type: string
-            description: 'Date on which the account record is created. <br> Format: yyyy-mm-dd '
-            format: date
-            example: 2021-11-20
-          AddressIdent:
-            maxLength: 36
-            type: string
-            description: Unique identifier of an address record
-          AddrUse:
-            type: string
-            description: |-
-              Usage of the address.  <br> Valid values are:
-                - Business
-                - Home
-                - Personal
-                - Tax
-          AddrUseEnumDesc:
-            maxLength: 80
-            type: string
-            description: Description of the enumeration value in the AddrUse field
-          AddrFormatType:
-            $ref: '#/components/schemas/AddrFormatTypeType'
-          Addr1:
-            maxLength: 64
-            type: string
-            description: Address line 1
-          Addr2:
-            maxLength: 64
-            type: string
-            description: Address line 2. To enter Addr2, Addr1 field must be provided.
-          City:
-            maxLength: 32
-            type: string
-            description: 'Name of the city '
-          StateProv:
-            maxLength: 80
-            type: string
-            description: State province name as per <a href="https://en.wikipedia.org/wiki/ISO_3166-2:US" title="Click to open" target="_blank" >ISO 3166-2:US codes</a>.
-          PostalCode:
-            maxLength: 11
-            type: string
-            description: Postal code or Zip code
-          CountryCode:
-            $ref: '#/components/schemas/CountryCodeType'
-          AddrType:
-            $ref: '#/components/schemas/AddrTypeType'
-          TimeFrame:
-            $ref: '#/components/schemas/TimeFrameType'
-          Retention:
-            type: boolean
-            description: Flag to indicate the address to be retained after its timeframe
-          CensusTract:
-            maxLength: 20
-            type: string
-            description: Census track number assigned by the U.S. Census Bureau to identify a geographic location.
-          CensusBlock:
-            maxLength: 20
-            type: string
-            description: Census block number assigned by the U.S. Postal Service to uniquely identify each carrier delivery point
-          ForeignFlag:
-            type: boolean
-            description: Flag to indicate the given postal address is foreign address
-          HandlingCode:
-            maxLength: 80
-            type: string
-            description: Handling code to specify the handling process of the notification and statement forms
-          HandlingCodeOption:
-            $ref: '#/components/schemas/HandlingCodeOptionType'
-          MSACode:
-            type: integer
-            description: Code that identifies a Metropolitan Statistical Area for postal delivery purposes. This code is defined by the U.S. Office of Management and Budget (OMB) and used by the U.S. Census Bureau and other federal government agencies for statistical purposes.
-            format: int64
+        - $ref: "#/components/schemas/LocatorType"
+        - required:
+            - AddrType
+          type: object
+          properties:
+            OpenDt:
+              type: string
+              description: "Date on which the account record is created. <br> Format: yyyy-mm-dd "
+              format: date
+              example: 2021-11-20
+            AddressIdent:
+              maxLength: 36
+              type: string
+              description: Unique identifier of an address record
+            AddrUse:
+              type: string
+              description: |-
+                Usage of the address.  <br> Valid values are:
+                  - Business
+                  - Home
+                  - Personal
+                  - Tax
+            AddrUseEnumDesc:
+              maxLength: 80
+              type: string
+              description: Description of the enumeration value in the AddrUse field
+            AddrFormatType:
+              $ref: "#/components/schemas/AddrFormatTypeType"
+            Addr1:
+              maxLength: 64
+              type: string
+              description: Address line 1
+            Addr2:
+              maxLength: 64
+              type: string
+              description: Address line 2. To enter Addr2, Addr1 field must be provided.
+            City:
+              maxLength: 32
+              type: string
+              description: "Name of the city "
+            StateProv:
+              maxLength: 80
+              type: string
+              description: State province name as per <a href="https://en.wikipedia.org/wiki/ISO_3166-2:US" title="Click to open" target="_blank" >ISO 3166-2:US codes</a>.
+            PostalCode:
+              maxLength: 11
+              type: string
+              description: Postal code or Zip code
+            CountryCode:
+              $ref: "#/components/schemas/CountryCodeType"
+            AddrType:
+              $ref: "#/components/schemas/AddrTypeType"
+            TimeFrame:
+              $ref: "#/components/schemas/TimeFrameType"
+            Retention:
+              type: boolean
+              description: Flag to indicate the address to be retained after its timeframe
+            CensusTract:
+              maxLength: 20
+              type: string
+              description: Census track number assigned by the U.S. Census Bureau to identify a geographic location.
+            CensusBlock:
+              maxLength: 20
+              type: string
+              description: Census block number assigned by the U.S. Postal Service to uniquely identify each carrier delivery point
+            ForeignFlag:
+              type: boolean
+              description: Flag to indicate the given postal address is foreign address
+            HandlingCode:
+              maxLength: 80
+              type: string
+              description: Handling code to specify the handling process of the notification and statement forms
+            HandlingCodeOption:
+              $ref: "#/components/schemas/HandlingCodeOptionType"
+            MSACode:
+              type: integer
+              description: Code that identifies a Metropolitan Statistical Area for postal delivery purposes. This code is defined by the U.S. Office of Management and Budget (OMB) and used by the U.S. Census Bureau and other federal government agencies for statistical purposes.
+              format: int64
     BeneficiaryDataType:
       title: BeneficiaryDataType
       type: object
       properties:
         PartyKeys:
-          $ref: '#/components/schemas/PartyKeysType'
+          $ref: "#/components/schemas/PartyKeysType"
         FullName:
           maxLength: 96
           type: string
           description: Full Name.
         TaxIdentType:
-          $ref: '#/components/schemas/TaxIdentTypeType'
+          $ref: "#/components/schemas/TaxIdentTypeType"
         TaxIdent:
           maxLength: 12
           type: string
@@ -1219,7 +1219,7 @@ components:
           description: Birth Date.
           format: date
         PostAddr:
-          $ref: '#/components/schemas/PostAddrType'
+          $ref: "#/components/schemas/PostAddrType"
         BeneficiaryLevel:
           type: string
           description: Beneficiary Level. Identifies primary from contigent beneficiaries in the account.
@@ -1247,12 +1247,12 @@ components:
     CardSummDataType:
       title: CardSummDataType
       required:
-      - CardKeys
-      - CardType
+        - CardKeys
+        - CardType
       type: object
       properties:
         CardKeys:
-          $ref: '#/components/schemas/CardKeysType'
+          $ref: "#/components/schemas/CardKeysType"
         CardType:
           maxLength: 80
           type: string
@@ -1268,13 +1268,13 @@ components:
     CashExclusionLimitAmtType:
       title: CashExclusionLimitAmtType
       allOf:
-      - $ref: '#/components/schemas/CurAmtType'
-      - type: object
+        - $ref: "#/components/schemas/CurAmtType"
+        - type: object
     CashValueAmtType:
       title: CashValueAmtType
       allOf:
-      - $ref: '#/components/schemas/CurAmtType'
-      - type: object
+        - $ref: "#/components/schemas/CurAmtType"
+        - type: object
     CDARSDataType:
       title: CDARSDataType
       type: object
@@ -1321,7 +1321,7 @@ components:
     ClientDefinedDataType:
       title: ClientDefinedDataType
       required:
-      - DataIdent
+        - DataIdent
       type: object
       properties:
         DataClassType:
@@ -1333,7 +1333,7 @@ components:
         DataIdent:
           maxLength: 36
           type: string
-          description: 'Unique data identifier to identify the client-defined data item '
+          description: "Unique data identifier to identify the client-defined data item "
         DataType:
           type: string
           description: |-
@@ -1357,7 +1357,7 @@ components:
           format: int64
         ExpDt:
           type: string
-          description: 'Date after which the client-defined data item expires and becomes inactive. <br> Format: yyyy-mm-dd '
+          description: "Date after which the client-defined data item expires and becomes inactive. <br> Format: yyyy-mm-dd "
           format: date
           example: 2021-11-20
         Desc:
@@ -1378,13 +1378,13 @@ components:
     ClientDefinedSearchType:
       title: ClientDefinedSearchType
       required:
-      - DataIdent
+        - DataIdent
       type: object
       properties:
         DataIdent:
           maxLength: 36
           type: string
-          description: 'Unique data identifier to identify the client-defined data item '
+          description: "Unique data identifier to identify the client-defined data item "
         Value:
           maxLength: 256
           type: string
@@ -1394,29 +1394,29 @@ components:
       title: EmailType
       description: Email address details of a party
       allOf:
-      - type: object
-        properties:
-          EmailIdent:
-            maxLength: 36
-            type: string
-            description: Unique identifier of the email address
-          EmailType:
-            type: string
-            description: "Type of the email address.  <br> Valid values are:\n  - Business\n  - Person\n  "
-          EmailAddr:
-            maxLength: 254
-            type: string
-            description: Email address of a party
-          PreferredEmail:
-            type: boolean
-            description: Flag to indicate the eamil address is the preferred email address of contact
+        - type: object
+          properties:
+            EmailIdent:
+              maxLength: 36
+              type: string
+              description: Unique identifier of the email address
+            EmailType:
+              type: string
+              description: "Type of the email address.  <br> Valid values are:\n  - Business\n  - Person\n  "
+            EmailAddr:
+              maxLength: 254
+              type: string
+              description: Email address of a party
+            PreferredEmail:
+              type: boolean
+              description: Flag to indicate the eamil address is the preferred email address of contact
     WebAddrType:
       title: WebAddrType
       type: object
       properties:
         WebAddrIdent:
           type: integer
-          description: 'Unique identifier of the web address. <br>  <b>Note: Use when you have more than one occurrence of a web address type. This element serializes the web addresses.</b>'
+          description: "Unique identifier of the web address. <br>  <b>Note: Use when you have more than one occurrence of a web address type. This element serializes the web addresses.</b>"
           format: int64
         WebAddrType:
           type: string
@@ -1433,29 +1433,29 @@ components:
       type: object
       properties:
         PhoneNum:
-          $ref: '#/components/schemas/PhoneNumType'
+          $ref: "#/components/schemas/PhoneNumType"
         PostAddr:
-          $ref: '#/components/schemas/PostAddrType'
+          $ref: "#/components/schemas/PostAddrType"
         Email:
-          $ref: '#/components/schemas/EmailType'
+          $ref: "#/components/schemas/EmailType"
         WebAddr:
-          $ref: '#/components/schemas/WebAddrType'
+          $ref: "#/components/schemas/WebAddrType"
     CreditLineLimitAmtType:
       title: CreditLineLimitAmtType
       allOf:
-      - $ref: '#/components/schemas/CurAmtType'
-      - type: object
+        - $ref: "#/components/schemas/CurAmtType"
+        - type: object
     ReviewFrequencyType:
       title: ReviewFrequencyType
       allOf:
-      - $ref: '#/components/schemas/RecurRuleType'
-      - type: object
+        - $ref: "#/components/schemas/RecurRuleType"
+        - type: object
     CreditLineDataType:
       title: CreditLineDataType
       type: object
       properties:
         CreditLineLimitAmt:
-          $ref: '#/components/schemas/CreditLineLimitAmtType'
+          $ref: "#/components/schemas/CreditLineLimitAmtType"
         Priority:
           maxLength: 10
           type: string
@@ -1465,7 +1465,7 @@ components:
           description: Approval Date.
           format: date
         ReviewFrequency:
-          $ref: '#/components/schemas/ReviewFrequencyType'
+          $ref: "#/components/schemas/ReviewFrequencyType"
         NextReviewDt:
           type: string
           description: Next Review Date. Next date the collateral will be reviewed.
@@ -1476,12 +1476,12 @@ components:
     LoanAmtType:
       title: LoanAmtType
       allOf:
-      - $ref: '#/components/schemas/CurAmtType'
-      - type: object
+        - $ref: "#/components/schemas/CurAmtType"
+        - type: object
     CreditRiskType:
       title: CreditRiskType
       required:
-      - RiskCategory
+        - RiskCategory
       type: object
       properties:
         RiskCategory:
@@ -1494,11 +1494,11 @@ components:
         InternalScore:
           maxLength: 80
           type: string
-          description: 'Internal credit risk rating used to assess the customer''s credit risk '
+          description: "Internal credit risk rating used to assess the customer's credit risk "
     RefDataType:
       title: RefDataType
       required:
-      - RefType
+        - RefType
       type: object
       properties:
         RefType:
@@ -1535,14 +1535,14 @@ components:
           type: array
           description: Reference Data.
           items:
-            $ref: '#/components/schemas/RefDataType'
+            $ref: "#/components/schemas/RefDataType"
     DisclosureDataType:
       title: DisclosureDataType
       type: object
       properties:
         DisclosureDt:
           type: string
-          description: 'Date of disclosure. <br> Format: yyyy-mm-dd'
+          description: "Date of disclosure. <br> Format: yyyy-mm-dd"
           format: date
           example: 2021-11-20
         DisclosureAckType:
@@ -1551,7 +1551,7 @@ components:
     EDDRiskType:
       title: EDDRiskType
       required:
-      - EDDRiskCategory
+        - EDDRiskCategory
       type: object
       properties:
         EDDRiskCategory:
@@ -1577,7 +1577,7 @@ components:
           type: array
           description: Enhance Due Diligence Risk.
           items:
-            $ref: '#/components/schemas/EDDRiskType'
+            $ref: "#/components/schemas/EDDRiskType"
         EDDCategory:
           maxLength: 80
           type: array
@@ -1626,7 +1626,7 @@ components:
       properties:
         EmploymentType:
           type: string
-          description: 'Employment Type. Work arrangement based on hours worked: FullTime, PartTime, etc.'
+          description: "Employment Type. Work arrangement based on hours worked: FullTime, PartTime, etc."
         EmploymentTypeEnumDesc:
           maxLength: 80
           type: string
@@ -1636,7 +1636,7 @@ components:
           type: string
           description: Employer Name.
         PostAddr:
-          $ref: '#/components/schemas/PostAddrType'
+          $ref: "#/components/schemas/PostAddrType"
         Occupation:
           maxLength: 50
           type: string
@@ -1654,27 +1654,27 @@ components:
           type: string
           description: Income Source.
         AnnualIncome:
-          $ref: '#/components/schemas/AnnualIncomeType'
+          $ref: "#/components/schemas/AnnualIncomeType"
         JobTitle:
           maxLength: 32
           type: string
           description: Job Title.
         TimeFrame:
-          $ref: '#/components/schemas/TimeFrameType'
+          $ref: "#/components/schemas/TimeFrameType"
     FaceValueAmtType:
       title: FaceValueAmtType
       allOf:
-      - $ref: '#/components/schemas/CurAmtType'
-      - type: object
+        - $ref: "#/components/schemas/CurAmtType"
+        - type: object
     MaxCoverageAmtType:
       title: MaxCoverageAmtType
       allOf:
-      - $ref: '#/components/schemas/CurAmtType'
-      - type: object
+        - $ref: "#/components/schemas/CurAmtType"
+        - type: object
     FinancialTypeDataType:
       title: FinancialTypeDataType
       required:
-      - FinancialType
+        - FinancialType
       type: object
       properties:
         FinancialType:
@@ -1693,9 +1693,9 @@ components:
           type: string
           description: Financial Sub Type Enumeration Description.
         FinancialAmt:
-          $ref: '#/components/schemas/FinancialAmtType'
+          $ref: "#/components/schemas/FinancialAmtType"
         MaxCoverageAmt:
-          $ref: '#/components/schemas/MaxCoverageAmtType'
+          $ref: "#/components/schemas/MaxCoverageAmtType"
     FinancialDataType:
       title: FinancialDataType
       type: object
@@ -1705,7 +1705,7 @@ components:
           type: string
           description: Update Date.
         ReviewFrequency:
-          $ref: '#/components/schemas/ReviewFrequencyType'
+          $ref: "#/components/schemas/ReviewFrequencyType"
         NextReviewDt:
           type: string
           description: Next Review Date. Next date the collateral will be reviewed.
@@ -1714,34 +1714,34 @@ components:
           type: array
           description: Financial Type Data.
           items:
-            $ref: '#/components/schemas/FinancialTypeDataType'
+            $ref: "#/components/schemas/FinancialTypeDataType"
     ForeignTaxFormsType:
       title: ForeignTaxFormsType
       type: string
       description: Foreign tax forms as defined by the Internal Revenue Service (IRS)
       enum:
-      - None
-      - 1042S
-      - W8
-      - 1042SandW8
+        - None
+        - 1042S
+        - W8
+        - 1042SandW8
     RecipientCountryCodeType:
       title: RecipientCountryCodeType
       description: Tax recipient country code.
       allOf:
-      - $ref: '#/components/schemas/CountryCodeType'
-      - type: object
+        - $ref: "#/components/schemas/CountryCodeType"
+        - type: object
     ResidenceCountryType:
       title: ResidenceCountryType
       description: Country details of the recipient of the foreign tax
       allOf:
-      - $ref: '#/components/schemas/CountryCodeType'
-      - type: object
+        - $ref: "#/components/schemas/CountryCodeType"
+        - type: object
     ForeignTaxDataType:
       title: ForeignTaxDataType
       type: object
       properties:
         ForeignTaxForms:
-          $ref: '#/components/schemas/ForeignTaxFormsType'
+          $ref: "#/components/schemas/ForeignTaxFormsType"
         IncomeCode:
           maxLength: 2
           type: string
@@ -1762,9 +1762,9 @@ components:
           type: string
           description: State province name as per <a href="https://en.wikipedia.org/wiki/ISO_3166-2:US" title="Click to open" target="_blank" >ISO 3166-2:US codes</a>.
         RecipientCountryCode:
-          $ref: '#/components/schemas/RecipientCountryCodeType'
+          $ref: "#/components/schemas/RecipientCountryCodeType"
         RecipientResidenceCountry:
-          $ref: '#/components/schemas/ResidenceCountryType'
+          $ref: "#/components/schemas/ResidenceCountryType"
         RecipientPostalCode:
           maxLength: 11
           type: string
@@ -1787,7 +1787,7 @@ components:
         RecipientGIIN:
           maxLength: 19
           type: string
-          description: 'Recipient Global Intermediary Identification Number assigned by IRS to a Participating Foreign Financial Institution (PFFI) or Registered Deemed Compliant FFI after a financial institution’s FATCA registration is submitted and approved. '
+          description: "Recipient Global Intermediary Identification Number assigned by IRS to a Participating Foreign Financial Institution (PFFI) or Registered Deemed Compliant FFI after a financial institution’s FATCA registration is submitted and approved. "
         W8FormType:
           type: string
           description: |-
@@ -1796,63 +1796,63 @@ components:
               - W8-BEN
         ForeignCertDt:
           type: string
-          description: 'Date on which the foreign tax is certified. <br> Format: yyyy-mm-dd '
+          description: "Date on which the foreign tax is certified. <br> Format: yyyy-mm-dd "
           format: date
           example: 2021-11-20
         ForeignExpDt:
           type: string
-          description: 'Date after which the foreign tax expires. <br> Format: yyyy-mm-dd '
+          description: "Date after which the foreign tax expires. <br> Format: yyyy-mm-dd "
           format: date
           example: 2021-11-20
       description: Data related to the taxes paid to a foreign government as a result of foreign income tax withholdings
     FromAcctKeysType:
       title: FromAcctKeysType
       allOf:
-      - $ref: '#/components/schemas/AcctKeysType'
-      - type: object
-        properties:
-          TrnCode:
-            maxLength: 80
-            type: string
-            description: Transaction Code. The Service Provider Transaction Code posted to the account.
-          ACHTrnCode:
-            maxLength: 80
-            type: string
-            description: ACH Transaction Code.
-          ACHReceivingType:
-            type: string
-            description: ACH Receiving Type.
-          ACHReceivingCompany:
-            maxLength: 30
-            type: string
-            description: ACH Receiving Company. Also known as Individual Name (Account Holder Name). This is the name of the receiver of the transaction.
-          ACHCompanyEntryDesc:
-            maxLength: 30
-            type: string
-            description: ACH Company Entry Description.
-          SameDayInd:
-            type: boolean
-            description: Same Day Indicator.
-          ACHStartDt:
-            type: string
-            description: ACH Start Date.
-            format: date
+        - $ref: "#/components/schemas/AcctKeysType"
+        - type: object
+          properties:
+            TrnCode:
+              maxLength: 80
+              type: string
+              description: Transaction Code. The Service Provider Transaction Code posted to the account.
+            ACHTrnCode:
+              maxLength: 80
+              type: string
+              description: ACH Transaction Code.
+            ACHReceivingType:
+              type: string
+              description: ACH Receiving Type.
+            ACHReceivingCompany:
+              maxLength: 30
+              type: string
+              description: ACH Receiving Company. Also known as Individual Name (Account Holder Name). This is the name of the receiver of the transaction.
+            ACHCompanyEntryDesc:
+              maxLength: 30
+              type: string
+              description: ACH Company Entry Description.
+            SameDayInd:
+              type: boolean
+              description: Same Day Indicator.
+            ACHStartDt:
+              type: string
+              description: ACH Start Date.
+              format: date
     GenderType:
       title: GenderType
       type: string
       description: Gender of a person
       enum:
-      - Male
-      - Female
-      - Unknown
+        - Male
+        - Female
+        - Unknown
     GovIssuedIdentType:
       title: GovIssuedIdentType
       required:
-      - CountryCode
+        - CountryCode
       type: object
       properties:
         CountryCode:
-          $ref: '#/components/schemas/CountryCodeType'
+          $ref: "#/components/schemas/CountryCodeType"
         StateProv:
           maxLength: 80
           type: string
@@ -1865,17 +1865,17 @@ components:
       title: HomeOwnershipType
       type: string
       enum:
-      - Lease
-      - Own
-      - Rent
-      - DoNotOwn
+        - Lease
+        - Own
+        - Rent
+        - DoNotOwn
     OvrdElementType:
       title: OvrdElementType
       type: object
       description: Information about the elements that corresponds to the override exception code.
       allOf:
-      - $ref: '#/components/schemas/SubjectElementType'
-      - type: object
+        - $ref: "#/components/schemas/SubjectElementType"
+        - type: object
     OverrideExceptionType:
       title: OverrideExceptionType
       type: object
@@ -1892,7 +1892,7 @@ components:
           type: string
           description: Override exception code to be overridden. This can be the ServerStatusCode from the Message Status section.
         OvrdElement:
-          $ref: '#/components/schemas/OvrdElementType'
+          $ref: "#/components/schemas/OvrdElementType"
     OvrdExceptionDataType:
       title: OvrdExceptionDataType
       type: object
@@ -1901,7 +1901,7 @@ components:
           type: array
           description: List of the exceptions that can be overridden.
           items:
-            $ref: '#/components/schemas/OverrideExceptionType'
+            $ref: "#/components/schemas/OverrideExceptionType"
       description: Details of the exceptions that can be manually acknowledged by the client.
     PartyPrefType:
       title: PartyPrefType
@@ -1928,7 +1928,7 @@ components:
           maxLength: 36
           type: string
           description: Member Number.
-      description: '[IFXR]Member Data.'
+      description: "[IFXR]Member Data."
     USATaxIdCertType:
       title: USATaxIdCertType
       type: object
@@ -1949,18 +1949,18 @@ components:
       type: object
       properties:
         TaxIdentType:
-          $ref: '#/components/schemas/TaxIdentTypeType'
+          $ref: "#/components/schemas/TaxIdentTypeType"
         TaxIdent:
           maxLength: 12
           type: string
-          description: 'Unique identifier of tax '
+          description: "Unique identifier of tax "
           example: "123456789"
         TaxIdentVerified:
           type: boolean
           description: Flag to indicate the tax information is verified
         TaxIdentVerifiedDt:
           type: string
-          description: 'Date when the tax identification is verified. <br> Format: yyyy-mm-dd '
+          description: "Date when the tax identification is verified. <br> Format: yyyy-mm-dd "
           format: date
           example: 2021-11-20
         TaxIdentVerifiedAttempts:
@@ -1973,16 +1973,16 @@ components:
           description: Any other identifier of tax information related to a party
         BNotice1Dt:
           type: string
-          description: 'Date when the B-Notice 1 is sent to a party.  <br> Format: yyyy-mm-dd'
+          description: "Date when the B-Notice 1 is sent to a party.  <br> Format: yyyy-mm-dd"
           format: date
           example: 2021-11-20
         BNotice2Dt:
           type: string
-          description: 'Date when the B-Notice 2 is sent to a party.  <br> Format: yyyy-mm-dd'
+          description: "Date when the B-Notice 2 is sent to a party.  <br> Format: yyyy-mm-dd"
           format: date
           example: 2021-11-20
         ForeignTaxData:
-          $ref: '#/components/schemas/ForeignTaxDataType'
+          $ref: "#/components/schemas/ForeignTaxDataType"
         LastActivityDt:
           type: string
           description: Last Activity Date.
@@ -2003,7 +2003,7 @@ components:
     SecretDataType:
       title: SecretDataType
       required:
-      - SecretIdent
+        - SecretIdent
       type: object
       properties:
         SecretIdent:
@@ -2026,8 +2026,8 @@ components:
     ReminderType:
       title: ReminderType
       required:
-      - ReminderCategory
-      - ReminderInd
+        - ReminderCategory
+        - ReminderInd
       type: object
       properties:
         ReminderCategory:
@@ -2041,14 +2041,14 @@ components:
     TaxExemptAmtType:
       title: TaxExemptAmtType
       allOf:
-      - $ref: '#/components/schemas/CurAmtType'
-      - type: object
+        - $ref: "#/components/schemas/CurAmtType"
+        - type: object
     InternetBankingFileOptType:
       title: InternetBankingFileOptType
       type: object
       properties:
         Vendor:
-          $ref: '#/components/schemas/AccessLevelDataType'
+          $ref: "#/components/schemas/AccessLevelDataType"
         FileOption:
           maxLength: 80
           type: string
@@ -2057,12 +2057,12 @@ components:
       title: InsurancePolicyTypeType
       type: string
       enum:
-      - None
-      - Joint
-      - Single
-      - NoneItwasSingle
-      - NoneItwasJoint
-      - SingleItwasJoint
+        - None
+        - Joint
+        - Single
+        - NoneItwasSingle
+        - NoneItwasJoint
+        - SingleItwasJoint
     LifeInsuranceDataType:
       title: LifeInsuranceDataType
       type: object
@@ -2072,7 +2072,7 @@ components:
           type: string
           description: Policy Number.
         InsurancePolicyType:
-          $ref: '#/components/schemas/InsurancePolicyTypeType'
+          $ref: "#/components/schemas/InsurancePolicyTypeType"
         Company:
           maxLength: 60
           type: string
@@ -2082,7 +2082,7 @@ components:
           type: string
           description: Insurance Company Identification.
         CompanyPostAddr:
-          $ref: '#/components/schemas/PostAddrType'
+          $ref: "#/components/schemas/PostAddrType"
         Insured:
           maxLength: 60
           type: string
@@ -2103,20 +2103,20 @@ components:
           type: array
           description: Insurance Purchaser Postal Address.
           items:
-            $ref: '#/components/schemas/PostAddrType'
+            $ref: "#/components/schemas/PostAddrType"
         BeneficiaryData:
           type: array
           description: Beneficiary Data Information. Identifies the Beneficiary Party and beneficiary relationships to the the Account.
           items:
-            $ref: '#/components/schemas/BeneficiaryDataType'
+            $ref: "#/components/schemas/BeneficiaryDataType"
         Desc:
           maxLength: 200
           type: string
           description: Description.
         FaceValueAmt:
-          $ref: '#/components/schemas/FaceValueAmtType'
+          $ref: "#/components/schemas/FaceValueAmtType"
         CashValueAmt:
-          $ref: '#/components/schemas/CashValueAmtType'
+          $ref: "#/components/schemas/CashValueAmtType"
         InsuranceEffDt:
           type: string
           description: Insurance Effective Date.
@@ -2130,11 +2130,11 @@ components:
           description: Insurance Expiration Date.
           format: date
         FromAcctKeys:
-          $ref: '#/components/schemas/FromAcctKeysType'
+          $ref: "#/components/schemas/FromAcctKeysType"
     NextOfKinDataType:
       title: NextOfKinDataType
       required:
-      - BirthDt
+        - BirthDt
       type: object
       properties:
         NextOfKinType:
@@ -2178,7 +2178,7 @@ components:
       type: object
       properties:
         PartyPref:
-          $ref: '#/components/schemas/PartyPrefType'
+          $ref: "#/components/schemas/PartyPrefType"
         EstablishedDt:
           type: string
           description: 'Date on which the party record is created. Also known as "Customer Since Date". <br> Format: yyyy-mm-dd '
@@ -2196,12 +2196,12 @@ components:
           type: array
           description: Credit risk details related to the party
           items:
-            $ref: '#/components/schemas/CreditRiskType'
+            $ref: "#/components/schemas/CreditRiskType"
         RelationshipMgr:
           type: array
           description: Information about the financial institution officers who have management-related responsibilities of the account
           items:
-            $ref: '#/components/schemas/RelationshipMgrType'
+            $ref: "#/components/schemas/RelationshipMgrType"
         OEDCode:
           type: string
           description: |-
@@ -2214,17 +2214,17 @@ components:
           type: array
           description: Details of the client-defined data whose value, data type and definition are defined by the client or user
           items:
-            $ref: '#/components/schemas/ClientDefinedDataType'
+            $ref: "#/components/schemas/ClientDefinedDataType"
         PartyType:
           type: string
           description: "Type of a party. <br> Valid values are:\n  - Unknown\n  - Personal-Prospect\n  - Business-Prospect\n  - Consumer\n  - Corporate\n  - SoleProprietorship\n  - C-Corporation\n  - S-Corporation\n  - Partnership\n  - Trust/Estate\n  - LimitLiabilityC-Corp\n  - LimitLiabilityS-Corp\n  - LimitLiabilityPartnership\n  - Other\n  - ThirdParty\n  "
         TaxDataInfo:
-          $ref: '#/components/schemas/TaxDataInfoType'
+          $ref: "#/components/schemas/TaxDataInfoType"
         DisclosureData:
           type: array
           description: Disclosure data related to a party
           items:
-            $ref: '#/components/schemas/DisclosureDataType'
+            $ref: "#/components/schemas/DisclosureDataType"
         NAICS:
           maxLength: 6
           type: array
@@ -2247,7 +2247,7 @@ components:
           type: array
           description: Client-defined secret data of party that is used to validate the identity of the party in scenarios such as forgotten password
           items:
-            $ref: '#/components/schemas/SecretDataType'
+            $ref: "#/components/schemas/SecretDataType"
         ExemptOFAC:
           type: boolean
           description: Flag to indicate the party is exempted from the Office of Foreign Assets Control (OFAC) reporting
@@ -2271,7 +2271,7 @@ components:
           type: array
           description: Reminder. Use to determine if the account has memo and ticklers linked to the account.
           items:
-            $ref: '#/components/schemas/ReminderType'
+            $ref: "#/components/schemas/ReminderType"
         TaxExempt:
           type: string
           description: |-
@@ -2282,7 +2282,7 @@ components:
     IssuedIdentType:
       title: IssuedIdentType
       required:
-      - IssuedIdentType
+        - IssuedIdentType
       type: object
       properties:
         IssuedIdentType:
@@ -2317,16 +2317,16 @@ components:
         IssueDt:
           pattern: ^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$
           type: string
-          description: 'Date when the identity card/document was issued. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS'
+          description: "Date when the identity card/document was issued. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS"
           example: 2021-01-31T23:59:59.999
         ExpDt:
           type: string
-          description: 'Date after which issued identity card/document expires. <br> Format: yyyy-mm-dd '
+          description: "Date after which issued identity card/document expires. <br> Format: yyyy-mm-dd "
           format: date
     NonDocIssuedIdentType:
       title: NonDocIssuedIdentType
       required:
-      - NonDocIssuedIdentType
+        - NonDocIssuedIdentType
       type: object
       properties:
         NonDocIssuedIdentType:
@@ -2378,7 +2378,7 @@ components:
           description: Next Identification Verification Date.
           format: date
         GovIssuedIdent:
-          $ref: '#/components/schemas/GovIssuedIdentType'
+          $ref: "#/components/schemas/GovIssuedIdentType"
     PartyDataType:
       title: PartyDataType
       type: object
@@ -2387,42 +2387,42 @@ components:
           type: array
           description: Contact information of a party (person or organization)
           items:
-            $ref: '#/components/schemas/ContactType'
+            $ref: "#/components/schemas/ContactType"
         IssuedIdent:
           type: array
           description: Issued identity card/document details of a party.
           items:
-            $ref: '#/components/schemas/IssuedIdentType'
+            $ref: "#/components/schemas/IssuedIdentType"
     NameTypeType:
       title: NameTypeType
       type: string
       description: "Type of the name. <br> Valid values are:\n  - Primary \n  - Secondary"
       enum:
-      - Primary
-      - Secondary
-      - Legal
+        - Primary
+        - Secondary
+        - Legal
     NameFormatType:
       title: NameFormatType
       type: string
       description: Format of the name to indicate that name to be is printed in certain situations.
       enum:
-      - None
-      - NonPersonal
-      - FirstLastSuffix
-      - FirstMiddleInitialLastSuffix
-      - FirstMiddleLastSuffix
-      - PrintedMailingSeasonal
-      - PrintedMailingSeasonalTax
-      - PrintedSeasonalOnly
-      - PrintedAddressOnly
+        - None
+        - NonPersonal
+        - FirstLastSuffix
+        - FirstMiddleInitialLastSuffix
+        - FirstMiddleLastSuffix
+        - PrintedMailingSeasonal
+        - PrintedMailingSeasonalTax
+        - PrintedSeasonalOnly
+        - PrintedAddressOnly
     PersonNameType:
       title: PersonNameType
       required:
-      - NameType
+        - NameType
       type: object
       properties:
         NameType:
-          $ref: '#/components/schemas/NameTypeType'
+          $ref: "#/components/schemas/NameTypeType"
         NameIdent:
           maxLength: 36
           type: string
@@ -2460,65 +2460,65 @@ components:
           type: string
           description: Name that identifies a person for legal or any other official purposes
         NameFormat:
-          $ref: '#/components/schemas/NameFormatType'
+          $ref: "#/components/schemas/NameFormatType"
       description: Name details of a person party
     PersonDataType:
       title: PersonDataType
       description: Information of a person party
       allOf:
-      - $ref: '#/components/schemas/PartyDataType'
-      - type: object
-        properties:
-          PersonName:
-            type: array
-            description: Name of a person
-            items:
-              $ref: '#/components/schemas/PersonNameType'
+        - $ref: "#/components/schemas/PartyDataType"
+        - type: object
+          properties:
+            PersonName:
+              type: array
+              description: Name of a person
+              items:
+                $ref: "#/components/schemas/PersonNameType"
     PersonPartyInfoType:
       title: PersonPartyInfoType
       description: Information related to a person
       allOf:
-      - $ref: '#/components/schemas/PartyInfoType'
-      - type: object
-        properties:
-          PersonData:
-            $ref: '#/components/schemas/PersonDataType'
-          BirthDt:
-            type: string
-            description: 'Date of birth of a person <br> Format: yyyy-mm-dd '
-            format: date
-            example: 2021-11-20
-          Gender:
-            $ref: '#/components/schemas/GenderType'
-          ImmigrationStat:
-            type: string
-            description: |-
-              Immigration status of a person.  <br> Some of the valid values are:
-                - National
-                - Citizen
-                - ResidentAlien
-                - NonResidentAlien
-          Race:
-            type: string
-            description: |-
-              Race of a person.  <br> Valid values are:
-                - NativeAmerican
-                - Asian
-                - Black
-                - Hispanic
-                - Caucasian
-                - Other
-                - Unknown
-                - RaceNotProvided
-                - RaceNotApplicable
+        - $ref: "#/components/schemas/PartyInfoType"
+        - type: object
+          properties:
+            PersonData:
+              $ref: "#/components/schemas/PersonDataType"
+            BirthDt:
+              type: string
+              description: "Date of birth of a person <br> Format: yyyy-mm-dd "
+              format: date
+              example: 2021-11-20
+            Gender:
+              $ref: "#/components/schemas/GenderType"
+            ImmigrationStat:
+              type: string
+              description: |-
+                Immigration status of a person.  <br> Some of the valid values are:
+                  - National
+                  - Citizen
+                  - ResidentAlien
+                  - NonResidentAlien
+            Race:
+              type: string
+              description: |-
+                Race of a person.  <br> Valid values are:
+                  - NativeAmerican
+                  - Asian
+                  - Black
+                  - Hispanic
+                  - Caucasian
+                  - Other
+                  - Unknown
+                  - RaceNotProvided
+                  - RaceNotApplicable
     OrgNameType:
       title: OrgNameType
       required:
-      - NameType
+        - NameType
       type: object
       properties:
         NameType:
-          $ref: '#/components/schemas/NameTypeType'
+          $ref: "#/components/schemas/NameTypeType"
         NameIdent:
           maxLength: 36
           type: string
@@ -2532,7 +2532,7 @@ components:
           type: string
           description: Name that identifies an organization for legal or any other official purposes
         NameFormat:
-          $ref: '#/components/schemas/NameFormatType'
+          $ref: "#/components/schemas/NameFormatType"
       description: Organization name details.
     OrgCatIdentType:
       title: OrgCatIdentType
@@ -2553,7 +2553,7 @@ components:
         MCC:
           maxLength: 4
           type: array
-          description: '[FSVR]MCC Code.'
+          description: "[FSVR]MCC Code."
           items:
             maxLength: 4
             type: string
@@ -2595,66 +2595,66 @@ components:
           type: array
           description: Organization Category Identification.
           items:
-            $ref: '#/components/schemas/OrgCatIdentType'
+            $ref: "#/components/schemas/OrgCatIdentType"
     OrgCategoryType:
       title: OrgCategoryType
       required:
-      - OrgCategoryCode
+        - OrgCategoryCode
       type: object
       properties:
         OrgCategoryCode:
-          $ref: '#/components/schemas/OrgCategoryCodeType'
+          $ref: "#/components/schemas/OrgCategoryCodeType"
     OrgDataType:
       title: OrgDataType
       description: Data related to an organization party
       allOf:
-      - $ref: '#/components/schemas/PartyDataType'
-      - type: object
-        properties:
-          OrgName:
-            type: array
-            description: Name of an organization
-            items:
-              $ref: '#/components/schemas/OrgNameType'
+        - $ref: "#/components/schemas/PartyDataType"
+        - type: object
+          properties:
+            OrgName:
+              type: array
+              description: Name of an organization
+              items:
+                $ref: "#/components/schemas/OrgNameType"
     OrgPartyInfoType:
       title: OrgPartyInfoType
       description: Information related to party when party is an organization
       allOf:
-      - $ref: '#/components/schemas/PartyInfoType'
-      - type: object
-        properties:
-          OrgData:
-            $ref: '#/components/schemas/OrgDataType'
+        - $ref: "#/components/schemas/PartyInfoType"
+        - type: object
+          properties:
+            OrgData:
+              $ref: "#/components/schemas/OrgDataType"
     PartyAddRqType:
       title: PartyAddRqType
       type: object
       properties:
         OvrdAutoAckInd:
           type: boolean
-          description: 'Flag to indicate if the exceptions should be auto-acknowledged by the system. If this value is set to True, then any exception that can be overridden will be automatically acknowledged by the system and exceptions that cannot be overridden will be returned in the Status aggregate of the response message.  '
+          description: "Flag to indicate if the exceptions should be auto-acknowledged by the system. If this value is set to True, then any exception that can be overridden will be automatically acknowledged by the system and exceptions that cannot be overridden will be returned in the Status aggregate of the response message.  "
         OvrdExceptionData:
-          $ref: '#/components/schemas/OvrdExceptionDataType'
+          $ref: "#/components/schemas/OvrdExceptionDataType"
         PersonPartyInfo:
-          $ref: '#/components/schemas/PersonPartyInfoType'
+          $ref: "#/components/schemas/PersonPartyInfoType"
         OrgPartyInfo:
-          $ref: '#/components/schemas/OrgPartyInfoType'
+          $ref: "#/components/schemas/OrgPartyInfoType"
     PartySelType:
       title: PartySelType
       required:
-      - PartyKeys
+        - PartyKeys
       type: object
       properties:
         PartyKeys:
-          $ref: '#/components/schemas/PartyKeysType'
+          $ref: "#/components/schemas/PartyKeysType"
       description: Selection criteria to search a party
     PartyInqRqType:
       title: PartyInqRqType
       required:
-      - PartySel
+        - PartySel
       type: object
       properties:
         PartySel:
-          $ref: '#/components/schemas/PartySelType'
+          $ref: "#/components/schemas/PartySelType"
     RecCtrlInType:
       title: RecCtrlInType
       type: object
@@ -2666,7 +2666,7 @@ components:
         Cursor:
           maxLength: 250
           type: string
-          description: 'Next record pointer to include in the response if more than 250 posted transaction records exist. <br> <b>Note: For more than 250 posted transactions, ESF returns Cursor value in the RecCtrlOut/Cursor field. To retrieve the next set of posted transactions, this field should be sent in the subsequent request within RecCtrlIn/Cursor field.</b>'
+          description: "Next record pointer to include in the response if more than 250 posted transaction records exist. <br> <b>Note: For more than 250 posted transactions, ESF returns Cursor value in the RecCtrlOut/Cursor field. To retrieve the next set of posted transactions, this field should be sent in the subsequent request within RecCtrlIn/Cursor field.</b>"
       description: Maximum number of records to be processed within a single response as specified by the client
     PersonNameSelType:
       title: PersonNameSelType
@@ -2696,7 +2696,7 @@ components:
           type: string
           description: "Name Search Code of a party to search the party records.  <br> Valid values are:\n  - SoundexName\n  - ExactName\n  - PartialName\n  \n<br> Soundex Name search option searches for a customers by the Family Name. Exact Name search option searches for a customer by exact Full Name. Partial Name search option searches for a customer by exact Given Name"
         ClientDefinedSearch:
-          $ref: '#/components/schemas/ClientDefinedSearchType'
+          $ref: "#/components/schemas/ClientDefinedSearchType"
         TaxIdent:
           maxLength: 12
           type: string
@@ -2722,7 +2722,7 @@ components:
           description: Postal code or Zip code to search the party records
         BirthDt:
           type: string
-          description: 'Date of birth to search the party records <br> Format: yyyy-mm-dd '
+          description: "Date of birth to search the party records <br> Format: yyyy-mm-dd "
           format: date
           example: 2021-11-20
         OEDCode:
@@ -2742,37 +2742,37 @@ components:
     PartyListInqRqType:
       title: PartyListInqRqType
       required:
-      - PartyListSel
+        - PartyListSel
       type: object
       properties:
         RecCtrlIn:
-          $ref: '#/components/schemas/RecCtrlInType'
+          $ref: "#/components/schemas/RecCtrlInType"
         PartyListSel:
-          $ref: '#/components/schemas/PartyListSelType'
+          $ref: "#/components/schemas/PartyListSelType"
     PartyModRqType:
       title: PartyModRqType
       required:
-      - PartyKeys
+        - PartyKeys
       type: object
       properties:
         OvrdAutoAckInd:
           type: boolean
           description: Flag to indicate if the exceptions should be auto-acknowledged by the system. If this value is set to True, then any exception that can be overridden will be automatically acknowledged by the system and exceptions that cannot be overridden will be returned in the Status aggregate of the response message.
         OvrdExceptionData:
-          $ref: '#/components/schemas/OvrdExceptionDataType'
+          $ref: "#/components/schemas/OvrdExceptionDataType"
         PartyKeys:
-          $ref: '#/components/schemas/PartyKeysType'
+          $ref: "#/components/schemas/PartyKeysType"
         PersonPartyInfo:
-          $ref: '#/components/schemas/PersonPartyInfoType'
+          $ref: "#/components/schemas/PersonPartyInfoType"
         OrgPartyInfo:
-          $ref: '#/components/schemas/OrgPartyInfoType'
+          $ref: "#/components/schemas/OrgPartyInfoType"
     StatusType:
       title: StatusType
       required:
-      - Severity
-      - StatusCode
-      - StatusDesc
-      - SvcProviderName
+        - Severity
+        - StatusCode
+        - StatusDesc
+        - SvcProviderName
       type: object
       properties:
         Id:
@@ -2787,7 +2787,7 @@ components:
           type: string
           description: Brief information about the EFX status code. Refer to the <a href="../docs?path=docs/response-codes.md" title="Click to open">Response Codes</a> section for more information.
         Severity:
-          $ref: '#/components/schemas/SeverityType'
+          $ref: "#/components/schemas/SeverityType"
         SvcProviderName:
           maxLength: 1024
           type: string
@@ -2810,7 +2810,7 @@ components:
           type: array
           description: Information about the elements that caused the status.
           items:
-            $ref: '#/components/schemas/SubjectElementType'
+            $ref: "#/components/schemas/SubjectElementType"
         ContentHTML:
           type: string
           description: Response status in HTML format. This parameter returns only in some cases.
@@ -2818,89 +2818,89 @@ components:
           type: array
           description: Details of the additional status of the response message. This aggrigate can appear once for each additional status that the server is expected to provide.
           items:
-            $ref: '#/components/schemas/AdditionalStatusType'
+            $ref: "#/components/schemas/AdditionalStatusType"
       description: Details of the API response messages.
     StatusType1:
       title: Status Type for Error messages
       required:
-      - Status
+        - Status
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
     PartyStatusCodeType:
       title: PartyStatusCodeType
       type: string
       description: "Status code of a party. <br> Valid value is: \n  - Valid"
       enum:
-      - Valid
-      - Deleted
+        - Valid
+        - Deleted
     PartyStatusType:
       title: PartyStatusType
       required:
-      - PartyStatusCode
+        - PartyStatusCode
       type: object
       properties:
         PartyStatusCode:
-          $ref: '#/components/schemas/PartyStatusCodeType'
+          $ref: "#/components/schemas/PartyStatusCodeType"
         EffDt:
           pattern: ^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$
           type: string
-          description: 'Effective date and time when the party status is changed. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS'
+          description: "Effective date and time when the party status is changed. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS"
           example: 2021-01-31T23:59:59.999
       description: Details of a party status
     PartyStatusRecType:
       title: PartyStatusRecType
       required:
-      - PartyKeys
-      - PartyStatus
+        - PartyKeys
+        - PartyStatus
       type: object
       properties:
         PartyKeys:
-          $ref: '#/components/schemas/PartyKeysType'
+          $ref: "#/components/schemas/PartyKeysType"
         PartyStatus:
-          $ref: '#/components/schemas/PartyStatusType'
+          $ref: "#/components/schemas/PartyStatusType"
       description: Information related to the current status of the party
     PartyAddRsType:
       title: PartyAddRsType
       required:
-      - Status
+        - Status
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
         PartyStatusRec:
-          $ref: '#/components/schemas/PartyStatusRecType'
+          $ref: "#/components/schemas/PartyStatusRecType"
     PartyRecType:
       title: PartyRecType
       required:
-      - PartyKeys
-      - PartyStatus
+        - PartyKeys
+        - PartyStatus
       type: object
       properties:
         PartyKeys:
-          $ref: '#/components/schemas/PartyKeysType'
+          $ref: "#/components/schemas/PartyKeysType"
         PersonPartyInfo:
-          $ref: '#/components/schemas/PersonPartyInfoType'
+          $ref: "#/components/schemas/PersonPartyInfoType"
         OrgPartyInfo:
-          $ref: '#/components/schemas/OrgPartyInfoType'
+          $ref: "#/components/schemas/OrgPartyInfoType"
         PartyStatus:
-          $ref: '#/components/schemas/PartyStatusType'
+          $ref: "#/components/schemas/PartyStatusType"
       description: Details of a party record
     PartyInqRsType:
       title: PartyInqRsType
       required:
-      - Status
+        - Status
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
         PartyRec:
-          $ref: '#/components/schemas/PartyRecType'
+          $ref: "#/components/schemas/PartyRecType"
     RecCtrlOutType:
       title: RecCtrlOutType
       required:
-      - SentRecCount
+        - SentRecCount
       type: object
       properties:
         SentRecCount:
@@ -2910,7 +2910,7 @@ components:
         Cursor:
           maxLength: 250
           type: string
-          description: 'Next record pointer included in the response if more than 250 posted transaction records exist. <br> <b>Note: For more than 250 posted transactions, ESF returns Cursor value in the RecCtrlOut/Cursor field.</b>'
+          description: "Next record pointer included in the response if more than 250 posted transaction records exist. <br> <b>Note: For more than 250 posted transactions, ESF returns Cursor value in the RecCtrlOut/Cursor field.</b>"
       description: Information retrieved for the criteria specified in the RecCtrlIn aggregate of the request message
     PartyListInfoType:
       title: PartyListInfoType
@@ -2929,9 +2929,9 @@ components:
           type: array
           description: Contact details of a party (person or organization).
           items:
-            $ref: '#/components/schemas/ContactType'
+            $ref: "#/components/schemas/ContactType"
         TaxIdentType:
-          $ref: '#/components/schemas/TaxIdentTypeType'
+          $ref: "#/components/schemas/TaxIdentTypeType"
         TaxIdent:
           maxLength: 12
           type: string
@@ -2940,70 +2940,70 @@ components:
           maxLength: 32
           type: string
           description: Originating Branch. Branch first originated the relationship with party or created the account.
-      description: '[IFXR]Party Information.'
+      description: "[IFXR]Party Information."
     PersonPartyListInfoType:
       title: PersonPartyListInfoType
       description: Frequently used properties of a person party
       allOf:
-      - $ref: '#/components/schemas/PartyListInfoType'
-      - type: object
-        properties:
-          PersonName:
-            $ref: '#/components/schemas/PersonNameType'
-          BirthDt:
-            type: string
-            description: Date of birth of a person.
-            format: date
+        - $ref: "#/components/schemas/PartyListInfoType"
+        - type: object
+          properties:
+            PersonName:
+              $ref: "#/components/schemas/PersonNameType"
+            BirthDt:
+              type: string
+              description: Date of birth of a person.
+              format: date
     OrgPartyListInfoType:
       title: OrgPartyListInfoType
       description: Frequently used properties of an organization party
       allOf:
-      - $ref: '#/components/schemas/PartyListInfoType'
-      - type: object
-        properties:
-          OrgName:
-            $ref: '#/components/schemas/OrgNameType'
+        - $ref: "#/components/schemas/PartyListInfoType"
+        - type: object
+          properties:
+            OrgName:
+              $ref: "#/components/schemas/OrgNameType"
     PartyListRecType:
       title: PartyListRecType
       required:
-      - PartyKeys
-      - PartyStatus
+        - PartyKeys
+        - PartyStatus
       type: object
       properties:
         PartyKeys:
-          $ref: '#/components/schemas/PartyKeysType'
+          $ref: "#/components/schemas/PartyKeysType"
         PersonPartyListInfo:
-          $ref: '#/components/schemas/PersonPartyListInfoType'
+          $ref: "#/components/schemas/PersonPartyListInfoType"
         OrgPartyListInfo:
-          $ref: '#/components/schemas/OrgPartyListInfoType'
+          $ref: "#/components/schemas/OrgPartyListInfoType"
         PartyStatus:
-          $ref: '#/components/schemas/PartyStatusType'
+          $ref: "#/components/schemas/PartyStatusType"
       description: Details of list of parties that are retrieved based on the specified search criteria
     PartyListInqRsType:
       title: PartyListInqRsType
       required:
-      - Status
+        - Status
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
         RecCtrlOut:
-          $ref: '#/components/schemas/RecCtrlOutType'
+          $ref: "#/components/schemas/RecCtrlOutType"
         PartyListRec:
           type: array
           description: list of parties that are retrieved.
           items:
-            $ref: '#/components/schemas/PartyListRecType'
+            $ref: "#/components/schemas/PartyListRecType"
     PartyModRsType:
       title: PartyModRsType
       required:
-      - Status
+        - Status
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
         PartyStatusRec:
-          $ref: '#/components/schemas/PartyStatusRecType'
+          $ref: "#/components/schemas/PartyStatusRecType"
   examples:
     "401-Premier":
       value:
@@ -3046,57 +3046,57 @@ components:
         PersonPartyInfo:
           PersonData:
             PersonName:
-            - NameType: Primary
-              FullName: Mike K Gupta A
-              FamilyName: GUPTA
-              GivenName: Mikee
-              MiddleName: K
-              NameFormat: None
+              - NameType: Primary
+                FullName: Mike K Gupta A
+                FamilyName: GUPTA
+                GivenName: Mikee
+                MiddleName: K
+                NameFormat: None
             Contact:
-            - PostAddr:
-                AddrUse: Business
-                AddrFormatType: Label
-                Addr1: PriAddr1
-                City: PriCity
-                StateProv: MH
-                PostalCode: 12345-1234
-                CountryCode:
-                  CountryCodeSource: SPCountryCode
-                  CountryCodeValue: "10"
-                AddrType: Primary
-                Retention: true
-                CensusTract: "9"
-                CensusBlock: "1"
-                ForeignFlag: true
-                HandlingCode: "9"
-                HandlingCodeOption: StatementsNotices
-                MSACode: 1002
-            - PostAddr:
-                AddrFormatType: Label
-                Addr1: PriSeaAddr1
-                City: PriSeaCity
-                StateProv: NZ
-                PostalCode: 12345-1234
-                CountryCode:
-                  CountryCodeSource: SPCountryCode
-                  CountryCodeValue: "11"
-                AddrType: Seasonal
-                TimeFrame:
-                  StartDt: "2017-05-05"
-                  EndDt: "2017-06-05"
-                CensusTract: "1"
-                CensusBlock: "9"
-                ForeignFlag: false
-                HandlingCode: "1"
-                HandlingCodeOption: Statements
-                MSACode: 1003
+              - PostAddr:
+                  AddrUse: Business
+                  AddrFormatType: Label
+                  Addr1: PriAddr1
+                  City: PriCity
+                  StateProv: MH
+                  PostalCode: 12345-1234
+                  CountryCode:
+                    CountryCodeSource: SPCountryCode
+                    CountryCodeValue: "10"
+                  AddrType: Primary
+                  Retention: true
+                  CensusTract: "9"
+                  CensusBlock: "1"
+                  ForeignFlag: true
+                  HandlingCode: "9"
+                  HandlingCodeOption: StatementsNotices
+                  MSACode: 1002
+              - PostAddr:
+                  AddrFormatType: Label
+                  Addr1: PriSeaAddr1
+                  City: PriSeaCity
+                  StateProv: NZ
+                  PostalCode: 12345-1234
+                  CountryCode:
+                    CountryCodeSource: SPCountryCode
+                    CountryCodeValue: "11"
+                  AddrType: Seasonal
+                  TimeFrame:
+                    StartDt: "2017-05-05"
+                    EndDt: "2017-06-05"
+                  CensusTract: "1"
+                  CensusBlock: "9"
+                  ForeignFlag: false
+                  HandlingCode: "1"
+                  HandlingCodeOption: Statements
+                  MSACode: 1003
             IssuedIdent:
-            - IssuedIdentType: "1"
-              IssuedIdentId: "1"
-              IssuedIdentValue: DEF8789
-              Issuer: "22"
-              IssueDt: "2016-12-29"
-              ExpDt: "2017-01-01"
+              - IssuedIdentType: "1"
+                IssuedIdentId: "1"
+                IssuedIdentValue: DEF8789
+                Issuer: "22"
+                IssueDt: "2016-12-29"
+                ExpDt: "2017-01-01"
           BirthDt: "1929-09-14"
           Gender: Male
           ImmigrationStat: National
@@ -3107,28 +3107,28 @@ components:
           OriginatingBranch: "2"
           ResponsibleBranch: "2"
           CreditRisk:
-          - RiskCategory: CreditScore
-            InternalScore: "1"
-          - RiskCategory: RiskScore1
-            InternalScore: "2"
-          - RiskCategory: RiskScore2
-            InternalScore: "3"
+            - RiskCategory: CreditScore
+              InternalScore: "1"
+            - RiskCategory: RiskScore1
+              InternalScore: "2"
+            - RiskCategory: RiskScore2
+              InternalScore: "3"
           RelationshipMgr:
-          - RelationshipMgrIdent: "12"
-            RelationshipRole: Officer
-          - RelationshipMgrIdent: "62"
-            RelationshipRole: ReferralOfficer
+            - RelationshipMgrIdent: "12"
+              RelationshipRole: Officer
+            - RelationshipMgrIdent: "62"
+              RelationshipRole: ReferralOfficer
           OEDCode: "1"
           ClientDefinedData:
-          - DataIdent: "700"
-            DataType: Alpha
-            Value: "100002"
-            DataLength: 40
-            ExpDt: "2022-12-12"
-            Desc: GoldTier ID
-            RequiredFlag: false
-            SearchFlag: false
-            GroupNum: "0"
+            - DataIdent: "700"
+              DataType: Alpha
+              Value: "100002"
+              DataLength: 40
+              ExpDt: "2022-12-12"
+              Desc: GoldTier ID
+              RequiredFlag: false
+              SearchFlag: false
+              GroupNum: "0"
           PartyType: Consumer
           TaxDataInfo:
             TaxIdentType: SSN
@@ -3156,14 +3156,14 @@ components:
               ForeignCertDt: "2014-12-28"
               ForeignExpDt: "2019-12-28"
           DisclosureData:
-          - DisclosureDt: "2022-12-28"
+            - DisclosureDt: "2022-12-28"
           WithholdingOption: None
           Retention: false
           SecretData:
-          - SecretIdent: PlaceOfBirth
-            SecretValue: New York City,NY
-          - SecretIdent: MaidenName
-            SecretValue: Gupta
+            - SecretIdent: PlaceOfBirth
+              SecretValue: New York City,NY
+            - SecretIdent: MaidenName
+              SecretValue: Gupta
           ExemptOFAC: false
           PartyOpenMethod: InPerson
           TelebancPswd: "0"
@@ -3198,101 +3198,101 @@ components:
         RecCtrlOut:
           SentRecCount: 3
         PartyListRec:
-        - PartyKeys:
-            PartyId: "57"
-          OrgPartyListInfo:
-            PartyType: Unknown
-            Contact:
-            - Email:
-                EmailIdent: "1"
-                EmailType: Person
-                EmailAddr: homemail@gmail.com
-                PreferredEmail: true
-            - WebAddr:
-                WebAddrIdent: 2
-                WebAddrType: Work
-                WebAddrLink: external@google.com
-            TaxIdentType: EIN
-            TaxIdent: "988125678"
-            OriginatingBranch: "1"
-            OrgName:
-              NameType: Primary
-              NameIdent: "57"
-              Name: MONICA PARTYMOD
-              LegalName: NAME49
-          PartyStatus:
-            PartyStatusCode: Valid
-            EffDt: 2021-09-08T11:43:21.977
-        - PartyKeys:
-            PartyId: "122"
-          OrgPartyListInfo:
-            PartyType: Unknown
-            Contact:
-            - Email:
-                EmailIdent: "1"
-                EmailType: Person
-                EmailAddr: homemail@gmail.com
-                PreferredEmail: true
-            - WebAddr:
-                WebAddrIdent: 2
-                WebAddrType: Work
-                WebAddrLink: external@google.com
-            TaxIdentType: EIN
-            TaxIdent: "988125671"
-            OriginatingBranch: "1"
-            OrgName:
-              NameType: Primary
-              NameIdent: "122"
-              Name: MONICA PARTYMOD
-              LegalName: ""
-          PartyStatus:
-            PartyStatusCode: Valid
-            EffDt: 2021-09-08T11:43:21.980
-        - PartyKeys:
-            PartyId: "3049"
-          OrgPartyListInfo:
-            PartyType: Unknown
-            Contact:
-            - Email:
-                EmailIdent: "1"
-                EmailType: Person
-                EmailAddr: homemail@gmail.com
-                PreferredEmail: true
-            - WebAddr:
-                WebAddrIdent: 2
-                WebAddrType: Work
-                WebAddrLink: external@google.com
-            - PostAddr:
-                AddressIdent: "1721"
-                AddrUse: Home
-                AddrFormatType: Label
-                Addr1: Address2
-                Addr2: ""
-                City: Lincoln
-                StateProv: NE
-                PostalCode: 32714-1234
-                CountryCode:
-                  CountryCodeSource: SPCountryCode
-                  CountryCodeValue: "91"
-                AddrType: Primary
-                Retention: true
-                CensusTract: "9"
-                CensusBlock: "1"
-                ForeignFlag: true
-                HandlingCode: "9"
-                HandlingCodeOption: StatementsNotices
-                MSACode: 1002
-            TaxIdentType: EIN
-            TaxIdent: "988125678"
-            OriginatingBranch: "1"
-            OrgName:
-              NameType: Primary
-              NameIdent: "3049"
-              Name: MONICA PARTYMOD
-              LegalName: ""
-          PartyStatus:
-            PartyStatusCode: Valid
-            EffDt: 2021-09-08T11:43:21.982
+          - PartyKeys:
+              PartyId: "57"
+            OrgPartyListInfo:
+              PartyType: Unknown
+              Contact:
+                - Email:
+                    EmailIdent: "1"
+                    EmailType: Person
+                    EmailAddr: homemail@gmail.com
+                    PreferredEmail: true
+                - WebAddr:
+                    WebAddrIdent: 2
+                    WebAddrType: Work
+                    WebAddrLink: external@google.com
+              TaxIdentType: EIN
+              TaxIdent: "988125678"
+              OriginatingBranch: "1"
+              OrgName:
+                NameType: Primary
+                NameIdent: "57"
+                Name: MONICA PARTYMOD
+                LegalName: NAME49
+            PartyStatus:
+              PartyStatusCode: Valid
+              EffDt: 2021-09-08T11:43:21.977
+          - PartyKeys:
+              PartyId: "122"
+            OrgPartyListInfo:
+              PartyType: Unknown
+              Contact:
+                - Email:
+                    EmailIdent: "1"
+                    EmailType: Person
+                    EmailAddr: homemail@gmail.com
+                    PreferredEmail: true
+                - WebAddr:
+                    WebAddrIdent: 2
+                    WebAddrType: Work
+                    WebAddrLink: external@google.com
+              TaxIdentType: EIN
+              TaxIdent: "988125671"
+              OriginatingBranch: "1"
+              OrgName:
+                NameType: Primary
+                NameIdent: "122"
+                Name: MONICA PARTYMOD
+                LegalName: ""
+            PartyStatus:
+              PartyStatusCode: Valid
+              EffDt: 2021-09-08T11:43:21.980
+          - PartyKeys:
+              PartyId: "3049"
+            OrgPartyListInfo:
+              PartyType: Unknown
+              Contact:
+                - Email:
+                    EmailIdent: "1"
+                    EmailType: Person
+                    EmailAddr: homemail@gmail.com
+                    PreferredEmail: true
+                - WebAddr:
+                    WebAddrIdent: 2
+                    WebAddrType: Work
+                    WebAddrLink: external@google.com
+                - PostAddr:
+                    AddressIdent: "1721"
+                    AddrUse: Home
+                    AddrFormatType: Label
+                    Addr1: Address2
+                    Addr2: ""
+                    City: Lincoln
+                    StateProv: NE
+                    PostalCode: 32714-1234
+                    CountryCode:
+                      CountryCodeSource: SPCountryCode
+                      CountryCodeValue: "91"
+                    AddrType: Primary
+                    Retention: true
+                    CensusTract: "9"
+                    CensusBlock: "1"
+                    ForeignFlag: true
+                    HandlingCode: "9"
+                    HandlingCodeOption: StatementsNotices
+                    MSACode: 1002
+              TaxIdentType: EIN
+              TaxIdent: "988125678"
+              OriginatingBranch: "1"
+              OrgName:
+                NameType: Primary
+                NameIdent: "3049"
+                Name: MONICA PARTYMOD
+                LegalName: ""
+            PartyStatus:
+              PartyStatusCode: Valid
+              EffDt: 2021-09-08T11:43:21.982
     PremierPartyModRequest:
       value:
         OvrdAutoAckInd: "true"
@@ -3318,7 +3318,7 @@ components:
             TaxIdentVerified: "false"
             TaxIdentVerifiedDt: "2017-12-28"
             TaxIdentVerifiedAttempts: "0"
-            '#': ' <OtherTaxIdent>988125600</OtherTaxIdent> '
+            "#": " <OtherTaxIdent>988125600</OtherTaxIdent> "
             BNotice1Dt: "2019-12-28"
             BNotice2Dt: "2020-02-28"
             ForeignTaxData:
@@ -3347,26 +3347,26 @@ components:
                 WebAddrIdent: "2"
                 WebAddrLink: external@google.com
             IssuedIdent:
-            - IssuedIdentType: "1"
-              IssuedIdentId: "2"
-              IssuedIdentValue: ABC3234
-              Issuer: "20"
-              IssueDt: "2016-12-25"
-              ExpDt: "2017-02-11"
-            - IssuedIdentType: "3"
-              IssuedIdentId: "1"
-              IssuedIdentValue: DEF8789
-              Issuer: "22"
-              IssueDt: "2016-12-29"
-              ExpDt: "2017-01-01"
+              - IssuedIdentType: "1"
+                IssuedIdentId: "2"
+                IssuedIdentValue: ABC3234
+                Issuer: "20"
+                IssueDt: "2016-12-25"
+                ExpDt: "2017-02-11"
+              - IssuedIdentType: "3"
+                IssuedIdentId: "1"
+                IssuedIdentValue: DEF8789
+                Issuer: "22"
+                IssueDt: "2016-12-29"
+                ExpDt: "2017-01-01"
             OrgName:
-            - NameType: Primary
-              NameIdent: "751"
-              Name: MAHENDRA DHONI
-            - NameType: Secondary
-              NameIdent: "100"
-              Name: RAHUL DRAVID
-              NameFormat: NonPersonal
+              - NameType: Primary
+                NameIdent: "751"
+                Name: MAHENDRA DHONI
+              - NameType: Secondary
+                NameIdent: "100"
+                Name: RAHUL DRAVID
+                NameFormat: NonPersonal
           OrgEstablishDt: "2016-12-29"
     PremierPartyModResponse:
       value:
@@ -3405,17 +3405,17 @@ components:
             ResponsibleBranch: "1"
             ResponsibleBranchEnumDesc: Deepak Accounting Branch
             CreditRisk:
-            - RiskCategory: CreditScore
-              InternalScore: "1"
-            - RiskCategory: RiskScore1
-              InternalScore: "2"
-            - RiskCategory: RiskScore2
-              InternalScore: "3"
+              - RiskCategory: CreditScore
+                InternalScore: "1"
+              - RiskCategory: RiskScore1
+                InternalScore: "2"
+              - RiskCategory: RiskScore2
+                InternalScore: "3"
             RelationshipMgr:
-            - RelationshipMgrIdent: "12"
-              RelationshipRole: Officer
-            - RelationshipMgrIdent: "62"
-              RelationshipRole: ReferralOfficer
+              - RelationshipMgrIdent: "12"
+                RelationshipRole: Officer
+              - RelationshipMgrIdent: "62"
+                RelationshipRole: ReferralOfficer
             OEDCode: "1"
             ClientDefinedData:
               DataIdent: "700"
@@ -3464,12 +3464,12 @@ components:
             WithholdingOptionEnumDesc: None
             Retention: "false"
             SecretData:
-            - SecretIdent: MaidenName
-              SecretIdentEnumDesc: MaidenName
-              SecretValue: Johnson
-            - SecretIdent: PlaceOfBirth
-              SecretIdentEnumDesc: PlaceOfBirth
-              SecretValue: New York City,NY
+              - SecretIdent: MaidenName
+                SecretIdentEnumDesc: MaidenName
+                SecretValue: Johnson
+              - SecretIdent: PlaceOfBirth
+                SecretIdentEnumDesc: PlaceOfBirth
+                SecretValue: New York City,NY
             LastUpdateDt: "2020-05-21"
             ExemptOFAC: "false"
             PartyOpenMethod: InPerson
@@ -3481,81 +3481,81 @@ components:
             TaxExempt: NotTaxExempt
             PersonData:
               Contact:
-              - PhoneNum:
-                  PhoneType: Home
-                  PhoneIdent: "1"
-                  Phone: +00001-402-5551212+000739
-                  PreferredPhone: "true"
-                  PhoneDesc: {}
-              - PostAddr:
-                  OpenDt: "2017-12-19"
-                  RelationshipMgr:
-                  - RelationshipMgrIdent: "0"
-                    RelationshipRole: Officer
-                  - RelationshipMgrIdent: "0"
-                    RelationshipRole: ReferralOfficer
-                  OriginatingBranch: "1"
-                  ResponsibleBranch: "1"
-                  AddressIdent: "5681"
-                  AddrUse: Home
-                  AddrUseEnumDesc: Home
-                  AddrFormatType: Label
-                  Addr1: FirstHouse, Lane no. 2
-                  Addr2: {}
-                  City: Lincoln
-                  StateProv: NE
-                  PostalCode: 32714-1234
-                  CountryCode:
-                    CountryCodeSource: SPCountryCode
-                    CountryCodeValue: "92"
-                    CountryCodeValueEnumDesc: {}
-                  AddrType: Secondary
-                  Retention: "true"
-                  CensusTract: "9"
-                  CensusBlock: "1"
-                  ForeignFlag: "true"
-                  HandlingCode: "9"
-                  HandlingCodeOption: StatementsNotices
-                  MSACode: "1002"
-              - PostAddr:
-                  OpenDt: "2017-12-19"
-                  RelationshipMgr:
-                  - RelationshipMgrIdent: "0"
-                    RelationshipRole: Officer
-                  - RelationshipMgrIdent: "0"
-                    RelationshipRole: ReferralOfficer
-                  OriginatingBranch: "1"
-                  ResponsibleBranch: "1"
-                  AddressIdent: "5682"
-                  AddrUse: Business
-                  AddrUseEnumDesc: Business
-                  AddrFormatType: Label
-                  Addr1: MEGASYSTEMS INC
-                  Addr2: {}
-                  City: TUCSON
-                  StateProv: AZ
-                  PostalCode: 32714-1234
-                  CountryCode:
-                    CountryCodeSource: SPCountryCode
-                    CountryCodeValue: "92"
-                    CountryCodeValueEnumDesc: {}
-                  AddrType: Secondary
-                  Retention: "false"
-                  CensusTract: "9"
-                  CensusBlock: "1"
-                  ForeignFlag: "true"
-                  HandlingCode: "9"
-                  HandlingCodeOption: StatementsNotices
-                  MSACode: "1002"
-              - Email:
-                  EmailIdent: "1"
-                  EmailType: Business
-                  EmailAddr: Mike.Johnson@gmail.com
-                  PreferredEmail: "true"
-              - Email:
-                  EmailIdent: "2"
-                  EmailType: Business
-                  EmailAddr: Marie.McAllister@llc-company.com
+                - PhoneNum:
+                    PhoneType: Home
+                    PhoneIdent: "1"
+                    Phone: +00001-402-5551212+000739
+                    PreferredPhone: "true"
+                    PhoneDesc: {}
+                - PostAddr:
+                    OpenDt: "2017-12-19"
+                    RelationshipMgr:
+                      - RelationshipMgrIdent: "0"
+                        RelationshipRole: Officer
+                      - RelationshipMgrIdent: "0"
+                        RelationshipRole: ReferralOfficer
+                    OriginatingBranch: "1"
+                    ResponsibleBranch: "1"
+                    AddressIdent: "5681"
+                    AddrUse: Home
+                    AddrUseEnumDesc: Home
+                    AddrFormatType: Label
+                    Addr1: FirstHouse, Lane no. 2
+                    Addr2: {}
+                    City: Lincoln
+                    StateProv: NE
+                    PostalCode: 32714-1234
+                    CountryCode:
+                      CountryCodeSource: SPCountryCode
+                      CountryCodeValue: "92"
+                      CountryCodeValueEnumDesc: {}
+                    AddrType: Secondary
+                    Retention: "true"
+                    CensusTract: "9"
+                    CensusBlock: "1"
+                    ForeignFlag: "true"
+                    HandlingCode: "9"
+                    HandlingCodeOption: StatementsNotices
+                    MSACode: "1002"
+                - PostAddr:
+                    OpenDt: "2017-12-19"
+                    RelationshipMgr:
+                      - RelationshipMgrIdent: "0"
+                        RelationshipRole: Officer
+                      - RelationshipMgrIdent: "0"
+                        RelationshipRole: ReferralOfficer
+                    OriginatingBranch: "1"
+                    ResponsibleBranch: "1"
+                    AddressIdent: "5682"
+                    AddrUse: Business
+                    AddrUseEnumDesc: Business
+                    AddrFormatType: Label
+                    Addr1: MEGASYSTEMS INC
+                    Addr2: {}
+                    City: TUCSON
+                    StateProv: AZ
+                    PostalCode: 32714-1234
+                    CountryCode:
+                      CountryCodeSource: SPCountryCode
+                      CountryCodeValue: "92"
+                      CountryCodeValueEnumDesc: {}
+                    AddrType: Secondary
+                    Retention: "false"
+                    CensusTract: "9"
+                    CensusBlock: "1"
+                    ForeignFlag: "true"
+                    HandlingCode: "9"
+                    HandlingCodeOption: StatementsNotices
+                    MSACode: "1002"
+                - Email:
+                    EmailIdent: "1"
+                    EmailType: Business
+                    EmailAddr: John.Doe@example.com
+                    PreferredEmail: "true"
+                - Email:
+                    EmailIdent: "2"
+                    EmailType: Business
+                    EmailAddr: Jane.Doe@example.com
               IssuedIdent:
                 IssuedIdentType: "1"
                 IssuedIdentTypeEnumDesc: Employer ID

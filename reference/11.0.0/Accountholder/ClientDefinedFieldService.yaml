@@ -6,118 +6,118 @@ info:
   description: Client Defined Field service supports management of fields available with respect to the type of application (DDA, SDA, CDA etc.). <br> Client Defined Fields are fields that can be changed in terms of purpose and definition as per the implementation method.
   contact:
     name: Roopam Cullam
-    email: Roopam.Cullam@fiserv.com
+    email: John.Doe@example.com
   version: 11.0.0
 servers:
-- url: /
+  - url: /
 paths:
   /clientDefinedFields:
     put:
       tags:
-      - Update Client Defined Field
+        - Update Client Defined Field
       summary: Update Client Defined Field.
       description: "Modifies, creates or deletes the client-defined field records associated with an account or party. <br> <b>Notes: </b> <ul><li>To modify, all client defined fields are to be included in the request (the ClientDefinedData aggregate should be included for each client defined field)</li> <li> To delete a particular field (currently in use by an account or party), do not include that field in the request</li> <li> To add a particular field (currently not in use by an account or party), include that field in the request</li></ul> <br> For more information about the Accountholder domain, <a href=\"../docs/?path=docs/fintechs/accountholder.md\" title=\"Click to open\">click here.</a> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n  </ul>\n"
       parameters:
-      - name: EFXHeader
-        in: header
-        description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open"> click here.</a>
-        required: true
-        style: simple
-        explode: false
-        schema:
-          $ref: '#/components/schemas/EFXHeader'
+        - name: EFXHeader
+          in: header
+          description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open"> click here.</a>
+          required: true
+          style: simple
+          explode: false
+          schema:
+            $ref: "#/components/schemas/EFXHeader"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ClientDefinedFieldModRqType'
+              $ref: "#/components/schemas/ClientDefinedFieldModRqType"
             examples:
               Sample Banking:
-                $ref: '#/components/examples/ClientDefinedFieldModRq-Premier'
+                $ref: "#/components/examples/ClientDefinedFieldModRq-Premier"
       responses:
         "200":
           description: Ok
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ClientDefinedFieldModRsType'
+                $ref: "#/components/schemas/ClientDefinedFieldModRsType"
               examples:
                 Sample Banking:
-                  $ref: '#/components/examples/ClientDefinedFieldModRs-Premier'
+                  $ref: "#/components/examples/ClientDefinedFieldModRs-Premier"
         "201":
           description: Created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ClientDefinedFieldModRsType'
+                $ref: "#/components/schemas/ClientDefinedFieldModRsType"
         "401":
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "401":
-                  $ref: '#/components/examples/401-Premier'
+                  $ref: "#/components/examples/401-Premier"
         "422":
           description: Un-processable Entity
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "422":
-                  $ref: '#/components/examples/422-Premier'
+                  $ref: "#/components/examples/422-Premier"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "500":
-                  $ref: '#/components/examples/500-Premier'
+                  $ref: "#/components/examples/500-Premier"
         "503":
           description: Service Unavailable
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "503":
-                  $ref: '#/components/examples/503-Premier'
+                  $ref: "#/components/examples/503-Premier"
         default:
           description: Unexpected error
           content:
             application/xml:
               schema:
-                $ref: '#/components/schemas/ClientDefinedFieldModRsType'
+                $ref: "#/components/schemas/ClientDefinedFieldModRsType"
       x-group-name: Client Defined Field Service
       x-proxy-name: Update Client Defined Field
       x-child-product-name: Accountholder
   /clientDefinedFields/secured:
     post:
       tags:
-      - Get Client Defined Field
+        - Get Client Defined Field
       summary: Get Client Defined Field.
       description: "Retrieves the existing client-defined field records associated with an account or party. <br> For more information about the Accountholder domain, <a href=\"../docs/?path=docs/fintechs/accountholder.md\" title=\"Click to open\">click here.</a> <br><br> <b>Relates to:</b>\n  <ul> \n    <li><a href=\"../docs/?path=docs/banks-and-CU/deposits.md\" title=\"Click to open\">Deposits</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/loans.md\" title=\"Click to open\">Loans</a></li>\n    <li><a href=\"../docs/?path=docs/banks-and-CU/bank-servicing.md\" title=\"Click to open\">Bank Servicing</a></li>\n  </ul>"
       parameters:
-      - name: EFXHeader
-        in: header
-        description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open"> click here.</a>
-        required: true
-        style: simple
-        explode: false
-        schema:
-          $ref: '#/components/schemas/EFXHeader'
+        - name: EFXHeader
+          in: header
+          description: EFX Header is a common and required component for all API calls, it contains authentication and client-related parameters. Please note that the header parameters should be sent as a JSON object under the EFXHeader parameter. To view the list of header parameters, <a href="../docs?path=docs/api-ref-EFX-header.md" title="Click to open"> click here.</a>
+          required: true
+          style: simple
+          explode: false
+          schema:
+            $ref: "#/components/schemas/EFXHeader"
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ClientDefinedFieldInqRqType'
+              $ref: "#/components/schemas/ClientDefinedFieldInqRqType"
             examples:
               Sample Banking:
-                $ref: '#/components/examples/ClientDefinedFieldInqRq-Premier'
+                $ref: "#/components/examples/ClientDefinedFieldInqRq-Premier"
         required: true
       responses:
         "200":
@@ -125,52 +125,52 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ClientDefinedFieldInqRsType'
+                $ref: "#/components/schemas/ClientDefinedFieldInqRsType"
               examples:
                 Sample Banking:
-                  $ref: '#/components/examples/ClientDefinedFieldInqRs-Premier'
+                  $ref: "#/components/examples/ClientDefinedFieldInqRs-Premier"
         "401":
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "401":
-                  $ref: '#/components/examples/401-Premier'
+                  $ref: "#/components/examples/401-Premier"
         "422":
           description: Un-processable Entity
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "422":
-                  $ref: '#/components/examples/422-Premier'
+                  $ref: "#/components/examples/422-Premier"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "500":
-                  $ref: '#/components/examples/500-Premier'
+                  $ref: "#/components/examples/500-Premier"
         "503":
           description: Service Unavailable
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatusType1'
+                $ref: "#/components/schemas/StatusType1"
               examples:
                 "503":
-                  $ref: '#/components/examples/503-Premier'
+                  $ref: "#/components/examples/503-Premier"
         default:
           description: Unexpected error
           content:
             application/xml:
               schema:
-                $ref: '#/components/schemas/ClientDefinedFieldInqRsType'
+                $ref: "#/components/schemas/ClientDefinedFieldInqRsType"
       x-group-name: Client Defined Field Service
       x-proxy-name: Get Client Defined Field
       x-child-product-name: Accountholder
@@ -178,7 +178,7 @@ components:
   schemas:
     EFXHeader:
       required:
-      - OrganizationId
+        - OrganizationId
       type: string
       properties:
         OrganizationId:
@@ -190,7 +190,7 @@ components:
           type: string
           description: An identifier, supplied by Fiserv, that represents the vendor using  this API service.
         Context:
-          $ref: '#/components/schemas/Context'
+          $ref: "#/components/schemas/Context"
       example: '{ "TrnId": "f262cfa4-9da4-4a10-b48c-2e947ce3e66c", "OrganizationId": "PRMOrg10", "VendorId": "112233", "Context":{ "Channel": "WEB" } }'
     Context:
       type: object
@@ -249,8 +249,8 @@ components:
           type: string
           description: Country code source.ISO3166-Numeric, ISO3166-Alpha-3
           enum:
-          - ISO3166Numeric
-          - ISO3166Alpha3
+            - ISO3166Numeric
+            - ISO3166Alpha3
         TerminalCountryCodeValue:
           maxLength: 80
           type: string
@@ -284,8 +284,8 @@ components:
           type: string
           description: Country code source.ISO3166-Numeric, ISO3166-Alpha-3
           enum:
-          - US
-          - IND
+            - US
+            - IND
         AcquirerCountryCodeValue:
           type: string
         MerchNum:
@@ -313,51 +313,51 @@ components:
         AMPMCode:
           type: string
           enum:
-          - AM
-          - PM
+            - AM
+            - PM
         ReentryType:
           type: string
           enum:
-          - Manual
-          - Auto
+            - Manual
+            - Auto
     ClientDefinedFieldStatusCodeType:
       title: ClientDefinedFieldStatusCodeType
       type: string
       description: "Current status of the client defined field <br> Valid value is: \n  - valid"
       enum:
-      - Deleted
-      - Valid
+        - Deleted
+        - Valid
     CurCodeTypeType:
       title: CurCodeTypeType
       type: string
       enum:
-      - ISO4217-Alpha
-      - ISO4217-Numeric
+        - ISO4217-Alpha
+        - ISO4217-Numeric
     PartyIdentTypeType:
       title: PartyIdentTypeType
       type: string
       enum:
-      - TaxIdent
-      - IBId
-      - Name
-      - MemberNum
-      - OrgNum
-      - PersonNum
+        - TaxIdent
+        - IBId
+        - Name
+        - MemberNum
+        - OrgNum
+        - PersonNum
     SeverityType:
       title: SeverityType
       type: string
       description: Severity type of the EFX status code. Refer to the <a href="../docs?path=docs/response-codes.md">Response Codes</a> section for more information.
       enum:
-      - Error
-      - Warning
-      - Info
+        - Error
+        - Warning
+        - Info
     AcctIdentType:
       title: AcctIdentType
       type: object
       properties:
         AcctIdentType:
           type: string
-          description: 'Account Identification Type. Valid values include: AcctNum, AliasAcct, PORT, etc.'
+          description: "Account Identification Type. Valid values include: AcctNum, AliasAcct, PORT, etc."
         AcctIdentValue:
           maxLength: 36
           type: string
@@ -387,7 +387,7 @@ components:
       properties:
         CardIdentType:
           type: string
-          description: 'Card Identification Type. Valid values include: PORT.'
+          description: "Card Identification Type. Valid values include: PORT."
         CardIdentValue:
           maxLength: 36
           type: string
@@ -395,37 +395,37 @@ components:
     CardKeysType:
       title: CardKeysType
       allOf:
-      - $ref: '#/components/schemas/BaseKeysType'
-      - type: object
-        properties:
-          SvcIdent:
-            $ref: '#/components/schemas/SvcIdentType'
-          ISOCode:
-            maxLength: 80
-            type: string
-            description: ISO Card Code. Some systems like Precision instead of ISO Number they use a code to refer to the ISO Number of the card.
-          CardNum:
-            maxLength: 32
-            type: string
-            description: Card Number. This number does not include the ISO component of the card identification.
-          CardId:
-            maxLength: 36
-            type: string
-            description: Card Identifier. Uniquely identifies a card held at a financial institution (this is the card number as it appears on the card).
-          CardSeqNum:
-            maxLength: 3
-            type: string
-            description: Card Sequence Number. Typically refers to the member number (if applicable).
-          CardIdent:
-            $ref: '#/components/schemas/CardIdentType'
+        - $ref: "#/components/schemas/BaseKeysType"
+        - type: object
+          properties:
+            SvcIdent:
+              $ref: "#/components/schemas/SvcIdentType"
+            ISOCode:
+              maxLength: 80
+              type: string
+              description: ISO Card Code. Some systems like Precision instead of ISO Number they use a code to refer to the ISO Number of the card.
+            CardNum:
+              maxLength: 32
+              type: string
+              description: Card Number. This number does not include the ISO component of the card identification.
+            CardId:
+              maxLength: 36
+              type: string
+              description: Card Identifier. Uniquely identifies a card held at a financial institution (this is the card number as it appears on the card).
+            CardSeqNum:
+              maxLength: 3
+              type: string
+              description: Card Sequence Number. Typically refers to the member number (if applicable).
+            CardIdent:
+              $ref: "#/components/schemas/CardIdentType"
     CurCodeType:
       title: CurCodeType
       required:
-      - CurCodeValue
+        - CurCodeValue
       type: object
       properties:
         CurCodeType:
-          $ref: '#/components/schemas/CurCodeTypeType'
+          $ref: "#/components/schemas/CurCodeTypeType"
         CurCodeTypeEnumDesc:
           maxLength: 80
           type: string
@@ -438,15 +438,15 @@ components:
       title: AcctKeysType
       description: Unique information to identify the account record
       allOf:
-      - type: object
-        properties:
-          AcctId:
-            maxLength: 36
-            type: string
-            description: Unique identification number of an account record
-          AcctType:
-            type: string
-            description: "Type of an account. <br> Valid values are:\n  - CDA\n  - DDA\n  - SDA\n  - LOAN\n  \n<br> For more information on account types, refer to the Account Types section in <a href=\"../docs?path=docs/api-glossary.md\" target=\"_blank\" title=\"Click to open in a new tab\"> Glossary </a>."
+        - type: object
+          properties:
+            AcctId:
+              maxLength: 36
+              type: string
+              description: Unique identification number of an account record
+            AcctType:
+              type: string
+              description: "Type of an account. <br> Valid values are:\n  - CDA\n  - DDA\n  - SDA\n  - LOAN\n  \n<br> For more information on account types, refer to the Account Types section in <a href=\"../docs?path=docs/api-glossary.md\" target=\"_blank\" title=\"Click to open in a new tab\"> Glossary </a>."
     SubjectElementType:
       title: SubjectElementType
       type: object
@@ -476,7 +476,7 @@ components:
           type: string
           description: Brief information about the EFX status code. Refer to the <a href="../docs?path=docs/response-codes.md">Response Codes</a> for more information.
         Severity:
-          $ref: '#/components/schemas/SeverityType'
+          $ref: "#/components/schemas/SeverityType"
         SvcProviderName:
           maxLength: 1024
           type: string
@@ -490,7 +490,7 @@ components:
         ServerStatusCode:
           maxLength: 20
           type: string
-          description: 'Server status code of the service provider''s application.  '
+          description: "Server status code of the service provider's application.  "
         ServerStatusDesc:
           maxLength: 255
           type: string
@@ -502,17 +502,17 @@ components:
           type: array
           description: Information about the elements that caused the status.
           items:
-            $ref: '#/components/schemas/SubjectElementType'
+            $ref: "#/components/schemas/SubjectElementType"
     ClientDefinedDataType:
       title: ClientDefinedDataType
       required:
-      - DataIdent
+        - DataIdent
       type: object
       properties:
         DataIdent:
           maxLength: 36
           type: string
-          description: 'Unique data identifier to identify the client-defined data item '
+          description: "Unique data identifier to identify the client-defined data item "
         DataType:
           type: string
           description: |-
@@ -535,7 +535,7 @@ components:
           format: int64
         ExpDt:
           type: string
-          description: 'Date after which the client-defined data item becomes inactive. <br> Format: yyyy-mm-dd '
+          description: "Date after which the client-defined data item becomes inactive. <br> Format: yyyy-mm-dd "
           format: date
           example: 2021-11-20
         Desc:
@@ -554,8 +554,8 @@ components:
       type: object
       description: Information about the elements that corresponds to the override exception code.
       allOf:
-      - $ref: '#/components/schemas/SubjectElementType'
-      - type: object
+        - $ref: "#/components/schemas/SubjectElementType"
+        - type: object
     OverrideExceptionType:
       title: OverrideExceptionType
       type: object
@@ -572,7 +572,7 @@ components:
           type: string
           description: Override exception code to be overridden. This can be the ServerStatusCode from the Message Status section.
         OvrdElement:
-          $ref: '#/components/schemas/OvrdElementType'
+          $ref: "#/components/schemas/OvrdElementType"
     OvrdExceptionDataType:
       title: OvrdExceptionDataType
       type: object
@@ -581,33 +581,33 @@ components:
           type: array
           description: List of the exceptions that can be overridden.
           items:
-            $ref: '#/components/schemas/OverrideExceptionType'
+            $ref: "#/components/schemas/OverrideExceptionType"
       description: Details of the exceptions that can be manually acknowledged by the client.
     PartyKeysType:
       title: PartyKeysType
       description: Unique information to identify the party record
       allOf:
-      - type: object
-        properties:
-          PartyId:
-            maxLength: 36
-            type: string
-            description: Unique identification number of a party record
+        - type: object
+          properties:
+            PartyId:
+              maxLength: 36
+              type: string
+              description: Unique identification number of a party record
     ClientDefinedFieldInfoType:
       title: ClientDefinedFieldInfoType
       required:
-      - ClientDefinedData
+        - ClientDefinedData
       type: object
       properties:
         AcctKeys:
-          $ref: '#/components/schemas/AcctKeysType'
+          $ref: "#/components/schemas/AcctKeysType"
         PartyKeys:
-          $ref: '#/components/schemas/PartyKeysType'
+          $ref: "#/components/schemas/PartyKeysType"
         ClientDefinedData:
           type: array
           description: Details of the client-defined data whose definition, data type and value is defined by the client or user
           items:
-            $ref: '#/components/schemas/ClientDefinedDataType'
+            $ref: "#/components/schemas/ClientDefinedDataType"
       description: Information about client defined field record associated with an account or party
     ClientDefinedFieldAddRqType:
       title: ClientDefinedFieldAddRqType
@@ -617,16 +617,16 @@ components:
           type: boolean
           description: Override AutoAcknowledge Indicator. Used when the midleware is in charge of  auto-acknowledgement of exceptions.
         OvrdExceptionData:
-          $ref: '#/components/schemas/OvrdExceptionDataType'
+          $ref: "#/components/schemas/OvrdExceptionDataType"
         ClientDefinedFieldInfo:
-          $ref: '#/components/schemas/ClientDefinedFieldInfoType'
+          $ref: "#/components/schemas/ClientDefinedFieldInfoType"
     StatusType:
       title: StatusType
       required:
-      - Severity
-      - StatusCode
-      - StatusDesc
-      - SvcProviderName
+        - Severity
+        - StatusCode
+        - StatusDesc
+        - SvcProviderName
       type: object
       properties:
         Id:
@@ -641,7 +641,7 @@ components:
           type: string
           description: Brief information about the EFX status code. Refer to the <a href="../docs?path=docs/response-codes.md">Response Codes</a> section for more information.
         Severity:
-          $ref: '#/components/schemas/SeverityType'
+          $ref: "#/components/schemas/SeverityType"
         SvcProviderName:
           maxLength: 1024
           type: string
@@ -670,7 +670,7 @@ components:
           type: array
           description: Information about the elements that caused the status.
           items:
-            $ref: '#/components/schemas/SubjectElementType'
+            $ref: "#/components/schemas/SubjectElementType"
         ContentHTML:
           type: string
           description: Response status in HTML format. This parameter returns only in some cases.
@@ -678,110 +678,110 @@ components:
           type: array
           description: Details of the additional status of the response message. This aggrigate can appear once for each additional status that the server is expected to provide.
           items:
-            $ref: '#/components/schemas/AdditionalStatusType'
+            $ref: "#/components/schemas/AdditionalStatusType"
       description: Details of the API response messages.
     StatusType1:
       title: Status Type for Error messages
       required:
-      - Status
+        - Status
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
     ClientDefinedFieldKeysType:
       title: ClientDefinedFieldKeysType
       type: object
       properties:
         AcctKeys:
-          $ref: '#/components/schemas/AcctKeysType'
+          $ref: "#/components/schemas/AcctKeysType"
         PartyKeys:
-          $ref: '#/components/schemas/PartyKeysType'
+          $ref: "#/components/schemas/PartyKeysType"
       description: Unique information to identify the client-defined field record
     ClientDefinedFieldStatusType:
       title: ClientDefinedFieldStatusType
       required:
-      - ClientDefinedFieldStatusCode
+        - ClientDefinedFieldStatusCode
       type: object
       properties:
         ClientDefinedFieldStatusCode:
-          $ref: '#/components/schemas/ClientDefinedFieldStatusCodeType'
+          $ref: "#/components/schemas/ClientDefinedFieldStatusCodeType"
         EffDt:
           pattern: ^\[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\.[0-9]{3})?((-|\+)[0-9]{2}:[0-9]{2})?)?)?$
           type: string
-          description: 'Effective date and time when the status of client defined field is changed. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS'
+          description: "Effective date and time when the status of client defined field is changed. <br> Format: yyyy-MM-ddTHH:mm:ss.SSS"
           example: 2021-06-28T23:40:30.888
       description: Details of the client defined field status
     ClientDefinedFieldStatusRecType:
       title: ClientDefinedFieldStatusRecType
       required:
-      - ClientDefinedFieldKeys
-      - ClientDefinedFieldStatus
+        - ClientDefinedFieldKeys
+        - ClientDefinedFieldStatus
       type: object
       properties:
         ClientDefinedFieldKeys:
           type: array
           description: Unique information to identify the client-defined field record
           items:
-            $ref: '#/components/schemas/ClientDefinedFieldKeysType'
+            $ref: "#/components/schemas/ClientDefinedFieldKeysType"
         ClientDefinedFieldStatus:
-          $ref: '#/components/schemas/ClientDefinedFieldStatusType'
+          $ref: "#/components/schemas/ClientDefinedFieldStatusType"
       description: Details of the client defined field response record that includes response keys and response status
     ClientDefinedFieldAddRsType:
       title: ClientDefinedFieldAddRsType
       required:
-      - Status
+        - Status
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
         ClientDefinedFieldStatusRec:
-          $ref: '#/components/schemas/ClientDefinedFieldStatusRecType'
+          $ref: "#/components/schemas/ClientDefinedFieldStatusRecType"
     ClientDefinedFieldDelRqType:
       title: ClientDefinedFieldDelRqType
       required:
-      - ClientDefinedFieldKeys
+        - ClientDefinedFieldKeys
       type: object
       properties:
         OvrdAutoAckInd:
           type: boolean
           description: Override AutoAcknowledge Indicator. Used when the midleware is in charge of  auto-acknowledgement of exceptions.
         OvrdExceptionData:
-          $ref: '#/components/schemas/OvrdExceptionDataType'
+          $ref: "#/components/schemas/OvrdExceptionDataType"
         ClientDefinedFieldKeys:
-          $ref: '#/components/schemas/ClientDefinedFieldKeysType'
+          $ref: "#/components/schemas/ClientDefinedFieldKeysType"
     ClientDefinedFieldDelRsType:
       title: ClientDefinedFieldDelRsType
       required:
-      - Status
+        - Status
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
         ClientDefinedFieldStatusRec:
-          $ref: '#/components/schemas/ClientDefinedFieldStatusRecType'
+          $ref: "#/components/schemas/ClientDefinedFieldStatusRecType"
     ClientDefinedFieldSelType:
       title: ClientDefinedFieldSelType
       type: object
       properties:
         ClientDefinedFieldKeys:
-          $ref: '#/components/schemas/ClientDefinedFieldKeysType'
+          $ref: "#/components/schemas/ClientDefinedFieldKeysType"
         AcctKeys:
-          $ref: '#/components/schemas/AcctKeysType'
+          $ref: "#/components/schemas/AcctKeysType"
         PartyKeys:
-          $ref: '#/components/schemas/PartyKeysType'
+          $ref: "#/components/schemas/PartyKeysType"
       description: Details of the selection criteria used to identify client defined field records
     ClientDefinedFieldInqRqType:
       title: ClientDefinedFieldInqRqType
       required:
-      - ClientDefinedFieldSel
+        - ClientDefinedFieldSel
       type: object
       properties:
         ClientDefinedFieldSel:
-          $ref: '#/components/schemas/ClientDefinedFieldSelType'
+          $ref: "#/components/schemas/ClientDefinedFieldSelType"
     RecCtrlOutType:
       title: RecCtrlOutType
       required:
-      - SentRecCount
+        - SentRecCount
       type: object
       properties:
         SentRecCount:
@@ -792,56 +792,56 @@ components:
     ClientDefinedFieldRecType:
       title: ClientDefinedFieldRecType
       required:
-      - ClientDefinedFieldInfo
-      - ClientDefinedFieldKeys
-      - ClientDefinedFieldStatus
+        - ClientDefinedFieldInfo
+        - ClientDefinedFieldKeys
+        - ClientDefinedFieldStatus
       type: object
       properties:
         ClientDefinedFieldKeys:
-          $ref: '#/components/schemas/ClientDefinedFieldKeysType'
+          $ref: "#/components/schemas/ClientDefinedFieldKeysType"
         ClientDefinedFieldInfo:
-          $ref: '#/components/schemas/ClientDefinedFieldInfoType'
+          $ref: "#/components/schemas/ClientDefinedFieldInfoType"
         ClientDefinedFieldStatus:
-          $ref: '#/components/schemas/ClientDefinedFieldStatusType'
+          $ref: "#/components/schemas/ClientDefinedFieldStatusType"
       description: Details of the client defined field response record that includes response keys, response status and response information
     ClientDefinedFieldInqRsType:
       title: ClientDefinedFieldInqRsType
       required:
-      - Status
+        - Status
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
         RecCtrlOut:
-          $ref: '#/components/schemas/RecCtrlOutType'
+          $ref: "#/components/schemas/RecCtrlOutType"
         ClientDefinedFieldRec:
-          $ref: '#/components/schemas/ClientDefinedFieldRecType'
+          $ref: "#/components/schemas/ClientDefinedFieldRecType"
     ClientDefinedFieldModRqType:
       title: ClientDefinedFieldModRqType
       required:
-      - ClientDefinedFieldInfo
-      - ClientDefinedFieldKeys
+        - ClientDefinedFieldInfo
+        - ClientDefinedFieldKeys
       type: object
       properties:
         OvrdAutoAckInd:
           type: boolean
           description: Flag to indicate if the exceptions should be auto-acknowledged by the system. If this value is set to True, then any exception that can be overridden will be automatically acknowledged by the system and exceptions that cannot be overridden will be returned in the Status aggregate of the response message.
         OvrdExceptionData:
-          $ref: '#/components/schemas/OvrdExceptionDataType'
+          $ref: "#/components/schemas/OvrdExceptionDataType"
         ClientDefinedFieldKeys:
-          $ref: '#/components/schemas/ClientDefinedFieldKeysType'
+          $ref: "#/components/schemas/ClientDefinedFieldKeysType"
         ClientDefinedFieldInfo:
-          $ref: '#/components/schemas/ClientDefinedFieldInfoType'
+          $ref: "#/components/schemas/ClientDefinedFieldInfoType"
     ClientDefinedFieldModRsType:
       title: ClientDefinedFieldModRsType
       required:
-      - Status
+        - Status
       type: object
       properties:
         Status:
-          $ref: '#/components/schemas/StatusType'
+          $ref: "#/components/schemas/StatusType"
         ClientDefinedFieldStatusRec:
-          $ref: '#/components/schemas/ClientDefinedFieldStatusRecType'
+          $ref: "#/components/schemas/ClientDefinedFieldStatusRecType"
   examples:
     "401-Premier":
       value:
@@ -901,9 +901,57 @@ components:
               AcctType: SDA
           ClientDefinedFieldInfo:
             ClientDefinedData:
+              - DataIdent: "1"
+                DataType: Date
+                Value: 9091995.0
+                DataLength: 10
+                Desc: NEXT ACCT REVIEW
+                RequiredFlag: false
+              - DataIdent: "2"
+                DataType: Alpha
+                Value: REGULAR TRANSACT
+                DataLength: 16
+                Desc: ACCT ACTIVITY
+                RequiredFlag: false
+              - DataIdent: "3"
+                DataType: Alpha
+                Value: ION ACTIVITY
+                DataLength: 16
+                Desc: ACCT ACTIVITY
+                RequiredFlag: false
+              - DataIdent: "5"
+                DataType: Alpha
+                Value: EARNED AT 6.8%
+                DataLength: 16
+                Desc: ACCT HISTORY
+                RequiredFlag: false
+              - DataIdent: "6"
+                DataType: Alpha
+                Value: FOR 3 YEARS,
+                DataLength: 16
+                Desc: ACCT HISTORY
+                RequiredFlag: false
+              - DataIdent: "7"
+                DataType: Alpha
+                Value: THEN 8.9% FOR 5.
+                DataLength: 16
+                Desc: ACCT HISTORY
+                RequiredFlag: false
+          ClientDefinedFieldStatus:
+            ClientDefinedFieldStatusCode: Valid
+            EffDt: 2022-01-17T14:44:14.944
+    ClientDefinedFieldModRq-Premier:
+      value:
+        OvrdAutoAckInd: true
+        ClientDefinedFieldKeys:
+          AcctKeys:
+            AcctId: "1000"
+            AcctType: SDA
+        ClientDefinedFieldInfo:
+          ClientDefinedData:
             - DataIdent: "1"
               DataType: Date
-              Value: 9091995.0
+              Value: "09091996"
               DataLength: 10
               Desc: NEXT ACCT REVIEW
               RequiredFlag: false
@@ -937,54 +985,6 @@ components:
               DataLength: 16
               Desc: ACCT HISTORY
               RequiredFlag: false
-          ClientDefinedFieldStatus:
-            ClientDefinedFieldStatusCode: Valid
-            EffDt: 2022-01-17T14:44:14.944
-    ClientDefinedFieldModRq-Premier:
-      value:
-        OvrdAutoAckInd: true
-        ClientDefinedFieldKeys:
-          AcctKeys:
-            AcctId: "1000"
-            AcctType: SDA
-        ClientDefinedFieldInfo:
-          ClientDefinedData:
-          - DataIdent: "1"
-            DataType: Date
-            Value: "09091996"
-            DataLength: 10
-            Desc: NEXT ACCT REVIEW
-            RequiredFlag: false
-          - DataIdent: "2"
-            DataType: Alpha
-            Value: REGULAR TRANSACT
-            DataLength: 16
-            Desc: ACCT ACTIVITY
-            RequiredFlag: false
-          - DataIdent: "3"
-            DataType: Alpha
-            Value: ION ACTIVITY
-            DataLength: 16
-            Desc: ACCT ACTIVITY
-            RequiredFlag: false
-          - DataIdent: "5"
-            DataType: Alpha
-            Value: EARNED AT 6.8%
-            DataLength: 16
-            Desc: ACCT HISTORY
-            RequiredFlag: false
-          - DataIdent: "6"
-            DataType: Alpha
-            Value: FOR 3 YEARS,
-            DataLength: 16
-            Desc: ACCT HISTORY
-            RequiredFlag: false
-          - DataIdent: "7"
-            DataType: Alpha
-            Value: THEN 8.9% FOR 5.
-            DataLength: 16
-            Desc: ACCT HISTORY
-            RequiredFlag: false
     ClientDefinedFieldModRs-Premier:
       value:
         Status:
@@ -994,9 +994,9 @@ components:
           SvcProviderName: Premier
         ClientDefinedFieldStatusRec:
           ClientDefinedFieldKeys:
-          - AcctKeys:
-              AcctId: "1000"
-              AcctType: SDA
+            - AcctKeys:
+                AcctId: "1000"
+                AcctType: SDA
           ClientDefinedFieldStatus:
             ClientDefinedFieldStatusCode: Valid
             EffDt: 2022-01-18T05:31:53.145
